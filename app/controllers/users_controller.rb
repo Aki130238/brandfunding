@@ -57,7 +57,33 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(
+      :name,
+      :email,
+      :password,
+      :password_confirmation
+    )
+  end
+
+  def user_plofile_params
+    params.require(:user).permit(
+      :name,
+      :email,
+      user_profiles_attributes:[
+        :family_name,
+        :family_name_sub,
+        :last_name,
+        :last_name_sub,
+        :sex,
+        :birthday,
+        :add_no,
+        :prefectures,
+        :address,
+        :phone_no1,
+        :phone_no2,
+        :created_at,
+        :updated_at,]
+      )
   end
 
   def set_user
@@ -67,7 +93,7 @@ class UsersController < ApplicationController
   def authenticate_user
     unless current_user.id == @user.id
       flash[:notice] = "ログインが必要"
-      redirect_to new_session_path, notice:"ログインが必要です"
+      redirect_to users_path, notice:"ログインが必要です"
     end
   end
 

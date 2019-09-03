@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :users do
-    collection do
-      post :user_profiles
-    end
-  end
+  root to: "tops#index"
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 end
