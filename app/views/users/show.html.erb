@@ -1,0 +1,11 @@
+<div class="w980">
+  <h1>user詳細画面</h1>
+  <p>ニックネーム: <%= @user.name %></p>
+  <p>登録メール: <%= @user.email %></p>
+  
+  
+  <% if @user.id == current_user.id %>
+    <%= link_to "編集する", edit_user_path(@user.id) %>
+    <%= link_to 'ユーザー削除', user_path(@user.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
+<% end %>
+</div>

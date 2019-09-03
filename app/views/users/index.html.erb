@@ -1,0 +1,16 @@
+<div class="w980">
+  <h1>user一覧</h1>
+  <table>
+    <tr>
+      <th>タイトル</th>
+      <th>内容</th>
+    </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= link_to '詳細を見る', user_path(user.id) %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
