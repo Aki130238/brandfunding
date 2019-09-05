@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_110735) do
+ActiveRecord::Schema.define(version: 2019_09_04_043248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,19 +36,21 @@ ActiveRecord::Schema.define(version: 2019_08_26_110735) do
   end
 
   create_table "user_profiles", force: :cascade do |t|
-    t.string "family_name", null: false
-    t.string "family_name_sub", null: false
-    t.string "last_name", null: false
-    t.string "last_name_sub", null: false
+    t.string "family_name"
+    t.string "family_name_sub"
+    t.string "last_name"
+    t.string "last_name_sub"
     t.string "sex"
-    t.string "birthday", null: false
-    t.integer "add_no", null: false
-    t.string "prefectures", null: false
-    t.text "address", null: false
-    t.integer "phone_no1", null: false
-    t.integer "phone_no2", null: false
+    t.string "birthday"
+    t.integer "add_no"
+    t.string "prefectures"
+    t.text "address"
+    t.integer "phone_no1"
+    t.integer "phone_no2"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,4 +61,5 @@ ActiveRecord::Schema.define(version: 2019_08_26_110735) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "user_profiles", "users"
 end

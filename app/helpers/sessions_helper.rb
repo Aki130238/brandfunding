@@ -5,4 +5,7 @@ module SessionsHelper
   def logged_in?
     current_user.present?
   end
+  def loginuser_id
+    current_user.id
+  end
 end

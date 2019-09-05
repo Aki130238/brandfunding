@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user, only: [:edit, :update, :destroy]
+  # before_action :authenticate_user, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -11,7 +11,9 @@ class UsersController < ApplicationController
   end
 
   def create
+    binding.pry
     @user = User.new(user_params)
+    @user.build_user_profile(user_profile_params)
     if params[:back]
       render 'new'
     else
@@ -31,7 +33,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
+    binding.pry
+    if @user.update(user_profile_params)
       redirect_to users_path, notice: "userを編集しました！"
     else
       render 'edit'
@@ -65,12 +68,9 @@ class UsersController < ApplicationController
     )
   end
 
-  def user_plofile_params
+  def user_profile_params
     params.require(:user).permit(
-      :name,
-      :email,
-      user_profiles_attributes:[
-        :family_name,
+        :family_name, 
         :family_name_sub,
         :last_name,
         :last_name_sub,
@@ -80,21 +80,19 @@ class UsersController < ApplicationController
         :prefectures,
         :address,
         :phone_no1,
-        :phone_no2,
-        :created_at,
-        :updated_at,]
-      )
+        :phone_no2
+    )
   end
 
   def set_user
     @user = User.find(params[:id])
   end
 
-  def authenticate_user
-    unless current_user.id == @user.id
-      flash[:notice] = "ログインが必要"
-      redirect_to users_path, notice:"ログインが必要です"
-    end
-  end
+  # def authenticate_user
+  #   unless current_user.id == @user.id
+  #     flash[:notice] = "ログインが必要"
+  #     redirect_to users_path, notice:"ログインが必要です"
+  #   end
+  # end
 
 end

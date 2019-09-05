@@ -1,3 +1,3 @@
 class ArtisanProfile < ApplicationRecord
-  belongs_to :users, inverse_of: :user_profile
+  belongs_to :user, inverse_of: :artisan_profile
 end

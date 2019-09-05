@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>ユーザープロフィール編集</h1>
+  <%= form_with(model: @user_profile, local: true) do |a| %>
+      <table>
+      <h3>プロフィール編集</h3>
+      <tr><td><%= a.label :family_name %></td></tr>
+      <tr><td><%= a.text_field :family_name %></td></tr>
+      <tr><td><%= a.label :last_name %></td></tr>
+      <tr><td><%= a.text_field :last_name %></td></tr>
+      <tr><td><%= a.label :family_name_sub %></td></tr>分
+      <tr><td><%= a.text_field :family_name_sub %></td></tr>
+      <tr><td><%= a.label :last_name_sub %></td></tr>
+      <tr><td><%= a.text_field :last_name_sub %></td></tr>
+      <tr><td><%= a.label :birthday %></td></tr>
+      <tr><td><%= a.text_field :birthday %></td></tr>
+      <tr><td><%= a.label :add_no %></td></tr>
+      <tr><td><%= a.text_field :add_no %></td></tr>
+      <tr><td><%= a.label :prefectures %></td></tr>
+      <tr><td><%= a.text_field :prefectures %></td></tr>
+      <tr><td><%= a.label :address %></td></tr>
+      <tr><td><%= a.text_field :address %></td></tr>
+      <tr><td><%= a.label :phone_no1 %></td></tr>
+      <tr><td><%= a.text_field :phone_no1 %></td></tr>
+      <tr><td><%= a.label :phone_no2 %></td></tr>
+      <tr><td><%= a.text_field :phone_no2 %></td></tr>
+      </table>
+    <%= a.submit :"ユーザー登録する", class: "btn btn-info" %>
+  <% end %>
+</div>
