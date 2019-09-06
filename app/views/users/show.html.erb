@@ -1,4 +1,8 @@
 <div class="container">
+  <p>
+  <strong>Image:</strong>
+  <%= image_tag @user.image.to_s %>
+  </p>
   <h1>user詳細画面</h1>
   <p>ニックネーム: <%= @user.name %></p>
   <p>登録メール: <%= @user.email %></p>
