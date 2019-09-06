@@ -16,6 +16,7 @@ class CreateArtisanProfiles < ActiveRecord::Migration[5.2]
       t.text :mypr
       t.text :myprofile
       t.text :work_status
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

@@ -32,11 +32,12 @@
           </div>
           <div id="gnavi" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-              <li><%= link_to"トップ", root_path %></li>
+              <li><%= link_to"TOP", root_path %></li>
             </ul>
             <ul class="nav navbar-nav">
               <% if logged_in? %>
-                <li><%= link_to "Profile", user_path(current_user.id) %></li>
+                <li><%= link_to "profile", user_path(current_user.id) %></li>
+                <li><%= link_to "artisan", artisan_profile_path(current_user.id) %></li>
                 <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
                 
               <% else %>

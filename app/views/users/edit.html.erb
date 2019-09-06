@@ -1,6 +1,6 @@
 <div class="container">
   <h1>プロフィール</h1>
-  <%= form_with(model: @user_profile, local: true, method: ) do |f| %>
+  <%= form_with(url: user_profiles_path, local: true) do |f| %>
     
       <table>
         <h3>プロフィール編集</h3>
@@ -24,6 +24,6 @@
         <tr><td><%= f.text_field :phone_no2, placeholder: :phone_no2 %></td></tr>
       </table>
     
-    <%= f.submit :"ユーザー登録する", class: "btn btn-info" %>
+    <%= f.submit :"ユーザー登録する", method: :patch, class: "btn btn-info" %>
   <% end %>
 </div>

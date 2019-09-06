@@ -1,32 +1,39 @@
 class ArtisanProfilesController < ApplicationController
-  def new
-    @user = User.new
-  end
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  # def new
+  #   @user = User.new
+  # end
 
-  def create
-    @user = User.new(user_params)
-    @user.build_user_profile(user_profile_params)
-    @user.build_artisan_profile(artisan_profile_params)
-    if params[:back]
-      render 'new'
-    else
-      if @user.save
-        redirect_to root_path, notice: "プロフィールを作成しました！"
-      else
-        render 'new', notice: "プロフィールを作成できません"
-      end
-    end
+  # def create
+  #   @user = User.new(user_params)
+  #   @user.build_user_profile(user_profile_params)
+  #   @user.build_artisan_profile(artisan_profile_params)
+  #   if params[:back]
+  #     render 'new'
+  #   else
+  #     if @user.save
+  #       redirect_to root_path, notice: "プロフィールを作成しました！"
+  #     else
+  #       render 'new', notice: "プロフィールを作成できません"
+  #     end
+  #   end
+  # end
+  def show
   end
 
   def edit
-    @artisan = User.new
-    @artisan_profile = UserProfile.new
+    flash[:notice] = '職人エディット'
+    @user = User.find(params[:id])
+    @user_profile = @user.user_profile
+    @artisan_profile = @user.artisan_profile
   end
 
   def update
-    @tweet = Tweet.find(params[:id])
-    if @artisan_profile = current_user.updated_at_change_to_be_saved(user_profile_params)
-      redirect_to root_path, notice: "プロフィールを修正しました！"
+    @user = User.find(params[:id])
+    @user_profile = @user.user_profile
+    @artisan_profile = @user.artisan_profile
+    if @user_profile.update(user_profile_params) && @artisan_profile.update(artisan_profile_params)
+      redirect_to artisan_profile_path(@user.id), notice: "プロフィールを修正しました！"
     else
         render 'new', notice: "プロフィールを修正できません"
     end
@@ -35,8 +42,12 @@ class ArtisanProfilesController < ApplicationController
 
   private
 
+  def set_user
+    @user = User.find(params[:id])
+  end
+
   def user_profile_params
-    params.require(:user_profile).permit(
+    params.require(:artisan_profile).permit(
         :family_name,
         :family_name_sub,
         :last_name,

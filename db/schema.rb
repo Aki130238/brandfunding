@@ -31,8 +31,10 @@ ActiveRecord::Schema.define(version: 2019_09_04_043248) do
     t.text "mypr"
     t.text "myprofile"
     t.text "work_status"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_artisan_profiles_on_user_id"
   end
 
   create_table "user_profiles", force: :cascade do |t|
@@ -42,11 +44,11 @@ ActiveRecord::Schema.define(version: 2019_09_04_043248) do
     t.string "last_name_sub"
     t.string "sex"
     t.string "birthday"
-    t.integer "add_no"
+    t.string "add_no"
     t.string "prefectures"
     t.text "address"
-    t.integer "phone_no1"
-    t.integer "phone_no2"
+    t.string "phone_no1"
+    t.string "phone_no2"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -61,5 +63,6 @@ ActiveRecord::Schema.define(version: 2019_09_04_043248) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "artisan_profiles", "users"
   add_foreign_key "user_profiles", "users"
 end

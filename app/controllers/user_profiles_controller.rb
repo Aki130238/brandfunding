@@ -17,17 +17,19 @@ class UserProfilesController < ApplicationController
   # end
 
   def edit
+    flash[:notice] = 'プロフィールエディット'
     @user = User.find(params[:id])
-    @user.user_profile
+    @user_profile = @user.user_profile
   end
 
   def update
-    binding.pry
+    flash[:notice] = 'UPdate'
     @user = User.find(params[:id])
-    if @user_profile = current_user.updated_at_change_to_be_saved(user_profile_params)
+    @user_profile = @user.user_profile
+    if @user.user_profile.update(user_profile_params)
       redirect_to user_path(@user.id), notice: "プロフィールを修正しました！"
     else
-      render 'new', notice: "プロフィールを修正できません"
+      render 'edit', notice: "プロフィールを修正できません"
     end
   end
 

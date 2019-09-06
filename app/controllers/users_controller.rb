@@ -11,9 +11,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    binding.pry
     @user = User.new(user_params)
     @user.build_user_profile(user_profile_params)
+    @user.build_artisan_profile(artisan_profile_params)
     if params[:back]
       render 'new'
     else
@@ -30,12 +30,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    flash[:notice] = 'ユーザーエディット'
   end
 
   def update
-    binding.pry
     if @user.update(user_profile_params)
-      redirect_to users_path, notice: "userを編集しました！"
+      redirect_to user_path(@user.id), notice: "userを編集しました！"
     else
       render 'edit'
     end
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to users_path, notice:"userを削除しました！"
+    redirect_to root_path, notice:"userを削除しました！"
   end
 
   def confirm
@@ -82,6 +82,26 @@ class UsersController < ApplicationController
         :phone_no1,
         :phone_no2
     )
+  end
+
+  def artisan_profile_params
+    params.require(:user).permit(
+        :workexp,
+        :homeworkexp,
+        :skill,
+        :skill_free,
+        :skill_exp,
+        :genre,
+        :genre_free,
+        :item,
+        :item_free,
+        :facillity,
+        :facillity_free,
+        :workexp_text,
+        :mypr,
+        :myprofile,
+        :work_status
+      )
   end
 
   def set_user
