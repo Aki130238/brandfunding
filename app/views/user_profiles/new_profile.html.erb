@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>ユーザープロフィール編集</h1>
+  <%= form_with(model: @user, local: true) do |f| %>
+    <table>
+    <tr><td><%= f.label :name %></td></tr>
+    <tr><td><%= f.text_field :name %></td></tr>
+    <tr><td><%= f.label :email %></td></tr>
+    <tr><td><%= f.email_field :email %></td></tr>
+    <tr><td></table>
+    <%= f.fields_for :user_profile do |a| %>
+      <table>
+      <h3>プロフィール編集</h3>
+      <tr><td><%= a.label :family_name %></td></tr>
+      <tr><td><%= a.text_field :family_name %></td></tr>
+      <tr><td><%= a.label :last_name %></td></tr>
+      <tr><td><%= a.text_field :last_name %></td></tr>
+      <tr><td><%= a.label :family_name_sub %></td></tr>分
+      <tr><td><%= a.text_field :family_name_sub %></td></tr>
+      <tr><td><%= a.label :last_name_sub %></td></tr>
+      <tr><td><%= a.text_field :last_name_sub %></td></tr>
+      <tr><td><%= a.label :birthday %></td></tr>
+      <tr><td><%= a.text_field :lbirthday %></td></tr>
+      <tr><td><%= a.label :add_no %></td></tr>
+      <tr><td><%= a.text_field :add_no %></td></tr>
+      <tr><td><%= a.label :prefectures %></td></tr>
+      <tr><td><%= a.text_field :prefectures %></td></tr>
+      <tr><td><%= a.label :phone_no1 %></td></tr>
+      <tr><td><%= a.text_field :phone_no1 %></td></tr>
+      <tr><td><%= a.label :phone_no2 %></td></tr>
+      <tr><td><%= a.text_field :phone_no2 %></td></tr>
+      <tr><td><%= a.label :last_name_sub %></td></tr>
+      <tr><td><%= a.text_field :last_name_sub %></td></tr>
+      <tr><td><%= a.label :created_at %></td></tr>
+      <tr><td><%= a.text_field :created_at %></td></tr>
+      <tr><td><%= a.label :updated_at %></td></tr>
+      <tr><td><%= a.text_field :updated_at %></td></tr>
+    <% end %>
+    </table>
+    <%= f.submit :"ユーザー登録する", class: "btn btn-info", method: "post" %>
+  <% end %>
+</div>

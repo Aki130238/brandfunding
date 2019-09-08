@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>user一覧</h1>
+  <table>
+    <tr>
+      <th>タイトル</th>
+      <th>内容</th>
+    </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= link_to '詳細を見る', user_path(user.id) %></td>
+      <td><%= link_to 'プロフィール登録', edit_user_profile_path(user.id) %></td>
+      <td><%= link_to '削除', user_path(user.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
