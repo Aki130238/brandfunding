@@ -31,10 +31,11 @@ class UsersController < ApplicationController
 
   def edit
     flash[:notice] = 'ユーザーエディット'
+    @user_profile = @user.user_profile
   end
 
   def update
-    if @user.update(user_profile_params)
+    if @user.user_profile.update(user_profile_params)
       redirect_to user_path(@user.id), notice: "userを編集しました！"
     else
       render 'edit'
@@ -59,6 +60,10 @@ class UsersController < ApplicationController
 
   private
 
+  def set_user
+    @user = User.find(params[:id])
+  end
+
   def user_params
     params.require(:user).permit(
       :name,
@@ -67,6 +72,28 @@ class UsersController < ApplicationController
       :password_confirmation,
       :image_name,
       :image_cache
+    )
+  end
+
+  def user_edit_params
+    params.require(:user).permit(
+      :name,
+      :email,
+      :image_name,
+      :image_cache,
+      user_profile:[
+        :family_name, 
+        :family_name_sub,
+        :last_name,
+        :last_name_sub,
+        :sex,
+        :birthday,
+        :add_no,
+        :prefectures,
+        :address,
+        :phone_no1,
+        :phone_no2
+      ]
     )
   end
 
@@ -106,9 +133,7 @@ class UsersController < ApplicationController
       )
   end
 
-  def set_user
-    @user = User.find(params[:id])
-  end
+  
 
   # def authenticate_user
   #   unless current_user.id == @user.id

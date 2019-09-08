@@ -1,13 +1,13 @@
 <div class="container">
-<h1>Log in</h1>
-<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+    <h2 class="form-signin-heading">ログインしてください</h2>
+      <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.submit "Log in", class: "btn btn-info"%>
-<% end %>
+      <%= f.label :email, class: "sr-only" %>
+      <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Email address" %>
+    
+      <%= f.label :password, class: "sr-only" %>
+      <%= f.password_field :password, id: "inputPassword", class: "form-control", placeholder: "Password"  %>
+          
+      <%= f.submit "Log in", class: "btn btn-lg btn-primary btn-block" %>
+    <% end %>
 </div>

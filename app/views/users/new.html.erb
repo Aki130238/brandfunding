@@ -10,19 +10,22 @@
       </ul>
     </div>
   <% end %>
-  <%= form_with(model: @user, local: true) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="container">
+    <h2 class="form-signin-heading">ログインしてください</h2>
+      <%= form_with(model: @user, local: true) do |f| %>
+      
+      <%= f.label :name, class: "sr-only" %>
+      <%= f.text_field :name, id: "inputName", class: "form-control", placeholder: "Name" %>
 
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+      <%= f.label :email, class: "sr-only" %>
+      <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Email address" %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+      <%= f.label :password, class: "sr-only" %>
+      <%= f.password_field :password, id: "inputPassword", class: "form-control", placeholder: "Password"  %>
 
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+      <%= f.label :password_confirmation, class: "sr-only" %>
+      <%= f.password_field :password_confirmation, id: "inputPasswordConfirmation", class: "form-control", placeholder: "Password_confirmation"  %>
 
-    <%= f.submit "ユーザー登録する", class: "btn btn-info" %>
-  <% end %>
+      <%= f.submit "Log in", class: "btn btn-lg btn-primary btn-block" %>
+    <% end %>
 </div>

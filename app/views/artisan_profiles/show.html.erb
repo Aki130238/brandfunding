@@ -1,10 +1,14 @@
 <div class="container">
+  <p>
+  <strong>Image:</strong>
+  <%= image_tag @user.image.to_s %>
+  </p>
   <h1>user詳細画面</h1>
-  <p>ニックネーム: <%= @user.name %></p>
-  <p>登録メール: <%= @user.email %></p>
+  <p>ニックネーム：<%= @user.name %></p>
+  <p>登録メール：<%= @user.email %></p>
   
   <p>ふりがな：<%= @user.user_profile.family_name_sub %><%= @user.user_profile.last_name_sub %></p>
-  <p>氏　　名: <%= @user.user_profile.family_name %><%= @user.user_profile.last_name %></p>
+  <p>氏　　名：<%= @user.user_profile.family_name %><%= @user.user_profile.last_name %></p>
   <p>お誕生日：<%= @user.user_profile.family_name_sub %><%= @user.user_profile.last_name_sub %></p>
   <p>〒：<%= @user.user_profile.add_no %></p>
   <p>都道府県：<%= @user.user_profile.prefectures %></p>

@@ -23,8 +23,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bcrypt', '3.1.11'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+gem 'bootstrap', '~> 4.3.1'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
