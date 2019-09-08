@@ -1,13 +1,13 @@
 <div class="container">
-    <h2 class="form-signin-heading">ログインしてください</h2>
+    <h2 class="form-signin-heading mt-5">ログインしてください</h2>
       <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
 
-      <%= f.label :email, class: "sr-only" %>
-      <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Email address" %>
+      <%= f.label :email, class: "sr-only mt-1" %>
+      <%= f.email_field :email, id: "inputEmail", class: "form-control mt-1", placeholder: "Email address" %>
     
-      <%= f.label :password, class: "sr-only" %>
-      <%= f.password_field :password, id: "inputPassword", class: "form-control", placeholder: "Password"  %>
+      <%= f.label :password, class: "sr-only mt-1" %>
+      <%= f.password_field :password, id: "inputPassword", class: "form-control mt-1", placeholder: "Password"  %>
           
-      <%= f.submit "Log in", class: "btn btn-lg btn-primary btn-block" %>
+      <%= f.submit "Log in", class: "btn btn-lg btn-primary btn-block mt-3" %>
     <% end %>
 </div>

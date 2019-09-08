@@ -11,8 +11,11 @@ class ArtisanProfilesController < ApplicationController
   end
 
   def update
+    
     @user = User.find(params[:id])
-    if @user.user_profile.update(user_profile_params) && @user.artisan_profile.update(artisan_profile_params)
+    binding.pry
+    # if @user.user_profile.update(user_profile_params) && @user.artisan_profile.update(artisan_profile_params)
+    if @user.update(user_edit_params)
       redirect_to artisan_profile_path(@user.id), notice: "プロフィールを修正しました！"
     else
         render 'new', notice: "プロフィールを修正できません"
@@ -64,7 +67,6 @@ class ArtisanProfilesController < ApplicationController
 
   def user_edit_params
     params.require(:user).permit(
-      :id,
       :name,
       :email,
       :image_name,
@@ -90,7 +92,7 @@ class ArtisanProfilesController < ApplicationController
       ],
       artisan_profile_attributes:[
         :id,
-        :artisan_id,
+        :user_id,
         :family_name, 
         :family_name_sub,
         :last_name,

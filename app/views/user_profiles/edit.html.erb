@@ -1,6 +1,6 @@
 <div class="container">
   <div class="py-5 text-center">
-    <h2></h2>
+    <h2>マイページ編集</h2>
     <p class="lead"></p>
   </div>
   <%= form_with(model: @user_profile, url: user_profile_path, local: true, method: :patch) do |f| %>
@@ -136,7 +136,8 @@
             </div>
           </div>
           <div class="mb-3">
-          <%= f.submit :"プロフィールを編集する", class: "btn btn-primary btn-lg btn-block" %>
+            <%= f.submit :"プロフィールを編集する", class: "btn btn-danger btn-lg btn-block mt-3" %>
+            <%= link_to "戻る", user_profile_path(current_user.id), class: "btn btn-primary btn-lg btn-block mt-3" %>
           </div>
       </div>
     </div>

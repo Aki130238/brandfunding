@@ -96,7 +96,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">〒</span>
                 </div>
-                <%= a.text_field :add_no, class: "form-control", id: "AddNumber", placeholder: "例）000-0000" %>
+                <%= a.text_field :add_no, class: "form-control", id: "AddNumber", placeholder: "例）0000000（ハイフン不要）" %>
                 <div class="invalid-feedback" style="width: 100%;">
                   Your username is required.
                 </div>
@@ -140,6 +140,6 @@
         <% end %>
       </div>
     </div>
-  <%= f.submit :"ユーザー登録する", class: "btn btn-primary btn-lg btn-block" %>
+  <%= f.submit :"ユーザー登録する", class: "btn btn-primary btn-lg btn-block mt-5" %>
   <% end %>
 </div>
