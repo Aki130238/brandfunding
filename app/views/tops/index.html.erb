@@ -16,9 +16,9 @@
             支援したその瞬間にあなたはブランドメンバーの仲間入りです。</p>
             <p>
               <% if logged_in? %>
-                <%= link_to 'スポンサー登録する', edit_user_profile_path(current_user.id), class: "btn btn-lg btn-primary" %>
+                <%= link_to 'スポンサー登録する', edit_user_profile_path(current_user.id), class: "btn btn-lg btn-dark border-white", style:"background-color:#cd22dc;" %>
               <% else %>
-                <%= link_to "スポンサー登録する", new_session_path, class: "btn btn-lg btn-primary"  %>
+                <%= link_to "スポンサー登録する", new_session_path, class: "btn btn-lg btn-dark border-white", style:"background-color:#cd22dc;"  %>
               <% end %>
             </p>
           </div>
@@ -33,9 +33,9 @@
             資金を集めてアイディアを実現する職人と繋がりましょう。あなたのブランドが誕生します。</p>
             <p>
               <% if logged_in? %>
-                <%= link_to 'オーナー登録する', edit_user_profile_path(current_user.id), class: "btn btn-lg btn-primary" %>
+                <%= link_to 'オーナー登録する', edit_user_profile_path(current_user.id), class:"btn btn-lg btn-dark border-white", style:"background-color:#cd22dc;" %>
               <% else %>
-                <%= link_to "オーナー登録する", new_session_path, class: "btn btn-lg btn-primary"  %>
+                <%= link_to "オーナー登録する", new_session_path, class: "btn btn-lg btn-dark border-white", style:"background-color:#cd22dc;"  %>
               <% end %>
             </p>
           </div>
@@ -49,9 +49,9 @@
             <p>日本全国の職人があなたのアイディアを実現させるために技術や素材を提供します。</p>
             <p>
               <% if logged_in? %>
-                <%= link_to '職人登録する', edit_artisan_profile_path(current_user.id), class: "btn btn-lg btn-primary" %>
+                <%= link_to '職人登録する', edit_artisan_profile_path(current_user.id), class: "btn btn-lg btn-dark border-white", style:"background-color:#cd22dc;" %>
               <% else %>
-                <%= link_to "職人登録する", new_session_path, class: "btn btn-lg btn-primary"  %>
+                <%= link_to "職人登録する", new_session_path, class: "btn btn-lg btn-dark border-white", style:"background-color:#cd22dc;"  %>
               <% end %>
             </p>
           </div>
@@ -76,19 +76,19 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
-        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <img class="rounded-circle" src="icon_item01.png" alt="Generic placeholder image" width="140" height="140">
         <h2>アイディアを投稿</h2>
         <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
         <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <img class="rounded-circle" src="icon_item02.png" alt="Generic placeholder image" width="140" height="140">
         <h2>スポンサーを集めて</h2>
         <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
         <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <img class="rounded-circle" src="icon_item03.png" alt="Generic placeholder image" width="140" height="140">
         <h2>職人に依頼する</h2>
         <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
         <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>

@@ -13,7 +13,6 @@ class ArtisanProfilesController < ApplicationController
   def update
     
     @user = User.find(params[:id])
-    binding.pry
     # if @user.user_profile.update(user_profile_params) && @user.artisan_profile.update(artisan_profile_params)
     if @user.update(user_edit_params)
       redirect_to artisan_profile_path(@user.id), notice: "プロフィールを修正しました！"
