@@ -1,5 +1,11 @@
 class ArtisanProfilesController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+
+  def index
+  end
+
+  def new
+  end
   
   def show
   end
@@ -73,6 +79,21 @@ class ArtisanProfilesController < ApplicationController
       user_profile_attributes:[
         :id,
         :user_id,
+        :family_name, 
+        :family_name_sub,
+        :last_name,
+        :last_name_sub,
+        :sex,
+        :birthday,
+        :add_no,
+        :prefectures,
+        :address,
+        :phone_no1,
+        :phone_no2
+      ],
+      artisan_profile_attributes:[
+        :id,
+        :user_id,
         :workexp,
         :homeworkexp,
         :skill,
@@ -88,21 +109,6 @@ class ArtisanProfilesController < ApplicationController
         :mypr,
         :myprofile,
         :work_status
-      ],
-      artisan_profile_attributes:[
-        :id,
-        :user_id,
-        :family_name, 
-        :family_name_sub,
-        :last_name,
-        :last_name_sub,
-        :sex,
-        :birthday,
-        :add_no,
-        :prefectures,
-        :address,
-        :phone_no1,
-        :phone_no2
       ]
     )
   end
