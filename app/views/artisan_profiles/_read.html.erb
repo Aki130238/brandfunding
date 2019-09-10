@@ -49,7 +49,7 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <%= a.label :family_name %>
-            <%= a.text_field :family_name, class: "form-control", id: "firstName", placeholder: "例）山田", value: @user.user_profile.family_name %>
+            <%= a.text_field :family_name, class: "form-control", id: "firstName", placeholder: "例）山田", value: @user.user_profile.family_name, readonly: true %>
 
             <div class="invalid-feedback">
               Valid first name is required.
@@ -57,7 +57,7 @@
           </div>
           <div class="col-md-6 mb-3">
             <label for="lastName">Last name</label>
-            <%= a.text_field :last_name, class: "form-control", id: "lastName", placeholder: "例）太郎", value: @user.user_profile.last_name  %>
+            <%= a.text_field :last_name, class: "form-control", id: "lastName", placeholder: "例）太郎", value: @user.user_profile.last_name, readonly: true %>
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
@@ -67,7 +67,7 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstNameSub">First name</label>
-            <%= a.text_field :family_name_sub, class: "form-control", id: "firstName", placeholder: "例）やまだ", value: @user.user_profile.family_name_sub %>
+            <%= a.text_field :family_name_sub, class: "form-control", id: "firstName", placeholder: "例）やまだ", value: @user.user_profile.family_name_sub, readonly: true %>
 
             <div class="invalid-feedback">
               Valid first name is required.
@@ -75,7 +75,7 @@
           </div>
           <div class="col-md-6 mb-3">
             <label for="lastName">Last name</label>
-            <%= a.text_field :last_name_sub, class: "form-control", id: "lastName", placeholder: "例）たろう", value: @user.user_profile.last_name_sub  %>
+            <%= a.text_field :last_name_sub, class: "form-control", id: "lastName", placeholder: "例）たろう", value: @user.user_profile.last_name_sub, readonly: true  %>
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
@@ -89,7 +89,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">〒</span>
               </div>
-              <%= a.text_field :add_no, class: "form-control", id: "AddNumber", placeholder: "例）0000000（ハイフン不要）" %>
+              <%= a.text_field :add_no, class: "form-control", id: "AddNumber", placeholder: "例）0000000（ハイフン不要）", readonly: true %>
               <div class="invalid-feedback" style="width: 100%;">
                 Your username is required.
               </div>
@@ -98,7 +98,7 @@
                         
           <div class="col-md-6 mb-3">
             <%= a.label :prefectures %>
-            <%= a.text_field :prefectures, class: "form-control", id: "Prefectures", placeholder: "例）東京都" %>
+            <%= a.text_field :prefectures, class: "form-control", id: "Prefectures", placeholder: "例）東京都", readonly: true %>
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
@@ -107,7 +107,7 @@
 
         <div class="mb-3">
           <%= a.label :address %>
-          <%= a.text_field :address, class: "form-control", id: "address", placeholder: "建物名までご記入ください" %>
+          <%= a.text_field :address, class: "form-control", id: "address", placeholder: "建物名までご記入ください", readonly: true %>
           <div class="invalid-feedback">
             Please enter your shipping address.
           </div>
@@ -116,7 +116,7 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <%= a.label :phone_no1 %>
-            <%= a.text_field :phone_no1, class: "form-control", id: "PhoneNumber1", placeholder: "例）00000000000(ハイフン不要)" %>
+            <%= a.text_field :phone_no1, class: "form-control", id: "PhoneNumber1", placeholder: "例）00000000000(ハイフン不要)", readonly: true %>
             <div class="invalid-feedback" style="width: 100%;">
               Your username is required.
             </div>
@@ -124,7 +124,7 @@
                         
           <div class="col-md-6 mb-3">
             <%= a.label :phone_no2 %>
-            <%= a.text_field :phone_no2, class: "form-control", id: "PhoneNumber2", placeholder: "例）00000000000(ハイフン不要)" %>
+            <%= a.text_field :phone_no2, class: "form-control", id: "PhoneNumber2", placeholder: "例）00000000000(ハイフン不要)", readonly: true %>
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
@@ -139,7 +139,7 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <%= b.label :workexp %>
-            <%= b.text_field :workexp, class: "form-control", id: "workExp", placeholder: "", value: @user.artisan_profile.workexp %>
+            <%= b.text_field :workexp, class: "form-control", id: "workExp", placeholder: "", value: @user.artisan_profile.workexp, readonly: true %>
 
             <div class="invalid-feedback">
               Valid first name is required.
@@ -147,7 +147,7 @@
           </div>
           <div class="col-md-6 mb-3">
             <%= b.label :homeworkexp %>
-            <%= b.text_field :homeworkexp, class: "form-control", id: "homeworkExp", placeholder: "", value: @user.artisan_profile.homeworkexp  %>
+            <%= b.text_field :homeworkexp, class: "form-control", id: "homeworkExp", placeholder: "", value: @user.artisan_profile.homeworkexp, readonly: true  %>
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
@@ -157,14 +157,14 @@
         <div class="row">
           <div class="col-md-6 mb-3">
           <%= b.label :skill %>
-            <%= b.text_field :skill, class: "form-control", id: "skill", placeholder: "" %>
+            <%= b.text_field :skill, class: "form-control", id: "skill", placeholder: "", readonly: true %>
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
           </div>
           <div class="col-md-6 mb-3">
             <label for="lastName">skill_free</label>
-            <%= b.text_field :skill_free, class: "form-control", id: "skillFree", placeholder: ""  %>
+            <%= b.text_field :skill_free, class: "form-control", id: "skillFree", placeholder: "", readonly: true  %>
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
@@ -174,7 +174,7 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <%= b.label :skill_exp %>
-            <%= b.text_field :skill_exp, class: "form-control", id: "skillExp", placeholder: "" %>
+            <%= b.text_field :skill_exp, class: "form-control", id: "skillExp", placeholder: "", readonly: true %>
               <div class="invalid-feedback" style="width: 100%;">
                 Your username is required.
               </div>
@@ -182,7 +182,7 @@
                         
           <div class="col-md-6 mb-3">
             <%= b.label :genre %>
-            <%= b.text_field :genre, class: "form-control", id: "genre", placeholder: "" %>
+            <%= b.text_field :genre, class: "form-control", id: "genre", placeholder: "", readonly: true %>
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
@@ -191,14 +191,13 @@
 
         <div class="mb-3">
           <%= b.label :genre_free %>
-          <%= b.text_field :genre_free, class: "form-control", id: "genre_free", placeholder: "" %>
+          <%= b.text_field :genre_free, class: "form-control", id: "genre_free", placeholder: "", readonly: true %>
           <div class="invalid-feedback">
             Please enter your shipping address.
           </div>
         </div>
         <div class="mb-3">
-        <%= f.submit :"職人プロフィールを編集する", class: "btn btn-danger btn-lg btn-block mt-5" %>
-        <%= link_to "戻る", user_path(current_user.id), class: "btn btn-primary btn-lg btn-block mt-3" %>
+        <%= link_to '職人プロフィールを編集する', edit_artisan_profile_path(@user.id), class: "btn btn-primary btn-lg btn-block mt-5" %>
         </div>
       <% end %>
       </div>

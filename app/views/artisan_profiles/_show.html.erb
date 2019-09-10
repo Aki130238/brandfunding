@@ -1,0 +1,40 @@
+<div class="container">
+  <p>
+  <strong>Image:</strong>
+  <%= image_tag @user.image.to_s %>
+  </p>
+  <h1>user詳細画面</h1>
+  <p>ニックネーム：<%= @user.name %></p>
+  <p>登録メール：<%= @user.email %></p>
+  
+  <p>ふりがな：<%= @user.user_profile.family_name_sub %><%= @user.user_profile.last_name_sub %></p>
+  <p>氏　　名：<%= @user.user_profile.family_name %><%= @user.user_profile.last_name %></p>
+  <p>お誕生日：<%= @user.user_profile.family_name_sub %><%= @user.user_profile.last_name_sub %></p>
+  <p>〒：<%= @user.user_profile.add_no %></p>
+  <p>都道府県：<%= @user.user_profile.prefectures %></p>
+  <p>住所：<%= @user.user_profile.address %></p>
+  <p>ご連絡先１：<%= @user.user_profile.phone_no1 %></p>
+  <p>ご連絡先２：<%= @user.user_profile.phone_no2 %></p>
+
+  <p>実務経験：<%= @user.artisan_profile.workexp %></p>
+  <p>家庭縫製経験： <%= @user.artisan_profile.homeworkexp %></p>
+  <p>経験年数：<%= @user.artisan_profile.skill_exp %></p>
+  <p>スキル：<%= @user.artisan_profile.skill %></p>
+  <p>スキル詳細：<%= @user.artisan_profile.skill_free %></p>
+  <p>ジャンル：<%= @user.artisan_profile.genre %><p>
+  <p>ジャンル詳細：<%= @user.artisan_profile.genre_free %><p>
+  <p>アイテム：<%= @user.artisan_profile.item %></p>
+  <p>得意アイテム：<%= @user.artisan_profile.item_free %></p>
+  <p>設備：<%= @user.artisan_profile.facillity %></p>
+  <p>その他設備：<%= @user.artisan_profile.facillity_free %></p>
+  <p>【加工設備】：<%= @user.artisan_profile.workexp_text %></p>
+  <p>経歴詳細：<%= @user.artisan_profile.workexp_text %></p>
+  <p>自己PR：<%= @user.artisan_profile.mypr %></p>
+  <p>自己紹介：<%= @user.artisan_profile.myprofile %></p>
+  <p>お仕事状況：<%= @user.artisan_profile.work_status %></p>
+
+  <%= link_to 'プロフィール登録', edit_user_profile_path(@user.id), class: "btn btn-info" %>
+  <%= link_to '職人申請', edit_artisan_profile_path(@user.id), class: "btn btn-info" %>
+  <%= link_to 'ユーザーを削除する', user_path(@user.id), class: "btn btn-info", method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
+  
+</div>
