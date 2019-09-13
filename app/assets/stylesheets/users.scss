@@ -10,9 +10,11 @@
       font-weight: bold;
     }
     &__list {
-      color: red;
+      color: $color-error;
       &__icon {
-        width: 3rem;
+        width: 2rem;
+        margin: 2rem 0 0 -6rem;
+        vertical-align: -.4rem;
       }
     }
     &-form {

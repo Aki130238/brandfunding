@@ -1,14 +1,17 @@
 <main class="container-fluid signup-page">
   <div class="row">
     <div class="col signup">
+    <h3 class="signup__title">ブランドファンディングはあなたのやりたい事を<br>応援します。仲間と一緒にアイディアをカタチに</h3>
       <% if @user.errors.any? %>
-        <ul>
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <ul>
+            <li class="signup__list">
+              <%= svg("exclamation-circle-solid.svg", class: "signup__list__icon") %>
+              <%= message %>
+            </li>
+          </ul>
+        <% end %>
       <% end %>
-      <h3 class="signup__title">ブランドファンディングはあなたのやりたい事を<br>応援します。仲間と一緒にアイディアをカタチに</h3>
       <div class="signup-form">
         <%= form_with(model: @user, local: true) do |f| %>
           <%= f.text_field :name, class: "signup-form__input", placeholder: "ニックネーム" %><br>
