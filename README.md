@@ -2,7 +2,11 @@
 
 発想と技術のマッチングでブランド作りを応援するクラウドファンディング
 
+* Rails version
+Rails 5.2.3
+
 * Ruby version
+ruby 2.6.3
 
 * System dependencies
 
