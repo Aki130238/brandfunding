@@ -1,29 +1,28 @@
 <main class="signup-page">
   <div class="signup">
     <h2 class="signup__title">ブランドファンディングはあなたのやりたい事を<br>応援します。仲間と一緒にアイディアをカタチに</h2>
-      <% if @user.errors.any? %>
-        <% @user.errors.full_messages.each do |message| %>
-          <ul>
-            <li class="signup__list">
-              <%= svg("exclamation-circle-solid.svg", class: "signup__list__icon") %>
-              <%= message %>
-            </li>
-          </ul>
-        <% end %>
+    <% if @user.errors.any? %>
+      <% @user.errors.full_messages.each do |message| %>
+        <ul>
+          <li class="signup__list">
+            <%= svg("exclamation-circle-solid.svg", class: "signup__list__icon") %>
+            <%= message %>
+          </li>
+        </ul>
       <% end %>
-      <div class="signup-form">
-        <%= form_with(model: @user, local: true) do |f| %>
-          <%= f.text_field :name, class: "signup-form__input", placeholder: "ニックネーム" %><br>
-          <%= f.email_field :email, class: "signup-form__input", placeholder: "メールアドレス" %><br>
-          <%= f.password_field :password, class: "signup-form__input", placeholder: "パスワード" %><br>
-          <%= f.password_field :password_confirmation, class: "signup-form__input", placeholder: "パスワード確認用" %><br>
-          <p class="signup-form__about">登録は無料。年会費もかかりません。</p>
-          <p class="signup-form__privacy">
-            <input type="checkbox" name="" value="">&nbsp;利用規約、個人情報保護方針に同意する
-          </p>
-          <%= f.submit "登録", class: "signup-form__button" %>
-        <% end %>
-      </div>
+    <% end %>
+    <div class="signup-form">
+      <%= form_with(model: @user, local: true) do |f| %>
+        <%= f.text_field :name, class: "signup-form__input", placeholder: "ニックネーム" %><br>
+        <%= f.email_field :email, class: "signup-form__input", placeholder: "メールアドレス" %><br>
+        <%= f.password_field :password, class: "signup-form__input", placeholder: "パスワード" %><br>
+        <%= f.password_field :password_confirmation, class: "signup-form__input", placeholder: "パスワード確認用" %><br>
+        <p class="signup-form__about">登録は無料。年会費もかかりません。</p>
+        <p class="signup-form__privacy">
+          <input type="checkbox" name="" value="">&nbsp;利用規約、個人情報保護方針に同意する
+        </p>
+        <%= f.submit "登録", class: "signup-form__button" %>
+      <% end %>
     </div>
   </div>
 </main>
