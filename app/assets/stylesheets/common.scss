@@ -1,6 +1,7 @@
 $bgcolor-1: #FFFEED;
 $bgcolor-footer: #606060;
 $color-1: #6C6C6C;
+$color-main: #FE38C3;
 $color-error: #e73562;
 $btncolor-1: #C19A88;
 
@@ -45,15 +46,56 @@ li {
   cursor: pointer;
 }
 
+.header-1 {
+  display: flex;
+  padding: 2.5rem 0 2rem 5rem;
+  border-bottom: solid $color-main;
+  background: white;
+  &__title {
+    margin-right: auto;
+    color: $color-1;
+  }
+  &__flash {
+    position: absolute center;
+    margin: .3rem 0 .3rem 33rem;
+    color: black;
+  }
+  &__column {
+    position: absolute;
+    right: 15rem;
+    margin: .3rem 0 .3rem 3rem;
+    color: $color-1;
+  }
+  &__column2 {
+    position: absolute;
+    right: 26.5rem;
+    margin: .3rem 0 .3rem 3rem;
+    color: $color-1;
+  }
+  &__column3 {
+    position: absolute;
+    right: 5rem;
+    margin: .3rem 0 .3rem 3rem;
+    color: $color-1;
+  }
+  &__title:hover, &__column:hover, &__column2:hover, &__column3:hover {
+    color: $color-1;
+    text-decoration: none;
+  }
+}
+
 .footer-1 {
   display: flex;
-  padding: 2.6rem 2rem;
+  padding: 2.5rem 0 2rem 5rem;
   background: $bgcolor-footer;
   color: white;
-  flex-direction: row;
   &__title {
     margin: 0 1rem;
-    cursor: pointer;
+    color: white;
+  }
+  &__title:hover {
+    color: white;
+    text-decoration: none;
   }
   &__column {
     margin: .3rem 1rem;
