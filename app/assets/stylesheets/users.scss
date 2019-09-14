@@ -1,8 +1,10 @@
 .signup-page {
+  padding: 5.2rem 0;
+  background: $bgcolor-1;
   .signup {
     display: inline-block;
-    padding: 5.2rem 0;
-    background: $bgcolor-1;
+    width: 100%;
+    margin: 0 auto;
     text-align: center;
     &__title {
       color: $color-1;
