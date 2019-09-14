@@ -1,30 +1,30 @@
-<div class="container">
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<main class="container-fluid signup-page">
+  <div class="row">
+    <div class="col signup">
+    <h2 class="signup__title">ブランドファンディングはあなたのやりたい事を<br>応援します。仲間と一緒にアイディアをカタチに</h2>
+      <% if @user.errors.any? %>
+        <% @user.errors.full_messages.each do |message| %>
+          <ul>
+            <li class="signup__list">
+              <%= svg("exclamation-circle-solid.svg", class: "signup__list__icon") %>
+              <%= message %>
+            </li>
+          </ul>
+        <% end %>
       <% end %>
-      </ul>
+      <div class="signup-form">
+        <%= form_with(model: @user, local: true) do |f| %>
+          <%= f.text_field :name, class: "signup-form__input", placeholder: "ニックネーム" %><br>
+          <%= f.email_field :email, class: "signup-form__input", placeholder: "メールアドレス" %><br>
+          <%= f.password_field :password, class: "signup-form__input", placeholder: "パスワード" %><br>
+          <%= f.password_field :password_confirmation, class: "signup-form__input", placeholder: "パスワード確認用" %><br>
+          <p class="signup-form__about">登録は無料。年会費もかかりません。</p>
+          <p class="signup-form__privacy">
+            <input type="checkbox" name="" value="">&nbsp;利用規約、個人情報保護方針に同意する
+          </p>
+          <%= f.submit "登録", class: "signup-form__button" %>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-  <div class="container">
-    <h2 class="form-signin-heading mt-5">ログインしてください</h2>
-      <%= form_with(model: @user, local: true) do |f| %>
-      
-      <%= f.label :name, class: "sr-only mt-1" %>
-      <%= f.text_field :name, id: "inputName", class: "form-control mt-1", placeholder: "Name" %>
-
-      <%= f.label :email, class: "sr-only mt-1" %>
-      <%= f.email_field :email, id: "inputEmail", class: "form-control mt-1", placeholder: "Email address" %>
-
-      <%= f.label :password, class: "sr-only mt-1" %>
-      <%= f.password_field :password, id: "inputPassword", class: "form-control mt-1", placeholder: "Password"  %>
-
-      <%= f.label :password_confirmation, class: "sr-only mt-1" %>
-      <%= f.password_field :password_confirmation, id: "inputPasswordConfirmation", class: "form-control mt-1", placeholder: "Password_confirmation"  %>
-
-      <%= f.submit "Log in", class: "btn btn-lg btn-primary btn-block mt-3" %>
-    <% end %>
-</div>
+  </div>
+</main>

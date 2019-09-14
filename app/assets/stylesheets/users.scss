@@ -1,3 +1,40 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.signup-page {
+  .signup {
+    height: 100vh;
+    display: inline-block;
+    padding: 3rem 0;
+    background: $bgcolor-1;
+    text-align: center;
+    &__title {
+      color: $color-1;
+      font-weight: bold;
+    }
+    &__list {
+      color: $color-error;
+      &__icon {
+        width: 2rem;
+        margin: 2rem 0 0 -6rem;
+        vertical-align: -.4rem;
+      }
+    }
+    &-form {
+      &__input {
+        @extend .form;
+      }
+      &__about {
+        padding-top: 4rem;
+        color: $color-1;
+        font-size: 1.4rem;
+      }
+      &__privacy {
+        margin-bottom: 2rem;
+        color: $color-1;
+        font-size: 1.1rem;
+      }
+      &__button {
+        @extend .button;
+        background: $btncolor-1;
+      }
+    }
+  }
+}
