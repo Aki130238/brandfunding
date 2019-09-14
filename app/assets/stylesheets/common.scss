@@ -1,7 +1,19 @@
 $bgcolor-1: #FFFEED;
-$color-error: #e73562;
+$bgcolor-footer: #606060;
 $color-1: #6C6C6C;
+$color-error: #e73562;
 $btncolor-1: #C19A88;
+
+$breakpoints: (
+  'sm': 'screen and (max-width: 559px)',
+  'md': 'screen and (max-width: 959px)',
+) !default;
+
+@mixin mq($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
 
 html {
   font-size: 62.5%;
@@ -31,4 +43,21 @@ li {
   border-radius: 5px;
   color: white;
   cursor: pointer;
+}
+
+.footer-1 {
+  display: flex;
+  padding: 2.6rem 2rem;
+  background: $bgcolor-footer;
+  color: white;
+  flex-direction: row;
+  &__title {
+    margin: 0 1rem;
+    cursor: pointer;
+  }
+  &__column {
+    margin: .3rem 1rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
 }

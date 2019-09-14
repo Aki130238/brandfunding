@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  
+
   <body>
     <% flash.each do |key, value| %><%= content_tag(:div, value, class: "#{key}") %><% end %>
     <header>
@@ -33,9 +33,19 @@
               <% end %>
             </ul>
           </ul>
-        </div>  
+        </div>
       </nav>
     </header>
+
     <%= yield %>
+
+    <footer class="footer-1">
+      <h2 class="footer-1__title">BRANDFUNDING</h2>
+      <p class="footer-1__column">ご利用規約</p>
+      <p class="footer-1__column">|</p>
+      <p class="footer-1__column">プライバシーポリシー</p>
+      <p class="footer-1__column">|</p>
+      <p class="footer-1__column">運営会社</p>
+    </footer>
   </body>
 </html>
