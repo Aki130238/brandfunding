@@ -1,6 +1,6 @@
-<main class="signup-page">
-  <div class="signup">
-    <h2 class="signup__title">ブランドファンディングはあなたのやりたい事を<br>応援します。仲間と一緒にアイディアをカタチに</h2>
+<main class="container-fluid signup-page">
+  <div class="row signup">
+    <h1 class="col-12 signup__title">ブランドファンディングはあなたのやりたい事を<br>応援します。仲間と一緒にアイディアをカタチに</h1>
     <% if @user.errors.any? %>
       <% @user.errors.full_messages.each do |message| %>
         <ul>
@@ -11,17 +11,17 @@
         </ul>
       <% end %>
     <% end %>
-    <div class="signup-form">
+    <div class="col-12 signup-form">
       <%= form_with(model: @user, local: true) do |f| %>
-        <%= f.text_field :name, class: "signup-form__input", placeholder: "ニックネーム" %><br>
-        <%= f.email_field :email, class: "signup-form__input", placeholder: "メールアドレス" %><br>
-        <%= f.password_field :password, class: "signup-form__input", placeholder: "パスワード" %><br>
-        <%= f.password_field :password_confirmation, class: "signup-form__input", placeholder: "パスワード確認用" %><br>
+        <%= f.text_field :name, class:"form-control signup-form__input", id:"exampleInputEmail1", placeholder: "ニックネーム" %><br>
+        <%= f.email_field :email, class:"form-control signup-form__input", id:"exampleInputEmail1", placeholder: "メールアドレス" %><br>
+        <%= f.password_field :password, class:"form-control signup-form__input", id:"exampleInputEmail1", placeholder: "パスワード" %><br>
+        <%= f.password_field :password_confirmation, class:"form-control signup-form__input", id:"exampleInputEmail1", placeholder: "パスワード確認用" %><br>
         <p class="signup-form__about">登録は無料。年会費もかかりません。</p>
         <p class="signup-form__privacy">
           <input type="checkbox" name="" value="">&nbsp;利用規約、個人情報保護方針に同意する
         </p>
-        <%= f.submit "登録", class: "signup-form__button" %>
+        <%= f.submit "登録", class: "btn signup-form__button" %>
       <% end %>
     </div>
   </div>

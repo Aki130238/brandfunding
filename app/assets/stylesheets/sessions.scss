@@ -13,20 +13,10 @@
     }
     &-form {
       &__input {
-        width: 40%;
-        margin: 0 auto;
-        padding: .8rem;
-        border-radius: 8px;
-        font-size: 1.6rem;
+        @extend .form-sign;
       }
       &__button {
-        width: 20%;
-        margin-top: 1rem;
-        padding: .8rem;
-        border-radius: 8px;
-        background: $btncolor-1;
-        color: white;
-        font-size: 1.6rem;
+        @extend .button-sign;
       }
     }
   }
