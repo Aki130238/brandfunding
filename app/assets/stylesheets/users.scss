@@ -23,18 +23,17 @@
         @extend .form;
       }
       &__about {
-        padding-top: 4rem;
+        margin-top: 4rem;
         color: $color-1;
         font-size: 1.4rem;
       }
       &__privacy {
-        margin-bottom: 2rem;
         color: $color-1;
         font-size: 1.1rem;
       }
       &__button {
         @extend .button;
-        margin-bottom: 10.5rem;
+        margin-top: 2rem;
         background: $btncolor-1;
       }
     }
