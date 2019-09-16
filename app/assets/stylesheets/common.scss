@@ -33,10 +33,14 @@ html {
       list-style: none;
     }
   }
+}
 
 .header-1 {
-  padding: 2.5rem 0 2rem 5rem;
+  padding: 2.5rem 0;
   border-bottom: solid $color-main;
+  &__title {
+    padding-left: 5rem;
+  }
   .navbar {
     margin-right: 2rem;
     background: white;
@@ -59,20 +63,25 @@ html {
 }
 
 .footer-1 {
-  display: flex;
-  padding: 2.5rem 0 2rem 5rem;
+  padding: 2.5rem 0 2rem 0rem;
   background: $bgcolor-footer;
-  color: white;
+  &__wrap {
+    margin-right: 5rem;
+  }
   &__title {
-    margin: 0 1rem;
+    margin-left: 8rem;
     color: white;
   }
   &__title:hover {
     color: white;
     text-decoration: none;
   }
+  &__column__wrap {
+    padding: 0 auto;
+  }
   &__column {
-    margin: .3rem 1rem;
+    margin: .3rem 0rem;
+    color: white;
     font-size: 1.3rem;
     cursor: pointer;
   }

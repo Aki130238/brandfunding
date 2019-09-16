@@ -13,7 +13,7 @@
     <% flash.each do |key, value| %><%= content_tag(:div, value, class: "#{key} header-1__flash") %><% end %>
     <header class="header-1">
       <nav class="navbar navbar-expand-sm">
-        <h1><%= link_to 'BRANDFUNDING', root_path, class: "header-1__navlink" %></h1>
+        <h1><%= link_to 'BRANDFUNDING', root_path, class: "header-1__navlink header-1__title" %></h1>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,13 +36,17 @@
 
     <%= yield %>
 
-    <footer class="footer-1">
-      <h2><%= link_to "BRAND FUNDING", root_path, class: "footer-1__title" %></h2>
-      <p class="footer-1__column">ご利用規約</p>
-      <p class="footer-1__column">|</p>
-      <p class="footer-1__column">プライバシーポリシー</p>
-      <p class="footer-1__column">|</p>
-      <p class="footer-1__column">運営会社</p>
+    <footer class="container-fluid footer-1">
+      <div class="row footer-1__wrap">
+        <h2 class="col-3"><%= link_to "BRAND FUNDING", root_path, class: "footer-1__title" %></h2>
+        <div class="footer-1__column__wrap">
+          <span class="col-2 footer-1__column">ご利用規約&ensp;</span>
+          <span class="footer-1__column">|&ensp;</span>
+          <span class="col-2 footer-1__column">プライバシーポリシー&ensp;</span>
+          <span class="footer-1__column">|&ensp;</span>
+          <span class="col2 footer-1__column">運営会社</span>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
