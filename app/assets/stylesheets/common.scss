@@ -5,29 +5,6 @@ $color-main: #FE38C3;
 $color-error: #e73562;
 $btncolor-1: #C19A88;
 
-$breakpoints: (
-  'sm': 'screen and (max-width: 559px)',
-  'md': 'screen and (max-width: 959px)',
-) !default;
-
-@mixin mq($breakpoint) {
-  @media #{map-get($breakpoints, $breakpoint)} {
-    @content;
-  }
-}
-
-html {
-  height: 100%;
-  font-size: 62.5%;
-  body {
-    height: 100%;
-    font-size: 1.6rem;
-    li {
-      list-style: none;
-    }
-  }
-}
-
 .form {
   width: 44rem;
   margin: 1.2rem 0;
@@ -46,39 +23,36 @@ html {
   cursor: pointer;
 }
 
+html {
+  height: 100%;
+  font-size: 62.5%;
+  body {
+    height: 100%;
+    font-size: 1.6rem;
+    li {
+      list-style: none;
+    }
+  }
+
 .header-1 {
-  display: flex;
   padding: 2.5rem 0 2rem 5rem;
   border-bottom: solid $color-main;
-  background: white;
-  &__title {
-    margin-right: auto;
+  .navbar {
+    margin-right: 2rem;
+    background: white;
+    .navbar-toggler {
+      font-size: 2rem;
+      outline: 0;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='pink' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+  }
+  &__navlink {
+    margin: .5rem 4rem 0 0;
     color: $color-1;
   }
-  &__flash {
-    position: absolute center;
-    margin: .3rem 0 .3rem 33rem;
-    color: black;
-  }
-  &__column {
-    position: absolute;
-    right: 15rem;
-    margin: .3rem 0 .3rem 3rem;
-    color: $color-1;
-  }
-  &__column2 {
-    position: absolute;
-    right: 26.5rem;
-    margin: .3rem 0 .3rem 3rem;
-    color: $color-1;
-  }
-  &__column3 {
-    position: absolute;
-    right: 5rem;
-    margin: .3rem 0 .3rem 3rem;
-    color: $color-1;
-  }
-  &__title:hover, &__column:hover, &__column2:hover, &__column3:hover {
+  &__navlink:hover {
     color: $color-1;
     text-decoration: none;
   }

@@ -10,17 +10,28 @@
   </head>
 
   <body>
+    <% flash.each do |key, value| %><%= content_tag(:div, value, class: "#{key} header-1__flash") %><% end %>
     <header class="header-1">
-      <h1><%= link_to "BRAND FUNDING", root_path, class: "header-1__title" %></h1>
-      <% flash.each do |key, value| %><%= content_tag(:div, value, class: "#{key} header-1__flash") %><% end %>
-      <% if logged_in? %>
-        <%= link_to "プロフィール", user_path(current_user.id), class: "header-1__column" %>
-        <%= link_to "職人情報", artisan_profile_path(current_user.id), class: "header-1__column2" %>
-        <%= link_to "ログアウト", session_path(current_user.id), method: :delete, class: "header-1__column3" %>
-      <% else %>
-        <%= link_to "ユーザー登録", new_user_path, class: "header-1__column" %>
-        <%= link_to "ログイン", new_session_path, class: "header-1__column3" %>
-      <% end %>
+      <nav class="navbar navbar-expand-sm">
+        <h1><%= link_to 'BRANDFUNDING', root_path, class: "header-1__navlink" %></h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+          </ul>
+          <ul class="nav navbar-nav">
+            <% if logged_in? %>
+              <li><%= link_to "プロフィール", user_path(current_user.id), class: "header-1__navlink" %></li>
+              <li><%= link_to "職人情報", artisan_profile_path(current_user.id), class: "header-1__navlink" %></li>
+              <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete, class: "header-1__navlink" %></li>
+            <% else %>
+              <li><%= link_to "ユーザー登録", new_user_path, class: "header-1__navlink" %></li>
+              <li><%= link_to "ログイン", new_session_path, class: "header-1__navlink" %></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
     </header>
 
     <%= yield %>
