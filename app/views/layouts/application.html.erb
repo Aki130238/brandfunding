@@ -10,7 +10,6 @@
   </head>
 
   <body>
-    <% flash.each do |key, value| %><%= content_tag(:div, value, class: "#{key} header-1__flash") %><% end %>
     <header class="header-1">
       <nav class="navbar navbar-expand-sm">
         <h1><%= link_to 'BRANDFUNDING', root_path, class: "header-1__navlink header-1__title" %></h1>
@@ -33,6 +32,7 @@
         </div>
       </nav>
     </header>
+    <% flash.each do |key, value| %><%= content_tag(:div, value, class: "#{key} flash") %><% end %>
 
     <%= yield %>
 

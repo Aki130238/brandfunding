@@ -35,6 +35,15 @@ html {
   }
 }
 
+.flash {
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+  background: $color-main;
+  color: white;
+  text-align: center;
+}
+
 .header-1 {
   padding: 2.5rem 0;
   border-bottom: solid $color-main;
