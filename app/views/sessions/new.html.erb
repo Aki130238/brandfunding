@@ -1,11 +1,11 @@
-<main class="signin-page">
-  <div class="signin">
-    <h2 class="signin__title">ブランドファンディングはあなたのやりたい事を<br>応援します。仲間と一緒にアイディアをカタチに</h2>
-    <div class="signin-form">
+<main class="container-fluid signin-page">
+  <div class="row signin">
+    <h1 class="col-12 signin__title">ブランドファンディングはあなたのやりたい事を<br>応援します。仲間と一緒にアイディアをカタチに</h1>
+    <div class="col-12 signin-form">
       <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-        <%= f.email_field :email, class: "signin-form__input", placeholder: "メールアドレス" %><br>
-        <%= f.password_field :password, class: "signin-form__input", placeholder: "パスワード" %><br>
-        <%= f.submit "ログイン", class: "signin-form__button" %>
+        <%= f.email_field :email, class:"form-control signin-form__input", id:"exampleInputEmail1", placeholder: "メールアドレス" %><br>
+        <%= f.password_field :password, class:"form-control signin-form__input", id:"exampleInputEmail1", placeholder: "パスワード" %><br>
+        <%= f.submit "ログイン", class: "btn signin-form__button" %>
       <% end %>
     </div>
   </div>
