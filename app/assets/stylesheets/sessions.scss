@@ -7,17 +7,26 @@
     margin: 10rem auto;
     text-align: center;
     &__title {
+      margin-bottom: 3rem;
       color: $color-1;
       font-weight: bold;
     }
     &-form {
       &__input {
-        @extend .form;
+        width: 40%;
+        margin: 0 auto;
+        padding: .8rem;
+        border-radius: 8px;
+        font-size: 1.6rem;
       }
       &__button {
-        @extend .button;
-        margin-top: 3rem;
+        width: 20%;
+        margin-top: 1rem;
+        padding: .8rem;
+        border-radius: 8px;
         background: $btncolor-1;
+        color: white;
+        font-size: 1.6rem;
       }
     }
   }
