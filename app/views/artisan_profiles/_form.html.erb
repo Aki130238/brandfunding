@@ -45,7 +45,7 @@
     <div class="col-md-8 order-md-2">
       <%= f.fields_for :user_profile do |a| %>
         <h4 class="mb-3">プロフィール</h4>
-        
+
         <div class="row">
           <div class="col-md-6 mb-3">
             <%= a.label :family_name %>
@@ -95,7 +95,7 @@
               </div>
             </div>
           </div>
-                        
+
           <div class="col-md-6 mb-3">
             <%= a.label :prefectures %>
             <%= a.text_field :prefectures, class: "form-control", id: "Prefectures", placeholder: "例）東京都" %>
@@ -121,7 +121,7 @@
               Your username is required.
             </div>
           </div>
-                        
+
           <div class="col-md-6 mb-3">
             <%= a.label :phone_no2 %>
             <%= a.text_field :phone_no2, class: "form-control", id: "PhoneNumber2", placeholder: "例）00000000000(ハイフン不要)" %>
@@ -131,11 +131,10 @@
           </div>
         </div>
       <% end %>
-    
-      
+
       <h4 class="mb-3">職人プロフィール</h4>
         <%= f.fields_for :artisan_profile do |b| %>
-        
+
         <div class="row">
           <div class="col-md-6 mb-3">
             <%= b.label :workexp %>
@@ -179,7 +178,7 @@
                 Your username is required.
               </div>
           </div>
-                        
+
           <div class="col-md-6 mb-3">
             <%= b.label :genre %>
             <%= b.text_field :genre, class: "form-control", id: "genre", placeholder: "" %>
@@ -188,7 +187,6 @@
             </div>
           </div>
         </div>
-
         <div class="mb-3">
           <%= b.label :genre_free %>
           <%= b.text_field :genre_free, class: "form-control", id: "genre_free", placeholder: "" %>
