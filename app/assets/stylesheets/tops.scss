@@ -30,9 +30,7 @@
       font-weight: bold;
     }
     &__button {
-      border: 1px solid black;
-      background: white;
-      color: $color-1;
+      @extend .button;
     }
   }
 }

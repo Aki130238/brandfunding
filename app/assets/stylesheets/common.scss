@@ -36,7 +36,9 @@ $btncolor-1: #C19A88;
 }
 
 .button {
-  border: 1px solid $color-main;
+  border: 1px solid black;
+  background: white;
+  color: $color-1;
 }
 
 html {
