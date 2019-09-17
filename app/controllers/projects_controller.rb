@@ -52,7 +52,7 @@ class ProjectsController < ApplicationController
   def destroy
     if @project.user_id == session[:user_id]
       @project.destroy
-      redirect_to projects_path, notice:"プロジェクトを削除しました！ "
+      redirect_to projects_path, notice:"プロジェクトを削除しました！！ "
       else
         redirect_to projects_path, notice: "他のユーザーのプロジェクトは削除できません！"
     end
