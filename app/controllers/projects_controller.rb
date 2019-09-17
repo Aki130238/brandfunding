@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
-      redirect_to projects_path, notice: "プロジェクトを編集しました！！"
+      redirect_to projects_path, notice: "プロジェクトを編集しました！！！"
     else
       render 'edit'
     end
