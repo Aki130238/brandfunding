@@ -7,17 +7,16 @@
     margin: 10rem auto;
     text-align: center;
     &__title {
+      margin-bottom: 3rem;
       color: $color-1;
       font-weight: bold;
     }
     &-form {
       &__input {
-        @extend .form;
+        @extend .form-sign;
       }
       &__button {
-        @extend .button;
-        margin-top: 3rem;
-        background: $btncolor-1;
+        @extend .button-sign;
       }
     }
   }

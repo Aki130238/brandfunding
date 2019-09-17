@@ -7,10 +7,12 @@
     margin: 10rem auto;
     text-align: center;
     &__title {
+      margin-bottom: 3rem;
       color: $color-1;
       font-weight: bold;
     }
     &__list {
+      margin-bottom: 3rem;
       color: $color-error;
       &__icon {
         width: 2rem;
@@ -20,22 +22,87 @@
     }
     &-form {
       &__input {
-        @extend .form;
+        @extend .form-sign;
       }
       &__about {
         margin-top: 4rem;
         color: $color-1;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
       }
       &__privacy {
         color: $color-1;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
       }
       &__button {
-        @extend .button;
-        margin-top: 2rem;
-        background: $btncolor-1;
+        @extend .button-sign;
       }
+    }
+  }
+}
+
+.my-page {
+  margin-left: 8rem;
+  padding-bottom: 5rem;
+  &__title {
+    margin: 3rem 0 3rem -1.5rem;
+    color: $color-1;
+    font-weight: bold;
+    font-size: 3rem;
+  }
+  .menu {
+    &__user_image {
+      border: 1px solid black;
+      border-bottom: none;
+      text-align: center;
+    }
+    &__user_name {
+      padding-bottom: 1rem;
+      border-right: 1px solid black;
+      border-left: 1px solid black;
+      font-size: 3rem;
+      text-align: center;
+    }
+    &__li {
+      border: 1px solid black;
+      border-top: none;
+    }
+    &__li_border-top {
+      border-top: 1px solid black;
+    }
+    &__button {
+      outline: 0;
+    }
+    &__title {
+      margin: 0 0 -.2rem .5rem;
+      color: $color-1;
+      font-weight: bold;
+      text-align: left;
+    }
+    &__title-2 {
+      margin-left: 2rem;
+      padding: 1rem 0 .5rem 0;
+      background: white;
+      color: $color-1;
+      font-weight: bold;
+      &__link {
+        color: $color-1;
+        text-decoration: none;
+      }
+    }
+    &__item {
+      color: black;
+    }
+    &__list {
+      margin-left: 4rem;
+      color: $color-1;
+      font-size: 1.8rem;
+    }
+  }
+  &__form {
+    margin: 5rem 0 0 8rem;
+    font-size: 2rem;
+    &__button_wrap {
+      margin-top: 3rem;
     }
   }
 }
