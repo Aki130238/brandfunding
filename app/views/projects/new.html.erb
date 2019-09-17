@@ -1,0 +1,10 @@
+
+<%= form_with(model: @project, local: true) do |f| %>
+    <%= f.label :project_title %>
+    <%= f.text_field :project_title %>
+    <%= f.label :project_text %>
+    <%= f.text_area :project_text %>
+    <%= f.fields_for :project_about do |ab|%>
+      <%= ab.text_area :project_abouts %>
+    <%= f.submit %>
+<% end %>

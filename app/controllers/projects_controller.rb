@@ -7,59 +7,110 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @project.build_project_about
+    @project.build_project_idea
+    @project.build_project_image
+    @project.build_project_report
+    @project.build_project_return
+    @project.build_project_sponsor
+    @project.build_project_value
   end
 
   def create
     @project = Project.new(project_params)
-    @project.build_project_profile(project_profile_params)
-    @project.build_artisan_profile(artisan_profile_params)
-    if params[:back]
-      render 'new'
+    if @project.save
+      redirect_to root_path
     else
-      if @project.save
-        session[:user_id] = @project.id
-        redirect_to user_path(@project.id), notice: "プロジェクトを作成しました！"
-      else
-        render 'new'
-      end
-    end
+      render 'index'
   end
 
+  
   def show
   end
 
   def edit
-    @project_profile = @project.project_profile
+    if @project.user_id == session[:user_id]
+      else
+        redirect_to projects_path, notice: "他のユーザーのプロジェクトは編集できません！"
+    end
   end
 
   def update
-    if @project.project_profile.update(project_profile_params)
-      redirect_to user_path(@project.id), notice: "プロジェクトを編集しました！"
+    if @project.update(project_params)
+      redirect_to projects_path, notice: "プロジェクトを編集しました！"
     else
       render 'edit'
     end
   end
 
-  def destroy
-    @project.destroy
-    redirect_to root_path, notice:"プロジェクトを削除しました！"
-  end
-
   def confirm
-    @project = Project.new(project_params)
-    # @project.image_user.cache!#carriewave設定
+    @project = current_user.projects.build(project_params)
     render :new if @project.invalid?
   end
 
-  def favorite
-    @project = Project.find(params[:id])
-    @favorites = @project.favorites
+  def destroy
+    if @project.user_id == session[:user_id]
+      @project.destroy
+      redirect_to projects_path, notice:"プロジェクトを削除しました！ "
+      else
+        redirect_to projects_path, notice: "他のユーザーのプロジェクトは削除できません！"
+    end
   end
 
   private
 
+  def project_params
+    params.require(:project)
+    # params.require(:project).permit(
+    #   :project_title,
+    #   :project_text,
+    #   project_about_attributes: [
+    #     :id,
+    #     :project_abouts
+    #   ],
+    #   project_idea_attributes: [
+    #     :id,
+    #     :project_returns
+    #   ],
+    #   project_image_attribute: [
+    #     :id,
+    #     :project_img,
+    #     :project_img2,
+    #     :project_img3,
+    #     :project_img4,
+    #     :project_img5,
+    #     :project_movie
+    # ],
+    # project_report_attribute: [
+    #   :id,
+    #   :project_reports
+    # ],
+    # project_return_attribute: [
+    #   :id,
+    #   :return_title,
+    #   :return_item_img,
+    #   :return_item_fund,
+    #   :return_item_count,
+    #   :return_item_sponsors,
+    #   :delivery_date,
+    #   :return_item_remark,
+    #   :return_option
+    # ],
+    # project_sponsor_attribute: [
+    #   :id,
+    #   :sponsors_list
+    # ],
+    # project_value_attribute: [
+    #   :id,
+    #   :target_fund,
+    #   :project_fund,
+    #   :recruitment_method,
+    #   :recruitment_deadline
+    # ]
+    # )
+  end
+
   def set_project
     @project = Project.find(params[:id])
   end
-
 end
