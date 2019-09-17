@@ -6,5 +6,6 @@
     <%= f.text_area :project_text %>
     <%= f.fields_for :project_about do |ab|%>
       <%= ab.text_area :project_abouts %>
+    <%= end %>
     <%= f.submit %>
 <% end %>
