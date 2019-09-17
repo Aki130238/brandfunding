@@ -39,3 +39,47 @@
     }
   }
 }
+
+.my-page {
+  // background: $bgcolor-1;
+  .menu {
+    &__user_image {
+      text-align: center;
+    }
+    &__user_name {
+      font-size: 3rem;
+      text-align: center;
+    }
+    &__li {
+      border: 1px solid black;
+      border-top: none;
+    }
+    &__li_border-top {
+      border-top: 1px solid black;
+    }
+    &__button {
+      outline: 0;
+    }
+    &__title {
+      margin: 0 0 -.2rem .5rem;
+      color: $color-1;
+      font-weight: bold;
+      text-align: left;
+    }
+    &__title-2 {
+      margin-left: 2rem;
+      padding: 1rem 0 .5rem 0;
+      background: white;
+      color: $color-1;
+      font-weight: bold;
+    }
+    &__item {
+      color: black;
+    }
+    &__list {
+      margin-left: 4rem;
+      color: $color-1;
+      font-size: 1.8rem;
+    }
+  }
+}
