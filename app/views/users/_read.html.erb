@@ -61,7 +61,7 @@
       </ul>
     </nav>
 
-    <form class="col-7 my-page__form">
+    <section class="col-7 my-page__form">
       <%= form_with(model: @user, url: user_path, local: true, method: :patch) do |f| %>
         <%= f.fields_for :user_profile do |a| %>
           <div class="row">
@@ -147,12 +147,8 @@
               </div>
             </div>
           </div>
-
-          <div class="mb-3">
-
-          </div>
         <% end %>
       <% end %>
-    </form>
+    </section>
   </div>
 </main>
