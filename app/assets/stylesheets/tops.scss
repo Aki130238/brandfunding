@@ -1,6 +1,38 @@
-// Place all the styles related to the tops controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.borderLine {
-  border-bottom: 1px solid grey;
+.top-page {
+  .menu {
+    background: $bgcolor-2;
+    &__button {
+      border: 1px solid $color-main;
+      background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100% );
+      color: $color-1;
+    }
+    &__button:hover {
+
+    }
+  }
+
+  .slide {
+    &__button {
+      top: 40%;
+      height: 5rem;
+    }
+  }
+
+  .guide {
+    background: $bgcolor-2;
+    &__column-1 {
+      margin-left: 15rem;
+    }
+    &__column-2 {
+      margin-left: 5rem;
+    }
+    &__title {
+      font-weight: bold;
+    }
+    &__button {
+      border: 1px solid black;
+      background: white;
+      color: $color-1;
+    }
+  }
 }
