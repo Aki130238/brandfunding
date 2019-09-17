@@ -41,12 +41,24 @@
 }
 
 .my-page {
-  // background: $bgcolor-1;
+  margin-left: 8rem;
+  padding-bottom: 5rem;
+  &__title {
+    margin: 3rem 0 3rem -1.5rem;
+    color: $color-1;
+    font-weight: bold;
+    font-size: 3rem;
+  }
   .menu {
     &__user_image {
+      border: 1px solid black;
+      border-bottom: none;
       text-align: center;
     }
     &__user_name {
+      padding-bottom: 1rem;
+      border-right: 1px solid black;
+      border-left: 1px solid black;
       font-size: 3rem;
       text-align: center;
     }
@@ -72,6 +84,10 @@
       background: white;
       color: $color-1;
       font-weight: bold;
+      &__link {
+        color: $color-1;
+        text-decoration: none;
+      }
     }
     &__item {
       color: black;
@@ -81,5 +97,9 @@
       color: $color-1;
       font-size: 1.8rem;
     }
+  }
+  &__form {
+    margin: 5rem 0 0 8rem;
+    font-size: 2rem;
   }
 }

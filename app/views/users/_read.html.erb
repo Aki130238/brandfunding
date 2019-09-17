@@ -1,163 +1,158 @@
-<main class="container-fluid row my-page">
-
-  <nav class="col-3 menu">
-    <p class="menu__user_image"><%= image_tag @user.image.to_s %></p>
-    <p class="menu__user_name"><%= @user.name %></p>
-    <ul>
-      <li class="menu__li menu__li_border-top">
-        <div class="card card-body">
-          <button type="button" class="menu__button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
-            <h1 class="menu__title"><span class="menu__item">▼</span>&ensp;プロジェクト管理</h1>
-          </button>
-        </div>
-        <div class="collapse" id="collapseExample1">
+<main class="container-fluid my-page">
+  <h1 class="row col my-page__title">会員情報・住所確認/変更</h1>
+  <div class="row">
+    <nav class="col-3 menu">
+      <ul>
+        <li class="menu__user_image"><%= image_tag @user.image.to_s %></li>
+        <li class="menu__user_name"><%= @user.name %></li>
+        <li class="menu__li menu__li_border-top">
           <div class="card card-body">
-            <p class="menu__list">プロジェクト新規作成</p>
-            <p class="menu__list">プロジェクト一覧</p>
+            <button type="button" class="menu__button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+              <h1 class="menu__title"><span class="menu__item">▼</span>&ensp;プロジェクト管理</h1>
+            </button>
           </div>
-        </div>
-      </li>
-      <li class="menu__li">
-        <div class="card card-body">
-          <button type="button" class="menu__button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-            <h1 class="menu__title"><span class="menu__item">▼</span>&ensp;アイディア管理</h1>
-          </button>
-        </div>
-        <div class="collapse" id="collapseExample2">
+          <div class="collapse" id="collapseExample1">
+            <div class="card card-body">
+              <p class="menu__list">プロジェクト新規作成</p>
+              <p class="menu__list">プロジェクト一覧</p>
+            </div>
+          </div>
+        </li>
+        <li class="menu__li">
           <div class="card card-body">
-            <p class="menu__list">ここにコンテンツ</p>
-            <p class="menu__list">ここにコンテンツ</p>
+            <button type="button" class="menu__button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+              <h1 class="menu__title"><span class="menu__item">▼</span>&ensp;アイディア管理</h1>
+            </button>
           </div>
-        </div>
-      </li>
-      <li class="menu__li">
-        <div class="card card-body">
-          <button type="button" class="menu__button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
-            <h1 class="menu__title"><span class="menu__item">▼</span>&ensp;スポンサー管理</h1>
-          </button>
-        </div>
-        <div class="collapse" id="collapseExample3">
+          <div class="collapse" id="collapseExample2">
+            <div class="card card-body">
+              <p class="menu__list">ここにコンテンツ</p>
+              <p class="menu__list">ここにコンテンツ</p>
+            </div>
+          </div>
+        </li>
+        <li class="menu__li">
           <div class="card card-body">
-            <p class="menu__list">ここにコンテンツ</p>
-            <p class="menu__list">ここにコンテンツ</p>
+            <button type="button" class="menu__button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+              <h1 class="menu__title"><span class="menu__item">▼</span>&ensp;スポンサー管理</h1>
+            </button>
           </div>
-        </div>
-      </li>
-      <li class="menu__li">
-        <h1 class="menu__title-2">お気に入りプロダクター</h1>
-      </li>
-      <li class="menu__li">
-        <h1 class="menu__title-2">お気に入りスポンサー</h1>
-      </li>
-      <li class="menu__li">
-        <h1 class="menu__title-2">お気に入りデザイナー</h1>
-      </li>
-      <li class="menu__li">
-        <h1 class="menu__title-2">会員情報変更</h1>
-      </li>
-    </ul>
-  </nav>
+          <div class="collapse" id="collapseExample3">
+            <div class="card card-body">
+              <p class="menu__list">ここにコンテンツ</p>
+              <p class="menu__list">ここにコンテンツ</p>
+            </div>
+          </div>
+        </li>
+        <li class="menu__li">
+          <h1 class="menu__title-2">お気に入りプロダクター</h1>
+        </li>
+        <li class="menu__li">
+          <h1 class="menu__title-2">お気に入りスポンサー</h1>
+        </li>
+        <li class="menu__li">
+          <h1 class="menu__title-2">お気に入りデザイナー</h1>
+        </li>
+        <li class="menu__li">
+          <%= link_to edit_user_profile_path(@user.id), class: "menu__title-2__link" do %>
+            <h1 class="menu__title-2">会員情報変更</h1>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
 
-
-  <form class="col-8">
-    <%= form_with(model: @user, url: user_path, local: true, method: :patch) do |f| %>
-
-
-
+    <form class="col-7 my-page__form">
+      <%= form_with(model: @user, url: user_path, local: true, method: :patch) do |f| %>
         <%= f.fields_for :user_profile do |a| %>
-          <div class="col-6 order-md-2">
-            <h4 class="mb-3">プロフィール</h4>
-
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <%= a.label :family_name %>
-                <%= a.text_field :family_name, class: "form-control", id: "firstName", placeholder: "例）山田", value: @user.user_profile.family_name, readonly: true %>
-                <div class="invalid-feedback">
-                  Valid first name is required.
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="lastName">Last name</label>
-                <%= a.text_field :last_name, class: "form-control", id: "lastName", placeholder: "例）太郎", value: @user.user_profile.last_name, readonly: true %>
-                <div class="invalid-feedback">
-                  Valid last name is required.
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="firstNameSub">First name</label>
-                <%= a.text_field :family_name_sub, class: "form-control", id: "firstName", placeholder: "例）やまだ", value: @user.user_profile.family_name_sub, readonly: true %>
-
-                <div class="invalid-feedback">
-                  Valid first name is required.
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="lastName">Last name</label>
-                <%= a.text_field :last_name_sub, class: "form-control", id: "lastName", placeholder: "例）たろう", value: @user.user_profile.last_name_sub, readonly: true  %>
-                <div class="invalid-feedback">
-                  Valid last name is required.
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <%= a.label :add_no %>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">〒</span>
-                  </div>
-                  <%= a.text_field :add_no, class: "form-control", id: "AddNumber", placeholder: "例）000-0000", value: @user.user_profile.add_no, readonly: true %>
-                  <div class="invalid-feedback" style="width: 100%;">
-                    Your username is required.
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 mb-3">
-                <%= a.label :prefectures %>
-                <%= a.text_field :prefectures, class: "form-control", id: "Prefectures", placeholder: "例）東京都", value: @user.user_profile.prefectures, readonly: true %>
-                <div class="invalid-feedback">
-                  Valid last name is required.
-                </div>
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <%= a.label :address %>
-              <%= a.text_field :address, class: "form-control", id: "address", placeholder: "建物名までご記入ください", value: @user.user_profile.address, readonly: true %>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <%= a.label :family_name %>
+              <%= a.text_field :family_name, class: "form-control", id: "firstName", placeholder: "例）山田", value: @user.user_profile.family_name, readonly: true %>
               <div class="invalid-feedback">
-                Please enter your shipping address.
+                Valid first name is required.
               </div>
             </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Last name</label>
+              <%= a.text_field :last_name, class: "form-control", id: "lastName", placeholder: "例）太郎", value: @user.user_profile.last_name, readonly: true %>
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+            </div>
+          </div>
 
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <%= a.label :phone_no1 %>
-                <%= a.text_field :phone_no1, class: "form-control", id: "PhoneNumber1", placeholder: "例）00000000000(ハイフン不要)", value: @user.user_profile.phone_no1, readonly: true %>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstNameSub">First name</label>
+              <%= a.text_field :family_name_sub, class: "form-control", id: "firstName", placeholder: "例）やまだ", value: @user.user_profile.family_name_sub, readonly: true %>
+
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Last name</label>
+              <%= a.text_field :last_name_sub, class: "form-control", id: "lastName", placeholder: "例）たろう", value: @user.user_profile.last_name_sub, readonly: true  %>
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <%= a.label :add_no %>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">〒</span>
+                </div>
+                <%= a.text_field :add_no, class: "form-control", id: "AddNumber", placeholder: "例）000-0000", value: @user.user_profile.add_no, readonly: true %>
                 <div class="invalid-feedback" style="width: 100%;">
                   Your username is required.
                 </div>
               </div>
+            </div>
 
-              <div class="col-md-6 mb-3">
-                <%= a.label :phone_no2 %>
-                <%= a.text_field :phone_no2, class: "form-control", id: "PhoneNumber2", placeholder: "例）00000000000(ハイフン不要)", value: @user.user_profile.phone_no2, readonly: true %>
-                <div class="invalid-feedback">
-                  Valid last name is required.
-                </div>
+            <div class="col-md-6 mb-3">
+              <%= a.label :prefectures %>
+              <%= a.text_field :prefectures, class: "form-control", id: "Prefectures", placeholder: "例）東京都", value: @user.user_profile.prefectures, readonly: true %>
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <%= a.label :address %>
+            <%= a.text_field :address, class: "form-control", id: "address", placeholder: "建物名までご記入ください", value: @user.user_profile.address, readonly: true %>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <%= a.label :phone_no1 %>
+              <%= a.text_field :phone_no1, class: "form-control", id: "PhoneNumber1", placeholder: "例）00000000000(ハイフン不要)", value: @user.user_profile.phone_no1, readonly: true %>
+              <div class="invalid-feedback" style="width: 100%;">
+                Your username is required.
               </div>
             </div>
 
-            <div class="mb-3">
-              <%= link_to 'プロフィール編集', edit_user_profile_path(@user.id), class: "btn btn-primary btn-lg btn-block mt-5" %>
+            <div class="col-md-6 mb-3">
+              <%= a.label :phone_no2 %>
+              <%= a.text_field :phone_no2, class: "form-control", id: "PhoneNumber2", placeholder: "例）00000000000(ハイフン不要)", value: @user.user_profile.phone_no2, readonly: true %>
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
             </div>
           </div>
-        <% end %>
 
-    <% end %>
-  </form>
+          <div class="mb-3">
+
+          </div>
+        <% end %>
+      <% end %>
+    </form>
+  </div>
 </main>
