@@ -1,9 +1,21 @@
 $bgcolor-1: #FFFEED;
+$bgcolor-2: #F8F9FA;
 $bgcolor-footer: #606060;
 $color-1: #6C6C6C;
 $color-main: #FE38C3;
 $color-error: #e73562;
 $btncolor-1: #C19A88;
+
+.no-gutters {
+  margin:0;
+  padding:0;
+}
+
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+  margin:0;
+  padding:0;
+}
 
 .form-sign {
   width: 40%;
@@ -21,6 +33,10 @@ $btncolor-1: #C19A88;
   background: $btncolor-1;
   color: white;
   font-size: 1.6rem;
+}
+
+.button {
+  border: 1px solid $color-main;
 }
 
 html {
