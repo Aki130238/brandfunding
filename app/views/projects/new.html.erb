@@ -1,24 +1,23 @@
 <main class="container-fluid new-project-page">
-  <h1 class="row col new-project-page__title">プロジェクト</h1>
-
-  <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" id="value-tab" data-toggle="tab" href="#value" role="tab" aria-controls="value" aria-selected="true">目標金額</a>
+  <h1 class="row col-12 new-project-page__title">プロジェクト</h1>
+  <ul class="row col-8 offset-2 nav nav-tabs new-project-page__menu" role="tablist">
+    <li class="nav-item new-project-page__menu__list">
+      <a class="nav-link new-project-page__menu__link active" id="value-tab" data-toggle="tab" href="#value" role="tab" aria-controls="value" aria-selected="true">目標金額</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" id="project-tab" data-toggle="tab" href="#project" role="tab" aria-controls="project" aria-selected="false">概要</a>
+    <li class="nav-item new-project-page__menu__list-2">
+      <a class="nav-link new-project-page__menu__link" id="project-tab" data-toggle="tab" href="#project" role="tab" aria-controls="project" aria-selected="false">概要</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" id="image-tab" data-toggle="tab" href="#image" role="tab" aria-controls="image" aria-selected="false">ビジュアル</a>
+    <li class="nav-item new-project-page__menu__list-2">
+      <a class="nav-link new-project-page__menu__link" id="image-tab" data-toggle="tab" href="#image" role="tab" aria-controls="image" aria-selected="false">ビジュアル</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false">本文</a>
+    <li class="nav-item new-project-page__menu__list-2">
+      <a class="nav-link new-project-page__menu__link" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false">本文</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" id="idea-tab" data-toggle="tab" href="#idea" role="tab" aria-controls="idea" aria-selected="false">アイディア</a>
+    <li class="nav-item new-project-page__menu__list-2">
+      <a class="nav-link new-project-page__menu__link" id="idea-tab" data-toggle="tab" href="#idea" role="tab" aria-controls="idea" aria-selected="false">アイディア</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" id="report-tab" data-toggle="tab" href="#report" role="tab" aria-controls="report" aria-selected="false">活動報告</a>
+    <li class="nav-item new-project-page__menu__list-2">
+      <a class="nav-link new-project-page__menu__link" id="report-tab" data-toggle="tab" href="#report" role="tab" aria-controls="report" aria-selected="false">活動報告</a>
     </li>
   </ul>
 
@@ -26,89 +25,98 @@
     <div class="tab-pane fade show active project-form-value" id="value" role="tabpanel" aria-labelledby="value-tab">
     <%= form_with(model: @project, local: true) do |f| %>
       <div class="row project-form-value__target">
-        <div class="col-3 d-flex project-form__title_wrap">
-          <h2 class="project-form__title-1">目標金額</h2>
-          <h2 class="project-form__title-2">必須</h2>
+        <div class="col-2 offset-2 d-flex project-form__title_wrap">
+          <h3 class="project-form__title-1">&emsp;目標金額</h2>
+          <h4 class="project-form__title-2">必須</h2>
         </div>
-        <div class="col-7">
-          <p class="form-inline"><%= f.text_field :target_fund, class: "col-5 form-control", placeholder: "10,000" %>円</p>
-          <p>目標金額は10,000円以上の金額で入力してください</p>
+        <div class="col-6 project-form__form_wrap">
+          <p class="form-inline"><%= f.text_field :target_fund, class: "col-5 form-control project-form-value__target__input", placeholder: "10,000" %>&ensp;円</p>
+          <p class="project-form-value__target__guide">目標金額は10,000円以上の金額で入力してください</p>
         </div>
       </div>
       <div class="row project-form-value__deadline">
-        <div class="col-3 d-flex project-form__title_wrap">
-          <h2 class="project-form__title-1">募集終了日</h2>
-          <h2 class="project-form__title-2">必須</h2>
+        <div class="col-2 offset-2 d-flex project-form__title_wrap">
+          <h3 class="project-form__title-1">募集終了日</h2>
+          <h4 class="project-form__title-2">必須</h2>
         </div>
-        <div class="col-7">
-          <p class="form-inline"><%= f.text_field :recruitment_deadline, class: "col-5 form-control project-form-deadline__input", placeholder: "2019-10-1" %></p>
-          <p>期限が65日以下のプロジェクトでは、成功率がより高くなっています。</p>
-          <p>公開可能期間は2日〜80日となります。</p>
-          <p>※2019-03-01&ensp;を選択した場合、2019-03-01&ensp;23:59に終了します。</p>
+        <div class="col-6 project-form__form_wrap">
+          <p class="form-inline"><%= f.text_field :recruitment_deadline, class: "col-5 form-control project-form-value__deadline__input", placeholder: "2019-10-1" %></p>
+          <p class="project-form-value__deadline__guide">期限が65日以下のプロジェクトでは、成功率がより高くなっています。</p><br>
+          <p class="project-form-value__deadline__guide">公開可能期間は2日〜80日となります。</p>
+          <p class="project-form-value__deadline__guide project-form-value__deadline__guide-2">※2019-03-01&ensp;を選択した場合、2019-03-01&ensp;23:59に終了します。</p>
         </div>
       </div>
       <div class="row project-form-value__method">
-        <div class="col-3 d-flex project-form__title_wrap">
-          <h2 class="project-form__title-1">募集方式</h2>
-          <h2 class="project-form__title-2">必須</h2>
+        <div class="col-2 offset-2 d-flex project-form__title_wrap">
+          <h3 class="project-form__title-1">&emsp;募集方式</h2>
+          <h4 class="project-form__title-2">必須</h2>
         </div>
-        <div class="col-7">
-          <p>
-            <span><%= f.radio_button :recruitment_method, "All-In" %>All-In&ensp;方式</span>
-            <span><%= f.radio_button :recruitment_method, "All-or-Nothing" %>All-or-Nothing&ensp;方式</span>
-          </p>
-          <p>All-In&ensp;方式</p>
-          <p>目標金額を達成しなくても賞金を受け取れる方式。（プロジェクトの実施、およびリターンの履行を確約できる方のみご利用可能です）
-          </p>
-          <p>All-or-Nothing&ensp;方式</p>
-          <p>目標金額を達成すると賞金を受け取れる方式。</p>
+        <div class="col-6 project-form__form_wrap">
+          <div class="form-inline">
+            <div class="project-form-value__method__input_wrap">
+              <%= f.radio_button :recruitment_method, "All-In", class: "project-form-value__method__input" %>
+              <p class="project-form-value__method__input__title">All-In&ensp;方式</p>
+            </div>
+            <div class="project-form-value__method__input_wrap-2">
+              <%= f.radio_button :recruitment_method, "All-or-Nothing", class: "project-form-value__method__input" %>
+              <p class="project-form-value__method__input__title">All-or-Nothing&ensp;方式</p>
+            </div>
+          </div><br>
+          <div class="project-form-value__method__guide_wrap">
+            <p class="project-form-value__method__guide_wrap-2">All-In&ensp;方式</p>
+            <p class="project-form-value__method__guide">目標金額を達成しなくても賞金を受け取れる方式。（プロジェクトの実施、およびリターンの履行を確約<br>できる方のみご利用可能です）
+            </p><br>
+            <p>All-or-Nothing&ensp;方式</p>
+            <p class="project-form-value__method__guide">目標金額を達成すると賞金を受け取れる方式。</p>
+          </div>
         </div>
       </div>
-      <%= f.submit "保存" %>
-      <p>プレビュー</p>
+      <div class="project-form__button_wrap">
+        <%= f.submit "保存", class: "project-form__button" %>
+        <%= f.submit "プレビュー", class: "project-form__button-2" %>
+      </div>
     </div>
 
 
     <div class="tab-pane fade project-form-project" id="project" role="tabpanel" aria-labelledby="project-tab">
       <div class="row project-form-project__title">
-        <div class="col-3 d-flex project-form__title_wrap">
-          <h2 class="project-form__title-1">タイトル</h2>
-          <h2 class="project-form__title-2">必須</h2>
+        <div class="col-2 offset-2 d-flex project-form__title_wrap">
+          <h3 class="project-form__title-1">タイトル</h2>
+          <h4 class="project-form__title-2">必須</h2>
         </div>
-        <div class="col-7">
+        <div class="col-6 project-form__form_wrap">
           <p><%= f.text_field :project_title, class: "col-5 form-control", placeholder: "あなただけのタイトルでスポンサーを惹きつけましょう" %></p>
         </div>
       </div>
       <div class="row project-form-project__content">
-        <div class="col-3 d-flex project-form__title_wrap">
-          <h2 class="project-form__title-1">概要</h2>
-          <h2 class="project-form__title-2">必須</h2>
+        <div class="col-2 offset-2 d-flex project-form__title_wrap">
+          <h3 class="project-form__title-1">&emsp;&emsp;概要</h2>
+          <h4 class="project-form__title-2">必須</h2>
         </div>
-        <div class="col-7">
+        <div class="col-6 project-form__form_wrap">
           <p><%= f.text_area :project_text, class: "col-5 form-control", placeholder: "プロジェクトの内容を3行程度でまとめてみましょう" %></p>
         </div>
       </div>
       <%= f.submit "保存" %>
-      <p>プレビュー</p>
+      <p>プレビュー</<p>
     </div>
 
 
     <div class="tab-pane fade project-form-image" id="image" role="tabpanel" aria-labelledby="image-tab">
       <div class="row project-form-image__main">
-        <div class="col-3 d-flex project-form__title_wrap">
-          <h2 class="project-form__title-1">メイン画像</h2>
-          <h2 class="project-form__title-2">必須</h2>
+        <div class="col-2 offset-2 d-flex project-form__title_wrap">
+          <h3 class="project-form__title-1">メイン画像</h2>
+          <h4 class="project-form__title-2">必須</h2>
         </div>
-        <div class="col-7">
+        <div class="col-6 project-form__form_wrap">
           <p><%= f.file_field :project_logo, class: "col-5 form-control" %></p>
         </div>
       </div>
       <div class="row project-form-image__sub">
-        <div class="col-3 d-flex project-form__title_wrap">
-          <h2 class="project-form__title-1">サブ画像</h2>
-          <h2 class="project-form__title-2"></h2>
+        <div class="col-2 offset-2 d-flex project-form__title_wrap">
+          <h3 class="project-form__title-1">&emsp;サブ画像&emsp;</h2>
         </div>
-        <div class="col-6">
+        <div class="col-6 project-form__form_wrap">
           <p class="form-inline">
             <%= f.file_field :project_img, class: "col-5 form-control" %>
             <%= f.file_field :project_img2, class: "col-5 form-control" %>
@@ -118,7 +126,7 @@
             <%= f.file_field :project_img4, class: "col-5 form-control" %>
           </p>
         </div>
-        <div class="col-3">
+        <div class="col-2 offset-2">
           <h2>画像の推奨サイズ</h2>
           <ul>
             <li>横1200px&ensp;縦800px&ensp;程度</li>
@@ -133,11 +141,10 @@
         </div>
       </div>
       <div class="row project-form-image__movie">
-        <div class="col-3 d-flex project-form__title_wrap">
-          <h2 class="project-form__title-1">動画</h2>
-          <h2 class="project-form__title-2"></h2>
+        <div class="col-2 offset-2 d-flex project-form__title_wrap">
+          <h3 class="project-form__title-1">動画</h2>
         </div>
-        <div class="col-7">
+        <div class="col-6 project-form__form_wrap">
           <p><%= f.url_field :project_movie, class: "col-5 form-control", placeholder: "YouTubeのみ対応しています" %></p>
         </div>
       </div>
@@ -148,11 +155,11 @@
 
     <div class="tab-pane fade project-form-about" id="about" role="tabpanel" aria-labelledby="about-tab">
       <div class="row project-form-about__content">
-        <div class="col-3 d-flex project-form__title_wrap">
-          <h2 class="project-form__title-1">本文</h2>
-          <h2 class="project-form__title-2">必須</h2>
+        <div class="col-2 offset-2 d-flex project-form__title_wrap">
+          <h3 class="project-form__title-1">&emsp;本文</h2>
+          <h4 class="project-form__title-2">必須</h2>
         </div>
-        <div class="col-7">
+        <div class="col-6 project-form__form_wrap">
           <p class="form-inline"><%= f.text_area :project_abouts, class: "col-5 form-control", placeholder: "" %></p>
         </div>
       </div>
@@ -163,11 +170,10 @@
 
     <div class="tab-pane fade project-form-idea" id="idea" role="tabpanel" aria-labelledby="idea-tab">
       <div class="row project-form-idea__content">
-        <div class="col-3 d-flex project-form__title_wrap">
-          <h2 class="project-form__title-1">アイディア追加</h2>
-          <h2 class="project-form__title-2"></h2>
+        <div class="col-2 offset-2 d-flex project-form__title_wrap">
+          <h3 class="project-form__title-1">&emsp;アイディア追加</h2>
         </div>
-        <div class="col-7">
+        <div class="col-6 project-form__form_wrap">
           <p class="form-inline"><%= f.text_field :project_returns, class: "col-5 form-control", placeholder: "リストからアイディア追加" %></p>
         </div>
       </div>
@@ -178,11 +184,10 @@
 
     <div class="tab-pane fade project-form-report" id="report" role="tabpanel" aria-labelledby="report-tab">
       <div class="row project-form-idea__content">
-        <div class="col-3 d-flex project-form__title_wrap">
-          <h2 class="project-form__title-1">活動報告</h2>
-          <h2 class="project-form__title-2"></h2>
+        <div class="col-2 offset-2 d-flex project-form__title_wrap">
+          <h3 class="project-form__title-1">&emsp;活動報告</h3>
         </div>
-        <div class="col-7">
+        <div class="col-6 project-form__form_wrap">
           <p class="form-inline"><%= f.text_area :project_reports, class: "col-5 form-control" %></p>
         </div>
       </div>
