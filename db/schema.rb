@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_06_071709) do
+ActiveRecord::Schema.define(version: 2019_09_18_060620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,35 @@ ActiveRecord::Schema.define(version: 2019_09_06_071709) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_artisan_profiles_on_user_id"
+  end
+
+  create_table "idea_users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ideas", force: :cascade do |t|
+    t.string "idea_title"
+    t.integer "idea_amount"
+    t.text "idea_about"
+    t.string "idea_usage"
+    t.text "idea_commit"
+    t.string "product_image"
+    t.string "idea_category"
+    t.string "idea_category_details"
+    t.string "product_about"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "select_genre_in_ideas", force: :cascade do |t|
+    t.bigint "idea_id"
+    t.bigint "idea_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["idea_id"], name: "index_select_genre_in_ideas_on_idea_id"
+    t.index ["idea_user_id"], name: "index_select_genre_in_ideas_on_idea_user_id"
   end
 
   create_table "user_profiles", force: :cascade do |t|
@@ -65,5 +94,7 @@ ActiveRecord::Schema.define(version: 2019_09_06_071709) do
   end
 
   add_foreign_key "artisan_profiles", "users"
+  add_foreign_key "select_genre_in_ideas", "idea_users"
+  add_foreign_key "select_genre_in_ideas", "ideas"
   add_foreign_key "user_profiles", "users"
 end
