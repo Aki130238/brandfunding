@@ -1,11 +1,45 @@
 
 <%= form_with(model: @project, local: true) do |f| %>
+    <%= f.fields_for :project_value do |va|%>
+      <%= va.label :target_fund %>
+      <%= va.number_field :target_fund %>
+      <%= va.label :recruitment_deadline %>
+      <%= va.date_field :recruitment_deadline %>
+      <%= va.label :recruitment_method %>
+      <%= va.radio_button :recruitment_method, 0 %> "All-in方式"
+      <%= va.radio_button :recruitment_method, 1 %> "All-or-Nothing方式"
+    <% end %>
     <%= f.label :project_title %>
     <%= f.text_field :project_title %>
     <%= f.label :project_text %>
     <%= f.text_area :project_text %>
+    <%= f.fields_for :project_image do |im|%>
+      <%= im.label :project_logo %>
+      <%= im.file_field :project_logo %>
+      <%= im.label :project_img %>
+      <%= im.file_field :project_img %>
+      <%= im.label :project_img_2 %>
+      <%= im.file_field :project_img_2 %>
+      <%= im.label :project_img_3 %>
+      <%= im.file_field :project_img_3 %>
+      <%= im.label :project_img_4 %>
+      <%= im.file_field :project_img_4 %>
+      <%= im.label :project_img_5 %>
+      <%= im.file_field :project_img_5 %>
+      <%= im.label :project_movie %>
+      <%= im.file_field :project_movie %>
+    <% end %>
     <%= f.fields_for :project_about do |ab|%>
+      <%= ab.label :project_abouts %>
       <%= ab.text_area :project_abouts %>
-    <%= end %>
-    <%= f.submit %>
+    <% end %>
+    <%= f.fields_for :project_idea do |id|%>
+      <%= id.label :project_returns %>
+      <%= id.text_area :project_returns %>
+    <% end %>
+    <%= f.fields_for :project_report do |id|%>
+      <%= id.label :project_reports %>
+      <%= id.text_area :project_reports %>
+    <% end %>
+    <%= f.submit class: "btn btn-primary" %>
 <% end %>
