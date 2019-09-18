@@ -1,0 +1,2 @@
+class SelectGenreInIdea < ApplicationRecord
+end
