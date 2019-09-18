@@ -35,9 +35,6 @@
     &__form_wrap {
       margin-left: -2rem;
     }
-    &__title_wrap {
-
-    }
     &__title-1 {
       margin-top: 1rem;
       padding: .3rem 1rem;
@@ -113,6 +110,25 @@
           padding-top: 3rem;
         }
         &__guide {
+          font-size: 1.4rem;
+        }
+      }
+      &__project {
+        &__content_wrap {
+          margin-top: 5rem;
+        }
+        &__input {
+          padding: 1rem;
+          font-size: 1.5rem;
+        }
+        &__input-2 {
+          padding: 1rem 1rem 5rem 1rem;
+          font-size: 1.5rem;
+          overflow: hidden;
+          resize: none;
+        }
+        &__guide {
+          margin-left: 1rem;
           font-size: 1.4rem;
         }
       }
