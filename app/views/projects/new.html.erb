@@ -39,7 +39,8 @@
     <% end %>
     <%= f.fields_for :project_report do |id|%>
       <%= id.label :project_reports %>
-      <%= id.text_area :project_reports %>
+      <%= id.hidden_field :project_reports, id: :article_text %>
+      <trix-editor input="article_text"></trix-editor>
     <% end %>
     <%= f.submit class: "btn btn-primary" %>
 <% end %>
