@@ -1,0 +1,157 @@
+<%= form_with(model: @idea, local: true) do |form| %>
+
+  <span>完成品イメージ</span>
+  <span>使う人</span>
+  <span>カテゴリ</span>
+  <span>カテゴリ詳細</span>
+  <span>素材</span>
+  <span>アイデア詳細</span>
+
+  <p>完成品のイメージを職人さんに伝える方法を選んでください</p>
+
+  <div class="field">
+    <% %w(似た物がある 写真や絵がある 型紙がある リメイクお直し 相談したい).each do |product_image| %>
+      <%= form.radio_button :product_image, product_image %><%= product_image %>
+    <% end %>
+  </div>
+
+  <span>完成品イメージ</span>
+  <span>使う人</span>
+  <span>カテゴリ</span>
+  <span>カテゴリ詳細</span>
+  <span>素材</span>
+  <span>アイデア詳細</span>
+
+  <p>使う人を選択してください。複数選択可</p>
+
+  <div class="field">
+    <% IdeaUser.all.each do |idea_user| %>
+      <%= form.check_box :idea_user_ids, { multiple: true, checked: @idea.idea_users.find_by(id: idea_user.id)
+          .present?, include_hidden: false }, idea_user[:id] %>
+      <%= idea_user.name %>
+    <% end %>
+  </div>
+
+  <span>完成品イメージ</span>
+  <span>使う人</span>
+  <span>カテゴリ</span>
+  <span>カテゴリ詳細</span>
+  <span>素材</span>
+  <span>アイデア詳細</span>
+
+  <p>作るもののカテゴリを選択してください</p>
+
+  <div class="field">
+    <% %w(洋服 和服 ドレス・衣装 作業服・ユニフォーム バッグ・帽子 小物 インテリア その他).each do |idea_category| %>
+      <%= form.radio_button :idea_category, idea_category %><%= idea_category %>
+    <% end %>
+  </div>
+
+  <span>完成品イメージ</span>
+  <span>使う人</span>
+  <span>カテゴリ</span>
+  <span>カテゴリ詳細</span>
+  <span>素材</span>
+  <span>アイデア詳細</span>
+
+  <p>カテゴリの詳細を選択してください</p>
+
+  <div class="field">
+    <% %w(ジャケット・アウター トップス・シャツ ボトムス・スカート ワンピース・オーバーオール スーツ・タキシード その他).each do |idea_category_details| %>
+      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <% %w(着物 浴衣 甚平 その他).each do |idea_category_details| %>
+      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <% %w(ウェディング ダンス 発表会 コスプレ その他).each do |idea_category_details| %>
+      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <% %w(作業着 ショップ用 スポーツ 制服).each do |idea_category_details| %>
+      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <% %w(バッグ(レザー) バッグ(ナイロン・帆布)　トートバッグ・ポーチ 帽子 くつ).each do |idea_category_details| %>
+      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <span>詳細なし</span>
+  </div>
+
+  <div class="field">
+    <% %w(カーテン ベッドリネン クッション ファブリックパネル その他).each do |idea_category_details| %>
+      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <span>詳細なし</span>
+  </div>
+
+  <span>完成品イメージ</span>
+  <span>使う人</span>
+  <span>カテゴリ</span>
+  <span>カテゴリ詳細</span>
+  <span>素材</span>
+  <span>アイデア詳細</span>
+
+  <p>生地や材料のご用意について</p>
+
+  <div class="field">
+    <% %w(相談したい 全て用意できる 生地のみ).each do |product_about| %>
+      <%= form.radio_button :product_about, product_about %><%= product_about %>
+    <% end %>
+  </div>
+
+  <span>完成品イメージ</span>
+  <span>使う人</span>
+  <span>カテゴリ</span>
+  <span>カテゴリ詳細</span>
+  <span>素材</span>
+  <span>アイデア詳細</span>
+
+  <p>作るものに関するくわしい情報を職人さんに伝えましょう</p>
+
+  <div class="field">
+    <span>アイディアのタイトル</span> <span>必須</span>
+    <%= form.text_field :idea_title, placeholder: "どんなものを作りたいかタイトルでわかるようにしましょう" %>
+  </div>
+
+  <div class="field">
+    <span>アイテムの製作数量</span> <span>必須</span>
+    <%= form.number_field :idea_amount, placeholder: "数値を入力" %> 点<br>
+    <span><small>最低製作数量を伝えて必要な予算を確定させましょう。職人さんへの製作意欲につながります。</small></span>
+  </div>
+
+  <div class="field">
+    <span>アイテムの概要と仕様</span> <span>必須</span>
+    <%= form.text_area :idea_about, placeholder: "型数、色数、利用生地、仕様など。できるだけ細かい内容を伝えるようにしましょう。" %>
+  </div>
+
+  <div class="field">
+    <span>用途</span> <span>必須</span>
+    <%= form.select :idea_usage, [["販売・お店ユニフォーム", "販売・お店ユニフォーム"], ["個人利用", "ギフト"], ["サンプル", "お教室衣装"]], prompt:
+        '用途を選択' %>
+  </div>
+
+  <div class="field">
+    <span>職人へ伝えたいこと</span> <span>必須</span>
+    <%= form.text_area :idea_commit, placeholder: "作るものへのこだわり、設備の希望など"%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
