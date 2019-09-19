@@ -104,55 +104,56 @@
       </div>
     </div>
 
-
-    <div class="tab-pane fade project-form-image" id="image" role="tabpanel" aria-labelledby="image-tab">
-      <div class="row project-form-image__main">
+    <div class="tab-pane fade project-form__image" id="image" role="tabpanel" aria-labelledby="image-tab">
+      <div class="row project-form-value__image__main">
         <div class="col-2 offset-2 d-flex project-form__title_wrap">
           <h3 class="project-form__title-1">メイン画像</h2>
           <h4 class="project-form__title-2">必須</h2>
         </div>
         <div class="col-6 project-form__form_wrap">
-          <p><%= f.file_field :project_logo, class: "col-5 form-control" %></p>
+          <p><%= f.file_field :project_logo, class: "col-12 form-control project-form-value__image__input" %></p>
         </div>
       </div>
-      <div class="row project-form-image__sub">
+      <div class="row project-form-value__image__sub">
         <div class="col-2 offset-2 d-flex project-form__title_wrap">
           <h3 class="project-form__title-1">&emsp;サブ画像&emsp;</h2>
         </div>
-        <div class="col-6 project-form__form_wrap">
+        <div class="col-4 project-form-value__form_wrap">
           <p class="form-inline">
-            <%= f.file_field :project_img, class: "col-5 form-control" %>
-            <%= f.file_field :project_img2, class: "col-5 form-control" %>
+            <%= f.file_field :project_img, class: "col-5 form-control project-form-value__image__input-2" %>
+            <%= f.file_field :project_img2, class: "col-5 form-control project-form-value__image__input-2" %>
           </p>
           <p class="form-inline">
-            <%= f.file_field :project_img3, class: "col-5 form-control" %>
-            <%= f.file_field :project_img4, class: "col-5 form-control" %>
+            <%= f.file_field :project_img3, class: "col-5 form-control project-form-value__image__input-2 project-form-value__image__input-2-1" %>
+            <%= f.file_field :project_img4, class: "col-5 form-control project-form-value__image__input-2 project-form-value__image__input-2-1" %>
           </p>
         </div>
-        <div class="col-2 offset-2">
-          <h2>画像の推奨サイズ</h2>
+        <div class="col-2 project-form-value__image__guide_wrap">
           <ul>
-            <li>横1200px&ensp;縦800px&ensp;程度</li>
-            <li>比率&ensp;3:2</li>
-            <li>容量&ensp;10メガバイトまで</li>
-            <li>縦横の比率を揃えると見栄えがよくなります。</li>
+            <li class="project-form-value__image__guide__title"><h2>画像の推奨サイズ</h2></li>
+            <li class="project-form-value__image__guide__content">横1200px&ensp;縦800px&ensp;程度</li>
+            <li class="project-form-value__image__guide__content">比率&ensp;3:2</li>
+            <li class="project-form-value__image__guide__content">容量&ensp;10メガバイトまで</li>
+            <li class="project-form-value__image__guide__content">縦横の比率を揃えると見栄えがよくなります。</li>
           </ul>
-          <h2>画像の優先順位</h2>
           <ul>
-          <li>最大5枚まで登録でき、1枚目に設定した画像がメインの画像になります。</li>
+            <li class="project-form-value__image__guide__title"><h2>画像の優先順位</h2></li>
+            <li class="project-form-value__image__guide__content">最大5枚まで登録でき、1枚目に設定した画像がメインの画像になります。</li>
           </ul>
         </div>
       </div>
       <div class="row project-form-image__movie">
         <div class="col-2 offset-2 d-flex project-form__title_wrap">
-          <h3 class="project-form__title-1">動画</h2>
+          <h3 class="project-form__title-1">&emsp;&emsp;動画</h2>
         </div>
         <div class="col-6 project-form__form_wrap">
-          <p><%= f.url_field :project_movie, class: "col-5 form-control", placeholder: "YouTubeのみ対応しています" %></p>
+          <p><%= f.url_field :project_movie, class: "col-12 form-control project-form-value__image__input-3", placeholder: "YouTubeのみ対応しています" %></p>
         </div>
       </div>
-      <%= f.submit "保存" %>
-      <p>プレビュー</p>
+      <div class="project-form__button_wrap">
+        <%= f.submit "保存", class: "project-form__button" %>
+        <%= f.submit "プレビュー", class: "project-form__button-2" %>
+      </div>
     </div>
 
 
