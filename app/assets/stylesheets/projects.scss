@@ -132,6 +132,13 @@
       }
     }
     &-image {
+      &__image_wrap {
+        border: 1px solid black;
+      }
+      &__image_wrap-2 {
+        border: 1px solid black;
+        margin: .8rem 1.6rem .8rem 0;
+      }
       &__input {
         padding: 1rem 1rem 35rem 1rem;
       }

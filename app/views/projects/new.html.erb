@@ -107,23 +107,38 @@
             <h3 class="project-form__title-1">メイン画像</h2>
             <h4 class="project-form__title-2">必須</h2>
           </div>
-          <div class="col-6 project-form__form_wrap">
-            <p><%= im.file_field :project_logo, class: "col-12 form-control project-form-image__input" %></p>
+          <div class="col-6">
+            <div id="imageField" onClick="$('#file').click()" class="project-form-image__image_wrap">
+              <p class="project-form-image__input">あなただけのタイトルでスポンサーを惹きつけましょう</p>
+            </div>
+            <p><%= im.file_field :project_logo, class: "col-12 form-control project-form-image__input", style: "display:none;", id: "file" %></p>
           </div>
         </div>
         <div class="row project-form-image__sub">
           <div class="col-2 offset-2 d-flex project-form__title_wrap">
             <h3 class="project-form__title-1">&emsp;サブ画像&emsp;</h2>
           </div>
-          <div class="col-4 project-form-form_wrap">
-            <p class="form-inline">
-              <%= im.file_field :project_img, class: "col-5 form-control project-form-image__input-2" %>
-              <%= im.file_field :project_img2, class: "col-5 form-control project-form-image__input-2" %>
-            </p>
-            <p class="form-inline">
-              <%= im.file_field :project_img3, class: "col-5 form-control project-form-image__input-2 project-form-image__input-2-1" %>
-              <%= im.file_field :project_img4, class: "col-5 form-control project-form-image__input-2 project-form-image__input-2-1" %>
-            </p>
+          <div class="col-4">
+            <div class="form-inline">
+              <%# <div id="imageField1" onClick="$('#file1').click()" class="col-5 project-form-image__image_wrap-2">
+                <p class="project-form-image__input-2">&emsp;</p> %>
+                <%= im.file_field :project_img, class: "col-5 form-control project-form-image__input-2" %>
+              <%# </div> %>
+              <%# <div id="imageField2" onClick="$('#file2').click()" class="col-5 project-form-image__image_wrap-2">
+                <p class="project-form-image__input-2">&emsp;</p> %>
+                <%= im.file_field :project_img2, class: "col-5 form-control project-form-image__input-2" %>
+              <%# </div> %>
+            </div>
+            <div class="form-inline">
+              <%# <div id="imageField3" onClick="$('#file3').click()" class="col-5 project-form-image__image_wrap-2 project-form-image__input-2-1">
+                <p class="project-form-image__input-2">&emsp;</p> %>
+                <%= im.file_field :project_img3, class: "col-5 form-control project-form-image__input-2 project-form-image__input-2-1" %>
+              <%# </div>
+              <div id="imageField4" onClick="$('#file4').click()" class="col-5 project-form-image__image_wrap-2 project-form-image__input-2-1">
+                <p class="project-form-image__input-2">&emsp;</p> %>
+                <%= im.file_field :project_img4, class: "col-5 form-control project-form-image__input-2 project-form-image__input-2-1" %>
+              <%# </div> %>
+            </div>
           </div>
           <div class="col-2 project-form-image__guide_wrap">
             <ul>
