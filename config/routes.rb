@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :artisan_profiles
   resources :sessions, only: [:new, :create, :destroy]
   resources :ideas
-  resources :projects
+  resources :projects do
+    resources :commnets, only: [:create]
+  end
 end
