@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_18_060620) do
+ActiveRecord::Schema.define(version: 2019_09_19_062423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 2019_09_18_060620) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_artisan_profiles_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_comments_on_project_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "idea_users", force: :cascade do |t|
@@ -133,8 +143,10 @@ ActiveRecord::Schema.define(version: 2019_09_18_060620) do
   create_table "projects", force: :cascade do |t|
     t.string "project_title"
     t.text "project_text"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "select_genre_in_ideas", force: :cascade do |t|
@@ -174,6 +186,8 @@ ActiveRecord::Schema.define(version: 2019_09_18_060620) do
   end
 
   add_foreign_key "artisan_profiles", "users"
+  add_foreign_key "comments", "projects"
+  add_foreign_key "comments", "users"
   add_foreign_key "project_abouts", "projects"
   add_foreign_key "project_ideas", "projects"
   add_foreign_key "project_images", "projects"
@@ -181,6 +195,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_060620) do
   add_foreign_key "project_returns", "projects"
   add_foreign_key "project_sponsors", "projects"
   add_foreign_key "project_values", "projects"
+  add_foreign_key "projects", "users"
   add_foreign_key "select_genre_in_ideas", "idea_users"
   add_foreign_key "select_genre_in_ideas", "ideas"
   add_foreign_key "user_profiles", "users"

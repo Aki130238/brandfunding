@@ -14,4 +14,7 @@ class Project < ApplicationRecord
   accepts_nested_attributes_for :project_return
   accepts_nested_attributes_for :project_sponsor
   accepts_nested_attributes_for :project_value
+
+  belongs_to :user
+  has_many :comments
 end

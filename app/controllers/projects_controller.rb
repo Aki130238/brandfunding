@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(project_params)
+    @project = current_user.projects.build(project_params)
     if @project.save
       redirect_to root_path
     else
@@ -27,6 +27,8 @@ class ProjectsController < ApplicationController
 
   
   def show
+    @commnets = @project.comments
+    @comment = Comment.new
   end
 
   def edit
