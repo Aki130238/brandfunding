@@ -1,0 +1,11 @@
+<% Project.each do |pr|%>
+  <%= pr.project_image.project_img %>
+  <%= pr.project_text %>
+  <%= pr.project_value.project_fund %>
+  <%= pr.project_return.return_item_sponsors %>
+  <% if Time.now >= pr.project_value.recruitment_deadline %>
+    終了
+  <% else %>
+    <%= pr.project_value.recruitment_deadline %>
+  <% end %>
+<% end %>

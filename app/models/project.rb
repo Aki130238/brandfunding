@@ -3,7 +3,7 @@ class Project < ApplicationRecord
   has_one :project_idea
   has_one :project_image
   has_one :project_report
-  has_one :project_return
+  has_many :project_return
   has_one :project_sponsor
   has_one :project_value
 

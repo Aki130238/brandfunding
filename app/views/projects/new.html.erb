@@ -241,6 +241,35 @@
       <% end %>
     </div>
 
+
+
+
+
+
+        <%= f.fields_for :project_return do |re| %>
+        <div class="row project-form-idea__content">
+          <div class="col-2 offset-2 d-flex project-form__title_wrap">
+            <h3 class="project-form__title-1">&emsp;&emsp;アイディア</h3>
+          </div>
+          <div class="col-6 project-form__form_wrap">
+            <p class="form-inline"><%= re.text_field :return_title, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.file_field :return_item_img, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.text_field :return_item_fund, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.number_field :return_item_count, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.text_area :return_item_about, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.number_field :return_item_sponsors, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.date_field :delivery_date, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.text_area :return_item_remark, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.text_area :return_option, class: "col-12 form-control project-form-report__input" %></p>
+          </div>
+        </div>
+      <% end %>
+
+
+
+
+
+
     <div class="tab-pane fade project-form-report" id="report" role="tabpanel" aria-labelledby="report-tab">
       <%= f.fields_for :project_report do |id| %>
         <div class="row project-form-idea__content">

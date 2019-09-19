@@ -1,7 +1,7 @@
-<% @project.title %>
+<% @project.project_title %>
 <% @project.project_value.project_fund %>
 <% @project.project_value.target_fund %>
-<% @project.project_return.return_item_sponsors %>
+
 <% @project.project_value.recruitment_deadline %>
 
 <% @project.project_text %>
@@ -18,8 +18,24 @@
     </div>
   <% end %>
 <% end %>
-  <%= form_with(model: [@project, @comment], local: true) do |f| %>
-    <%= f.text_field :content %>
-    <br>
-    <%= f.submit 'コメントする' %>
+<%= form_with(model: [@project, @comment], local: true) do |f| %>
+  <%= f.text_field :content %>
+  <br>
+  <%= f.submit 'コメントする' %>
+<% end %>
+
+<% if logged_in? %>
+  <%= form_with(model: @project_return, url:"/projects/#{@project.id}",  local: true) do |re| %>            <p class="form-inline"><%= re.text_field :return_title, class: "col-12 form-control project-form-report__input" %></p>
+    <p class="form-inline"><%= re.file_field :return_item_img, class: "col-12 form-control project-form-report__input" %></p>
+    <p class="form-inline"><%= re.text_field :return_item_fund, class: "col-12 form-control project-form-report__input" %></p>
+    <p class="form-inline"><%= re.number_field :return_item_count, class: "col-12 form-control project-form-report__input" %></p>
+    <p class="form-inline"><%= re.text_area :return_item_about, class: "col-12 form-control project-form-report__input" %></p>
+    <p class="form-inline"><%= re.number_field :return_item_sponsors, class: "col-12 form-control project-form-report__input" %></p>
+    <p class="form-inline"><%= re.date_field :delivery_date, class: "col-12 form-control project-form-report__input" %></p>
+    <p class="form-inline"><%= re.text_area :return_item_remark, class: "col-12 form-control project-form-report__input" %></p>
+    <p class="form-inline"><%= re.text_area :return_option, class: "col-12 form-control project-form-report__input" %></p>
+    <%= re.submit "保存", class: "project-form__button" %>
   <% end %>
+<% else %>
+<% end%>
+
