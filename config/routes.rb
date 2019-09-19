@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   resources :user_profiles
   resources :artisan_profiles
   resources :sessions, only: [:new, :create, :destroy]
-  resources :ideas
 end

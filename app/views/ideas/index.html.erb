@@ -1,9 +1,0 @@
-<h1>アイディア一覧</h1>
-<% @ideas.each do |idea| %>
-    <tr>
-      <td><%= idea.idea_title %></td>
-      <td><%= link_to 'Show', idea %></td>
-      <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
-      <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
