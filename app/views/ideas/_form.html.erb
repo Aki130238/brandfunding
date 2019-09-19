@@ -1,26 +1,79 @@
-<%= form_with(model: @idea, local: true) do |form| %>
-
-  <span>完成品イメージ</span>
-  <span>使う人</span>
-  <span>カテゴリ</span>
-  <span>カテゴリ詳細</span>
-  <span>素材</span>
-  <span>アイデア詳細</span>
-
-  <p>完成品のイメージを職人さんに伝える方法を選んでください</p>
-
-  <div class="field">
-    <% %w(似た物がある 写真や絵がある 型紙がある リメイクお直し 相談したい).each do |product_image| %>
-      <%= form.radio_button :product_image, product_image %><%= product_image %>
-    <% end %>
+<main class="container-fluid new-idea-page">
+  <div class="row">
+    <h1 class="col-12 new-idea-page__title">アイディア編集</h1>
   </div>
 
-  <span>完成品イメージ</span>
-  <span>使う人</span>
-  <span>カテゴリ</span>
-  <span>カテゴリ詳細</span>
-  <span>素材</span>
-  <span>アイデア詳細</span>
+  <%= render "navbar" %>
+
+  <section class="tab-content idea-form">
+    <div class="tab-pane fade show active idea-form-image" id="ideaImage" role="tabpanel" aria-labelledby="ideaImage-tab">
+    <%= form_with(model: @idea, local: true) do |f| %>
+      <div class="row">
+        <h2 class="col-8 offset-2 idea-form-image__title">完成品のイメージを職人さんに伝える方法を選んでください</h2>
+      </div>
+      <div class="row">
+        <div class="col-3 offset-3 idea-form-image__content__wrap1" id= "ideaContentWrap1">
+          <%= f.radio_button :product_image, "似た物がある", class: "idea-form-image__input" %>
+          <%= f.label :product_image, "似た物がある", value: "似た物がある", class: "idea-form-image__content", id: "ideaContent1" %>
+        </div>
+        <div class="col-3 offset-2 idea-form-image__content__wrap2" id= "ideaContentWrap2">
+          <%= f.radio_button :product_image, "写真や絵がある", class: "idea-form-image__input" %>
+          <%= f.label :product_image, "写真や絵がある", value: "写真や絵がある", class: "idea-form-image__content", id: "ideaContent2" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 offset-3 idea-form-image__content__wrap1" id= "ideaContentWrap3">
+          <%= f.radio_button :product_image, "型紙がある", class: "idea-form-image__input" %>
+          <%= f.label :product_image, "型紙がある", value: "型紙がある", class: "idea-form-image__content", id: "ideaContent3" %>
+        </div>
+        <div class="col-3 offset-2 idea-form-image__content__wrap2" id= "ideaContentWrap4">
+          <%= f.radio_button :product_image, "リメイクお直し", class: "idea-form-image__input" %>
+          <%= f.label :product_image, "リメイクお直し", value: "リメイクお直し", class: "idea-form-image__content", id: "ideaContent4" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 offset-3 idea-form-image__content__wrap1" id= "ideaContentWrap5">
+          <%= f.radio_button :product_image, "相談したい", class: "idea-form-image__input" %>
+          <%= f.label :product_image, "相談したい", value: "相談したい", class: "idea-form-image__content", id: "ideaContent5" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade idea-form-use" id="ideaUse" role="tabpanel" aria-labelledby="ideaUse-tab">
+
+    </div>
+
+    <div class="tab-pane fade idea-form-category" id="ideaCategory" role="tabpanel" aria-labelledby="ideaCategory-tab">
+
+    </div>
+
+    <div class="tab-pane fade idea-form-category-details" id="ideaCategoryDetails" role="tabpanel" aria-labelledby="ideaCategoryDetails-tab">
+
+    </div>
+
+    <div class="tab-pane fade idea-form-material" id="ideaMaterial" role="tabpanel" aria-labelledby="ideaMaterial-tab">
+
+    </div>
+
+    <div class="tab-pane fade idea-form-details" id="ideaDetails" role="tabpanel" aria-labelledby="ideaDetails-tab">
+
+    </div>
+    <div class="idea-form__button_wrap">
+      <%= f.submit "保存", class: "idea-form__button" %>
+      <%= f.submit "プレビュー", class: "idea-form__button-2" %>
+    </div>
+    <% end %>
+  </section>
+</main>
+
+<%= form_with(model: @idea, local: true) do |form| %>
+
+
+
+  <div class="field">
+
+  </div>
+
 
   <p>使う人を選択してください。複数選択可</p>
 
@@ -151,7 +204,4 @@
     <%= form.text_area :idea_commit, placeholder: "作るものへのこだわり、設備の希望など"%>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

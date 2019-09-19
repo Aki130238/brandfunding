@@ -105,4 +105,39 @@ $(window).on('turbolinks:load',function() {
   //   })(file);
   //   reader.readAsDataURL(file);
   // });
+  $('#ideaContent1').on('click',function() {
+    $('#ideaContentWrap2').css('background', 'white');
+    $('#ideaContentWrap3').css('background', 'white');
+    $('#ideaContentWrap4').css('background', 'white');
+    $('#ideaContentWrap5').css('background', 'white');
+    $('#ideaContentWrap1').css('background', '#FFD800');
+  });
+  $('#ideaContent2').on('click',function() {
+    $('#ideaContentWrap1').css('background', 'white');
+    $('#ideaContentWrap3').css('background', 'white');
+    $('#ideaContentWrap4').css('background', 'white');
+    $('#ideaContentWrap5').css('background', 'white');
+    $('#ideaContentWrap2').css('background', '#FFD800');
+  });
+  $('#ideaContent3').on('click',function() {
+    $('#ideaContentWrap1').css('background', 'white');
+    $('#ideaContentWrap2').css('background', 'white');
+    $('#ideaContentWrap4').css('background', 'white');
+    $('#ideaContentWrap5').css('background', 'white');
+    $('#ideaContentWrap3').css('background', '#FFD800');
+  });
+  $('#ideaContent4').on('click',function() {
+    $('#ideaContentWrap1').css('background', 'white');
+    $('#ideaContentWrap2').css('background', 'white');
+    $('#ideaContentWrap3').css('background', 'white');
+    $('#ideaContentWrap5').css('background', 'white');
+    $('#ideaContentWrap4').css('background', '#FFD800');
+  });
+  $('#ideaContent5').on('click',function() {
+    $('#ideaContentWrap1').css('background', 'white');
+    $('#ideaContentWrap2').css('background', 'white');
+    $('#ideaContentWrap3').css('background', 'white');
+    $('#ideaContentWrap4').css('background', 'white');
+    $('#ideaContentWrap5').css('background', '#FFD800');
+  });
 });
