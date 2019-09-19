@@ -7,4 +7,5 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :artisan_profile, reject_if: :all_blank
   validates :password, presence: true, length: { minimum: 6 }, on: :new
   has_many :comments
+  has_many :projects
 end
