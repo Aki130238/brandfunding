@@ -1,5 +1,7 @@
 $bgcolor-1: #FFFEED;
 $bgcolor-2: #F8F9FA;
+$bgcolor-3: red;
+$bgcolor-4: #1DBE00;
 $bgcolor-footer: #606060;
 $color-1: #6C6C6C;
 $color-main: #FE38C3;
@@ -47,9 +49,6 @@ html {
   body {
     height: 100%;
     font-size: 1.6rem;
-    li {
-      list-style: none;
-    }
   }
 }
 

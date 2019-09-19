@@ -43,6 +43,9 @@
 .my-page {
   margin-left: 8rem;
   padding-bottom: 5rem;
+  li {
+    list-style: none;
+  }
   &__title {
     margin: 3rem 0 3rem -1.5rem;
     color: $color-1;
@@ -88,6 +91,10 @@
         color: $color-1;
         text-decoration: none;
       }
+    }
+    &__link {
+      color: $color-1;
+      text-decoration: none;
     }
     &__item {
       color: black;
