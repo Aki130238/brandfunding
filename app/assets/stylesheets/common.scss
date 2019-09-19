@@ -1,0 +1,115 @@
+$bgcolor-1: #FFFEED;
+$bgcolor-2: #F8F9FA;
+$bgcolor-footer: #606060;
+$color-1: #6C6C6C;
+$color-main: #FE38C3;
+$color-error: #e73562;
+$btncolor-1: #C19A88;
+
+.no-gutters {
+  margin:0;
+  padding:0;
+}
+
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+  margin:0;
+  padding:0;
+}
+
+.form-sign {
+  width: 40%;
+  margin: 0 auto;
+  padding: .8rem;
+  border-radius: 8px;
+  font-size: 1.6rem;
+}
+
+.button-sign {
+  width: 20%;
+  margin-top: 1rem;
+  padding: .8rem;
+  border-radius: 8px;
+  background: $btncolor-1;
+  color: white;
+  font-size: 1.6rem;
+}
+
+.button {
+  border: 1px solid black;
+  background: white;
+  color: $color-1;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+  body {
+    height: 100%;
+    font-size: 1.6rem;
+    li {
+      list-style: none;
+    }
+  }
+}
+
+.flash {
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+  background: $color-main;
+  color: white;
+  text-align: center;
+}
+
+.header-1 {
+  padding: 2.5rem 0;
+  border-bottom: solid $color-main;
+  &__title {
+    padding-left: 5rem;
+  }
+  .navbar {
+    margin-right: 2rem;
+    background: white;
+    .navbar-toggler {
+      font-size: 2rem;
+      outline: 0;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='pink' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+  }
+  &__navlink {
+    margin: .5rem 4rem 0 0;
+    color: $color-1;
+  }
+  &__navlink:hover {
+    color: $color-1;
+    text-decoration: none;
+  }
+}
+
+.footer-1 {
+  padding: 2.5rem 0 2rem 0rem;
+  background: $bgcolor-footer;
+  &__wrap {
+    margin-right: 5rem;
+  }
+  &__title {
+    margin-left: 8rem;
+    color: white;
+  }
+  &__title:hover {
+    color: white;
+    text-decoration: none;
+  }
+  &__column__wrap {
+    padding: 0 auto;
+  }
+  &__column {
+    margin: .3rem 0rem;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+}
