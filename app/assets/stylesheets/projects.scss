@@ -110,63 +110,62 @@
           font-size: 1.4rem;
         }
       }
-      &__project {
-        &__content_wrap {
-          margin-top: 5rem;
-        }
-        &__input {
-          padding: 1rem;
-          font-size: 1.5rem;
-        }
-        &__input-2 {
-          padding: 1rem 1rem 5rem 1rem;
-          font-size: 1.5rem;
-          overflow: hidden;
-          resize: none;
-        }
-        &__guide {
-          margin-left: 1rem;
-          font-size: 1.4rem;
-        }
-      }
-      &__image {
-        &__input {
-          padding: 1rem 1rem 35rem 1rem;
-        }
-        &__input-2 {
-          margin: 0 1.5rem .5rem 0;
-          padding: 1rem 1rem 10rem 1rem;
-        }
-        &__input-2-1 {
-          margin-bottom: 5rem;
-        }
-        &__input-3 {
-          padding: 1rem;
-          font-size: 1.4rem;
-        }
-        &__sub {
-          margin-top: 5rem;
-        }
-        &__guide_wrap {
-          font-size: 1.5rem;
-        }
-        &__guide__title {
-          margin-left: -4rem;
-          list-style: none;
-        }
-        &__guide__content {
-          margin-left: -1rem;
-        }
-      }
     }
     &-project {
-
+      &__content_wrap {
+        margin-top: 5rem;
+      }
+      &__input {
+        padding: 1rem;
+        font-size: 1.5rem;
+      }
+      &__input-2 {
+        padding: 1rem 1rem 5rem 1rem;
+        font-size: 1.5rem;
+        overflow: hidden;
+        resize: none;
+      }
+      &__guide {
+        margin-left: 1rem;
+        font-size: 1.4rem;
+      }
     }
     &-image {
-
+      &__input {
+        padding: 1rem 1rem 35rem 1rem;
+      }
+      &__input-2 {
+        margin: 0 1.5rem .5rem 0;
+        padding: 1rem 1rem 10rem 1rem;
+      }
+      &__input-2-1 {
+        margin-bottom: 5rem;
+      }
+      &__input-3 {
+        padding: 1rem;
+        font-size: 1.4rem;
+      }
+      &__sub {
+        margin-top: 5rem;
+      }
+      &__guide_wrap {
+        font-size: 1.5rem;
+      }
+      &__guide__title {
+        margin-left: -4rem;
+        list-style: none;
+      }
+      &__guide__content {
+        margin-left: -1rem;
+      }
     }
     &-about {
-
+      &__input {
+        padding: 1.5rem 1.5rem 110rem 1.5rem;
+        font-size: 1.5rem;
+        overflow: hidden;
+        resize: none;
+      }
     }
   }
 }
