@@ -1,13 +1,25 @@
-<% @comments.each do |c| %>
-  <div>
-    <a href="/users/<%= @project.user.id %>"><%= c.user.email %></a>
-    <%= c.content %>
-    <hr>
-  </div>
-<% end %>
+<% @project.title %>
+<% @project.project_value.project_fund %>
+<% @project.project_value.target_fund %>
+<% @project.project_return.return_item_sponsors %>
+<% @project.project_value.recruitment_deadline %>
 
-<%= form_for [@project, @comment] do |f| %>
-  <%= f.text_field :content %>
-  <br>
-  <%= f.submit 'コメントする' %>
+<% @project.project_text %>
+<% @project.project_report.project_reports %>
+
+<% if @comments.nil?%>
+
+<% else %>
+  <% @comments.each do |c| %>
+    <div>
+      <a href="/users/<%= @project.user.id %>"><%= c.user.email %></a>
+      <%= c.content %>
+      <hr>
+    </div>
+  <% end %>
 <% end %>
+  <%= form_with(model: [@project, @comment], local: true) do |f| %>
+    <%= f.text_field :content %>
+    <br>
+    <%= f.submit 'コメントする' %>
+  <% end %>

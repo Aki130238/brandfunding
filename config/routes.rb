@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :ideas
   resources :projects do
-    resources :commnets, only: [:create]
+    resources :comments, only: [:create]
   end
 end
