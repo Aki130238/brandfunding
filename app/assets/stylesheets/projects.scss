@@ -1,10 +1,11 @@
 .new-project-page {
+  width: 100%;
   &__title {
     display: inline-block;
-    margin-top: 3rem;
     width: 100%;
-    color: $color-1;
-    font-weight: bold;
+    padding: 2.5rem 0;
+    background: $bgcolor-4;
+    color: white;
     text-align: center;
   }
   &__menu {
@@ -162,6 +163,19 @@
     &-about {
       &__input {
         padding: 1.5rem 1.5rem 110rem 1.5rem;
+        font-size: 1.5rem;
+        overflow: hidden;
+        resize: none;
+      }
+    }
+    &-idea {
+      &__input {
+        padding: 2rem 1rem;
+      }
+    }
+    &-report {
+      &__input {
+        padding: 1.5rem 1.5rem 30rem 1.5rem;
         font-size: 1.5rem;
         overflow: hidden;
         resize: none;
