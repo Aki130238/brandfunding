@@ -76,7 +76,40 @@
     </div>
 
     <div class="tab-pane fade idea-form-category" id="ideaCategory" role="tabpanel" aria-labelledby="ideaCategory-tab">
-
+      <h2 class="col-8 offset-2 idea-form-category__title">作るもののカテゴリを選択してください</h2>
+      <div class="row col-10">
+        <div class="col-3 offset-2 idea-form-category__content__wrap" id= "ideaCategoryWrap1">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "洋服", class: "idea-form-category__input" %>洋服</p>
+        </div>
+        <div class="col-3 idea-form-category__content__wrap2" id= "ideaCategoryWrap2">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "和服", class: "idea-form-category__input" %>和服</p>
+        </div>
+        <div class="col-3 idea-form-category__content__wrap2" id= "ideaCategoryWrap3">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "ドレス・衣装", class: "idea-form-category__input" %>ドレス・衣装</p>
+        </div>
+      </div>
+      <div class="row col-10">
+        <div class="col-3 offset-2 idea-form-category__content__wrap" id= "ideaCategoryWrap4">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "作業服・ユニフォーム", class: "idea-form-category__input" %>作業服・ユニフォーム</p>
+        </div>
+        <div class="col-3 idea-form-category__content__wrap2" id= "ideaCategoryWrap5">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "バッグ・帽子", class: "idea-form-category__input" %>バッグ・帽子</p>
+        </div>
+        <div class="col-3 idea-form-category__content__wrap2" id= "ideaCategoryWrap6">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "ジャケット・アウター", class: "idea-form-category__input" %>ジャケット・アウター</p>
+        </div>
+      </div>
+      <div class="row col-10">
+        <div class="col-3 offset-2 idea-form-category__content__wrap" id= "ideaCategoryWrap7">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "小物", class: "idea-form-category__input" %>小物</p>
+        </div>
+        <div class="col-3 idea-form-category__content__wrap2" id= "ideaCategoryWrap8">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "インテリア", class: "idea-form-category__input" %>インテリア</p>
+        </div>
+        <div class="col-3 idea-form-category__content__wrap2" id= "ideaCategoryWrap9">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "その他", class: "idea-form-category__input" %>その他</p>
+        </div>
+      </div>
     </div>
 
     <div class="tab-pane fade idea-form-category-details" id="ideaCategoryDetails" role="tabpanel" aria-labelledby="ideaCategoryDetails-tab">
@@ -101,12 +134,8 @@
 <%= form_with(model: @idea, local: true) do |form| %>
 
 
-
-
-  <p>作るもののカテゴリを選択してください</p>
-
   <div class="field">
-    <% %w(洋服 和服 ドレス・衣装 作業服・ユニフォーム バッグ・帽子 小物 インテリア その他).each do |idea_category| %>
+    <% %w(    ).each do |idea_category| %>
       <%= form.radio_button :idea_category, idea_category %><%= idea_category %>
     <% end %>
   </div>
@@ -121,7 +150,7 @@
   <p>カテゴリの詳細を選択してください</p>
 
   <div class="field">
-    <% %w(ジャケット・アウター トップス・シャツ ボトムス・スカート ワンピース・オーバーオール スーツ・タキシード その他).each do |idea_category_details| %>
+    <% %w( トップス・シャツ ボトムス・スカート ワンピース・オーバーオール スーツ・タキシード その他).each do |idea_category_details| %>
       <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
     <% end %>
   </div>

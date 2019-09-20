@@ -1,6 +1,3 @@
-// $(window).on('turborinks:load', function() {
-// });
-
 $(function(){
   setTimeout("$('.flash').fadeOut('slow')", 3000)
 });
@@ -10,15 +7,15 @@ $(window).on('turbolinks:load',function() {
   $($fileField).on('change', $fileField, function(e) {
     file = e.target.files[0]
     reader = new FileReader(),
-    $preview = $("#imageField");
+    $preview = $('#imageField');
 
     reader.onload = (function(file) {
       return function(e) {
         $preview.empty();
         $preview.append($('<img>').attr({
           src: e.target.result,
-          width: "100%",
-          class: "preview",
+          width: '100%',
+          class: 'preview',
           title: file.name
         }));
       };
@@ -30,15 +27,15 @@ $(window).on('turbolinks:load',function() {
   // $($fileField).on('change', $fileField, function(e) {
   //   file = e.target.files[0]
   //   reader = new FileReader(),
-  //   $preview = $("#imageField1");
+  //   $preview = $('#imageField1');
 
   //   reader.onload = (function(file) {
   //     return function(e) {
   //       $preview.empty();
   //       $preview.append($('<img>').attr({
   //         src: e.target.result,
-  //         width: "100%",
-  //         class: "preview",
+  //         width: '100%',
+  //         class: 'preview',
   //         title: file.name
   //       }));
   //     };
@@ -50,15 +47,15 @@ $(window).on('turbolinks:load',function() {
   // $($fileField).on('change', $fileField, function(e) {
   //   file = e.target.files[0]
   //   reader = new FileReader(),
-  //   $preview = $("#imageField2");
+  //   $preview = $('#imageField2');
 
   //   reader.onload = (function(file) {
   //     return function(e) {
   //       $preview.empty();
   //       $preview.append($('<img>').attr({
   //         src: e.target.result,
-  //         width: "100%",
-  //         class: "preview",
+  //         width: '100%',
+  //         class: 'preview',
   //         title: file.name
   //       }));
   //     };
@@ -70,15 +67,15 @@ $(window).on('turbolinks:load',function() {
   // $($fileField).on('change', $fileField, function(e) {
   //   file = e.target.files[0]
   //   reader = new FileReader(),
-  //   $preview = $("#imageField3");
+  //   $preview = $('#imageField3');
 
   //   reader.onload = (function(file) {
   //     return function(e) {
   //       $preview.empty();
   //       $preview.append($('<img>').attr({
   //         src: e.target.result,
-  //         width: "100%",
-  //         class: "preview",
+  //         width: '100%',
+  //         class: 'preview',
   //         title: file.name
   //       }));
   //     };
@@ -90,15 +87,15 @@ $(window).on('turbolinks:load',function() {
   // $($fileField).on('change', $fileField, function(e) {
   //   file = e.target.files[0]
   //   reader = new FileReader(),
-  //   $preview = $("#imageField4");
+  //   $preview = $('#imageField4');
 
   //   reader.onload = (function(file) {
   //     return function(e) {
   //       $preview.empty();
   //       $preview.append($('<img>').attr({
   //         src: e.target.result,
-  //         width: "100%",
-  //         class: "preview",
+  //         width: '100%',
+  //         class: 'preview',
   //         title: file.name
   //       }));
   //     };
@@ -140,4 +137,40 @@ $(window).on('turbolinks:load',function() {
     $('#ideaContentWrap4').css('background', 'white');
     $('#ideaContentWrap5').css('background', '#FFD800');
   });
+
+  $('#ideaCategoryWrap1').click(function() {
+    $('#idea_idea_category_洋服').prop('checked', true);
+  });
+  $('#ideaCategoryWrap2').click(function() {
+    $('#idea_idea_category_和服').prop('checked', true);
+  });
+  $('#ideaCategoryWrap3').click(function() {
+    $('#idea_idea_category_ドレス衣装').prop('checked', true);
+  });
+  $('#ideaCategoryWrap4').click(function() {
+    $('#idea_idea_category_作業服ユニフォーム').prop('checked', true);
+  });
+  $('#ideaCategoryWrap5').click(function() {
+    $('#idea_idea_category_バッグ帽子').prop('checked', true);
+  });
+  $('#ideaCategoryWrap6').click(function() {
+    $('#idea_idea_category_ジャケットアウター').prop('checked', true);
+  });
+  $('#ideaCategoryWrap7').click(function() {
+    $('#idea_idea_category_小物').prop('checked', true);
+  });
+  $('#ideaCategoryWrap8').click(function() {
+    $('#idea_idea_category_インテリア').prop('checked', true);
+  });
+  $('#ideaCategoryWrap9').click(function() {
+    $('#idea_idea_category_その他').prop('checked', true);
+  });
+
+  // $(function(){
+  //   if($('#idea_idea_category_その他').prop('checked')) {
+  //     $('#ideaCategoryWrap9').css('background','red');
+  //   } else {
+  //     $('#ideaCategoryWrap9').css('background','white');
+  //   }
+  // });
 });
