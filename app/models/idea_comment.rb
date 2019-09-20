@@ -1,0 +1,2 @@
+class IdeaComment < ApplicationRecord
+end

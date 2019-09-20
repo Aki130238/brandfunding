@@ -1,0 +1,2 @@
+class IdeaCommentsController < ApplicationController
+end
