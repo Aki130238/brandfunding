@@ -102,40 +102,55 @@ $(window).on('turbolinks:load',function() {
   //   })(file);
   //   reader.readAsDataURL(file);
   // });
-  $('#ideaContent1').on('click',function() {
-    $('#ideaContentWrap2').css('background', 'white');
-    $('#ideaContentWrap3').css('background', 'white');
-    $('#ideaContentWrap4').css('background', 'white');
-    $('#ideaContentWrap5').css('background', 'white');
-    $('#ideaContentWrap1').css('background', '#FFD800');
+  // $('#ideaContent1').on('click',function() {
+  //   $('#ideaContentWrap2').css('background', 'white');
+  //   $('#ideaContentWrap3').css('background', 'white');
+  //   $('#ideaContentWrap4').css('background', 'white');
+  //   $('#ideaContentWrap5').css('background', 'white');
+  //   $('#ideaContentWrap1').css('background', '#FFD800');
+  // });
+  // $('#ideaContent2').on('click',function() {
+  //   $('#ideaContentWrap1').css('background', 'white');
+  //   $('#ideaContentWrap3').css('background', 'white');
+  //   $('#ideaContentWrap4').css('background', 'white');
+  //   $('#ideaContentWrap5').css('background', 'white');
+  //   $('#ideaContentWrap2').css('background', '#FFD800');
+  // });
+  // $('#ideaContent3').on('click',function() {
+  //   $('#ideaContentWrap1').css('background', 'white');
+  //   $('#ideaContentWrap2').css('background', 'white');
+  //   $('#ideaContentWrap4').css('background', 'white');
+  //   $('#ideaContentWrap5').css('background', 'white');
+  //   $('#ideaContentWrap3').css('background', '#FFD800');
+  // });
+  // $('#ideaContent4').on('click',function() {
+  //   $('#ideaContentWrap1').css('background', 'white');
+  //   $('#ideaContentWrap2').css('background', 'white');
+  //   $('#ideaContentWrap3').css('background', 'white');
+  //   $('#ideaContentWrap5').css('background', 'white');
+  //   $('#ideaContentWrap4').css('background', '#FFD800');
+  // });
+  // $('#ideaContent5').on('click',function() {
+  //   $('#ideaContentWrap1').css('background', 'white');
+  //   $('#ideaContentWrap2').css('background', 'white');
+  //   $('#ideaContentWrap3').css('background', 'white');
+  //   $('#ideaContentWrap4').css('background', 'white');
+  //   $('#ideaContentWrap5').css('background', '#FFD800');
+  // });
+  $('#ideaImageWrap1').click(function() {
+    $('#idea_product_image_似た物がある').prop('checked', true);
   });
-  $('#ideaContent2').on('click',function() {
-    $('#ideaContentWrap1').css('background', 'white');
-    $('#ideaContentWrap3').css('background', 'white');
-    $('#ideaContentWrap4').css('background', 'white');
-    $('#ideaContentWrap5').css('background', 'white');
-    $('#ideaContentWrap2').css('background', '#FFD800');
+  $('#ideaImageWrap2').click(function() {
+    $('#idea_product_image_写真や絵がある').prop('checked', true);
   });
-  $('#ideaContent3').on('click',function() {
-    $('#ideaContentWrap1').css('background', 'white');
-    $('#ideaContentWrap2').css('background', 'white');
-    $('#ideaContentWrap4').css('background', 'white');
-    $('#ideaContentWrap5').css('background', 'white');
-    $('#ideaContentWrap3').css('background', '#FFD800');
+  $('#ideaImageWrap3').click(function() {
+    $('#idea_product_image_型紙がある').prop('checked', true);
   });
-  $('#ideaContent4').on('click',function() {
-    $('#ideaContentWrap1').css('background', 'white');
-    $('#ideaContentWrap2').css('background', 'white');
-    $('#ideaContentWrap3').css('background', 'white');
-    $('#ideaContentWrap5').css('background', 'white');
-    $('#ideaContentWrap4').css('background', '#FFD800');
+  $('#ideaImageWrap4').click(function() {
+    $('#idea_product_image_リメイクお直し').prop('checked', true);
   });
-  $('#ideaContent5').on('click',function() {
-    $('#ideaContentWrap1').css('background', 'white');
-    $('#ideaContentWrap2').css('background', 'white');
-    $('#ideaContentWrap3').css('background', 'white');
-    $('#ideaContentWrap4').css('background', 'white');
-    $('#ideaContentWrap5').css('background', '#FFD800');
+  $('#ideaImageWrap5').click(function() {
+    $('#idea_product_image_相談したい').prop('checked', true);
   });
 
   $('#ideaCategoryWrap1').click(function() {

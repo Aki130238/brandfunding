@@ -73,19 +73,21 @@
         padding: 0;
         border: 1px solid black;
         text-align: center;
+        cursor: pointer;
       }
       &__content__wrap2 {
         margin: 1.5rem 0 0 1.5rem;
         padding: 0;
         border: 1px solid black;
         text-align: center;
+        cursor: pointer;
       }
       &__input {
-        margin-left: -2.5rem;
-        visibility: hidden;
+        margin-left: -1.5rem;
+        // visibility: hidden;
       }
       &__content {
-        padding: 1.5rem 9rem 1rem 11.5rem;
+        padding: 1.8rem 0 1rem 0;
         font-weight: bold;
         font-size: 2rem;
       }
@@ -135,7 +137,7 @@
         cursor: pointer;
       }
       &__content {
-        padding: 3.5rem 0 3rem 0;
+        padding: 3.8rem 0 3rem 0;
         font-weight: bold;
         font-size: 2rem;
       }

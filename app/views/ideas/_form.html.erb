@@ -11,30 +11,25 @@
       <div class="row">
         <h2 class="col-8 offset-2 idea-form-image__title">完成品のイメージを職人さんに伝える方法を選んでください</h2>
       </div>
-      <div class="row">
-        <div class="col-3 offset-3 idea-form-image__content__wrap1" id= "ideaContentWrap1">
-          <%= f.radio_button :product_image, "似た物がある", class: "idea-form-image__input" %>
-          <%= f.label :product_image, "似た物がある", value: "似た物がある", class: "idea-form-image__content", id: "ideaContent1" %>
+      <div class="row col-10">
+        <div class="col-4 offset-3 idea-form-image__content__wrap1" id= "ideaImageWrap1">
+          <p class="idea-form-image__content"><%= f.radio_button :product_image, "似た物がある", class: "idea-form-image__input" %>似た物がある</p>
         </div>
-        <div class="col-3 offset-2 idea-form-image__content__wrap2" id= "ideaContentWrap2">
-          <%= f.radio_button :product_image, "写真や絵がある", class: "idea-form-image__input" %>
-          <%= f.label :product_image, "写真や絵がある", value: "写真や絵がある", class: "idea-form-image__content", id: "ideaContent2" %>
+        <div class="col-4 idea-form-image__content__wrap2" id= "ideaImageWrap2">
+          <p class="idea-form-image__content"><%= f.radio_button :product_image, "写真や絵がある", class: "idea-form-image__input" %>写真や絵がある</p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-3 offset-3 idea-form-image__content__wrap1" id= "ideaContentWrap3">
-          <%= f.radio_button :product_image, "型紙がある", class: "idea-form-image__input" %>
-          <%= f.label :product_image, "型紙がある", value: "型紙がある", class: "idea-form-image__content", id: "ideaContent3" %>
+      <div class="row col-10">
+        <div class="col-4 offset-3 idea-form-image__content__wrap1" id= "ideaImageWrap3">
+          <p class="idea-form-image__content"><%= f.radio_button :product_image, "型紙がある", class: "idea-form-image__input" %>型紙がある</p>
         </div>
-        <div class="col-3 offset-2 idea-form-image__content__wrap2" id= "ideaContentWrap4">
-          <%= f.radio_button :product_image, "リメイクお直し", class: "idea-form-image__input" %>
-          <%= f.label :product_image, "リメイクお直し", value: "リメイクお直し", class: "idea-form-image__content", id: "ideaContent4" %>
+        <div class="col-4 idea-form-image__content__wrap2" id= "ideaImageWrap4">
+          <p class="idea-form-image__content"><%= f.radio_button :product_image, "リメイクお直し", class: "idea-form-image__input" %>リメイクお直し</p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-3 offset-3 idea-form-image__content__wrap1" id= "ideaContentWrap5">
-          <%= f.radio_button :product_image, "相談したい", class: "idea-form-image__input" %>
-          <%= f.label :product_image, "相談したい", value: "相談したい", class: "idea-form-image__content", id: "ideaContent5" %>
+      <div class="row col-10">
+        <div class="col-4 offset-3 idea-form-image__content__wrap1" id= "ideaImageWrap5">
+          <p class="idea-form-image__content"><%= f.radio_button :product_image, "相談したい", class: "idea-form-image__input" %>相談したい</p>
         </div>
       </div>
     </div>
