@@ -21,6 +21,7 @@
     &__link {
       padding: 1.5rem 3.6rem;
       color: $color-1;
+      font-weight: bold;
     }
     &__link:hover {
       color: $color-1;
@@ -68,14 +69,14 @@
         font-weight: bold;
         text-align: center;
       }
-      &__content__wrap1 {
-        margin-top: 1.5rem;
+      &__input__wrap {
+        margin: 1.5rem 0 0 27rem;
         padding: 0;
         border: 1px solid black;
         text-align: center;
         cursor: pointer;
       }
-      &__content__wrap2 {
+      &__input__wrap2 {
         margin: 1.5rem 0 0 1.5rem;
         padding: 0;
         border: 1px solid black;
@@ -99,21 +100,25 @@
         text-align: center;
       }
       &__input__wrap {
-        margin: 1.5rem;
+        margin-left: 2.5rem;
         padding: 0;
         border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
       }
-      &__input__content {
-        margin-bottom: -4rem;
-        padding: 6rem 4rem 10rem 4.5rem;
+      &__content {
+        padding: 7.8rem 0 5rem 0;
         font-weight: bold;
         font-size: 2rem;
       }
-      &__input__content2 {
-        margin-bottom: -4rem;
-        padding: 4.5rem 3.5rem 11.5rem 5rem;
+      &__content2 {
+        padding: 6.8rem 0 5rem 0;
         font-weight: bold;
         font-size: 2rem;
+      }
+      &__input {
+        margin-left: -1.5rem;
+        // visibility: hidden;
       }
     }
     &-category {
@@ -122,14 +127,14 @@
         font-weight: bold;
         text-align: center;
       }
-      &__content__wrap {
+      &__input__wrap {
         margin: 1.5rem 0 0 25rem;
         padding: 0;
         border: 1px solid black;
         text-align: center;
         cursor: pointer;
       }
-      &__content__wrap2 {
+      &__input__wrap2 {
         margin: 1.5rem 0rem 0 1.5rem;
         padding: 0;
         border: 1px solid black;

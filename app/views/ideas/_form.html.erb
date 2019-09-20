@@ -11,24 +11,24 @@
       <div class="row">
         <h2 class="col-8 offset-2 idea-form-image__title">完成品のイメージを職人さんに伝える方法を選んでください</h2>
       </div>
-      <div class="row col-10">
-        <div class="col-4 offset-3 idea-form-image__content__wrap1" id= "ideaImageWrap1">
+      <div class="row col-11">
+        <div class="col-4 offset-3 idea-form-image__input__wrap" id= "ideaImageWrap1">
           <p class="idea-form-image__content"><%= f.radio_button :product_image, "似た物がある", class: "idea-form-image__input" %>似た物がある</p>
         </div>
-        <div class="col-4 idea-form-image__content__wrap2" id= "ideaImageWrap2">
+        <div class="col-4 idea-form-image__input__wrap2" id= "ideaImageWrap2">
           <p class="idea-form-image__content"><%= f.radio_button :product_image, "写真や絵がある", class: "idea-form-image__input" %>写真や絵がある</p>
         </div>
       </div>
-      <div class="row col-10">
-        <div class="col-4 offset-3 idea-form-image__content__wrap1" id= "ideaImageWrap3">
+      <div class="row col-11">
+        <div class="col-4 offset-3 idea-form-image__input__wrap" id= "ideaImageWrap3">
           <p class="idea-form-image__content"><%= f.radio_button :product_image, "型紙がある", class: "idea-form-image__input" %>型紙がある</p>
         </div>
-        <div class="col-4 idea-form-image__content__wrap2" id= "ideaImageWrap4">
+        <div class="col-4 idea-form-image__input__wrap2" id= "ideaImageWrap4">
           <p class="idea-form-image__content"><%= f.radio_button :product_image, "リメイクお直し", class: "idea-form-image__input" %>リメイクお直し</p>
         </div>
       </div>
-      <div class="row col-10">
-        <div class="col-4 offset-3 idea-form-image__content__wrap1" id= "ideaImageWrap5">
+      <div class="row col-11">
+        <div class="col-4 offset-3 idea-form-image__input__wrap" id= "ideaImageWrap5">
           <p class="idea-form-image__content"><%= f.radio_button :product_image, "相談したい", class: "idea-form-image__input" %>相談したい</p>
         </div>
       </div>
@@ -39,33 +39,17 @@
         <h2 class="col-8 offset-2 idea-form-user__title">使う人を選択してください。複数選択可</h2>
       </div>
       <div class="row col-10 offset-2">
-        <div class="col-2 idea-form-user__input__wrap" id="userWrap1">
-          <%= f.label :idea_user_ids_1 do %>
-            <%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user1
-                .present?, include_hidden: false }, @idea_user1, id: "userInput1" %>
-            <p class="idea-form-user__input__content">&emsp;メンズ&emsp;</p>
-          <% end %>
+        <div class="col-2 idea-form-user__input__wrap" id= "ideaUserWrap1">
+          <p class="idea-form-user__content"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user1.present?, include_hidden: false, class: "idea-form-user__input" }, @idea_user1 %>メンズ</p>
         </div>
-        <div class="col-2 idea-form-user__input__wrap">
-          <%= f.label :idea_user_ids_2 do %>
-            <%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user2
-                .present?, include_hidden: false }, @idea_user2 %>
-            <p class="idea-form-user__input__content">レディース</p>
-          <% end %>
+        <div class="col-2 idea-form-user__input__wrap" id= "ideaUserWrap2">
+          <p class="idea-form-user__content"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user2.present?, include_hidden: false, class: "idea-form-user__input" }, @idea_user2 %>レディース</p>
         </div>
-        <div class="col-2 idea-form-user__input__wrap">
-          <%= f.label :idea_user_ids_3 do %>
-            <%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user3
-                .present?, include_hidden: false }, @idea_user3 %>
-            <p class="idea-form-user__input__content">&emsp;キッズ&emsp;</p>
-          <% end %>
+        <div class="col-2 idea-form-user__input__wrap" id= "ideaUserWrap3">
+          <p class="idea-form-user__content"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user3.present?, include_hidden: false, class: "idea-form-user__input" }, @idea_user3 %>キッズ</p>
         </div>
-        <div class="col-2 idea-form-user__input__wrap">
-          <%= f.label :idea_user_ids_4 do %>
-            <%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user4
-                .present?, include_hidden: false }, @idea_user4 %>
-            <p class="idea-form-user__input__content2">ベビー＆<br>マタニティ</p>
-          <% end %>
+        <div class="col-2 idea-form-user__input__wrap" id= "ideaUserWrap4">
+          <p class="idea-form-user__content2"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user4.present?,  include_hidden: false, class: "idea-form-user__input" }, @idea_user4 %>ベビー＆<br>マタニティ</p>
         </div>
       </div>
     </div>
@@ -73,35 +57,35 @@
     <div class="tab-pane fade idea-form-category" id="ideaCategory" role="tabpanel" aria-labelledby="ideaCategory-tab">
       <h2 class="col-8 offset-2 idea-form-category__title">作るもののカテゴリを選択してください</h2>
       <div class="row col-10">
-        <div class="col-3 offset-2 idea-form-category__content__wrap" id= "ideaCategoryWrap1">
+        <div class="col-3 offset-2 idea-form-category__input__wrap" id= "ideaCategoryWrap1">
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "洋服", class: "idea-form-category__input" %>洋服</p>
         </div>
-        <div class="col-3 idea-form-category__content__wrap2" id= "ideaCategoryWrap2">
+        <div class="col-3 idea-form-category__input__wrap2" id= "ideaCategoryWrap2">
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "和服", class: "idea-form-category__input" %>和服</p>
         </div>
-        <div class="col-3 idea-form-category__content__wrap2" id= "ideaCategoryWrap3">
+        <div class="col-3 idea-form-category__input__wrap2" id= "ideaCategoryWrap3">
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "ドレス・衣装", class: "idea-form-category__input" %>ドレス・衣装</p>
         </div>
       </div>
       <div class="row col-10">
-        <div class="col-3 offset-2 idea-form-category__content__wrap" id= "ideaCategoryWrap4">
+        <div class="col-3 offset-2 idea-form-category__input__wrap" id= "ideaCategoryWrap4">
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "作業服・ユニフォーム", class: "idea-form-category__input" %>作業服・ユニフォーム</p>
         </div>
-        <div class="col-3 idea-form-category__content__wrap2" id= "ideaCategoryWrap5">
+        <div class="col-3 idea-form-category__input__wrap2" id= "ideaCategoryWrap5">
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "バッグ・帽子", class: "idea-form-category__input" %>バッグ・帽子</p>
         </div>
-        <div class="col-3 idea-form-category__content__wrap2" id= "ideaCategoryWrap6">
+        <div class="col-3 idea-form-category__input__wrap2" id= "ideaCategoryWrap6">
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "ジャケット・アウター", class: "idea-form-category__input" %>ジャケット・アウター</p>
         </div>
       </div>
       <div class="row col-10">
-        <div class="col-3 offset-2 idea-form-category__content__wrap" id= "ideaCategoryWrap7">
+        <div class="col-3 offset-2 idea-form-category__input__wrap" id= "ideaCategoryWrap7">
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "小物", class: "idea-form-category__input" %>小物</p>
         </div>
-        <div class="col-3 idea-form-category__content__wrap2" id= "ideaCategoryWrap8">
+        <div class="col-3 idea-form-category__input__wrap2" id= "ideaCategoryWrap8">
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "インテリア", class: "idea-form-category__input" %>インテリア</p>
         </div>
-        <div class="col-3 idea-form-category__content__wrap2" id= "ideaCategoryWrap9">
+        <div class="col-3 idea-form-category__input__wrap2" id= "ideaCategoryWrap9">
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "その他", class: "idea-form-category__input" %>その他</p>
         </div>
       </div>

@@ -153,6 +153,21 @@ $(window).on('turbolinks:load',function() {
     $('#idea_product_image_相談したい').prop('checked', true);
   });
 
+  $(function(){
+    $("#ideaUserWrap1").on("click", function (evt) {
+      $("#idea_idea_user_ids_1").prop("checked", !$("#idea_idea_user_ids_1").prop("checked"));
+    });
+    $("#ideaUserWrap2").on("click", function (evt) {
+      $("#idea_idea_user_ids_2").prop("checked", !$("#idea_idea_user_ids_2").prop("checked"));
+    });
+    $("#ideaUserWrap3").on("click", function (evt) {
+      $("#idea_idea_user_ids_3").prop("checked", !$("#idea_idea_user_ids_3").prop("checked"));
+    });
+    $("#ideaUserWrap4").on("click", function (evt) {
+      $("#idea_idea_user_ids_4").prop("checked", !$("#idea_idea_user_ids_4").prop("checked"));
+    });
+  });
+
   $('#ideaCategoryWrap1').click(function() {
     $('#idea_idea_category_洋服').prop('checked', true);
   });
