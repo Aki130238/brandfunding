@@ -20,6 +20,9 @@
   <% unless idea_comment.id.nil? %>
     <p><%= link_to idea_comment.user.name, user_path(idea_comment.user.id) %></p>
     <p><%= idea_comment.content %></p>
+    <% if idea_comment.user == current_user || @idea.user == current_user %>
+      <p><%= link_to 'コメントを削除する', idea_idea_comment_path(idea_comment.idea_id, idea_comment.id), method: :delete, remote: true %></p>
+    <% end %>
   <% end %>
 <% end %>
 

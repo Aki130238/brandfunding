@@ -7,6 +7,17 @@ class IdeaCommentsController < ApplicationController
     redirect_to idea_path(@idea) if @idea_comment.save
   end
 
+  def destroy
+    @idea = Idea.find(params[:idea_id])
+    @idea_comment = IdeaComment.find(params[:id])
+    if @idea_comment.user == current_user || @idea.user == current_user
+      @idea_comment.destroy
+      redirect_to idea_path(@idea)
+    else
+      redirect_to idea_path(@idea)
+    end
+  end
+
   private
 
   def idea_comment_params
