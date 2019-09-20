@@ -1,16 +1,33 @@
 <h1>アイデアの詳細</h1>
 
-<%= @idea.idea_title %>
-<%= @idea.idea_amount %>
-<%= @idea.idea_about %>
-<%= @idea.idea_usage %>
-<%= @idea.idea_commit %>
-<%= @idea.product_image %>
-<% @idea.idea_user_ids.each do |idea_user_id| %>
-  <label><%= IdeaUser.find_by(id: idea_user_id).name %></label>
-<% end %>
-<%= @idea.idea_category %>
-<%= @idea.idea_category_details %>
-<%= @idea.product_about %>
 
-<%= link_to 'Edit', edit_idea_path(@idea) %>
+<span>完成品のイメージ</span><%= @idea.product_image %><br>
+<span>使う人</span>
+<% @idea.idea_user_ids.each do |idea_user_id| %>
+  <%= IdeaUser.find_by(id: idea_user_id).name %><br>
+<% end %>
+<span>カテゴリ</span> <%= @idea.idea_category %><br>
+<span>素材</span> <%= @idea.idea_category_details %>　<%= @idea.product_about %>
+
+<p>アイデア詳細</p>
+<span>アイデアのタイトル</span> <%= @idea.idea_title %><br>
+<span>アイテムの製作数量</span> <%= @idea.idea_amount %>点<br>
+<span>アイテムの概要と仕様</span> <%= @idea.idea_about %><br>
+<span>用途</span> <%= @idea.idea_usage %><br>
+<span>職人に伝えたいこと</span> <%= @idea.idea_commit %><br>
+
+<% @idea_comments.each do |idea_comment| %>
+  <% unless idea_comment.id.nil? %>
+    <p><%= link_to idea_comment.user.name, user_path(idea_comment.user.id) %></p>
+    <p><%= idea_comment.content %></p>
+  <% end %>
+<% end %>
+
+<%= form_with(model: [@idea, @idea_comment] ) do |f| %>
+  <div>
+    <%= f.text_area :content %>
+  </div>
+  <div>
+    <%= f.submit "コメントする" %>
+  </div>
+<% end %>

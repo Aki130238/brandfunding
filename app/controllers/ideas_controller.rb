@@ -6,6 +6,8 @@ class IdeasController < ApplicationController
   end
 
   def show
+    @idea_comment = IdeaComment.new
+    @idea_comments = @idea.idea_comments
   end
 
   def new
