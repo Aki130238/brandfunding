@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, on: :new
   has_many :comments
   has_many :projects
+  has_many :idea_comments, dependent: :destroy
 end
