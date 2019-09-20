@@ -115,7 +115,18 @@
     </div>
 
     <div class="tab-pane fade idea-form-material" id="ideaMaterial" role="tabpanel" aria-labelledby="ideaMaterial-tab">
-
+      <h2 class="idea-form-material__title">生地や材料のご用意について</h2>
+      <div class="row col-10">
+        <div class="col-3 offset-2 idea-form-category-details__input__wrap" id= "ideaMaterialWrap1">
+          <p class="idea-form-material__content"><%= f.radio_button :idea_category_details, "相談したい", class: "idea-form-material__input" %>相談したい</p>
+        </div>
+        <div class="col-3 idea-form-material__input__wrap2" id= "ideaMaterialWrap2">
+          <p class="idea-form-material__content"><%= f.radio_button :idea_category_details, "すべて用意できる", class: "idea-form-material__input" %>すべて用意できる</p>
+        </div>
+        <div class="col-3 idea-form-material__input__wrap2" id= "ideaMaterialWrap3">
+          <p class="idea-form-material__content"><%= f.radio_button :idea_category_details, "生地のみ", class: "idea-form-material__input" %>生地のみ</p>
+        </div>
+      </div>
     </div>
 
     <div class="tab-pane fade idea-form-details" id="ideaDetails" role="tabpanel" aria-labelledby="ideaDetails-tab">
@@ -131,52 +142,6 @@
 
 <%= form_with(model: @idea, local: true) do |form| %>
 
-  <div class="field">
-    <% %w(着物 浴衣 甚平 その他).each do |idea_category_details| %>
-      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <% %w(ウェディング ダンス 発表会 コスプレ その他).each do |idea_category_details| %>
-      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <% %w(作業着 ショップ用 スポーツ 制服).each do |idea_category_details| %>
-      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <% %w(バッグ(レザー) バッグ(ナイロン・帆布)　トートバッグ・ポーチ 帽子 くつ).each do |idea_category_details| %>
-      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <span>詳細なし</span>
-  </div>
-
-  <div class="field">
-    <% %w(カーテン ベッドリネン クッション ファブリックパネル その他).each do |idea_category_details| %>
-      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <span>詳細なし</span>
-  </div>
-
-  <span>完成品イメージ</span>
-  <span>使う人</span>
-  <span>カテゴリ</span>
-  <span>カテゴリ詳細</span>
-  <span>素材</span>
-  <span>アイデア詳細</span>
-
-  <p>生地や材料のご用意について</p>
 
   <div class="field">
     <% %w(相談したい 全て用意できる 生地のみ).each do |product_about| %>

@@ -212,6 +212,16 @@ $(window).on('turbolinks:load',function() {
     $('#idea_idea_category_details_その他').prop('checked', true);
   });
 
+  $('#ideaMaterialWrap1').click(function() {
+    $('#idea_idea_category_details_相談したい').prop('checked', true);
+  });
+  $('#ideaMaterialWrap2').click(function() {
+    $('#idea_idea_category_details_すべて用意できる').prop('checked', true);
+  });
+  $('#ideaMaterialWrap3').click(function() {
+    $('#idea_idea_category_details_生地のみ').prop('checked', true);
+  });
+
   // $(function(){
   //   if($('#idea_idea_category_その他').prop('checked')) {
   //     $('#ideaCategoryWrap9').css('background','red');
