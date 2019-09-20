@@ -151,5 +151,35 @@
         // visibility: hidden;
       }
     }
+    &-category-details {
+      &__title {
+        margin-bottom: 3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__input__wrap {
+        margin: 1.5rem 0 0 25rem;
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__input__wrap2 {
+        margin: 1.5rem 0rem 0 1.5rem;
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__content {
+        padding: 3.8rem 0 3rem 0;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__input {
+        margin-left: -1.5rem;
+        // visibility: hidden;
+      }
+    }
   }
 }

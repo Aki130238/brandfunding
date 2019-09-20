@@ -184,16 +184,32 @@ $(window).on('turbolinks:load',function() {
     $('#idea_idea_category_バッグ帽子').prop('checked', true);
   });
   $('#ideaCategoryWrap6').click(function() {
-    $('#idea_idea_category_ジャケットアウター').prop('checked', true);
-  });
-  $('#ideaCategoryWrap7').click(function() {
     $('#idea_idea_category_小物').prop('checked', true);
   });
-  $('#ideaCategoryWrap8').click(function() {
+  $('#ideaCategoryWrap7').click(function() {
     $('#idea_idea_category_インテリア').prop('checked', true);
   });
-  $('#ideaCategoryWrap9').click(function() {
+  $('#ideaCategoryWrap8').click(function() {
     $('#idea_idea_category_その他').prop('checked', true);
+  });
+
+  $('#ideaCategoryDetailsWrap1').click(function() {
+    $('#idea_idea_category_details_ジャケットアウター').prop('checked', true);
+  });
+  $('#ideaCategoryDetailsWrap2').click(function() {
+    $('#idea_idea_category_details_トップスシャツ').prop('checked', true);
+  });
+  $('#ideaCategoryDetailsWrap3').click(function() {
+    $('#idea_idea_category_details_ボトムススカート').prop('checked', true);
+  });
+  $('#ideaCategoryDetailsWrap4').click(function() {
+    $('#idea_idea_category_details_ワンピースオーバーオール').prop('checked', true);
+  });
+  $('#ideaCategoryDetailsWrap5').click(function() {
+    $('#idea_idea_category_details_スーツタキシード').prop('checked', true);
+  });
+  $('#ideaCategoryDetailsWrap6').click(function() {
+    $('#idea_idea_category_details_その他').prop('checked', true);
   });
 
   // $(function(){
