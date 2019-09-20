@@ -33,9 +33,11 @@
   }
 
   .idea-form {
-    height: 100%;
     margin: 5rem auto 0 auto;
     color: $color-1;
+    &__content__wrap {
+      margin-bottom: 5rem;
+    }
     &__title-1 {
       margin-top: 1rem;
       padding: .3rem 1rem;
@@ -51,7 +53,7 @@
       display: inline-block;
       width: 100%;
       margin-top: 5rem;
-      padding-bottom: 6rem;
+      padding-bottom: 10rem;
       text-align: center;
     }
     &__button {
@@ -85,7 +87,7 @@
       }
       &__input {
         margin-left: -1.5rem;
-        // visibility: hidden;
+        visibility: hidden;
       }
       &__content {
         padding: 1.8rem 0 1rem 0;
@@ -95,6 +97,9 @@
     }
 
     &-user {
+      .bgIdea {
+        background: $bgcolor-idea;
+      }
       &__title {
         margin-bottom: 3rem;
         font-weight: bold;
@@ -150,7 +155,7 @@
       }
       &__input {
         margin-left: -1.5rem;
-        // visibility: hidden;
+        visibility: hidden;
       }
 
     }
@@ -181,11 +186,12 @@
       }
       &__input {
         margin-left: -1.5rem;
-        // visibility: hidden;
+        visibility: hidden;
       }
 
     }
     &-material {
+      padding-bottom: 3rem;
       &__title {
         margin-bottom: 3rem;
         font-weight: bold;
@@ -212,7 +218,56 @@
       }
       &__input {
         margin-left: -1.5rem;
-        // visibility: hidden;
+        visibility: hidden;
+      }
+    }
+
+    &-idea-details {
+      &__title {
+        margin-bottom: 3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__title1 {
+        margin-top: 1rem;
+        padding: .3rem 1rem;
+        font-weight: bold;
+      }
+      &__title2 {
+        margin: 1rem 0 auto 0;
+        padding: .5rem 1rem;
+        background: $bgcolor-3;
+        color: white;
+      }
+      &__title__wrap, &__input__wrap {
+        margin-bottom: 5rem;
+      }
+      &__input {
+        margin-left: -8rem;
+        padding: 1rem;
+        font-size: 1.5rem;
+      }
+      &__input2 {
+        margin-left: -8rem;
+        padding: 1rem 1rem 8rem 1rem;
+        font-size: 1.5rem;
+        overflow: hidden;
+        resize: none;
+      }
+      &__input3 {
+        margin: 0 0 5rem -8rem;
+        padding: 1rem;
+        border: 1px solid black;
+        font-size: 1.6rem;
+        outline: 0;
+      }
+      &__guide {
+        margin: 0 0 5rem -8rem;
+        font-size: 1.4rem;
+      }
+      &__content {
+        margin-left: -58rem;
+        padding-top: 1rem;
       }
     }
   }
