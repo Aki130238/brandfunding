@@ -39,8 +39,40 @@
       </div>
     </div>
 
-    <div class="tab-pane fade idea-form-use" id="ideaUse" role="tabpanel" aria-labelledby="ideaUse-tab">
-
+    <div class="tab-pane fade idea-form-user" id="ideaUser" role="tabpanel" aria-labelledby="ideaUser-tab">
+      <div class="row">
+        <h2 class="col-8 offset-2 idea-form-user__title">使う人を選択してください。複数選択可</h2>
+      </div>
+      <div class="row col-10 offset-2">
+        <div class="col-2 idea-form-user__input__wrap" id="userWrap1">
+          <%= f.label :idea_user_ids_1 do %>
+            <%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user1
+                .present?, include_hidden: false }, @idea_user1, id: "userInput1" %>
+            <p class="idea-form-user__input__content">&emsp;メンズ&emsp;</p>
+          <% end %>
+        </div>
+        <div class="col-2 idea-form-user__input__wrap">
+          <%= f.label :idea_user_ids_2 do %>
+            <%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user2
+                .present?, include_hidden: false }, @idea_user2 %>
+            <p class="idea-form-user__input__content">レディース</p>
+          <% end %>
+        </div>
+        <div class="col-2 idea-form-user__input__wrap">
+          <%= f.label :idea_user_ids_3 do %>
+            <%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user3
+                .present?, include_hidden: false }, @idea_user3 %>
+            <p class="idea-form-user__input__content">&emsp;キッズ&emsp;</p>
+          <% end %>
+        </div>
+        <div class="col-2 idea-form-user__input__wrap">
+          <%= f.label :idea_user_ids_4 do %>
+            <%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user4
+                .present?, include_hidden: false }, @idea_user4 %>
+            <p class="idea-form-user__input__content2">ベビー＆<br>マタニティ</p>
+          <% end %>
+        </div>
+      </div>
     </div>
 
     <div class="tab-pane fade idea-form-category" id="ideaCategory" role="tabpanel" aria-labelledby="ideaCategory-tab">
@@ -70,27 +102,6 @@
 
 
 
-  <div class="field">
-
-  </div>
-
-
-  <p>使う人を選択してください。複数選択可</p>
-
-  <div class="field">
-    <% IdeaUser.all.each do |idea_user| %>
-      <%= form.check_box :idea_user_ids, { multiple: true, checked: @idea.idea_users.find_by(id: idea_user.id)
-          .present?, include_hidden: false }, idea_user[:id] %>
-      <%= idea_user.name %>
-    <% end %>
-  </div>
-
-  <span>完成品イメージ</span>
-  <span>使う人</span>
-  <span>カテゴリ</span>
-  <span>カテゴリ詳細</span>
-  <span>素材</span>
-  <span>アイデア詳細</span>
 
   <p>作るもののカテゴリを選択してください</p>
 
