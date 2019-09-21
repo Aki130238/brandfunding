@@ -21,22 +21,25 @@ $btncolor-1: #C19A88;
   padding:0;
 }
 
-.form-sign {
-  width: 40%;
-  margin: 0 auto;
-  padding: .8rem;
-  border-radius: 8px;
-  font-size: 1.6rem;
+.center {
+  display: inline-block;
+  text-align: center;
 }
 
-.button-sign {
-  width: 20%;
+.sign-form {
+  margin: 2rem 0;
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.8rem;
+}
+
+.sign-button {
   margin-top: 1rem;
   padding: .8rem;
   border-radius: 8px;
   background: $btncolor-1;
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 .button {

@@ -13,10 +13,10 @@
     }
     &-form {
       &__input {
-        @extend .form-sign;
+        @extend .sign-form;
       }
       &__button {
-        @extend .button-sign;
+        @extend .sign-button;
       }
     }
   }
