@@ -1,0 +1,2 @@
+class ArtisanGenreList < ApplicationRecord
+end
