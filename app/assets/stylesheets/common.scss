@@ -66,11 +66,11 @@ html {
   text-align: center;
 }
 
-.header-1 {
-  padding: 2.5rem 0;
+.header {
+  padding: 2.5rem 0 2.5rem 3rem;
   border-bottom: solid $color-main;
   &__title {
-    padding-left: 5rem;
+    color: $color-1;
   }
   .navbar {
     margin-right: 2rem;
@@ -93,7 +93,7 @@ html {
   }
 }
 
-.footer-1 {
+.footer {
   padding: 2.5rem 0 2rem 0rem;
   background: $bgcolor-footer;
   &__wrap {
