@@ -187,6 +187,15 @@
               Valid last name is required.
             </div>
           </div>
+          
+            <div class="field">
+              <% ArtisanGenreList.all.each do |genreList| %>
+                <%= b.check_box :artisan_genre_ids, { multiple: true, checked: @artisan_profile.artisan_genre_lists.find_by(id: genreList.id)
+                    .present?, include_hidden: false }, genreList[:id] %>
+                <%= genreList.genre_name %>
+              <% end %>
+            </div>
+          
         </div>
 
         <div class="mb-3">
