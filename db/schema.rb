@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_18_060620) do
+ActiveRecord::Schema.define(version: 2019_09_20_031609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,28 @@ ActiveRecord::Schema.define(version: 2019_09_18_060620) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_artisan_profiles_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "idea_id"
+    t.index ["idea_id"], name: "index_comments_on_idea_id"
+    t.index ["project_id"], name: "index_comments_on_project_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "idea_comments", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "idea_id"
+    t.bigint "user_id"
+    t.index ["idea_id"], name: "index_idea_comments_on_idea_id"
+    t.index ["user_id"], name: "index_idea_comments_on_user_id"
   end
 
   create_table "idea_users", force: :cascade do |t|
@@ -174,6 +196,11 @@ ActiveRecord::Schema.define(version: 2019_09_18_060620) do
   end
 
   add_foreign_key "artisan_profiles", "users"
+  add_foreign_key "comments", "ideas"
+  add_foreign_key "comments", "projects"
+  add_foreign_key "comments", "users"
+  add_foreign_key "idea_comments", "ideas"
+  add_foreign_key "idea_comments", "users"
   add_foreign_key "project_abouts", "projects"
   add_foreign_key "project_ideas", "projects"
   add_foreign_key "project_images", "projects"

@@ -11,13 +11,13 @@ class ProjectsController < ApplicationController
     @project.build_project_idea
     @project.build_project_image
     @project.build_project_report
-    @project.build_project_return
+    @project.project_return.build
     @project.build_project_sponsor
     @project.build_project_value
   end
 
   def create
-    @project = Project.new(project_params)
+    @project = current_user.projects.build(project_params)
     if @project.save
       redirect_to root_path
     else
@@ -27,6 +27,9 @@ class ProjectsController < ApplicationController
 
   
   def show
+    @comments = @project.comments
+    @comment = Comment.new
+    @project_return = ProjectReturn.new
   end
 
   def edit

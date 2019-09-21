@@ -64,4 +64,23 @@
     <p class="col-2 show-idea-list__title2">職人へ伝えたいこと</p>
     <p class="col-7 show-idea-list__content6"><%= @idea.idea_commit %></p>
   </div><br>
+<% @idea_comments.each do |idea_comment| %>
+  <% unless idea_comment.id.nil? %>
+    <p><%= link_to idea_comment.user.name, user_path(idea_comment.user.id) %></p>
+    <p><%= idea_comment.content %></p>
+    <% if idea_comment.user == current_user || @idea.user == current_user %>
+      <p><%= link_to 'コメントを削除する', idea_idea_comment_path(idea_comment.idea_id, idea_comment.id), method: :delete, remote: true %></p>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= form_with(model: [@idea, @idea_comment] ) do |f| %>
+  <div>
+    <%= f.text_area :content %>
+  </div>
+  <div>
+    <%= f.submit "コメントする" %>
+  </div>
+<% end %>
+
 </main>
