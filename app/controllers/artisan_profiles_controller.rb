@@ -79,7 +79,7 @@ class ArtisanProfilesController < ApplicationController
       user_profile_attributes:[
         :id,
         :user_id,
-        :family_name, 
+        :family_name,
         :family_name_sub,
         :last_name,
         :last_name_sub,
@@ -99,7 +99,7 @@ class ArtisanProfilesController < ApplicationController
         :skill,
         :skill_free,
         :skill_exp,
-        :genre,
+        
         :genre_free,
         :item,
         :item_free,
@@ -108,7 +108,8 @@ class ArtisanProfilesController < ApplicationController
         :workexp_text,
         :mypr,
         :myprofile,
-        :work_status
+        :work_status,
+        artisan_genre_ids: []
       ]
     )
   end
