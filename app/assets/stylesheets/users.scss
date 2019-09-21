@@ -2,18 +2,17 @@
   height: 100%;
   background: $bgcolor-1;
   .signup {
-    display: inline-block;
-    width: 100%;
-    margin: 10rem auto;
-    text-align: center;
     &__title {
-      margin-bottom: 3rem;
+      margin: 0 auto 3rem auto;
+      padding-top: 5rem;
       color: $color-1;
       font-weight: bold;
     }
     &__list {
-      margin-bottom: 3rem;
+      margin: 0 auto 3rem auto;
+      padding-left: 12rem;
       color: $color-error;
+      list-style: none;
       &__icon {
         width: 2rem;
         margin: 2rem 0 0 -6rem;
@@ -21,20 +20,30 @@
       }
     }
     &-form {
+      &__wrap {
+        margin: 0 auto;
+      }
       &__input {
-        @extend .form-sign;
+        @extend .sign-form;
       }
       &__about {
-        margin-top: 4rem;
+        margin: 5rem auto 1rem auto;
         color: $color-1;
         font-size: 1.6rem;
+        text-align: center;
       }
       &__privacy {
+        margin: 0 auto 1rem auto;
         color: $color-1;
         font-size: 1.3rem;
+        text-align: center;
+      }
+      &__button__wrap {
+        margin: 0 auto;
+        padding-bottom: 8rem;
       }
       &__button {
-        @extend .button-sign;
+        @extend .sign-button;
       }
     }
   }
