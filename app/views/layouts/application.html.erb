@@ -10,9 +10,9 @@
   </head>
 
   <body>
-    <header class="header-1">
+    <header class="header">
       <nav class="navbar navbar-expand-sm">
-        <h1><%= link_to 'BRANDFUNDING', root_path, class: "header-1__navlink header-1__title" %></h1>
+        <h1><%= link_to "BRANDFUNDING", root_path, class: "header__title" %></h1>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,12 +21,12 @@
           </ul>
           <ul class="nav navbar-nav">
             <% if logged_in? %>
-              <li><%= link_to "プロフィール", user_path(current_user.id), class: "header-1__navlink" %></li>
-              <li><%= link_to "職人情報", artisan_profile_path(current_user.id), class: "header-1__navlink" %></li>
-              <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete, class: "header-1__navlink" %></li>
+              <li><%= link_to "プロフィール", user_path(current_user.id), class: "header__navlink" %></li>
+              <li><%= link_to "職人情報", artisan_profile_path(current_user.id), class: "header__navlink" %></li>
+              <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete, class: "header__navlink" %></li>
             <% else %>
-              <li><%= link_to "ユーザー登録", new_user_path, class: "header-1__navlink" %></li>
-              <li><%= link_to "ログイン", new_session_path, class: "header-1__navlink" %></li>
+              <li><%= link_to "ユーザー登録", new_user_path, class: "header__navlink" %></li>
+              <li><%= link_to "ログイン", new_session_path, class: "header__navlink" %></li>
             <% end %>
           </ul>
         </div>
@@ -36,15 +36,15 @@
 
     <%= yield %>
 
-    <footer class="container-fluid footer-1">
-      <div class="row footer-1__wrap">
-        <h2 class="col-3"><%= link_to "BRAND FUNDING", root_path, class: "footer-1__title" %></h2>
-        <div class="footer-1__column__wrap">
-          <span class="col-2 footer-1__column">ご利用規約&ensp;</span>
-          <span class="footer-1__column">|&ensp;</span>
-          <span class="col-2 footer-1__column">プライバシーポリシー&ensp;</span>
-          <span class="footer-1__column">|&ensp;</span>
-          <span class="col2 footer-1__column">運営会社</span>
+    <footer class="container-fluid footer">
+      <div class="row footer__wrap">
+        <h1 class="col-12 col-5 col-lg-4 col-xl-3 footer__title__wrap"><%= link_to "BRAND FUNDING", root_path, class: "footer__title" %></h1>
+        <div class="d-flex col-12 col-lg-6 footer__column__wrap">
+          <p class="footer__column">ご利用規約</p>
+          <p class="footer__column2">|</p>
+          <p class="footer__column2">プライバシーポリシー</p>
+          <p class="footer__column2">|</p>
+          <p class="footer__column2">運営会社</p>
         </div>
       </div>
     </footer>
