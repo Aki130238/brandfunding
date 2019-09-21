@@ -1,3 +1,365 @@
-// Place all the styles related to the ideas controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.new-idea-page {
+  width: 100%;
+  &__title {
+    display: inline-block;
+    width: 100%;
+    padding: 2.5rem 0;
+    background: $bgcolor-idea;
+    color: $color-1;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__menu {
+    margin-top: 3rem;
+    &__list {
+      border: 1px solid black;
+    }
+    &__list-2 {
+      border: 1px solid black;
+      border-left: none;
+    }
+    &__link {
+      padding: 1.5rem 3.6rem;
+      color: $color-1;
+      font-weight: bold;
+    }
+    &__link:hover {
+      color: $color-1;
+    }
+    .nav-link.active {
+      background: $bgcolor-idea;
+      color: black;
+    }
+  }
+
+  .idea-form {
+    margin: 5rem auto 0 auto;
+    color: $color-1;
+    &__content__wrap {
+      margin-bottom: 5rem;
+    }
+    &__title-1 {
+      margin-top: 1rem;
+      padding: .3rem 1rem;
+      font-weight: bold;
+    }
+    &__title-2 {
+      margin: 1rem 0 auto 0;
+      padding: .5rem 1rem;
+      background: $bgcolor-3;
+      color: $color-1;
+    }
+    &__button_wrap {
+      display: inline-block;
+      width: 100%;
+      margin-top: 5rem;
+      padding-bottom: 10rem;
+      text-align: center;
+    }
+    &__button {
+      padding: 1.5rem 7rem;
+      border: 1px solid black;
+    }
+    &__button-2 {
+      margin-left: 1.5rem;
+      padding: 1.5rem 5rem;
+      border: 1px solid black;
+    }
+    &-image {
+      &__title {
+        margin-bottom: 3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__input__wrap {
+        margin: 1.5rem 0 0 27rem;
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__input__wrap2 {
+        margin: 1.5rem 0 0 1.5rem;
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__input {
+        margin-left: -1.5rem;
+        visibility: hidden;
+      }
+      &__content {
+        padding: 1.8rem 0 1rem 0;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+    }
+
+    &-user {
+      .bgIdea {
+        background: $bgcolor-idea;
+      }
+      &__title {
+        margin-bottom: 3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__input__wrap {
+        margin-left: 2.5rem;
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__content {
+        padding: 7.8rem 0 5rem 0;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__content2 {
+        padding: 6.8rem 0 5rem 0;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__input {
+        margin-left: -1.5rem;
+        // visibility: hidden;
+      }
+
+    }
+    &-category {
+      &__title {
+        margin-bottom: 3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__input__wrap {
+        margin: 1.5rem 0 0 25rem;
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__input__wrap2 {
+        margin: 1.5rem 0rem 0 1.5rem;
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__content {
+        padding: 3.8rem 0 3rem 0;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__input {
+        margin-left: -1.5rem;
+        visibility: hidden;
+      }
+
+    }
+    &-category-details {
+      &__title {
+        margin-bottom: 3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__input__wrap {
+        margin: 1.5rem 0 0 25rem;
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__input__wrap2 {
+        margin: 1.5rem 0rem 0 1.5rem;
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__content {
+        padding: 3.8rem 0 3rem 0;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__input {
+        margin-left: -1.5rem;
+        visibility: hidden;
+      }
+
+    }
+    &-material {
+      padding-bottom: 3rem;
+      &__title {
+        margin-bottom: 3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__input__wrap {
+        margin: 1.5rem 0 0 25rem;
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__input__wrap2 {
+        margin: 1.5rem 0rem 0 1.5rem;
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__content {
+        padding: 3.8rem 0 3rem 0;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__input {
+        margin-left: -1.5rem;
+        visibility: hidden;
+      }
+    }
+
+    &-idea-details {
+      &__title {
+        margin-bottom: 3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__title1 {
+        margin-top: 1rem;
+        padding: .3rem 1rem;
+        font-weight: bold;
+      }
+      &__title2 {
+        margin: 1rem 0 auto 0;
+        padding: .5rem 1rem;
+        background: $bgcolor-3;
+        color: white;
+      }
+      &__title__wrap, &__input__wrap {
+        margin-bottom: 5rem;
+      }
+      &__input {
+        margin-left: -8rem;
+        padding: 1rem;
+        font-size: 1.5rem;
+      }
+      &__input2 {
+        margin-left: -8rem;
+        padding: 1rem 1rem 8rem 1rem;
+        font-size: 1.5rem;
+        overflow: hidden;
+        resize: none;
+      }
+      &__input3 {
+        margin: 0 0 5rem -8rem;
+        padding: 1rem;
+        border: 1px solid black;
+        font-size: 1.6rem;
+        outline: 0;
+      }
+      &__guide {
+        margin: 0 0 5rem -8rem;
+        font-size: 1.4rem;
+      }
+      &__content {
+        margin-left: -58rem;
+        padding-top: 1rem;
+      }
+    }
+  }
+}
+
+.show-idea-page {
+  width: 100%;
+  &__title {
+    display: inline-block;
+    width: 100%;
+    margin:0;
+    padding: 2.5rem 0;
+    background: $bgcolor-idea;
+    color: $color-1;
+    font-weight: bold;
+    text-align: center;
+  }
+  .show-idea-overview {
+    margin: 0 0 5rem 12rem;
+    background: $bgcolor-1;
+    &__wrap {
+      margin-left: 3rem;
+    }
+    &__title{
+      padding: 3rem 0 1rem 0;
+      font-weight: bold;
+    }
+    &__title2 {
+      margin: 7rem 44rem 1.5rem 2rem;
+      padding: .5rem 1.5rem .5rem 2rem;
+      border-radius: 20px;
+      background: $bgcolor-idea;
+      color: $color-1;
+      font-weight: bold;
+    }
+    &__image {
+      padding: 13rem 0;
+      border: 1px solid black;
+    }
+    &__content {
+      margin-left: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px double black;
+      color: $color-1;
+    }
+  }
+
+  .show-idea-list {
+    margin-bottom: 1rem;
+    color: $color-1;
+    &__title {
+      padding: 1rem 0;
+      background: $bgcolor-idea;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__title2 {
+      padding: 1rem 0;
+      font-weight: bold;
+      text-align: right;
+    }
+    &__content {
+      margin-left: 3rem;
+      padding: 1rem 0 1rem 1rem;
+      border-bottom: 1px double black;
+      font-weight: bold;
+    }
+    &__content2 {
+      margin-right: 5rem;
+    }
+    &__content3 {
+      margin-left: 2rem;
+      padding: 1rem 0 0 2rem;
+      background: $bgcolor-4;
+    }
+    &__content4 {
+      margin-left: 2rem;
+      padding-top: 1rem;
+      background: $bgcolor-4;
+      text-align: center;
+    }
+    &__content5 {
+      margin-left: 2rem;
+      padding-top:1rem;
+    }
+    &__content6 {
+      margin-left: 2rem;
+      padding: 1rem 0 10rem 2rem;
+      background: $bgcolor-4;
+    }
+    &__wrap {
+      margin-bottom: 3rem;
+    }
+  }
+}

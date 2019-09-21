@@ -1,157 +1,190 @@
-<%= form_with(model: @idea, local: true) do |form| %>
+<main class="container-fluid new-idea-page">
+  <div class="row">
+    <h1 class="col-12 new-idea-page__title">アイディア<%= idea_title %></h1>
+  </div>
 
-  <span>完成品イメージ</span>
-  <span>使う人</span>
-  <span>カテゴリ</span>
-  <span>カテゴリ詳細</span>
-  <span>素材</span>
-  <span>アイデア詳細</span>
+  <%= render "navbar" %>
 
-  <p>完成品のイメージを職人さんに伝える方法を選んでください</p>
+  <section class="tab-content idea-form">
+    <div class="tab-pane fade show active idea-form-image" id="ideaImage" role="tabpanel" aria-labelledby="ideaImage-tab">
+    <%= form_with(model: @idea, local: true) do |f| %>
+      <div class="row">
+        <h2 class="col-8 offset-2 idea-form-image__title">完成品のイメージを職人さんに伝える方法を選んでください</h2>
+      </div>
+      <div class="row col-11">
+        <div class="col-4 offset-3 idea-form-image__input__wrap" id= "ideaImageWrap1">
+          <p class="idea-form-image__content"><%= f.radio_button :product_image, "似た物がある", class: "idea-form-image__input" %>似た物がある</p>
+        </div>
+        <div class="col-4 idea-form-image__input__wrap2" id= "ideaImageWrap2">
+          <p class="idea-form-image__content"><%= f.radio_button :product_image, "写真や絵がある", class: "idea-form-image__input" %>写真や絵がある</p>
+        </div>
+      </div>
+      <div class="row col-11">
+        <div class="col-4 offset-3 idea-form-image__input__wrap" id= "ideaImageWrap3">
+          <p class="idea-form-image__content"><%= f.radio_button :product_image, "型紙がある", class: "idea-form-image__input" %>型紙がある</p>
+        </div>
+        <div class="col-4 idea-form-image__input__wrap2" id= "ideaImageWrap4">
+          <p class="idea-form-image__content"><%= f.radio_button :product_image, "リメイクお直し", class: "idea-form-image__input" %>リメイクお直し</p>
+        </div>
+      </div>
+      <div class="row col-11 idea-form__content__wrap">
+        <div class="col-4 offset-3 idea-form-image__input__wrap" id= "ideaImageWrap5">
+          <p class="idea-form-image__content"><%= f.radio_button :product_image, "相談したい", class: "idea-form-image__input" %>相談したい</p>
+        </div>
+      </div>
+    </div>
 
-  <div class="field">
-    <% %w(似た物がある 写真や絵がある 型紙がある リメイクお直し 相談したい).each do |product_image| %>
-      <%= form.radio_button :product_image, product_image %><%= product_image %>
+    <div class="tab-pane fade idea-form-user" id="ideaUser" role="tabpanel" aria-labelledby="ideaUser-tab">
+      <div class="row">
+        <h2 class="col-8 offset-2 idea-form-user__title">使う人を選択してください。複数選択可</h2>
+      </div>
+      <div class="row col-10 offset-2 idea-form__content__wrap">
+        <div class="col-2 idea-form-user__input__wrap" id= "ideaUserWrap1">
+          <p class="idea-form-user__content"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user1.present?, include_hidden: false, class: "idea-form-user__input" }, @idea_user1 %>メンズ</p>
+        </div>
+        <div class="col-2 idea-form-user__input__wrap" id= "ideaUserWrap2">
+          <p class="idea-form-user__content"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user2.present?, include_hidden: false, class: "idea-form-user__input" }, @idea_user2 %>レディース</p>
+        </div>
+        <div class="col-2 idea-form-user__input__wrap" id= "ideaUserWrap3">
+          <p class="idea-form-user__content"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user3.present?, include_hidden: false, class: "idea-form-user__input" }, @idea_user3 %>キッズ</p>
+        </div>
+        <div class="col-2 idea-form-user__input__wrap" id= "ideaUserWrap4">
+          <p class="idea-form-user__content2"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user4.present?,  include_hidden: false, class: "idea-form-user__input" }, @idea_user4 %>ベビー＆<br>マタニティ</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade idea-form-category" id="ideaCategory" role="tabpanel" aria-labelledby="ideaCategory-tab">
+      <h2 class="col-8 offset-2 idea-form-category__title">作るもののカテゴリを選択してください</h2>
+      <div class="row col-10">
+        <div class="col-3 offset-2 idea-form-category__input__wrap" id= "ideaCategoryWrap1">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "洋服", class: "idea-form-category__input" %>洋服</p>
+        </div>
+        <div class="col-3 idea-form-category__input__wrap2" id= "ideaCategoryWrap2">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "和服", class: "idea-form-category__input" %>和服</p>
+        </div>
+        <div class="col-3 idea-form-category__input__wrap2" id= "ideaCategoryWrap3">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "ドレス・衣装", class: "idea-form-category__input" %>ドレス・衣装</p>
+        </div>
+      </div>
+      <div class="row col-10">
+        <div class="col-3 offset-2 idea-form-category__input__wrap" id= "ideaCategoryWrap4">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "作業服・ユニフォーム", class: "idea-form-category__input" %>作業服・ユニフォーム</p>
+        </div>
+        <div class="col-3 idea-form-category__input__wrap2" id= "ideaCategoryWrap5">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "バッグ・帽子", class: "idea-form-category__input" %>バッグ・帽子</p>
+        </div>
+        <div class="col-3 offset-2 idea-form-category__input__wrap2" id= "ideaCategoryWrap6">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "小物", class: "idea-form-category__input" %>小物</p>
+        </div>
+      </div>
+      <div class="row col-10 idea-form__content__wrap">
+        <div class="col-3 idea-form-category__input__wrap" id= "ideaCategoryWrap7">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "インテリア", class: "idea-form-category__input" %>インテリア</p>
+        </div>
+        <div class="col-3 idea-form-category__input__wrap2" id= "ideaCategoryWrap8">
+          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "その他", class: "idea-form-category__input" %>その他</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade idea-form-category-details" id="ideaCategoryDetails" role="tabpanel" aria-labelledby="ideaCategoryDetails-tab">
+      <h2 class="col-8 offset-2 idea-form-category-details__title">カテゴリの詳細を選択してください</h2>
+      <div class="row col-10">
+        <div class="col-3 offset-2 idea-form-category-details__input__wrap" id= "ideaCategoryDetailsWrap1">
+          <p class="idea-form-category-details__content"><%= f.radio_button :idea_category_details, "ジャケット・アウター", class: "idea-form-category-details__input" %>ジャケット・アウター</p>
+        </div>
+        <div class="col-3 idea-form-category-details__input__wrap2" id= "ideaCategoryDetailsWrap2">
+          <p class="idea-form-category-details__content"><%= f.radio_button :idea_category_details, "トップス・シャツ", class: "idea-form-category-details__input" %>トップス・シャツ</p>
+        </div>
+        <div class="col-3 idea-form-category-details__input__wrap2" id= "ideaCategoryDetailsWrap3">
+          <p class="idea-form-category-details__content"><%= f.radio_button :idea_category_details, "ボトムス・スカート", class: "idea-form-category-details__input" %>ボトムス・スカート</p>
+        </div>
+      </div>
+      <div class="row col-10 idea-form__content__wrap">
+        <div class="col-3 offset-2 idea-form-category-details__input__wrap" id= "ideaCategoryDetailsWrap4">
+          <p class="idea-form-category-details__content"><%= f.radio_button :idea_category_details, "ワンピース・オーバーオール", class: "idea-form-category-details__input" %>ワンピース・オーバーオール</p>
+        </div>
+        <div class="col-3 idea-form-category-details__input__wrap2" id= "ideaCategoryDetailsWrap5">
+          <p class="idea-form-category-details__content"><%= f.radio_button :idea_category_details, "スーツ・タキシード", class: "idea-form-category-details__input" %>スーツ・タキシード</p>
+        </div>
+        <div class="col-3 idea-form-category-details__input__wrap2" id= "ideaCategoryDetailsWrap6">
+          <p class="idea-form-category-details__content"><%= f.radio_button :idea_category_details, "その他", class: "idea-form-category-details__input" %>その他</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade idea-form-material" id="ideaMaterial" role="tabpanel" aria-labelledby="ideaMaterial-tab">
+      <h2 class="idea-form-material__title">生地や材料のご用意について</h2>
+      <div class="row col-10 idea-form__content__wrap">
+        <div class="col-3 offset-2 idea-form-category-details__input__wrap" id= "ideaMaterialWrap1">
+          <p class="idea-form-material__content"><%= f.radio_button :a, "相談したい", class: "idea-form-material__input" %>相談したい</p>
+        </div>
+        <div class="col-3 idea-form-material__input__wrap2" id= "ideaMaterialWrap2">
+          <p class="idea-form-material__content"><%= f.radio_button :a, "すべて用意できる", class: "idea-form-material__input" %>すべて用意できる</p>
+        </div>
+        <div class="col-3 idea-form-material__input__wrap2" id= "ideaMaterialWrap3">
+          <p class="idea-form-material__content"><%= f.radio_button :a, "生地のみ", class: "idea-form-material__input" %>生地のみ</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade idea-form-idea-details" id="ideaDetails" role="tabpanel" aria-labelledby="ideaDetails-tab">
+      <h2 class="idea-form-idea-details__title">作るものに関するくわしい情報を職人さんに伝えましょう</h2>
+      <div class="row">
+        <div class="col-3 offset-2 d-flex idea-form-idea-details__title__wrap">
+          <h3 class="idea-form-idea-details__title1">アイディアのタイトル</h3>
+          <h4 class="idea-form-idea-details__title2">必須</h4>
+        </div>
+        <div class="col-6 idea-form-idea-details__input__wrap">
+          <p><%= f.text_field :idea_title, class: "col-11 form-control idea-form-idea-details__input", placeholder: "どんなものを作りたいのかタイトルでわかるようにしましょう" %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 offset-2 d-flex idea-form-idea-details__title__wrap">
+          <h3 class="idea-form-idea-details__title1">&emsp;&emsp;アイテム製作数量</h3>
+          <h4 class="idea-form-idea-details__title2">必須</h4>
+        </div>
+        <div class="col-6 idea-form-idea-details__input__wrap">
+          <p><%= f.number_field :idea_amount, class: "col-11 form-control idea-form-idea-details__input", placeholder: "数値を入力" %></p>
+          <p class="idea-form-idea-details__guide">最低製作数量を伝えて必要な予算を確定させましょう。職人さんへの製作意欲につながります。</p>
+        </div>
+        <div class="col-1 idea-form-idea-details__content idea-form-idea-details__input__wrap">
+          <p>点</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 offset-2 d-flex idea-form-idea-details__title__wrap">
+          <h3 class="idea-form-idea-details__title1">アイテムの概要と仕様</h3>
+          <h4 class="idea-form-idea-details__title2">必須</h4>
+        </div>
+        <div class="col-6 idea-form-idea-details__input__wrap">
+          <p><%= f.text_area :idea_about, class: "col-11 form-control idea-form-idea-details__input2", placeholder: "型数、色数、利用生地、仕様など。できるだけ細かい内容を伝えるようにしましょう。" %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 offset-2 d-flex idea-form-idea-details__title__wrap">
+          <h3 class="idea-form-idea-details__title1">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;用途</h3>
+          <h4 class="idea-form-idea-details__title2">必須</h4>
+        </div>
+        <div class="col-6 idea-form-idea-details__input__wrap">
+          <p><%= f.select :idea_usage, [["用途を選択",""], ["販売・お店ユニフォーム", "販売・お店ユニフォーム"], ["個人利用", "ギフト"], ["サンプル", "お教室衣装"]], {}, {class: "col-5 idea-form-idea-details__input3"} %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 offset-2 d-flex idea-form-idea-details__title__wrap">
+          <h3 class="idea-form-idea-details__title1">職人へ伝えたいこと</h3>
+          <h4 class="idea-form-idea-details__title2">必須</h4>
+        </div>
+        <div class="col-6 idea-form-idea-details__input__wrap">
+          <p><%= f.text_area :idea_commit, class: "col-11 form-control idea-form-idea-details__input2", placeholder: "作るものへのこだわり、設備の希望など" %></p>
+        </div>
+      </div>
+    </div>
+    <div class="idea-form__button_wrap">
+      <%= f.submit "保存", class: "idea-form__button" %>
+      <%= f.submit "プレビュー", class: "idea-form__button-2" %>
+    </div>
     <% end %>
-  </div>
-
-  <span>完成品イメージ</span>
-  <span>使う人</span>
-  <span>カテゴリ</span>
-  <span>カテゴリ詳細</span>
-  <span>素材</span>
-  <span>アイデア詳細</span>
-
-  <p>使う人を選択してください。複数選択可</p>
-
-  <div class="field">
-    <% IdeaUser.all.each do |idea_user| %>
-      <%= form.check_box :idea_user_ids, { multiple: true, checked: @idea.idea_users.find_by(id: idea_user.id)
-          .present?, include_hidden: false }, idea_user[:id] %>
-      <%= idea_user.name %>
-    <% end %>
-  </div>
-
-  <span>完成品イメージ</span>
-  <span>使う人</span>
-  <span>カテゴリ</span>
-  <span>カテゴリ詳細</span>
-  <span>素材</span>
-  <span>アイデア詳細</span>
-
-  <p>作るもののカテゴリを選択してください</p>
-
-  <div class="field">
-    <% %w(洋服 和服 ドレス・衣装 作業服・ユニフォーム バッグ・帽子 小物 インテリア その他).each do |idea_category| %>
-      <%= form.radio_button :idea_category, idea_category %><%= idea_category %>
-    <% end %>
-  </div>
-
-  <span>完成品イメージ</span>
-  <span>使う人</span>
-  <span>カテゴリ</span>
-  <span>カテゴリ詳細</span>
-  <span>素材</span>
-  <span>アイデア詳細</span>
-
-  <p>カテゴリの詳細を選択してください</p>
-
-  <div class="field">
-    <% %w(ジャケット・アウター トップス・シャツ ボトムス・スカート ワンピース・オーバーオール スーツ・タキシード その他).each do |idea_category_details| %>
-      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <% %w(着物 浴衣 甚平 その他).each do |idea_category_details| %>
-      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <% %w(ウェディング ダンス 発表会 コスプレ その他).each do |idea_category_details| %>
-      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <% %w(作業着 ショップ用 スポーツ 制服).each do |idea_category_details| %>
-      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <% %w(バッグ(レザー) バッグ(ナイロン・帆布)　トートバッグ・ポーチ 帽子 くつ).each do |idea_category_details| %>
-      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <span>詳細なし</span>
-  </div>
-
-  <div class="field">
-    <% %w(カーテン ベッドリネン クッション ファブリックパネル その他).each do |idea_category_details| %>
-      <%= form.radio_button :idea_category_details, idea_category_details %><%= idea_category_details %>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <span>詳細なし</span>
-  </div>
-
-  <span>完成品イメージ</span>
-  <span>使う人</span>
-  <span>カテゴリ</span>
-  <span>カテゴリ詳細</span>
-  <span>素材</span>
-  <span>アイデア詳細</span>
-
-  <p>生地や材料のご用意について</p>
-
-  <div class="field">
-    <% %w(相談したい 全て用意できる 生地のみ).each do |product_about| %>
-      <%= form.radio_button :product_about, product_about %><%= product_about %>
-    <% end %>
-  </div>
-
-  <span>完成品イメージ</span>
-  <span>使う人</span>
-  <span>カテゴリ</span>
-  <span>カテゴリ詳細</span>
-  <span>素材</span>
-  <span>アイデア詳細</span>
-
-  <p>作るものに関するくわしい情報を職人さんに伝えましょう</p>
-
-  <div class="field">
-    <span>アイディアのタイトル</span> <span>必須</span>
-    <%= form.text_field :idea_title, placeholder: "どんなものを作りたいかタイトルでわかるようにしましょう" %>
-  </div>
-
-  <div class="field">
-    <span>アイテムの製作数量</span> <span>必須</span>
-    <%= form.number_field :idea_amount, placeholder: "数値を入力" %> 点<br>
-    <span><small>最低製作数量を伝えて必要な予算を確定させましょう。職人さんへの製作意欲につながります。</small></span>
-  </div>
-
-  <div class="field">
-    <span>アイテムの概要と仕様</span> <span>必須</span>
-    <%= form.text_area :idea_about, placeholder: "型数、色数、利用生地、仕様など。できるだけ細かい内容を伝えるようにしましょう。" %>
-  </div>
-
-  <div class="field">
-    <span>用途</span> <span>必須</span>
-    <%= form.select :idea_usage, [["販売・お店ユニフォーム", "販売・お店ユニフォーム"], ["個人利用", "ギフト"], ["サンプル", "お教室衣装"]], prompt:
-        '用途を選択' %>
-  </div>
-
-  <div class="field">
-    <span>職人へ伝えたいこと</span> <span>必須</span>
-    <%= form.text_area :idea_commit, placeholder: "作るものへのこだわり、設備の希望など"%>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  </section>
+</main>

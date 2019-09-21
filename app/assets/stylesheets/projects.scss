@@ -4,8 +4,9 @@
     display: inline-block;
     width: 100%;
     padding: 2.5rem 0;
-    background: $bgcolor-4;
+    background: $bgcolor-project;
     color: white;
+    font-weight: bold;
     text-align: center;
   }
   &__menu {
@@ -20,12 +21,13 @@
     &__link {
       padding: 1.5rem 4.5rem;
       color: $color-1;
+      font-weight: bold;
     }
     &__link:hover {
       color: $color-1;
     }
     .nav-link.active {
-      background: $bgcolor-4;
+      background: $bgcolor-project;
       color: white;
     }
   }
@@ -176,6 +178,7 @@
       }
     }
     &-idea {
+      padding-bottom: 20rem;
       &__input {
         padding: 2rem 1rem;
       }

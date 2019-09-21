@@ -12,9 +12,17 @@ class IdeasController < ApplicationController
 
   def new
     @idea = Idea.new
+    @idea_user1 = IdeaUser.find(1).id
+    @idea_user2 = IdeaUser.find(2).id
+    @idea_user3 = IdeaUser.find(3).id
+    @idea_user4 = IdeaUser.find(4).id
   end
 
   def edit
+    @idea_user1 = IdeaUser.find(1).id
+    @idea_user2 = IdeaUser.find(2).id
+    @idea_user3 = IdeaUser.find(3).id
+    @idea_user4 = IdeaUser.find(4).id
   end
 
   def create

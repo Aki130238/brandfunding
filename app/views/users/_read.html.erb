@@ -14,7 +14,7 @@
           <div class="collapse" id="collapseExample1">
             <div class="card card-body">
               <p class="menu__list"><%= link_to "プロジェクト新規作成", new_project_path, class: "menu__link" %></p>
-              <p class="menu__list">プロジェクト一覧</p>
+              <p class="menu__list"><%= link_to "プロジェクト一覧", projects_path, class: "menu__link" %></p>
             </div>
           </div>
         </li>
@@ -26,8 +26,8 @@
           </div>
           <div class="collapse" id="collapseExample2">
             <div class="card card-body">
-              <p class="menu__list">ここにコンテンツ</p>
-              <p class="menu__list">ここにコンテンツ</p>
+              <p class="menu__list"><%= link_to "アイディア新規作成", new_idea_path, class: "menu__link" %></p>
+              <p class="menu__list"><%= link_to "アイディア一覧", ideas_path, class: "menu__link" %></p>
             </div>
           </div>
         </li>
@@ -39,8 +39,8 @@
           </div>
           <div class="collapse" id="collapseExample3">
             <div class="card card-body">
-              <p class="menu__list">ここにコンテンツ</p>
-              <p class="menu__list">ここにコンテンツ</p>
+              <p class="menu__list">スポンサー</p>
+              <p class="menu__list">スポンサー</p>
             </div>
           </div>
         </li>

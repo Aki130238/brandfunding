@@ -1,21 +1,69 @@
-<h1>アイデアの詳細</h1>
-
-
-<span>完成品のイメージ</span><%= @idea.product_image %><br>
-<span>使う人</span>
-<% @idea.idea_user_ids.each do |idea_user_id| %>
-  <%= IdeaUser.find_by(id: idea_user_id).name %><br>
-<% end %>
-<span>カテゴリ</span> <%= @idea.idea_category %><br>
-<span>素材</span> <%= @idea.idea_category_details %>　<%= @idea.product_about %>
-
-<p>アイデア詳細</p>
-<span>アイデアのタイトル</span> <%= @idea.idea_title %><br>
-<span>アイテムの製作数量</span> <%= @idea.idea_amount %>点<br>
-<span>アイテムの概要と仕様</span> <%= @idea.idea_about %><br>
-<span>用途</span> <%= @idea.idea_usage %><br>
-<span>職人に伝えたいこと</span> <%= @idea.idea_commit %><br>
-
+<main class="container-fluid show-idea-page">
+  <div class="row">
+    <h1 class="col-12 show-idea-page__title">アイディア詳細</h1>
+  </div>
+  <div class="row col-10 show-idea-overview">
+    <div class="col-5 offset-1 show-idea-overview__wrap">
+      <h2 class="show-idea-overview__title">フラダンス衣装</h2>
+      <p class="show-idea-overview__image">&emsp;</p>
+    </div>
+    <div class="col-6">
+      <h3 class="show-idea-overview__title2">概要</h3>
+      <p class="show-idea-overview__content">お仕事番号&thinsp;：</p>
+      <p class="show-idea-overview__content">製品用途&thinsp;：</p>
+      <p class="show-idea-overview__content">納品希望日&thinsp;：</p>
+      <p class="show-idea-overview__content">公開期間&thinsp;：</p>
+      <p class="show-idea-overview__content">契約形態&thinsp;：</p>
+    </div>
+  </div>
+  <div class="row col-10 offset-1 show-idea-list">
+    <p class="col-2 show-idea-list__title">完成品イメージ</p>
+    <p class="col-9 show-idea-list__content"><%= @idea.product_image %></p>
+  </div>
+  <div class="row col-10 offset-1 show-idea-list">
+    <p class="col-2 show-idea-list__title">使う人</p>
+    <p class="col-9 show-idea-list__content">
+      <% @idea.idea_user_ids.each do |idea_user_id| %>
+        <span class="show-idea-list__content2"><%= IdeaUser.find_by(id: idea_user_id).name %></span>
+      <% end %>
+    </p>
+  </div>
+  <div class="row col-10 offset-1 show-idea-list">
+    <p class="col-2 show-idea-list__title">カテゴリ</p>
+    <p class="col-9 show-idea-list__content">
+      <span class="show-idea-list__content2"><%= @idea.idea_category %></span><%= @idea.idea_category_details %>
+    </p>
+  </div>
+  <div class="row col-10 offset-1 show-idea-list">
+    <p class="col-2 show-idea-list__title">素材</p>
+    <p class="col-9 show-idea-list__content"></p>
+  </div>
+  <div class="row col-10 offset-1 show-idea-list show-idea-list__wrap">
+    <p class="col-2 show-idea-list__title">アイディア詳細</p>
+    <p class="col-2 show-idea-list__title2">アイディアのタイトル</p>
+    <p class="col-7 show-idea-list__content3"><%= @idea.idea_title %></p>
+  </div>
+  <div class="row col-10 offset-1 show-idea-list show-idea-list__wrap">
+    <p class="col-2"></p>
+    <p class="col-2 show-idea-list__title2">アイテム製作数量</p>
+    <p class="col-2 show-idea-list__content4"><%= @idea.idea_amount %></p>
+    <p class="col-1 show-idea-list__content5">点</p>
+  </div>
+  <div class="row col-10 offset-1 show-idea-list show-idea-list__wrap">
+    <p class="col-2"></p>
+    <p class="col-2 show-idea-list__title2">アイテムの概要と仕様</p>
+    <p class="col-7 show-idea-list__content6"><%= @idea.idea_about %></p>
+  </div>
+  <div class="row col-10 offset-1 show-idea-list show-idea-list__wrap">
+    <p class="col-2"></p>
+    <p class="col-2 show-idea-list__title2">用途</p>
+    <p class="col-2 show-idea-list__content4"><%= @idea.idea_usage %></p>
+  </div>
+  <div class="row col-10 offset-1 show-idea-list show-idea-list__wrap">
+    <p class="col-2"></p>
+    <p class="col-2 show-idea-list__title2">職人へ伝えたいこと</p>
+    <p class="col-7 show-idea-list__content6"><%= @idea.idea_commit %></p>
+  </div><br>
 <% @idea_comments.each do |idea_comment| %>
   <% unless idea_comment.id.nil? %>
     <p><%= link_to idea_comment.user.name, user_path(idea_comment.user.id) %></p>
@@ -34,3 +82,5 @@
     <%= f.submit "コメントする" %>
   </div>
 <% end %>
+
+</main>
