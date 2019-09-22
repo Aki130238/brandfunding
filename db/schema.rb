@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_21_140233) do
+ActiveRecord::Schema.define(version: 2019_09_21_144159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -165,6 +165,15 @@ ActiveRecord::Schema.define(version: 2019_09_21_140233) do
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
+  create_table "select_genre_in_artisans", force: :cascade do |t|
+    t.bigint "artisan_profile_id"
+    t.bigint "artisan_genre_list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artisan_genre_list_id"], name: "index_select_genre_in_artisans_on_artisan_genre_list_id"
+    t.index ["artisan_profile_id"], name: "index_select_genre_in_artisans_on_artisan_profile_id"
+  end
+
   create_table "select_genre_in_ideas", force: :cascade do |t|
     t.bigint "idea_id"
     t.bigint "idea_user_id"
@@ -214,6 +223,8 @@ ActiveRecord::Schema.define(version: 2019_09_21_140233) do
   add_foreign_key "project_sponsors", "projects"
   add_foreign_key "project_values", "projects"
   add_foreign_key "projects", "users"
+  add_foreign_key "select_genre_in_artisans", "artisan_genre_lists"
+  add_foreign_key "select_genre_in_artisans", "artisan_profiles"
   add_foreign_key "select_genre_in_ideas", "idea_users"
   add_foreign_key "select_genre_in_ideas", "ideas"
   add_foreign_key "user_profiles", "users"

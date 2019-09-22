@@ -179,23 +179,15 @@
                 Your username is required.
               </div>
           </div>
-                        
-          <div class="col-md-6 mb-3">
-            <%= b.label :genre %>
-            <%= b.text_field :genre, class: "form-control", id: "genre", placeholder: "" %>
-            <div class="invalid-feedback">
-              Valid last name is required.
-            </div>
-          </div>
-          
+          <%= b.fields_for @user do |c| %>
             <div class="field">
               <% ArtisanGenreList.all.each do |genreList| %>
-                <%= b.check_box :artisan_genre_ids, { multiple: true, checked: @artisan_profile.artisan_genre_lists.find_by(id: genreList.id)
+                <%= c.check_box :artisan_genre_ids, { multiple: true, checked: @artisan_profile.artisan_genre_lists.find_by(id: genreList.id)
                     .present?, include_hidden: false }, genreList[:id] %>
                 <%= genreList.genre_name %>
               <% end %>
             </div>
-          
+          <% end %>
         </div>
 
         <div class="mb-3">
