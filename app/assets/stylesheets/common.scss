@@ -17,10 +17,10 @@ $btncolor-1: #C19A88;
 }
 
 $breakpoints: (
-  'sm': 'screen and (min-width: 540px)',
-  'md': 'screen and (min-width: 720px)',
-  'lg': 'screen and (min-width: 960px)',
-  'xl': 'screen and (min-width: 1140px)',
+  'sm': 'screen and (min-width: 576px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 992px)',
+  'xl': 'screen and (min-width: 1200px)',
 ) !default;
 
 @mixin mq($breakpoint: md) {
