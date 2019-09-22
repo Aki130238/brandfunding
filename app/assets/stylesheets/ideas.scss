@@ -11,15 +11,43 @@
   }
   &__menu {
     margin-top: 3rem;
+    @include mq(md) {
+      margin-left: 8rem;
+    }
+    @include mq(lg) {
+      margin-left: 14.5rem;
+    }
+    @include mq(xl) {
+      margin-left: 23rem;
+    }
+    border: none;
     &__list {
       border: 1px solid black;
     }
     &__list-2 {
       border: 1px solid black;
-      border-left: none;
+      border-left: 1px solid black;
+      @include mq(sm) {
+        border-left: none;
+      }
     }
     &__link {
-      padding: 1.5rem 3.6rem;
+      padding: 1.6rem 3.6rem;
+      @include mq(ssm) {
+        padding: 1.6rem 5rem;
+      }
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
       color: $color-1;
       font-weight: bold;
     }
@@ -29,6 +57,98 @@
     .nav-link.active {
       background: $bgcolor-idea;
       color: black;
+    }
+    .ideaTab1 {
+      padding: 1.6rem 6.8rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+    .ideaTab2 {
+      padding: 1.6rem 9.9rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+    .ideaTab3 {
+      padding: 1.6rem 9.1rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+    .ideaTab4 {
+      padding: 1.6rem 7.5rem;
+      @include mq(sm) {
+        padding: 1.6rem 4.35rem;
+        border-left: 1px solid black;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+        border-left: none;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+    .ideaTab5 {
+      padding: 1.6rem 10.7rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+    .ideaTab6 {
+      padding: 1.6rem 6.8rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
     }
   }
 
