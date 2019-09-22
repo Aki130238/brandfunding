@@ -102,22 +102,109 @@ $(window).on('turbolinks:load',function() {
   //   })(file);
   //   reader.readAsDataURL(file);
   // });#FFD800
+
   $(function() {
     let bgIdea = '#FFD800';
+    // // $('#ideaTabWrap1').css('background', bgIdea);
+    // $('.ideaTab1').on('click',function() {
+    //   $(this).css('background',bgIdea);
+    //   $('.ideaTab2').css('background', '');
+    //   $('.ideaTab3').css('background', '');
+    //   $('.ideaTab4').css('background', '');
+    //   $('.ideaTab5').css('background', '');
+    //   $('.ideaTab6').css('background', '');
+    //   $('#ideaTabWrap1').css('background', bgIdea);
+    //   $('#ideaTabWrap2').css('background', '');
+    //   $('#ideaTabWrap3').css('background', '');
+    //   $('#ideaTabWrap4').css('background', '');
+    //   $('#ideaTabWrap5').css('background', '');
+    //   $('#ideaTabWrap6').css('background', '');
+    // });
+    // $('.ideaTab2').on('click',function() {
+    //   $(this).css('background',bgIdea);
+    //   $('.ideaTab1').css('background', '');
+    //   $('.ideaTab3').css('background', '');
+    //   $('.ideaTab4').css('background', '');
+    //   $('.ideaTab5').css('background', '');
+    //   $('.ideaTab6').css('background', '');
+    //   $('#ideaTabWrap2').css('background', '');
+    //   $('#ideaTabWrap2').css('background', bgIdea);
+    //   $('#ideaTabWrap3').css('background', '');
+    //   $('#ideaTabWrap4').css('background', '');
+    //   $('#ideaTabWrap5').css('background', '');
+    //   $('#ideaTabWrap6').css('background', '');
+    // });
+    // $('.ideaTab3').on('click',function() {
+    //   $(this).css('background',bgIdea);
+    //   $('.ideaTab1').css('background', '');
+    //   $('.ideaTab2').css('background', '');
+    //   $('.ideaTab4').css('background', '');
+    //   $('.ideaTab5').css('background', '');
+    //   $('.ideaTab6').css('background', '');
+    //   $('#ideaTabWrap1').css('background', '');
+    //   $('#ideaTabWrap2').css('background', '');
+    //   $('#ideaTabWrap3').css('background', bgIdea);
+    //   $('#ideaTabWrap4').css('background', '');
+    //   $('#ideaTabWrap5').css('background', '');
+    //   $('#ideaTabWrap6').css('background', '');
+    // });
+    // $('.ideaTab4').on('click',function() {
+    //   $(this).css('background',bgIdea);
+    //   $('.ideaTab1').css('background', '');
+    //   $('.ideaTab2').css('background', '');
+    //   $('.ideaTab3').css('background', '');
+    //   $('.ideaTab5').css('background', '');
+    //   $('.ideaTab6').css('background', '');
+    //   $('#ideaTabWrap1').css('background', '');
+    //   $('#ideaTabWrap2').css('background', '');
+    //   $('#ideaTabWrap3').css('background', '');
+    //   $('#ideaTabWrap4').css('background', bgIdea);
+    //   $('#ideaTabWrap5').css('background', '');
+    //   $('#ideaTabWrap6').css('background', '');
+    // });
+    // $('.ideaTab5').on('click',function() {
+    //   $(this).css('background',bgIdea);
+    //   $('.ideaTab1').css('background', '');
+    //   $('.ideaTab2').css('background', '');
+    //   $('.ideaTab3').css('background', '');
+    //   $('.ideaTab4').css('background', '');
+    //   $('.ideaTab6').css('background', '');
+    //   $('#ideaTabWrap1').css('background', '');
+    //   $('#ideaTabWrap2').css('background', '');
+    //   $('#ideaTabWrap3').css('background', '');
+    //   $('#ideaTabWrap4').css('background', '');
+    //   $('#ideaTabWrap5').css('background', bgIdea);
+    //   $('#ideaTabWrap6').css('background', '');
+    // });
+    // $('.ideaTab6').on('click',function() {
+    //   $(this).css('background',bgIdea);
+    //   $('.ideaTab1').css('background', '');
+    //   $('.ideaTab2').css('background', '');
+    //   $('.ideaTab3').css('background', '');
+    //   $('.ideaTab4').css('background', '');
+    //   $('.ideaTab5').css('background', '');
+    //   $('#ideaTabWrap1').css('background', '');
+    //   $('#ideaTabWrap2').css('background', '');
+    //   $('#ideaTabWrap3').css('background', '');
+    //   $('#ideaTabWrap4').css('background', '');
+    //   $('#ideaTabWrap5').css('background', '');
+    //   $('#ideaTabWrap6').css('background', bgIdea);
+    // });
 
-    $('#ideaImageWrap1').click(function() {
+
+    $('#ideaImageWrap1').on('click',function() {
       $('#idea_product_image_似た物がある').prop('checked', true);
     });
-    $('#ideaImageWrap2').click(function() {
+    $('#ideaImageWrap2').on('click',function() {
       $('#idea_product_image_写真や絵がある').prop('checked', true);
     });
-    $('#ideaImageWrap3').click(function() {
+    $('#ideaImageWrap3').on('click',function() {
       $('#idea_product_image_型紙がある').prop('checked', true);
     });
-    $('#ideaImageWrap4').click(function() {
+    $('#ideaImageWrap4').on('click',function() {
       $('#idea_product_image_リメイクお直し').prop('checked', true);
     });
-    $('#ideaImageWrap5').click(function() {
+    $('#ideaImageWrap5').on('click',function() {
       $('#idea_product_image_相談したい').prop('checked', true);
     });
     $('#ideaImageWrap1').on('click',function() {
@@ -175,28 +262,28 @@ $(window).on('turbolinks:load',function() {
       });
     });
 
-    $('#ideaCategoryWrap1').click(function() {
+    $('#ideaCategoryWrap1').on('click',function() {
       $('#idea_idea_category_洋服').prop('checked', true);
     });
-    $('#ideaCategoryWrap2').click(function() {
+    $('#ideaCategoryWrap2').on('click',function() {
       $('#idea_idea_category_和服').prop('checked', true);
     });
-    $('#ideaCategoryWrap3').click(function() {
+    $('#ideaCategoryWrap3').on('click',function() {
       $('#idea_idea_category_ドレス衣装').prop('checked', true);
     });
-    $('#ideaCategoryWrap4').click(function() {
+    $('#ideaCategoryWrap4').on('click',function() {
       $('#idea_idea_category_作業服ユニフォーム').prop('checked', true);
     });
-    $('#ideaCategoryWrap5').click(function() {
+    $('#ideaCategoryWrap5').on('click',function() {
       $('#idea_idea_category_バッグ帽子').prop('checked', true);
     });
-    $('#ideaCategoryWrap6').click(function() {
+    $('#ideaCategoryWrap6').on('click',function() {
       $('#idea_idea_category_小物').prop('checked', true);
     });
-    $('#ideaCategoryWrap7').click(function() {
+    $('#ideaCategoryWrap7').on('click',function() {
       $('#idea_idea_category_インテリア').prop('checked', true);
     });
-    $('#ideaCategoryWrap8').click(function() {
+    $('#ideaCategoryWrap8').on('click',function() {
       $('#idea_idea_category_その他').prop('checked', true);
     });
     $('#ideaCategoryWrap1').on('click',function() {
@@ -280,22 +367,22 @@ $(window).on('turbolinks:load',function() {
       $('#ideaCategoryWrap8').css('background', bgIdea);
     });
 
-    $('#ideaCategoryDetailsWrap1').click(function() {
+    $('#ideaCategoryDetailsWrap1').on('click',function() {
       $('#idea_idea_category_details_ジャケットアウター').prop('checked', true);
     });
-    $('#ideaCategoryDetailsWrap2').click(function() {
+    $('#ideaCategoryDetailsWrap2').on('click',function() {
       $('#idea_idea_category_details_トップスシャツ').prop('checked', true);
     });
-    $('#ideaCategoryDetailsWrap3').click(function() {
+    $('#ideaCategoryDetailsWrap3').on('click',function() {
       $('#idea_idea_category_details_ボトムススカート').prop('checked', true);
     });
-    $('#ideaCategoryDetailsWrap4').click(function() {
+    $('#ideaCategoryDetailsWrap4').on('click',function() {
       $('#idea_idea_category_details_ワンピースオーバーオール').prop('checked', true);
     });
-    $('#ideaCategoryDetailsWrap5').click(function() {
+    $('#ideaCategoryDetailsWrap5').on('click',function() {
       $('#idea_idea_category_details_スーツタキシード').prop('checked', true);
     });
-    $('#ideaCategoryDetailsWrap6').click(function() {
+    $('#ideaCategoryDetailsWrap6').on('click',function() {
       $('#idea_idea_category_details_その他').prop('checked', true);
     });
     $('#ideaCategoryDetailsWrap1').on('click',function() {
@@ -347,13 +434,13 @@ $(window).on('turbolinks:load',function() {
       $('#ideaCategoryDetailsWrap6').css('background', bgIdea);
     });
 
-    $('#ideaMaterialWrap1').click(function() {
+    $('#ideaMaterialWrap1').on('click',function() {
       $('#idea_idea_category_details_相談したい').prop('checked', true);
     });
-    $('#ideaMaterialWrap2').click(function() {
+    $('#ideaMaterialWrap2').on('click',function() {
       $('#idea_idea_category_details_すべて用意できる').prop('checked', true);
     });
-    $('#ideaMaterialWrap3').click(function() {
+    $('#ideaMaterialWrap3').on('click',function() {
       $('#idea_idea_category_details_生地のみ').prop('checked', true);
     });
     $('#ideaMaterialWrap1').on('click',function() {

@@ -1,5 +1,5 @@
 .new-idea-page {
-  width: 100%;
+  // height: 100%;
   &__title {
     display: inline-block;
     width: 100%;
@@ -11,15 +11,43 @@
   }
   &__menu {
     margin-top: 3rem;
+    @include mq(md) {
+      margin-left: 8rem;
+    }
+    @include mq(lg) {
+      margin-left: 14.5rem;
+    }
+    @include mq(xl) {
+      margin-left: 23rem;
+    }
+    border: none;
     &__list {
       border: 1px solid black;
     }
     &__list-2 {
       border: 1px solid black;
-      border-left: none;
+      border-left: 1px solid black;
+      @include mq(sm) {
+        border-left: none;
+      }
     }
     &__link {
-      padding: 1.5rem 3.6rem;
+      padding: 1.6rem 3.6rem;
+      @include mq(ssm) {
+        padding: 1.6rem 5rem;
+      }
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
       color: $color-1;
       font-weight: bold;
     }
@@ -29,6 +57,98 @@
     .nav-link.active {
       background: $bgcolor-idea;
       color: black;
+    }
+    .ideaTab1 {
+      padding: 1.6rem 6.8rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+    .ideaTab2 {
+      padding: 1.6rem 9.9rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+    .ideaTab3 {
+      padding: 1.6rem 9.1rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+    .ideaTab4 {
+      padding: 1.6rem 7.5rem;
+      @include mq(sm) {
+        padding: 1.6rem 4.35rem;
+        border-left: 1px solid black;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+        border-left: none;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+    .ideaTab5 {
+      padding: 1.6rem 10.7rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+    .ideaTab6 {
+      padding: 1.6rem 6.8rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
     }
   }
 
@@ -57,12 +177,11 @@
       text-align: center;
     }
     &__button {
-      padding: 1.5rem 7rem;
-      border: 1px solid black;
-    }
-    &__button-2 {
-      margin-left: 1.5rem;
-      padding: 1.5rem 5rem;
+      margin-top: 1.5rem;
+      @include mq(sm) {
+        margin-left:1.5rem;
+      }
+      padding: 1.5rem 0rem;
       border: 1px solid black;
     }
     &-image {
@@ -72,14 +191,17 @@
         text-align: center;
       }
       &__input__wrap {
-        margin: 1.5rem 0 0 27rem;
+        margin-top: 1.5rem;
         padding: 0;
         border: 1px solid black;
         text-align: center;
         cursor: pointer;
       }
       &__input__wrap2 {
-        margin: 1.5rem 0 0 1.5rem;
+        margin-top: 1.5rem;
+        @include mq(md) {
+          margin-left:1.5rem;
+        }
         padding: 0;
         border: 1px solid black;
         text-align: center;
@@ -106,14 +228,29 @@
         text-align: center;
       }
       &__input__wrap {
-        margin-left: 2.5rem;
+        margin-top: 1.5rem;
         padding: 0;
         border: 1px solid black;
         text-align: center;
         cursor: pointer;
       }
+      &__input__wrap2 {
+        margin-top: 1.5rem;
+        @include mq(md) {
+          margin-left:1.5rem;
+        }
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__input__wrap3 {
+        @include mq(lg) {
+          margin-left: 1.5rem;
+        }
+      }
       &__content {
-        padding: 7.8rem 0 5rem 0;
+        padding: 7.8rem 0 5.8rem 0;
         font-weight: bold;
         font-size: 2rem;
       }
@@ -135,14 +272,23 @@
         text-align: center;
       }
       &__input__wrap {
-        margin: 1.5rem 0 0 25rem;
+        margin-top: 1.5rem;
+        @include mq(lg) {
+          margin-left: 12rem;
+        }
+        @include mq(xl) {
+          margin-left: 18rem;
+        }
         padding: 0;
         border: 1px solid black;
         text-align: center;
         cursor: pointer;
       }
       &__input__wrap2 {
-        margin: 1.5rem 0rem 0 1.5rem;
+        margin-top: 1.5rem;
+        @include mq(md) {
+          margin-left: 1.5rem;
+        }
         padding: 0;
         border: 1px solid black;
         text-align: center;
@@ -150,6 +296,28 @@
       }
       &__content {
         padding: 3.8rem 0 3rem 0;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__content2 {
+        padding: 3.8rem 0 3rem 0;
+        @include mq(md) {
+          padding: 4rem 0 .5rem 0;
+        }
+        @include mq(lg) {
+          padding: 3.8rem 0 3rem 0;
+        }
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__content3 {
+        padding: 3.8rem 0 3rem 0;
+        @include mq(md) {
+          padding: 3.3rem 0 1.3rem 0;
+        }
+        @include mq(lg) {
+          padding: 3.8rem 0 3rem 0;
+        }
         font-weight: bold;
         font-size: 2rem;
       }
@@ -166,23 +334,82 @@
         text-align: center;
       }
       &__input__wrap {
-        margin: 1.5rem 0 0 25rem;
+        margin-top: 1.5rem;
+        @include mq(lg) {
+          margin-left: 12rem;
+        }
+        @include mq(xl) {
+          margin-left: 18rem;
+        }
         padding: 0;
         border: 1px solid black;
         text-align: center;
         cursor: pointer;
       }
       &__input__wrap2 {
-        margin: 1.5rem 0rem 0 1.5rem;
+        margin-top: 1.5rem;
+        @include mq(md) {
+          margin-left: 1.5rem;
+        }
         padding: 0;
         border: 1px solid black;
         text-align: center;
         cursor: pointer;
       }
       &__content {
-        padding: 3.8rem 0 3rem 0;
+        padding: 3.8rem 1rem 3rem 1rem;
         font-weight: bold;
         font-size: 2rem;
+      }
+      &__content2 {
+        padding: 3.8rem 1rem 3rem 1rem;
+        @include mq(md) {
+          padding: 4rem 1rem .5rem 1rem;
+        }
+        @include mq(lg) {
+          padding: 3.8rem 0 3rem 0;
+        }
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__content3 {
+        padding: 3.8rem 1rem 3rem 1rem;
+        @include mq(md) {
+          padding: 3.3rem 1rem 1.3rem 1rem;
+        }
+        @include mq(lg) {
+          padding: 3.8rem 0 3rem 0;
+        }
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__content4 {
+        @include mq(md) {
+          padding: 4rem 1rem 1.5rem 1rem;
+        }
+        @include mq(lg) {
+          padding: 3.8rem 0 3rem 0;
+        }
+      }
+      &__content5 {
+        @include mq(lg) {
+          margin-bottom: -1.5rem;
+          padding: 3.8rem 0 3rem 0;
+        }
+        @include mq(xl) {
+          margin-bottom: 1rem;
+          padding: 3.8rem 0 3rem 0;
+        }
+      }
+      &__content6 {
+        @include mq(lg) {
+          margin-bottom: -1.5rem;
+          padding: 3rem 1.5rem 3rem 1.5rem;
+        }
+        @include mq(xl) {
+          margin-bottom: 1rem;
+          padding: 3.8rem 0 3rem 0;
+        }
       }
       &__input {
         margin-left: -1.5rem;
@@ -198,14 +425,17 @@
         text-align: center;
       }
       &__input__wrap {
-        margin: 1.5rem 0 0 25rem;
+        margin-top: 1.5rem;
         padding: 0;
         border: 1px solid black;
         text-align: center;
         cursor: pointer;
       }
       &__input__wrap2 {
-        margin: 1.5rem 0rem 0 1.5rem;
+        margin-top: 1.5rem;
+        @include mq(md) {
+          margin-left: 1.5rem;
+        }
         padding: 0;
         border: 1px solid black;
         text-align: center;
@@ -230,43 +460,81 @@
       }
       &__title1 {
         margin-top: 1rem;
-        padding: .3rem 1rem;
         font-weight: bold;
+        @include mq(md) {
+          text-align: right;
+        }
       }
       &__title2 {
-        margin: 1rem 0 auto 0;
+        margin: .7rem 0 auto 0;
         padding: .5rem 1rem;
         background: $bgcolor-3;
         color: white;
+        text-align: center;
+      }
+      &__title__wrap {
+        @include mq(md) {
+          margin-right: -8rem;
+        }
       }
       &__title__wrap, &__input__wrap {
         margin-bottom: 5rem;
       }
       &__input {
-        margin-left: -8rem;
+        @include mq(md) {
+          margin-left: -2rem;
+        }
+        @include mq(lg) {
+          margin-left: -3rem;
+        }
+        @include mq(xl) {
+          margin-left: -10rem;
+        }
         padding: 1rem;
         font-size: 1.5rem;
       }
       &__input2 {
-        margin-left: -8rem;
+        @include mq(md) {
+          margin-left: -2rem;
+        }
+        @include mq(lg) {
+          margin-left: -3rem;
+        }
+        @include mq(xl) {
+          margin-left: -10rem;
+        }
         padding: 1rem 1rem 8rem 1rem;
         font-size: 1.5rem;
         overflow: hidden;
         resize: none;
       }
       &__input3 {
-        margin: 0 0 5rem -8rem;
+        @include mq(md) {
+          margin-left: -2rem;
+        }
+        @include mq(lg) {
+          margin-left: -3rem;
+        }
+        @include mq(xl) {
+          margin-left: -10rem;
+        }
+        margin-bottom: 5rem;
         padding: 1rem;
         border: 1px solid black;
         font-size: 1.6rem;
         outline: 0;
       }
       &__guide {
-        margin: 0 0 5rem -8rem;
+        margin-bottom: 5rem;
         font-size: 1.4rem;
+        @include mq(lg) {
+          margin-left: 15rem;
+        }
+        @include mq(xl) {
+          margin-left: 12rem;
+        }
       }
       &__content {
-        margin-left: -58rem;
         padding-top: 1rem;
       }
     }
