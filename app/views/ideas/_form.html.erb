@@ -36,7 +36,7 @@
 
     <div class="tab-pane fade idea-form-user" id="ideaUser" role="tabpanel" aria-labelledby="ideaUser-tab">
       <div class="row">
-        <h2 class="col-9 offset-2 idea-form-user__title">使う人を選択してください。複数選択可</h2>
+        <h2 class="col-8 offset-2 idea-form-user__title">使う人を選択してください。複数選択可</h2>
       </div>
       <div class="row col-12 idea-form__content__wrap">
         <div class="col-8 col-sm-5 col-md-4 col-lg-2 offset-3 offset-sm-1 offset-md-2 offset-lg-2 idea-form-user__input__wrap" id= "ideaUserWrap1">
@@ -56,33 +56,29 @@
 
     <div class="tab-pane fade idea-form-category" id="ideaCategory" role="tabpanel" aria-labelledby="ideaCategory-tab">
       <h2 class="col-8 offset-2 idea-form-category__title">作るもののカテゴリを選択してください</h2>
-      <div class="row col-10">
-        <div class="col-3 offset-2 idea-form-category__input__wrap" id= "ideaCategoryWrap1">
+      <div class="row col-12">
+        <div class="col-10 col-sm-5 col-md-3 offset-2 offset-sm-1 offset-md-2 idea-form-category__input__wrap" id= "ideaCategoryWrap1">
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "洋服", class: "idea-form-category__input" %>洋服</p>
         </div>
-        <div class="col-3 idea-form-category__input__wrap2" id= "ideaCategoryWrap2">
+        <div class="col-10 col-sm-5 col-md-3 offset-2 offset-sm-1 offset-md-0 idea-form-category__input__wrap2" id= "ideaCategoryWrap2">
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "和服", class: "idea-form-category__input" %>和服</p>
         </div>
-        <div class="col-3 idea-form-category__input__wrap2" id= "ideaCategoryWrap3">
-          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "ドレス・衣装", class: "idea-form-category__input" %>ドレス・衣装</p>
+        <div class="col-10 col-sm-5 col-md-3 offset-2 offset-sm-1 offset-md-0 idea-form-category__input__wrap2" id= "ideaCategoryWrap3">
+          <p class="idea-form-category__content2"><%= f.radio_button :idea_category, "ドレス・衣装", class: "idea-form-category__input" %>ドレス・衣装</p>
         </div>
-      </div>
-      <div class="row col-10">
-        <div class="col-3 offset-2 idea-form-category__input__wrap" id= "ideaCategoryWrap4">
-          <p class="idea-form-category__content"><%= f.radio_button :idea_category, "作業服・ユニフォーム", class: "idea-form-category__input" %>作業服・ユニフォーム</p>
+        <div class="col-10 col-sm-5 col-md-3 offset-2 offset-sm-1 offset-md-2 idea-form-category__input__wrap" id= "ideaCategoryWrap4">
+          <p class="idea-form-category__content3"><%= f.radio_button :idea_category, "作業服・ユニフォーム", class: "idea-form-category__input" %>作業服・ユニフォーム</p>
         </div>
-        <div class="col-3 idea-form-category__input__wrap2" id= "ideaCategoryWrap5">
+        <div class="col-10 col-sm-5 col-md-3 offset-2 offset-sm-1 offset-md-0 idea-form-category__input__wrap2" id= "ideaCategoryWrap5">
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "バッグ・帽子", class: "idea-form-category__input" %>バッグ・帽子</p>
         </div>
-        <div class="col-3 offset-2 idea-form-category__input__wrap2" id= "ideaCategoryWrap6">
+        <div class="col-10 col-sm-5 col-md-3 offset-2 offset-sm-1 offset-md-0 idea-form-category__input__wrap2" id= "ideaCategoryWrap6">
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "小物", class: "idea-form-category__input" %>小物</p>
         </div>
-      </div>
-      <div class="row col-10 idea-form__content__wrap">
-        <div class="col-3 idea-form-category__input__wrap" id= "ideaCategoryWrap7">
+        <div class="col-10 col-sm-5 col-md-3 offset-2 offset-sm-1 offset-md-2 idea-form-category__input__wrap" id= "ideaCategoryWrap7">
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "インテリア", class: "idea-form-category__input" %>インテリア</p>
         </div>
-        <div class="col-3 idea-form-category__input__wrap2" id= "ideaCategoryWrap8">
+        <div class="col-10 col-sm-5 col-md-3 offset-2 offset-sm-1 offset-md-0 idea-form-category__input__wrap2" id= "ideaCategoryWrap8">
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "その他", class: "idea-form-category__input" %>その他</p>
         </div>
       </div>
