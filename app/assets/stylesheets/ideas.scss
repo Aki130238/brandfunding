@@ -213,23 +213,82 @@
         text-align: center;
       }
       &__input__wrap {
-        margin: 1.5rem 0 0 25rem;
+        margin-top: 1.5rem;
+        @include mq(lg) {
+          margin-left: 12rem;
+        }
+        @include mq(xl) {
+          margin-left: 18rem;
+        }
         padding: 0;
         border: 1px solid black;
         text-align: center;
         cursor: pointer;
       }
       &__input__wrap2 {
-        margin: 1.5rem 0rem 0 1.5rem;
+        margin-top: 1.5rem;
+        @include mq(md) {
+          margin-left: 1.5rem;
+        }
         padding: 0;
         border: 1px solid black;
         text-align: center;
         cursor: pointer;
       }
       &__content {
-        padding: 3.8rem 0 3rem 0;
+        padding: 3.8rem 1rem 3rem 1rem;
         font-weight: bold;
         font-size: 2rem;
+      }
+      &__content2 {
+        padding: 3.8rem 1rem 3rem 1rem;
+        @include mq(md) {
+          padding: 4rem 1rem .5rem 1rem;
+        }
+        @include mq(lg) {
+          padding: 3.8rem 0 3rem 0;
+        }
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__content3 {
+        padding: 3.8rem 1rem 3rem 1rem;
+        @include mq(md) {
+          padding: 3.3rem 1rem 1.3rem 1rem;
+        }
+        @include mq(lg) {
+          padding: 3.8rem 0 3rem 0;
+        }
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__content4 {
+        @include mq(md) {
+          padding: 4rem 1rem 1.5rem 1rem;
+        }
+        @include mq(lg) {
+          padding: 3.8rem 0 3rem 0;
+        }
+      }
+      &__content5 {
+        @include mq(lg) {
+          margin-bottom: -1.5rem;
+          padding: 3.8rem 0 3rem 0;
+        }
+        @include mq(xl) {
+          margin-bottom: 1rem;
+          padding: 3.8rem 0 3rem 0;
+        }
+      }
+      &__content6 {
+        @include mq(lg) {
+          margin-bottom: -1.5rem;
+          padding: 3rem 1.5rem 3rem 1.5rem;
+        }
+        @include mq(xl) {
+          margin-bottom: 1rem;
+          padding: 3.8rem 0 3rem 0;
+        }
       }
       &__input {
         margin-left: -1.5rem;
