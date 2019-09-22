@@ -10,6 +10,12 @@ $color-main: #FE38C3;
 $color-error: #e73562;
 $btncolor-1: #C19A88;
 
+@media (max-width: 540px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
 .no-gutters {
   margin:0;
   padding:0;
@@ -54,6 +60,10 @@ html {
   body {
     height: 100%;
     font-size: 1.6rem;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 }
 
