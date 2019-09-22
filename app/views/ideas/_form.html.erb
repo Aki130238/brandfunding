@@ -11,24 +11,24 @@
       <div class="row">
         <h2 class="col-8 offset-2 idea-form-image__title">完成品のイメージを職人さんに伝える方法を選んでください</h2>
       </div>
-      <div class="row col-11">
-        <div class="col-4 offset-3 idea-form-image__input__wrap" id= "ideaImageWrap1">
+      <div class="row col-12">
+        <div class="col-10 col-sm-5 col-md-4 offset-2 offset-sm-1 offset-md-2 idea-form-image__input__wrap" id= "ideaImageWrap1">
           <p class="idea-form-image__content"><%= f.radio_button :product_image, "似た物がある", class: "idea-form-image__input" %>似た物がある</p>
         </div>
-        <div class="col-4 idea-form-image__input__wrap2" id= "ideaImageWrap2">
+        <div class="col-10 col-sm-5 col-md-4 offset-2 offset-sm-1 idea-form-image__input__wrap2" id= "ideaImageWrap2">
           <p class="idea-form-image__content"><%= f.radio_button :product_image, "写真や絵がある", class: "idea-form-image__input" %>写真や絵がある</p>
         </div>
       </div>
-      <div class="row col-11">
-        <div class="col-4 offset-3 idea-form-image__input__wrap" id= "ideaImageWrap3">
+      <div class="row col-12">
+        <div class="col-10 col-sm-5 col-md-4 offset-2 offset-sm-1 offset-md-2 idea-form-image__input__wrap" id= "ideaImageWrap3">
           <p class="idea-form-image__content"><%= f.radio_button :product_image, "型紙がある", class: "idea-form-image__input" %>型紙がある</p>
         </div>
-        <div class="col-4 idea-form-image__input__wrap2" id= "ideaImageWrap4">
+        <div class="col-10 col-sm-5 col-md-4 offset-2 offset-sm-1 idea-form-image__input__wrap2" id= "ideaImageWrap4">
           <p class="idea-form-image__content"><%= f.radio_button :product_image, "リメイクお直し", class: "idea-form-image__input" %>リメイクお直し</p>
         </div>
       </div>
-      <div class="row col-11 idea-form__content__wrap">
-        <div class="col-4 offset-3 idea-form-image__input__wrap" id= "ideaImageWrap5">
+      <div class="row col-12 idea-form__content__wrap">
+        <div class="col-10 col-sm-5 col-md-4 offset-2 offset-sm-1 offset-md-2 idea-form-image__input__wrap" id= "ideaImageWrap5">
           <p class="idea-form-image__content"><%= f.radio_button :product_image, "相談したい", class: "idea-form-image__input" %>相談したい</p>
         </div>
       </div>
@@ -181,9 +181,9 @@
         </div>
       </div>
     </div>
-    <div class="idea-form__button_wrap">
-      <%= f.submit "保存", class: "idea-form__button" %>
-      <%= f.submit "プレビュー", class: "idea-form__button-2" %>
+    <div class="row col-12 idea-form__button_wrap">
+      <%= f.submit "保存", class: "col-8 col-sm-4 col-md-3 col-xl-2 offset-2 offset-sm-1 idea-form__button" %>
+      <%= f.submit "プレビュー", class: "col-8 col-sm-4 col-md-3 col-xl-2 offset-2 offset-sm-1 idea-form__button" %>
     </div>
     <% end %>
   </section>
