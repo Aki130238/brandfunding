@@ -36,19 +36,19 @@
 
     <div class="tab-pane fade idea-form-user" id="ideaUser" role="tabpanel" aria-labelledby="ideaUser-tab">
       <div class="row">
-        <h2 class="col-8 offset-2 idea-form-user__title">使う人を選択してください。複数選択可</h2>
+        <h2 class="col-9 offset-2 idea-form-user__title">使う人を選択してください。複数選択可</h2>
       </div>
-      <div class="row col-10 offset-2 idea-form__content__wrap">
-        <div class="col-2 idea-form-user__input__wrap" id= "ideaUserWrap1">
+      <div class="row col-12 idea-form__content__wrap">
+        <div class="col-8 col-sm-5 col-md-4 col-lg-2 offset-3 offset-sm-1 offset-md-2 offset-lg-2 idea-form-user__input__wrap" id= "ideaUserWrap1">
           <p class="idea-form-user__content"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user1.present?, include_hidden: false, class: "idea-form-user__input" }, @idea_user1 %>メンズ</p>
         </div>
-        <div class="col-2 idea-form-user__input__wrap" id= "ideaUserWrap2">
+        <div class="col-8 col-sm-5 col-md-4 col-lg-2 offset-3 offset-sm-1 offset-lg-0 idea-form-user__input__wrap2" id= "ideaUserWrap2">
           <p class="idea-form-user__content"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user2.present?, include_hidden: false, class: "idea-form-user__input" }, @idea_user2 %>レディース</p>
         </div>
-        <div class="col-2 idea-form-user__input__wrap" id= "ideaUserWrap3">
+        <div class="col-8 col-sm-5 col-md-4 col-lg-2 offset-3 offset-sm-1 offset-md-2 offset-lg-0 idea-form-user__input__wrap idea-form-user__input__wrap3" id= "ideaUserWrap3">
           <p class="idea-form-user__content"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user3.present?, include_hidden: false, class: "idea-form-user__input" }, @idea_user3 %>キッズ</p>
         </div>
-        <div class="col-2 idea-form-user__input__wrap" id= "ideaUserWrap4">
+        <div class="col-8 col-sm-5 col-md-4 col-lg-2 offset-3 offset-sm-1 offset-lg-0 idea-form-user__input__wrap2" id= "ideaUserWrap4">
           <p class="idea-form-user__content2"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user4.present?,  include_hidden: false, class: "idea-form-user__input" }, @idea_user4 %>ベビー＆<br>マタニティ</p>
         </div>
       </div>

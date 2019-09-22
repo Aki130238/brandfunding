@@ -58,7 +58,7 @@
     }
     &__button {
       margin-top: 1.5rem;
-      @include mq() {
+      @include mq(sm) {
         margin-left:1.5rem;
       }
       padding: 1.5rem 0rem;
@@ -79,7 +79,7 @@
       }
       &__input__wrap2 {
         margin-top: 1.5rem;
-        @include mq() {
+        @include mq(md) {
           margin-left:1.5rem;
         }
         padding: 0;
@@ -108,14 +108,29 @@
         text-align: center;
       }
       &__input__wrap {
-        margin-left: 2.5rem;
+        margin-top: 1.5rem;
         padding: 0;
         border: 1px solid black;
         text-align: center;
         cursor: pointer;
       }
+      &__input__wrap2 {
+        margin-top: 1.5rem;
+        @include mq(md) {
+          margin-left:1.5rem;
+        }
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__input__wrap3 {
+        @include mq(lg) {
+          margin-left: 1.5rem;
+        }
+      }
       &__content {
-        padding: 7.8rem 0 5rem 0;
+        padding: 7.8rem 0 5.8rem 0;
         font-weight: bold;
         font-size: 2rem;
       }
