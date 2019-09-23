@@ -1,7 +1,7 @@
 <main class="container-fluid my-page">
-  <h1 class="row col my-page__title">会員情報・住所確認/変更</h1>
+  <h1 class="row col-12 col-lg-10 my-page__title">会員情報・住所確認/変更</h1>
   <div class="row">
-    <nav class="col-3 menu">
+    <nav class="col-10 col-md-5 col-lg-4 col-xl-3 menu offset-1 offset-md-0">
       <ul>
         <li class="menu__user_image"><%= image_tag @user.image.to_s %></li>
         <li class="menu__user_name"><%= @user.name %></li>
@@ -61,7 +61,7 @@
       </ul>
     </nav>
 
-    <section class="col-7 my-page__form">
+    <section class="col-10 col-md-6 offset-1 offset-md-0 my-page__form">
       <%= form_with(model: @user, url: user_path, local: true, method: :patch) do |f| %>
         <%= f.fields_for :user_profile do |a| %>
           <div class="row">
