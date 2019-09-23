@@ -10,6 +10,26 @@ $color-main: #FE38C3;
 $color-error: #e73562;
 $btncolor-1: #C19A88;
 
+@media (max-width: 540px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+$breakpoints: (
+  'ssm': 'screen and (min-width: 1px)',
+  'sm': 'screen and (min-width: 576px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 992px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
 .no-gutters {
   margin:0;
   padding:0;
@@ -21,22 +41,25 @@ $btncolor-1: #C19A88;
   padding:0;
 }
 
-.form-sign {
-  width: 40%;
-  margin: 0 auto;
-  padding: .8rem;
-  border-radius: 8px;
-  font-size: 1.6rem;
+.center {
+  display: inline-block;
+  text-align: center;
 }
 
-.button-sign {
-  width: 20%;
+.sign-form {
+  margin: 2rem 0;
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.8rem;
+}
+
+.sign-button {
   margin-top: 1rem;
   padding: .8rem;
   border-radius: 8px;
   background: $btncolor-1;
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 .button {
@@ -51,6 +74,10 @@ html {
   body {
     height: 100%;
     font-size: 1.6rem;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 }
 
@@ -63,11 +90,15 @@ html {
   text-align: center;
 }
 
-.header-1 {
-  padding: 2.5rem 0;
+.header {
+  padding: 2.5rem 0 2.5rem 3rem;
   border-bottom: solid $color-main;
   &__title {
-    padding-left: 5rem;
+    color: $color-1;
+  }
+  &__title:hover {
+    color: $color-1;
+    text-decoration: none;
   }
   .navbar {
     margin-right: 2rem;
@@ -90,27 +121,33 @@ html {
   }
 }
 
-.footer-1 {
+.footer {
   padding: 2.5rem 0 2rem 0rem;
   background: $bgcolor-footer;
   &__wrap {
     margin-right: 5rem;
   }
+  &__title__wrap {
+    padding-top: .3rem;
+  }
   &__title {
-    margin-left: 8rem;
+    margin-left: 3rem;
     color: white;
   }
   &__title:hover {
     color: white;
     text-decoration: none;
   }
-  &__column__wrap {
-    padding: 0 auto;
-  }
   &__column {
-    margin: .3rem 0rem;
+    margin: 0 1rem 0 3rem;
+    padding-top: .8rem;
     color: white;
-    font-size: 1.3rem;
-    cursor: pointer;
+    font-size: 1.4rem;
+  }
+  &__column2 {
+    margin: 0 1rem;
+    padding-top: .8rem;
+    color: white;
+    font-size: 1.4rem;
   }
 }
