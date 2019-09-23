@@ -18,9 +18,9 @@ class ArtisanProfilesController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    binding.irb
     # if @user.user_profile.update(user_profile_params) && @user.artisan_profile.update(artisan_profile_params)
     if @user.update(user_edit_params)
+      binding.pry
       redirect_to artisan_profile_path(@user.id), notice: "プロフィールを修正しました！"
     else
         render 'new', notice: "プロフィールを修正できません"
@@ -76,6 +76,7 @@ class ArtisanProfilesController < ApplicationController
       :email,
       :image_name,
       :image_cache,
+      artisan_genre_ids: [],
       user_profile_attributes:[
         :id,
         :user_id,
@@ -107,9 +108,11 @@ class ArtisanProfilesController < ApplicationController
         :workexp_text,
         :mypr,
         :myprofile,
-        :work_status
+        :work_status,
       ],
-      artisan_genre_ids: []
+      artisan_item_ids: [],
+        artisan_facillity_ids: [],
+        artisan_processing_ids: []
     )
   end
 
