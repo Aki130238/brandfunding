@@ -10,7 +10,7 @@
     text-align: center;
   }
   &__menu {
-    margin-top: 3rem;
+    margin-top: 5rem;
     @include mq(md) {
       margin-left: 8rem;
     }
@@ -542,11 +542,8 @@
 }
 
 .show-idea-page {
-  width: 100%;
   &__title {
     display: inline-block;
-    width: 100%;
-    margin:0;
     padding: 2.5rem 0;
     background: $bgcolor-idea;
     color: $color-1;
@@ -554,29 +551,32 @@
     text-align: center;
   }
   .show-idea-overview {
-    margin: 0 0 5rem 12rem;
+    margin-bottom: 5rem;
+    padding-bottom: 1.5rem;
     background: $bgcolor-1;
     &__wrap {
-      margin-left: 3rem;
+      @include mq(lg) {
+        margin: 6rem 0 0 -3rem;
+      }
     }
     &__title{
       padding: 3rem 0 1rem 0;
       font-weight: bold;
     }
     &__title2 {
-      margin: 7rem 44rem 1.5rem 2rem;
-      padding: .5rem 1.5rem .5rem 2rem;
+      padding: .8rem 1.5rem .8rem 2rem;
       border-radius: 20px;
       background: $bgcolor-idea;
       color: $color-1;
       font-weight: bold;
     }
     &__image {
+      margin-bottom: 1.5rem;
       padding: 13rem 0;
       border: 1px solid black;
     }
     &__content {
-      margin-left: 2rem;
+      margin-top: 1.5rem;
       padding-bottom: 1rem;
       border-bottom: 1px double black;
       color: $color-1;
@@ -584,50 +584,188 @@
   }
 
   .show-idea-list {
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     color: $color-1;
     &__title {
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: 3rem;
+      }
       padding: 1rem 0;
       background: $bgcolor-idea;
       font-weight: bold;
       text-align: center;
     }
     &__title2 {
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -12.5rem;
+        text-align: right;
+      }
       padding: 1rem 0;
       font-weight: bold;
-      text-align: right;
+      text-align: center;
+    }
+    &__title3 {
+      margin-bottom: 1.5rem;
+    }
+    &__title4 {
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: 3rem;
+        text-align: right;
+      }
+      padding: 1rem 0;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__title5 {
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -35.5rem;
+        text-align: right;
+      }
+      @include mq(xl) {
+        margin-left: -55.5rem;
+        text-align: right;
+      }
+      padding: 1rem 0;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__title6 {
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -27rem;
+        text-align: right;
+      }
+      @include mq(xl) {
+        margin-left: -45rem;
+      }
+      padding: 1rem 0;
+      font-weight: bold;
+      text-align: center;
     }
     &__content {
-      margin-left: 3rem;
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -8rem;
+      }
       padding: 1rem 0 1rem 1rem;
       border-bottom: 1px double black;
       font-weight: bold;
     }
     &__content2 {
-      margin-right: 5rem;
+      margin-right: 3rem;
     }
     &__content3 {
-      margin-left: 2rem;
-      padding: 1rem 0 0 2rem;
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -5rem;
+        margin-bottom: 1.5rem;
+      }
+      @include mq(xl) {
+        margin-left: -8rem;
+        margin-bottom: 1.5rem;
+      }
+      padding: .8rem 0 .8rem 2rem;
       background: $bgcolor-4;
     }
     &__content4 {
-      margin-left: 2rem;
-      padding-top: 1rem;
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -36rem;
+      }
+      @include mq(xl) {
+        margin-left: -50rem;
+      }
+      padding: .8rem 0;
       background: $bgcolor-4;
       text-align: center;
     }
     &__content5 {
-      margin-left: 2rem;
-      padding-top:1rem;
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -28rem;
+      }
+      @include mq(xl) {
+        margin-left: -39rem;
+      }
+      padding: .8rem 0;
+      background: $bgcolor-4;
+      text-align: center;
     }
     &__content6 {
-      margin-left: 2rem;
-      padding: 1rem 0 10rem 2rem;
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -5rem;
+      }
+      @include mq(xl) {
+        margin-left: -7rem;
+      }
+      padding: .8rem 0 10rem 2rem;
       background: $bgcolor-4;
     }
     &__wrap {
       margin-bottom: 3rem;
+    }
+  }
+
+  .show-idea-comment {
+    &__wrap {
+      margin: 5rem 0;
+    }
+    &__input__wrap {
+      margin-top: 3rem;
+      @include mq(md) {
+        margin: 3rem 0 0 20rem;
+      }
+      @include mq(lg) {
+        margin: 10rem auto 1.5rem auto;
+      }
+    }
+    &__input {
+      padding: .8rem;
+      @include mq(lg) {
+        padding: .8rem .8rem 5rem .8rem;
+      }
+      font-size: 1.7rem;
+      overflow: hidden;
+      resize: none;
+    }
+    &__button__wrap {
+      margin: 1.5rem 0 0 12rem;
+      @include mq(md) {
+        margin: 1.5rem 0 0 34rem;
+      }
+      @include mq(lg) {
+        margin: 1.5rem auto 0 auto;
+      }
+    }
+    &__button {
+      @extend .sign-button;
+    }
+    &__user__wrap {
+      margin: 3.8rem 3rem 0 0 ;
+      text-align: right;
+    }
+    &__user {
+      color: black;
+    }
+    &__content {
+      margin-top: 3rem;
+      padding: .8rem;
+      border: 1px solid black;
+      color: $color-1;
+    }
+    &__delete-button__wrap {
+      margin-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+    &__delete-button {
+      @extend .sign-button;
+      background: red;
+      color: white;
     }
   }
 }

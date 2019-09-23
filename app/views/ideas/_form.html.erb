@@ -32,6 +32,10 @@
           <p class="idea-form-image__content"><%= f.radio_button :product_image, "相談したい", class: "idea-form-image__input" %>相談したい</p>
         </div>
       </div>
+      <div class="row idea-form__button_wrap">
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">プレビュー</p>
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">次へ</p>
+      </div>
     </div>
 
     <div class="tab-pane fade idea-form-user" id="ideaUser" role="tabpanel" aria-labelledby="ideaUser-tab">
@@ -51,6 +55,10 @@
         <div class="col-8 col-sm-5 col-md-4 col-lg-2 offset-3 offset-sm-1 offset-lg-0 idea-form-user__input__wrap2" id= "ideaUserWrap4">
           <p class="idea-form-user__content2"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea_user4.present?,  include_hidden: false, class: "idea-form-user__input" }, @idea_user4 %>ベビー＆<br>マタニティ</p>
         </div>
+      </div>
+      <div class="row idea-form__button_wrap">
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">前へ</p>
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">次へ</p>
       </div>
     </div>
 
@@ -82,6 +90,10 @@
           <p class="idea-form-category__content"><%= f.radio_button :idea_category, "その他", class: "idea-form-category__input" %>その他</p>
         </div>
       </div>
+      <div class="row idea-form__button_wrap">
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">前へ</p>
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">次へ</p>
+      </div>
     </div>
 
     <div class="tab-pane fade idea-form-category-details" id="ideaCategoryDetails" role="tabpanel" aria-labelledby="ideaCategoryDetails-tab">
@@ -106,6 +118,10 @@
           <p class="idea-form-category-details__content idea-form-category-details__content5"><%= f.radio_button :idea_category_details, "その他", class: "idea-form-category-details__input" %>その他</p>
         </div>
       </div>
+      <div class="row idea-form__button_wrap">
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">前へ</p>
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">次へ</p>
+      </div>
     </div>
 
     <div class="tab-pane fade idea-form-material" id="ideaMaterial" role="tabpanel" aria-labelledby="ideaMaterial-tab">
@@ -120,6 +136,10 @@
         <div class="col-10 col-md-3 offset-2 idea-form-material__input__wrap2" id= "ideaMaterialWrap3">
           <p class="idea-form-material__content"><%= f.radio_button :a, "生地のみ", class: "idea-form-material__input" %>生地のみ</p>
         </div>
+      </div>
+      <div class="row idea-form__button_wrap">
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">前へ</p>
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">次へ</p>
       </div>
     </div>
 
@@ -170,11 +190,11 @@
         <div class="col-md-8 idea-form-idea-details__input__wrap">
           <p class="offset-1 offset-md-3"><%= f.text_area :idea_commit, class: "col-11 form-control idea-form-idea-details__input2", placeholder: "作るものへのこだわり、設備の希望など" %></p>
         </div>
+        <div class="row idea-form__button_wrap">
+          <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">プレビュー</p>
+          <%= f.submit "保存", class: "col-8 col-sm-4 col-md-3 col-lg-2 offset-1 idea-form__button" %>
+        </div>
       </div>
-    </div>
-    <div class="row idea-form__button_wrap">
-      <%= f.submit "保存", class: "col-8 col-sm-4 col-md-3 col-lg-2 offset-1 idea-form__button" %>
-      <%= f.submit "プレビュー", class: "col-8 col-sm-4 col-md-3 col-lg-2 offset-1 idea-form__button" %>
     </div>
     <% end %>
   </section>
