@@ -142,7 +142,7 @@
             <%= b.label :genre %>
             <div class="field">
               <% ArtisanGenreList.all.each do |genreList| %>
-                <%= b.check_box :artisan_genre_ids, { multiple: true, checked: @artisan_profile.artisan_genre_lists.find_by(id: genreList.id)
+                <%= b.check_box :artisan_genre_list_ids, { multiple: true, checked: @artisan_profile.artisan_genre_lists.find_by(id: genreList.id)
                     .present?, include_hidden: false }, genreList[:id] %>
                 <%= genreList.genre_name %>
               <% end %>
@@ -158,7 +158,7 @@
           <%= b.label :item %>
           <div class="field">
             <% ArtisanItemList.all.each do |itemList| %>
-              <%= b.check_box :artisan_item_ids, { multiple: true, checked: @artisan_profile.artisan_item_lists.find_by(id: itemList.id)
+              <%= b.check_box :artisan_item_list_ids, { multiple: true, checked: @artisan_profile.artisan_item_lists.find_by(id: itemList.id)
                   .present?, include_hidden: false }, itemList[:id] %>
               <%= itemList.item_name %>
             <% end %>
@@ -174,7 +174,7 @@
         <%= b.label :facillity %>
         <div class="field">
           <% ArtisanFacillityList.all.each do |facillityList| %>
-            <%= b.check_box :artisan_facillity_ids, { multiple: true, checked: @artisan_profile.artisan_facillity_lists.find_by(id: facillityList.id)
+            <%= b.check_box :artisan_facillity_list_ids, { multiple: true, checked: @artisan_profile.artisan_facillity_lists.find_by(id: facillityList.id)
                 .present?, include_hidden: false }, facillityList[:id] %>
             <%= facillityList.facillity_name %>
           <% end %>
@@ -183,6 +183,26 @@
         <div class="mb-3">
           <%= b.label :facillity_free %>
           <%= b.text_field :facillity_free, class: "form-control", id: "facillity_free", placeholder: "" %>
+        </div>
+
+        <div class="mb-3">
+          <%= b.label :workexp_text %>
+          <%= b.text_field :workexp_text, class: "form-control", id: "workexp_text", placeholder: "" %>
+        </div>
+
+        <div class="mb-3">
+          <%= b.label :mypr %>
+          <%= b.text_field :mypr, class: "form-control", id: "mypr", placeholder: "" %>
+        </div>
+
+        <div class="mb-3">
+          <%= b.label :myprofile %>
+          <%= b.text_field :myprofile, class: "form-control", id: "myprofile", placeholder: "" %>
+        </div>
+
+        <div class="mb-3">
+          <%= b.label :work_status %>
+          <%= b.text_field :work_status, class: "form-control", id: "work_status", placeholder: "" %>
         </div>
 
         <div class="mb-3">
