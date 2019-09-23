@@ -64,18 +64,24 @@
     <p class="col-9 col-lg-6 show-idea-list__content6"><%= @idea.idea_commit %></p>
   </div>
   <div class="show-idea-comment">
-    <%= form_with(model: [@idea, @idea_comment] ) do |f| %>
-      <p class="col-10 col-md-11 col-lg-6 show-idea-comment__input__wrap"><%= f.text_area :content, class: "col-12 form-control show-idea-comment__input" %></p>
-      <p class="col-10 col-lg-3 show-idea-comment__button__wrap"><%= f.submit "コメントする", class: "col-lg-12 btn show-idea-comment__button" %></p>
-    <% end %>
+    <div class="col-12">
+      <%= form_with(model: [@idea, @idea_comment] ) do |f| %>
+        <p class="col-10 col-md-8 col-lg-7 col-xl-5 show-idea-comment__input__wrap"><%= f.text_area :content, class: "col-12 form-control show-idea-comment__input" %></p>
+        <p class="col-6 col-md-4 col-lg-3 col-xl-2 show-idea-comment__button__wrap"><%= f.submit "コメントする", class: "col-lg-12 btn show-idea-comment__button" %></p>
+      <% end %>
+    </div>
     <div class="row show-idea-comment__wrap">
       <% @idea_comments.each do |idea_comment| %>
         <% unless idea_comment.id.nil? %>
-          <p class="col-3 col-lg-2 offset-md-1 show-idea-comment__user__wrap"><%= link_to idea_comment.user.name, user_path(idea_comment.user.id), class: "show-idea-comment__user" %></p>
-          <p class="col-7 col-lg-8 show-idea-comment__content"><%= idea_comment.content %></p>
-          <% if idea_comment.user == current_user || @idea.user == current_user %>
-            <p class="col-8 col-lg-6 offset-4 offset-md-5 show-idea-comment__delete-button__wrap"><%= link_to "コメントを削除する", idea_idea_comment_path(idea_comment.idea_id, idea_comment.id), method: :delete, remote: true, class: "col-lg-12 show-idea-comment__delete-button" %></p>
-          <% end %>
+          <div class="col-12">
+            <p class="col-10 col-lg-1 show-idea-comment__user__wrap"><%= link_to idea_comment.user.name, user_path(idea_comment.user.id), class: "show-idea-comment__user" %></p>
+            <p class="col-10 col-md-8 col-lg-6 show-idea-comment__content"><%= idea_comment.content %></p>
+          </div>
+          <div class="col-12">
+            <% if idea_comment.user == current_user || @idea.user == current_user %>
+              <p class="col-7 col-md-5 col-lg-3 show-idea-comment__delete-button__wrap"><%= link_to "コメントを削除する", idea_idea_comment_path(idea_comment.idea_id, idea_comment.id), method: :delete, remote: true, class: "col-12 col-lg-12 show-idea-comment__delete-button" %></p>
+            <% end %>
+          </div>
         <% end %>
       <% end %>
     </div>

@@ -716,11 +716,8 @@
       margin: 5rem 0;
     }
     &__input__wrap {
-      margin-top: 3rem;
+      margin: 3rem auto 1.5rem auto;
       @include mq(md) {
-        margin: 3rem 0 0 20rem;
-      }
-      @include mq(lg) {
         margin: 10rem auto 1.5rem auto;
       }
     }
@@ -734,38 +731,40 @@
       resize: none;
     }
     &__button__wrap {
-      margin: 1.5rem 0 0 12rem;
-      @include mq(md) {
-        margin: 1.5rem 0 0 34rem;
-      }
-      @include mq(lg) {
-        margin: 1.5rem auto 0 auto;
-      }
+      margin: 1.5rem auto 0 auto;
     }
     &__button {
       @extend .sign-button;
     }
     &__user__wrap {
-      margin: 3.8rem 3rem 0 0 ;
-      text-align: right;
+      margin: 3.8rem auto 0 auto;
+      text-align: center;
+      @include mq(lg) {
+        text-align: right;
+      }
     }
     &__user {
       color: black;
+      font-size: 1.8rem;
     }
     &__content {
-      margin-top: 3rem;
+      margin: 3rem auto 0 auto;
       padding: .8rem;
       border: 1px solid black;
       color: $color-1;
     }
     &__delete-button__wrap {
-      margin-top: 1.5rem;
+      margin: 3rem auto 0 auto;
       padding-bottom: 1.5rem;
     }
     &__delete-button {
       @extend .sign-button;
       background: red;
       color: white;
+      font-size: 1.5rem;
+      @include mq(md) {
+        font-size: 1.6rem;
+      }
     }
   }
 }
