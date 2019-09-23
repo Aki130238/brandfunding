@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_20_031609) do
+ActiveRecord::Schema.define(version: 2019_09_23_073234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artisan_facillity_lists", force: :cascade do |t|
+    t.string "facillity_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "artisan_genre_lists", force: :cascade do |t|
+    t.string "genre_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "artisan_item_lists", force: :cascade do |t|
+    t.string "item_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "artisan_processing_lists", force: :cascade do |t|
+    t.string "processing_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "artisan_profiles", force: :cascade do |t|
     t.integer "workexp"
@@ -43,8 +67,6 @@ ActiveRecord::Schema.define(version: 2019_09_20_031609) do
     t.bigint "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "idea_id"
-    t.index ["idea_id"], name: "index_comments_on_idea_id"
     t.index ["project_id"], name: "index_comments_on_project_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -77,6 +99,7 @@ ActiveRecord::Schema.define(version: 2019_09_20_031609) do
     t.string "product_about"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "idea_material"
   end
 
   create_table "project_abouts", force: :cascade do |t|
@@ -155,8 +178,28 @@ ActiveRecord::Schema.define(version: 2019_09_20_031609) do
   create_table "projects", force: :cascade do |t|
     t.string "project_title"
     t.text "project_text"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "select_facillity_in_artisans", force: :cascade do |t|
+    t.bigint "artisan_profile_id"
+    t.bigint "artisan_facillity_list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artisan_facillity_list_id"], name: "index_select_facillity_in_artisans_on_artisan_facillity_list_id"
+    t.index ["artisan_profile_id"], name: "index_select_facillity_in_artisans_on_artisan_profile_id"
+  end
+
+  create_table "select_genre_in_artisans", force: :cascade do |t|
+    t.bigint "artisan_profile_id"
+    t.bigint "artisan_genre_list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artisan_genre_list_id"], name: "index_select_genre_in_artisans_on_artisan_genre_list_id"
+    t.index ["artisan_profile_id"], name: "index_select_genre_in_artisans_on_artisan_profile_id"
   end
 
   create_table "select_genre_in_ideas", force: :cascade do |t|
@@ -166,6 +209,24 @@ ActiveRecord::Schema.define(version: 2019_09_20_031609) do
     t.datetime "updated_at", null: false
     t.index ["idea_id"], name: "index_select_genre_in_ideas_on_idea_id"
     t.index ["idea_user_id"], name: "index_select_genre_in_ideas_on_idea_user_id"
+  end
+
+  create_table "select_item_in_artisans", force: :cascade do |t|
+    t.bigint "artisan_profile_id"
+    t.bigint "artisan_item_list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artisan_item_list_id"], name: "index_select_item_in_artisans_on_artisan_item_list_id"
+    t.index ["artisan_profile_id"], name: "index_select_item_in_artisans_on_artisan_profile_id"
+  end
+
+  create_table "select_processing_in_artisans", force: :cascade do |t|
+    t.bigint "artisan_profile_id"
+    t.bigint "artisan_processing_list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artisan_processing_list_id"], name: "index_artisan_processing_list_id"
+    t.index ["artisan_profile_id"], name: "index_artisan_processing_id"
   end
 
   create_table "user_profiles", force: :cascade do |t|
@@ -196,7 +257,6 @@ ActiveRecord::Schema.define(version: 2019_09_20_031609) do
   end
 
   add_foreign_key "artisan_profiles", "users"
-  add_foreign_key "comments", "ideas"
   add_foreign_key "comments", "projects"
   add_foreign_key "comments", "users"
   add_foreign_key "idea_comments", "ideas"
@@ -208,7 +268,16 @@ ActiveRecord::Schema.define(version: 2019_09_20_031609) do
   add_foreign_key "project_returns", "projects"
   add_foreign_key "project_sponsors", "projects"
   add_foreign_key "project_values", "projects"
+  add_foreign_key "projects", "users"
+  add_foreign_key "select_facillity_in_artisans", "artisan_facillity_lists"
+  add_foreign_key "select_facillity_in_artisans", "artisan_profiles"
+  add_foreign_key "select_genre_in_artisans", "artisan_genre_lists"
+  add_foreign_key "select_genre_in_artisans", "artisan_profiles"
   add_foreign_key "select_genre_in_ideas", "idea_users"
   add_foreign_key "select_genre_in_ideas", "ideas"
+  add_foreign_key "select_item_in_artisans", "artisan_item_lists"
+  add_foreign_key "select_item_in_artisans", "artisan_profiles"
+  add_foreign_key "select_processing_in_artisans", "artisan_processing_lists"
+  add_foreign_key "select_processing_in_artisans", "artisan_profiles"
   add_foreign_key "user_profiles", "users"
 end
