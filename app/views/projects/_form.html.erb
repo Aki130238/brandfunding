@@ -10,7 +10,7 @@
     <%= form_with(model: @project, local: true) do |f| %>
       <%= f.fields_for :project_value do |va| %>
         <div class="row project-form-value__target">
-          <div class="col-md-4 offset-1 offset-md-1 d-flex project-form__title__wrap">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
             <h3 class="col-5 col-md-6 project-form__title-1">目標金額</h2>
             <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h2>
           </div>
@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="row project-form-value__deadline">
-          <div class="col-md-4 offset-1 offset-md-1 d-flex project-form__title__wrap">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
             <h3 class="col-5 col-md-6 project-form__title-1">募集終了日</h2>
             <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h2>
           </div>
@@ -61,22 +61,22 @@
 
     <div class="tab-pane fade project-form-project" id="project" role="tabpanel" aria-labelledby="project-tab">
       <div class="row project-form-project__title">
-        <div class="col-xl-2 offset-md-2 d-flex project-form__title__wrap">
-          <h3 class="project-form__title-1">タイトル</h2>
-          <h4 class="project-form__title-2">必須</h2>
+        <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
+          <h3 class="col-4 col-md-6 project-form__title-1">タイトル</h2>
+          <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h2>
         </div>
-        <div class="col-10 col-xl-6 project-form__form__wrap">
-          <p><%= f.text_field :project_title, class: "col-12 form-control project-form-project__input", placeholder: "あなただけのタイトルでスポンサーを惹きつけましょう" %></p>
+        <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
+          <p><%= f.text_field :project_title, class: "col-12 col-xl-11 form-control project-form-project__input", placeholder: "あなただけのタイトルでスポンサーを惹きつけましょう" %></p>
           <p class="project-form-project__guide">40文字以内で入力してください。</p>
         </div>
       </div>
       <div class="row project-form-project__content_wrap">
-        <div class="col-xl-2 offset-md-2 d-flex project-form__title__wrap">
-          <h3 class="project-form__title-1">概要</h2>
-          <h4 class="project-form__title-2">必須</h2>
+        <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
+          <h3 class="col-4 col-md-6 project-form__title-1">概要</h2>
+          <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h2>
         </div>
-        <div class="col-10 col-xl-6 project-form__form__wrap">
-          <p><%= f.text_area :project_text, class: "col-12 form-control project-form-project__input-2", placeholder: "プロジェクトの内容を3行程度でまとめてみましょう" %></p>
+        <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
+          <p><%= f.text_area :project_text, class: "col-12 col-xl-11 form-control project-form-project__input-2", placeholder: "プロジェクトの内容を3行程度でまとめてみましょう" %></p>
           <p class="project-form-project__guide">140文字以内で入力してください。</p>
         </div>
       </div>
@@ -85,7 +85,7 @@
     <div class="tab-pane fade project-form-image" id="image" role="tabpanel" aria-labelledby="image-tab">
       <%= f.fields_for :project_image do |im| %>
         <div class="row project-form-image__main">
-          <div class="col-xl-2 offset-md-2 d-flex project-form__title__wrap">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
             <h3 class="project-form__title-1">メイン画像</h2>
             <h4 class="project-form__title-2">必須</h2>
           </div>
@@ -97,7 +97,7 @@
           </div>
         </div>
         <div class="row project-form-image__sub">
-          <div class="col-xl-2 offset-md-2 d-flex project-form__title__wrap">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
             <h3 class="project-form__title-1">サブ画像</h2>
           </div>
           <div class="col-4">
@@ -137,7 +137,7 @@
           </div>
         </div>
         <div class="row project-form-image__movie">
-          <div class="col-xl-2 offset-md-2 d-flex project-form__title__wrap">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
             <h3 class="project-form__title-1">&emsp;&emsp;動画</h2>
           </div>
           <div class="col-xl-6 project-form__form__wrap">
@@ -150,7 +150,7 @@
     <div class="tab-pane fade project-form-about" id="about" role="tabpanel" aria-labelledby="about-tab">
       <%= f.fields_for :project_about do |ab| %>
         <div class="row project-form-about__content">
-          <div class="col-xl-2 offset-md-2 d-flex project-form__title__wrap">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
             <h3 class="project-form__title-1">&emsp;&emsp;本文</h2>
             <h4 class="project-form__title-2">必須</h2>
           </div>
@@ -213,7 +213,7 @@
     <div class="tab-pane fade project-form-idea" id="idea" role="tabpanel" aria-labelledby="idea-tab">
       <%= f.fields_for :project_idea do |id| %>
         <div class="row project-form-idea__content">
-          <div class="col-xl-2 offset-md-2 d-flex project-form__title__wrap">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
             <h3 class="project-form__title-1">&emsp;アイディア追加</h3>
           </div>
           <div class="col-xl-6 project-form__form__wrap">
@@ -226,7 +226,7 @@
     <div class="tab-pane fade project-form-report" id="report" role="tabpanel" aria-labelledby="report-tab">
       <%= f.fields_for :project_report do |id| %>
         <div class="row project-form-idea__content">
-          <div class="col-xl-2 offset-md-2 d-flex project-form__title__wrap">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
             <h3 class="project-form__title-1">&emsp;&emsp;活動報告</h3>
           </div>
           <div class="col-xl-6 project-form__form__wrap">
