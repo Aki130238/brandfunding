@@ -1,0 +1,55 @@
+.edit-artisan-page {
+  &__title__wrap {
+    padding: 1rem 0;
+    border-bottom: 1px solid $color-1;
+  }
+  &__image {
+    width: 1.8rem;
+    margin: .5rem 0 0 1.5rem;
+  }
+  &__title {
+    margin-left: 1rem;
+    color: $color-1;
+    font-weight: bold;
+  }
+  .edit-artisan-form {
+    &__title1 {
+      margin: auto 0;
+      background: $bgcolor-3;
+      color: white;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    &__title2 {
+      margin: auto 0;
+      color: $color-1;
+      font-size: 1.4rem;
+    }
+    &__input__title {
+      margin: auto 0;
+      color: $color-1;
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: right;
+    }
+    &__profile {
+      margin-top: 1.5rem;
+      &__wrap {
+        margin-bottom: 1.5rem;
+      }
+      &__input__wrap {
+        margin: auto 0;
+      }
+      &__input {
+        padding: .5rem 1rem;
+        font-size: 1.6rem;
+      }
+      &__title {
+        margin-bottom: 3rem;
+        border-bottom: 1px solid $color-1;
+        color: $color-1;
+        font-weight: bold;
+      }
+    }
+  }
+}

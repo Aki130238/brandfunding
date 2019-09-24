@@ -1,7 +1,7 @@
-<div class="container">
-  <div class="py-5 text-center">
-    <h2>職人情報更新</h2>
-    <p class="lead"></p>
+<main class="container-fluid edit-artisan-page">
+  <div class="row edit-artisan-page__title__wrap">
+    <p class="d-flex"><%= svg("pencil-alt-solid.svg", class: "edit-artisan-page__image") %></p>
+    <h1 class="edit-artisan-page__title">会員情報を登録しましょう</h1>
   </div>
-  <%= render 'form', artisan_profile: @user %>
-</div>
+  <%= render "form", artisan_profile: @user %>
+</main>
