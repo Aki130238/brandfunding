@@ -308,7 +308,13 @@
     }
     &-about {
       &__input {
-        padding: 1.5rem 1.5rem 110rem 1.5rem;
+        padding: 1.5rem 1.5rem 135rem 1.5rem;
+        @include mq(md) {
+          padding-bottom: 113rem;
+        }
+        @include mq(lg) {
+          padding-bottom: 93rem;
+        }
         font-size: 1.5rem;
         overflow: hidden;
         resize: none;
