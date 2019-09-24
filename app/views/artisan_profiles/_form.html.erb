@@ -25,8 +25,8 @@
               <p class="edit-artisan-form__title1">必須</p>
               <p class="edit-artisan-form__title2">非公開</p>
             </div>
-            <p class="col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :family_name_sub, class: "form-control edit-artisan-form__profile__input", id: "firstName", placeholder: "せい", value: @user.user_profile.family_name_sub %></p>
-            <p class="col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :last_name_sub, class: "form-control edit-artisan-form__profile__input", id: "lastName", placeholder: "めい", value: @user.user_profile.last_name_sub  %></p>
+            <p class="col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :family_name_sub, class: "form-control edit-artisan-form__profile__input", id: "firstNameSub", placeholder: "せい", value: @user.user_profile.family_name_sub %></p>
+            <p class="col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :last_name_sub, class: "form-control edit-artisan-form__profile__input", id: "lastNameSub", placeholder: "めい", value: @user.user_profile.last_name_sub  %></p>
           </div>
         </div>
 
@@ -64,14 +64,23 @@
         </div>
 
         <div class="row edit-artisan-form__profile__wrap">
-          <label for="phone_no1" class="col-xl-3 edit-artisan-form__input__title">電話番号</label>
+          <label for="PhoneNumber1" class="col-xl-3 edit-artisan-form__input__title">電話番号</label>
           <div class="col-xl-9 d-flex">
             <div>
               <p class="edit-artisan-form__title1">必須</p>
               <p class="edit-artisan-form__title2">非公開</p>
             </div>
-            <p class="col-xl-4 edit-artisan-form__profile__input__wrap"><%= a.text_field :phone_no1, class: "form-control edit-artisan-form__profile__input", id: "PhoneNumber1", placeholder: "例）00000000000(ハイフン不要)" %></p>
-            <%= a.text_field :phone_no2, class: "form-control", id: "PhoneNumber2", placeholder: "例）00000000000(ハイフン不要)" %>
+            <p class="col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :phone_no1, class: "form-control edit-artisan-form__profile__input", id: "PhoneNumber1", placeholder: "例）00000000000(ハイフン不要)" %></p>
+          </div>
+        </div>
+
+        <div class="row edit-artisan-form__profile__wrap">
+          <label for="PhoneNumber2" class="col-xl-3 edit-artisan-form__input__title">電話番号(予備)</label>
+          <div class="col-xl-9 d-flex">
+            <div>
+              <p class="edit-artisan-form__title3">非公開</p>
+            </div>
+            <p class="col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :phone_no2, class: "form-control edit-artisan-form__profile__input", id: "PhoneNumber2", placeholder: "例）00000000000(ハイフン不要)" %></p>
           </div>
         </div>
       <% end %>
