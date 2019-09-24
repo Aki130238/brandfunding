@@ -271,6 +271,7 @@
     }
     &-image {
       &__image_wrap {
+        margin-top: 1.5rem;
         border: 1px solid black;
       }
       &__image_wrap-2 {
@@ -281,11 +282,8 @@
         padding: 1rem 1rem 35rem 1rem;
       }
       &__input-2 {
-        margin: 0 1.5rem .5rem 0;
+        margin: 0 1.5rem 1.5rem 0;
         padding: 1rem 1rem 10rem 1rem;
-      }
-      &__input-2-1 {
-        margin-bottom: 5rem;
       }
       &__input-3 {
         padding: 1rem;
@@ -294,15 +292,18 @@
       &__sub {
         margin-top: 5rem;
       }
-      &__guide_wrap {
+      &__guide__wrap {
+        @include mq(md) {
+          margin-bottom: 1.5rem;
+        }
+        @include mq(xl) {
+          margin-left: -5rem;
+        }
         font-size: 1.5rem;
       }
       &__guide__title {
-        margin-left: -4rem;
+        margin-top: 1.5rem;
         list-style: none;
-      }
-      &__guide__content {
-        margin-left: -1rem;
       }
     }
     &-about {
