@@ -1,18 +1,41 @@
 .edit-artisan-page {
   &__title__wrap {
-    padding: 1rem 0;
-    border-bottom: 1px solid $color-1;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid $bordercolor-1;
   }
   &__image {
     width: 1.8rem;
-    margin: .5rem 0 0 1.5rem;
+    margin: 1rem 0 0 1.5rem;
+    color: $color-1;
   }
   &__title {
-    margin-left: 1rem;
+    margin: .5rem 0 0 1rem;
     color: $color-1;
     font-weight: bold;
   }
   .edit-artisan-form {
+    &__privacy {
+      margin: 8rem auto 3rem auto;
+      color: $color-1;
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: center;
+    }
+    &__privacy__content {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &__button__wrap {
+      margin: 0 auto 8rem auto;
+    }
+    &__button {
+      padding: 1.5rem 0rem;
+      border: 1px solid black;
+      color: $color-1;
+      font-weight: bold;
+      font-size: 2rem;
+    }
     &__title1 {
       margin: auto 0;
       background: $bgcolor-3;
@@ -26,9 +49,25 @@
       font-size: 1.4rem;
     }
     &__title3 {
-      margin-top: .8rem;
+      margin-top: 1rem;
       color: $color-1;
       font-size: 1.4rem;
+    }
+    &__title4 {
+      margin: auto 0;
+      padding: 0 .8rem;
+      background: $bgcolor-3;
+      color: white;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    &__title_hide {
+      margin: auto 0;
+      padding: 0 .8rem;
+      background: white;
+      color: white;
+      font-size: 1.4rem;
+      text-align: center;
     }
     &__input__title {
       margin: auto 0;
@@ -38,9 +77,9 @@
       text-align: right;
     }
     &__profile {
-      margin-top: 1.5rem;
+      margin: 1.5rem 0 5rem 0;
       &__wrap {
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
       }
       &__input__wrap {
         margin: auto 0;
@@ -49,11 +88,117 @@
         padding: .5rem 1rem;
         font-size: 1.6rem;
       }
+      &__title__wrap {
+        // padding: 1.5rem 0;
+      }
+      // &__title {
+      //   padding: .5rem 0 .5rem 4rem;
+      //   color: $color-1;
+      //   font-weight: bold;
+      // }
+    }
+    &__artisan {
+      &__wrap {
+        margin-bottom: 1.5rem;
+      }
+      &__wrap2 {
+        margin-top: -10rem;
+      }
+      &__wrap3 {
+        margin-top: 3rem;
+      }
+      &__input__wrap {
+        margin-top: 1.1rem;
+      }
+      &__input__wrap2 {
+        margin: 1.1rem 0 0 8.3rem;
+      }
+      &__input__wrap3 {
+        margin: 1.1rem 0 0 4rem;
+      }
+      &__input__wrap4 {
+        margin-top: 15rem;
+      }
+      &__genre__wrap {
+        margin-bottom: -10rem;
+      }
+      &__genre__wrap2 {
+        margin-bottom: -18rem;
+      }
+      &__genre-list__wrap {
+        margin-top: 7rem;
+      }
+      &__genre-list__wrap2 {
+        margin-top: 10rem;
+      }
+      &__genre__content {
+        float: left;
+      }
+      &__item__wrap {
+        margin-top: 5rem;
+      }
+      &__item-list__wrap {
+        margin-top: 18rem;
+      }
+      &__facillity__wrap {
+        margin-top: -5rem;
+      }
+      &__facillity-list__wrap {
+        margin-top: 11rem;
+      }
+      &__input {
+        padding: .5rem 1rem;
+        font-size: 1.6rem;
+      }
+      &__input2 {
+        padding: .5rem 1rem;
+        background: $bgcolor-5;
+        font-size: 1.6rem;
+      }
+      &__input3 {
+        padding: 1rem 1rem 15rem 1rem;
+        font-size: 1.6rem;
+      }
       &__title {
-        margin-bottom: 3rem;
-        border-bottom: 1px solid $color-1;
+        margin: auto 0 auto 5rem;
         color: $color-1;
-        font-weight: bold;
+      }
+      &__title2 {
+        margin: auto 0 auto 10rem;
+        color: $color-1;
+      }
+      &__content {
+        margin: auto 0;
+        color: $color-1;
+      }
+      &__skill_bg {
+        margin: 1rem 0 0 1.5rem;
+        padding: 1.5rem;
+        background: $bgcolor-skill;
+        color: $color-skill;
+      }
+      &__button {
+        @extend .sign-button;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: .8rem 0;
+        background: $btncolor-2;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      &__image {
+        width: 1.6rem;
+        color: white;
+        vertical-align: -.4rem;
+      }
+      &__radio__wrap {
+        margin-top: 1rem;
+      }
+      &__radio__input {
+        margin: .5rem 0 0 3rem;
+      }
+      &__radio__content {
+        margin-top: .8rem;
       }
     }
   }
