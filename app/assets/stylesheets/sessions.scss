@@ -2,22 +2,25 @@
   height: 100%;
   background: $bgcolor-1;
   .signin {
-    display: inline-block;
-    width: 100%;
-    margin: 10rem auto;
-    text-align: center;
     &__title {
+      margin: 0 auto 3rem auto;
+      padding-top: 5rem;
       color: $color-1;
       font-weight: bold;
     }
     &-form {
+      &__wrap {
+        margin: 0 auto;
+      }
       &__input {
-        @extend .form;
+        @extend .sign-form;
+      }
+      &__button__wrap {
+        margin: 0 auto;
+        padding-bottom: 8rem;
       }
       &__button {
-        @extend .button;
-        margin-top: 3rem;
-        background: $btncolor-1;
+        @extend .sign-button;
       }
     }
   }

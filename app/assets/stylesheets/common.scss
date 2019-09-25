@@ -1,19 +1,70 @@
 $bgcolor-1: #FFFEED;
+$bgcolor-2: #F8F9FA;
+$bgcolor-3: red;
+$bgcolor-4: #F7F7F7;
+$bgcolor-project: #1DBE00;
+$bgcolor-idea: #FFD800;
 $bgcolor-footer: #606060;
 $color-1: #6C6C6C;
 $color-main: #FE38C3;
 $color-error: #e73562;
 $btncolor-1: #C19A88;
 
+@media (max-width: 540px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
 $breakpoints: (
-  'sm': 'screen and (max-width: 559px)',
-  'md': 'screen and (max-width: 959px)',
+  'sm': 'screen and (min-width: 576px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 992px)',
+  'xl': 'screen and (min-width: 1200px)',
 ) !default;
 
-@mixin mq($breakpoint) {
+@mixin mq($breakpoint: md) {
   @media #{map-get($breakpoints, $breakpoint)} {
     @content;
   }
+}
+
+.no-gutters {
+  margin:0;
+  padding:0;
+}
+
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+  margin:0;
+  padding:0;
+}
+
+.center {
+  display: inline-block;
+  text-align: center;
+}
+
+.sign-form {
+  margin: 2rem 0;
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.8rem;
+}
+
+.sign-button {
+  margin-top: 1rem;
+  padding: .8rem;
+  border-radius: 8px;
+  background: $btncolor-1;
+  color: white;
+  font-size: 1.8rem;
+}
+
+.button {
+  border: 1px solid black;
+  background: white;
+  color: $color-1;
 }
 
 html {
@@ -22,75 +73,64 @@ html {
   body {
     height: 100%;
     font-size: 1.6rem;
-    li {
-      list-style: none;
+    img {
+      max-width: 100%;
+      height: auto;
     }
   }
 }
 
-.form {
-  width: 44rem;
-  margin: 1.2rem 0;
-  padding: .7rem 1rem;
-  border: .1rem solid $color-1;
-  border-radius: 5px;
-  background: white;
-  outline: 0;
-}
-
-.button {
-  width: 23rem;
-  padding: .7rem 0;
-  border-radius: 5px;
+.flash {
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+  background: $color-main;
   color: white;
-  cursor: pointer;
+  text-align: center;
 }
 
-.header-1 {
-  display: flex;
-  padding: 2.5rem 0 2rem 5rem;
+.header {
+  padding: 2.5rem 0 2.5rem 3rem;
   border-bottom: solid $color-main;
-  background: white;
   &__title {
-    margin-right: auto;
     color: $color-1;
   }
-  &__flash {
-    position: absolute center;
-    margin: .3rem 0 .3rem 33rem;
-    color: black;
+  &__title:hover {
+    color: $color-1;
+    text-decoration: none;
   }
-  &__column {
-    position: absolute;
-    right: 15rem;
-    margin: .3rem 0 .3rem 3rem;
+  .navbar {
+    margin-right: 2rem;
+    background: white;
+    .navbar-toggler {
+      font-size: 2rem;
+      outline: 0;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='pink' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+  }
+  &__navlink {
+    margin: .5rem 4rem 0 0;
     color: $color-1;
   }
-  &__column2 {
-    position: absolute;
-    right: 26.5rem;
-    margin: .3rem 0 .3rem 3rem;
-    color: $color-1;
-  }
-  &__column3 {
-    position: absolute;
-    right: 5rem;
-    margin: .3rem 0 .3rem 3rem;
-    color: $color-1;
-  }
-  &__title:hover, &__column:hover, &__column2:hover, &__column3:hover {
+  &__navlink:hover {
     color: $color-1;
     text-decoration: none;
   }
 }
 
-.footer-1 {
-  display: flex;
-  padding: 2.5rem 0 2rem 5rem;
+.footer {
+  padding: 2.5rem 0 2rem 0rem;
   background: $bgcolor-footer;
-  color: white;
+  &__wrap {
+    margin-right: 5rem;
+  }
+  &__title__wrap {
+    padding-top: .3rem;
+  }
   &__title {
-    margin: 0 1rem;
+    margin-left: 3rem;
     color: white;
   }
   &__title:hover {
@@ -98,8 +138,15 @@ html {
     text-decoration: none;
   }
   &__column {
-    margin: .3rem 1rem;
-    font-size: 1.3rem;
-    cursor: pointer;
+    margin: 0 1rem 0 3rem;
+    padding-top: .8rem;
+    color: white;
+    font-size: 1.4rem;
+  }
+  &__column2 {
+    margin: 0 1rem;
+    padding-top: .8rem;
+    color: white;
+    font-size: 1.4rem;
   }
 }

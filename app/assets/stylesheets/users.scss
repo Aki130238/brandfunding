@@ -2,16 +2,17 @@
   height: 100%;
   background: $bgcolor-1;
   .signup {
-    display: inline-block;
-    width: 100%;
-    margin: 10rem auto;
-    text-align: center;
     &__title {
+      margin: 0 auto 3rem auto;
+      padding-top: 5rem;
       color: $color-1;
       font-weight: bold;
     }
     &__list {
+      margin: 0 auto 3rem auto;
+      padding-left: 12rem;
       color: $color-error;
+      list-style: none;
       &__icon {
         width: 2rem;
         margin: 2rem 0 0 -6rem;
@@ -19,23 +20,145 @@
       }
     }
     &-form {
+      &__wrap {
+        margin: 0 auto;
+      }
       &__input {
-        @extend .form;
+        @extend .sign-form;
       }
       &__about {
-        margin-top: 4rem;
+        margin: 5rem auto 1rem auto;
         color: $color-1;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+        text-align: center;
       }
       &__privacy {
+        margin: 0 auto 1rem auto;
         color: $color-1;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+      &__button__wrap {
+        margin: 0 auto;
       }
       &__button {
-        @extend .button;
-        margin-top: 2rem;
-        background: $btncolor-1;
+        @extend .sign-button;
       }
+    }
+  }
+}
+
+.my-page {
+  padding-bottom: 5rem;
+  li {
+    list-style: none;
+  }
+  &__title {
+    margin: 3rem 0;
+    @include mq(md) {
+      margin: 3rem 0 3rem 2rem;
+    }
+    @include mq(lg) {
+      margin: 3rem 0 3rem 7rem;
+    }
+    @include mq(xl) {
+      margin: 3rem 0 3rem 10rem;
+    }
+    color: $color-1;
+    font-weight: bold;
+    font-size: 2.7rem;
+    @include mq(lg) {
+      font-size: 3rem;
+    }
+  }
+  .menu {
+    @include mq(md) {
+      margin-left: 3rem;
+    }
+    @include mq(lg) {
+      margin-left: 8rem;
+    }
+    @include mq(xl) {
+      margin-left: 12rem;
+    }
+    &__user_image {
+      border: 1px solid black;
+      border-bottom: none;
+      text-align: center;
+    }
+    &__user_name {
+      padding-bottom: 1rem;
+      border-right: 1px solid black;
+      border-left: 1px solid black;
+      font-size: 3rem;
+      text-align: center;
+    }
+    &__li {
+      border: 1px solid black;
+      border-top: none;
+    }
+    &__li_border-top {
+      border-top: 1px solid black;
+    }
+    &__button {
+      outline: 0;
+    }
+    &__title {
+      margin: 0 0 -.2rem .5rem;
+      color: $color-1;
+      font-weight: bold;
+      text-align: left;
+      @include mq(md) {
+        font-size: 2rem;
+      }
+      @include mq(xl) {
+      font-size: 2.5rem;
+      }
+    }
+    &__title-2 {
+      margin-left: 2rem;
+      padding: 1rem 0 .5rem 0;
+      background: white;
+      color: $color-1;
+      font-weight: bold;
+      @include mq(md) {
+        font-size: 2rem;
+      }
+      @include mq(xl) {
+        font-size: 2.5rem;
+        }
+      &__link {
+        color: $color-1;
+        text-decoration: none;
+      }
+    }
+    &__link {
+      color: $color-1;
+      text-decoration: none;
+    }
+    &__item {
+      color: black;
+    }
+    &__list {
+      margin-left: 4rem;
+      color: $color-1;
+      font-size: 1.8rem;
+    }
+  }
+  &__form {
+    margin-top: 5rem;
+    @include mq(lg) {
+      margin-left: 3rem;
+    }
+    @include mq(xl) {
+      margin-left: 8rem;
+    }
+    font-size: 2rem;
+    @include mq(md) {
+      font-size: 2.5rem;
+    }
+    &__button_wrap {
+      margin-top: 3rem;
     }
   }
 }

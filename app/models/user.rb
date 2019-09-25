@@ -6,4 +6,7 @@ class User < ApplicationRecord
   has_one :artisan_profile, inverse_of: :user, dependent: :destroy
   accepts_nested_attributes_for :artisan_profile, reject_if: :all_blank
   validates :password, presence: true, length: { minimum: 6 }, on: :new
+  has_many :comments
+  has_many :projects
+  has_many :idea_comments, dependent: :destroy
 end
