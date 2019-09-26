@@ -7,7 +7,7 @@
     <div class="edit-artisan-form__profile">
       <%= f.fields_for :user_profile do |a| %>
         <%# <div class="row edit-artisan-form__profile__title__wrap">
-          <h1 class="col-11 edit-artisan-form__profile__title">プロフィール</h1>
+          <h1 class="col-12 edit-artisan-form__profile__title">プロフィール</h1>
         </div> %>
 
         <div class="row edit-artisan-form__profile__wrap">
@@ -21,8 +21,8 @@
               <p class="edit-artisan-form__title1">必須</p>
               <p class="edit-artisan-form__title2">非公開</p>
             </div>
-            <p class="col-11 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :family_name, class: "form-control edit-artisan-form__profile__input", id: "firstName", placeholder: "性", value: @user.user_profile.family_name %></p>
-            <p class="col-11 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :last_name, class: "form-control edit-artisan-form__profile__input", id: "lastName", placeholder: "名", value: @user.user_profile.last_name  %></p>
+            <p class="col-12 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :family_name, class: "form-control edit-artisan-form__profile__input", id: "firstName", placeholder: "性", value: @user.user_profile.family_name %></p>
+            <p class="col-12 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :last_name, class: "form-control edit-artisan-form__profile__input", id: "lastName", placeholder: "名", value: @user.user_profile.last_name  %></p>
           </div>
         </div>
 
@@ -38,8 +38,8 @@
               <p class="edit-artisan-form__title1">必須</p>
               <p class="edit-artisan-form__title2">非公開</p>
             </div>
-            <p class="col-11 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :family_name_sub, class: "form-control edit-artisan-form__profile__input", id: "firstNameSub", placeholder: "せい", value: @user.user_profile.family_name_sub %></p>
-            <p class="col-11 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :last_name_sub, class: "form-control edit-artisan-form__profile__input", id: "lastNameSub", placeholder: "めい", value: @user.user_profile.last_name_sub  %></p>
+            <p class="col-12 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :family_name_sub, class: "form-control edit-artisan-form__profile__input", id: "firstNameSub", placeholder: "せい", value: @user.user_profile.family_name_sub %></p>
+            <p class="col-12 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :last_name_sub, class: "form-control edit-artisan-form__profile__input", id: "lastNameSub", placeholder: "めい", value: @user.user_profile.last_name_sub  %></p>
           </div>
         </div>
 
@@ -54,7 +54,7 @@
               <p class="edit-artisan-form__title1">必須</p>
               <p class="edit-artisan-form__title2">非公開</p>
             </div>
-            <p class="col-11 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :prefectures, class: "form-control edit-artisan-form__profile__input", id: "Prefectures", placeholder: "例）東京都" %></p>
+            <p class="col-12 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :prefectures, class: "form-control edit-artisan-form__profile__input", id: "Prefectures", placeholder: "例）東京都" %></p>
           </div>
         </div>
 
@@ -69,7 +69,7 @@
               <p class="edit-artisan-form__title1">必須</p>
               <p class="edit-artisan-form__title2">非公開</p>
             </div>
-            <p class="col-11 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :add_no, class: "form-control edit-artisan-form__profile__input", id: "AddNumber", placeholder: "例）0000000（ハイフン不要）" %></p>
+            <p class="col-12 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :add_no, class: "form-control edit-artisan-form__profile__input", id: "AddNumber", placeholder: "例）0000000（ハイフン不要）" %></p>
           </div>
         </div>
 
@@ -84,7 +84,7 @@
               <p class="edit-artisan-form__title1">必須</p>
               <p class="edit-artisan-form__title2">非公開</p>
             </div>
-            <p class="col-11 col-xl-10 edit-artisan-form__profile__input__wrap"><%= a.text_field :address, class: "form-control edit-artisan-form__profile__input", id: "address", placeholder: "建物名までご記入ください" %></p>
+            <p class="col-12 col-xl-10 edit-artisan-form__profile__input__wrap"><%= a.text_field :address, class: "form-control edit-artisan-form__profile__input", id: "address", placeholder: "建物名までご記入ください" %></p>
           </div>
         </div>
 
@@ -99,10 +99,10 @@
               <p class="edit-artisan-form__title1">必須</p>
               <p class="edit-artisan-form__title2">非公開</p>
             </div>
-            <p class="col-11 col-xl-4 edit-artisan-form__profile__input__wrap"><%= a.text_field :phone_no1, class: "form-control edit-artisan-form__profile__input", id: "PhoneNumber1", placeholder: "例）00000000000(ハイフン不要)" %></p>
+            <p class="col-12 col-xl-4 edit-artisan-form__profile__input__wrap"><%= a.text_field :phone_no1, class: "form-control edit-artisan-form__profile__input", id: "PhoneNumber1", placeholder: "例）00000000000(ハイフン不要)" %></p>
             <label for="PhoneNumber2" class="col-xl-2 edit-artisan-form__input__title edit-artisan-form__input__title_phone">電話番号(予備)</label>
             <p class="edit-artisan-form__title3">非公開</p>
-            <p class="col-11 col-xl-4 edit-artisan-form__profile__input__wrap"><%= a.text_field :phone_no2, class: "col-xl-11 form-control edit-artisan-form__profile__input", id: "PhoneNumber2", placeholder: "例）00000000000(ハイフン不要)" %></p>
+            <p class="col-12 col-xl-4 edit-artisan-form__profile__input__wrap"><%= a.text_field :phone_no2, class: "col-xl-11 form-control edit-artisan-form__profile__input", id: "PhoneNumber2", placeholder: "例）00000000000(ハイフン不要)" %></p>
           </div>
         </div>
       <% end %>
@@ -117,7 +117,7 @@
       <%= f.fields_for :artisan_profile do |b| %>
 
         <div class="row edit-artisan-form__input__wrap">
-          <label for="workExp" class="col-xl-3 edit-artisan-form__input__title">経験年数</label>
+          <label for="workExp" class="col-5 col-xl-3 edit-artisan-form__input__title">経験年数</label>
           <div class="col-xl-9 d-flex">
             <p class="edit-artisan-form__title4">必須</p>
             <label for="workExp" class="edit-artisan-form__artisan__title">実務経験</label>
