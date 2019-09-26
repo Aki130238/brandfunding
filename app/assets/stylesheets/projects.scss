@@ -336,3 +336,54 @@
     }
   }
 }
+
+.projects-page {
+  &__title {
+    display: inline-block;
+    padding: 2.5rem 0;
+    background: $bgcolor-project;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+  .project-list {
+    margin: 1.5rem;
+    border: 1px solid black;
+    &_void {
+      margin: 3rem;
+    }
+    &__wrap {
+      display: flex;
+      margin-left: 12rem;
+    }
+    &__title {
+      margin-left: 1.3rem;
+    }
+    &__bar {
+      background: $bgcolor-idea;
+    }
+    &__bar__content {
+      margin: .5rem auto;
+      color: white;
+    }
+    &__content__wrap {
+      background: $bgcolor-project2;
+    }
+    &__guide {
+      display: flex;
+      margin-bottom: -.5rem;
+      padding-top: 1rem;
+      background: $bgcolor-project2;
+      color: $color-1;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    &__content {
+      display: flex;
+      padding-bottom: 1rem;
+      background: $bgcolor-project2;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}
