@@ -12,17 +12,9 @@ class IdeasController < ApplicationController
 
   def new
     @idea = Idea.new
-    @idea_user1 = IdeaUser.find(1).id
-    @idea_user2 = IdeaUser.find(2).id
-    @idea_user3 = IdeaUser.find(3).id
-    @idea_user4 = IdeaUser.find(4).id
   end
 
   def edit
-    @idea_user1 = IdeaUser.find(1).id
-    @idea_user2 = IdeaUser.find(2).id
-    @idea_user3 = IdeaUser.find(3).id
-    @idea_user4 = IdeaUser.find(4).id
   end
 
   def create
@@ -54,7 +46,8 @@ class IdeasController < ApplicationController
   end
 
   def idea_params
-    params.require(:idea).permit(:idea_title, :idea_amount, :idea_about, :idea_usage, :idea_commit, :product_image,
-                                 :idea_category, :idea_category_details, :product_about, idea_user_ids: [])
+    params.require(:idea).permit(:idea_title, :idea_amount, :idea_about,
+                                 :idea_usage, :idea_commit, :product_image, :idea_category,
+                                 :idea_category_details, :product_about, :idea_material, idea_user_ids: [])
   end
 end
