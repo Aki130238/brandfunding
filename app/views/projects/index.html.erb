@@ -1,9 +1,20 @@
 <main class="container-fluid projects-page">
   <div class="row">
-    <h1 class="col-12 projects-page__title">&emsp;</h1>
+    <div class="col-12 projects-page__header">
+      <div class="col-md-8 projects-page__header__menu">
+        <%= svg("sort-amount-down-solid.svg", class: "projects-page__header__menu__icon") %>
+        <p class="projects-page__header__menu__button">並び替え</p>
+        <p class="projects-page__header__menu__button2">人気順</p>
+        <p class="projects-page__header__menu__button2">新着順</p>
+        <p class="projects-page__header__menu__button2">終了日が近い順</p>
+        <p class="projects-page__header__menu__button2">支援総額順</p>
+        <p class="projects-page__header__menu__button2">支援者数順</p>
+        <p class="projects-page__header__menu__button3"><%= svg("plus-circle-solid.svg", class: "projects-page__header__menu__icon2") %>&thinsp;条件を追加</p>
+      </div>
+    </div>
   </div>
 
-  <div class="row col-md-12 project-list__wrap">
+  <div class="row col-md-11 project-list__wrap">
     <div class="row col-12 project-list_void"></div>
     <% @projects.each do |pr|%>
       <div class="project-list col-md-3">
@@ -32,6 +43,7 @@
             <% end %>
           </p>
         </div>
+        <div class="row project-list__bar2">&ensp;</div>
       </div>
     <% end %>
     <div class="row col-12 project-list_void"></div>
