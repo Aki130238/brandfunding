@@ -383,7 +383,11 @@
     }
     &__wrap {
       display: flex;
-      margin-left: 16rem;
+      margin-left: 15rem;
+    }
+    &__link {
+      color: $color-1;
+      text-decoration: none;
     }
     &__title {
       margin-left: 1.3rem;
