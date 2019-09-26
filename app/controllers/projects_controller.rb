@@ -30,6 +30,7 @@ class ProjectsController < ApplicationController
     @comments = @project.comments
     @comment = Comment.new
     @project_return = ProjectReturn.new
+    @like = current_user.project_likes.find_by(project_id: @project.id)
   end
 
   def edit
