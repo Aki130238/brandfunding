@@ -1,4 +1,4 @@
 class ProjectLike < ApplicationRecord
-  belogns_to :user
-  belogns_to :project
+  belongs_to :user
+  belongs_to :project
 end
