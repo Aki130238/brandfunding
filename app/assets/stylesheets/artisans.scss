@@ -36,6 +36,22 @@
       font-weight: bold;
       font-size: 2rem;
     }
+    &__input_direction {
+      @include mq(md) {
+        display: flex;
+      }
+    }
+    &__title_show {
+      @include mq(md) {
+        display: none;
+      }
+    }
+    &__title_none {
+      display: none;
+      @include mq(md) {
+        display: block;
+      }
+    }
     &__title1 {
       margin: auto 0;
       background: $bgcolor-3;
@@ -49,9 +65,13 @@
       font-size: 1.4rem;
     }
     &__title3 {
-      margin-top: 1rem;
-      color: $color-1;
-      font-size: 1.4rem;
+      display: none;
+      @include mq(md) {
+        display: block;
+        margin-top: 1rem;
+        color: $color-1;
+        font-size: 1.4rem;
+      }
     }
     &__title4 {
       margin: auto 0;
@@ -70,11 +90,51 @@
       text-align: center;
     }
     &__input__title {
-      margin: auto 0;
+      margin: auto 0 auto 2.5rem;
+      @include mq(md) {
+        margin: auto 0;
+      }
       color: $color-1;
       font-weight: bold;
       font-size: 2rem;
-      text-align: right;
+      text-align: left;
+      @include mq(md) {
+        text-align: right;
+      }
+    }
+    &__input__title_name {
+      display: none;
+      @include mq(md) {
+        display: block;
+        margin: auto 0;
+        color: $color-1;
+        font-weight: bold;
+        font-size: 2rem;
+        text-align: right;
+      }
+    }
+    &__input__title_sm {
+      margin: auto 0 auto 2.5rem;
+      color: $color-1;
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: left;
+      @include mq(md) {
+        display: none;
+      }
+    }
+    &__input__title_phone {
+      margin: 1rem 0 0 1rem;
+      @include mq(md) {
+        margin: auto 0;
+      }
+      color: $color-1;
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: left;
+      @include mq(md) {
+        text-align: right;
+      }
     }
     &__profile {
       margin: 1.5rem 0 5rem 0;
@@ -82,7 +142,10 @@
         margin-bottom: 2rem;
       }
       &__input__wrap {
-        margin: auto 0;
+        margin: .5rem 0 1rem 0;
+        @include mq(md) {
+          margin: auto 0;
+        }
       }
       &__input {
         padding: .5rem 1rem;
