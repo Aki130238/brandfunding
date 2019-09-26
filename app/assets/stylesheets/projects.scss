@@ -336,3 +336,86 @@
     }
   }
 }
+
+.projects-page {
+  &__header {
+    background: $bgcolor-project;
+    &__menu {
+      display: flex;
+      margin: .8rem auto .8rem auto;
+      padding: 1rem 0;
+      background: $bgcolor-project2;
+      &__icon {
+        width: 2rem;
+        margin-left: 2rem;
+        cursor: pointer;
+      }
+      &__icon2 {
+        width: 1.6rem;
+        vertical-align: -.2rem;
+      }
+      &__button {
+        margin: 1rem 1.5rem 0 1rem;
+        cursor: pointer;
+      }
+      &__button2 {
+        margin: 0 .3rem;
+        padding: 1rem 1.6rem;
+        border: 1px solid $bordercolor-1;
+        background: white;
+        color: $color-1;
+        cursor: pointer;
+      }
+      &__button3 {
+        margin: 0 2rem;
+        padding: 1rem 1.6rem;
+        border: 1px solid $bordercolor-1;
+        background: white;
+        color: $color-1;
+        cursor: pointer;
+      }
+    }
+  }
+  .project-list {
+    margin: 1.5rem;
+    &_void {
+      margin: 3rem;
+    }
+    &__wrap {
+      display: flex;
+      margin-left: 16rem;
+    }
+    &__title {
+      margin-left: 1.3rem;
+    }
+    &__bar {
+      background: $bgcolor-idea;
+    }
+    &__bar__content {
+      margin: .5rem auto;
+      color: white;
+    }
+    &__content__wrap {
+      background: $bgcolor-project2;
+    }
+    &__guide {
+      display: flex;
+      margin-bottom: -.5rem;
+      padding-top: 1rem;
+      background: $bgcolor-project2;
+      color: $color-1;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    &__content {
+      display: flex;
+      padding-bottom: 1rem;
+      background: $bgcolor-project2;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__bar2 {
+      background: $bgcolor-project3;
+    }
+  }
+}

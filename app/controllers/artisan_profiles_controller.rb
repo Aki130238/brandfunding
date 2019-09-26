@@ -18,7 +18,6 @@ class ArtisanProfilesController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_edit_params)
       redirect_to artisan_profile_path(@user.id), notice: "プロフィールを修正しました！"
     else
