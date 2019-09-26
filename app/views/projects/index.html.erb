@@ -1,8 +1,8 @@
-<% Project.each do |pr|%>
+<% @projects.each do |pr|%>
   <%= pr.project_image.project_img %>
   <%= pr.project_text %>
   <%= pr.project_value.project_fund %>
-  <%= pr.project_return.return_item_sponsors %>
+  <%= pr.project_idea.project_returns %>
   <% if Time.now >= pr.project_value.recruitment_deadline %>
     終了
   <% else %>
