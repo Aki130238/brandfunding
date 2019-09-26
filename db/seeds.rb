@@ -14,7 +14,7 @@ IdeaUser.create(name: "ベビー＆マタニティ")
 ArtisanGenreList.create( genre_name: "レディース")
 ArtisanGenreList.create( genre_name: "メンズ")
 ArtisanGenreList.create( genre_name: "キッズ")
-ArtisanGenreList.create( genre_name: "ベビー・マタイティ")
+ArtisanGenreList.create( genre_name: "ベビー・マタニティ")
 ArtisanGenreList.create( genre_name: "インテリア・アクセサリ")
 ArtisanGenreList.create( genre_name: "その他")
 
@@ -30,6 +30,7 @@ ArtisanItemList.create( item_name: "ドレス")
 ArtisanItemList.create( item_name: "バッグ")
 ArtisanItemList.create( item_name: "帽子")
 ArtisanItemList.create( item_name: "靴")
+ArtisanItemList.create( item_name: "その他")
 
 
 ArtisanFacillityList.create( facillity_name: "工業用直線縫いミシン")
