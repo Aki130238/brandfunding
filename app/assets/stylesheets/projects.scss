@@ -340,40 +340,43 @@
 .projects-page {
   &__header {
     background: $bgcolor-project;
-    &__menu {
-      display: flex;
-      margin: .8rem auto .8rem auto;
-      padding: 1rem 0;
-      background: $bgcolor-project2;
-      &__icon {
-        width: 2rem;
-        margin-left: 2rem;
-        cursor: pointer;
-      }
-      &__icon2 {
-        width: 1.6rem;
-        vertical-align: -.2rem;
-      }
-      &__button {
-        margin: 1rem 1.5rem 0 1rem;
-        cursor: pointer;
-      }
-      &__button2 {
-        margin: 0 .3rem;
-        padding: 1rem 1.6rem;
-        border: 1px solid $bordercolor-1;
-        background: white;
-        color: $color-1;
-        cursor: pointer;
-      }
-      &__button3 {
-        margin: 0 2rem;
-        padding: 1rem 1.6rem;
-        border: 1px solid $bordercolor-1;
-        background: white;
-        color: $color-1;
-        cursor: pointer;
-      }
+    }
+  &__menu {
+    display: flex;
+    margin: .8rem auto .8rem auto;
+    padding: 1rem 0;
+    background: $bgcolor-project2;
+    &__icon__wrap {
+      margin-top: 1.1rem;
+    }
+    &__icon {
+      width: 2rem;
+      margin-left: 2rem;
+      cursor: pointer;
+    }
+    &__icon2 {
+      width: 1.6rem;
+      vertical-align: -.2rem;
+    }
+    &__button {
+      margin: 1rem 1.5rem 0 1rem;
+      cursor: pointer;
+    }
+    &__button2 {
+      margin: 0 .3rem;
+      padding: 1rem 1.6rem;
+      border: 1px solid $bordercolor-1;
+      background: white;
+      color: $color-1;
+      cursor: pointer;
+    }
+    &__button3 {
+      margin: 0 2rem;
+      padding: 1rem 1.6rem;
+      border: 1px solid $bordercolor-1;
+      background: white;
+      color: $color-1;
+      cursor: pointer;
     }
   }
   .project-list {
@@ -420,6 +423,127 @@
     }
     &__bar2 {
       background: $bgcolor-project3;
+    }
+  }
+}
+
+.show-project-page {
+  &__header {
+    padding: 3.5rem 0;
+    background: $bgcolor-project;
+  }
+  .show-project1 {
+    background: $bgcolor-6;
+    color: $color-1;
+    &__title {
+      display: inline-block;
+      margin: 3rem auto;
+      padding: 2rem 0;
+      border: 1px solid black;
+      background: white;
+      color: $color-1;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__image {
+      margin: 0 0 3rem 6rem;
+      padding: 23.5rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__sns {
+      margin-left: 6rem;
+      padding: .3rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+      cursor: pointer;
+    }
+    &__content__wrap {
+      margin: 2rem 0 0 4rem;
+    }
+    &__icon {
+      width: 1.5rem;
+      color: black;
+      vertical-align: -.4rem;
+    }
+    &__project-fund {
+      padding: 1.5rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__progress {
+      padding-left: 1.5rem;
+      border-radius: 50px;
+      background: $bgcolor-idea;
+      color: white;
+    }
+    &__target-fund {
+      margin-bottom: 5rem;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__user-image__wrap {
+      display: flex;
+      margin-bottom: -9rem;
+    }
+    &__patron {
+      margin: 1rem 0 0 -1.5rem;
+    }
+    &__icon2 {
+      width: 3rem;
+      color: black;
+      vertical-align: -.5rem;
+    }
+    &__supporter {
+      margin-bottom: 5rem;
+      padding: 1.5rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__user-image {
+      margin: -5rem auto 0 auto;
+      padding: 8rem 0;
+      border: 1px solid black;
+      border-radius: 50%;
+      background: white;
+      text-align: center;
+    }
+    &__icon3 {
+      width: 2.2rem;
+      color: black;
+      vertical-align: -.5rem;
+    }
+    &__owner-name__wrap {
+      display: flex;
+      margin-top: 7rem;
+    }
+    &__deadline {
+      padding: 1.5rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__owner-name {
+      padding: 1rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__prefectures__wrap {
+      display: flex;
+      margin-top: -2rem;
+    }
+    &__prefectures {
+      margin: 2.5rem auto auto auto;
+      padding: .3rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
     }
   }
 }

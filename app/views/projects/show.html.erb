@@ -1,11 +1,44 @@
-<% @project.project_title %>
-<% @project.project_value.project_fund %>
-<% @project.project_value.target_fund %>
+<main class="container-fluid show-project-page">
+  <div class="row show-project-page__header"></div>
+  <div class="show-project1">
+    <div class="row show-project1">
+      <h2 class="col-11 show-project1__title"><%= @project.project_title %></h2>
+    </div>
+    <div class="row show-project1">
+      <div class="col-md-6">
+        <p class="show-project1__image">画像</p>
+        <p class="show-project1__sns">SNS連携</p>
+      </div>
+      <div class="col-md-5 show-project1__content__wrap">
+        <p><%= svg("yen-sign-solid.svg", class: "show-project1__icon") %>&ensp;現在の支援総額</p>
+        <p class="col-md-11 show-project1__project-fund"><%= @project.project_value.project_fund %>支援額</p>
+        <p class="col-md-11 show-project1__progress">105%</p>
+        <p class="col-md-5 show-project1__target-fund"><%= @project.project_value.target_fund %></p>
+        <div class="show-project1__user-image__wrap">
+          <p class="col-md-4 show-project1__patron"><%= svg("users-solid.svg", class: "show-project1__icon2") %>&ensp;パトロン数</p>
+          <p class="col-md-4 show-project1__user-image">ユーザーイメージ</p>
+        </div>
+        <p class="col-md-4 show-project1__supporter">サポーター人数</p>
+        <div class="show-project1__owner-name__wrap">
+          <p><%= svg("clock-regular.svg", class: "show-project1__icon3") %>&ensp;募集終了まで残り</p>
+          <p class="col-md-5 offset-md-2 show-project1__owner-name">オーナーネーム</p>
+        </div>
+        <div class="show-project1__prefectures__wrap">
+          <p class="col-md-4 show-project1__deadline">募集期限</p>
+          <p class="col-md-3 show-project1__prefectures">都道府県</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<% @project.project_value.recruitment_deadline %>
 
-<% @project.project_text %>
-<% @project.project_report.project_reports %>
+
+
+
+
+
+<%= @project.project_text %>
+<%= @project.project_report.project_reports %>
 
 <% if @comments.nil?%>
 
@@ -37,5 +70,6 @@
     <%= re.submit "保存", class: "project-form__button" %>
   <% end %>
 <% else %>
-<% end%>
+<% end %>
 
+</main>
