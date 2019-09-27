@@ -42,7 +42,9 @@
       </div>
     </li>
     <li class="menu__li">
+    <%= link_to project_project_likes_path(@user.id), class: "menu__title-2_link" do %>
       <h1 class="menu__title-2">お気に入りプロダクター</h1>
+    <% end %>
     </li>
     <li class="menu__li">
       <h1 class="menu__title-2">お気に入りスポンサー</h1>
