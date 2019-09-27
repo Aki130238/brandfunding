@@ -546,6 +546,7 @@
       text-align: center;
     }
   }
+
   .show-menu {
     margin: 10rem 0 0 6rem;
     border: none;
@@ -587,6 +588,24 @@
       width: 1.7rem;
       color: black;
       vertical-align: -.3rem;
+    }
+  }
+
+  .show-project2 {
+    margin-top: 5rem;
+    &__home {
+      margin-left: 6rem;
+      &__title {
+        font-weight: bold;
+      }
+      &__icon {
+        width: 1.3rem;
+      }
+      &__content {
+        margin-top: 1.5rem;
+        border: 1px solid black;
+        padding: 30rem 0;
+      }
     }
   }
 }

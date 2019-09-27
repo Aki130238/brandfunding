@@ -1,6 +1,6 @@
 <main class="container-fluid show-project-page">
   <div class="row show-project-page__header"></div>
-  <div class="show-project1">
+  <section class="show-project1">
     <div class="row show-project1">
       <h2 class="col-11 show-project1__title"><%= @project.project_title %></h2>
     </div>
@@ -31,61 +31,61 @@
         <%= render "show_menu" %>
         <p class="col-md-4 show-menu__favorite"><%= svg("star-regular.svg", class: "show-menu__icon") %>お気に入り登録する</p>
     </div>
-  </div>
+  </section>
 
-  <div class="tab-content">
-    <div class="tab-pane fade show active" id="showHome" role="tabpanel" aria-labelledby="showHome-tab">
-      home
-    </div>
-    <div class="tab-pane fade" id="showReport" role="tabpanel" aria-labelledby="showReport-tab">
-      活動報告
+  <section class="row show-project2">
+    <div class="col-md-6 tab-content">
+      <div class="row tab-pane fade show active show-project2__home" id="showHome" role="tabpanel" aria-labelledby="showHome-tab">
+        <h2 class="show-project2__home__title"><%= svg("file-solid.svg", class:"show-project2__home__icon") %>&ensp;プロジェクト本文</h2>
+        <p class="show-project2__home__content">&ensp;</p>
       </div>
-    <div class="tab-pane fade" id="showPatron" role="tabpanel" aria-labelledby="showPatron-tab">
-      パトロン
+
+      <div class="tab-pane fade" id="showReport" role="tabpanel" aria-labelledby="showReport-tab">
+        活動報告
+      </div>
+
+      <div class="tab-pane fade" id="showPatron" role="tabpanel" aria-labelledby="showPatron-tab">
+        <% if logged_in? %>
+          <%= form_with(model: @project_return, url:"/projects/#{@project.id}",  local: true) do |re| %>            <p class="form-inline"><%= re.text_field :return_title, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.file_field :return_item_img, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.text_field :return_item_fund, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.number_field :return_item_count, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.text_area :return_item_about, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.number_field :return_item_sponsors, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.date_field :delivery_date, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.text_area :return_item_remark, class: "col-12 form-control project-form-report__input" %></p>
+            <p class="form-inline"><%= re.text_area :return_option, class: "col-12 form-control project-form-report__input" %></p>
+            <%= re.submit "保存", class: "project-form__button" %>
+          <% end %>
+        <% else %>
+        <% end %>
+      </div>
+
+      <div class="tab-pane fade" id="showComment" role="tabpanel" aria-labelledby="showComment-tab">
+        <% if @comments.nil?%>
+
+        <% else %>
+          <% @comments.each do |c| %>
+            <div>
+              <a href="/users/<%= @project.user.id %>"><%= c.user.email %></a>
+              <%= c.content %>
+              <hr>
+            </div>
+          <% end %>
+        <% end %>
+        <%= form_with(model: [@project, @comment], local: true) do |f| %>
+          <%= f.text_field :content %>
+          <br>
+          <%= f.submit 'コメントする' %>
+        <% end %>
+      </div>
     </div>
-    <div class="tab-pane fade" id="showComment" role="tabpanel" aria-labelledby="showComment-tab">
-      コメント
+
+    <div class="col-md-5">
+      フラダンス衣装
+      <%= @project.project_text %>
+      <%= @project.project_report.project_reports %>
     </div>
-  </div>
-
-
-
-
-
-
-<%= @project.project_text %>
-<%= @project.project_report.project_reports %>
-
-<% if @comments.nil?%>
-
-<% else %>
-  <% @comments.each do |c| %>
-    <div>
-      <a href="/users/<%= @project.user.id %>"><%= c.user.email %></a>
-      <%= c.content %>
-      <hr>
-    </div>
-  <% end %>
-<% end %>
-<%= form_with(model: [@project, @comment], local: true) do |f| %>
-  <%= f.text_field :content %>
-  <br>
-  <%= f.submit 'コメントする' %>
-<% end %>
-
-<% if logged_in? %>
-  <%= form_with(model: @project_return, url:"/projects/#{@project.id}",  local: true) do |re| %>            <p class="form-inline"><%= re.text_field :return_title, class: "col-12 form-control project-form-report__input" %></p>
-    <p class="form-inline"><%= re.file_field :return_item_img, class: "col-12 form-control project-form-report__input" %></p>
-    <p class="form-inline"><%= re.text_field :return_item_fund, class: "col-12 form-control project-form-report__input" %></p>
-    <p class="form-inline"><%= re.number_field :return_item_count, class: "col-12 form-control project-form-report__input" %></p>
-    <p class="form-inline"><%= re.text_area :return_item_about, class: "col-12 form-control project-form-report__input" %></p>
-    <p class="form-inline"><%= re.number_field :return_item_sponsors, class: "col-12 form-control project-form-report__input" %></p>
-    <p class="form-inline"><%= re.date_field :delivery_date, class: "col-12 form-control project-form-report__input" %></p>
-    <p class="form-inline"><%= re.text_area :return_item_remark, class: "col-12 form-control project-form-report__input" %></p>
-    <p class="form-inline"><%= re.text_area :return_option, class: "col-12 form-control project-form-report__input" %></p>
-    <%= re.submit "保存", class: "project-form__button" %>
-  <% end %>
-<% else %>
-<% end %>
+  </section>
 
 </main>
