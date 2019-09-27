@@ -48,3 +48,7 @@ ArtisanProcessingList.create( processing_name: "ボタンホール")
 ArtisanProcessingList.create( processing_name: "かんぬき")
 ArtisanProcessingList.create( processing_name: "菊穴")
 ArtisanProcessingList.create( processing_name: "その他加工設備")
+
+UserStatus.create( status_name: "admin", level: "1", login_top_url: "/admin/" )
+UserStatus.create( status_name: "artisan", level: "2", login_top_url: "/artisan/" )
+UserStatus.create( status_name: "general", level: "3", login_top_url: "/general/" )
