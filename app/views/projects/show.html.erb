@@ -28,9 +28,25 @@
           <p class="col-md-3 show-project1__prefectures">都道府県</p>
         </div>
       </div>
+        <%= render "show_menu" %>
+        <p class="col-md-4 show-menu__favorite"><%= svg("star-regular.svg", class: "show-menu__icon") %>お気に入り登録する</p>
     </div>
   </div>
 
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="showHome" role="tabpanel" aria-labelledby="showHome-tab">
+      home
+    </div>
+    <div class="tab-pane fade" id="showReport" role="tabpanel" aria-labelledby="showReport-tab">
+      活動報告
+      </div>
+    <div class="tab-pane fade" id="showPatron" role="tabpanel" aria-labelledby="showPatron-tab">
+      パトロン
+    </div>
+    <div class="tab-pane fade" id="showComment" role="tabpanel" aria-labelledby="showComment-tab">
+      コメント
+    </div>
+  </div>
 
 
 

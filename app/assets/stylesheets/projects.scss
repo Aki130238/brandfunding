@@ -546,4 +546,47 @@
       text-align: center;
     }
   }
+  .show-menu {
+    margin: 10rem 0 0 6rem;
+    border: none;
+    list-style: none;
+    &__favorite {
+      margin: 10rem 0 0 6rem;
+      text-align: right;
+    }
+    &__link {
+      border: none;
+      color: $color-1;
+    }
+    &__link.active {
+      background: white;
+      color: black;
+    }
+    &__icon {
+      width: 2rem;
+      margin-right: .5rem;
+      color: $bgcolor-idea;
+      vertical-align: -.2rem;
+    }
+    &__icon1, &__icon2, &__icon3, &__icon4 {
+      margin: 0 .5rem;
+    }
+    &__icon1, &__icon2 {
+      width: 1.8rem;
+      color: black;
+      vertical-align: -.2rem;
+    }
+    &__icon2 {
+    }
+    &__icon3 {
+      width: 2.1rem;
+      color: black;
+      vertical-align: -.2rem;
+    }
+    &__icon4 {
+      width: 1.7rem;
+      color: black;
+      vertical-align: -.3rem;
+    }
+  }
 }
