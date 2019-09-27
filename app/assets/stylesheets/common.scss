@@ -3,10 +3,12 @@ $bgcolor-2: #F8F9FA;
 $bgcolor-3: #D61935;
 $bgcolor-4: #F7F7F7;
 $bgcolor-5: #EEEEEE;
+$bgcolor-6: #F6FAFD;
 $bgcolor-project: #1DBE00;
 $bgcolor-project2: #F6F8FA;
 $bgcolor-project3: #E3E4E8;
 $bgcolor-idea: #FFD800;
+$bgcolor-idea2: #FFFFEA;
 $bgcolor-skill: #D8EEF7;
 $bgcolor-footer: #606060;
 $color-1: #6C6C6C;
@@ -15,6 +17,7 @@ $color-error: #e73562;
 $color-skill: #4C829F;
 $btncolor-1: #C19A88;
 $btncolor-2: #44B5AE;
+$btncolor-3: #AF7128;
 $bordercolor-1: #E7E7E7;
 
 @media (max-width: 540px) {
@@ -80,6 +83,9 @@ html {
   body {
     height: 100%;
     font-size: 1.6rem;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     img {
       max-width: 100%;
       height: auto;
