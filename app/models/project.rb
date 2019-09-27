@@ -1,11 +1,11 @@
 class Project < ApplicationRecord
-  has_one :project_about
-  has_one :project_idea
-  has_one :project_image
-  has_one :project_report
-  has_many :project_return
-  has_one :project_sponsor
-  has_one :project_value
+  has_one :project_about, dependent: :destroy
+  has_one :project_idea, dependent: :destroy
+  has_one :project_image, dependent: :destroy
+  has_one :project_report, dependent: :destroy
+  has_many :project_return, dependent: :destroy
+  has_one :project_sponsor, dependent: :destroy
+  has_one :project_value, dependent: :destroy
 
   accepts_nested_attributes_for :project_about
   accepts_nested_attributes_for :project_idea
