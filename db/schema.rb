@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2019_09_27_020524) do
+=======
 ActiveRecord::Schema.define(version: 2019_09_26_022651) do
+>>>>>>> develop
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -256,6 +260,14 @@ ActiveRecord::Schema.define(version: 2019_09_26_022651) do
     t.index ["user_id"], name: "index_user_profiles_on_user_id"
   end
 
+  create_table "user_statuses", force: :cascade do |t|
+    t.string "status_name"
+    t.integer "level"
+    t.string "login_top_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -263,6 +275,7 @@ ActiveRecord::Schema.define(version: 2019_09_26_022651) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.integer "user_status", default: 3
   end
 
   add_foreign_key "artisan_profiles", "users"
