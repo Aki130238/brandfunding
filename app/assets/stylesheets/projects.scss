@@ -605,7 +605,7 @@
       &__content {
         margin-top: 1.5rem;
         border: 1px solid black;
-        padding: 30rem 0;
+        padding: 50rem 0;
       }
     }
     &__report {
@@ -648,6 +648,7 @@
   .show-project3 {
     margin-left: 4rem;
     &__idea {
+      margin-bottom: 3rem;
       padding-bottom: 1.5rem;
       background: $bgcolor-idea2;
       &__title {
@@ -688,6 +689,45 @@
         font-size: 2rem;
         text-align: center;
         cursor: pointer;
+      }
+    }
+    &__return {
+      &__wrap {
+        border: 1px solid black;
+        background: $bgcolor-project2;
+      }
+      &__wrap2 {
+        background: $bgcolor-project2;
+      }
+      &__title {
+        margin-bottom: 1.5rem;
+        font-weight: bold;
+      }
+      &__icon {
+        width: 2rem;
+        vertical-align: -.2rem;
+      }
+      &__money, &__content, &__supporter, &__schedule {
+        margin: 0 auto;
+        border: 1px solid black;
+        background: white;
+        color: $color-1;
+        text-align: center;
+      }
+      &__money {
+        margin: 1.5rem auto;
+        padding: 1rem 0;
+      }
+      &__content {
+        margin-bottom: 1.5rem;
+        padding: .5rem 0;
+      }
+      &__supporter__wrap {
+        display: flex;
+      }
+      &__supporter, &__schedule {
+        margin-bottom: 1.5rem;
+        padding: .5rem 0;
       }
     }
   }
