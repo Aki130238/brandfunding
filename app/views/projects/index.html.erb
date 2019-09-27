@@ -1,11 +1,53 @@
-<% @projects.each do |pr|%>
-  <%= pr.project_image.project_img %>
-  <%= pr.project_text %>
-  <%= pr.project_value.project_fund %>
-  <%= pr.project_idea.project_returns %>
-  <% if Time.now >= pr.project_value.recruitment_deadline %>
-    終了
-  <% else %>
-    <%= pr.project_value.recruitment_deadline %>
-  <% end %>
-<% end %>
+<main class="container-fluid projects-page">
+  <div class="row">
+    <div class="col-12 projects-page__header">
+      <div class="col-md-8 projects-page__menu">
+        <p class="projects-page__menu__icon__wrap"><%= svg("sort-amount-down-solid.svg", class: "projects-page__menu__icon") %></p>
+        <p class="projects-page__menu__button">並び替え</p>
+        <p class="projects-page__menu__button2">人気順</p>
+        <p class="projects-page__menu__button2">新着順</p>
+        <p class="projects-page__menu__button2">終了日が近い順</p>
+        <p class="projects-page__menu__button2">支援総額順</p>
+        <p class="projects-page__menu__button2">支援者数順</p>
+        <p class="projects-page__menu__button3"><%= svg("plus-circle-solid.svg", class: "projects-page__menu__icon2") %>&thinsp;条件を追加</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row col-md-11 project-list__wrap">
+    <div class="row col-12 project-list_void"></div>
+    <% @projects.each do |pr|%>
+      <div class="project-list col-md-3">
+        <%= link_to project_path(pr.id), class: "project-list__link" do %>
+          <div class="">
+            <span class="project-list__image"><%= pr.project_image.project_img %>画像</span>
+          </div>
+          <div class="row">
+            <p class="project-list__title"><%= pr.project_text %></p>
+          </div>
+          <div class="row project-list__bar">
+            <p class="project-list__bar__content">SUCCESS</p>
+          </div>
+          <div class="row project-list__guide">
+            <p class="col-md-4">現在</p>
+            <p class="col-md-4">パトロン</p>
+            <p class="col-md-4">残り</p>
+          </div>
+          <div class="row project-list__content">
+            <p class="col-md-4"><%= pr.project_value.project_fund %>10,000円</p>
+            <p class="col-md-4"><%= pr.project_idea.project_returns %>9人</p>
+            <p class="col-md-4">
+              <% if Time.now >= pr.project_value.recruitment_deadline %>
+                終了
+              <% else %>
+                5日
+              <% end %>
+            </p>
+          </div>
+          <div class="row project-list__bar2">&ensp;</div>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="row col-12 project-list_void"></div>
+  </div>
+</main>
