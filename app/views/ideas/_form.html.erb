@@ -186,6 +186,16 @@
           </div>
           <div class="row">
             <div class="col-md-4 col-lg-3 offset-1 d-flex idea-form-idea-details__title__wrap">
+              <h3 class="col-6 col-md-11 idea-form-idea-details__title1">予算</h3>
+              <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
+            </div>
+            <div class="col-md-8 idea-form-idea-details__input__wrap">
+              <p class="offset-1 offset-md-3 form-inline"><%= f.number_field :budget, class: "col-md-6 col-xl-4
+              form-control idea-form-idea-details__input", placeholder: "数値を入力" %>&emsp;円</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-lg-3 offset-1 d-flex idea-form-idea-details__title__wrap">
               <h3 class="col-6 col-md-11 idea-form-idea-details__title1">アイテムの概要と仕様</h3>
               <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
             </div>
@@ -200,6 +210,25 @@
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
               <p class="offset-1 offset-md-3"><%= f.select :idea_usage, [["用途を選択",""], ["販売・お店ユニフォーム", "販売・お店ユニフォーム"], ["個人利用", "ギフト"], ["サンプル", "お教室衣装"]], {}, {class: "col-9 col-md-8 col-lg-5 idea-form-idea-details__input3"} %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-lg-3 offset-1 d-flex idea-form-idea-details__title__wrap">
+              <h3 class="col-6 col-md-11 idea-form-idea-details__title1 idea-form-idea-details__title3">契約形態</h3>
+              <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
+            </div>
+            <div class="col-md-8 idea-form-idea-details__input__wrap">
+              <p class="offset-1 offset-md-3"><%= f.select :work_style, [["契約形態を選択",""], ["提示金額にて固定", "提示金額にて固定"], ["初期費用固定と単価にて変動", "初期費用固定と単価にて変動"], ["相談したい", "相談したい"]], {}, {class: "col-9 col-md-8 col-lg-5 idea-form-idea-details__input3"} %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-lg-3 offset-1 d-flex idea-form-idea-details__title__wrap">
+              <h3 class="col-6 col-md-11 idea-form-idea-details__title1">納品希望日</h3>
+              <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
+            </div>
+            <div class="col-md-8 idea-form-idea-details__input__wrap">
+              <p class="offset-1 offset-md-3 form-inline"><%= f.date_field :delivery_date, class: "col-md-6 col-xl-4
+              form-control idea-form-idea-details__input" %></p>
             </div>
           </div>
           <div class="row">

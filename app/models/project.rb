@@ -17,4 +17,6 @@ class Project < ApplicationRecord
 
   belongs_to :user
   has_many :comments
+  has_many :project_likes, dependent: :destroy
+  has_many :like_users, through: :project_likes, source: :user
 end
