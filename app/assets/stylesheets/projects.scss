@@ -607,5 +607,41 @@
         padding: 30rem 0;
       }
     }
+    &__report {
+      margin-left: 6rem;
+    }
+    &__patron {
+      margin-left: 6rem;
+    }
+    &__comment {
+      &__input__wrap {
+        margin: 0 auto;
+      }
+      &__input {
+        padding: 1rem 1rem 5rem 1rem;
+        font-size: 1.7rem;
+        overflow: hidden;
+        resize: none;
+      }
+      &__button__wrap {
+        margin: 1.5rem auto 0 auto;
+      }
+      &__button {
+        @extend .sign-button;
+        margin-bottom: 5rem;
+        padding: .5rem;
+      }
+      &__content__wrap {
+        display: flex;
+        margin-left: 6rem;
+      }
+      &__user {
+        color: black;
+        text-decoration: none;
+      }
+      &__content {
+        color: $color-1;
+      }
+    }
   }
 }

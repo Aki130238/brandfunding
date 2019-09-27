@@ -40,11 +40,12 @@
         <p class="show-project2__home__content">&ensp;</p>
       </div>
 
-      <div class="tab-pane fade" id="showReport" role="tabpanel" aria-labelledby="showReport-tab">
-        活動報告
+      <div class="tab-pane fade show-project2__report" id="showReport" role="tabpanel" aria-labelledby="showReport-tab">
+        <h2 class="show-project2__home__title"><%= svg("file-solid.svg", class:"show-project2__home__icon") %>&ensp;活動報告</h2>
+        <p class="show-project2__home__content">&ensp;</p>
       </div>
 
-      <div class="tab-pane fade" id="showPatron" role="tabpanel" aria-labelledby="showPatron-tab">
+      <div class="tab-pane fade show-project2__patron" id="showPatron" role="tabpanel" aria-labelledby="showPatron-tab">
         <% if logged_in? %>
           <%= form_with(model: @project_return, url:"/projects/#{@project.id}",  local: true) do |re| %>            <p class="form-inline"><%= re.text_field :return_title, class: "col-12 form-control project-form-report__input" %></p>
             <p class="form-inline"><%= re.file_field :return_item_img, class: "col-12 form-control project-form-report__input" %></p>
@@ -62,21 +63,18 @@
       </div>
 
       <div class="tab-pane fade" id="showComment" role="tabpanel" aria-labelledby="showComment-tab">
+        <%= form_with(model: [@project, @comment], local: true) do |f| %>
+          <p class="col-md-8 show-project2__comment__input__wrap"><%= f.text_area :content, class: "col-md-12 form-control show-project2__comment__input" %></p>
+          <p class="col-md-4 show-project2__comment__button__wrap"><%= f.submit "コメントする", class: "col-md-12 btn show-project2__comment__button" %></p>
+        <% end %>
         <% if @comments.nil?%>
-
         <% else %>
           <% @comments.each do |c| %>
-            <div>
-              <a href="/users/<%= @project.user.id %>"><%= c.user.email %></a>
-              <%= c.content %>
-              <hr>
+            <div class="show-project2__comment__content__wrap">
+              <p><a href="/users/<%= @project.user.id %>" class="show-project2__comment__user"><%= c.user.name %>：</a></p>
+              <p class="show-project2__comment__content"><%= c.content %></p>
             </div>
           <% end %>
-        <% end %>
-        <%= form_with(model: [@project, @comment], local: true) do |f| %>
-          <%= f.text_field :content %>
-          <br>
-          <%= f.submit 'コメントする' %>
         <% end %>
       </div>
     </div>
