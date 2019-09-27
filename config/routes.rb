@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   post 'projects/:id', to: 'project_returns#create'
   resources :projects do
     resources :comments, only: [:create]
+    resources :project_likes, only: [:create, :destroy]
   end
 end
