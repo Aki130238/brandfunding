@@ -7,6 +7,12 @@
 <% @project.project_text %>
 <% @project.project_report.project_reports %>
 
+<% if @like.nil? %>
+  <%= link_to 'イイねを解除', project_project_like_path(id: @like.id), method: :delete, class:"btn btn-danger" %>
+<% else %>
+  <%= link_to 'イイね！', project_project_likes_path(project_id: @project.id), method: :post, class:"btn btn-primary" %>
+<% end %>
+
 <% if @comments.nil?%>
 
 <% else %>

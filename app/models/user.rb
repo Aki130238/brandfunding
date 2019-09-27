@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :comments
   has_many :projects
   has_many :idea_comments, dependent: :destroy
+  has_many :project_likes, dependent: :destroy
+  has_many :like_projects, through: :project_likes, source: :project
 end
