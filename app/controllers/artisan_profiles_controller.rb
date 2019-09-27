@@ -38,6 +38,7 @@ class ArtisanProfilesController < ApplicationController
       :email,
       :image_name,
       :image_cache,
+      :user_status,
       user_profile_attributes:[
         :id,
         :user_id,
