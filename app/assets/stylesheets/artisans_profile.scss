@@ -326,3 +326,67 @@
     }
   }
 }
+
+.show-artisan-page {
+  &__title {
+    margin-bottom: -.15rem;
+    padding: 1rem 0;
+    background: $bgcolor-artisan2;
+    font-weight: bold;
+    text-align: center;
+  }
+  .show-artisan1 {
+    background: $bgcolor-artisan3;
+    &__wrap {
+
+    }
+    &__image {
+      margin: 2.5rem 0 2.5rem auto;
+      padding: 18rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__title_hide {
+      visibility: hidden;
+    }
+    &__title {
+      text-align: right;
+    }
+    // &__title2 {
+    //   margin-bottom: 5rem;
+    //   text-align: right;
+    // }
+    &__content {
+      color: $color-1;
+      font-size: 1.5rem;
+    }
+    &__content2 {
+      margin-top: -.5rem;
+      font-size: 2.3rem;
+    }
+    &__content3 {
+      margin: -.5rem 2.5rem auto 0;
+      padding: .3rem 1rem;
+      border-radius: 4px;
+      background: $bgcolor-artisan4;
+      color: white;
+    }
+    &__content4 {
+      margin: -.5rem 2.5rem auto 0;
+      padding: .3rem 1rem;
+      border-radius: 4px;
+      background: $bgcolor-artisan4;
+      color: white;
+    }
+    &__content__wrap {
+      margin-top: 3rem;
+    }
+    &__content__wrap2 {
+      margin-bottom: 3rem;
+    }
+    &__content__wrap3 {
+      margin-bottom: 2rem;
+    }
+  }
+}

@@ -1,3 +1,44 @@
-<main>
-  <%= render 'read', artisan_profile: @user %>
+<main class="show-artisan-page">
+  <h1 class="show-artisan-page__title">職人紹介</h1>
+  <div class="row show-artisan1">
+    <div class="col-md-5">
+      <p class="col-md-6 show-artisan1__image">職人画像</p>
+    </div>
+    <div class="col-md-7 show-artisan1__wrap">
+      <div class="row show-artisan1__content__wrap">
+        <p class="col-md-2 show-artisan1__title_hide">名前</p>
+        <p class="show-artisan1__content">しょくにんめい</p>
+      </div>
+      <div class="row show-artisan1__content__wrap2">
+        <p class="col-md-2 show-artisan1__title">名&emsp;前</p>
+        <p class="show-artisan1__content2">職人名</p>
+      </div>
+      <div class="row show-artisan1__content__wrap3">
+        <p class="col-md-2 show-artisan1__title">ジャンル</p>
+        <p class="show-artisan1__content3">レディース</p>
+        <p class="show-artisan1__content3">メンズ</p>
+      </div>
+
+      <div class="row show-artisan1__content__wrap3">
+        <p class="col-md-2 show-artisan1__title">設備</p>
+        <p class="show-artisan1__content3">4本糸ロックミシン</p>
+        <p class="show-artisan1__content3">扇平縫いミシン</p>
+        <p class="show-artisan1__content3">千鳥ミシン</p>
+      </div>
+
+      <div class="row show-artisan1__content__wrap3">
+        <p class="col-md-2 show-artisan1__title">アイテム</p>
+        <div class="col-10 d-flex">
+        <% 10.times do %>
+          <p class="col-2 show-artisan1__content4">ジャケット</p>
+        <% end %>
+        </div>
+      </div>
+
+
+      <div class="show-artisan1__">
+      </div>
+    </div>
+  </div>
+
 </main>
