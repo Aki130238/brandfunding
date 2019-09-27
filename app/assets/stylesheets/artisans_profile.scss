@@ -266,3 +266,69 @@
     }
   }
 }
+
+.artisans-page {
+  &__header {
+    margin: 0 auto;
+    padding: 1.5rem 0;
+    background: $bgcolor-artisan;
+  }
+  &__title {
+    font-weight: bold;
+    text-align: center;
+  }
+  &__header2 {
+    margin: 0 auto;
+    background: $bgcolor-project2;
+  }
+  .artisan-list {
+    margin: 1.5rem;
+    border: 1px solid black;
+    &_void {
+      margin: 3rem;
+    }
+    &__wrap {
+      display: flex;
+      margin-left: 20rem;
+    }
+    &__link {
+      color: $color-1;
+      text-decoration: none;
+    }
+    &__image {
+      margin: 2rem auto -6rem  auto;
+      padding: 7rem 0;
+      border: 1px solid black;
+      text-align: center;
+    }
+    &__image2 {
+      margin: 0 auto 1rem auto;
+      padding: 3rem 0;
+      border: 1px solid black;
+      border-radius: 50%;
+      text-align: center;
+    }
+    &__year {
+      color: $color-1;
+      text-align: center;
+    }
+    &__name {
+      font-weight: bold;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+    &__pr {
+
+    }
+    &__bar {
+      padding: 1rem 0;
+      background: $bgcolor-artisan;
+    }
+    &__idea {
+      margin: auto 0;
+      color: $color-1;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}
