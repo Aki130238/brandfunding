@@ -63,12 +63,14 @@
       </div>
 
 <% if @like.nil? %>
-<%= link_to 'イイね！', project_project_likes_path(project_id: @project.id), method: :post, class:"btn btn-primary" %>
-
+  <%= link_to 'イイね！', project_likes_path(project_id: @project.id), method: :post, class:"btn btn-primary" %>
 <% else %>
-  <%= link_to 'イイねを解除', project_project_like_path(id: @like.id), method: :delete, class:"btn btn-danger" %>
+  <%= link_to 'イイねを解除', project_like_path(project_id: @like.id), method: :delete, class:"btn btn-danger" %>
 <% end %>
 
+<%= render 'users/follow_form', user: @project.user %>
+
+<% if @comments.nil?%>
 
       <div class="tab-pane fade show-project2__comment" id="showComment" role="tabpanel" aria-labelledby="showComment-tab">
         <%= form_with(model: [@project, @comment], local: true) do |f| %>
