@@ -350,52 +350,65 @@
     &__wrap {
       margin-left: -3rem;
     }
-    &__image__wrap {
-      margin: 2.5rem 0 2.5rem auto;
-      padding: 18rem 0;
-      border: 1px solid black;
-      border-radius: 5px;
-      background: white;
-      text-align: center;
-    }
     &__image {
       margin-top: -18rem;
       padding: 11rem 0;
-    }
-    &__image__decoration {
-      display: inline-block;
-      position: absolute;
-      top: -6px;
-      left: 25px;
-      margin: 0;
-      padding: 30px 0;
-      z-index: 2;
-      width: 50px;
-      text-align: center;
-      color: white;
-      font-size: 17px;
-      background: linear-gradient(#ff785b 0%, #e95738 100%);
-      border-radius: 2px 0 0 0;
+      &__wrap {
+        margin: 2.5rem 0 2.5rem auto;
+        padding: 18rem 0;
+        border: 1px solid black;
+        border-radius: 5px;
+        background: white;
+        text-align: center;
       }
-    &__image__decoration:before {
+      &__decoration {
+        display: inline-block;
+        position: absolute;
+        top: -3px;
+        left: 25px;
+        z-index: 2;
+        width: 50px;
+        margin: 0;
+        padding: 28px 0;
+        border-radius: 2px 0 0 0;
+        background: $bgcolor-decoration;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+      }
+      &__decoration__content {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      &__decoration:before {
       position: absolute;
-      content: '';
-      top: 0;
-      right: -6px;
+      content: '経歴';
+      top: 10px;
+      left: 11px;
       border: none;
-      border-bottom: solid 6px #cf4a2d;
+      border-bottom: solid 6px $bgcolor-decoration;
       border-right: solid 6px transparent;
-    }
-    &__image__decoration:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 100%;
-      height: 0;
-      width: 0;
-      border-left: 25px solid #e95738;
-      border-right: 25px solid #e95738;
-      border-bottom: 15px solid transparent;
+      font-size: 1.4rem;
+      }
+      &__decoration:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-left: 25px solid $bgcolor-decoration;
+        border-right: 25px solid $bgcolor-decoration;
+        border-bottom: 15px solid transparent;
+      }
+      &__decoration2 {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 0;
+        background: $bgcolor-decoration2;
+        color: white;
+        text-align: right;
+      }
     }
     &__title {
       text-align: right;
