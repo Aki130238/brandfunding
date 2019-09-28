@@ -13,4 +13,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
     resources :project_likes, only: [:create, :destroy]
   end
+  resources :conversations do
+    resources :messages
+  end
 end
