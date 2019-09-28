@@ -336,17 +336,57 @@
     text-align: center;
   }
   .show-artisan1 {
-    margin: 0 auto;
+    margin: 0 auto 3rem auto;
     background: $bgcolor-artisan3;
     &__wrap {
       margin-left: -3rem;
     }
-    &__image {
+    &__image__wrap {
       margin: 2.5rem 0 2.5rem auto;
-      padding: 22rem 0;
+      padding: 18rem 0;
       border: 1px solid black;
+      border-radius: 5px;
       background: white;
       text-align: center;
+    }
+    &__image {
+      margin-top: -18rem;
+      padding: 11rem 0;
+    }
+    &__image__decoration {
+      display: inline-block;
+      position: absolute;
+      top: -6px;
+      left: 25px;
+      margin: 0;
+      padding: 30px 0;
+      z-index: 2;
+      width: 50px;
+      text-align: center;
+      color: white;
+      font-size: 17px;
+      background: linear-gradient(#ff785b 0%, #e95738 100%);
+      border-radius: 2px 0 0 0;
+      }
+    &__image__decoration:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: -6px;
+      border: none;
+      border-bottom: solid 6px #cf4a2d;
+      border-right: solid 6px transparent;
+    }
+    &__image__decoration:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 100%;
+      height: 0;
+      width: 0;
+      border-left: 25px solid #e95738;
+      border-right: 25px solid #e95738;
+      border-bottom: 15px solid transparent;
     }
     &__title {
       text-align: right;
@@ -390,6 +430,18 @@
     }
     &__content__wrap3 {
       margin-bottom: 2rem;
+    }
+  }
+  .show-artisan2 {
+    margin: 0 auto;
+    &__title {
+      margin-top: 2rem;
+      text-align: right;
+    }
+    &__content {
+      margin-bottom: 3rem;
+      padding: 1rem 1rem 30rem 1rem;
+      border: 2px solid $bordercolor-1;
     }
   }
 }

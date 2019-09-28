@@ -1,8 +1,11 @@
 <main class="show-artisan-page">
-  <h1 class="show-artisan-page__title">職人紹介</h1>
+  <h1 class="show-artisan-page__title">職人紹介&emsp;<%= link_to "職人一覧(仮置き)", artisan_profiles_path %></h1>
   <div class="row show-artisan1">
     <div class="col-md-4">
-      <p class="col-md-8 show-artisan1__image">職人画像</p>
+      <div class="col-md-8 show-artisan1__image__wrap">
+        <span class="show-artisan1__image__decoration">20年</span>
+        <p class="show-artisan1__image">職人画像</p>
+      </div>
     </div>
 
     <div class="col-md-7 show-artisan1__wrap">
@@ -64,6 +67,15 @@
       </div>
 
     </div>
+  </div>
+
+  <div class="row show-artisan2">
+    <p class="col-md-3 show-artisan2__title">経歴紹介</p>
+    <p class="col-md-7 show-artisan2__content">経歴紹介テキスト</p>
+    <p class="col-md-3 show-artisan2__title">自己PR</p>
+    <p class="col-md-7 show-artisan2__content">自己PRテキスト</p>
+    <p class="col-md-3 show-artisan2__title">自己紹介</p>
+    <p class="col-md-7 show-artisan2__content">自己紹介テキスト</p>
   </div>
 
 </main>
