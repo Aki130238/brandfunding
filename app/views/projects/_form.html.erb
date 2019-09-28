@@ -167,8 +167,8 @@
             <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
           </div>
           <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-            <p class="form-inline">
-              <%= ab.text_area :project_abouts, value: "はじめに・ご挨拶
+            <%= ab.hidden_field :project_abouts, id: :article_text %>
+            <trix-editor input="article_text" class="col-12 form-control project-form-about__input"><%= ab.text_area :project_abouts, value: "はじめに・ご挨拶
   信頼性を高めるため、ご本人もしくは実行チームの簡単な自己紹介を書きましょう。
 
 
@@ -207,8 +207,7 @@
   本プロジェクトはAll-in方式で実施します。目標金額に満たない場合も、計画を実行し、リターンをお届けします。
 
   ＜All-or-Nothing方式の場合＞
-  本プロジェクトはAll-or-Nothing方式で実施します。目標金額に満たない場合、計画の実行及びリターンのお届けはございません。",class: "col-12 form-control project-form-about__input" %>
-            </p>
+  本プロジェクトはAll-or-Nothing方式で実施します。目標金額に満たない場合、計画の実行及びリターンのお届けはございません。",class: "col-12 form-control project-form-about__input" %></trix-editor>
           </div>
         </div>
       <% end %>
