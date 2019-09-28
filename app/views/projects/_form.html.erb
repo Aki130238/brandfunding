@@ -39,12 +39,12 @@
           <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
             <div class="form-inline">
               <div class="project-form-value__method__input_wrap">
-                <%= va.radio_button :recruitment_method, 0 %>
-                <p class="project-form-value__method__input__title">All-In&ensp;方式</p>
+                <%= va.radio_button :recruitment_method, 0, id: "allIn" %>
+                <label for="allIn" class="project-form-value__method__input__title">All-In&ensp;方式</label>
               </div>
               <div class="project-form-value__method__input_wrap-2">
-                <%= va.radio_button :recruitment_method, 1 %>
-                <p class="project-form-value__method__input__title">All-or-Nothing&ensp;方式</p>
+                <%= va.radio_button :recruitment_method, 1, id: "allOrNothing" %>
+                <label for="allOrNothing" class="project-form-value__method__input__title">All-or-Nothing&ensp;方式</label>
               </div>
             </div><br>
             <div class="project-form-value__method__guide_wrap">
