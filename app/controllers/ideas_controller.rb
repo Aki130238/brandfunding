@@ -1,8 +1,9 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
+  before_action :idea_authority, only: [:edit, :uodate, :destroy]
 
   def index
-    @ideas = Idea.all
+    @ideas = current_user.ideas
   end
 
   def show
@@ -11,14 +12,14 @@ class IdeasController < ApplicationController
   end
 
   def new
-    @idea = Idea.new
+    @idea = current_user.ideas.build
   end
 
   def edit
   end
 
   def create
-    @idea = Idea.new(idea_params)
+    @idea = current_user.ideas.build(idea_params)
     if @idea.save
       redirect_to @idea
     else
@@ -49,5 +50,12 @@ class IdeasController < ApplicationController
     params.require(:idea).permit(:idea_title, :idea_amount, :idea_about, :idea_usage, :idea_commit, :product_image,
                                  :idea_category, :idea_category_details, :product_about, :idea_material, :work_style, :delivery_date,
                                  :budget, idea_user_ids: [])
+  end
+
+  def idea_authority
+    if @idea.user_id != current_user.id
+      flash[:danger] = "権限がありません"
+      redirect_to root_path
+    end
   end
 end

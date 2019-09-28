@@ -69,7 +69,6 @@
         <% else %>
         <% end %>
       </div>
-
       <div class="tab-pane fade show-project2__comment" id="showComment" role="tabpanel" aria-labelledby="showComment-tab">
         <%= form_with(model: [@project, @comment], local: true) do |f| %>
           <p class="col-md-8 show-project2__comment__input__wrap"><%= f.text_area :content, class: "col-md-12 form-control show-project2__comment__input" %></p>
@@ -83,36 +82,34 @@
               <p class="show-project2__comment__content"><%= c.content %></p>
             </div>
           <% end %>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="col-md-5 show-project3">
-      <div class="show-project3__idea">
-        <h2 class="col-md-11 show-project3__idea__title">フラダンス衣装</h2>
-        <p class="col-md-11 show-project3__idea__image">画像</p>
-        <h3 class="col-md-2 show-project3__idea__title2">概要</h3>
-        <p class="col-md-11 show-project3__idea__content">お仕事番号&thinsp;：</p>
-        <p class="col-md-11 show-project3__idea__content">&emsp;製品用途&thinsp;：</p>
-        <p class="col-md-11 show-project3__idea__content">納品希望日&thinsp;：</p>
-        <p class="col-md-11 show-project3__idea__content">&emsp;公開期間&thinsp;：</p>
-        <p class="col-md-11 show-project3__idea__content">&emsp;契約形態&thinsp;：</p>
-        <p class="col-md-11 show-project3__idea__button">詳細要件はこちらから</p>
-      </div>
-      <div class="show-project3__return">
-        <h2 class="show-project3__return__title"><%= svg("gift-solid.svg", class: "show-project3__return__icon") %>&ensp;リターン</h2>
-        <div class="show-project3__return__wrap">
-          <p class="col-md-5 show-project3__return__money">リターン金額</p>
-          <p class="col-md-11 show-project3__return__content">リターン内容</p>
-          <div class="show-project3__return__supporter__wrap">
-            <p class="col-5 show-project3__return__supporter">サポーター人数</p>
-            <p class="col-5 show-project3__return__schedule">お届け予定日</p>
+        </div>
+        <div class="col-md-5 show-project3">
+          <div class="show-project3__idea">
+            <h2 class="col-md-11 show-project3__idea__title">フラダンス衣装</h2>
+            <p class="col-md-11 show-project3__idea__image">画像</p>
+            <h3 class="col-md-2 show-project3__idea__title2">概要</h3>
+            <p class="col-md-11 show-project3__idea__content">お仕事番号&thinsp;：</p>
+            <p class="col-md-11 show-project3__idea__content">&emsp;製品用途&thinsp;：</p>
+            <p class="col-md-11 show-project3__idea__content">納品希望日&thinsp;：</p>
+            <p class="col-md-11 show-project3__idea__content">&emsp;公開期間&thinsp;：</p>
+            <p class="col-md-11 show-project3__idea__content">&emsp;契約形態&thinsp;：</p>
+            <p class="col-md-11 show-project3__idea__button">詳細要件はこちらから</p>
           </div>
-        </div>
-        <div class="show-project3__return__wrap2">
-        </div>
+          <div class="show-project3__return">
+            <h2 class="show-project3__return__title"><%= svg("gift-solid.svg", class: "show-project3__return__icon") %>&ensp;リターン</h2>
+            <div class="show-project3__return__wrap">
+              <p class="col-md-5 show-project3__return__money">リターン金額</p>
+              <p class="col-md-11 show-project3__return__content">リターン内容</p>
+              <div class="show-project3__return__supporter__wrap">
+                <p class="col-5 show-project3__return__supporter">サポーター人数</p>
+                <p class="col-5 show-project3__return__schedule">お届け予定日</p>
+              </div>
+            </div>
+            <div class="show-project3__return__wrap2">
+            </div>
+          </div>
+      <% end %>
       </div>
     </div>
   </section>
-
 </main>
