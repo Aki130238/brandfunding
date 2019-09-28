@@ -336,3 +336,399 @@
     }
   }
 }
+
+.projects-page {
+  &__header {
+    background: $bgcolor-project;
+    }
+  &__menu {
+    display: flex;
+    margin: .8rem auto .8rem auto;
+    padding: 1rem 0;
+    background: $bgcolor-project2;
+    &__icon__wrap {
+      margin-top: 1.1rem;
+    }
+    &__icon {
+      width: 2rem;
+      margin-left: 2rem;
+      cursor: pointer;
+    }
+    &__icon2 {
+      width: 1.6rem;
+      vertical-align: -.2rem;
+    }
+    &__button {
+      margin: 1rem 1.5rem 0 1rem;
+      cursor: pointer;
+    }
+    &__button2 {
+      margin: 0 .3rem;
+      padding: 1rem 1.6rem;
+      border: 1px solid $bordercolor-1;
+      background: white;
+      color: $color-1;
+      cursor: pointer;
+    }
+    &__button3 {
+      margin: 0 2rem;
+      padding: 1rem 1.6rem;
+      border: 1px solid $bordercolor-1;
+      background: white;
+      color: $color-1;
+      cursor: pointer;
+    }
+  }
+  .project-list {
+    margin: 1.5rem;
+    &_void {
+      margin: 3rem;
+    }
+    &__wrap {
+      display: flex;
+      margin-left: 15rem;
+    }
+    &__link {
+      color: $color-1;
+      text-decoration: none;
+    }
+    &__title {
+      margin-left: 1.3rem;
+    }
+    &__bar {
+      background: $bgcolor-idea;
+    }
+    &__bar__content {
+      margin: .5rem auto;
+      color: white;
+    }
+    &__content__wrap {
+      background: $bgcolor-project2;
+    }
+    &__guide {
+      display: flex;
+      margin-bottom: -.5rem;
+      padding-top: 1rem;
+      background: $bgcolor-project2;
+      color: $color-1;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    &__content {
+      display: flex;
+      padding-bottom: 1rem;
+      background: $bgcolor-project2;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__bar2 {
+      background: $bgcolor-project3;
+    }
+  }
+}
+
+.show-project-page {
+  &__header {
+    padding: 3.5rem 0;
+    background: $bgcolor-project;
+  }
+  .show-project1 {
+    background: $bgcolor-6;
+    color: $color-1;
+    &__title {
+      display: inline-block;
+      margin: 3rem auto;
+      padding: 2rem 0;
+      border: 1px solid black;
+      background: white;
+      color: $color-1;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__image {
+      margin: 0 0 3rem 6rem;
+      padding: 23.5rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__sns {
+      margin-left: 6rem;
+      padding: .3rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+      cursor: pointer;
+    }
+    &__content__wrap {
+      margin: 2rem 0 0 4rem;
+    }
+    &__icon {
+      width: 1.5rem;
+      color: black;
+      vertical-align: -.4rem;
+    }
+    &__project-fund {
+      padding: 1.5rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__progress {
+      padding-left: 1.5rem;
+      border-radius: 50px;
+      background: $bgcolor-idea;
+      color: white;
+    }
+    &__target-fund {
+      margin-bottom: 5rem;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__user-image__wrap {
+      display: flex;
+      margin-bottom: -9rem;
+    }
+    &__patron {
+      margin: 1rem 0 0 -1.5rem;
+    }
+    &__icon2 {
+      width: 3rem;
+      color: black;
+      vertical-align: -.5rem;
+    }
+    &__supporter {
+      margin-bottom: 5rem;
+      padding: 1.5rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__user-image {
+      margin: -5rem auto 0 auto;
+      padding: 8rem 0;
+      border: 1px solid black;
+      border-radius: 50%;
+      background: white;
+      text-align: center;
+    }
+    &__icon3 {
+      width: 2.2rem;
+      color: black;
+      vertical-align: -.5rem;
+    }
+    &__owner-name__wrap {
+      display: flex;
+      margin-top: 7rem;
+    }
+    &__deadline {
+      padding: 1.5rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__owner-name {
+      padding: 1rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__prefectures__wrap {
+      display: flex;
+      margin-top: -2rem;
+    }
+    &__prefectures {
+      margin: 2.5rem auto auto auto;
+      padding: .3rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+  }
+
+  .show-menu {
+    margin: 10rem 0 0 6rem;
+    border: none;
+    list-style: none;
+    &__favorite {
+      margin: 10rem 0 0 6rem;
+      text-align: right;
+    }
+    &__link {
+      border: none;
+      color: $color-1;
+    }
+    &__link.active {
+      background: white;
+      color: black;
+    }
+    &__icon {
+      width: 2rem;
+      margin-right: .5rem;
+      color: $bgcolor-idea;
+      vertical-align: -.2rem;
+    }
+    &__icon1, &__icon2, &__icon3, &__icon4 {
+      margin: 0 .5rem;
+    }
+    &__icon1, &__icon2 {
+      width: 1.8rem;
+      color: black;
+      vertical-align: -.2rem;
+    }
+    &__icon2 {
+
+    }
+    &__icon3 {
+      width: 2.1rem;
+      color: black;
+      vertical-align: -.2rem;
+    }
+    &__icon4 {
+      width: 1.7rem;
+      color: black;
+      vertical-align: -.3rem;
+    }
+  }
+
+  .show-project2 {
+    margin: 5rem 0;
+    &__home {
+      margin-left: 6rem;
+      &__title {
+        font-weight: bold;
+      }
+      &__icon {
+        width: 1.3rem;
+      }
+      &__content {
+        margin-top: 1.5rem;
+        border: 1px solid black;
+        padding: 50rem 0;
+      }
+    }
+    &__report {
+      margin-left: 6rem;
+    }
+    &__patron {
+      margin-left: 6rem;
+    }
+    &__comment {
+      &__input__wrap {
+        margin: 0 auto;
+      }
+      &__input {
+        padding: 1rem 1rem 5rem 1rem;
+        font-size: 1.7rem;
+        overflow: hidden;
+        resize: none;
+      }
+      &__button__wrap {
+        margin: 1.5rem auto 0 auto;
+      }
+      &__button {
+        @extend .sign-button;
+        margin-bottom: 5rem;
+        padding: .5rem;
+      }
+      &__content__wrap {
+        display: flex;
+        margin-left: 6rem;
+      }
+      &__user {
+        color: black;
+        text-decoration: none;
+      }
+      &__content {
+        color: $color-1;
+      }
+    }
+  }
+  .show-project3 {
+    margin-left: 4rem;
+    &__idea {
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      background: $bgcolor-idea2;
+      &__title {
+        margin-bottom: 3rem;
+        padding-top: 3rem;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+      }
+      &__image {
+        margin: 0 auto 2rem auto;
+        padding: 15rem 0;
+        border: 1px solid black;
+        background: white;
+        text-align: center;
+      }
+      &__title2 {
+        margin-left: 2rem;
+        padding: .6rem 0;
+        border-radius: 20px;
+        background: $btncolor-3;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__content {
+        margin: 1.5rem 0 0 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px double black;
+        color: $color-1;
+      }
+      &__button {
+        margin: 2rem 0 0 2rem;
+        padding: 2rem 0;
+        border-radius: 50px;
+        background: $bgcolor-idea;
+        font-weight: bold;
+        font-size: 2rem;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+    &__return {
+      &__wrap {
+        border: 1px solid black;
+        background: $bgcolor-project2;
+      }
+      &__wrap2 {
+        background: $bgcolor-project2;
+      }
+      &__title {
+        margin-bottom: 1.5rem;
+        font-weight: bold;
+      }
+      &__icon {
+        width: 2rem;
+        vertical-align: -.2rem;
+      }
+      &__money, &__content, &__supporter, &__schedule {
+        margin: 0 auto;
+        border: 1px solid black;
+        background: white;
+        color: $color-1;
+        text-align: center;
+      }
+      &__money {
+        margin: 1.5rem auto;
+        padding: 1rem 0;
+      }
+      &__content {
+        margin-bottom: 1.5rem;
+        padding: .5rem 0;
+      }
+      &__supporter__wrap {
+        display: flex;
+      }
+      &__supporter, &__schedule {
+        margin-bottom: 1.5rem;
+        padding: .5rem 0;
+      }
+    }
+  }
+}

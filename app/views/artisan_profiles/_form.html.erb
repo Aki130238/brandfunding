@@ -278,6 +278,7 @@
 
         <div>
           <p class="col-xl-5 edit-artisan-form__privacy"><%= f.check_box :s %>&thinsp;<span class="edit-artisan-form__privacy__content">利用規約、個人情報保護方針に同意する</span></p>
+          <%= f.hidden_field :user_status, value: 2 %>
           <p class="col-xl-5 edit-artisan-form__button__wrap"><%= f.submit "職人登録する", class: "col-xl-12 edit-artisan-form__button" %></p>
         </div>
 

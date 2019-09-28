@@ -1,0 +1,35 @@
+<main class="artisans-page">
+  <div class="row artisans-page__header">
+    <h1 class="col-12 artisans-page__title">職人一覧</h1>
+  </div>
+  <div class="row artisans-page__header2">
+    <%= render "layouts/sort_bar" %>
+  </div>
+  <div class="row col-md-10 artisan-list__wrap">
+    <div class="row col-12 artisan-list_void"></div>
+    <% 9.times do %>
+      <div class="artisan-list col-md-3">
+        <div class="row">
+          <p class="col-md-11 artisan-list__image">職人画像</p>
+        </div>
+        <div class="row">
+          <p class="artisan-list__title"></p>
+        </div>
+        <div class="row">
+          <p class="col-md-4 artisan-list__image2">職人画像</p>
+        </div>
+        <div class="row">
+          <p class="col-md-12 artisan-list__year">実務経験&ensp;20年</p>
+        </div>
+        <div class="row">
+          <p class="col-md-12 artisan-list__name">職人名</p>
+        </div>
+        <div class="row">
+          <p class="col-md-12 artisan-list__pr"><% 20.times do %>一言PR<% end %></p>
+        </div>
+        <div class="row artisan-list__bar"></div>
+      </div>
+    <% end %>
+    <div class="row col-12 artisan-list_void"></div>
+  </div>
+</main>

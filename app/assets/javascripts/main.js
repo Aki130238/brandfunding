@@ -435,13 +435,13 @@ $(window).on('turbolinks:load',function() {
     });
 
     $('#ideaMaterialWrap1').on('click',function() {
-      $('#idea_idea_category_details_相談したい').prop('checked', true);
+      $('#idea_idea_material_相談したい').prop('checked', true);
     });
     $('#ideaMaterialWrap2').on('click',function() {
-      $('#idea_idea_category_details_すべて用意できる').prop('checked', true);
+      $('#idea_idea_material_すべて用意できる').prop('checked', true);
     });
     $('#ideaMaterialWrap3').on('click',function() {
-      $('#idea_idea_category_details_生地のみ').prop('checked', true);
+      $('#idea_idea_material_生地のみ').prop('checked', true);
     });
     $('#ideaMaterialWrap1').on('click',function() {
       $('#ideaMaterialWrap1').css('background', bgIdea);
