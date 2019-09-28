@@ -336,27 +336,21 @@
     text-align: center;
   }
   .show-artisan1 {
+    margin: 0 auto;
     background: $bgcolor-artisan3;
     &__wrap {
-
+      margin-left: -3rem;
     }
     &__image {
       margin: 2.5rem 0 2.5rem auto;
-      padding: 18rem 0;
+      padding: 22rem 0;
       border: 1px solid black;
       background: white;
       text-align: center;
     }
-    &__title_hide {
-      visibility: hidden;
-    }
     &__title {
       text-align: right;
     }
-    // &__title2 {
-    //   margin-bottom: 5rem;
-    //   text-align: right;
-    // }
     &__content {
       color: $color-1;
       font-size: 1.5rem;
@@ -366,18 +360,27 @@
       font-size: 2.3rem;
     }
     &__content3 {
-      margin: -.5rem 2.5rem auto 0;
+      float: left;
+      margin-right: 2rem;
       padding: .3rem 1rem;
       border-radius: 4px;
       background: $bgcolor-artisan4;
       color: white;
+      text-align: center;
     }
     &__content4 {
-      margin: -.5rem 2.5rem auto 0;
-      padding: .3rem 1rem;
-      border-radius: 4px;
-      background: $bgcolor-artisan4;
-      color: white;
+      margin: -.3rem 2rem 0 0;
+      background: $bgcolor-skill2;
+      color: $color-1;
+    }
+    &__content5 {
+      float: left;
+      font-weight: bold;
+    }
+    &__content6 {
+      padding-bottom: 4rem;
+      border: 3px solid $bgcolor-skill2;
+      background: white;
     }
     &__content__wrap {
       margin-top: 3rem;
