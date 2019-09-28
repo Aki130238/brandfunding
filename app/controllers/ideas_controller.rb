@@ -6,6 +6,8 @@ class IdeasController < ApplicationController
   end
 
   def show
+    @idea_comment = IdeaComment.new
+    @idea_comments = @idea.idea_comments
   end
 
   def new
@@ -45,6 +47,7 @@ class IdeasController < ApplicationController
 
   def idea_params
     params.require(:idea).permit(:idea_title, :idea_amount, :idea_about, :idea_usage, :idea_commit, :product_image,
-                                 :idea_category, :idea_category_details, :product_about, idea_user_ids: [])
+                                 :idea_category, :idea_category_details, :product_about, :idea_material, :work_style, :delivery_date,
+                                 :budget, idea_user_ids: [])
   end
 end

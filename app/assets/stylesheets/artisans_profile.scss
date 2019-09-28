@@ -1,0 +1,447 @@
+.edit-artisan-page {
+  &__title__wrap {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid $bordercolor-1;
+  }
+  &__image {
+    width: 1.8rem;
+    margin: 1rem 0 0 1.5rem;
+    color: $color-1;
+  }
+  &__title {
+    margin: .5rem 0 0 1rem;
+    color: $color-1;
+    font-weight: bold;
+  }
+  .edit-artisan-form {
+    &__privacy {
+      margin: 8rem auto 3rem auto;
+      color: $color-1;
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: center;
+    }
+    &__privacy__content {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &__button__wrap {
+      margin: 0 auto 8rem auto;
+    }
+    &__button {
+      padding: 1.5rem 0rem;
+      border: 1px solid black;
+      color: $color-1;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+    &__input_direction {
+      @include mq(md) {
+        display: flex;
+      }
+    }
+    &__title_show {
+      @include mq(md) {
+        display: none;
+      }
+    }
+    &__title_none {
+      display: none;
+      @include mq(md) {
+        display: block;
+      }
+    }
+    &__title1 {
+      margin: auto 0;
+      background: $bgcolor-3;
+      color: white;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    &__title2 {
+      margin: auto 0;
+      color: $color-1;
+      font-size: 1.4rem;
+    }
+    &__title3 {
+      display: none;
+      @include mq(md) {
+        display: block;
+        margin-top: 1rem;
+        color: $color-1;
+        font-size: 1.4rem;
+      }
+    }
+    &__title4 {
+      margin: auto 0;
+      padding: 0 .8rem;
+      background: $bgcolor-3;
+      color: white;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    &__title_hide {
+      margin: auto 0;
+      padding: 0 .8rem;
+      background: white;
+      color: white;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    &__input__title {
+      margin: auto 0 auto 2.5rem;
+      @include mq(md) {
+        margin: auto 0;
+      }
+      color: $color-1;
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: left;
+      @include mq(md) {
+        text-align: right;
+      }
+    }
+    &__input__title_name {
+      display: none;
+      @include mq(md) {
+        display: block;
+        margin: auto 0;
+        color: $color-1;
+        font-weight: bold;
+        font-size: 2rem;
+        text-align: right;
+      }
+    }
+    &__input__title_sm {
+      margin: auto 0 auto 2.5rem;
+      color: $color-1;
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: left;
+      @include mq(md) {
+        display: none;
+      }
+    }
+    &__input__title_phone {
+      margin: 1rem 0 0 1rem;
+      @include mq(md) {
+        margin: auto 0;
+      }
+      color: $color-1;
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: left;
+      @include mq(md) {
+        text-align: right;
+      }
+    }
+    &__profile {
+      margin: 1.5rem 0 5rem 0;
+      &__wrap {
+        margin-bottom: 2rem;
+      }
+      &__input__wrap {
+        margin: .5rem 0 1rem 0;
+        @include mq(md) {
+          margin: auto 0;
+        }
+      }
+      &__input {
+        padding: .5rem 1rem;
+        font-size: 1.6rem;
+      }
+      &__title__wrap {
+        // padding: 1.5rem 0;
+      }
+      // &__title {
+      //   padding: .5rem 0 .5rem 4rem;
+      //   color: $color-1;
+      //   font-weight: bold;
+      // }
+    }
+    &__artisan {
+      &__wrap {
+        margin-bottom: 1.5rem;
+      }
+      &__wrap2 {
+        margin-top: -10rem;
+      }
+      &__wrap3 {
+        margin-top: 3rem;
+      }
+      &__input__wrap {
+        margin-top: 1.1rem;
+      }
+      &__input__wrap2 {
+        margin: 1.1rem 0 0 8.3rem;
+      }
+      &__input__wrap3 {
+        margin: 1.1rem 0 0 4rem;
+      }
+      &__input__wrap4 {
+        margin-top: 15rem;
+      }
+      &__genre__wrap {
+        margin-bottom: -10rem;
+      }
+      &__genre__wrap2 {
+        margin-bottom: -18rem;
+      }
+      &__genre-list__wrap {
+        margin-top: 7rem;
+      }
+      &__genre-list__wrap2 {
+        margin-top: 10rem;
+      }
+      &__genre__content {
+        float: left;
+      }
+      &__item__wrap {
+        margin-top: 5rem;
+      }
+      &__item-list__wrap {
+        margin-top: 18rem;
+      }
+      &__facillity__wrap {
+        margin-top: -5rem;
+      }
+      &__facillity-list__wrap {
+        margin-top: 11rem;
+      }
+      &__input {
+        padding: .5rem 1rem;
+        font-size: 1.6rem;
+      }
+      &__input2 {
+        padding: .5rem 1rem;
+        background: $bgcolor-5;
+        font-size: 1.6rem;
+      }
+      &__input3 {
+        padding: 1rem 1rem 15rem 1rem;
+        font-size: 1.6rem;
+      }
+      &__title {
+        margin: auto 0 auto 5rem;
+        color: $color-1;
+      }
+      &__title2 {
+        margin: auto 0 auto 10rem;
+        color: $color-1;
+      }
+      &__content {
+        margin: auto 0;
+        color: $color-1;
+      }
+      &__skill_bg {
+        margin: 1rem 0 0 1.5rem;
+        padding: 1.5rem;
+        background: $bgcolor-skill;
+        color: $color-skill;
+      }
+      &__button {
+        @extend .sign-button;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: .8rem 0;
+        background: $btncolor-2;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      &__image {
+        width: 1.6rem;
+        color: white;
+        vertical-align: -.4rem;
+      }
+      &__radio__wrap {
+        margin-top: 1rem;
+      }
+      &__radio__input {
+        margin: .5rem 0 0 3rem;
+      }
+      &__radio__content {
+        margin-top: .8rem;
+      }
+    }
+  }
+}
+
+.artisans-page {
+  &__header {
+    margin: 0 auto;
+    padding: 1.5rem 0;
+    background: $bgcolor-artisan;
+  }
+  &__title {
+    font-weight: bold;
+    text-align: center;
+  }
+  &__header2 {
+    margin: 0 auto;
+    background: $bgcolor-project2;
+  }
+  .artisan-list {
+    margin: 1.5rem;
+    border: 1px solid black;
+    &_void {
+      margin: 3rem;
+    }
+    &__wrap {
+      display: flex;
+      margin-left: 20rem;
+    }
+    &__link {
+      color: $color-1;
+      text-decoration: none;
+    }
+    &__image {
+      margin: 2rem auto -6rem  auto;
+      padding: 7rem 0;
+      border: 1px solid black;
+      text-align: center;
+    }
+    &__image2 {
+      margin: 0 auto 1rem auto;
+      padding: 3rem 0;
+      border: 1px solid black;
+      border-radius: 50%;
+      text-align: center;
+    }
+    &__year {
+      color: $color-1;
+      text-align: center;
+    }
+    &__name {
+      font-weight: bold;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+    &__pr {
+
+    }
+    &__bar {
+      padding: 1.5rem 0;
+      background: $bgcolor-artisan;
+    }
+  }
+}
+
+.show-artisan-page {
+  &__title {
+    margin-bottom: -.15rem;
+    padding: 1rem 0;
+    background: $bgcolor-artisan2;
+    font-weight: bold;
+    text-align: center;
+  }
+  .show-artisan1 {
+    margin: 0 auto 3rem auto;
+    background: $bgcolor-artisan3;
+    &__wrap {
+      margin-left: -3rem;
+    }
+    &__image__wrap {
+      margin: 2.5rem 0 2.5rem auto;
+      padding: 18rem 0;
+      border: 1px solid black;
+      border-radius: 5px;
+      background: white;
+      text-align: center;
+    }
+    &__image {
+      margin-top: -18rem;
+      padding: 11rem 0;
+    }
+    &__image__decoration {
+      display: inline-block;
+      position: absolute;
+      top: -6px;
+      left: 25px;
+      margin: 0;
+      padding: 30px 0;
+      z-index: 2;
+      width: 50px;
+      text-align: center;
+      color: white;
+      font-size: 17px;
+      background: linear-gradient(#ff785b 0%, #e95738 100%);
+      border-radius: 2px 0 0 0;
+      }
+    &__image__decoration:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: -6px;
+      border: none;
+      border-bottom: solid 6px #cf4a2d;
+      border-right: solid 6px transparent;
+    }
+    &__image__decoration:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 100%;
+      height: 0;
+      width: 0;
+      border-left: 25px solid #e95738;
+      border-right: 25px solid #e95738;
+      border-bottom: 15px solid transparent;
+    }
+    &__title {
+      text-align: right;
+    }
+    &__content {
+      color: $color-1;
+      font-size: 1.5rem;
+    }
+    &__content2 {
+      margin-top: -.5rem;
+      font-size: 2.3rem;
+    }
+    &__content3 {
+      float: left;
+      margin-right: 2rem;
+      padding: .3rem 1rem;
+      border-radius: 4px;
+      background: $bgcolor-artisan4;
+      color: white;
+      text-align: center;
+    }
+    &__content4 {
+      margin: -.3rem 2rem 0 0;
+      background: $bgcolor-skill2;
+      color: $color-1;
+    }
+    &__content5 {
+      float: left;
+      font-weight: bold;
+    }
+    &__content6 {
+      padding-bottom: 4rem;
+      border: 3px solid $bgcolor-skill2;
+      background: white;
+    }
+    &__content__wrap {
+      margin-top: 3rem;
+    }
+    &__content__wrap2 {
+      margin-bottom: 3rem;
+    }
+    &__content__wrap3 {
+      margin-bottom: 2rem;
+    }
+  }
+  .show-artisan2 {
+    margin: 0 auto;
+    &__title {
+      margin-top: 2rem;
+      text-align: right;
+    }
+    &__content {
+      margin-bottom: 3rem;
+      padding: 1rem 1rem 30rem 1rem;
+      border: 2px solid $bordercolor-1;
+    }
+  }
+}

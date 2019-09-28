@@ -1,3 +1,766 @@
-// Place all the styles related to the ideas controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.new-idea-page {
+  // height: 100%;
+  &__title {
+    display: inline-block;
+    width: 100%;
+    padding: 2.5rem 0;
+    background: $bgcolor-idea;
+    color: $color-1;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__menu {
+    margin-top: 5rem;
+    @include mq(md) {
+      margin-left: 8rem;
+    }
+    @include mq(lg) {
+      margin-left: 14.5rem;
+    }
+    @include mq(xl) {
+      margin-left: 23rem;
+    }
+    border: none;
+    &__list {
+      border: 1px solid black;
+    }
+    &__list-2 {
+      border: 1px solid black;
+      border-left: 1px solid black;
+      @include mq(sm) {
+        border-left: none;
+      }
+    }
+    &__link {
+      padding: 1.6rem 3.6rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+      color: $color-1;
+      font-weight: bold;
+    }
+    &__link:hover {
+      color: $color-1;
+    }
+    .nav-link.active {
+      background: $bgcolor-idea;
+      color: black;
+    }
+    .ideaTab1 {
+      padding: 1.6rem 6.8rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+    .ideaTab2 {
+      padding: 1.6rem 9.9rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+    .ideaTab3 {
+      padding: 1.6rem 9.1rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+    .ideaTab4 {
+      padding: 1.6rem 7.5rem;
+      @include mq(sm) {
+        padding: 1.6rem 4.35rem;
+        border-left: 1px solid black;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+        border-left: none;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+    .ideaTab5 {
+      padding: 1.6rem 10.7rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+    .ideaTab6 {
+      padding: 1.6rem 6.8rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 1.7rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 3.6rem;
+      }
+    }
+  }
+
+  .idea-form {
+    margin: 5rem auto 0 auto;
+    color: $color-1;
+    &__content__wrap {
+      margin-bottom: 5rem;
+    }
+    &__title-1 {
+      margin-top: 1rem;
+      padding: .3rem 1rem;
+      font-weight: bold;
+    }
+    &__title-2 {
+      margin: 1rem 0 auto 0;
+      padding: .5rem 1rem;
+      background: $bgcolor-3;
+      color: $color-1;
+    }
+    &__button_wrap {
+      display: inline-block;
+      width: 100%;
+      margin-top: 5rem;
+      padding-bottom: 10rem;
+      text-align: center;
+    }
+    &__button {
+      margin-top: 1.5rem;
+      @include mq(sm) {
+        margin-left:1.5rem;
+      }
+      padding: 1.5rem 0rem;
+      border: 1px solid black;
+    }
+    &-image {
+      &__title {
+        margin-bottom: 3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__input__wrap {
+        margin-top: 1.5rem;
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__input__wrap2 {
+        margin-top: 1.5rem;
+        @include mq(md) {
+          margin-left:1.5rem;
+        }
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__input {
+        margin-left: -1.5rem;
+        visibility: hidden;
+      }
+      &__content {
+        padding: 1.8rem 0 1rem 0;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+    }
+
+    &-user {
+      .bgIdea {
+        background: $bgcolor-idea;
+      }
+      &__title {
+        margin-bottom: 3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__input__wrap {
+        margin-top: 1.5rem;
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__input__wrap2 {
+        margin-top: 1.5rem;
+        @include mq(md) {
+          margin-left:1.5rem;
+        }
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__input__wrap3 {
+        @include mq(lg) {
+          margin-left: 1.5rem;
+        }
+      }
+      &__content {
+        padding: 7.8rem 0 5.8rem 0;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__content2 {
+        padding: 6.8rem 0 5rem 0;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__input {
+        margin-left: -1.5rem;
+        // visibility: hidden;
+      }
+
+    }
+    &-category {
+      &__title {
+        margin-bottom: 3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__input__wrap {
+        margin-top: 1.5rem;
+        @include mq(lg) {
+          margin-left: 12rem;
+        }
+        @include mq(xl) {
+          margin-left: 18rem;
+        }
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__input__wrap2 {
+        margin-top: 1.5rem;
+        @include mq(md) {
+          margin-left: 1.5rem;
+        }
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__content {
+        padding: 3.8rem 0 3rem 0;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__content2 {
+        padding: 3.8rem 0 3rem 0;
+        @include mq(md) {
+          padding: 4rem 0 .5rem 0;
+        }
+        @include mq(lg) {
+          padding: 3.8rem 0 3rem 0;
+        }
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__content3 {
+        padding: 3.8rem 0 3rem 0;
+        @include mq(md) {
+          padding: 3.3rem 0 1.3rem 0;
+        }
+        @include mq(lg) {
+          padding: 3.8rem 0 3rem 0;
+        }
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__input {
+        margin-left: -1.5rem;
+        visibility: hidden;
+      }
+
+    }
+    &-category-details {
+      &__title {
+        margin-bottom: 3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__input__wrap {
+        margin-top: 1.5rem;
+        @include mq(lg) {
+          margin-left: 12rem;
+        }
+        @include mq(xl) {
+          margin-left: 18rem;
+        }
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__input__wrap2 {
+        margin-top: 1.5rem;
+        @include mq(md) {
+          margin-left: 1.5rem;
+        }
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__content {
+        padding: 3.8rem 1rem 3rem 1rem;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__content2 {
+        padding: 3.8rem 1rem 3rem 1rem;
+        @include mq(md) {
+          padding: 4rem 1rem .5rem 1rem;
+        }
+        @include mq(lg) {
+          padding: 3.8rem 0 3rem 0;
+        }
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__content3 {
+        padding: 3.8rem 1rem 3rem 1rem;
+        @include mq(md) {
+          padding: 3.3rem 1rem 1.3rem 1rem;
+        }
+        @include mq(lg) {
+          padding: 3.8rem 0 3rem 0;
+        }
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__content4 {
+        @include mq(md) {
+          padding: 4rem 1rem 1.5rem 1rem;
+        }
+        @include mq(lg) {
+          padding: 3.8rem 0 3rem 0;
+        }
+      }
+      &__content5 {
+        @include mq(lg) {
+          margin-bottom: -1.5rem;
+          padding: 3.8rem 0 3rem 0;
+        }
+        @include mq(xl) {
+          margin-bottom: 1rem;
+          padding: 3.8rem 0 3rem 0;
+        }
+      }
+      &__content6 {
+        @include mq(lg) {
+          margin-bottom: -1.5rem;
+          padding: 3rem 1.5rem 3rem 1.5rem;
+        }
+        @include mq(xl) {
+          margin-bottom: 1rem;
+          padding: 3.8rem 0 3rem 0;
+        }
+      }
+      &__input {
+        margin-left: -1.5rem;
+        visibility: hidden;
+      }
+    }
+    &-material {
+      padding-bottom: 3rem;
+      &__title {
+        margin-bottom: 3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__input__wrap {
+        margin-top: 1.5rem;
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__input__wrap2 {
+        margin-top: 1.5rem;
+        @include mq(md) {
+          margin-left: 1.5rem;
+        }
+        padding: 0;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__content {
+        padding: 3.8rem 0 3rem 0;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      &__input {
+        margin-left: -1.5rem;
+        visibility: hidden;
+      }
+    }
+
+    &-idea-details {
+      &__title {
+        margin-bottom: 3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__title1 {
+        margin-top: 1rem;
+        font-weight: bold;
+        @include mq(md) {
+          text-align: right;
+        }
+      }
+      &__title2 {
+        margin: .7rem 0 auto 0;
+        padding: .5rem 1rem;
+        background: $bgcolor-3;
+        color: white;
+        text-align: center;
+      }
+      &__title__wrap {
+        @include mq(md) {
+          margin-right: -8rem;
+        }
+      }
+      &__title__wrap, &__input__wrap {
+        margin-bottom: 5rem;
+      }
+      &__input {
+        @include mq(md) {
+          margin-left: -2rem;
+        }
+        @include mq(lg) {
+          margin-left: -3rem;
+        }
+        @include mq(xl) {
+          margin-left: -10rem;
+        }
+        padding: 1rem;
+        font-size: 1.5rem;
+      }
+      &__input2 {
+        @include mq(md) {
+          margin-left: -2rem;
+        }
+        @include mq(lg) {
+          margin-left: -3rem;
+        }
+        @include mq(xl) {
+          margin-left: -10rem;
+        }
+        padding: 1rem 1rem 8rem 1rem;
+        font-size: 1.5rem;
+        overflow: hidden;
+        resize: none;
+      }
+      &__input3 {
+        @include mq(md) {
+          margin-left: -2rem;
+        }
+        @include mq(lg) {
+          margin-left: -3rem;
+        }
+        @include mq(xl) {
+          margin-left: -10rem;
+        }
+        margin-bottom: 5rem;
+        padding: 1rem;
+        border: 1px solid black;
+        font-size: 1.6rem;
+        outline: 0;
+      }
+      &__guide {
+        margin-bottom: 5rem;
+        font-size: 1.4rem;
+        @include mq(lg) {
+          margin-left: 15rem;
+        }
+        @include mq(xl) {
+          margin-left: 12rem;
+        }
+      }
+      &__content {
+        padding-top: 1rem;
+      }
+    }
+  }
+}
+
+.show-idea-page {
+  &__title {
+    display: inline-block;
+    padding: 2.5rem 0;
+    background: $bgcolor-idea;
+    color: $color-1;
+    font-weight: bold;
+    text-align: center;
+  }
+  .show-idea-overview {
+    margin-bottom: 5rem;
+    padding-bottom: 1.5rem;
+    background: $bgcolor-1;
+    &__wrap {
+      @include mq(lg) {
+        margin: 6rem 0 0 -3rem;
+      }
+    }
+    &__title{
+      padding: 3rem 0 1rem 0;
+      font-weight: bold;
+    }
+    &__title2 {
+      padding: .8rem 1.5rem .8rem 2rem;
+      border-radius: 20px;
+      background: $bgcolor-idea;
+      color: $color-1;
+      font-weight: bold;
+    }
+    &__image {
+      margin-bottom: 1.5rem;
+      padding: 13rem 0;
+      border: 1px solid black;
+    }
+    &__content {
+      margin-top: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px double black;
+      color: $color-1;
+    }
+  }
+
+  .show-idea-list {
+    margin-bottom: 3rem;
+    color: $color-1;
+    &__title {
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: 3rem;
+      }
+      padding: 1rem 0;
+      background: $bgcolor-idea;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__title2 {
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -12.5rem;
+        text-align: right;
+      }
+      padding: 1rem 0;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__title3 {
+      margin-bottom: 1.5rem;
+    }
+    &__title4 {
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: 3rem;
+        text-align: right;
+      }
+      padding: 1rem 0;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__title5 {
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -35.5rem;
+        text-align: right;
+      }
+      @include mq(xl) {
+        margin-left: -55.5rem;
+        text-align: right;
+      }
+      padding: 1rem 0;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__title6 {
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -27rem;
+        text-align: right;
+      }
+      @include mq(xl) {
+        margin-left: -45rem;
+      }
+      padding: 1rem 0;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__content {
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -8rem;
+      }
+      padding: 1rem 0 1rem 1rem;
+      border-bottom: 1px double black;
+      font-weight: bold;
+    }
+    &__content2 {
+      margin-right: 3rem;
+    }
+    &__content3 {
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -5rem;
+        margin-bottom: 1.5rem;
+      }
+      @include mq(xl) {
+        margin-left: -8rem;
+        margin-bottom: 1.5rem;
+      }
+      padding: .8rem 0 .8rem 2rem;
+      background: $bgcolor-4;
+    }
+    &__content4 {
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -36rem;
+      }
+      @include mq(xl) {
+        margin-left: -50rem;
+      }
+      padding: .8rem 0;
+      background: $bgcolor-4;
+      text-align: center;
+    }
+    &__content5 {
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -28rem;
+      }
+      @include mq(xl) {
+        margin-left: -39rem;
+      }
+      padding: .8rem 0;
+      background: $bgcolor-4;
+      text-align: center;
+    }
+    &__content6 {
+      margin: 0 auto;
+      @include mq(lg) {
+        margin-left: -5rem;
+      }
+      @include mq(xl) {
+        margin-left: -7rem;
+      }
+      padding: .8rem 0 10rem 2rem;
+      background: $bgcolor-4;
+    }
+    &__wrap {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .show-idea-comment {
+    &__wrap {
+      margin: 5rem 0;
+    }
+    &__input__wrap {
+      margin: 3rem auto 1.5rem auto;
+      @include mq(md) {
+        margin: 10rem auto 1.5rem auto;
+      }
+    }
+    &__input {
+      padding: .8rem;
+      @include mq(lg) {
+        padding: .8rem .8rem 5rem .8rem;
+      }
+      font-size: 1.7rem;
+      overflow: hidden;
+      resize: none;
+    }
+    &__button__wrap {
+      margin: 1.5rem auto 0 auto;
+    }
+    &__button {
+      @extend .sign-button;
+    }
+    &__user__wrap {
+      margin: 3.8rem auto 0 auto;
+      text-align: center;
+      @include mq(lg) {
+        text-align: right;
+      }
+    }
+    &__user {
+      color: black;
+      font-size: 1.8rem;
+    }
+    &__content {
+      margin: 3rem auto 0 auto;
+      padding: .8rem;
+      border: 1px solid black;
+      color: $color-1;
+    }
+    &__delete-button__wrap {
+      margin: 3rem auto 0 auto;
+      padding-bottom: 1.5rem;
+    }
+    &__delete-button {
+      @extend .sign-button;
+      background: red;
+      color: white;
+      font-size: 1.5rem;
+      @include mq(md) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

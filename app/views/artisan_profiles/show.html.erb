@@ -1,7 +1,81 @@
-<div class="container">
-  <div class="py-5 text-center">
-    <h2>職人情報</h2>
-    <p class="lead"></p>
+<main class="show-artisan-page">
+  <h1 class="show-artisan-page__title">職人紹介&emsp;<%= link_to "職人一覧(仮置き)", artisan_profiles_path %></h1>
+  <div class="row show-artisan1">
+    <div class="col-md-4">
+      <div class="col-md-8 show-artisan1__image__wrap">
+        <span class="show-artisan1__image__decoration">20年</span>
+        <p class="show-artisan1__image">職人画像</p>
+      </div>
+    </div>
+
+    <div class="col-md-7 show-artisan1__wrap">
+      <div class="row show-artisan1__content__wrap">
+        <p class="col-md-2"></p>
+        <div class="col-md-10">
+          <p class="show-artisan1__content">しょくにんめい</p>
+        </div>
+      </div>
+
+      <div class="row show-artisan1__content__wrap2">
+        <p class="col-md-2 show-artisan1__title">名&emsp;前</p>
+        <div class="col-md-10">
+          <p class="show-artisan1__content2">職人名</p>
+        </div>
+      </div>
+
+      <div class="row show-artisan1__content__wrap3">
+        <p class="col-md-2 show-artisan1__title">ジャンル</p>
+        <div class="col-md-10">
+          <% 2.times do %>
+            <p class="col-md-2 show-artisan1__content3">レディース</p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row show-artisan1__content__wrap3">
+        <p class="col-md-2 show-artisan1__title">設備</p>
+        <div class="col-md-10">
+          <% 3.times do %>
+            <p class="col-md-3 show-artisan1__content3">4本糸ロックミシン</p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row show-artisan1__content__wrap3">
+        <p class="col-md-2 show-artisan1__title">アイテム</p>
+        <div class="col-md-10">
+          <% 10.times do %>
+            <p class="col-md-2 show-artisan1__content3">ジャケット</p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row show-artisan1__content__wrap3">
+        <p class="col-md-2 show-artisan1__title">スキル</p>
+        <div class="col-md-10">
+          <p class="col-md-2 show-artisan1__content3 show-artisan1__content4">スキル</p>
+          <p class="col-md-2 show-artisan1__content5">スキル年数</p>
+          <p class="col-md-2 show-artisan1__content3 show-artisan1__content4">10年</p>
+        </div>
+      </div>
+
+      <div class="row show-artisan1__content__wrap3">
+        <p class="col-md-2"></p>
+        <div class="col-md-10">
+          <p class="col-md-10 show-artisan1__content6">スキル</p>
+        </div>
+      </div>
+
+    </div>
   </div>
-  <%= render 'read', artisan_profile: @user %>
-</div>
+
+  <div class="row show-artisan2">
+    <p class="col-md-3 show-artisan2__title">経歴紹介</p>
+    <p class="col-md-7 show-artisan2__content">経歴紹介テキスト</p>
+    <p class="col-md-3 show-artisan2__title">自己PR</p>
+    <p class="col-md-7 show-artisan2__content">自己PRテキスト</p>
+    <p class="col-md-3 show-artisan2__title">自己紹介</p>
+    <p class="col-md-7 show-artisan2__content">自己紹介テキスト</p>
+  </div>
+
+</main>

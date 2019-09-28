@@ -1,3 +1,734 @@
-// Place all the styles related to the projects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.new-project-page {
+  &__title {
+    display: inline-block;
+    padding: 2.5rem 0;
+    background: $bgcolor-project;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__menu {
+    margin-top: 5rem;
+    border: none;
+    &__list {
+      border: 1px solid black;
+    }
+    &__list-2 {
+      border: 1px solid black;
+      border-left: 1px solid black;
+      @include mq(sm) {
+        border-left: none;
+      }
+    }
+    &__link {
+      color: $color-1;
+      font-weight: bold;
+    }
+    &__link:hover {
+      color: $color-1;
+    }
+    .nav-link.active {
+      background: $bgcolor-project;
+      color: black;
+    }
+    .projectTab1 {
+      padding: 1.6rem 8rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem 2rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 2.5rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 4.5rem;
+      }
+    }
+    .projectTab2 {
+      padding: 1.6rem 9.6rem;
+      @include mq(sm) {
+        padding: 1.6rem 2rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem 2.5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 3.5rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 5rem;
+      }
+    }
+    .projectTab3 {
+      padding: 1.6rem 7.3rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem 1.5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 2rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 4rem;
+      }
+    }
+    .projectTab4 {
+      padding: 1.6rem 9.6rem;
+      @include mq(sm) {
+        padding: 1.6rem 2rem;
+        border-left: 1px solid black;
+      }
+      @include mq(md) {
+        padding: 1.6rem 3rem;
+        border-left: none;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 3.5rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 5rem;
+      }
+    }
+    .projectTab5 {
+      padding: 1.6rem 7.3rem;
+      @include mq(sm) {
+        padding: 1.6rem .5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem 1.5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 2rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 4rem;
+      }
+    }
+    .projectTab6 {
+      padding: 1.6rem 8rem;
+      @include mq(sm) {
+        padding: 1.6rem 1.5rem;
+      }
+      @include mq(md) {
+        padding: 1.6rem 1.5rem;
+      }
+      @include mq(lg) {
+        padding: 1.6rem 2.5rem;
+      }
+      @include mq(xl) {
+        padding: 1.6rem 4.5rem;
+      }
+    }
+  }
+
+
+  .project-form {
+    margin: 5rem auto 0 auto;
+    color: $color-1;
+    &__title-1 {
+      margin-top: 1rem;
+      padding: .3rem 1rem;
+      font-weight: bold;
+      @include mq(md) {
+        text-align: right;
+      }
+    }
+    &__title-2 {
+      margin: 1rem 0 auto 0;
+      padding: .5rem 1rem;
+      background: $bgcolor-3;
+      color: white;
+      text-align: center;
+    }
+    &__title__wrap {
+      margin-top: 1.5rem;
+      @include mq(lg) {
+        margin-left: 12rem;
+      }
+      @include mq(xl) {
+        margin-top: 1.9rem;
+      }
+    }
+    &__form__wrap {
+      margin-top: 1rem;
+      @include mq(md) {
+        margin: 2rem 0 0 -5rem;
+      }
+      @include mq(lg) {
+        margin-left: -8rem;
+      }
+      @include mq(xl) {
+        margin-left: -11rem;
+      }
+    }
+    &__button_wrap {
+      display: inline-block;
+      width: 100%;
+      margin-top: 5rem;
+      padding-bottom: 10rem;
+      text-align: center;
+    }
+    &__button {
+      margin-top: 1.5rem;
+      @include mq(sm) {
+        margin-left:1.5rem;
+      }
+      padding: 1.5rem 0rem;
+      border: 1px solid black;
+    }
+
+    &-value {
+      &__target {
+        &__input {
+          padding: .5rem;
+          font-size: 1.4rem;
+          @include mq(xl) {
+            padding: 1rem;
+            font-size: 1.5rem;
+          }
+        }
+        &__guide {
+          font-size: 1.3rem;
+          @include mq(xl) {
+            margin-bottom: 5rem;
+            font-size: 1.4rem;
+          }
+        }
+      }
+      &__deadline {
+        &__input {
+          padding: .5rem;
+          font-size: 1.4rem;
+          @include mq(xl) {
+            padding: 1rem;
+            font-size: 1.5rem;
+          }
+        }
+        &__guide {
+          font-size: 1.3rem;
+          @include mq(xl) {
+            margin-left: 1rem;
+            font-size: 1.4rem;
+          }
+        }
+        &__guide-2 {
+          @include mq(xl) {
+            margin-bottom: 5rem;
+          }
+        }
+      }
+      &__method {
+        &__input_wrap {
+          margin-top: 1rem;
+        }
+        &__input_wrap-2 {
+          margin-top: 1rem;
+          padding-left: 3rem;
+        }
+        &__input__title {
+          @include mq(xl) {
+            margin-top: -2.3rem;
+            padding-left: 2.5rem;
+            font-size: 1.8rem;
+          }
+        }
+        &__input {
+          padding-bottom: 1rem;
+        }
+        &__guide_wrap-2 {
+          padding-top: 3rem;
+        }
+        &__guide {
+          font-size: 1.3rem;
+          @include mq(xl) {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+    &-project {
+      &__content_wrap {
+        margin-top: 5rem;
+      }
+      &__input {
+        padding: 1rem;
+        font-size: 1.5rem;
+      }
+      &__input-2 {
+        padding: 1rem 1rem 5rem 1rem;
+        font-size: 1.5rem;
+        overflow: hidden;
+        resize: none;
+      }
+      &__guide {
+        margin-left: 1rem;
+        font-size: 1.4rem;
+      }
+    }
+    &-image {
+      &__image_wrap {
+        margin-top: 1.5rem;
+        border: 1px solid black;
+      }
+      &__image_wrap-2 {
+        border: 1px solid black;
+        margin: .8rem 1.6rem .8rem 0;
+      }
+      &__input {
+        padding: 1rem 1rem 35rem 1rem;
+      }
+      &__input-2 {
+        margin: 0 1.5rem 1.5rem 0;
+        padding: 1rem 1rem 10rem 1rem;
+      }
+      &__input-3 {
+        padding: 1rem;
+        font-size: 1.4rem;
+      }
+      &__sub {
+        margin-top: 5rem;
+      }
+      &__guide__wrap {
+        @include mq(md) {
+          margin-bottom: 1.5rem;
+        }
+        @include mq(xl) {
+          margin-left: -5rem;
+        }
+        font-size: 1.5rem;
+      }
+      &__guide__title {
+        margin-top: 1.5rem;
+        list-style: none;
+      }
+    }
+    &-about {
+      &__input {
+        padding: 1.5rem 1.5rem 135rem 1.5rem;
+        @include mq(md) {
+          padding-bottom: 113rem;
+        }
+        @include mq(lg) {
+          padding-bottom: 93rem;
+        }
+        font-size: 1.5rem;
+        overflow: hidden;
+        resize: none;
+      }
+    }
+    &-idea {
+      padding-bottom: 20rem;
+      &__input {
+        padding: 2rem 1rem;
+      }
+    }
+    &-report {
+      &__input {
+        padding: 1.5rem 1.5rem 30rem 1.5rem;
+        font-size: 1.5rem;
+        overflow: hidden;
+        resize: none;
+      }
+    }
+  }
+}
+
+.projects-page {
+  &__header {
+    background: $bgcolor-project;
+    }
+  &__menu {
+    display: flex;
+    margin: .8rem auto .8rem auto;
+    padding: 1rem 0;
+    background: $bgcolor-project2;
+    &__icon__wrap {
+      margin-top: 1.1rem;
+    }
+    &__icon {
+      width: 2rem;
+      margin-left: 2rem;
+      cursor: pointer;
+    }
+    &__icon2 {
+      width: 1.6rem;
+      vertical-align: -.2rem;
+    }
+    &__button {
+      margin: 1rem 1.5rem 0 1rem;
+      cursor: pointer;
+    }
+    &__button2 {
+      margin: 0 .3rem;
+      padding: 1rem 1.6rem;
+      border: 1px solid $bordercolor-1;
+      background: white;
+      color: $color-1;
+      cursor: pointer;
+    }
+    &__button3 {
+      margin: 0 2rem;
+      padding: 1rem 1.6rem;
+      border: 1px solid $bordercolor-1;
+      background: white;
+      color: $color-1;
+      cursor: pointer;
+    }
+  }
+  .project-list {
+    margin: 1.5rem;
+    &_void {
+      margin: 3rem;
+    }
+    &__wrap {
+      display: flex;
+      margin-left: 15rem;
+    }
+    &__link {
+      color: $color-1;
+      text-decoration: none;
+    }
+    &__title {
+      margin-left: 1.3rem;
+    }
+    &__bar {
+      background: $bgcolor-idea;
+    }
+    &__bar__content {
+      margin: .5rem auto;
+      color: white;
+    }
+    &__content__wrap {
+      background: $bgcolor-project2;
+    }
+    &__guide {
+      display: flex;
+      margin-bottom: -.5rem;
+      padding-top: 1rem;
+      background: $bgcolor-project2;
+      color: $color-1;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    &__content {
+      display: flex;
+      padding-bottom: 1rem;
+      background: $bgcolor-project2;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__bar2 {
+      background: $bgcolor-project3;
+    }
+  }
+}
+
+.show-project-page {
+  &__header {
+    padding: 3.5rem 0;
+    background: $bgcolor-project;
+  }
+  .show-project1 {
+    background: $bgcolor-6;
+    color: $color-1;
+    &__title {
+      display: inline-block;
+      margin: 3rem auto;
+      padding: 2rem 0;
+      border: 1px solid black;
+      background: white;
+      color: $color-1;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__image {
+      margin: 0 0 3rem 6rem;
+      padding: 23.5rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__sns {
+      margin-left: 6rem;
+      padding: .3rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+      cursor: pointer;
+    }
+    &__content__wrap {
+      margin: 2rem 0 0 4rem;
+    }
+    &__icon {
+      width: 1.5rem;
+      color: black;
+      vertical-align: -.4rem;
+    }
+    &__project-fund {
+      padding: 1.5rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__progress {
+      padding-left: 1.5rem;
+      border-radius: 50px;
+      background: $bgcolor-idea;
+      color: white;
+    }
+    &__target-fund {
+      margin-bottom: 5rem;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__user-image__wrap {
+      display: flex;
+      margin-bottom: -9rem;
+    }
+    &__patron {
+      margin: 1rem 0 0 -1.5rem;
+    }
+    &__icon2 {
+      width: 3rem;
+      color: black;
+      vertical-align: -.5rem;
+    }
+    &__supporter {
+      margin-bottom: 5rem;
+      padding: 1.5rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__user-image {
+      margin: -5rem auto 0 auto;
+      padding: 8rem 0;
+      border: 1px solid black;
+      border-radius: 50%;
+      background: white;
+      text-align: center;
+    }
+    &__icon3 {
+      width: 2.2rem;
+      color: black;
+      vertical-align: -.5rem;
+    }
+    &__owner-name__wrap {
+      display: flex;
+      margin-top: 7rem;
+    }
+    &__deadline {
+      padding: 1.5rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__owner-name {
+      padding: 1rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+    &__prefectures__wrap {
+      display: flex;
+      margin-top: -2rem;
+    }
+    &__prefectures {
+      margin: 2.5rem auto auto auto;
+      padding: .3rem 0;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+    }
+  }
+
+  .show-menu {
+    margin: 10rem 0 0 6rem;
+    border: none;
+    list-style: none;
+    &__favorite {
+      margin: 10rem 0 0 6rem;
+      text-align: right;
+    }
+    &__link {
+      border: none;
+      color: $color-1;
+    }
+    &__link.active {
+      background: white;
+      color: black;
+    }
+    &__icon {
+      width: 2rem;
+      margin-right: .5rem;
+      color: $bgcolor-idea;
+      vertical-align: -.2rem;
+    }
+    &__icon1, &__icon2, &__icon3, &__icon4 {
+      margin: 0 .5rem;
+    }
+    &__icon1, &__icon2 {
+      width: 1.8rem;
+      color: black;
+      vertical-align: -.2rem;
+    }
+    &__icon2 {
+
+    }
+    &__icon3 {
+      width: 2.1rem;
+      color: black;
+      vertical-align: -.2rem;
+    }
+    &__icon4 {
+      width: 1.7rem;
+      color: black;
+      vertical-align: -.3rem;
+    }
+  }
+
+  .show-project2 {
+    margin: 5rem 0;
+    &__home {
+      margin-left: 6rem;
+      &__title {
+        font-weight: bold;
+      }
+      &__icon {
+        width: 1.3rem;
+      }
+      &__content {
+        margin-top: 1.5rem;
+        border: 1px solid black;
+        padding: 50rem 0;
+      }
+    }
+    &__report {
+      margin-left: 6rem;
+    }
+    &__patron {
+      margin-left: 6rem;
+    }
+    &__comment {
+      &__input__wrap {
+        margin: 0 auto;
+      }
+      &__input {
+        padding: 1rem 1rem 5rem 1rem;
+        font-size: 1.7rem;
+        overflow: hidden;
+        resize: none;
+      }
+      &__button__wrap {
+        margin: 1.5rem auto 0 auto;
+      }
+      &__button {
+        @extend .sign-button;
+        margin-bottom: 5rem;
+        padding: .5rem;
+      }
+      &__content__wrap {
+        display: flex;
+        margin-left: 6rem;
+      }
+      &__user {
+        color: black;
+        text-decoration: none;
+      }
+      &__content {
+        color: $color-1;
+      }
+    }
+  }
+  .show-project3 {
+    margin-left: 4rem;
+    &__idea {
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      background: $bgcolor-idea2;
+      &__title {
+        margin-bottom: 3rem;
+        padding-top: 3rem;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+      }
+      &__image {
+        margin: 0 auto 2rem auto;
+        padding: 15rem 0;
+        border: 1px solid black;
+        background: white;
+        text-align: center;
+      }
+      &__title2 {
+        margin-left: 2rem;
+        padding: .6rem 0;
+        border-radius: 20px;
+        background: $btncolor-3;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__content {
+        margin: 1.5rem 0 0 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px double black;
+        color: $color-1;
+      }
+      &__button {
+        margin: 2rem 0 0 2rem;
+        padding: 2rem 0;
+        border-radius: 50px;
+        background: $bgcolor-idea;
+        font-weight: bold;
+        font-size: 2rem;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+    &__return {
+      &__wrap {
+        border: 1px solid black;
+        background: $bgcolor-project2;
+      }
+      &__wrap2 {
+        background: $bgcolor-project2;
+      }
+      &__title {
+        margin-bottom: 1.5rem;
+        font-weight: bold;
+      }
+      &__icon {
+        width: 2rem;
+        vertical-align: -.2rem;
+      }
+      &__money, &__content, &__supporter, &__schedule {
+        margin: 0 auto;
+        border: 1px solid black;
+        background: white;
+        color: $color-1;
+        text-align: center;
+      }
+      &__money {
+        margin: 1.5rem auto;
+        padding: 1rem 0;
+      }
+      &__content {
+        margin-bottom: 1.5rem;
+        padding: .5rem 0;
+      }
+      &__supporter__wrap {
+        display: flex;
+      }
+      &__supporter, &__schedule {
+        margin-bottom: 1.5rem;
+        padding: .5rem 0;
+      }
+    }
+  }
+}
