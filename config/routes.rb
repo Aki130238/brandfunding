@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   resources :projects do
     resources :comments, only: %i[create]
   end
+  resources :conversations do
+    resources :messages
+  end
 end
