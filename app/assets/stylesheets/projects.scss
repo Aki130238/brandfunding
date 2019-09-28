@@ -387,15 +387,20 @@
       margin: 3rem;
     }
     &__wrap {
-      display: flex;
-      margin-left: 15rem;
+      float: right;
+      margin: 0 auto;
     }
     &__link {
       color: $color-1;
       text-decoration: none;
     }
+    &__image {
+      padding: 8rem 0;
+      border: 1px solid black;
+      text-align: center;
+    }
     &__title {
-      margin-left: 1.3rem;
+      margin: 1rem 0 3rem 1.3rem;
     }
     &__bar {
       background: $bgcolor-idea;
@@ -413,7 +418,7 @@
       padding-top: 1rem;
       background: $bgcolor-project2;
       color: $color-1;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       text-align: center;
     }
     &__content {
@@ -421,6 +426,7 @@
       padding-bottom: 1rem;
       background: $bgcolor-project2;
       font-weight: bold;
+      font-size: 1.4rem;
       text-align: center;
     }
     &__bar2 {

@@ -5,13 +5,13 @@
     </div>
   </div>
 
-  <div class="row col-md-11 project-list__wrap">
+  <div class="row col-md-10 project-list__wrap">
     <div class="row col-12 project-list_void"></div>
     <% @projects.each do |pr|%>
       <div class="project-list col-md-3">
         <%= link_to project_path(pr.id), class: "project-list__link" do %>
-          <div class="">
-            <span class="project-list__image"><%= pr.project_image.project_img %>画像</span>
+          <div class="row">
+            <span class="col-12 project-list__image"><%= pr.project_image.project_img %>画像</span>
           </div>
           <div class="row">
             <p class="project-list__title"><%= pr.project_text %></p>
