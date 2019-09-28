@@ -555,6 +555,14 @@
       margin: 10rem 0 0 6rem;
       text-align: right;
     }
+    &__favorite__button {
+      color: $color-1;
+      text-decoration: none;
+    }
+    &__favorite__button2 {
+      color: red;
+      text-decoration: none;
+    }
     &__link {
       border: none;
       color: $color-1;
