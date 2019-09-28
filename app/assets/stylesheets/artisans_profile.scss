@@ -164,50 +164,59 @@
       &__wrap {
         margin-bottom: 1.5rem;
       }
-      &__wrap2 {
-        margin-top: -10rem;
-      }
       &__wrap3 {
         margin-top: 3rem;
       }
-      &__input__wrap {
-        margin-top: 1.1rem;
+      &__input {
+        &__wrap {
+          margin-top: 1.1rem;
+        }
+        &__wrap2 {
+          margin: 1.1rem 0 0 8.3rem;
+        }
+        &__wrap3 {
+          margin: 1.1rem 0 0 4rem;
+        }
+        &__wrap4 {
+          margin-top: 5rem;
+        }
       }
-      &__input__wrap2 {
-        margin: 1.1rem 0 0 8.3rem;
+      &__genre {
+        &-list__wrap {
+          margin-top: 5rem;
+        }
+        &__content {
+          float: left;
+        }
       }
-      &__input__wrap3 {
-        margin: 1.1rem 0 0 4rem;
-      }
-      &__input__wrap4 {
-        margin-top: 15rem;
-      }
-      &__genre__wrap {
-        margin-bottom: -10rem;
-      }
-      &__genre__wrap2 {
-        margin-bottom: -18rem;
-      }
-      &__genre-list__wrap {
-        margin-top: 7rem;
-      }
-      &__genre-list__wrap2 {
-        margin-top: 10rem;
-      }
-      &__genre__content {
-        float: left;
-      }
-      &__item__wrap {
-        margin-top: 5rem;
-      }
-      &__item-list__wrap {
-        margin-top: 18rem;
-      }
-      &__facillity__wrap {
-        margin-top: -5rem;
+      &__item {
+        &__title {
+          margin: auto 0 auto 2.5rem;
+          @include mq(md) {
+            margin: 5rem 0 0 0;
+          }
+          color: $color-1;
+          font-weight: bold;
+          font-size: 2rem;
+          text-align: left;
+          @include mq(md) {
+            text-align: right;
+          }
+        }
+        &__title2 {
+          margin: 5.5rem 0 auto 0;
+          padding: 0 .8rem;
+          background: $bgcolor-3;
+          color: white;
+          font-size: 1.4rem;
+          text-align: center;
+        }
+        &-list__wrap {
+          margin-top: 5rem;
+        }
       }
       &__facillity-list__wrap {
-        margin-top: 11rem;
+        margin-top: 5rem;
       }
       &__input {
         padding: .5rem 1rem;
@@ -255,7 +264,7 @@
         vertical-align: -.4rem;
       }
       &__radio__wrap {
-        margin-top: 1rem;
+        margin-top: 4.8rem;
       }
       &__radio__input {
         margin: .5rem 0 0 3rem;
