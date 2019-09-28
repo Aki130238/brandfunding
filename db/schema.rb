@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_09_27_090319) do
+=======
+ActiveRecord::Schema.define(version: 2019_09_06_071709) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +65,7 @@ ActiveRecord::Schema.define(version: 2019_09_27_090319) do
     t.index ["user_id"], name: "index_artisan_profiles_on_user_id"
   end
 
+<<<<<<< HEAD
   create_table "comments", force: :cascade do |t|
     t.string "content"
     t.bigint "user_id"
@@ -251,6 +256,8 @@ ActiveRecord::Schema.define(version: 2019_09_27_090319) do
     t.index ["artisan_profile_id"], name: "index_artisan_processing_id"
   end
 
+=======
+>>>>>>> master
   create_table "user_profiles", force: :cascade do |t|
     t.string "family_name"
     t.string "family_name_sub"
@@ -288,6 +295,7 @@ ActiveRecord::Schema.define(version: 2019_09_27_090319) do
   end
 
   add_foreign_key "artisan_profiles", "users"
+
   add_foreign_key "comments", "projects"
   add_foreign_key "comments", "users"
   add_foreign_key "idea_comments", "ideas"
