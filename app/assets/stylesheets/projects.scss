@@ -274,12 +274,14 @@
         margin-top: 1.5rem;
         border: 1px solid black;
       }
-      &__image_wrap-2 {
+      &__image_wrap2 {
+        float: left;
         border: 1px solid black;
         margin: .8rem 1.6rem .8rem 0;
       }
       &__input {
         padding: 1rem 1rem 35rem 1rem;
+        cursor: pointer;
       }
       &__input-2 {
         margin: 0 1.5rem 1.5rem 0;
