@@ -23,7 +23,7 @@
       </div>
       <div class="collapse" id="collapseExample2">
         <div class="card card-body">
-          <p class="menu__list"><%= link_to "アイディア新規作成", new_idea_path, class: "menu__link" %></p>
+          <p class="menu__list"><%= link_to "アイディア新規作成", new_idea_path, class: "menu__link", data: {"turbolinks" => false} %></p>
           <p class="menu__list"><%= link_to "アイディア一覧", ideas_path, class: "menu__link" %></p>
         </div>
       </div>
@@ -42,10 +42,14 @@
       </div>
     </li>
     <li class="menu__li">
-      <h1 class="menu__title-2">お気に入りプロダクター</h1>
+    <%= link_to project_likes_path(@user.id), class: "menu__title-2__link" do %>
+      <h1 class="menu__title-2">お気に入りプロジェクト</h1>
+    <% end %>
     </li>
     <li class="menu__li">
-      <h1 class="menu__title-2">お気に入りスポンサー</h1>
+      <%= link_to relationships_path(@user.id), class: "menu__title-2__link" do %>
+        <h1 class="menu__title-2">フォローしたオーナー</h1>
+      <% end %>
     </li>
     <li class="menu__li">
       <h1 class="menu__title-2">お気に入りデザイナー</h1>

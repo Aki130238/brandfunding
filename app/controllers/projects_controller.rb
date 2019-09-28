@@ -21,10 +21,9 @@ class ProjectsController < ApplicationController
     if @project.save
       redirect_to root_path
     else
-      render 'index'
+      render 'new'
     end
   end
-
 
   def show
     @comments = @project.comments
