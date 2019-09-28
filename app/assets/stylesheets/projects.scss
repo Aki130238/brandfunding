@@ -630,7 +630,7 @@
       &__content {
         margin-top: 1.5rem;
         border: 1px solid black;
-        padding: 50rem 0;
+        padding-bottom: 167rem;
       }
     }
     &__report {
@@ -721,6 +721,7 @@
     }
     &__return {
       &__wrap {
+        margin-bottom: 3rem;
         border: 1px solid black;
         background: $bgcolor-project2;
       }
@@ -729,6 +730,11 @@
       }
       &__title {
         margin-bottom: 1.5rem;
+        font-weight: bold;
+      }
+      &__title2 {
+        margin: 2rem 1.5rem 1.5rem 1.5rem;
+        padding-top: 2rem;
         font-weight: bold;
       }
       &__icon {
@@ -750,12 +756,21 @@
         margin-bottom: 1.5rem;
         padding: .5rem 0;
       }
+      &__content2 {
+        margin: 0 2rem;
+      }
       &__supporter__wrap {
         display: flex;
       }
       &__supporter, &__schedule {
         margin-bottom: 1.5rem;
         padding: .5rem 0;
+      }
+      &__patron {
+        margin: 3rem auto 1.5rem 1.5rem;
+      }
+      &__schedule2 {
+        margin: 3rem 2rem 1.5rem auto;
       }
     }
   }
