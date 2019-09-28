@@ -1,3 +1,290 @@
 <main class="container-fluid edit-artisan-page">
-  <%= render "form", artisan_profile: @user %>
+  <section class="edit-artisan-form">
+    <div class="row edit-artisan-page__title__wrap">
+      <p class="d-flex"><%= svg("pencil-alt-solid.svg", class: "edit-artisan-page__image") %></p>
+      <h1 class="edit-artisan-page__title">会員情報を登録しましょう</h1>
+    </div>
+    <%= form_with(model: @user, url: artisan_profile_path, local: true, method: :patch) do |f| %>
+      <div class="edit-artisan-form__profile">
+        <%= f.fields_for :user_profile do |a| %>
+          <%# <div class="row edit-artisan-form__profile__title__wrap">
+            <h1 class="col-12 edit-artisan-form__profile__title">プロフィール</h1>
+          </div> %>
+
+          <div class="row edit-artisan-form__profile__wrap">
+            <label for="firstName" class="col-5 col-xl-3 edit-artisan-form__input__title">氏名</label>
+            <div class="edit-artisan-form__title_show">
+              <p class="edit-artisan-form__title1">必須</p>
+              <p class="edit-artisan-form__title2">非公開</p>
+            </div>
+            <div class="col-xl-9 edit-artisan-form__input_direction">
+              <div class="edit-artisan-form__title_none">
+                <p class="edit-artisan-form__title1">必須</p>
+                <p class="edit-artisan-form__title2">非公開</p>
+              </div>
+              <p class="col-12 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :family_name, class: "form-control edit-artisan-form__profile__input", id: "firstName", placeholder: "性", value: @user.user_profile.family_name %></p>
+              <p class="col-12 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :last_name, class: "form-control edit-artisan-form__profile__input", id: "lastName", placeholder: "名", value: @user.user_profile.last_name  %></p>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__profile__wrap">
+            <label for="firstNameSub" class="col-5 col-xl-3 edit-artisan-form__input__title_sm">氏名(かな)</label>
+            <label for="firstNameSub" class="col-5 col-xl-3 edit-artisan-form__input__title_name">氏名(ふりがな)</label>
+            <div class="edit-artisan-form__title_show">
+              <p class="edit-artisan-form__title1">必須</p>
+              <p class="edit-artisan-form__title2">非公開</p>
+            </div>
+            <div class="col-xl-9 edit-artisan-form__input_direction">
+              <div class="edit-artisan-form__title_none">
+                <p class="edit-artisan-form__title1">必須</p>
+                <p class="edit-artisan-form__title2">非公開</p>
+              </div>
+              <p class="col-12 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :family_name_sub, class: "form-control edit-artisan-form__profile__input", id: "firstNameSub", placeholder: "せい", value: @user.user_profile.family_name_sub %></p>
+              <p class="col-12 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :last_name_sub, class: "form-control edit-artisan-form__profile__input", id: "lastNameSub", placeholder: "めい", value: @user.user_profile.last_name_sub  %></p>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__profile__wrap">
+            <label for="Prefectures" class="col-5 col-xl-3 edit-artisan-form__input__title">都道府県</label>
+            <div class="edit-artisan-form__title_show">
+              <p class="edit-artisan-form__title1">必須</p>
+              <p class="edit-artisan-form__title2">非公開</p>
+            </div>
+            <div class="col-xl-9 edit-artisan-form__input_direction">
+              <div class="edit-artisan-form__title_none">
+                <p class="edit-artisan-form__title1">必須</p>
+                <p class="edit-artisan-form__title2">非公開</p>
+              </div>
+              <p class="col-12 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :prefectures, class: "form-control edit-artisan-form__profile__input", id: "Prefectures", placeholder: "例）東京都" %></p>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__profile__wrap">
+            <label for="AddNumber" class="col-5 col-xl-3 edit-artisan-form__input__title">郵便番号</label>
+            <div class="edit-artisan-form__title_show">
+              <p class="edit-artisan-form__title1">必須</p>
+              <p class="edit-artisan-form__title2">非公開</p>
+            </div>
+            <div class="col-xl-9 edit-artisan-form__input_direction">
+              <div class="edit-artisan-form__title_none">
+                <p class="edit-artisan-form__title1">必須</p>
+                <p class="edit-artisan-form__title2">非公開</p>
+              </div>
+              <p class="col-12 col-xl-5 edit-artisan-form__profile__input__wrap"><%= a.text_field :add_no, class: "form-control edit-artisan-form__profile__input", id: "AddNumber", placeholder: "例）0000000（ハイフン不要）" %></p>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__profile__wrap">
+            <label for="address" class="col-5 col-xl-3 edit-artisan-form__input__title">住所</label>
+            <div class="edit-artisan-form__title_show">
+              <p class="edit-artisan-form__title1">必須</p>
+              <p class="edit-artisan-form__title2">非公開</p>
+            </div>
+            <div class="col-xl-9 edit-artisan-form__input_direction">
+              <div class="edit-artisan-form__title_none">
+                <p class="edit-artisan-form__title1">必須</p>
+                <p class="edit-artisan-form__title2">非公開</p>
+              </div>
+              <p class="col-12 col-xl-10 edit-artisan-form__profile__input__wrap"><%= a.text_field :address, class: "form-control edit-artisan-form__profile__input", id: "address", placeholder: "建物名までご記入ください" %></p>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__profile__wrap">
+            <label for="PhoneNumber1" class="col-5 col-xl-3 edit-artisan-form__input__title">電話番号</label>
+            <div class="edit-artisan-form__title_show">
+              <p class="edit-artisan-form__title1">必須</p>
+              <p class="edit-artisan-form__title2">非公開</p>
+            </div>
+            <div class="col-xl-9 edit-artisan-form__input_direction">
+              <div class="edit-artisan-form__title_none">
+                <p class="edit-artisan-form__title1">必須</p>
+                <p class="edit-artisan-form__title2">非公開</p>
+              </div>
+              <p class="col-12 col-xl-4 edit-artisan-form__profile__input__wrap"><%= a.text_field :phone_no1, class: "form-control edit-artisan-form__profile__input", id: "PhoneNumber1", placeholder: "例）00000000000(ハイフン不要)" %></p>
+              <label for="PhoneNumber2" class="col-xl-2 edit-artisan-form__input__title edit-artisan-form__input__title_phone">電話番号(予備)</label>
+              <p class="edit-artisan-form__title3">非公開</p>
+              <p class="col-12 col-xl-4 edit-artisan-form__profile__input__wrap"><%= a.text_field :phone_no2, class: "col-xl-11 form-control edit-artisan-form__profile__input", id: "PhoneNumber2", placeholder: "例）00000000000(ハイフン不要)" %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="row edit-artisan-page__title__wrap">
+        <p class="d-flex"><%= svg("pencil-alt-solid.svg", class: "edit-artisan-page__image") %></p>
+        <h1 class="edit-artisan-page__title">職人情報を登録しましょう</h1>
+      </div>
+
+      <div class="edit-artisan-form__artisan">
+        <%= f.fields_for :artisan_profile do |b| %>
+
+          <div class="row edit-artisan-form__input__wrap">
+            <label for="workExp" class="col-5 col-xl-3 edit-artisan-form__input__title">経験年数</label>
+            <div class="col-xl-9 d-flex">
+              <p class="edit-artisan-form__title4">必須</p>
+              <label for="workExp" class="edit-artisan-form__artisan__title">実務経験</label>
+              <p class="col-xl-2 edit-artisan-form__artisan__input__wrap"><%= b.number_field :workexp, class: "col-xl-12 form-control edit-artisan-form__artisan__input", id: "workExp", placeholder: "0", value: @user.artisan_profile.workexp %></p>
+              <p class="edit-artisan-form__artisan__content">年</p>
+              <label for="homeworkExp" class="edit-artisan-form__artisan__title">家庭縫製経験</label>
+              <p class="col-xl-2 edit-artisan-form__artisan__input__wrap"><%= b.number_field :homeworkexp, class: "col-xl-12 form-control edit-artisan-form__artisan__input", id: "homeworkExp", placeholder: "0", value: @user.artisan_profile.homeworkexp  %></p>
+              <p class="edit-artisan-form__artisan__content">年</p>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__input__wrap">
+            <label for="skill" class="col-xl-3 edit-artisan-form__input__title">スキル</label>
+            <div class="col-xl-9 d-flex">
+              <p class="edit-artisan-form__title4">必須</p>
+              <p class="col-xl-10 edit-artisan-form__artisan__skill_bg">下からスキル・経験年数を入力してください。</p>
+            </div>
+          </div>
+
+
+          <div class="row edit-artisan-form__input__wrap">
+            <div class="col-xl-9 offset-xl-3 d-flex">
+              <label for="skill" class="edit-artisan-form__artisan__title2">&emsp;スキル</label>
+              <p class="col-xl-4 edit-artisan-form__artisan__input__wrap"><%= b.text_field :skill, class: "col-xl-11 form-control edit-artisan-form__artisan__input", id: "skill", placeholder: "スキルを選択" %></p>
+              <p class="col-xl-4 offset-xl-1 edit-artisan-form__artisan__input__wrap"><%= b.text_field :skill_free, class: "col-xl-11 form-control edit-artisan-form__artisan__input2", id: "skillFree", placeholder: "その他のスキル" %></p>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__input__wrap">
+            <div class="col-xl-9 offset-xl-3 d-flex">
+              <label for="skillExp" class="edit-artisan-form__artisan__title2">経験年数</label>
+              <p class="col-xl-2 edit-artisan-form__artisan__input__wrap"><%= b.number_field :skill_exp, class: "col-xl-12 form-control edit-artisan-form__artisan__input", id: "skillExp", placeholder: "0" %></p>
+              <p class="edit-artisan-form__artisan__content">年</p>
+              <p class="col-xl-2 offset-xl-3 edit-artisan-form__artisan__button"><%= svg("plus-solid.svg", class: "edit-artisan-form__artisan__image") %>&thinsp;スキルを登録する</p>
+            </div>
+          </div>
+
+
+          <div class="row edit-artisan-form__artisan__genre__wrap">
+            <label for="genre" class="col-xl-3 edit-artisan-form__input__title">ジャンル</label>
+            <div class="col-xl-9 d-flex">
+              <p class="edit-artisan-form__title4">必須</p>
+              <div class="col-xl-11 edit-artisan-form__artisan__genre-list__wrap">
+                <% genre = ArtisanGenreList.find(1,2,3,4,5) %>
+                <% genre.each do |genreList| %>
+                  <p class="col-xl-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_genre_list_ids, { multiple: true, checked: @artisan_profile.artisan_genre_lists.find_by(id: genreList.id).present?, include_hidden: false }, genreList[:id] %>
+                  <%= genreList.genre_name %></p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__artisan__genre__wrap2">
+            <div class="col-xl-9 offset-xl-3 d-flex">
+              <p class="edit-artisan-form__title_hide">必須</p>
+              <div class="col-xl-8 edit-artisan-form__artisan__genre-list__wrap2">
+                <% genreOther = ArtisanGenreList.find(6) %>
+                <p class="col-xl-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_genre_list_ids, { multiple: true, checked: @artisan_profile.artisan_genre_lists.find_by(id: genreOther.id).present?, include_hidden: false }, genreOther[:id] %>
+                <%= genreOther.genre_name %></p>
+                <%= b.text_field :genre_free, class: "col-xl-7 form-control edit-artisan-form__artisan__input", id: "genre_free", placeholder: "その他のジャンル" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__artisan__item__wrap">
+            <label for="item" class="col-xl-3 edit-artisan-form__input__title">アイテム</label>
+            <div class="col-xl-9 d-flex">
+              <p class="edit-artisan-form__title4">必須</p>
+              <div class="col-xl-11 edit-artisan-form__artisan__item-list__wrap">
+                <% item = ArtisanItemList.find(1,2,3,4,5,6,7,8,9,10,11,12) %>
+                <% item.each do |itemList| %>
+                  <p class="col-xl-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_item_list_ids, { multiple: true, checked: @artisan_profile.artisan_item_lists.find_by(id: itemList.id)
+                      .present?, include_hidden: false }, itemList[:id] %>
+                  <%= itemList.item_name %></p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__input__wrap">
+            <div class="col-xl-9 offset-xl-3 d-flex">
+              <p class="edit-artisan-form__title_hide">必須</p>
+              <div class="col-xl-8">
+                <% itemOther = ArtisanItemList.find(13) %>
+                <p class="col-xl-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_genre_list_ids, { multiple: true, checked: @artisan_profile.artisan_genre_lists.find_by(id: itemOther.id).present?, include_hidden: false }, itemOther[:id] %>
+                <%= itemOther.item_name %></p>
+                <%= b.text_field :item_free, class: "col-xl-7 form-control edit-artisan-form__artisan__input", id: "item_free", placeholder: "その他のアイテム" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__artisan__facillity__wrap">
+            <label for="item" class="col-xl-3 edit-artisan-form__input__title">設備</label>
+            <div class="col-xl-9 d-flex">
+              <p class="edit-artisan-form__title4">必須</p>
+              <div class="col-xl-11 edit-artisan-form__artisan__facillity-list__wrap">
+                <% facillity = ArtisanFacillityList.find(1,2,3,4,5,6,7,8) %>
+                <% facillity.each do |facillityList| %>
+                  <p class="col-xl-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_facillity_list_ids, { multiple: true, checked: @artisan_profile.artisan_facillity_lists.find_by(id: facillityList.id)
+                      .present?, include_hidden: false }, facillityList[:id] %>
+                  <%= facillityList.facillity_name %></p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__input__wrap">
+            <div class="col-xl-9 offset-xl-3 d-flex">
+              <p class="edit-artisan-form__title_hide">必須</p>
+              <div class="col-xl-8">
+                <% facillityOther = ArtisanFacillityList.find(9) %>
+                <p class="col-xl-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_facillity_list_ids, { multiple: true, checked: @artisan_profile.artisan_facillity_lists.find_by(id: facillityOther.id)
+                      .present?, include_hidden: false }, facillityOther[:id] %>
+                  <%= facillityOther.facillity_name %></p>
+                <%= b.text_field :facillity_free, class: "col-xl-7 form-control edit-artisan-form__artisan__input", id: "facillity_free", placeholder: "その他の設備（特殊ミシンなど）" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__artisan__wrap2">
+            <label for="workexp_text" class="col-xl-3 edit-artisan-form__input__title">経歴詳細</label>
+            <div class="col-xl-9 d-flex">
+              <p class="edit-artisan-form__title4">必須</p>
+              <p class="col-xl-9 edit-artisan-form__artisan__input__wrap4"><%= b.text_field :workexp_text, class: "form-control edit-artisan-form__artisan__input3", id: "workexp_text", placeholder: "" %></p>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__artisan__wrap2">
+            <label for="mypr" class="col-xl-3 edit-artisan-form__input__title">自己PR</label>
+            <div class="col-xl-9 d-flex">
+              <p class="edit-artisan-form__title4">必須</p>
+              <p class="col-xl-9 edit-artisan-form__artisan__input__wrap4"><%= b.text_field :mypr, class: "form-control edit-artisan-form__artisan__input3", id: "mypr", placeholder: "" %></p>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__artisan__wrap2">
+            <label for="myprofile" class="col-xl-3 edit-artisan-form__input__title">自己紹介</label>
+            <div class="col-xl-9 d-flex">
+              <p class="edit-artisan-form__title_hide">必須</p>
+              <p class="col-xl-9 edit-artisan-form__artisan__input__wrap4"><%= b.text_field :myprofile, class: "form-control edit-artisan-form__artisan__input3", id: "myprofile", placeholder: "" %></p>
+            </div>
+          </div>
+
+          <div class="row edit-artisan-form__artisan__wrap3">
+            <label for="work_status" class="col-xl-3 edit-artisan-form__input__title">お仕事状況</label>
+            <div class="col-xl-9 d-flex">
+              <p class="edit-artisan-form__title4">必須</p>
+              <div class="col-xl-9 d-flex edit-artisan-form__artisan__radio__wrap">
+                <p class="edit-artisan-form__artisan__radio__input"><%= b.radio_button :work_status, "仕事できます" %></p>
+                <p class="edit-artisan-form__artisan__radio__content">&ensp;仕事できます</p>
+                <p class="edit-artisan-form__artisan__radio__input"><%= b.radio_button :work_status, "仕事によります" %></p>
+                <p class="edit-artisan-form__artisan__radio__content">&ensp;仕事によります</p>
+                <p class="edit-artisan-form__artisan__radio__input"><%= b.radio_button :work_status, "今は忙しいです" %></p>
+                <p class="edit-artisan-form__artisan__radio__content">&ensp;今は忙しいです</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p class="col-xl-5 edit-artisan-form__privacy"><%= f.check_box :s %>&thinsp;<span class="edit-artisan-form__privacy__content">利用規約、個人情報保護方針に同意する</span></p>
+            <%= f.hidden_field :user_status, value: 2 %>
+            <p class="col-xl-5 edit-artisan-form__button__wrap"><%= f.submit "職人登録する", class: "col-xl-12 edit-artisan-form__button" %></p>
+          </div>
+
+        <% end %>
+      </div>
+    <% end %>
+  </section>
 </main>
