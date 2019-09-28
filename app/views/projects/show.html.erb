@@ -29,17 +29,16 @@
         </div>
       </div>
       <%= render "show_menu" %>
-      <p class="col-md-4 show-menu__favorite"><%= svg("star-regular.svg", class: "show-menu__icon") %>
+      <%= render 'users/follow_form', user: @project.user %>
+      <p class="show-menu__favorite"><%= svg("star-regular.svg", class: "show-menu__icon") %>
         <% if @like.nil? %>
-          <%= link_to "お気に入り登録する", project_likes_path(project_id: @project.id), method: :post, class: "show-menu__favorite__button" %>
+          <%= link_to "お気に入り登録する", project_likes_path(project_id: @project.id), method: :post, class: "show-menu__favorite-button" %>
         <% else %>
-          <%= link_to "お気に入り登録を解除", project_like_path(project_id: @like.id), method: :delete , class: "show-menu__favorite__button2"%>
+          <%= link_to "お気に入り登録を解除", project_like_path(project_id: @like.id), method: :delete , class: "show-menu__favorite-button2"%>
         <% end %>
       </p>
     </div>
   </section>
-
-  <%= render 'users/follow_form', user: @project.user %>
 
   <section class="row show-project2">
     <div class="col-md-6 tab-content">

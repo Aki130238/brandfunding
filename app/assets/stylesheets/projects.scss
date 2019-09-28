@@ -555,11 +555,27 @@
       margin: 10rem 0 0 6rem;
       text-align: right;
     }
-    &__favorite__button {
+    &__favorite-button {
       color: $color-1;
       text-decoration: none;
     }
-    &__favorite__button2 {
+    &__favorite-button2 {
+      color: red;
+      text-decoration: none;
+    }
+    &__follow {
+      margin-top: 10rem;
+    }
+    &__follow-icon {
+      width: 2rem;
+      margin-right: .5rem;
+      vertical-align: -.2rem;
+    }
+    &__follow-button {
+      color: $color-1;
+      text-decoration: none;
+    }
+    &__follow-button2 {
       color: red;
       text-decoration: none;
     }
