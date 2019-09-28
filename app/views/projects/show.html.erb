@@ -28,10 +28,18 @@
           <p class="col-md-3 show-project1__prefectures">都道府県</p>
         </div>
       </div>
-        <%= render "show_menu" %>
-        <p class="col-md-4 show-menu__favorite"><%= svg("star-regular.svg", class: "show-menu__icon") %>お気に入り登録する</p>
+      <%= render "show_menu" %>
+      <p class="col-md-4 show-menu__favorite"><%= svg("star-regular.svg", class: "show-menu__icon") %>
+        <% if @like.nil? %>
+          <%= link_to "お気に入り登録する", project_likes_path(project_id: @project.id), method: :post, class: "show-menu__favorite__button" %>
+        <% else %>
+          <%= link_to "お気に入り登録を解除", project_like_path(project_id: @like.id), method: :delete , class: "show-menu__favorite__button2"%>
+        <% end %>
+      </p>
     </div>
   </section>
+
+  <%= render 'users/follow_form', user: @project.user %>
 
   <section class="row show-project2">
     <div class="col-md-6 tab-content">
@@ -61,16 +69,6 @@
         <% else %>
         <% end %>
       </div>
-
-<% if @like.nil? %>
-  <%= link_to 'イイね！', project_likes_path(project_id: @project.id), method: :post, class:"btn btn-primary" %>
-<% else %>
-  <%= link_to 'イイねを解除', project_like_path(project_id: @like.id), method: :delete, class:"btn btn-danger" %>
-<% end %>
-
-<%= render 'users/follow_form', user: @project.user %>
-
-<% if @comments.nil?%>
 
       <div class="tab-pane fade show-project2__comment" id="showComment" role="tabpanel" aria-labelledby="showComment-tab">
         <%= form_with(model: [@project, @comment], local: true) do |f| %>
