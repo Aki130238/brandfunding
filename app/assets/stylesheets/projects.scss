@@ -553,31 +553,32 @@
     list-style: none;
     &__favorite {
       margin: 10rem 0 0 6rem;
-      text-align: right;
-    }
-    &__favorite-button {
-      color: $color-1;
-      text-decoration: none;
-    }
-    &__favorite-button2 {
-      color: red;
-      text-decoration: none;
+      &-button {
+        color: $color-1;
+        text-decoration: none;
+      }
+      &-button2 {
+        color: red;
+        text-decoration: none;
+      }
     }
     &__follow {
       margin-top: 10rem;
-    }
-    &__follow-icon {
-      width: 2rem;
-      margin-right: .5rem;
-      vertical-align: -.2rem;
-    }
-    &__follow-button {
-      color: $color-1;
-      text-decoration: none;
-    }
-    &__follow-button2 {
-      color: red;
-      text-decoration: none;
+      &-icon {
+        width: 2rem;
+        margin-right: .5rem;
+        vertical-align: -.2rem;
+      }
+      &-button {
+        color: $color-1;
+        text-decoration: none;
+        outline: 0;
+      }
+      &-button2 {
+        color: red;
+        text-decoration: none;
+        outline: 0;
+      }
     }
     &__link {
       border: none;
@@ -639,11 +640,12 @@
       margin-left: 6rem;
     }
     &__comment {
+      margin-left: 6rem;
       &__input__wrap {
-        margin: 0 auto;
+        margin: 0 auto 3rem auto;
       }
       &__input {
-        padding: 1rem 1rem 5rem 1rem;
+        padding: 1rem 1rem 10rem 1rem;
         font-size: 1.7rem;
         overflow: hidden;
         resize: none;
@@ -652,13 +654,15 @@
         margin: 1.5rem auto 0 auto;
       }
       &__button {
-        @extend .sign-button;
         margin-bottom: 5rem;
         padding: .5rem;
+        border: 1px solid black;
+        background: $btncolor-comment;
+        font-weight: bold;
       }
       &__content__wrap {
         display: flex;
-        margin-left: 6rem;
+        margin: 2rem;
       }
       &__user {
         color: black;

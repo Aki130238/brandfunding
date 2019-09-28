@@ -29,7 +29,7 @@
         </div>
       </div>
       <%= render "show_menu" %>
-      <%= render 'users/follow_form', user: @project.user %>
+      <%= render "users/follow_form", user: @project.user %>
       <p class="show-menu__favorite"><%= svg("star-regular.svg", class: "show-menu__icon") %>
         <% if @like.nil? %>
           <%= link_to "お気に入り登録する", project_likes_path(project_id: @project.id), method: :post, class: "show-menu__favorite-button" %>
@@ -69,18 +69,19 @@
         <% end %>
       </div>
       <div class="tab-pane fade show-project2__comment" id="showComment" role="tabpanel" aria-labelledby="showComment-tab">
-        <%= form_with(model: [@project, @comment], local: true) do |f| %>
-          <p class="col-md-8 show-project2__comment__input__wrap"><%= f.text_area :content, class: "col-md-12 form-control show-project2__comment__input" %></p>
-          <p class="col-md-4 show-project2__comment__button__wrap"><%= f.submit "コメントする", class: "col-md-12 btn show-project2__comment__button" %></p>
-        <% end %>
-        <% if @comments.nil?%>
+        <h2 class="col-md-6 show-project2__home__title"><%= svg("file-solid.svg", class:"show-project2__home__icon") %>&ensp;取引コメント</h2>
+        <% if @comments.nil? %>
         <% else %>
           <% @comments.each do |c| %>
             <div class="show-project2__comment__content__wrap">
               <p><a href="/users/<%= @project.user.id %>" class="show-project2__comment__user"><%= c.user.name %>：</a></p>
-              <p class="show-project2__comment__content"><%= c.content %></p>
+              <p class="show-project2__comment__content">&thinsp;<%= c.content %></p>
             </div>
           <% end %>
+        <% end %>
+        <%= form_with(model: [@project, @comment], local: true) do |f| %>
+          <p class="col-md-12 show-project2__comment__input__wrap"><%= f.text_area :content, class: "col-md-12 form-control show-project2__comment__input" %></p>
+          <p class="col-md-5 show-project2__comment__button__wrap"><%= f.submit "コメントを送る", class: "col-md-12 show-project2__comment__button" %></p>
         <% end %>
       </div>
     </div>
