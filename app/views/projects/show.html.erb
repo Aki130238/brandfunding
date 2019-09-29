@@ -5,11 +5,11 @@
       <h2 class="col-11 show-project1__title"><%= @project.project_title %></h2>
     </div>
     <div class="row show-project1">
-      <div class="col-md-6">
+      <div class="col-12 col-md-6">
         <p class="show-project1__image">画像</p>
         <p class="show-project1__sns">SNS連携</p>
       </div>
-      <div class="col-md-5 show-project1__content__wrap">
+      <div class="col-11 col-md-5 show-project1__content__wrap">
         <p><%= svg("yen-sign-solid.svg", class: "show-project1__icon") %>&ensp;現在の支援総額</p>
         <p class="col-md-11 show-project1__project-fund"><%= @project.project_value.project_fund %>支援額</p>
         <p class="col-md-11 show-project1__progress">105%</p>

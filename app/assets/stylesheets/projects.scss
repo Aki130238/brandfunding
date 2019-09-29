@@ -466,14 +466,20 @@
       text-align: center;
     }
     &__image {
-      margin: 0 0 3rem 6rem;
+      margin: 0 auto 3rem auto;
+      @include mq(md) {
+        margin: 0 0 3rem 6rem;
+      }
       padding: 23.5rem 0;
       border: 1px solid black;
       background: white;
       text-align: center;
     }
     &__sns {
-      margin-left: 6rem;
+      margin-bottom: 3rem;
+      @include mq(md) {
+        margin-left: 6rem;
+      }
       padding: .3rem 0;
       border: 1px solid black;
       background: white;
@@ -481,7 +487,10 @@
       cursor: pointer;
     }
     &__content__wrap {
-      margin: 2rem 0 0 4rem;
+      margin: 0 auto;
+      @include mq(md) {
+        margin: 2rem 0 0 4rem;
+      }
     }
     &__icon {
       width: 1.5rem;
@@ -508,10 +517,15 @@
     }
     &__user-image__wrap {
       display: flex;
-      margin-bottom: -9rem;
+      @include mq(md) {
+        margin-bottom: -9rem;
+      }
     }
     &__patron {
-      margin: 1rem 0 0 -1.5rem;
+      margin: 10rem 0 0 -1.5rem;
+      @include mq(md) {
+        margin: 1rem 0 0 -1.5rem;
+      }
     }
     &__icon2 {
       width: 3rem;
@@ -519,7 +533,10 @@
       vertical-align: -.5rem;
     }
     &__supporter {
-      margin-bottom: 5rem;
+      margin-bottom: -2rem;
+      @include mq(md) {
+        margin-bottom: 5rem;
+      }
       padding: 1.5rem 0;
       border: 1px solid black;
       background: white;
@@ -543,6 +560,10 @@
       margin-top: 7rem;
     }
     &__deadline {
+      margin-top: 2rem;
+      @include mq(md) {
+        margin: 0;
+      }
       padding: 1.5rem 0;
       border: 1px solid black;
       background: white;
@@ -559,7 +580,10 @@
       margin-top: -2rem;
     }
     &__prefectures {
-      margin: 2.5rem auto auto auto;
+      margin: 2.5rem auto auto 1rem;
+      @include mq(md) {
+        margin: 2.5rem auto auto auto;
+      }
       padding: .3rem 0;
       border: 1px solid black;
       background: white;
