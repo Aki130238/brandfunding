@@ -278,7 +278,7 @@
 
 .artisans-page {
   &__header {
-    margin: 0 auto;
+    margin: 0 auto -1rem auto;
     padding: 1.5rem 0;
     background: $bgcolor-artisan;
   }
@@ -291,14 +291,25 @@
     background: $bgcolor-project2;
   }
   .artisan-list {
-    margin: 1.5rem;
+    margin: 1.5rem auto;
+    @include mq(lg) {
+      margin: 1.5rem;
+    }
     border: 1px solid black;
     &_void {
-      margin: 3rem;
+      margin-top: 2rem;
+      @include mq(md) {
+        margin-top: 3rem;
+      }
     }
     &__wrap {
-      display: flex;
-      margin-left: 20rem;
+      margin: 0 auto;
+      @include mq(lg) {
+        margin: 0 0 0 auto;
+      }
+      @include mq(xl) {
+        margin-right: 3rem;
+      }
     }
     &__link {
       color: $color-1;
