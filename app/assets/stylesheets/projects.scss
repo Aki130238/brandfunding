@@ -468,6 +468,9 @@
     &__image {
       margin: 0 auto 3rem auto;
       @include mq(md) {
+        margin-left: 2rem;
+      }
+      @include mq(lg) {
         margin: 0 0 3rem 6rem;
       }
       padding: 23.5rem 0;
@@ -478,6 +481,9 @@
     &__sns {
       margin-bottom: 3rem;
       @include mq(md) {
+        margin-left: 2rem;
+      }
+      @include mq(lg) {
         margin-left: 6rem;
       }
       padding: .3rem 0;
@@ -537,6 +543,9 @@
       @include mq(md) {
         margin-bottom: 5rem;
       }
+      @include mq(lg) {
+        margin-top: 2rem;
+      }
       padding: 1.5rem 0;
       border: 1px solid black;
       background: white;
@@ -545,6 +554,12 @@
     &__user-image {
       margin: -5rem auto 0 auto;
       padding: 8rem 0;
+      @include mq(md) {
+        padding: 5rem 0;
+      }
+      @include mq(lg) {
+        padding: 8rem 0;
+      }
       border: 1px solid black;
       border-radius: 50%;
       background: white;
@@ -561,7 +576,7 @@
     }
     &__deadline {
       margin-top: 2rem;
-      @include mq(md) {
+      @include mq(xl) {
         margin: 0;
       }
       padding: 1.5rem 0;
@@ -592,11 +607,26 @@
   }
 
   .show-menu {
-    margin: 10rem 0 0 6rem;
+    margin: 5rem 0 0 2.5rem;
+    @include mq(md) {
+      margin: 1.5rem 0 0 3rem;
+    }
+    @include mq(lg) {
+      margin: 10rem 0 0 6rem;
+    }
     border: none;
     list-style: none;
     &__favorite {
-      margin: 10rem 0 0 6rem;
+      margin: 2rem 0 2rem 3rem;
+      @include mq(md) {
+        margin: 3rem 0 2rem 3rem;
+      }
+      @include mq(lg) {
+        margin: -2.8rem 25rem 0 auto;
+      }
+      @include mq(xl) {
+        margin: 10rem 0 0 6rem;
+      }
       &-button {
         color: $color-1;
         text-decoration: none;
@@ -607,7 +637,13 @@
       }
     }
     &__follow {
-      margin-top: 10rem;
+      margin: 3rem 0 0 3rem;
+      @include mq(lg) {
+        margin-top: 7rem;
+      }
+      @include mq(xl) {
+        margin-top: 10rem;
+      }
       &-icon {
         width: 2rem;
         margin-right: .5rem;
@@ -670,7 +706,9 @@
   .show-project2 {
     margin: 5rem 0;
     &__home {
-      margin-left: 6rem;
+      @include mq(lg) {
+        margin-left: 6rem;
+      }
       &__title {
         font-weight: bold;
       }
@@ -684,13 +722,19 @@
       }
     }
     &__report {
-      margin-left: 6rem;
+      @include mq(lg) {
+        margin-left: 6rem;
+      }
     }
     &__patron {
-      margin-left: 6rem;
+      @include mq(lg) {
+        margin-left: 6rem;
+      }
     }
     &__comment {
-      margin-left: 6rem;
+      @include mq(lg) {
+        margin-left: 6rem;
+      }
       &__input__wrap {
         margin: 0 auto 3rem auto;
       }
@@ -724,9 +768,15 @@
     }
   }
   .show-project3 {
-    margin-left: 4rem;
+    margin-top: 3rem;
+    @include mq(md) {
+      margin-left: 4rem;
+    }
     &__idea {
-      margin-bottom: 3rem;
+      margin: 0 -3rem 3rem -3rem;
+      @include mq(xl) {
+        margin: 0 0 3rem 0;
+      }
       padding-bottom: 1.5rem;
       background: $bgcolor-idea2;
       &__title {
@@ -820,7 +870,17 @@
         margin: 3rem auto 1.5rem 1.5rem;
       }
       &__schedule2 {
-        margin: 3rem 2rem 1.5rem auto;
+        margin: .5rem auto 1.5rem 2rem;
+        padding-bottom: 1rem;
+        @include mq(lg) {
+          margin: 3rem 2rem 1.5rem auto;
+          padding-bottom: 0;
+        }
+      }
+      &__guide {
+        @include mq(lg) {
+          display: flex;
+        }
       }
     }
   }

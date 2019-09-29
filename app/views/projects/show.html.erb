@@ -5,11 +5,11 @@
       <h2 class="col-11 show-project1__title"><%= @project.project_title %></h2>
     </div>
     <div class="row show-project1">
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-5 col-lg-6 ">
         <p class="show-project1__image">画像</p>
         <p class="show-project1__sns">SNS連携</p>
       </div>
-      <div class="col-11 col-md-5 show-project1__content__wrap">
+      <div class="col-11 col-sm-8 col-md-6 col-lg-5 show-project1__content__wrap">
         <p><%= svg("yen-sign-solid.svg", class: "show-project1__icon") %>&ensp;現在の支援総額</p>
         <p class="col-md-11 show-project1__project-fund"><%= @project.project_value.project_fund %>支援額</p>
         <p class="col-md-11 show-project1__progress">105%</p>
@@ -21,11 +21,11 @@
         <p class="col-md-4 show-project1__supporter">サポーター人数</p>
         <div class="show-project1__owner-name__wrap">
           <p><%= svg("clock-regular.svg", class: "show-project1__icon3") %>&ensp;募集終了まで残り</p>
-          <p class="col-md-5 offset-md-2 show-project1__owner-name">オーナーネーム</p>
+          <p class="col-md-6 col-xl-5 offset-md-2 show-project1__owner-name">オーナーネーム</p>
         </div>
         <div class="show-project1__prefectures__wrap">
           <p class="col-md-4 show-project1__deadline">募集期限</p>
-          <p class="col-md-3 show-project1__prefectures">都道府県</p>
+          <p class="col-md-4 col-xl-3 show-project1__prefectures">都道府県</p>
         </div>
       </div>
       <%= render "show_menu" %>
@@ -41,8 +41,8 @@
   </section>
 
   <section class="row show-project2">
-    <div class="col-md-6 tab-content">
-      <div class="row tab-pane fade show active show-project2__home" id="showHome" role="tabpanel" aria-labelledby="showHome-tab">
+    <div class="col-12 col-md-6 tab-content">
+      <div class="tab-pane fade show active show-project2__home" id="showHome" role="tabpanel" aria-labelledby="showHome-tab">
         <h2 class="show-project2__home__title"><%= svg("file-solid.svg", class:"show-project2__home__icon") %>&ensp;プロジェクト本文</h2>
         <p class="show-project2__home__content">&ensp;</p>
       </div>
@@ -70,7 +70,7 @@
         <% end %>
       </div>
       <div class="tab-pane fade show-project2__comment" id="showComment" role="tabpanel" aria-labelledby="showComment-tab">
-        <h2 class="col-md-6 show-project2__home__title"><%= svg("file-solid.svg", class:"show-project2__home__icon") %>&ensp;取引コメント</h2>
+        <h2 class="show-project2__home__title"><%= svg("file-solid.svg", class:"show-project2__home__icon") %>&ensp;取引コメント</h2>
         <% if @comments.nil? %>
         <% else %>
           <% @comments.each do |c| %>
@@ -86,23 +86,23 @@
         <% end %>
       </div>
     </div>
-    <div class="col-md-5 show-project3">
+    <div class="col-12 col-md-5 show-project3">
       <div class="show-project3__idea">
-        <h2 class="col-md-11 show-project3__idea__title">フラダンス衣装</h2>
-        <p class="col-md-11 show-project3__idea__image">画像</p>
-        <h3 class="col-md-2 show-project3__idea__title2">概要</h3>
-        <p class="col-md-11 show-project3__idea__content">お仕事番号&thinsp;：</p>
-        <p class="col-md-11 show-project3__idea__content">&emsp;製品用途&thinsp;：</p>
-        <p class="col-md-11 show-project3__idea__content">納品希望日&thinsp;：</p>
-        <p class="col-md-11 show-project3__idea__content">&emsp;公開期間&thinsp;：</p>
-        <p class="col-md-11 show-project3__idea__content">&emsp;契約形態&thinsp;：</p>
-        <p class="col-md-11 show-project3__idea__button">詳細要件はこちらから</p>
+        <h2 class="col-11 show-project3__idea__title">フラダンス衣装</h2>
+        <p class="col-11 show-project3__idea__image">画像</p>
+        <h3 class="col-3 col-md-2 show-project3__idea__title2">概要</h3>
+        <p class="col-11 show-project3__idea__content">お仕事番号&thinsp;：</p>
+        <p class="col-11 show-project3__idea__content">&emsp;製品用途&thinsp;：</p>
+        <p class="col-11 show-project3__idea__content">納品希望日&thinsp;：</p>
+        <p class="col-11 show-project3__idea__content">&emsp;公開期間&thinsp;：</p>
+        <p class="col-11 show-project3__idea__content">&emsp;契約形態&thinsp;：</p>
+        <p class="col-11 show-project3__idea__button">詳細要件はこちらから</p>
       </div>
       <div class="show-project3__return">
         <h2 class="show-project3__return__title"><%= svg("gift-solid.svg", class: "show-project3__return__icon") %>&ensp;リターン</h2>
         <div class="show-project3__return__wrap">
-          <p class="col-md-5 show-project3__return__money">リターン金額</p>
-          <p class="col-md-11 show-project3__return__content">リターン内容</p>
+          <p class="col-11 show-project3__return__money">リターン金額</p>
+          <p class="col-11 show-project3__return__content">リターン内容</p>
           <div class="show-project3__return__supporter__wrap">
             <p class="col-5 show-project3__return__supporter">サポーター人数</p>
             <p class="col-5 show-project3__return__schedule">お届け予定日</p>
@@ -112,7 +112,7 @@
           <div class="show-project3__return__wrap2">
             <h2 class="show-project3__return__title2"><%= svg("gift-solid.svg", class: "show-project3__return__icon") %>&ensp;3,000円</h2>
             <p class="show-project3__return__content2"><% 20.times do %>テキスト<% end %></p>
-            <div class="d-flex">
+            <div class="show-project3__return__guide">
               <p class="show-project3__return__patron"><%= svg("users-solid.svg" ,class: "show-menu__icon3") %>&thinsp;パトロン：12人</p>
               <p class="show-project3__return__schedule2"><%= svg("truck-moving-solid.svg" ,class: "show-menu__icon5") %>&thinsp;お届け予定：3日</p>
             </div>
