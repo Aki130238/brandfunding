@@ -50,6 +50,7 @@
       display: none;
       @include mq(md) {
         display: block;
+        margin: auto 0;
       }
     }
     &__title1 {
@@ -68,7 +69,7 @@
       display: none;
       @include mq(md) {
         display: block;
-        margin-top: 1rem;
+        margin: auto 0;
         color: $color-1;
         font-size: 1.4rem;
       }
@@ -81,6 +82,28 @@
       font-size: 1.4rem;
       text-align: center;
     }
+    &__title4_sm {
+      margin: auto 0;
+      padding: 0 .8rem;
+      background: $bgcolor-3;
+      color: white;
+      font-size: 1.4rem;
+      text-align: center;
+      @include mq(md) {
+        display: none;
+      }
+    }
+    &__title4_sm-none {
+      display: none;
+      @include mq(md) {
+        margin: auto 0;
+        padding: 0 .8rem;
+        background: $bgcolor-3;
+        color: white;
+        font-size: 1.4rem;
+        text-align: center;
+      }
+    }
     &__title_hide {
       margin: auto 0;
       padding: 0 .8rem;
@@ -90,7 +113,7 @@
       text-align: center;
     }
     &__input__title {
-      margin: auto 0 auto 2.5rem;
+      margin: auto 0 auto 8rem;
       @include mq(md) {
         margin: auto 0;
       }
@@ -100,31 +123,10 @@
       text-align: left;
       @include mq(md) {
         text-align: right;
-      }
-    }
-    &__input__title_name {
-      display: none;
-      @include mq(md) {
-        display: block;
-        margin: auto 0;
-        color: $color-1;
-        font-weight: bold;
-        font-size: 2rem;
-        text-align: right;
-      }
-    }
-    &__input__title_sm {
-      margin: auto 0 auto 2.5rem;
-      color: $color-1;
-      font-weight: bold;
-      font-size: 2rem;
-      text-align: left;
-      @include mq(md) {
-        display: none;
       }
     }
     &__input__title_phone {
-      margin: 1rem 0 0 1rem;
+      margin: 1rem 0 0 6rem;
       @include mq(md) {
         margin: auto 0;
       }
@@ -142,7 +144,7 @@
         margin-bottom: 2rem;
       }
       &__input__wrap {
-        margin: .5rem 0 1rem 0;
+        margin: .5rem auto 1rem auto;
         @include mq(md) {
           margin: auto 0;
         }
@@ -151,14 +153,6 @@
         padding: .5rem 1rem;
         font-size: 1.6rem;
       }
-      &__title__wrap {
-        // padding: 1.5rem 0;
-      }
-      // &__title {
-      //   padding: .5rem 0 .5rem 4rem;
-      //   color: $color-1;
-      //   font-weight: bold;
-      // }
     }
     &__artisan {
       &__wrap {
