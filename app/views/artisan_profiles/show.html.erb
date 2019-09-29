@@ -1,10 +1,11 @@
 <main class="show-artisan-page">
-  <h1 class="show-artisan-page__title">職人紹介&emsp;<%= link_to "職人一覧(仮置き)", artisan_profiles_path %></h1>
+  <h1 class="show-artisan-page__title">職人紹介&emsp;<%= link_to "職人一覧(仮置き)", artisan_profiles_path %><%= link_to "職人情報編集(仮置き)", edit_artisan_profile_path(@artisan_profile.id) %></h1>
   <div class="row show-artisan1">
     <div class="col-md-4">
       <div class="col-md-8 show-artisan1__image__wrap">
-        <span class="show-artisan1__image__decoration">20年</span>
+        <p class="show-artisan1__image__decoration"><span class="show-artisan1__image__decoration__content">20</span></p>
         <p class="show-artisan1__image">職人画像</p>
+        <p class="col-12 show-artisan1__image__decoration2">職人名</p>
       </div>
     </div>
 
