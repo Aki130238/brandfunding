@@ -4,6 +4,7 @@ class ArtisanTalkroomsController < ApplicationController
     @user_profile = @user.user_profile
     @artisan_profile = @user.artisan_profile
   end
+  
   private
 
   def user_edit_params

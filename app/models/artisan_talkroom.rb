@@ -1,0 +1,3 @@
+class ArtisanTalkroom < ApplicationRecord
+  
+end
