@@ -382,13 +382,25 @@
     }
   }
   .project-list {
-    margin: 1.5rem;
+    margin: 2rem auto;
+    @include mq(md) {
+      margin: 1.5rem;
+    }
     &_void {
-      margin: 3rem;
+      display: none;
+      @include mq(md) {
+        display: block;
+        margin: 3rem;
+      }
     }
     &__wrap {
-      float: right;
-      margin: 0 auto;
+      margin: 1.5rem auto;
+      @include mq(md) {
+        float: right;
+      }
+      @include mq(xl) {
+        margin-right: 2.5rem;
+      }
     }
     &__link {
       color: $color-1;
