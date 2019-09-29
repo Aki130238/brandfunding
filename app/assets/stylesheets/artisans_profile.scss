@@ -50,6 +50,7 @@
       display: none;
       @include mq(md) {
         display: block;
+        margin: auto 0;
       }
     }
     &__title1 {
@@ -68,7 +69,7 @@
       display: none;
       @include mq(md) {
         display: block;
-        margin-top: 1rem;
+        margin: auto 0;
         color: $color-1;
         font-size: 1.4rem;
       }
@@ -81,6 +82,28 @@
       font-size: 1.4rem;
       text-align: center;
     }
+    &__title4_sm {
+      margin: auto 0;
+      padding: 0 .8rem;
+      background: $bgcolor-3;
+      color: white;
+      font-size: 1.4rem;
+      text-align: center;
+      @include mq(md) {
+        display: none;
+      }
+    }
+    &__title4_sm-none {
+      display: none;
+      @include mq(md) {
+        margin: auto 0;
+        padding: 0 .8rem;
+        background: $bgcolor-3;
+        color: white;
+        font-size: 1.4rem;
+        text-align: center;
+      }
+    }
     &__title_hide {
       margin: auto 0;
       padding: 0 .8rem;
@@ -90,7 +113,7 @@
       text-align: center;
     }
     &__input__title {
-      margin: auto 0 auto 2.5rem;
+      margin: auto 0 auto 8rem;
       @include mq(md) {
         margin: auto 0;
       }
@@ -100,31 +123,10 @@
       text-align: left;
       @include mq(md) {
         text-align: right;
-      }
-    }
-    &__input__title_name {
-      display: none;
-      @include mq(md) {
-        display: block;
-        margin: auto 0;
-        color: $color-1;
-        font-weight: bold;
-        font-size: 2rem;
-        text-align: right;
-      }
-    }
-    &__input__title_sm {
-      margin: auto 0 auto 2.5rem;
-      color: $color-1;
-      font-weight: bold;
-      font-size: 2rem;
-      text-align: left;
-      @include mq(md) {
-        display: none;
       }
     }
     &__input__title_phone {
-      margin: 1rem 0 0 1rem;
+      margin: 1rem 0 0 6rem;
       @include mq(md) {
         margin: auto 0;
       }
@@ -142,7 +144,7 @@
         margin-bottom: 2rem;
       }
       &__input__wrap {
-        margin: .5rem 0 1rem 0;
+        margin: .5rem auto 1rem auto;
         @include mq(md) {
           margin: auto 0;
         }
@@ -151,14 +153,6 @@
         padding: .5rem 1rem;
         font-size: 1.6rem;
       }
-      &__title__wrap {
-        // padding: 1.5rem 0;
-      }
-      // &__title {
-      //   padding: .5rem 0 .5rem 4rem;
-      //   color: $color-1;
-      //   font-weight: bold;
-      // }
     }
     &__artisan {
       &__wrap {
@@ -278,7 +272,7 @@
 
 .artisans-page {
   &__header {
-    margin: 0 auto;
+    margin: 0 auto -1rem auto;
     padding: 1.5rem 0;
     background: $bgcolor-artisan;
   }
@@ -291,14 +285,25 @@
     background: $bgcolor-project2;
   }
   .artisan-list {
-    margin: 1.5rem;
+    margin: 1.5rem auto;
+    @include mq(lg) {
+      margin: 1.5rem;
+    }
     border: 1px solid black;
     &_void {
-      margin: 3rem;
+      margin-top: 2rem;
+      @include mq(md) {
+        margin-top: 3rem;
+      }
     }
     &__wrap {
-      display: flex;
-      margin-left: 20rem;
+      margin: 0 auto;
+      @include mq(lg) {
+        margin: 0 0 0 auto;
+      }
+      @include mq(xl) {
+        margin-right: 3rem;
+      }
     }
     &__link {
       color: $color-1;
@@ -348,13 +353,21 @@
     margin: 0 auto 3rem auto;
     background: $bgcolor-artisan3;
     &__wrap {
-      margin-left: -3rem;
+      @include mq(xl) {
+        margin-left: -3rem;
+      }
     }
     &__image {
       margin-top: -18rem;
       padding: 11rem 0;
       &__wrap {
-        margin: 2.5rem 0 2.5rem auto;
+        margin: 2.5rem auto 0 auto;
+        @include mq(md) {
+          margin: 2.5rem auto;
+        }
+        @include mq(lg) {
+          margin: 2.5rem 0 2.5rem auto;
+        }
         padding: 18rem 0;
         border: 1px solid black;
         border-radius: 5px;
@@ -411,7 +424,24 @@
       }
     }
     &__title {
-      text-align: right;
+      @include mq(md) {
+        text-align: right;
+      }
+    }
+    &__content_sm {
+      display: none;
+      @include mq(lg) {
+        display: block;
+      }
+      color: $color-1;
+      font-size: 1.5rem;
+    }
+    &__content_sm2 {
+      color: $color-1;
+      font-size: 1.5rem;
+      @include mq(lg) {
+        display: none;
+      }
     }
     &__content {
       color: $color-1;
@@ -434,6 +464,9 @@
       margin: -.3rem 2rem 0 0;
       background: $bgcolor-skill2;
       color: $color-1;
+    }
+    &__content4_sm {
+      margin-bottom: 1.5rem;
     }
     &__content5 {
       float: left;
@@ -458,10 +491,18 @@
     margin: 0 auto;
     &__title {
       margin-top: 2rem;
-      text-align: right;
+      @include mq(md) {
+        text-align: right;
+      }
     }
     &__content {
-      margin-bottom: 3rem;
+      margin: 0 auto 3rem auto;
+      @include mq(md) {
+        margin: 0 0 3rem 0;
+      }
+      @include mq(lg) {
+        margin: 0 0 3rem 0;
+      }
       padding: 1rem 1rem 30rem 1rem;
       border: 2px solid $bordercolor-1;
     }
