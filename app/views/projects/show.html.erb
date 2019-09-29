@@ -39,7 +39,9 @@
     </div>
   </section>
 
-  <%= render 'users/follow_form', user: @project.user %>
+  <% unless current_user.id == @project.user.id%>
+    <%= render 'users/follow_form', user: @project.user %>
+  <% end %>
 
   <section class="row show-project2">
     <div class="col-md-6 tab-content">
