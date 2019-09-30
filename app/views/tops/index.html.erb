@@ -75,9 +75,9 @@
         <p>まずは作りたいアイディアを投稿してみましょう。あなたのアイディアに共感する仲間が集まります。資金を集めてアイディアを実現する職人と繋がりましょう。あなたのブランドが誕生します。</p>
         <p>
           <% if logged_in? %>
-            <%= link_to "オーナー登録する »", edit_user_profile_path(current_user.id), class:"btn btn-lg guide__button" %>
+            <%= link_to "オーナー登録する »", edit_user_profile_path(current_user.id), class:"btn btn-lg guide__button guide__button1" %>
           <% else %>
-            <%= link_to "オーナー登録する »", new_session_path, class: "btn btn-lg guide__button" %>
+            <%= link_to "オーナー登録する »", new_session_path, class: "btn btn-lg guide__button guide__button1" %>
           <% end %>
         </p>
       </div>
@@ -87,9 +87,9 @@
         <p class="guide__content2">ブランドオーナーやブランドアイディアに共感したら支援者になりましょう！支援したその瞬間にあなたはブランドメンバーの仲間入りです。</p><br>
         <p>
           <% if logged_in? %>
-            <%= link_to "スポンサー登録する »", edit_user_profile_path(current_user.id), class: "btn btn-lg guide__button" %>
+            <%= link_to "スポンサー登録する »", edit_user_profile_path(current_user.id), class: "btn btn-lg guide__button guide__button2" %>
           <% else %>
-            <%= link_to "スポンサー登録する »", new_session_path, class: "btn btn-lg guide__button" %>
+            <%= link_to "スポンサー登録する »", new_session_path, class: "btn btn-lg guide__button guide__button2" %>
           <% end %>
         </p>
       </div>
@@ -99,9 +99,9 @@
         <p class="guide__content2">BRANDFUNDINGを支える日本全国の職人がオリジナルブランドづくりを応援します。日本の織物産地で素材をみつければ世界に通用する日本ブランドになります。</p><br>
         <p>
           <% if logged_in? %>
-            <%= link_to "職人登録する »", edit_artisan_profile_path(current_user.id), class: "btn btn-lg guide__button" %>
+            <%= link_to "職人登録する »", edit_artisan_profile_path(current_user.id), class: "btn btn-lg guide__button guide__button3" %>
           <% else %>
-            <%= link_to "職人登録する »", new_session_path, class: "btn btn-lg guide__button"  %>
+            <%= link_to "職人登録する »", new_session_path, class: "btn btn-lg guide__button guide__button3"  %>
           <% end %>
         </p>
       </div>

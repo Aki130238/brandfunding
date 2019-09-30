@@ -179,6 +179,12 @@
       }
       padding: 1.5rem 0rem;
       border: 1px solid black;
+      cursor: pointer;
+    }
+    &__button:hover {
+      @extend .hover;
+      background: $hovercolor-submit;
+      color: white;
     }
 
     &-value {
@@ -230,6 +236,7 @@
           padding-left: 3rem;
         }
         &__input__title {
+          cursor: pointer;
           @include mq(xl) {
             margin-top: -2.3rem;
             padding-left: 2.5rem;
@@ -356,6 +363,10 @@
       margin-left: 2rem;
       cursor: pointer;
     }
+    &__icon:hover {
+      @extend .hover;
+      color: $hovercolor-sort;
+    }
     &__icon2 {
       width: 1.6rem;
       vertical-align: -.2rem;
@@ -363,6 +374,10 @@
     &__button {
       margin: 1rem 1.5rem 0 1rem;
       cursor: pointer;
+    }
+    &__button:hover {
+      @extend .hover;
+      color: $hovercolor-sort;
     }
     &__button2 {
       margin: 0 .3rem;
@@ -379,6 +394,11 @@
       background: white;
       color: $color-1;
       cursor: pointer;
+    }
+    &__button2:hover, &__button3:hover {
+      @extend .hover;
+      background: $hovercolor-sort;
+      color: white;
     }
   }
   .project-list {
@@ -627,11 +647,15 @@
       @include mq(xl) {
         margin: 10rem 0 0 6rem;
       }
-      &-button {
+      &__button {
         color: $color-1;
         text-decoration: none;
       }
-      &-button2 {
+      &__button:hover {
+        @extend .hover;
+        color: $hovercolor-favorite;
+      }
+      &__button2 {
         color: red;
         text-decoration: none;
       }
@@ -649,12 +673,16 @@
         margin-right: .5rem;
         vertical-align: -.2rem;
       }
-      &-button {
+      &__button {
         color: $color-1;
         text-decoration: none;
         outline: 0;
       }
-      &-button2 {
+      &__button:hover {
+        @extend .hover;
+        color: $hovercolor-follow;
+      }
+      &__button2 {
         color: red;
         text-decoration: none;
         outline: 0;
@@ -754,6 +782,11 @@
         background: $btncolor-comment;
         font-weight: bold;
       }
+      &__button:hover {
+        @extend .hover;
+        background: $hovercolor-comment;
+        color: white;
+      }
       &__content__wrap {
         display: flex;
         margin: 2rem;
@@ -817,6 +850,11 @@
         font-size: 2rem;
         text-align: center;
         cursor: pointer;
+      }
+      &__button:hover {
+        @extend .hover;
+        background: $hovercolor-idea;
+        color: white;
       }
     }
     &__return {
