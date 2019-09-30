@@ -68,7 +68,7 @@
   </div>
 
   <nav class="guide">
-    <div class="row">
+    <div class="row guide2">
       <div class="col-10 col-sm-6 col-md-3 guide__column-1">
         <p><img class="rounded-circle  d-flex justify-content-center" src="icon_item01.png" alt="Generic placeholder image" width="140" height="145"></p>
         <h2 class="guide__title">アイディアを投稿</h2>
@@ -114,25 +114,23 @@
         <h2>投稿されたブランドアイディア</h2>
       </div>
       <div class="row">
-      <% 3.times do %>
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="card mb-4 box-shadow">
-            <img class="card-img-top" data-src="smb01.jpg" alt="Thumbnail [100%x225]" style="width: 100%; display: block;" src="smb01.jpg" data-holder-rendered="true">
-            <div class="card-body">
-              <p class="card-text">
-                かわいいワンピースだけを集めたブランド。「One treasure」を立ち上げます！自己資金３００万円と皆様のご支援で全国にワンピースのかわいさを届けたい！
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+        <% @projects.each do |p| %>
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="smb01.jpg" alt="Thumbnail [100%x225]" style="width: 100%; display: block;" src="smb01.jpg" data-holder-rendered="true">
+              <div class="card-body">
+                <p class="card-text"><%= p.project_text %></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <%= link_to "View", project_path(p.id), class: "btn btn-sm btn-outline-secondary", data: {"turbolinks" => false} %>
+                    <%= link_to "Edit", edit_project_path(p.id), class: "btn btn-sm btn-outline-secondary", data: {"turbolinks" => false} %>
+                  </div>
+                <%# <small class="text-muted">108 いいね</small> %>
                 </div>
-              <small class="text-muted">108 いいね</small>
               </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
       </div>
     </div>
   </article>
