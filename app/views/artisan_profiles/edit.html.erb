@@ -162,7 +162,7 @@
                 <% genre = ArtisanGenreList.find(1,2,3,4,5) %>
                 <% genre.each do |genreList| %>
                   <p class="col-md-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_genre_list_ids, { multiple: true, checked: @artisan_profile.artisan_genre_lists.find_by(id: genreList.id).present?, include_hidden: false }, genreList[:id] %>
-                  <%= genreList.genre_name %></p>
+                    <%= genreList.genre_name %></p>
                 <% end %>
               </div>
             </div>
@@ -174,7 +174,7 @@
               <div class="col-md-8 edit-artisan-form__artisan__genre-list__wrap2">
                 <% genreOther = ArtisanGenreList.find(6) %>
                 <p class="col-md-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_genre_list_ids, { multiple: true, checked: @artisan_profile.artisan_genre_lists.find_by(id: genreOther.id).present?, include_hidden: false }, genreOther[:id] %>
-                <%= genreOther.genre_name %></p>
+                  <%= genreOther.genre_name %></p>
                 <%= b.text_field :genre_free, class: "col-md-7 form-control edit-artisan-form__artisan__input", id: "genre_free", placeholder: "その他のジャンル" %>
               </div>
             </div>
@@ -189,7 +189,7 @@
                 <% item.each do |itemList| %>
                   <p class="col-md-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_item_list_ids, { multiple: true, checked: @artisan_profile.artisan_item_lists.find_by(id: itemList.id)
                       .present?, include_hidden: false }, itemList[:id] %>
-                  <%= itemList.item_name %></p>
+                    <%= itemList.item_name %></p>
                 <% end %>
               </div>
             </div>
@@ -201,7 +201,7 @@
               <div class="col-md-8">
                 <% itemOther = ArtisanItemList.find(13) %>
                 <p class="col-md-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_genre_list_ids, { multiple: true, checked: @artisan_profile.artisan_genre_lists.find_by(id: itemOther.id).present?, include_hidden: false }, itemOther[:id] %>
-                <%= itemOther.item_name %></p>
+                  <%= itemOther.item_name %></p>
                 <%= b.text_field :item_free, class: "col-md-7 form-control edit-artisan-form__artisan__input", id: "item_free", placeholder: "その他のアイテム" %>
               </div>
             </div>
@@ -216,7 +216,7 @@
                 <% facillity.each do |facillityList| %>
                   <p class="col-md-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_facillity_list_ids, { multiple: true, checked: @artisan_profile.artisan_facillity_lists.find_by(id: facillityList.id)
                       .present?, include_hidden: false }, facillityList[:id] %>
-                  <%= facillityList.facillity_name %></p>
+                    <%= facillityList.facillity_name %></p>
                 <% end %>
               </div>
             </div>
@@ -228,7 +228,7 @@
               <div class="col-md-8">
                 <% facillityOther = ArtisanFacillityList.find(9) %>
                 <p class="col-md-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_facillity_list_ids, { multiple: true, checked: @artisan_profile.artisan_facillity_lists.find_by(id: facillityOther.id)
-                      .present?, include_hidden: false }, facillityOther[:id] %>
+                    .present?, include_hidden: false }, facillityOther[:id] %>
                   <%= facillityOther.facillity_name %></p>
                 <%= b.text_field :facillity_free, class: "col-md-7 form-control edit-artisan-form__artisan__input", id: "facillity_free", placeholder: "その他の設備（特殊ミシンなど）" %>
               </div>
@@ -275,7 +275,10 @@
           </div>
 
           <div>
-            <p class="col-md-5 edit-artisan-form__privacy"><%= f.check_box :s %>&thinsp;<span class="edit-artisan-form__privacy__content">利用規約、個人情報保護方針に同意する</span></p>
+            <p class="col-md-5 edit-artisan-form__privacy">「職人登録する」のボタンを押すことにより、<br>
+            <%= link_to "利用規約", agreements_terms_of_service_path %>、
+            <%= link_to "プライバシーポリシー", agreements_privacy_policy_path %>に同意したとみなします。
+          </p>
             <%= f.hidden_field :user_status, value: 2 %>
             <p class="col-md-5 edit-artisan-form__button__wrap"><%= f.submit "職人登録する", class: "col-md-12 edit-artisan-form__button" %></p>
           </div>
