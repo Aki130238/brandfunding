@@ -841,6 +841,68 @@
     @include mq(md) {
       margin-left: 4rem;
     }
+    &-form {
+      &__button {
+        outline: 0;
+      }
+      &__icon {
+        width: 2rem;
+        vertical-align: -.5rem;
+      }
+      &__wrap {
+        @include mq(lg) {
+          display: flex;
+        }
+        margin-top: 2rem;
+      }
+      &__image__wrap {
+        padding-bottom: 25rem;
+        border: 1px solid black;
+        cursor: pointer;
+      }
+      &__input__wrap {
+        margin-left: -2rem;
+      }
+      &__input__wrap2 {
+        @include mq(xl) {
+          margin-left: -3.2rem;
+        }
+      }
+      &__input {
+        font-size: 1.6rem;
+      }
+      &__input2 {
+        font-size: 1.6rem;
+        text-align: center;
+      }
+      &__input3 {
+        padding: 1rem 1rem 7rem 1rem;
+        font-size: 1.6rem;
+        overflow: hidden;
+        resize: none;
+      }
+      &__button:hover {
+        @extend .hover;
+        color: $hovercolor-return;
+      }
+      .showReturn {
+        color: $hovercolor-return;
+      }
+      &__button2__wrap {
+        margin: 3rem auto;
+      }
+      &__button2 {
+        padding: 1.5rem 0rem;
+        border: 1px solid black;
+        outline: 0;
+        cursor: pointer;
+      }
+      &__button2:hover {
+        @extend .hover;
+        background: $hovercolor-submit;
+        color: white;
+      }
+    }
     &__idea {
       margin: 0 -3rem 3rem -3rem;
       @include mq(xl) {

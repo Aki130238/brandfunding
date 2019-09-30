@@ -2,7 +2,6 @@ $(function(){
   setTimeout("$('.flash').fadeOut('slow')", 3000)
 });
 
-$(window).on('turbolinks:load',function() {
   $fileField = $('#fileReturn')
   $($fileField).on('change', $fileField, function(e) {
     file = e.target.files[0]
@@ -23,8 +22,28 @@ $(window).on('turbolinks:load',function() {
     reader.readAsDataURL(file);
   });
 
-  $fileField = $('#file')
-  $($fileField).on('change', $fileField, function(e) {
+  $fileField2 = $('#fileReturn2')
+  $($fileField2).on('change', $fileField, function(e) {
+    file = e.target.files[0]
+    reader = new FileReader(),
+    $preview = $('#imageFieldReturn2');
+
+    reader.onload = (function(file) {
+      return function(e) {
+        $preview.empty();
+        $preview.append($('<img>').attr({
+          src: e.target.result,
+          width: '100%',
+          class: 'preview',
+          title: file.name
+        }));
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  });
+
+  $fileField3 = $('#file')
+  $($fileField3).on('change', $fileField, function(e) {
     file = e.target.files[0]
     reader = new FileReader(),
     $preview = $('#imageField');
