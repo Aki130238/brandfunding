@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_30_075051) do
+ActiveRecord::Schema.define(version: 2019_09_30_080956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,7 +106,6 @@ ActiveRecord::Schema.define(version: 2019_09_30_075051) do
     t.string "product_image", null: false
     t.string "idea_category", null: false
     t.string "idea_category_details", null: false
-    t.string "product_about"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "idea_material", null: false
