@@ -8,6 +8,10 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    if logged_in?
+      flash[:alert] = "すでにログインしています"
+      redirect_to root_path
+    end
   end
 
   def create
