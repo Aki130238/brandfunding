@@ -165,6 +165,18 @@
         margin-left: -11rem;
       }
     }
+    &__form__return__wrap {
+      margin-top: 1rem;
+      @include mq(md) {
+        margin-top: 2rem;
+      }
+      @include mq(lg) {
+        margin-left: -3rem;
+      }
+      @include mq(xl) {
+        margin-left: -5rem;
+      }
+    }
     &__button_wrap {
       display: inline-block;
       width: 100%;
@@ -333,6 +345,30 @@
       padding-bottom: 20rem;
       &__input {
         padding: 2rem 1rem;
+      }
+    }
+    &-return {
+      &__input {
+        padding: 1rem 1rem 1rem 1rem;
+        font-size: 1.6rem;
+        overflow: hidden;
+        resize: none;
+      }
+      &__input2 {
+        padding: 1rem 1rem 10rem 1rem;
+        font-size: 1.6rem;
+        overflow: hidden;
+        resize: none;
+      }
+      &__input3 {
+        padding: 1rem 1rem 1rem 1rem;
+        font-size: 1.6rem;
+        overflow: hidden;
+        resize: none;
+        text-align: center;
+      }
+      &__image {
+        padding: 15rem;
       }
     }
     &-report {
