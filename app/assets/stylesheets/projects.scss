@@ -274,12 +274,14 @@
         margin-top: 1.5rem;
         border: 1px solid black;
       }
-      &__image_wrap-2 {
+      &__image_wrap2 {
+        float: left;
         border: 1px solid black;
         margin: .8rem 1.6rem .8rem 0;
       }
       &__input {
         padding: 1rem 1rem 35rem 1rem;
+        cursor: pointer;
       }
       &__input-2 {
         margin: 0 1.5rem 1.5rem 0;
@@ -380,20 +382,37 @@
     }
   }
   .project-list {
-    margin: 1.5rem;
+    margin: 2rem auto;
+    @include mq(md) {
+      margin: 1.5rem;
+    }
     &_void {
-      margin: 3rem;
+      display: none;
+      @include mq(md) {
+        display: block;
+        margin: 3rem;
+      }
     }
     &__wrap {
-      display: flex;
-      margin-left: 15rem;
+      margin: 1.5rem auto;
+      @include mq(md) {
+        float: right;
+      }
+      @include mq(xl) {
+        margin-right: 2.5rem;
+      }
     }
     &__link {
       color: $color-1;
       text-decoration: none;
     }
+    &__image {
+      padding: 8rem 0;
+      border: 1px solid black;
+      text-align: center;
+    }
     &__title {
-      margin-left: 1.3rem;
+      margin: 1rem 0 3rem 1.3rem;
     }
     &__bar {
       background: $bgcolor-idea;
@@ -411,7 +430,7 @@
       padding-top: 1rem;
       background: $bgcolor-project2;
       color: $color-1;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       text-align: center;
     }
     &__content {
@@ -419,6 +438,7 @@
       padding-bottom: 1rem;
       background: $bgcolor-project2;
       font-weight: bold;
+      font-size: 1.4rem;
       text-align: center;
     }
     &__bar2 {
@@ -446,14 +466,26 @@
       text-align: center;
     }
     &__image {
-      margin: 0 0 3rem 6rem;
+      margin: 0 auto 3rem auto;
+      @include mq(md) {
+        margin-left: 2rem;
+      }
+      @include mq(lg) {
+        margin: 0 0 3rem 6rem;
+      }
       padding: 23.5rem 0;
       border: 1px solid black;
       background: white;
       text-align: center;
     }
     &__sns {
-      margin-left: 6rem;
+      margin-bottom: 3rem;
+      @include mq(md) {
+        margin-left: 2rem;
+      }
+      @include mq(lg) {
+        margin-left: 6rem;
+      }
       padding: .3rem 0;
       border: 1px solid black;
       background: white;
@@ -461,7 +493,10 @@
       cursor: pointer;
     }
     &__content__wrap {
-      margin: 2rem 0 0 4rem;
+      margin: 0 auto;
+      @include mq(md) {
+        margin: 2rem 0 0 4rem;
+      }
     }
     &__icon {
       width: 1.5rem;
@@ -488,10 +523,15 @@
     }
     &__user-image__wrap {
       display: flex;
-      margin-bottom: -9rem;
+      @include mq(md) {
+        margin-bottom: -9rem;
+      }
     }
     &__patron {
-      margin: 1rem 0 0 -1.5rem;
+      margin: 10rem 0 0 -1.5rem;
+      @include mq(md) {
+        margin: 1rem 0 0 -1.5rem;
+      }
     }
     &__icon2 {
       width: 3rem;
@@ -499,7 +539,13 @@
       vertical-align: -.5rem;
     }
     &__supporter {
-      margin-bottom: 5rem;
+      margin-bottom: -2rem;
+      @include mq(md) {
+        margin-bottom: 5rem;
+      }
+      @include mq(lg) {
+        margin-top: 2rem;
+      }
       padding: 1.5rem 0;
       border: 1px solid black;
       background: white;
@@ -508,6 +554,12 @@
     &__user-image {
       margin: -5rem auto 0 auto;
       padding: 8rem 0;
+      @include mq(md) {
+        padding: 5rem 0;
+      }
+      @include mq(lg) {
+        padding: 8rem 0;
+      }
       border: 1px solid black;
       border-radius: 50%;
       background: white;
@@ -523,6 +575,10 @@
       margin-top: 7rem;
     }
     &__deadline {
+      margin-top: 2rem;
+      @include mq(xl) {
+        margin: 0;
+      }
       padding: 1.5rem 0;
       border: 1px solid black;
       background: white;
@@ -539,7 +595,10 @@
       margin-top: -2rem;
     }
     &__prefectures {
-      margin: 2.5rem auto auto auto;
+      margin: 2.5rem auto auto 1rem;
+      @include mq(md) {
+        margin: 2.5rem auto auto auto;
+      }
       padding: .3rem 0;
       border: 1px solid black;
       background: white;
@@ -548,20 +607,58 @@
   }
 
   .show-menu {
-    margin: 10rem 0 0 6rem;
+    margin: 5rem 0 0 2.5rem;
+    @include mq(md) {
+      margin: 1.5rem 0 0 3rem;
+    }
+    @include mq(lg) {
+      margin: 10rem 0 0 6rem;
+    }
     border: none;
     list-style: none;
     &__favorite {
-      margin: 10rem 0 0 6rem;
-      text-align: right;
+      margin: 2rem 0 2rem 3rem;
+      @include mq(md) {
+        margin: 3rem 0 2rem 3rem;
+      }
+      @include mq(lg) {
+        margin: -2.8rem 25rem 0 auto;
+      }
+      @include mq(xl) {
+        margin: 10rem 0 0 6rem;
+      }
+      &-button {
+        color: $color-1;
+        text-decoration: none;
+      }
+      &-button2 {
+        color: red;
+        text-decoration: none;
+      }
     }
-    &__favorite__button {
-      color: $color-1;
-      text-decoration: none;
-    }
-    &__favorite__button2 {
-      color: red;
-      text-decoration: none;
+    &__follow {
+      margin: 3rem 0 0 3rem;
+      @include mq(lg) {
+        margin-top: 7rem;
+      }
+      @include mq(xl) {
+        margin-top: 10rem;
+      }
+      &-icon {
+        width: 2rem;
+        margin-right: .5rem;
+        vertical-align: -.2rem;
+      }
+      &-button {
+        color: $color-1;
+        text-decoration: none;
+        outline: 0;
+      }
+      &-button2 {
+        color: red;
+        text-decoration: none;
+        outline: 0;
+      }
     }
     &__link {
       border: none;
@@ -598,12 +695,20 @@
       color: black;
       vertical-align: -.3rem;
     }
+    &__icon5 {
+      width: 2rem;
+      color: black;
+      vertical-align: -.2rem;
+      transform: scaleX(-1);
+    }
   }
 
   .show-project2 {
     margin: 5rem 0;
     &__home {
-      margin-left: 6rem;
+      @include mq(lg) {
+        margin-left: 6rem;
+      }
       &__title {
         font-weight: bold;
       }
@@ -613,21 +718,28 @@
       &__content {
         margin-top: 1.5rem;
         border: 1px solid black;
-        padding: 50rem 0;
+        padding-bottom: 167rem;
       }
     }
     &__report {
-      margin-left: 6rem;
+      @include mq(lg) {
+        margin-left: 6rem;
+      }
     }
     &__patron {
-      margin-left: 6rem;
+      @include mq(lg) {
+        margin-left: 6rem;
+      }
     }
     &__comment {
+      @include mq(lg) {
+        margin-left: 6rem;
+      }
       &__input__wrap {
-        margin: 0 auto;
+        margin: 0 auto 3rem auto;
       }
       &__input {
-        padding: 1rem 1rem 5rem 1rem;
+        padding: 1rem 1rem 10rem 1rem;
         font-size: 1.7rem;
         overflow: hidden;
         resize: none;
@@ -636,13 +748,15 @@
         margin: 1.5rem auto 0 auto;
       }
       &__button {
-        @extend .sign-button;
         margin-bottom: 5rem;
         padding: .5rem;
+        border: 1px solid black;
+        background: $btncolor-comment;
+        font-weight: bold;
       }
       &__content__wrap {
         display: flex;
-        margin-left: 6rem;
+        margin: 2rem;
       }
       &__user {
         color: black;
@@ -654,9 +768,15 @@
     }
   }
   .show-project3 {
-    margin-left: 4rem;
+    margin-top: 3rem;
+    @include mq(md) {
+      margin-left: 4rem;
+    }
     &__idea {
-      margin-bottom: 3rem;
+      margin: 0 -3rem 3rem -3rem;
+      @include mq(xl) {
+        margin: 0 0 3rem 0;
+      }
       padding-bottom: 1.5rem;
       background: $bgcolor-idea2;
       &__title {
@@ -701,6 +821,7 @@
     }
     &__return {
       &__wrap {
+        margin-bottom: 3rem;
         border: 1px solid black;
         background: $bgcolor-project2;
       }
@@ -709,6 +830,11 @@
       }
       &__title {
         margin-bottom: 1.5rem;
+        font-weight: bold;
+      }
+      &__title2 {
+        margin: 2rem 1.5rem 1.5rem 1.5rem;
+        padding-top: 2rem;
         font-weight: bold;
       }
       &__icon {
@@ -730,12 +856,31 @@
         margin-bottom: 1.5rem;
         padding: .5rem 0;
       }
+      &__content2 {
+        margin: 0 2rem;
+      }
       &__supporter__wrap {
         display: flex;
       }
       &__supporter, &__schedule {
         margin-bottom: 1.5rem;
         padding: .5rem 0;
+      }
+      &__patron {
+        margin: 3rem auto 1.5rem 1.5rem;
+      }
+      &__schedule2 {
+        margin: .5rem auto 1.5rem 2rem;
+        padding-bottom: 1rem;
+        @include mq(lg) {
+          margin: 3rem 2rem 1.5rem auto;
+          padding-bottom: 0;
+        }
+      }
+      &__guide {
+        @include mq(lg) {
+          display: flex;
+        }
       }
     }
   }
