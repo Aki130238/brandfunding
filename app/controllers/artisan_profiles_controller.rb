@@ -4,9 +4,6 @@ class ArtisanProfilesController < ApplicationController
   def index
   end
 
-  def new
-  end
-
   def show
     @user_profile = @user.user_profile
     @artisan_profile = @user.artisan_profile
@@ -24,7 +21,6 @@ class ArtisanProfilesController < ApplicationController
         render 'new', notice: "プロフィールを修正できません"
     end
   end
-
 
   private
 
@@ -78,5 +74,4 @@ class ArtisanProfilesController < ApplicationController
       ]
     )
   end
-
 end
