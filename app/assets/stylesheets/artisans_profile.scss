@@ -21,6 +21,10 @@
       font-weight: bold;
       font-size: 2rem;
       text-align: center;
+      cursor: pointer;
+    }
+    &__privacy:hover {
+      opacity: 0.85;
     }
     &__privacy__content {
       display: inline-block;
@@ -35,6 +39,11 @@
       color: $color-1;
       font-weight: bold;
       font-size: 2rem;
+    }
+    &__button:hover {
+      @extend .hover;
+      background: $hovercolor-submit;
+      color: white;
     }
     &__input_direction {
       @include mq(md) {
@@ -251,6 +260,11 @@
         background: $btncolor-2;
         font-size: 1.5rem;
         text-align: center;
+        cursor: pointer;
+      }
+      &__button:hover {
+        @extend .hover;
+        background: $hovercolor-artisanbtn;
       }
       &__image {
         width: 1.6rem;
@@ -265,6 +279,7 @@
       }
       &__radio__content {
         margin-top: .8rem;
+        cursor: pointer;
       }
     }
   }

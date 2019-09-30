@@ -89,7 +89,7 @@
           </div>
           <div class="col-12">
             <% if idea_comment.user == current_user || @idea.user == current_user %>
-              <p class="col-7 col-md-5 col-lg-3 show-idea-comment__delete-button__wrap"><%= link_to "コメントを削除する", idea_idea_comment_path(idea_comment.idea_id, idea_comment.id), method: :delete, remote: true, class: "col-12 col-lg-12 show-idea-comment__delete-button" %></p>
+              <p class="col-9 col-md-4 col-lg-3 col-xl-2 show-idea-comment__delete-button__wrap"><%= link_to "コメントを削除する", idea_idea_comment_path(idea_comment.idea_id, idea_comment.id), method: :delete, remote: true, class: "col-12 col-lg-12 show-idea-comment__delete-button" %></p>
             <% end %>
           </div>
         <% end %>
