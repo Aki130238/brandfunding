@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: "tops#index"
   resources :users, :user_profiles, :artisan_profiles
   resources :sessions, only: %i[new create destroy]
-  resources :relationships, only: %i[index create destroy]
   resources :project_likes, only: %i[index create destroy]
+  resources :relationships, only: %i[index create destroy]
   resources :ideas do
     resources :idea_comments
   end
