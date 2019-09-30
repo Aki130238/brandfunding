@@ -27,6 +27,25 @@ $btncolor-2: #44B5AE;
 $btncolor-3: #AF7128;
 $btncolor-comment: #E2E590;
 $bordercolor-1: #E7E7E7;
+$hovercolor-top1: #ffffc1;
+$hovercolor-top2: #c1ffc1;
+$hovercolor-top3: #c1ffff;
+$hovercolor-main: #e3adc1;
+$hovercolor-sign: #e73562;
+$hovercolor-sign2: #f7b977;
+$hovercolor-profile: #f3a68c;
+$hovercolor-terms: #f7b977;
+$hovercolor-privacy: #f7b977;
+$hovercolor-management: #f7b977;
+$hovercolor-sponsor: #fcc800;
+$hovercolor-favorite: #fcc800;
+$hovercolor-follow: #fcc800;
+$hovercolor-submit: orange;
+$hovercolor-sort: #fcc800;
+$hovercolor-idea: #fcc800;
+$hovercolor-comment: #fcc800;
+$hovercolor-delete: #d70035;
+$hovercolor-artisanbtn: #00885a;
 
 @media (max-width: 540px) {
   h1 {
@@ -85,6 +104,10 @@ $breakpoints: (
   color: $color-1;
 }
 
+.hover {
+  transition: 0.3s ease-in-out;
+}
+
 html {
   height: 100%;
   font-size: 62.5%;
@@ -117,7 +140,8 @@ html {
     color: $color-1;
   }
   &__title:hover {
-    color: $color-1;
+    @extend .hover;
+    color: $hovercolor-main;
     text-decoration: none;
   }
   .navbar {
@@ -134,9 +158,18 @@ html {
   &__navlink {
     margin: .5rem 4rem 0 0;
     color: $color-1;
+    &__artisan:hover {
+      color: $bgcolor-artisan4;
+    }
+    &__profile:hover {
+      color: $hovercolor-profile;
+    }
+    &__sign:hover {
+      color: $hovercolor-sign;
+    }
   }
   &__navlink:hover {
-    color: $color-1;
+    @extend .hover;
     text-decoration: none;
   }
 }
@@ -155,7 +188,8 @@ html {
     color: white;
   }
   &__title:hover {
-    color: white;
+    @extend .hover;
+    color: $hovercolor-main;
     text-decoration: none;
   }
   &__column {
@@ -163,6 +197,21 @@ html {
     padding-top: .8rem;
     color: white;
     font-size: 1.4rem;
+    &__terms:hover {
+      @extend .hover;
+      color: $hovercolor-terms;
+      cursor: pointer;
+    }
+    &__privacy:hover {
+      @extend .hover;
+      color: $hovercolor-privacy;
+      cursor: pointer;
+    }
+    &__management:hover {
+      @extend .hover;
+      color: $hovercolor-management;
+      cursor: pointer;
+    }
   }
   &__column2 {
     margin: 0 1rem;
