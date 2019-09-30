@@ -2,6 +2,8 @@ $(function(){
   setTimeout("$('.flash').fadeOut('slow')", 3000)
 });
 
+$(window).on('turbolinks:load',function() {
+
   $fileField = $('#fileReturn')
   $($fileField).on('change', $fileField, function(e) {
     file = e.target.files[0]
