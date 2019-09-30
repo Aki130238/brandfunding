@@ -5,8 +5,13 @@ class ArtisanProfilesController < ApplicationController
   end
 
   def show
-    @user_profile = @user.user_profile
-    @artisan_profile = @user.artisan_profile
+    if @user.user_status == 2
+      @user_profile = @user.user_profile
+      @artisan_profile = @user.artisan_profile
+    else
+      flash[:alert] = "職人ではありません"
+      redirect_to root_path
+    end
   end
 
   def edit
