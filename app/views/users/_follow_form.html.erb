@@ -1,12 +1,12 @@
-<div class="follow_form">
+<div id="follow_form_<%= user.id %>">
   <% unless current_user.following?(user) %>
     <%= form_with(model: current_user.active_relationships.build(followed_id: user.id))do |f| %>
       <%= f.hidden_field :followed_id %>
-      <%= f.submit "このプロジェクトのオーナーをフォロー", class:"btn btn-primary" %>
+      <p class="show-menu__follow"><%= svg("user-plus-solid.svg", class: "show-menu__follow-icon") %><%= f.submit "このプロジェクトのオーナーをフォロー", class: "show-menu__follow-button" %></p>
     <% end %>
   <% else %>
     <%= form_with(model: current_user.active_relationships.find_by(followed_id: user.id), method: :delete) do |f| %>
-      <%= f.submit "オーナーのフォローを解除", class:"btn btn-danger" %>
+      <p class="show-menu__follow"><%= svg("user-plus-solid.svg", class: "show-menu__follow-icon") %><%= f.submit "オーナーのフォローを解除", class: "show-menu__follow-button2" %></p>
     <% end %>
   <% end %>
 </div>

@@ -180,7 +180,8 @@
               <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
-              <p class="offset-1 offset-md-3 form-inline"><%= f.number_field :idea_amount, class: "col-md-6 col-xl-4 form-control idea-form-idea-details__input", placeholder: "数値を入力" %>&emsp;点</p>
+              <p class="offset-1 offset-md-3 form-inline"><%= f.number_field :idea_amount, class: "col-md-6 col-xl-4
+              form-control idea-form-idea-details__input", placeholder: "数値を入力", min: "1", max: "9999" %>&emsp;点</p>
               <p class="col-9 col-lg-8 col-xl-7 offset-1 offset-md-3 idea-form-idea-details__guide">最低製作数量を伝えて必要な予算を確定させましょう。<br>職人さんへの製作意欲につながります。</p>
             </div>
           </div>
@@ -190,8 +191,8 @@
               <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
-              <p class="offset-1 offset-md-3 form-inline"><%= f.number_field :budget, class: "col-md-6 col-xl-4
-              form-control idea-form-idea-details__input", placeholder: "数値を入力" %>&emsp;円</p>
+              <p class="offset-1 offset-md-3">
+                <%= f.select :budget, [["予算を選択",""], ["6千円~2万円", "6千円~2万円"], ["2万円~5万円", "2万円~5万円"], ["5万円~10万円", "5万円~10万円"], ["10万円~20万円", "10万円~20万円"], ["20万円~30万円", "20万円~30万円"], ["30万円以上", "30万円以上"]], {}, {class: "col-9 col-md-8 col-lg-5 idea-form-idea-details__input3"} %></p>
             </div>
           </div>
           <div class="row">
