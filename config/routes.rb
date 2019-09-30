@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   resources :conversations do
     resources :messages
   end
+  get 'agreements/terms_of_service'
+  get 'agreements/privacy_policy'
+  get 'agreements/product_team'
 end
