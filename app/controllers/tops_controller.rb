@@ -1,10 +1,14 @@
 class TopsController < ApplicationController
   def index
     @user = User.new
+    @projects = Project.all
   end
 
   def new
     @user = User.new
+  end
+
+  def edit
   end
 
   def create

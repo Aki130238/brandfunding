@@ -264,12 +264,12 @@
             <div class="col-md-9 d-flex">
               <p class="edit-artisan-form__artisan__item__title2">必須</p>
               <div class="col-md-9 d-flex edit-artisan-form__artisan__radio__wrap">
-                <p class="edit-artisan-form__artisan__radio__input"><%= b.radio_button :work_status, "仕事できます" %></p>
-                <p class="edit-artisan-form__artisan__radio__content">&ensp;仕事できます</p>
-                <p class="edit-artisan-form__artisan__radio__input"><%= b.radio_button :work_status, "仕事によります" %></p>
-                <p class="edit-artisan-form__artisan__radio__content">&ensp;仕事によります</p>
-                <p class="edit-artisan-form__artisan__radio__input"><%= b.radio_button :work_status, "今は忙しいです" %></p>
-                <p class="edit-artisan-form__artisan__radio__content">&ensp;今は忙しいです</p>
+                <p class="edit-artisan-form__artisan__radio__input"><%= b.radio_button :work_status, "仕事できます", id: "work1" %></p>
+                <label for="work1" class="edit-artisan-form__artisan__radio__content">&ensp;仕事できます</label>
+                <p class="edit-artisan-form__artisan__radio__input"><%= b.radio_button :work_status, "仕事によります", id: "work2" %></p>
+                <label for="work2" class="edit-artisan-form__artisan__radio__content">&ensp;仕事によります</label>
+                <p class="edit-artisan-form__artisan__radio__input"><%= b.radio_button :work_status, "今は忙しいです", id: "work3" %></p>
+                <label for="work3" class="edit-artisan-form__artisan__radio__content">&ensp;今は忙しいです</label>
               </div>
             </div>
           </div>

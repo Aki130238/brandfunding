@@ -37,12 +37,20 @@
         color: $color-1;
         font-size: 1.3rem;
         text-align: center;
+        cursor: pointer;
+      }
+      &__privacy:hover {
+        opacity: 0.85;
       }
       &__button__wrap {
-        margin: 0 auto;
+        margin: 0 auto 5rem auto;
       }
       &__button {
         @extend .sign-button;
+      }
+      &__button:hover {
+        @extend .hover;
+        background: $hovercolor-sign2;
       }
     }
   }
@@ -96,6 +104,21 @@
     &__li {
       border: 1px solid black;
       border-top: none;
+      &__favorite:hover {
+        @extend .hover;
+        background: $hovercolor-favorite;
+        color: white;
+      }
+      &__follow:hover {
+        @extend .hover;
+        background: $hovercolor-follow;
+        color: white;
+      }
+      &__user:hover {
+        @extend .hover;
+        background: $hovercolor-profile;
+        color: white;
+      }
     }
     &__li_border-top {
       border-top: 1px solid black;
@@ -115,6 +138,9 @@
       font-size: 2.5rem;
       }
     }
+    &__title:hover {
+      color: white;
+    }
     &__title-2 {
       margin-left: 2rem;
       padding: 1rem 0 .5rem 0;
@@ -132,9 +158,25 @@
         text-decoration: none;
       }
     }
+    &__title2:hover {
+      color: white;
+    }
     &__link {
       color: $color-1;
       text-decoration: none;
+      &__project:hover {
+        @extend .hover;
+        color: $bgcolor-project;
+      }
+      &__idea:hover {
+        @extend .hover;
+        color: $bgcolor-idea;
+      }
+      &__sponsor:hover {
+        @extend .hover;
+        color: $hovercolor-sponsor;
+        cursor: pointer;
+      }
     }
     &__item {
       color: black;
@@ -143,6 +185,18 @@
       margin-left: 4rem;
       color: $color-1;
       font-size: 1.8rem;
+      &__project:hover {
+        @extend .hover;
+        background: $bgcolor-project;
+      }
+      &__idea:hover {
+        @extend .hover;
+        background: $bgcolor-idea;
+      }
+      &__sponsor:hover {
+        @extend .hover;
+        background: $hovercolor-sponsor;
+      }
     }
   }
   &__form {

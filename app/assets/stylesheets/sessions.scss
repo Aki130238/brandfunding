@@ -22,6 +22,10 @@
       &__button {
         @extend .sign-button;
       }
+      &__button:hover {
+        @extend .hover;
+        background: $hovercolor-sign2;
+      }
     }
   }
 }

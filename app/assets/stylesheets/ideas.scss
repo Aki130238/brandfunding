@@ -1,5 +1,4 @@
 .new-idea-page {
-  // height: 100%;
   &__title {
     display: inline-block;
     width: 100%;
@@ -180,6 +179,11 @@
       }
       padding: 1.5rem 0rem;
       border: 1px solid black;
+    }
+    &__button:hover {
+      @extend .hover;
+      background: $hovercolor-submit;
+      color: white;
     }
     &-image {
       &__title {
@@ -730,7 +734,17 @@
       margin: 1.5rem auto 0 auto;
     }
     &__button {
-      @extend .sign-button;
+      margin-bottom: 5rem;
+      padding: .6rem;
+      border: 1px solid black;
+      background: $btncolor-comment;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    &__button:hover {
+      @extend .hover;
+      background: $hovercolor-comment;
+      color: white;
     }
     &__user__wrap {
       margin: 3.8rem auto 0 auto;
@@ -755,12 +769,18 @@
     }
     &__delete-button {
       @extend .sign-button;
+      padding: 1rem 2.5rem;
       background: red;
       color: white;
       font-size: 1.5rem;
       @include mq(md) {
         font-size: 1.6rem;
       }
+      text-decoration: none;
+    }
+    &__delete-button:hover {
+      @extend .hover;
+      background: $hovercolor-delete;
     }
   }
 }
