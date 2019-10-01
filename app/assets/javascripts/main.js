@@ -2,7 +2,47 @@ $(function(){
   setTimeout("$('.flash').fadeOut('slow')", 3000)
 });
 
+$(function(){
+  // $('.ideaTab2').on('click', function(e){
+  //     e.preventDefault();
+  //     window.location.href = $(this).attr('href');
+  // });
+
+  $('#ideaNext1').on('click', function() {
+    $('.ideaTab2').trigger('click');
+  });
+  $('#ideaNext2').on('click', function() {
+    $('.ideaTab3').trigger('click');
+  });
+  $('#ideaNext3').on('click', function() {
+    $('.ideaTab4').trigger('click');
+  });
+  $('#ideaNext4').on('click', function() {
+    $('.ideaTab5').trigger('click');
+  });
+  $('#ideaNext5').on('click', function() {
+    $('.ideaTab6').trigger('click');
+  });
+  $('#ideaBack1').on('click', function() {
+    $('.ideaTab1').trigger('click');
+  });
+  $('#ideaBack2').on('click', function() {
+    $('.ideaTab2').trigger('click');
+  });
+  $('#ideaBack3').on('click', function() {
+    $('.ideaTab3').trigger('click');
+  });
+  $('#ideaBack4').on('click', function() {
+    $('.ideaTab4').trigger('click');
+  });
+  $('#ideaBack5').on('click', function() {
+    $('.ideaTab5').trigger('click');
+  });
+});
+
 $(window).on('turbolinks:load',function() {
+
+
 
   $fileField = $('#fileReturn')
   $($fileField).on('change', $fileField, function(e) {
