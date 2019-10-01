@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
     @project.project_return.build
     @project.build_project_sponsor
     @project.build_project_value
+    @ideas = current_user.ideas
   end
 
   def create

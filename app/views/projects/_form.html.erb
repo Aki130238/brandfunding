@@ -8,6 +8,10 @@
   <section class="tab-content project-form">
     <div class="tab-pane fade show active project-form-value" id="value" role="tabpanel" aria-labelledby="value-tab">
     <%= form_with(model: @project, local: true) do |f| %>
+        <p class="form-inline">
+          <%= f.select :idea_id, options_for_select(@ideas.map{ |i| [i.idea_title, i.id] }), prompt:
+              "Select Idea" %>
+        </p>
       <%= f.fields_for :project_value do |va| %>
         <div class="row project-form-value__target">
           <div class="col-md-4 offset-1 d-flex project-form__title__wrap">

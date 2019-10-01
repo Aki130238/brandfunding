@@ -8,4 +8,8 @@ module ApplicationHelper
     end
     doc.to_html.html_safe
   end
+
+  def format_date(date)
+    date.strftime("%Y-%m-%d (#{%w(日 月 火 水 木 金 土)[Time.now.wday]})")
+  end
 end
