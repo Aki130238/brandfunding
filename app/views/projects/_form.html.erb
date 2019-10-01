@@ -7,6 +7,10 @@
 
   <section class="tab-content project-form">
     <div class="tab-pane fade show active project-form-value" id="value" role="tabpanel" aria-labelledby="value-tab">
+      <div class="progress project-form__bar">
+        <div class="progress-bar project-form__bar__content" style="width: 16.6%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+        </div>
+      </div>
     <%= form_with(model: @project, local: true) do |f| %>
       <%= f.fields_for :project_value do |va| %>
         <div class="row project-form-value__target">
@@ -56,14 +60,17 @@
             </div>
           </div>
           <div class="row project-form__button_wrap">
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">プレビュー</p>
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">次へ</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectNext1">次へ</p>
           </div>
         </div>
       <% end %>
     </div>
 
     <div class="tab-pane fade project-form-project" id="project" role="tabpanel" aria-labelledby="project-tab">
+      <div class="progress project-form__bar">
+        <div class="progress-bar project-form__bar__content" style="width: 33.2%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+        </div>
+      </div>
       <div class="row project-form-project__title">
         <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
           <h3 class="col-4 col-md-6 project-form__title-1">タイトル</h3>
@@ -85,12 +92,16 @@
         </div>
       </div>
       <div class="row project-form__button_wrap">
-        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">前へ</p>
-        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">次へ</p>
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectBack1">前へ</p>
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectNext2">次へ</p>
       </div>
     </div>
 
     <div class="tab-pane fade project-form-image" id="image" role="tabpanel" aria-labelledby="image-tab">
+      <div class="progress project-form__bar">
+        <div class="progress-bar project-form__bar__content" style="width: 49.8%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+        </div>
+      </div>
       <%= f.fields_for :project_image do |im| %>
         <div class="row project-form-image__main">
           <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
@@ -99,7 +110,7 @@
           </div>
           <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
             <div id="imageField" onClick="$('#file').click()" class="project-form-image__image_wrap">
-              <p class="project-form-image__input">あなただけのタイトルでスポンサーを惹きつけましょう</p>
+              <p class="project-form-image__input">&ensp;</p>
             </div>
             <p><%= im.file_field :project_logo, class: "col-12 form-control project-form-image__input", style: "display:none;", id: "file" %></p>
           </div>
@@ -154,12 +165,16 @@
         </div>
       <% end %>
       <div class="row project-form__button_wrap">
-        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">前へ</p>
-        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">次へ</p>
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectBack2">前へ</p>
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectNext3">次へ</p>
       </div>
     </div>
 
     <div class="tab-pane fade project-form-about" id="about" role="tabpanel" aria-labelledby="about-tab">
+      <div class="progress project-form__bar">
+        <div class="progress-bar project-form__bar__content" style="width: 66..4%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+        </div>
+      </div>
       <%= f.fields_for :project_about do |ab| %>
         <div class="row project-form-about__content">
           <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
@@ -168,56 +183,21 @@
           </div>
           <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
             <%= ab.hidden_field :project_abouts, id: :article_text %>
-            <trix-editor input="article_text" class="col-12 form-control project-form-about__input"><%= ab.text_area :project_abouts, value: "はじめに・ご挨拶
-  信頼性を高めるため、ご本人もしくは実行チームの簡単な自己紹介を書きましょう。
-
-
-  このプロジェクトで実現したいこと
-  企画内容と目的を具体的かつ論理的に書きましょう。
-
-
-  プロジェクトをやろうと思った理由
-  プロジェクト立ち上げの背景や経緯を具体的に書きましょう。
-
-
-  これまでの活動
-  プロジェクトにつながる過去の活動や体験を書きましょう。
-
-
-  資金の使い道
-  集めた支援金用途や内訳を書きましょう。
-
-
-  リターンについて
-  リターンに関する説明や画像を載せましょう。
-
-
-  実施スケジュール
-  プロジェクト実施の計画を時系列で書きましょう。
-
-
-  最後に
-  応援したくなるような熱いメッセージを書きましょう。
-
-
-  ※募集方式についての説明も載せるとわかりやすいです。
-
-  例）
-  ＜All-in方式の場合＞
-  本プロジェクトはAll-in方式で実施します。目標金額に満たない場合も、計画を実行し、リターンをお届けします。
-
-  ＜All-or-Nothing方式の場合＞
-  本プロジェクトはAll-or-Nothing方式で実施します。目標金額に満たない場合、計画の実行及びリターンのお届けはございません。",class: "col-12 form-control project-form-about__input" %></trix-editor>
+            <trix-editor input="article_text" class="col-12 form-control project-form-about__input"><%= ab.text_area :project_abouts, class: "col-12 form-control project-form-about__input" %></trix-editor>
           </div>
         </div>
       <% end %>
       <div class="row project-form__button_wrap">
-        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">前へ</p>
-        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">次へ</p>
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectBack3">前へ</p>
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectNext4">次へ</p>
       </div>
     </div>
 
     <div class="tab-pane fade project-form-idea" id="idea" role="tabpanel" aria-labelledby="idea-tab">
+      <div class="progress project-form__bar">
+        <div class="progress-bar project-form__bar__content" style="width: 83%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+        </div>
+      </div>
       <%= f.fields_for :project_idea do |id| %>
         <div class="row project-form-idea__content">
           <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
@@ -258,7 +238,7 @@
               <h4 class="col-3 col-sm-2 col-md-3 col-xl-2 project-form__title-2">必須</h4>
             </div>
             <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-              <p class="form-inline"><%= re.number_field :return_item_fund, class: "col-12 col-md-4 form-control project-form-return__input3" %>&ensp;円</p>
+              <p class="form-inline"><%= re.number_field :return_item_fund, class: "col-6 col-md-4 form-control project-form-return__input3" %>&ensp;円</p>
             </div>
 
             <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
@@ -266,7 +246,7 @@
               <h4 class="col-3 col-sm-2 col-md-3 col-xl-2 project-form__title-2">必須</h4>
             </div>
             <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-              <p class="form-inline"><%= re.number_field :return_item_count, class: "col-12 col-md-4 form-control project-form-return__input3" %>&ensp;個</p>
+              <p class="form-inline"><%= re.number_field :return_item_count, class: "col-6 col-md-4 form-control project-form-return__input3" %>&ensp;個</p>
             </div>
 
             <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
@@ -282,7 +262,7 @@
               <h4 class="col-3 col-sm-2 col-md-3 col-xl-2 project-form__title-2">必須</h4>
             </div>
             <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-              <p class="form-inline"><%= re.number_field :return_item_sponsors, class: "col-12 col-md-4 form-control project-form-return__input3" %>&ensp;人</p>
+              <p class="form-inline"><%= re.number_field :return_item_sponsors, class: "col-6 col-md-4 form-control project-form-return__input3" %>&ensp;人</p>
             </div>
 
             <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
@@ -290,7 +270,7 @@
               <h4 class="col-3 col-sm-2 col-md-3 col-xl-2 project-form__title-2">必須</h4>
             </div>
             <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-              <p class="form-inline"><%= re.date_field :delivery_date, class: "col-12 col-md-4 form-control project-form-return__input" %></p>
+              <p class="form-inline"><%= re.date_field :delivery_date, class: "col-6 col-md-4 form-control project-form-return__input" %></p>
             </div>
 
             <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
@@ -299,18 +279,21 @@
             <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
               <p class="form-inline"><%= re.text_area :return_item_remark, class: "col-12 col-md-11 form-control project-form-return__input" %></p>
             </div>
-
+            <div class="row project-form__button_wrap">
+              <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectBack4">前へ</p>
+              <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectNext5">次へ</p>
+            </div>
           <% end %>
         <% else %>
         <% end %>
       </div>
-      <div class="row project-form__button_wrap">
-        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">前へ</p>
-        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">次へ</p>
-      </div>
     </div>
 
     <div class="tab-pane fade project-form-report" id="report" role="tabpanel" aria-labelledby="report-tab">
+      <div class="progress project-form__bar">
+        <div class="progress-bar project-form__bar__content" style="width: 100%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+        </div>
+      </div>
       <%= f.fields_for :project_report do |id| %>
         <div class="row project-form-idea__content">
           <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
@@ -321,11 +304,11 @@
           </div>
         </div>
         <div class="row project-form__button_wrap">
-          <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">前へ</p>
+          <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectBack5">前へ</p>
           <%= f.submit "保存", class: "col-8 col-sm-4 col-md-3 col-lg-2 offset-1 project-form__button" %>
         </div>
-        <% end %>
-      </div>
+      <% end %>
+    </div>
     <% end %>
   </section>
 </main>

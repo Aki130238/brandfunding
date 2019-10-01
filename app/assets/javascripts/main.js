@@ -3,11 +3,6 @@ $(function(){
 });
 
 $(function(){
-  // $('.ideaTab2').on('click', function(e){
-  //     e.preventDefault();
-  //     window.location.href = $(this).attr('href');
-  // });
-
   $('#ideaNext1').on('click', function() {
     $('.ideaTab2').trigger('click');
   });
@@ -40,9 +35,40 @@ $(function(){
   });
 });
 
+$(function(){
+  $('#projectNext1').on('click', function() {
+    $('.projectTab2').trigger('click');
+  });
+  $('#projectNext2').on('click', function() {
+    $('.projectTab3').trigger('click');
+  });
+  $('#projectNext3').on('click', function() {
+    $('.projectTab4').trigger('click');
+  });
+  $('#projectNext4').on('click', function() {
+    $('.projectTab5').trigger('click');
+  });
+  $('#projectNext5').on('click', function() {
+    $('.projectTab6').trigger('click');
+  });
+  $('#projectBack1').on('click', function() {
+    $('.projectTab1').trigger('click');
+  });
+  $('#projectBack2').on('click', function() {
+    $('.projectTab2').trigger('click');
+  });
+  $('#projectBack3').on('click', function() {
+    $('.projectTab3').trigger('click');
+  });
+  $('#projectBack4').on('click', function() {
+    $('.projectTab4').trigger('click');
+  });
+  $('#projectBack5').on('click', function() {
+    $('.projectTab5').trigger('click');
+  });
+})
+
 $(window).on('turbolinks:load',function() {
-
-
 
   $fileField = $('#fileReturn')
   $($fileField).on('change', $fileField, function(e) {

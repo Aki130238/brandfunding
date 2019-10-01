@@ -416,6 +416,9 @@
       &__title1 {
         margin-top: 1rem;
         font-weight: bold;
+        @include mq(s) {
+          font-size: 1.6rem;
+        }
         @include mq(md) {
           text-align: right;
         }
@@ -425,6 +428,9 @@
         padding: .5rem 1rem;
         background: $bgcolor-3;
         color: white;
+        @include mq(s) {
+          font-size: 1.4rem;
+        }
         text-align: center;
       }
       &__title__wrap {
@@ -437,6 +443,9 @@
           margin-bottom: 2.5rem;
         }
         margin-bottom: 5rem;
+      }
+      &__input__number {
+        text-align: center;
       }
       &__input {
         @include mq(md) {
