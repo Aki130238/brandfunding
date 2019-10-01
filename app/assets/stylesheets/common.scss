@@ -177,6 +177,12 @@ html {
     margin-right: 5rem;
   }
   &__title__wrap {
+    @include mq(lg) {
+      margin-right: -8rem;
+    }
+    @include mq(xl) {
+      margin-right: -10rem;
+    }
     padding-top: .3rem;
   }
   &__title {
@@ -202,6 +208,10 @@ html {
     &__wrap {
       @include mq(md) {
         display: flex;
+        margin-left: -2.1rem;
+      }
+      @include mq(lg) {
+        margin-left: 0;
       }
     }
     &__terms:hover {
