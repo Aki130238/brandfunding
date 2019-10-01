@@ -28,10 +28,24 @@
         <p class="col-10 col-sm-6 col-lg-4 col-xl-3 signup-form__button__wrap"><%= f.submit "登録", class: "col-12 btn signup-form__button" %></p>
       <% end %>
       <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-        <%= f.hidden_field :email, value: 'test@example.com' %>
+        <%= f.hidden_field :email, value: 'test1@example.com' %>
         <%= f.hidden_field :password, value: '123456' %>
-        <p class="col-10 col-sm-6 col-lg-4 col-xl-3 signup-form__button__wrap2">
-          <%= f.submit "テストユーザーでログイン", class: "col-12 btn signup-form__button" %>
+        <p class="col-7 col-sm-5 col-md-4 col-lg-3 signup-form__button__wrap">
+          <%= f.submit "テストユーザー1でログイン", class: "col-12 btn signup-form__button" %>
+        </p>
+      <% end %>
+      <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+        <%= f.hidden_field :email, value: 'test2@example.com' %>
+        <%= f.hidden_field :password, value: '123456' %>
+        <p class="col-7 col-sm-5 col-md-4 col-lg-3 signup-form__button__wrap">
+          <%= f.submit "テストユーザー2でログイン", class: "col-12 btn signup-form__button" %>
+        </p>
+      <% end %>
+      <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+        <%= f.hidden_field :email, value: 'test3@example.com' %>
+        <%= f.hidden_field :password, value: '123456' %>
+        <p class="col-7 col-sm-5 col-md-4 col-lg-3 signup-form__button__wrap">
+          <%= f.submit "テストユーザー3でログイン", class: "col-12 btn signup-form__button" %>
         </p>
       <% end %>
     </div>
