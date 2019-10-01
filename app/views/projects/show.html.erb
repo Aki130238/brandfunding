@@ -21,7 +21,7 @@
         <p class="col-md-4 show-project1__supporter">サポーター人数</p>
         <div class="show-project1__owner-name__wrap">
           <p><%= svg("clock-regular.svg", class: "show-project1__icon3") %>&ensp;募集終了まで残り</p>
-          <p class="col-md-6 col-xl-5 offset-md-2 show-project1__owner-name">オーナーネーム</p>
+          <p class="col-md-6 col-xl-5 offset-md-2 show-project1__owner-name"><%= @project.user.name %></p>
         </div>
         <div class="show-project1__prefectures__wrap">
           <p class="col-md-4 show-project1__deadline">
@@ -30,7 +30,7 @@
             <% else %>
               <span>募集終了</span></p>
             <% end %>
-            <p class="col-md-4 col-xl-3 show-project1__prefectures">都道府県</p>
+            <p class="col-md-4 col-xl-3 show-project1__prefectures"><%= @project.user.user_profile.prefectures %></p>
             </div>
       </div>
       <%= render "show_menu" %>
