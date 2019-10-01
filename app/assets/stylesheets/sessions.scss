@@ -16,8 +16,10 @@
         @extend .sign-form;
       }
       &__button__wrap {
+        margin: 0 auto 2rem auto;
+      }
+      &__button__wrap2 {
         margin: 0 auto;
-        padding-bottom: 8rem;
       }
       &__button {
         @extend .sign-button;

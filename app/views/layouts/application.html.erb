@@ -44,11 +44,11 @@
         <h1 class="col-12 col-5 col-lg-4 col-xl-3 footer__title__wrap"><%= link_to "BRAND FUNDING", root_path, class: "footer__title" %></h1>
         <div class="d-flex col-12 col-lg-6 footer__column__wrap">
 
-          <p class="footer__column"><%= link_to "利用規約", agreements_terms_of_service_path %></p>
+          <p class="footer__column"><%= link_to "利用規約", agreements_terms_of_service_path ,class: "footer__column footer__column__terms" %></p>
           <p class="footer__column2">|</p>
-          <p class="footer__column2"><%= link_to "プライバシーポリシー", agreements_privacy_policy_path %></p>
+          <p class="footer__column2"><%= link_to "プライバシーポリシー", agreements_privacy_policy_path, class: "footer__column2 footer__column__privacy" %></p>
           <p class="footer__column2">|</p>
-          <p class="footer__column2"><%= link_to "開発チーム", agreements_product_team_path %></p>
+          <p class="footer__column2"><%= link_to "開発チーム", agreements_product_team_path, class: "footer__column2 footer__column__management" %></p>
 
         </div>
       </div>

@@ -10,7 +10,7 @@
       <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
         <%= f.hidden_field :email, value: 'test@example.com' %>
         <%= f.hidden_field :password, value: '123456' %>
-        <p class="col-7 col-sm-5 col-md-4 col-lg-3 signin-form__button__wrap">
+        <p class="col-7 col-sm-5 col-md-4 col-lg-3 signin-form__button__wrap2">
           <%= f.submit "テストユーザーでログイン", class: "col-12 btn signin-form__button" %>
         </p>
       <% end %>
