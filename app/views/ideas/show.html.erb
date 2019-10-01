@@ -39,39 +39,39 @@
     <p class="col-9 col-lg-8 show-idea-list__content"><%= @idea.idea_material %></p>
   </div>
   <div class="row show-idea-list show-idea-list__wrap offset-lg-1">
-    <p class="col-9 col-lg-2 show-idea-list__title show-idea-list__title3">アイディア詳細</p>
-    <p class="col-9 col-lg-3 col-xl-2 show-idea-list__title2">アイディアのタイトル</p>
+    <p class="col-9 col-lg-2 show-idea-list__title3">アイディア詳細</p>
+    <p class="col-9 col-lg-3 show-idea-list__title2">アイディアのタイトル</p>
     <p class="col-9 col-lg-6 show-idea-list__content3"><%= @idea.idea_title %></p>
   </div>
   <div class="row show-idea-list show-idea-list__wrap offset-lg-1">
-    <p class="col-9 col-lg-2 show-idea-list__title4"></p>
-    <p class="col-9 col-lg-2 col-xl-2 show-idea-list__title5">アイテム製作数量</p>
-    <p class="col-9 col-lg-2 show-idea-list__content4"><%= @idea.idea_amount %>&thinsp;点</p>
+    <p class="col-9 col-lg-2 show-idea-list__title4">&emsp;</p>
+    <p class="col-9 col-lg-3 show-idea-list__title2">アイテム製作数量</p>
+    <p class="col-9 col-lg-2 show-idea-list__content3"><%= @idea.idea_amount %>&thinsp;点</p>
   </div>
   <div class="row show-idea-list show-idea-list__wrap offset-lg-1">
-    <p class="col-9 col-lg-2 show-idea-list__title4"></p>
-    <p class="col-9 col-lg-2 col-xl-2 show-idea-list__title5">予算</p>
-    <p class="col-9 col-lg-2 show-idea-list__content4"><%= @idea.budget %></p>
+    <p class="col-9 col-lg-2 show-idea-list__title4">&emsp;</p>
+    <p class="col-9 col-lg-3 show-idea-list__title2">予算</p>
+    <p class="col-9 col-lg-2 show-idea-list__content3"><%= @idea.budget %></p>
   </div>
   <div class="row show-idea-list show-idea-list__wrap offset-lg-1">
-    <p class="col-9 col-lg-2 show-idea-list__title4"></p>
-    <p class="col-9 col-lg-3 col-xl-2 show-idea-list__title2">アイテムの概要と仕様</p>
-    <p class="col-9 col-lg-6 show-idea-list__content6"><%= @idea.idea_about %></p>
+    <p class="col-9 col-lg-2 show-idea-list__title4">&emsp;</p>
+    <p class="col-9 col-lg-3 show-idea-list__title2">アイテムの概要と仕様</p>
+    <p class="col-9 col-lg-6 show-idea-list__content3"><%= @idea.idea_about %></p>
   </div>
   <div class="row show-idea-list show-idea-list__wrap offset-lg-1">
-    <p class="col-9 col-lg-2 show-idea-list__title4"></p>
-    <p class="col-9 col-lg-2 show-idea-list__title6">用途</p>
-    <p class="col-9 col-lg-3 show-idea-list__content5"><%= @idea.idea_usage %></p>
+    <p class="col-9 col-lg-2 show-idea-list__title4">&emsp;</p>
+    <p class="col-9 col-lg-3 show-idea-list__title2">用途</p>
+    <p class="col-9 col-lg-3 show-idea-list__content3"><%= @idea.idea_usage %></p>
   </div>
   <div class="row show-idea-list show-idea-list__wrap offset-lg-1">
-    <p class="col-9 col-lg-2 show-idea-list__title4"></p>
-    <p class="col-9 col-lg-2 show-idea-list__title6">契約形態</p>
-    <p class="col-9 col-lg-3 show-idea-list__content5"><%= @idea.work_style %></p>
+    <p class="col-9 col-lg-2 show-idea-list__title4">&emsp;</p>
+    <p class="col-9 col-lg-3 show-idea-list__title2">契約形態</p>
+    <p class="col-9 col-lg-3 show-idea-list__content3"><%= @idea.work_style %></p>
   </div>
   <div class="row show-idea-list show-idea-list__wrap offset-lg-1">
-    <p class="col-9 col-lg-2 show-idea-list__title4"></p>
-    <p class="col-9 col-lg-3 col-xl-2 show-idea-list__title2">職人へ伝えたいこと</p>
-    <p class="col-9 col-lg-6 show-idea-list__content6"><%= @idea.idea_commit %></p>
+    <p class="col-9 col-lg-2 show-idea-list__title4">&emsp;</p>
+    <p class="col-9 col-lg-3 show-idea-list__title2">職人へ伝えたいこと</p>
+    <p class="col-9 col-lg-6 show-idea-list__content3"><%= @idea.idea_commit %></p>
   </div>
   <div class="show-idea-comment">
     <div class="col-12">
@@ -84,12 +84,12 @@
       <% @idea_comments.each do |idea_comment| %>
         <% unless idea_comment.id.nil? %>
           <div class="col-12">
-            <p class="col-10 col-lg-1 show-idea-comment__user__wrap"><%= link_to idea_comment.user.name, user_path(idea_comment.user.id), class: "show-idea-comment__user" %></p>
+            <p class="col-10 col-lg-6 show-idea-comment__user__wrap"><%= link_to idea_comment.user.name, user_path(idea_comment.user.id), class: "show-idea-comment__user" %></p>
             <p class="col-10 col-md-8 col-lg-6 show-idea-comment__content"><%= idea_comment.content %></p>
           </div>
           <div class="col-12">
             <% if idea_comment.user == current_user || @idea.user == current_user %>
-              <p class="col-9 col-md-4 col-lg-3 col-xl-2 show-idea-comment__delete-button__wrap"><%= link_to "コメントを削除する", idea_idea_comment_path(idea_comment.idea_id, idea_comment.id), method: :delete, remote: true, class: "col-12 col-lg-12 show-idea-comment__delete-button" %></p>
+              <p class="col-9 col-md-4 col-lg-3 col-xl-2 show-idea-comment__delete-button__wrap"><%= link_to "コメントを削除する", idea_idea_comment_path(idea_comment.idea_id, idea_comment.id), method: :delete, remote: true, class: "col-12 show-idea-comment__delete-button" %></p>
             <% end %>
           </div>
         <% end %>

@@ -597,54 +597,38 @@
       text-align: center;
     }
     &__title2 {
-      margin: 0 auto;
+      margin: 0 auto 1rem auto;
       @include mq(lg) {
-        margin-left: -12.5rem;
+        margin: 1.5rem 0 0 -2rem;
+      }
+      @include mq(xl) {
+        margin: 1.5rem 0 0 -9rem;
+      }
+      font-weight: bold;
+      @include mq(lg) {
         text-align: right;
       }
-      padding: 1rem 0;
-      font-weight: bold;
-      text-align: center;
     }
     &__title3 {
-      margin-bottom: 1.5rem;
+      margin: 0 auto 1.5rem auto;
+      @include mq(lg) {
+        margin: 0 0 1.5rem 3rem;
+      }
+      padding: 1rem 0;
+      background: $bgcolor-idea;
+      font-weight: bold;
+      text-align: center;
     }
     &__title4 {
-      margin: 0 auto;
+      margin: 0 auto 1.5rem auto;
       @include mq(lg) {
-        margin-left: 3rem;
-        text-align: right;
+        margin: 0 0 1.5rem 3rem;
       }
       padding: 1rem 0;
+      background: $bgcolor-idea;
       font-weight: bold;
       text-align: center;
-    }
-    &__title5 {
-      margin: 0 auto;
-      @include mq(lg) {
-        margin-left: -35.5rem;
-        text-align: right;
-      }
-      @include mq(xl) {
-        margin-left: -55.5rem;
-        text-align: right;
-      }
-      padding: 1rem 0;
-      font-weight: bold;
-      text-align: center;
-    }
-    &__title6 {
-      margin: 0 auto;
-      @include mq(lg) {
-        margin-left: -27rem;
-        text-align: right;
-      }
-      @include mq(xl) {
-        margin-left: -45rem;
-      }
-      padding: 1rem 0;
-      font-weight: bold;
-      text-align: center;
+      background: white;
     }
     &__content {
       margin: 0 auto;
@@ -661,53 +645,10 @@
     &__content3 {
       margin: 0 auto;
       @include mq(lg) {
-        margin-left: -5rem;
-        margin-bottom: 1.5rem;
-      }
-      @include mq(xl) {
-        margin-left: -8rem;
-        margin-bottom: 1.5rem;
+        margin: auto 0;
       }
       padding: .8rem 0 .8rem 2rem;
       background: $bgcolor-4;
-    }
-    &__content4 {
-      margin: 0 auto;
-      @include mq(lg) {
-        margin-left: -36rem;
-      }
-      @include mq(xl) {
-        margin-left: -50rem;
-      }
-      padding: .8rem 0;
-      background: $bgcolor-4;
-      text-align: center;
-    }
-    &__content5 {
-      margin: 0 auto;
-      @include mq(lg) {
-        margin-left: -28rem;
-      }
-      @include mq(xl) {
-        margin-left: -39rem;
-      }
-      padding: .8rem 0;
-      background: $bgcolor-4;
-      text-align: center;
-    }
-    &__content6 {
-      margin: 0 auto;
-      @include mq(lg) {
-        margin-left: -5rem;
-      }
-      @include mq(xl) {
-        margin-left: -7rem;
-      }
-      padding: .8rem 0 10rem 2rem;
-      background: $bgcolor-4;
-    }
-    &__wrap {
-      margin-bottom: 3rem;
     }
   }
 
@@ -749,13 +690,16 @@
     &__user__wrap {
       margin: 3.8rem auto 0 auto;
       text-align: center;
-      @include mq(lg) {
-        text-align: right;
-      }
     }
     &__user {
       color: black;
+      font-weight: bold;
       font-size: 1.8rem;
+      text-decoration: none;
+    }
+    &__user:hover {
+      @extend .hover;
+      color: $hovercolor-user;
     }
     &__content {
       margin: 3rem auto 0 auto;
@@ -766,6 +710,7 @@
     &__delete-button__wrap {
       margin: 3rem auto 0 auto;
       padding-bottom: 1.5rem;
+      text-align: center;
     }
     &__delete-button {
       @extend .sign-button;
