@@ -4,7 +4,7 @@
     width: 100%;
     padding: 2.5rem 0;
     background: $bgcolor-project;
-    color: $color-1;
+    color: white;
     font-weight: bold;
     text-align: center;
   }
@@ -54,7 +54,7 @@
     .nav-link.active {
       border: none;
       background: $bgcolor-project;
-      color: black;
+      color: white;
     }
   }
 
@@ -72,6 +72,14 @@
       }
       &__title {
         font-size: 1.4rem;
+      }
+    }
+    &__idea__input {
+      padding: .5rem 1rem;
+      border: 1px solid black;
+      outline: 0;
+      &__wrap {
+        margin: .5rem 0 3rem 0;
       }
     }
     &__title-1 {
@@ -207,6 +215,9 @@
           padding-bottom: 1rem;
         }
         &__guide_wrap-2 {
+          @include mq(s) {
+            padding-top: 0;
+          }
           padding-top: 3rem;
         }
         &__guide {
