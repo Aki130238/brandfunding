@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
     @project.project_return.build
     @project.build_project_sponsor
     @project.build_project_value
+    @ideas = current_user.ideas
   end
 
   def create
@@ -33,6 +34,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @ideas = current_user.ideas
     if @project.user_id == session[:user_id]
       else
         redirect_to projects_path, notice: "他のユーザーのプロジェクトは編集できません！"

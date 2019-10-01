@@ -193,6 +193,7 @@
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
               <p class="offset-1 offset-md-3"><%= f.text_field :idea_title, class: "col-11 form-control idea-form-idea-details__input", placeholder: "どんなものを作りたいのかタイトルでわかるようにしましょう" %></p>
+              <p class="col-9 col-lg-8 col-xl-7 offset-1 offset-md-3 idea-form-idea-details__guide">1~40文字まで。</p>
             </div>
           </div>
           <div class="row">
@@ -201,9 +202,11 @@
               <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
+
               <p class="offset-1 offset-md-3 form-inline"><%= f.number_field :idea_amount, class: "col-5 col-md-6 col-xl-4
               form-control idea-form-idea-details__input idea-form-idea-details__input__number", placeholder: "数値を入力", min: "1", max: "9999" %>&emsp;点</p>
               <p class="col-9 col-lg-8 col-xl-7 offset-1 offset-md-3 idea-form-idea-details__guide">最低製作数量を伝えて必要な予算を確定させましょう。<br>職人さんへの製作意欲につながります。</p>
+
             </div>
           </div>
           <div class="row">
@@ -223,6 +226,7 @@
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
               <p class="offset-1 offset-md-3"><%= f.text_area :idea_about, class: "col-11 col-md-11 form-control idea-form-idea-details__input2", placeholder: "型数、色数、利用生地、仕様など。できるだけ細かい内容を伝えるようにしましょう。" %></p>
+              <p class="col-9 col-lg-8 col-xl-7 offset-1 offset-md-3 idea-form-idea-details__guide">1~1000文字まで。</p>
             </div>
           </div>
           <div class="row">
@@ -251,6 +255,8 @@
             <div class="col-md-8 idea-form-idea-details__input__wrap">
               <p class="offset-1 offset-md-3 form-inline"><%= f.date_field :delivery_date, class: "col-6 col-md-6 col-xl-4
               form-control idea-form-idea-details__input" %></p>
+              <p class="col-9 col-lg-8 col-xl-7 offset-1 offset-md-3
+              idea-form-idea-details__guide">次の日以降でなるべく余裕をもった日にしましょう。</p>
             </div>
           </div>
           <div class="row">
@@ -260,6 +266,7 @@
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
               <p class="offset-1 offset-md-3"><%= f.text_area :idea_commit, class: "col-11 form-control idea-form-idea-details__input2", placeholder: "作るものへのこだわり、設備の希望など" %></p>
+              <p class="col-9 col-lg-8 col-xl-7 offset-1 offset-md-3 idea-form-idea-details__guide">1~1000文字まで。</p>
             </div>
             <div class="idea-form__button_wrap">
               <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaBack5">戻る</p>

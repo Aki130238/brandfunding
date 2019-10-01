@@ -11,9 +11,8 @@
       <h3 class="show-idea-overview__title2">概要</h3>
       <p class="show-idea-overview__content">お仕事番号&thinsp;： <%= sprintf("%05d", @idea.id) %></p>
       <p class="show-idea-overview__content">&emsp;製品用途&thinsp;： <%= @idea.idea_usage %></p>
-      <p class="show-idea-overview__content">納品希望日&thinsp;：<%= @idea.delivery_date.strftime("%Y-%m-%d (#{%w(日 月 火 水 木 金 土)[Time.now.wday]})") %></p>
-      <p class="show-idea-overview__content">&emsp;公開期間&thinsp;：</p>
-      <p class="show-idea-overview__content">&emsp;契約形態&thinsp;：<%= @idea.work_style %></p>
+      <p class="show-idea-overview__content">納品希望日&thinsp;： <%= format_date(@idea.delivery_date) %></p>
+      <p class="show-idea-overview__content">&emsp;契約形態&thinsp;： <%= @idea.work_style %></p>
     </div>
   </div>
   <div class="row show-idea-list offset-lg-1">
