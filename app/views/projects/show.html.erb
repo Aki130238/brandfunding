@@ -24,9 +24,14 @@
           <p class="col-md-6 col-xl-5 offset-md-2 show-project1__owner-name">オーナーネーム</p>
         </div>
         <div class="show-project1__prefectures__wrap">
-          <p class="col-md-4 show-project1__deadline">募集期限</p>
-          <p class="col-md-4 col-xl-3 show-project1__prefectures">都道府県</p>
-        </div>
+          <p class="col-md-4 show-project1__deadline">
+            <% if (@project.project_value.recruitment_deadline > DateTime.now) %>
+              <%= (@project.project_value.recruitment_deadline - DateTime.now).to_i / 1.days + 1 %>日
+            <% else %>
+              <span>募集終了</span></p>
+            <% end %>
+            <p class="col-md-4 col-xl-3 show-project1__prefectures">都道府県</p>
+            </div>
       </div>
       <%= render "show_menu" %>
       <%= render "users/follow_form", user: @project.user %>
@@ -108,9 +113,9 @@
                 <p class="col-lg-3">画像</p>
                 <p class="form-inline">
                   <div id="imageFieldReturn2" onClick="$('#fileReturn2').click()" class="show-project3-form__image__wrap">
-                    <p class="project-form-image__input">&ensp;</p>
-                  </div>
-                  <%= re.file_field :return_item_img, class: "col-11 form-control show-project3-form__input3", style: "display:none;", id: "fileReturn2" %>
+                <p class="project-form-image__input">&ensp;</p>
+                </div>
+                <%= re.file_field :return_item_img, class: "col-11 form-control show-project3-form__input3", style: "display:none;", id: "fileReturn2" %>
                 </p>
                 <div class="show-project3-form__wrap">
                   <p class="col-lg-3">金額</p>
@@ -136,19 +141,19 @@
               <% end %>
             <% else %>
             <% end %>
+            </div>
+      </div>
+      <% 3.times do %>
+        <div class="show-project3__return__wrap2">
+          <h2 class="show-project3__return__title2"><%= svg("gift-solid.svg", class: "show-project3__return__icon") %>&ensp;3,000円</h2>
+          <p class="show-project3__return__content2"><% 20.times do %>テキスト<% end %></p>
+          <div class="show-project3__return__guide">
+            <p class="show-project3__return__patron"><%= svg("users-solid.svg" ,class: "show-menu__icon3") %>&thinsp;パトロン：12人</p>
+            <p class="show-project3__return__schedule2"><%= svg("truck-moving-solid.svg" ,class: "show-menu__icon5") %>&thinsp;お届け予定：3日</p>
           </div>
         </div>
-        <% 3.times do %>
-          <div class="show-project3__return__wrap2">
-            <h2 class="show-project3__return__title2"><%= svg("gift-solid.svg", class: "show-project3__return__icon") %>&ensp;3,000円</h2>
-            <p class="show-project3__return__content2"><% 20.times do %>テキスト<% end %></p>
-            <div class="show-project3__return__guide">
-              <p class="show-project3__return__patron"><%= svg("users-solid.svg" ,class: "show-menu__icon3") %>&thinsp;パトロン：12人</p>
-              <p class="show-project3__return__schedule2"><%= svg("truck-moving-solid.svg" ,class: "show-menu__icon5") %>&thinsp;お届け予定：3日</p>
-            </div>
-          </div>
-        <% end %>
-      </div>
+      <% end %>
+    </div>
     </div>
   </section>
 </main>
