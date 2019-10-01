@@ -134,7 +134,10 @@ html {
   // position: sticky;
   // top: 0;
   // z-index: 99999;
-  padding: 2.5rem 0 2.5rem 3rem;
+  @include mq(s) {
+    padding: 1rem 0 .5rem 3rem;
+  }
+  padding: 2.5rem 0 2rem 3rem;
   border-top: solid $color-main;
   &__title {
     color: $color-1;
@@ -145,6 +148,9 @@ html {
     @extend .hover;
     color: $hovercolor-main;
     text-decoration: none;
+  }
+  &__icon {
+    vertical-align: .2rem;
   }
   .navbar {
     margin-right: 2rem;
@@ -159,6 +165,9 @@ html {
   &__navlink {
     margin: .5rem 4rem 0 0;
     color: $color-1;
+    @include mq(s) {
+      font-size: 1.2rem;
+    }
     &__artisan:hover {
       color: $bgcolor-artisan4;
     }

@@ -16,6 +16,12 @@
         font-size: 2.8rem;
       }
     }
+    &__title {
+      font-size: 3.5rem;
+    }
+    &__title2 {
+      font-size: 5rem;
+    }
     &__sm-hide {
       display: none;
       @include mq(md) {
@@ -23,9 +29,11 @@
       }
     }
     &__button {
+      padding: .8rem 2.5rem;
       border: 1px solid $color-main;
       background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100% );
       color: $color-1;
+      font-size: 1.6rem;
     }
     &__button:hover {
       background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
@@ -50,21 +58,29 @@
     }
     &__column-1 {
       margin: 0 auto;
+      // padding: 0;
     }
     &__column-2 {
       margin: 0 auto;
+      // padding: 0;
     }
     &__title {
+      @include mq(s) {
+        margin-bottom: 1.5rem;
+      }
       font-weight: bold;
+      font-size: 2.5rem;
       text-align: center;
     }
     &__content {
-
+      @include mq(s) {
+        display: none;
+      }
     }
     &__button__wrap {
       margin-bottom: 3rem;
       @include mq(md) {
-        margin-bottom: 0;
+        margin-bottom: 1.5rem;
       }
       text-align: center;
     }
