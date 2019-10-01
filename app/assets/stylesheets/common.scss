@@ -46,6 +46,7 @@ $hovercolor-idea: #fcc800;
 $hovercolor-comment: #fcc800;
 $hovercolor-delete: #d70035;
 $hovercolor-artisanbtn: #00885a;
+$hovercolor-return: #fcc800;
 
 @media (max-width: 540px) {
   h1 {
@@ -135,7 +136,7 @@ html {
 
 .header {
   padding: 2.5rem 0 2.5rem 3rem;
-  border-bottom: solid $color-main;
+  border-top: solid $color-main;
   &__title {
     color: $color-1;
   }
