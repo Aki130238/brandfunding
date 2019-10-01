@@ -202,16 +202,19 @@ html {
       @extend .hover;
       color: $hovercolor-terms;
       cursor: pointer;
+      text-decoration: none;
     }
     &__privacy:hover {
       @extend .hover;
       color: $hovercolor-privacy;
       cursor: pointer;
+      text-decoration: none;
     }
     &__management:hover {
       @extend .hover;
       color: $hovercolor-management;
       cursor: pointer;
+      text-decoration: none;
     }
   }
   &__column2 {

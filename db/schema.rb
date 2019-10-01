@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_28_111115) do
+ActiveRecord::Schema.define(version: 2019_09_30_080956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,21 +98,20 @@ ActiveRecord::Schema.define(version: 2019_09_28_111115) do
   end
 
   create_table "ideas", force: :cascade do |t|
-    t.string "idea_title"
-    t.integer "idea_amount"
-    t.text "idea_about"
-    t.string "idea_usage"
-    t.text "idea_commit"
-    t.string "product_image"
-    t.string "idea_category"
-    t.string "idea_category_details"
-    t.string "product_about"
+    t.string "idea_title", null: false
+    t.integer "idea_amount", null: false
+    t.text "idea_about", null: false
+    t.string "idea_usage", null: false
+    t.text "idea_commit", null: false
+    t.string "product_image", null: false
+    t.string "idea_category", null: false
+    t.string "idea_category_details", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "idea_material"
-    t.string "work_style"
-    t.datetime "delivery_date"
-    t.string "budget"
+    t.string "idea_material", null: false
+    t.string "work_style", null: false
+    t.datetime "delivery_date", null: false
+    t.string "budget", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_ideas_on_user_id"
   end
