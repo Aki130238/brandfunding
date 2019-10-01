@@ -82,7 +82,7 @@
         <p class="col-11 show-project3__idea__content">納品希望日&thinsp;：<%= format_date(@project.idea.delivery_date) %></p>
         <p class="col-11 show-project3__idea__content">&emsp;公開期間&thinsp;： <%=format_date(@project.project_value.recruitment_deadline)%></p>
         <p class="col-11 show-project3__idea__content">&emsp;契約形態&thinsp;： <%= @project.idea.work_style %></p>
-        <p class="col-11 show-project3__idea__button">詳細要件はこちらから</p>
+        <p class="col-11 show-project3__idea__button"><%= link_to "詳細要件はこちらから", idea_path(@project.idea) %></p>
       </div>
       <div class="show-project3__return">
         <h2 class="show-project3__return__title"><%= svg("gift-solid.svg", class: "show-project3__return__icon") %>&ensp;リターン</h2>

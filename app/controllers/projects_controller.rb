@@ -34,6 +34,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @ideas = current_user.ideas
     if @project.user_id == session[:user_id]
       else
         redirect_to projects_path, notice: "他のユーザーのプロジェクトは編集できません！"
