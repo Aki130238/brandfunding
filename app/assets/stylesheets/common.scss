@@ -47,14 +47,10 @@ $hovercolor-comment: #fcc800;
 $hovercolor-delete: #d70035;
 $hovercolor-artisanbtn: #00885a;
 $hovercolor-return: #fcc800;
-
-@media (max-width: 540px) {
-  h1 {
-    font-size: 2rem;
-  }
-}
+$hovercolor-user: #fcc800;
 
 $breakpoints: (
+  's': 'screen and (max-width: 575px)',
   'sm': 'screen and (min-width: 576px)',
   'md': 'screen and (min-width: 768px)',
   'lg': 'screen and (min-width: 992px)',
@@ -135,19 +131,29 @@ html {
 }
 
 .header {
-  padding: 2.5rem 0 2.5rem 3rem;
+  // position: sticky;
+  // top: 0;
+  // z-index: 99999;
+  @include mq(s) {
+    padding: 1rem 0 .5rem 3rem;
+  }
+  padding: 2.5rem 0 2rem 3rem;
   border-top: solid $color-main;
   &__title {
     color: $color-1;
+    font-family: 'Playfair Display', serif;
+    // text-shadow: 1px 1px 0 $color-main, -1px 1px 0 $color-main, 1px -1px 0 $color-main, -1px -1px 0 $color-main;
   }
   &__title:hover {
     @extend .hover;
     color: $hovercolor-main;
     text-decoration: none;
   }
+  &__icon {
+    vertical-align: .2rem;
+  }
   .navbar {
     margin-right: 2rem;
-    background: white;
     .navbar-toggler {
       font-size: 2rem;
       outline: 0;
@@ -159,6 +165,9 @@ html {
   &__navlink {
     margin: .5rem 4rem 0 0;
     color: $color-1;
+    @include mq(s) {
+      font-size: 1.2rem;
+    }
     &__artisan:hover {
       color: $bgcolor-artisan4;
     }
@@ -182,11 +191,21 @@ html {
     margin-right: 5rem;
   }
   &__title__wrap {
+    @include mq(lg) {
+      margin-right: -8rem;
+    }
+    @include mq(xl) {
+      margin-right: -10rem;
+    }
     padding-top: .3rem;
   }
   &__title {
     margin-left: 3rem;
+    @include mq(md) {
+      margin-left: 4rem;
+    }
     color: white;
+    font-family: 'Playfair Display', serif;
   }
   &__title:hover {
     @extend .hover;
@@ -194,30 +213,54 @@ html {
     text-decoration: none;
   }
   &__column {
-    margin: 0 1rem 0 3rem;
+    margin: 0 1.5rem;
+    @include mq(md) {
+      margin: 0 1rem 0 3rem;
+    }
     padding-top: .8rem;
     color: white;
     font-size: 1.4rem;
+    &__wrap {
+      @include mq(md) {
+        display: flex;
+        margin-left: -2.1rem;
+      }
+      @include mq(lg) {
+        margin-left: 0;
+      }
+    }
     &__terms:hover {
       @extend .hover;
       color: $hovercolor-terms;
       cursor: pointer;
+      text-decoration: none;
     }
     &__privacy:hover {
       @extend .hover;
       color: $hovercolor-privacy;
       cursor: pointer;
+      text-decoration: none;
     }
     &__management:hover {
       @extend .hover;
       color: $hovercolor-management;
       cursor: pointer;
+      text-decoration: none;
     }
   }
   &__column2 {
-    margin: 0 1rem;
+    margin: 0 1.5rem;
+    @include mq(md) {
+      margin-left: 1rem;
+    }
     padding-top: .8rem;
     color: white;
     font-size: 1.4rem;
+  }
+  &__column3 {
+    display: none;
+    @include mq(md) {
+      display: block;
+    }
   }
 }

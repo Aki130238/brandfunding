@@ -1,11 +1,11 @@
 <main class="container-fluid signin-page">
   <div class="row signin">
-    <h1 class="col-9 col-sm-8 col-md-7 col-lg-6 col-xl-5 signin__title">ブランドファンディングはあなたのやりたい事を応援します。仲間と一緒にアイディアをカタチに</h1>
+    <h1 class="col-11 col-sm-8 col-md-7 col-lg-6 col-xl-5 signin__title">ブランドファンディングはあなたのやりたい事を応援します。仲間と一緒にアイディアをカタチに</h1>
     <div class="col-12 signin-form">
       <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
         <p class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-5 signin-form__wrap"><%= f.email_field :email, class:"form-control signin-form__input", placeholder: "メールアドレス" %></p>
         <p class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-5 signin-form__wrap"><%= f.password_field :password, class:"form-control signin-form__input", placeholder: "パスワード" %></p>
-        <p class="col-7 col-sm-5 col-md-4 col-lg-3 signin-form__button__wrap"><%= f.submit "ログイン", class: "col-12 btn signin-form__button" %></p>
+        <p class="col-10 col-sm-6 col-lg-4 col-xl-3 signin-form__button__wrap"><%= f.submit "ログイン", class: "col-12 btn signin-form__button" %></p>
       <% end %>
       <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
         <%= f.hidden_field :email, value: 'test1@example.com' %>
