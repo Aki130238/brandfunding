@@ -233,7 +233,7 @@
       <% end %>
       <div class="row project-form-idea__content">
         <% if logged_in? %>
-          <%= form_with(model: @project_return, url:"/projects/#{@project.id}",  local: true) do |re| %>
+          <%= f.fields_for :project_return do |re| %>
             <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
               <h3 class="col-6 col-md-8  project-form__title-1">タイトル</h3>
               <h4 class="col-3 col-sm-2 col-md-3 col-xl-2 project-form__title-2">必須</h4>
