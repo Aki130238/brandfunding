@@ -7,11 +7,15 @@
 
   <section class="tab-content idea-form">
     <div class="tab-pane fade show active idea-form-image" id="ideaImage" role="tabpanel" aria-labelledby="ideaImage-tab">
+      <div class="progress idea-form__bar">
+        <div class="progress-bar idea-form__bar__content" style="width: 16.6%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+        </div>
+      </div>
       <%= form_with(model: @idea, local: true) do |f| %>
         <div class="row">
           <h2 class="col-8 offset-2 idea-form-image__title">完成品のイメージを職人さんに伝える方法を選んでください</h2>
         </div>
-        <div class="row col-12">
+        <div class="row col-12 idea-form__wrap">
           <div class="col-10 col-sm-5 col-md-4 offset-2 offset-sm-1 offset-md-2 idea-form-image__input__wrap" id=
               "ideaImageWrap1" style="<%= "background: #FFD800" if @idea.product_image == '似た物がある' %>">
             <p class="idea-form-image__content"><%= f.radio_button :product_image, "似た物がある", class: "idea-form-image__input" %>似た物がある</p>
@@ -20,7 +24,7 @@
             <p class="idea-form-image__content"><%= f.radio_button :product_image, "写真や絵がある", class: "idea-form-image__input" %>写真や絵がある</p>
           </div>
         </div>
-        <div class="row col-12">
+        <div class="row col-12 idea-form__wrap">
           <div class="col-10 col-sm-5 col-md-4 offset-2 offset-sm-1 offset-md-2 idea-form-image__input__wrap" id=
               "ideaImageWrap3" style="<%= "background: #FFD800" if @idea.product_image == '型紙がある' %>">
             <p class="idea-form-image__content"><%= f.radio_button :product_image, "型紙がある", class: "idea-form-image__input" %>型紙がある</p>
@@ -29,23 +33,26 @@
             <p class="idea-form-image__content"><%= f.radio_button :product_image, "リメイクお直し", class: "idea-form-image__input" %>リメイクお直し</p>
           </div>
         </div>
-        <div class="row col-12 idea-form__content__wrap">
+        <div class="row col-12 idea-form__content__wrap idea-form__wrap">
           <div class="col-10 col-sm-5 col-md-4 offset-2 offset-sm-1 offset-md-2 idea-form-image__input__wrap" id=
               "ideaImageWrap5" style="<%= "background: #FFD800" if @idea.product_image == '相談したい' %>">
             <p class="idea-form-image__content"><%= f.radio_button :product_image, "相談したい", class: "idea-form-image__input" %>相談したい</p>
           </div>
         </div>
-        <div class="row idea-form__button_wrap">
-          <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">プレビュー</p>
-          <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">次へ</p>
+        <div class="idea-form__button_wrap">
+          <p class="col-8 col-sm-4 col-md-3 col-lg-2  d-inline-block idea-form__button" id="ideaNext1">次へ</p>
         </div>
         </div>
 
         <div class="tab-pane fade idea-form-user" id="ideaUser" role="tabpanel" aria-labelledby="ideaUser-tab">
+          <div class="progress idea-form__bar">
+            <div class="progress-bar idea-form__bar__content" style="width: 33.2%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
           <div class="row">
             <h2 class="col-8 offset-2 idea-form-user__title">使う人を選択してください。複数選択可</h2>
           </div>
-          <div class="row col-12 idea-form__content__wrap">
+          <div class="row col-12 idea-form__content__wrap idea-form__wrap">
             <div class="col-8 col-sm-5 col-md-4 col-lg-2 offset-3 offset-sm-1 offset-md-2 offset-lg-2
         idea-form-user__input__wrap" id= "ideaUserWrap1">
               <p class="idea-form-user__content"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea
@@ -65,15 +72,19 @@
                   .idea_users.find_by(id: 4).present?,  include_hidden: false, class: "idea-form-user__input" },IdeaUser.ids[3] %>ベビー＆<br>マタニティ</p>
             </div>
           </div>
-          <div class="row idea-form__button_wrap">
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">前へ</p>
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">次へ</p>
+          <div class="idea-form__button_wrap">
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaBack1">前へ</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaNext2">次へ</p>
           </div>
         </div>
 
         <div class="tab-pane fade idea-form-category" id="ideaCategory" role="tabpanel" aria-labelledby="ideaCategory-tab">
+          <div class="progress idea-form__bar">
+            <div class="progress-bar idea-form__bar__content" style="width: 49.8%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
           <h2 class="col-8 offset-2 idea-form-category__title">作るもののカテゴリを選択してください</h2>
-          <div class="row col-12">
+          <div class="row col-12 idea-form__wrap">
             <div class="col-10 col-sm-5 col-md-3 offset-2 offset-sm-1 offset-md-2 idea-form-category__input__wrap"
                  id= "ideaCategoryWrap1" style="<%= "background: #FFD800" if @idea.idea_category == '洋服' %>">
               <p class="idea-form-category__content"><%= f.radio_button :idea_category, "洋服", class: "idea-form-category__input" %>洋服</p>
@@ -107,15 +118,19 @@
               <p class="idea-form-category__content"><%= f.radio_button :idea_category, "その他", class: "idea-form-category__input" %>その他</p>
             </div>
           </div>
-          <div class="row idea-form__button_wrap">
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">前へ</p>
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">次へ</p>
+          <div class="idea-form__button_wrap">
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaBack2">前へ</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaNext3">次へ</p>
           </div>
         </div>
 
         <div class="tab-pane fade idea-form-category-details" id="ideaCategoryDetails" role="tabpanel" aria-labelledby="ideaCategoryDetails-tab">
+          <div class="progress idea-form__bar">
+            <div class="progress-bar idea-form__bar__content" style="width: 66.4%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
           <h2 class="col-8 offset-2 idea-form-category-details__title">カテゴリの詳細を選択してください</h2>
-          <div class="row col-12">
+          <div class="row col-12 idea-form__wrap">
             <div class="col-10 col-sm-5 col-md-3 offset-2 offset-sm-1 offset-md-2
             idea-form-category-details__input__wrap" id= "ideaCategoryDetailsWrap1" style="<%= "background: #FFD800" if @idea.idea_category_details == 'ジャケット・アウター' %>">
               <p class="idea-form-category-details__content idea-form-category-details__content4"><%= f.radio_button :idea_category_details, "ジャケット・アウター", class: "idea-form-category-details__input" %>ジャケット・アウター</p>
@@ -136,15 +151,19 @@
               <p class="idea-form-category-details__content idea-form-category-details__content5"><%= f.radio_button :idea_category_details, "その他", class: "idea-form-category-details__input" %>その他</p>
             </div>
           </div>
-          <div class="row idea-form__button_wrap">
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">前へ</p>
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">次へ</p>
+          <div class="idea-form__button_wrap">
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaBack3">前へ</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaNext4">次へ</p>
           </div>
         </div>
 
         <div class="tab-pane fade idea-form-material" id="ideaMaterial" role="tabpanel" aria-labelledby="ideaMaterial-tab">
+          <div class="progress idea-form__bar">
+            <div class="progress-bar idea-form__bar__content" style="width: 83%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
           <h2 class="idea-form-material__title">生地や材料のご用意について</h2>
-          <div class="row col-12 idea-form__content__wrap">
+          <div class="row col-12 idea-form__content__wrap idea-form__wrap">
             <div class="col-10 col-md-3 offset-2 idea-form-category-details__input__wrap" id="ideaMaterialWrap1" style="<%= "background: #FFD800" if @idea.idea_material == '相談したい' %>">
               <p class="idea-form-material__content"><%= f.radio_button :idea_material, "相談したい", class: "idea-form-material__input" %>相談したい</p>
             </div>
@@ -155,17 +174,21 @@
               <p class="idea-form-material__content"><%= f.radio_button :idea_material, "生地のみ", class: "idea-form-material__input" %>生地のみ</p>
             </div>
           </div>
-          <div class="row idea-form__button_wrap">
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">前へ</p>
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">次へ</p>
+          <div class="idea-form__button_wrap">
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaBack4">前へ</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaNext5">次へ</p>
           </div>
         </div>
 
         <div class="tab-pane fade idea-form-idea-details" id="ideaDetails" role="tabpanel" aria-labelledby="ideaDetails-tab">
+          <div class="progress idea-form__bar">
+            <div class="progress-bar idea-form__bar__content" style="width: 100%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
           <h2 class="col-10 offset-1 idea-form-idea-details__title">作るものに関するくわしい情報を職人さんに伝えましょう</h2>
           <div class="row">
             <div class="col-md-4 col-lg-3 offset-1 d-flex idea-form-idea-details__title__wrap">
-              <h3 class="col-6 col-md-11 idea-form-idea-details__title1">アイディアのタイトル</h3>
+              <h3 class="col-8 col-md-11 idea-form-idea-details__title1">アイディアのタイトル</h3>
               <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
@@ -175,19 +198,20 @@
           </div>
           <div class="row">
             <div class="col-md-4 col-lg-3 offset-1 d-flex idea-form-idea-details__title__wrap">
-              <h3 class="col-6 col-md-11 idea-form-idea-details__title1">アイテム製作数量</h3>
+              <h3 class="col-8 col-md-11 idea-form-idea-details__title1">アイテム製作数量</h3>
               <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
-              <p class="offset-1 offset-md-3 form-inline"><%= f.number_field :idea_amount, class: "col-md-6 col-xl-4
-              form-control idea-form-idea-details__input", placeholder: "数値を入力", min: "1", max: "9999" %>&emsp;点</p>
-              <p class="col-9 col-lg-8 col-xl-7 offset-1 offset-md-3
-              idea-form-idea-details__guide">1~9999個まで。<br>最低製作数量を伝えて必要な予算を確定させましょう。<br>職人さんへの製作意欲につながります。</p>
+
+              <p class="offset-1 offset-md-3 form-inline"><%= f.number_field :idea_amount, class: "col-5 col-md-6 col-xl-4
+              form-control idea-form-idea-details__input idea-form-idea-details__input__number", placeholder: "数値を入力", min: "1", max: "9999" %>&emsp;点</p>
+              <p class="col-9 col-lg-8 col-xl-7 offset-1 offset-md-3 idea-form-idea-details__guide">最低製作数量を伝えて必要な予算を確定させましょう。<br>職人さんへの製作意欲につながります。</p>
+
             </div>
           </div>
           <div class="row">
             <div class="col-md-4 col-lg-3 offset-1 d-flex idea-form-idea-details__title__wrap">
-              <h3 class="col-6 col-md-11 idea-form-idea-details__title1">予算</h3>
+              <h3 class="col-8 col-md-11 idea-form-idea-details__title1">予算</h3>
               <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
@@ -197,7 +221,7 @@
           </div>
           <div class="row">
             <div class="col-md-4 col-lg-3 offset-1 d-flex idea-form-idea-details__title__wrap">
-              <h3 class="col-6 col-md-11 idea-form-idea-details__title1">アイテムの概要と仕様</h3>
+              <h3 class="col-8 col-md-11 idea-form-idea-details__title1">アイテムの概要と仕様</h3>
               <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
@@ -207,7 +231,7 @@
           </div>
           <div class="row">
             <div class="col-md-4 col-lg-3 offset-1 d-flex idea-form-idea-details__title__wrap">
-              <h3 class="col-6 col-md-11 idea-form-idea-details__title1 idea-form-idea-details__title3">用途</h3>
+              <h3 class="col-8 col-md-11 idea-form-idea-details__title1 idea-form-idea-details__title3">用途</h3>
               <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
@@ -216,7 +240,7 @@
           </div>
           <div class="row">
             <div class="col-md-4 col-lg-3 offset-1 d-flex idea-form-idea-details__title__wrap">
-              <h3 class="col-6 col-md-11 idea-form-idea-details__title1 idea-form-idea-details__title3">契約形態</h3>
+              <h3 class="col-8 col-md-11 idea-form-idea-details__title1 idea-form-idea-details__title3">契約形態</h3>
               <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
@@ -225,11 +249,11 @@
           </div>
           <div class="row">
             <div class="col-md-4 col-lg-3 offset-1 d-flex idea-form-idea-details__title__wrap">
-              <h3 class="col-6 col-md-11 idea-form-idea-details__title1">納品希望日</h3>
+              <h3 class="col-8 col-md-11 idea-form-idea-details__title1">納品希望日</h3>
               <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
-              <p class="offset-1 offset-md-3 form-inline"><%= f.date_field :delivery_date, class: "col-md-6 col-xl-4
+              <p class="offset-1 offset-md-3 form-inline"><%= f.date_field :delivery_date, class: "col-6 col-md-6 col-xl-4
               form-control idea-form-idea-details__input" %></p>
               <p class="col-9 col-lg-8 col-xl-7 offset-1 offset-md-3
               idea-form-idea-details__guide">次の日以降でなるべく余裕をもった日にしましょう。</p>
@@ -237,15 +261,15 @@
           </div>
           <div class="row">
             <div class="col-md-4 col-lg-3 offset-1 d-flex idea-form-idea-details__title__wrap">
-              <h3 class="col-6 col-md-11 idea-form-idea-details__title1">職人へ伝えたいこと</h3>
+              <h3 class="col-8 col-md-11 idea-form-idea-details__title1">職人へ伝えたいこと</h3>
               <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
               <p class="offset-1 offset-md-3"><%= f.text_area :idea_commit, class: "col-11 form-control idea-form-idea-details__input2", placeholder: "作るものへのこだわり、設備の希望など" %></p>
               <p class="col-9 col-lg-8 col-xl-7 offset-1 offset-md-3 idea-form-idea-details__guide">1~1000文字まで。</p>
             </div>
-            <div class="row idea-form__button_wrap">
-              <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button">プレビュー</p>
+            <div class="idea-form__button_wrap">
+              <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaBack5">戻る</p>
               <%= f.submit "保存", class: "col-8 col-sm-4 col-md-3 col-lg-2 offset-1 idea-form__button" %>
             </div>
           </div>

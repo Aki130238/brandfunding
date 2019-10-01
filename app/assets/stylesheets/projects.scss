@@ -1,19 +1,30 @@
 .new-project-page {
   &__title {
     display: inline-block;
+    width: 100%;
     padding: 2.5rem 0;
     background: $bgcolor-project;
-    color: white;
+    color: $color-1;
     font-weight: bold;
     text-align: center;
   }
   &__menu {
-    margin-top: 5rem;
+    display: none;
+    margin: 5rem auto 0 auto;
+    @include mq(lg) {
+      display: flex;
+      margin: 5rem auto 0 .8rem;
+    }
+    @include mq(lg) {
+      margin: 5rem auto 0 auto;
+    }
     border: none;
     &__list {
+      padding: 0;
       border: 1px solid black;
     }
     &__list-2 {
+      padding: 0;
       border: 1px solid black;
       border-left: 1px solid black;
       @include mq(sm) {
@@ -21,114 +32,48 @@
       }
     }
     &__link {
+      margin-bottom: -.1rem;
+      padding: 1.6rem 0;
       color: $color-1;
       font-weight: bold;
+      text-align: center;
+      @include mq(md) {
+        font-size: 1.3rem;
+      }
+      @include mq(lg) {
+        font-size: 1.5rem;
+      }
+      @include mq(xl) {
+        font-size: 1.6rem;
+      }
     }
     &__link:hover {
+      border: none;
       color: $color-1;
     }
     .nav-link.active {
+      border: none;
       background: $bgcolor-project;
       color: black;
     }
-    .projectTab1 {
-      padding: 1.6rem 8rem;
-      @include mq(sm) {
-        padding: 1.6rem .5rem;
-      }
-      @include mq(md) {
-        padding: 1.6rem 2rem;
-      }
-      @include mq(lg) {
-        padding: 1.6rem 2.5rem;
-      }
-      @include mq(xl) {
-        padding: 1.6rem 4.5rem;
-      }
-    }
-    .projectTab2 {
-      padding: 1.6rem 9.6rem;
-      @include mq(sm) {
-        padding: 1.6rem 2rem;
-      }
-      @include mq(md) {
-        padding: 1.6rem 2.5rem;
-      }
-      @include mq(lg) {
-        padding: 1.6rem 3.5rem;
-      }
-      @include mq(xl) {
-        padding: 1.6rem 5rem;
-      }
-    }
-    .projectTab3 {
-      padding: 1.6rem 7.3rem;
-      @include mq(sm) {
-        padding: 1.6rem .5rem;
-      }
-      @include mq(md) {
-        padding: 1.6rem 1.5rem;
-      }
-      @include mq(lg) {
-        padding: 1.6rem 2rem;
-      }
-      @include mq(xl) {
-        padding: 1.6rem 4rem;
-      }
-    }
-    .projectTab4 {
-      padding: 1.6rem 9.6rem;
-      @include mq(sm) {
-        padding: 1.6rem 2rem;
-        border-left: 1px solid black;
-      }
-      @include mq(md) {
-        padding: 1.6rem 3rem;
-        border-left: none;
-      }
-      @include mq(lg) {
-        padding: 1.6rem 3.5rem;
-      }
-      @include mq(xl) {
-        padding: 1.6rem 5rem;
-      }
-    }
-    .projectTab5 {
-      padding: 1.6rem 7.3rem;
-      @include mq(sm) {
-        padding: 1.6rem .5rem;
-      }
-      @include mq(md) {
-        padding: 1.6rem 1.5rem;
-      }
-      @include mq(lg) {
-        padding: 1.6rem 2rem;
-      }
-      @include mq(xl) {
-        padding: 1.6rem 4rem;
-      }
-    }
-    .projectTab6 {
-      padding: 1.6rem 8rem;
-      @include mq(sm) {
-        padding: 1.6rem 1.5rem;
-      }
-      @include mq(md) {
-        padding: 1.6rem 1.5rem;
-      }
-      @include mq(lg) {
-        padding: 1.6rem 2.5rem;
-      }
-      @include mq(xl) {
-        padding: 1.6rem 4.5rem;
-      }
-    }
   }
-
 
   .project-form {
     margin: 5rem auto 0 auto;
     color: $color-1;
+    &__bar {
+      @include mq(lg) {
+        display: none;
+      }
+      margin: -1rem 0 3rem 0;
+      height: 2rem;
+      &__content {
+        background: $bgcolor-project;
+      }
+      &__title {
+        font-size: 1.4rem;
+      }
+    }
     &__title-1 {
       margin-top: 1rem;
       padding: .3rem 1rem;
@@ -245,6 +190,9 @@
         }
         &__input_wrap-2 {
           margin-top: 1rem;
+          @include mq(s) {
+            padding-left: 1rem;
+          }
           padding-left: 3rem;
         }
         &__input__title {
@@ -329,7 +277,7 @@
     }
     &-about {
       &__input {
-        padding: 1.5rem 1.5rem 135rem 1.5rem;
+        padding: 1.5rem 1.5rem 50rem 1.5rem;
         @include mq(md) {
           padding-bottom: 113rem;
         }

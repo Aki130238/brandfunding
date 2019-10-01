@@ -8,10 +8,10 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item">
-          <img class="first-slide d-block w-100" src="/main01.jpg" alt="First slide">
+          <img class="first-slide d-block menu__image" src="/main01.jpg" alt="First slide">
           <div class="carousel-caption text-left menu__sm-hide">
-            <h1>作りたいを応援する『BRAND FUNDING』</h1>
-            <p>ブランドオーナーやブランドアイディアに共感したら支援者になりましょう！</p>
+            <h1 class="menu__title">作りたいを応援する『BRAND FUNDING』</h1>
+            <p>ブランドオーナーやプロジェクトに共感したら支援者になりましょう！</p>
             <p>支援したその瞬間にあなたはブランドメンバーの仲間入りです。</p>
             <p>
               <% if logged_in? %>
@@ -23,12 +23,12 @@
           </div>
         </div>
         <div class="carousel-item active">
-          <img class="second-slide d-block w-100" src="/main02.jpg" alt="Second slide">
+          <img class="second-slide d-block menu__image" src="/main02.jpg" alt="Second slide">
           <div class="carousel-caption menu__sm-hide">
             <h1 class="menu__md">あなたのアイディアを形にできる</h1>
-            <h1>『BRAND FUNDING』</h1>
-            <p>まずは作りたいアイディアを投稿してみましょう。あなたのアイディアに共感する仲間が集まります。</p>
-            <p>資金を集めてアイディアを実現する職人と繋がりましょう。あなたのブランドが誕生します。</p>
+            <h1 class="menu__title2">『BRAND FUNDING』</h1>
+            <p>まずは作りたいアイディアを作成してみましょう。アイディアを作成したらプロジェクト立ち上げます。</p>
+            <p>あなたのアイディアに共感する仲間が集まります。そうしてあなたのブランドが誕生します。</p>
             <p>
               <% if logged_in? %>
                 <%= link_to "オーナー登録する", edit_user_profile_path(current_user.id), class: "btn btn-lg menu__button" %>
@@ -39,10 +39,10 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img class="third-slide d-block w-100" src="/main03.jpg" alt="Third slide">
+          <img class="third-slide d-block menu__image" src="/main03.jpg" alt="Third slide">
           <div class="carousel-caption text-right menu__sm-hide">
-            <h1>『BRAND FUNDING』を支える全国の職人</h1>
-            <p>日本全国の職人があなたのアイディアを実現させるために技術や素材を提供します。</p>
+            <h1 class="menu__title">日本全国の職人があなたのアイディアを実現させます。</h1>
+            <p>資金を集めてアイディアを実現する職人と繋がりましょう。</p>
             <p>
               <% if logged_in? %>
                 <%= link_to "職人登録する", edit_artisan_profile_path(current_user.id), class: "btn btn-lg menu__button" %>
@@ -69,11 +69,11 @@
 
   <nav class="guide">
     <div class="row guide2">
-      <div class="col-10 col-sm-6 col-md-3 guide__column-1">
-        <p><img class="rounded-circle  d-flex justify-content-center" src="icon_item01.png" alt="Generic placeholder image" width="140" height="145"></p>
+      <div class="col-9 col-sm-6 col-md-3 guide__column-1">
+        <p class="guide__image__wrap"><img class="rounded-circle justify-content-center guide__image" src="icon_item01.png" alt="Generic placeholder image" width="140" height="145"></p>
         <h2 class="guide__title">アイディアを投稿</h2>
-        <p>まずは作りたいアイディアを投稿してみましょう。あなたのアイディアに共感する仲間が集まります。資金を集めてアイディアを実現する職人と繋がりましょう。あなたのブランドが誕生します。</p>
-        <p>
+        <p class="guide__content">まずは作りたいアイディアを投稿してからプロジェクトを立ち上げましょう。あなたのプロジェクトに共感する仲間が集まります。</p>
+        <p class="guide__button__wrap">
           <% if logged_in? %>
             <%= link_to "オーナー登録する »", edit_user_profile_path(current_user.id), class:"btn btn-lg guide__button guide__button1" %>
           <% else %>
@@ -81,11 +81,11 @@
           <% end %>
         </p>
       </div>
-      <div class="col-10 col-sm-6 col-md-3 guide__column-2">
-        <p><img class="rounded-circle" src="icon_item02.png" alt="Generic placeholder image" width="140" height="140"></p>
+      <div class="col-9 col-sm-6 col-md-3 guide__column-2">
+        <p class="guide__image__wrap"><img class="rounded-circle guide__image" src="icon_item02.png" alt="Generic placeholder image" width="140" height="140"></p>
         <h2 class="guide__title">スポンサーを集めて</h2>
-        <p class="guide__content2">ブランドオーナーやブランドアイディアに共感したら支援者になりましょう！支援したその瞬間にあなたはブランドメンバーの仲間入りです。</p><br>
-        <p>
+        <p class="guide__content">オーナーやプロジェクトに共感したら支援者になりましょう！スポンサーになればあなたはブランドメンバーの仲間入りです。</p>
+        <p class="guide__button__wrap">
           <% if logged_in? %>
             <%= link_to "スポンサー登録する »", edit_user_profile_path(current_user.id), class: "btn btn-lg guide__button guide__button2" %>
           <% else %>
@@ -93,11 +93,11 @@
           <% end %>
         </p>
       </div>
-      <div class="col-10 col-sm-6 col-md-3 guide__column-2">
-        <p><img class="rounded-circle" src="icon_item03.png" alt="Generic placeholder image" width="140" height="135"></p>
+      <div class="col-9 col-sm-6 col-md-3 guide__column-2">
+        <p class="guide__image__wrap"><img class="rounded-circle guide__image" src="icon_item03.png" alt="Generic placeholder image" width="140" height="135"></p>
         <h2 class="guide__title">職人に依頼する</h2>
-        <p class="guide__content2">BRANDFUNDINGを支える日本全国の職人がオリジナルブランドづくりを応援します。日本の織物産地で素材をみつければ世界に通用する日本ブランドになります。</p><br>
-        <p>
+        <p class="guide__content">BRANDFUNDINGを支える日本全国の職人がオリジナルブランドづくりを応援します。世界に通用するブランドを目指せます。</p>
+        <p class="guide__button__wrap">
           <% if logged_in? %>
             <%= link_to "職人登録する »", edit_artisan_profile_path(current_user.id), class: "btn btn-lg guide__button guide__button3" %>
           <% else %>
@@ -108,10 +108,10 @@
     </div>
   </nav>
 
-  <article class="top-page__article">
+  <article class="article">
     <div class="container">
       <div class="py-5 text-center">
-        <h2>投稿されたブランドアイディア</h2>
+        <h2 class="article__title">投稿されたブランドアイディア</h2>
       </div>
       <div class="row">
         <% @projects.each do |p| %>
