@@ -130,10 +130,15 @@ html {
 }
 
 .header {
+  // position: sticky;
+  // top: 0;
+  // z-index: 99999;
   padding: 2.5rem 0 2.5rem 3rem;
   border-top: solid $color-main;
   &__title {
     color: $color-1;
+    font-family: 'Playfair Display', serif;
+    // text-shadow: 1px 1px 0 $color-main, -1px 1px 0 $color-main, 1px -1px 0 $color-main, -1px -1px 0 $color-main;
   }
   &__title:hover {
     @extend .hover;
@@ -142,7 +147,6 @@ html {
   }
   .navbar {
     margin-right: 2rem;
-    background: white;
     .navbar-toggler {
       font-size: 2rem;
       outline: 0;
@@ -191,6 +195,7 @@ html {
       margin-left: 4rem;
     }
     color: white;
+    font-family: 'Playfair Display', serif;
   }
   &__title:hover {
     @extend .hover;
