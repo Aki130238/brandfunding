@@ -48,12 +48,6 @@ $hovercolor-delete: #d70035;
 $hovercolor-artisanbtn: #00885a;
 $hovercolor-return: #fcc800;
 
-@media (max-width: 540px) {
-  h1 {
-    font-size: 2rem;
-  }
-}
-
 $breakpoints: (
   'sm': 'screen and (min-width: 576px)',
   'md': 'screen and (min-width: 768px)',
@@ -186,6 +180,9 @@ html {
   }
   &__title {
     margin-left: 3rem;
+    @include mq(md) {
+      margin-left: 4rem;
+    }
     color: white;
   }
   &__title:hover {
@@ -194,10 +191,18 @@ html {
     text-decoration: none;
   }
   &__column {
-    margin: 0 1rem 0 3rem;
+    margin: 0 1.5rem;
+    @include mq(md) {
+      margin: 0 1rem 0 3rem;
+    }
     padding-top: .8rem;
     color: white;
     font-size: 1.4rem;
+    &__wrap {
+      @include mq(md) {
+        display: flex;
+      }
+    }
     &__terms:hover {
       @extend .hover;
       color: $hovercolor-terms;
@@ -218,9 +223,18 @@ html {
     }
   }
   &__column2 {
-    margin: 0 1rem;
+    margin: 0 1.5rem;
+    @include mq(md) {
+      margin-left: 1rem;
+    }
     padding-top: .8rem;
     color: white;
     font-size: 1.4rem;
+  }
+  &__column3 {
+    display: none;
+    @include mq(md) {
+      display: block;
+    }
   }
 }
