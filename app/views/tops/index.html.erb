@@ -8,48 +8,54 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item">
-          <img class="first-slide d-block menu__image" src="/main01.jpg" alt="First slide">
-          <div class="carousel-caption text-left menu__sm-hide">
-            <h1 class="menu__title">作りたいを応援する『BRAND FUNDING』</h1>
-            <p>ブランドオーナーやプロジェクトに共感したら支援者になりましょう！</p>
-            <p>支援したその瞬間にあなたはブランドメンバーの仲間入りです。</p>
-            <p>
-              <% if logged_in? %>
-                <%= link_to "スポンサー登録する", edit_user_profile_path(current_user.id), class: "btn btn-lg menu__button" %>
-              <% else %>
-                <%= link_to "スポンサー登録する", new_session_path, class: "btn btn-lg menu__button" %>
-              <% end %>
-            </p>
+          <img class="first-slide d-block menu__image1" src="/main01.jpg" alt="First slide">
+          <div class="carousel-caption text-left">
+            <h1 class="menu__title">作りたいを応援する『BRAND&ensp;FUNDING』</h1>
+            <div class="menu__sm-hide">
+              <p>ブランドオーナーやプロジェクトに共感したら支援者になりましょう！</p>
+              <p>支援したその瞬間にあなたはブランドメンバーの仲間入りです。</p>
+              <p>
+                <% if logged_in? %>
+                  <%= link_to "スポンサー登録する", edit_user_profile_path(current_user.id), class: "btn btn-lg menu__button" %>
+                <% else %>
+                  <%= link_to "スポンサー登録する", new_session_path, class: "btn btn-lg menu__button" %>
+                <% end %>
+              </p>
+            </div>
           </div>
         </div>
         <div class="carousel-item active">
-          <img class="second-slide d-block menu__image" src="/main02.jpg" alt="Second slide">
-          <div class="carousel-caption menu__sm-hide">
+          <img class="second-slide d-block menu__image2" src="/main02.jpg" alt="Second slide">
+          <div class="carousel-caption">
             <h1 class="menu__md">あなたのアイディアを形にできる</h1>
-            <h1 class="menu__title2">『BRAND FUNDING』</h1>
-            <p>まずは作りたいアイディアを作成してみましょう。アイディアを作成したらプロジェクト立ち上げます。</p>
-            <p>あなたのアイディアに共感する仲間が集まります。そうしてあなたのブランドが誕生します。</p>
-            <p>
-              <% if logged_in? %>
-                <%= link_to "オーナー登録する", edit_user_profile_path(current_user.id), class: "btn btn-lg menu__button" %>
-              <% else %>
-                <%= link_to "オーナー登録する", new_session_path, class: "btn btn-lg menu__button" %>
-              <% end %>
-            </p>
+            <h1 class="menu__title2">『BRAND&ensp;FUNDING』</h1>
+            <div class="menu__sm-hide">
+              <p>まずは作りたいアイディアを作成してみましょう。アイディアを作成したらプロジェクト立ち上げます。</p>
+              <p>あなたのアイディアに共感する仲間が集まります。そうしてあなたのブランドが誕生します。</p>
+              <p>
+                <% if logged_in? %>
+                  <%= link_to "オーナー登録する", edit_user_profile_path(current_user.id), class: "btn btn-lg menu__button" %>
+                <% else %>
+                  <%= link_to "オーナー登録する", new_session_path, class: "btn btn-lg menu__button" %>
+                <% end %>
+              </p>
+            </div>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="third-slide d-block menu__image" src="/main03.jpg" alt="Third slide">
-          <div class="carousel-caption text-right menu__sm-hide">
+          <img class="third-slide d-block menu__image3" src="/main03.jpg" alt="Third slide">
+          <div class="carousel-caption text-right">
             <h1 class="menu__title">日本全国の職人があなたのアイディアを実現させます。</h1>
-            <p>資金を集めてアイディアを実現する職人と繋がりましょう。</p>
-            <p>
-              <% if logged_in? %>
-                <%= link_to "職人登録する", edit_artisan_profile_path(current_user.id), class: "btn btn-lg menu__button" %>
-              <% else %>
-                <%= link_to "職人登録する", new_session_path, class: "btn btn-lg menu__button" %>
-              <% end %>
-            </p>
+            <div class="menu__sm-hide">
+              <p>資金を集めてアイディアを実現する職人と繋がりましょう。</p>
+              <p>
+                <% if logged_in? %>
+                  <%= link_to "職人登録する", edit_artisan_profile_path(current_user.id), class: "btn btn-lg menu__button" %>
+                <% else %>
+                  <%= link_to "職人登録する", new_session_path, class: "btn btn-lg menu__button" %>
+                <% end %>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -111,7 +117,7 @@
   <article class="article">
     <div class="container">
       <div class="py-5 text-center">
-        <h2 class="article__title">投稿されたブランドアイディア</h2>
+        <h2 class="article__title">投稿された最新プロジェクト</h2>
       </div>
       <div class="row">
         <% @projects.each do |p| %>
@@ -132,6 +138,7 @@
           </div>
         <% end %>
       </div>
+      <p class="col-4 article__button__wrap"><%= link_to "一覧を見る", projects_path, class: "btn col-12 article__button" %></p>
     </div>
   </article>
 

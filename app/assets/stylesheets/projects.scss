@@ -342,8 +342,12 @@
 }
 
 .projects-page {
+  // padding: 0;
   &__header {
     background: $bgcolor-project;
+    &__wrap {
+
+    }
   }
   &__menu {
     display: none;
@@ -466,7 +470,7 @@
   }
 
   .project-list {
-    margin: 2rem auto;
+    margin: 1.5rem auto;
     @include mq(md) {
       margin: 1.5rem;
     }
@@ -482,8 +486,12 @@
       @include mq(md) {
         float: right;
       }
+      @include mq(lg) {
+        margin-left: 5rem;
+        padding-left: 15rem;
+      }
       @include mq(xl) {
-        margin-right: 2.5rem;
+        padding-left: 0;
       }
     }
     &__link {
@@ -516,6 +524,33 @@
       color: $color-1;
       font-size: 1.4rem;
       text-align: center;
+      &__content {
+        @include mq(s) {
+          display: none;
+        }
+      }
+      &__icon__wrap {
+        padding-top: 1rem;
+      }
+      &__icon1, &__icon2, &__icon3 {
+        // @include mq(md) {
+        //   display: none;
+        // }
+        // &__wrap {
+        //   @include mq(md) {
+        //     display: none;
+        //   }
+        // }
+      }
+      &__icon1 {
+        width: 1.35rem;
+      }
+      &__icon2 {
+        width: 2rem;
+      }
+      &__icon3 {
+        width: 1.8rem;
+      }
     }
     &__content {
       display: flex;
