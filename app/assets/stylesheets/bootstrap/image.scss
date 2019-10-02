@@ -1,0 +1,6 @@
+// 小さいサイズでサムネイルする用。画像の中心を基準にはみ出る部分がトリミングされる。
+.img-thum-sm {
+  height: 70px;
+  width:  70px;
+  object-fit: cover;
+}

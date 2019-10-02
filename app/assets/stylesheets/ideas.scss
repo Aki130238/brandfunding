@@ -1,5 +1,4 @@
 .new-idea-page {
-  // height: 100%;
   &__title {
     display: inline-block;
     width: 100%;
@@ -10,21 +9,22 @@
     text-align: center;
   }
   &__menu {
-    margin-top: 5rem;
-    @include mq(md) {
-      margin-left: 8rem;
+    display: none;
+    margin: 5rem auto 0 auto;
+    @include mq(lg) {
+      display: flex;
+      margin: 5rem auto 0 .8rem;
     }
     @include mq(lg) {
-      margin-left: 14.5rem;
-    }
-    @include mq(xl) {
-      margin-left: 23rem;
+      margin: 5rem auto 0 auto;
     }
     border: none;
     &__list {
+      padding: 0;
       border: 1px solid black;
     }
     &__list-2 {
+      padding: 0;
       border: 1px solid black;
       border-left: 1px solid black;
       @include mq(sm) {
@@ -32,126 +32,55 @@
       }
     }
     &__link {
-      padding: 1.6rem 3.6rem;
-      @include mq(sm) {
-        padding: 1.6rem .5rem;
-      }
-      @include mq(md) {
-        padding: 1.6rem .5rem;
-      }
-      @include mq(lg) {
-        padding: 1.6rem 1.7rem;
-      }
-      @include mq(xl) {
-        padding: 1.6rem 3.6rem;
-      }
+      margin-bottom: -.1rem;
+      padding: 1.6rem 0;
       color: $color-1;
       font-weight: bold;
+      text-align: center;
+      @include mq(md) {
+        font-size: 1.3rem;
+      }
+      @include mq(lg) {
+        font-size: 1.5rem;
+      }
+      @include mq(xl) {
+        font-size: 1.6rem;
+      }
     }
     &__link:hover {
+      border: none;
       color: $color-1;
     }
     .nav-link.active {
+      border: none;
       background: $bgcolor-idea;
       color: black;
-    }
-    .ideaTab1 {
-      padding: 1.6rem 6.8rem;
-      @include mq(sm) {
-        padding: 1.6rem .5rem;
-      }
-      @include mq(md) {
-        padding: 1.6rem .5rem;
-      }
-      @include mq(lg) {
-        padding: 1.6rem 1.7rem;
-      }
-      @include mq(xl) {
-        padding: 1.6rem 3.6rem;
-      }
-    }
-    .ideaTab2 {
-      padding: 1.6rem 9.9rem;
-      @include mq(sm) {
-        padding: 1.6rem .5rem;
-      }
-      @include mq(md) {
-        padding: 1.6rem .5rem;
-      }
-      @include mq(lg) {
-        padding: 1.6rem 1.7rem;
-      }
-      @include mq(xl) {
-        padding: 1.6rem 3.6rem;
-      }
-    }
-    .ideaTab3 {
-      padding: 1.6rem 9.1rem;
-      @include mq(sm) {
-        padding: 1.6rem .5rem;
-      }
-      @include mq(md) {
-        padding: 1.6rem .5rem;
-      }
-      @include mq(lg) {
-        padding: 1.6rem 1.7rem;
-      }
-      @include mq(xl) {
-        padding: 1.6rem 3.6rem;
-      }
-    }
-    .ideaTab4 {
-      padding: 1.6rem 7.5rem;
-      @include mq(sm) {
-        padding: 1.6rem 4.35rem;
-        border-left: 1px solid black;
-      }
-      @include mq(md) {
-        padding: 1.6rem .5rem;
-        border-left: none;
-      }
-      @include mq(lg) {
-        padding: 1.6rem 1.7rem;
-      }
-      @include mq(xl) {
-        padding: 1.6rem 3.6rem;
-      }
-    }
-    .ideaTab5 {
-      padding: 1.6rem 10.7rem;
-      @include mq(sm) {
-        padding: 1.6rem .5rem;
-      }
-      @include mq(md) {
-        padding: 1.6rem .5rem;
-      }
-      @include mq(lg) {
-        padding: 1.6rem 1.7rem;
-      }
-      @include mq(xl) {
-        padding: 1.6rem 3.6rem;
-      }
-    }
-    .ideaTab6 {
-      padding: 1.6rem 6.8rem;
-      @include mq(sm) {
-        padding: 1.6rem .5rem;
-      }
-      @include mq(md) {
-        padding: 1.6rem .5rem;
-      }
-      @include mq(lg) {
-        padding: 1.6rem 1.7rem;
-      }
-      @include mq(xl) {
-        padding: 1.6rem 3.6rem;
-      }
     }
   }
 
   .idea-form {
     margin: 5rem auto 0 auto;
     color: $color-1;
+    &__wrap {
+      display: inline-block;
+      margin: 0 auto;
+      @include mq(md) {
+        display: flex;
+      }
+    }
+    &__bar {
+      @include mq(lg) {
+        display: none;
+      }
+      margin: -1rem 0 3rem 0;
+      height: 2rem;
+      &__content {
+        background: $bgcolor-idea;
+      }
+      &__title {
+        font-size: 1.4rem;
+      }
+    }
     &__content__wrap {
       margin-bottom: 5rem;
     }
@@ -174,12 +103,18 @@
       text-align: center;
     }
     &__button {
-      margin-top: 1.5rem;
+      margin: 1.5rem auto 0 auto;
       @include mq(sm) {
         margin-left:1.5rem;
       }
       padding: 1.5rem 0rem;
       border: 1px solid black;
+      cursor: pointer;
+    }
+    &__button:hover {
+      @extend .hover;
+      background: $hovercolor-submit;
+      color: white;
     }
     &-image {
       &__title {
@@ -189,15 +124,18 @@
       }
       &__input__wrap {
         margin-top: 1.5rem;
+        @include mq(s) {
+          margin: 1.5rem auto 0 auto;
+        }
         padding: 0;
         border: 1px solid black;
         text-align: center;
         cursor: pointer;
       }
       &__input__wrap2 {
-        margin-top: 1.5rem;
+        margin: 1.5rem auto 0 auto;
         @include mq(md) {
-          margin-left:1.5rem;
+          margin: 1.5rem 0 0 1.5rem;
         }
         padding: 0;
         border: 1px solid black;
@@ -226,15 +164,18 @@
       }
       &__input__wrap {
         margin-top: 1.5rem;
+        @include mq(s) {
+          margin: 1.5rem auto 0 auto;
+        }
         padding: 0;
         border: 1px solid black;
         text-align: center;
         cursor: pointer;
       }
       &__input__wrap2 {
-        margin-top: 1.5rem;
+        margin: 1.5rem auto 0 auto;
         @include mq(md) {
-          margin-left:1.5rem;
+          margin: 1.5rem 0 0 1.5rem;
         }
         padding: 0;
         border: 1px solid black;
@@ -270,6 +211,9 @@
       }
       &__input__wrap {
         margin-top: 1.5rem;
+        @include mq(s) {
+          margin: 1.5rem auto 0 auto;
+        }
         @include mq(lg) {
           margin-left: 12rem;
         }
@@ -282,9 +226,9 @@
         cursor: pointer;
       }
       &__input__wrap2 {
-        margin-top: 1.5rem;
+        margin: 1.5rem auto 0 auto;
         @include mq(md) {
-          margin-left: 1.5rem;
+          margin: 1.5rem 0 0 1.5rem;
         }
         padding: 0;
         border: 1px solid black;
@@ -332,6 +276,9 @@
       }
       &__input__wrap {
         margin-top: 1.5rem;
+        @include mq(s) {
+          margin: 1.5rem auto 0 auto;
+        }
         @include mq(lg) {
           margin-left: 12rem;
         }
@@ -345,6 +292,9 @@
       }
       &__input__wrap2 {
         margin-top: 1.5rem;
+        @include mq(s) {
+          margin: 1.5rem auto 0 auto;
+        }
         @include mq(md) {
           margin-left: 1.5rem;
         }
@@ -407,6 +357,9 @@
           margin-bottom: 1rem;
           padding: 3.8rem 0 3rem 0;
         }
+        @include mq(s) {
+          font-size: 1.8rem;
+        }
       }
       &__input {
         margin-left: -1.5rem;
@@ -422,6 +375,9 @@
       }
       &__input__wrap {
         margin-top: 1.5rem;
+        @include mq(s) {
+          margin: 1.5rem auto 0 auto;
+        }
         padding: 0;
         border: 1px solid black;
         text-align: center;
@@ -429,6 +385,9 @@
       }
       &__input__wrap2 {
         margin-top: 1.5rem;
+        @include mq(s) {
+          margin: 1.5rem auto 0 auto;
+        }
         @include mq(md) {
           margin-left: 1.5rem;
         }
@@ -457,6 +416,9 @@
       &__title1 {
         margin-top: 1rem;
         font-weight: bold;
+        @include mq(s) {
+          font-size: 1.6rem;
+        }
         @include mq(md) {
           text-align: right;
         }
@@ -466,6 +428,9 @@
         padding: .5rem 1rem;
         background: $bgcolor-3;
         color: white;
+        @include mq(s) {
+          font-size: 1.4rem;
+        }
         text-align: center;
       }
       &__title__wrap {
@@ -474,7 +439,13 @@
         }
       }
       &__title__wrap, &__input__wrap {
+        @include mq(s) {
+          margin-bottom: 2.5rem;
+        }
         margin-bottom: 5rem;
+      }
+      &__input__number {
+        // text-align: center;
       }
       &__input {
         @include mq(md) {
@@ -538,6 +509,21 @@
 }
 
 .show-idea-page {
+  &__edit__button {
+    padding: .6rem 0;
+    border: 1px solid black;
+    color: $color-1;
+    font-size: 1.4rem;
+    text-decoration: none;
+    &__wrap {
+      margin: 5rem auto 0 auto;
+    }
+  }
+  &__edit__button:hover {
+    @extend .hover;
+    background: $hovercolor-idea;
+    color: white;
+  }
   &__title {
     display: inline-block;
     padding: 2.5rem 0;
@@ -593,54 +579,38 @@
       text-align: center;
     }
     &__title2 {
-      margin: 0 auto;
+      margin: 0 auto 1rem auto;
       @include mq(lg) {
-        margin-left: -12.5rem;
+        margin: 1.5rem 0 0 -2rem;
+      }
+      @include mq(xl) {
+        margin: 1.5rem 0 0 -9rem;
+      }
+      font-weight: bold;
+      @include mq(lg) {
         text-align: right;
       }
-      padding: 1rem 0;
-      font-weight: bold;
-      text-align: center;
     }
     &__title3 {
-      margin-bottom: 1.5rem;
+      margin: 0 auto 1.5rem auto;
+      @include mq(lg) {
+        margin: 0 0 1.5rem 3rem;
+      }
+      padding: 1rem 0;
+      background: $bgcolor-idea;
+      font-weight: bold;
+      text-align: center;
     }
     &__title4 {
-      margin: 0 auto;
+      margin: 0 auto 1.5rem auto;
       @include mq(lg) {
-        margin-left: 3rem;
-        text-align: right;
+        margin: 0 0 1.5rem 3rem;
       }
       padding: 1rem 0;
+      background: $bgcolor-idea;
       font-weight: bold;
       text-align: center;
-    }
-    &__title5 {
-      margin: 0 auto;
-      @include mq(lg) {
-        margin-left: -35.5rem;
-        text-align: right;
-      }
-      @include mq(xl) {
-        margin-left: -55.5rem;
-        text-align: right;
-      }
-      padding: 1rem 0;
-      font-weight: bold;
-      text-align: center;
-    }
-    &__title6 {
-      margin: 0 auto;
-      @include mq(lg) {
-        margin-left: -27rem;
-        text-align: right;
-      }
-      @include mq(xl) {
-        margin-left: -45rem;
-      }
-      padding: 1rem 0;
-      font-weight: bold;
-      text-align: center;
+      background: white;
     }
     &__content {
       margin: 0 auto;
@@ -657,53 +627,10 @@
     &__content3 {
       margin: 0 auto;
       @include mq(lg) {
-        margin-left: -5rem;
-        margin-bottom: 1.5rem;
-      }
-      @include mq(xl) {
-        margin-left: -8rem;
-        margin-bottom: 1.5rem;
+        margin: auto 0;
       }
       padding: .8rem 0 .8rem 2rem;
       background: $bgcolor-4;
-    }
-    &__content4 {
-      margin: 0 auto;
-      @include mq(lg) {
-        margin-left: -36rem;
-      }
-      @include mq(xl) {
-        margin-left: -50rem;
-      }
-      padding: .8rem 0;
-      background: $bgcolor-4;
-      text-align: center;
-    }
-    &__content5 {
-      margin: 0 auto;
-      @include mq(lg) {
-        margin-left: -28rem;
-      }
-      @include mq(xl) {
-        margin-left: -39rem;
-      }
-      padding: .8rem 0;
-      background: $bgcolor-4;
-      text-align: center;
-    }
-    &__content6 {
-      margin: 0 auto;
-      @include mq(lg) {
-        margin-left: -5rem;
-      }
-      @include mq(xl) {
-        margin-left: -7rem;
-      }
-      padding: .8rem 0 10rem 2rem;
-      background: $bgcolor-4;
-    }
-    &__wrap {
-      margin-bottom: 3rem;
     }
   }
 
@@ -730,18 +657,31 @@
       margin: 1.5rem auto 0 auto;
     }
     &__button {
-      @extend .sign-button;
+      margin-bottom: 5rem;
+      padding: .6rem;
+      border: 1px solid black;
+      background: $btncolor-comment;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    &__button:hover {
+      @extend .hover;
+      background: $hovercolor-comment;
+      color: white;
     }
     &__user__wrap {
       margin: 3.8rem auto 0 auto;
       text-align: center;
-      @include mq(lg) {
-        text-align: right;
-      }
     }
     &__user {
       color: black;
+      font-weight: bold;
       font-size: 1.8rem;
+      text-decoration: none;
+    }
+    &__user:hover {
+      @extend .hover;
+      color: $hovercolor-user;
     }
     &__content {
       margin: 3rem auto 0 auto;
@@ -752,15 +692,22 @@
     &__delete-button__wrap {
       margin: 3rem auto 0 auto;
       padding-bottom: 1.5rem;
+      text-align: center;
     }
     &__delete-button {
       @extend .sign-button;
+      padding: 1rem 2.5rem;
       background: red;
       color: white;
       font-size: 1.5rem;
       @include mq(md) {
         font-size: 1.6rem;
       }
+      text-decoration: none;
+    }
+    &__delete-button:hover {
+      @extend .hover;
+      background: $hovercolor-delete;
     }
   }
 }

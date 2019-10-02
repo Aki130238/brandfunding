@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_27_124656) do
+ActiveRecord::Schema.define(version: 2019_10_02_043306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,21 +98,22 @@ ActiveRecord::Schema.define(version: 2019_09_27_124656) do
   end
 
   create_table "ideas", force: :cascade do |t|
-    t.string "idea_title"
-    t.integer "idea_amount"
-    t.text "idea_about"
-    t.string "idea_usage"
-    t.text "idea_commit"
-    t.string "product_image"
-    t.string "idea_category"
-    t.string "idea_category_details"
-    t.string "product_about"
+    t.string "idea_title", null: false
+    t.integer "idea_amount", null: false
+    t.text "idea_about", null: false
+    t.string "idea_usage", null: false
+    t.text "idea_commit", null: false
+    t.string "product_image", null: false
+    t.string "idea_category", null: false
+    t.string "idea_category_details", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "idea_material"
-    t.string "work_style"
-    t.datetime "delivery_date"
-    t.integer "budget"
+    t.string "idea_material", null: false
+    t.string "work_style", null: false
+    t.datetime "delivery_date", null: false
+    t.string "budget", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_ideas_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -214,6 +215,8 @@ ActiveRecord::Schema.define(version: 2019_09_27_124656) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "idea_id"
+    t.index ["idea_id"], name: "index_projects_on_idea_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
@@ -272,6 +275,13 @@ ActiveRecord::Schema.define(version: 2019_09_27_124656) do
     t.index ["artisan_profile_id"], name: "index_artisan_processing_id"
   end
 
+  create_table "sponsor_lists", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "project_return_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_profiles", force: :cascade do |t|
     t.string "family_name"
     t.string "family_name_sub"
@@ -313,6 +323,7 @@ ActiveRecord::Schema.define(version: 2019_09_27_124656) do
   add_foreign_key "comments", "users"
   add_foreign_key "idea_comments", "ideas"
   add_foreign_key "idea_comments", "users"
+  add_foreign_key "ideas", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "project_abouts", "projects"
