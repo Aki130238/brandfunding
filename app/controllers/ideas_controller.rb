@@ -20,9 +20,9 @@ class IdeasController < ApplicationController
   end
 
   def create
-    @ideas = current_user.ideas.build(idea_params)
-    if @ideas.save
-      redirect_to @ideas
+    @idea = current_user.ideas.build(idea_params)
+    if @idea.save
+      redirect_to @idea
     else
       render :new
     end
