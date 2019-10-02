@@ -1,15 +1,19 @@
 class ArtisanProfilesController < ApplicationController
+  before_action :require_login
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :artisan_profile_authority, only: [:edit, :update]
 
   def index
   end
 
-  def new
-  end
-
   def show
-    @user_profile = @user.user_profile
-    @artisan_profile = @user.artisan_profile
+    if @user.user_status == 2
+      @user_profile = @user.user_profile
+      @artisan_profile = @user.artisan_profile
+    else
+      flash[:alert] = "職人ではありません"
+      redirect_to root_path
+    end
   end
 
   def edit
@@ -24,7 +28,6 @@ class ArtisanProfilesController < ApplicationController
         render 'new', notice: "プロフィールを修正できません"
     end
   end
-
 
   private
 
@@ -79,4 +82,10 @@ class ArtisanProfilesController < ApplicationController
     )
   end
 
+  def artisan_profile_authority
+    if @user.id != current_user.id
+      flash[:danger] = "権限がありません"
+      redirect_to root_path
+    end
+  end
 end

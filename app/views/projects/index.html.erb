@@ -5,36 +5,41 @@
     </div>
   </div>
 
-  <div class="row col-md-11 project-list__wrap">
+  <div class="row col-12 col-md-11 col-lg-12 col-xl-10 project-list__wrap">
     <div class="row col-12 project-list_void"></div>
     <% @projects.each do |pr|%>
-      <div class="project-list col-md-3">
+      <div class="project-list col-9 col-sm-8 col-md-5 col-lg-3">
         <%= link_to project_path(pr.id), class: "project-list__link" do %>
-          <div class="">
-            <span class="project-list__image"><%= pr.project_image.project_img %>画像</span>
+          <div class="row">
+            <span class="col-12 project-list__image"><%= pr.project_image.project_img %>画像</span>
           </div>
           <div class="row">
             <p class="project-list__title"><%= pr.project_text %></p>
           </div>
           <div class="row project-list__bar">
-            <p class="project-list__bar__content">SUCCESS</p>
-          </div>
-          <div class="row project-list__guide">
-            <p class="col-md-4">現在</p>
-            <p class="col-md-4">パトロン</p>
-            <p class="col-md-4">残り</p>
-          </div>
-          <div class="row project-list__content">
-            <p class="col-md-4"><%= pr.project_value.project_fund %>10,000円</p>
-            <p class="col-md-4"><%= pr.project_idea.project_returns %>9人</p>
-            <p class="col-md-4">
-              <% if Time.now >= pr.project_value.recruitment_deadline %>
-                終了
+            <p class="project-list__bar__content">
+              <% if fund_count(pr) >= pr.project_value.target_fund %>
+                <%= "SUCCESS" %>
               <% else %>
-                5日
+                <%= fund_progress(pr) %>%
               <% end %>
             </p>
           </div>
+          <div class="row project-list__guide">
+            <p class="col-4 project-list__guide__icon__wrap"><%= svg("yen-sign-solid.svg", class: "project-list__guide__icon1") %></p>
+            <p class="col-4 project-list__guide__icon__wrap"><%= svg("users-solid.svg", class: "project-list__guide__icon2") %></p>
+            <p class="col-4 project-list__guide__icon__wrap"><%= svg("clock-regular.svg", class: "project-list__guide__icon3") %></p>
+          </div>
+          <div class="row project-list__content">
+            <p class="col-4"><%= fund_count(pr) %>円</p>
+            <p class="col-4"><%= sponsor_count(pr) %>人</p>
+            <p class="col-4">
+              <% if (pr.project_value.recruitment_deadline > DateTime.now) %>
+                <%= (pr.project_value.recruitment_deadline - DateTime.now).to_i / 1.days + 1 %>日
+              <% else %>
+                <span>募集終了</span></p>
+              <% end %>
+              </div>
           <div class="row project-list__bar2">&ensp;</div>
         <% end %>
       </div>
