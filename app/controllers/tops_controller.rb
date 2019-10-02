@@ -14,12 +14,13 @@ class TopsController < ApplicationController
   def create
     @user = User.new(user_params)
     if params[:back]
-      render 'new'
+      render :new
     else
       if @user.save
-        redirect_to user_path(@user.id), notice: "userを作成しました！"
+        redirect_to user_path(@user.id), notice: "ユーザー登録しました！"
       else
-        render 'new'
+        flash.now[:alert] = "ユーザー登録に失敗しました。"
+        render :new
       end
     end
   end
