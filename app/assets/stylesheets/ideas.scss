@@ -509,6 +509,21 @@
 }
 
 .show-idea-page {
+  &__edit__button {
+    padding: .6rem 0;
+    border: 1px solid black;
+    color: $color-1;
+    font-size: 1.4rem;
+    text-decoration: none;
+    &__wrap {
+      margin: 5rem auto 0 auto;
+    }
+  }
+  &__edit__button:hover {
+    @extend .hover;
+    background: $hovercolor-idea;
+    color: white;
+  }
   &__title {
     display: inline-block;
     padding: 2.5rem 0;
