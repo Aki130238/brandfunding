@@ -26,7 +26,9 @@
           </div>
           <div class="row project-list__content">
             <p class="col-4"><%= pr.project_value.project_fund %>10,000円</p>
-            <p class="col-4"><%= pr.project_idea.project_returns %>9人</p>
+            <p class="col-4">
+            <%# <%= pr.project_idea.project_returns %>9人
+            </p>
             <p class="col-4">
               <% if Time.now >= pr.project_value.recruitment_deadline %>
                 終了
