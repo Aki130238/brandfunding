@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :project_likes, only: %i[index create destroy]
   resources :relationships, only: %i[index create destroy]
   resources :ideas do
-    resources :idea_comments
+    resources :idea_comments, only: %i[create destroy]
   end
   post 'projects/:id', to: 'project_returns#create'
   resources :projects do
