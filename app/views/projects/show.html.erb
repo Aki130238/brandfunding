@@ -25,7 +25,7 @@
         </div>
         <div class="show-project1__prefectures__wrap">
           <p class="col-lg-5 col-xl-4 show-project1__deadline">
-            <% if (@project.project_value.recruitment_deadline > DateTime.now) %>
+            <% if @project.project_value.recruitment_deadline > DateTime.now %>
               <%= (@project.project_value.recruitment_deadline - DateTime.now).to_i / 1.days + 1 %>日
             <% else %>
               <span>募集終了</span></p>
@@ -167,7 +167,7 @@
             <p class="show-project3__return__schedule2"><%= svg("truck-moving-solid.svg" ,class: "show-menu__icon5")
             %>&thinsp;<%= pr.delivery_date %></p>
             <% if return_remains(pr) > 0 %>
-              <%= link_to "支援する", sponsor_lists_path(project_return_id: pr.id), method: :post %>
+              <%= link_to "支援する", sponsor_lists_path(project_return_id: pr.id, project_id: @project.id), method: :post %>
             <% end %>
           </div>
         </div>
