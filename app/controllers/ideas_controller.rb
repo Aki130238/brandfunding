@@ -1,4 +1,5 @@
 class IdeasController < ApplicationController
+  before_action :require_login
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
   before_action :idea_authority, only: [:edit, :uodate, :destroy]
 
@@ -19,9 +20,9 @@ class IdeasController < ApplicationController
   end
 
   def create
-    @idea = current_user.ideas.build(idea_params)
-    if @idea.save
-      redirect_to @idea
+    @ideas = current_user.ideas.build(idea_params)
+    if @ideas.save
+      redirect_to @ideas
     else
       render :new
     end

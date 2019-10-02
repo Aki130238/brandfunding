@@ -1,4 +1,5 @@
 class ArtisanProfilesController < ApplicationController
+  before_action :require_login
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :artisan_profile_authority, only: [:edit, :update]
 
