@@ -28,4 +28,9 @@ module ApplicationHelper
     end
     total_funds
   end
+
+  def fund_progress(project)
+    progress = fund_count(project).to_f / project.project_value.target_fund.to_f * 100
+    progress.ceil
+  end
 end
