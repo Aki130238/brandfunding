@@ -281,21 +281,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_043306) do
     t.index ["artisan_profile_id"], name: "index_artisan_processing_id"
   end
 
-  create_table "sponsers", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "project_return_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "sponsor_lists", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "project_return_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "sponsors", force: :cascade do |t|
     t.integer "user_id"
     t.integer "project_return_id"
     t.datetime "created_at", null: false
