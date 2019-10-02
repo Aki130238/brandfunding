@@ -41,11 +41,15 @@
             <%= link_to "お気に入り登録を解除", project_like_path(project_id: @like.id), method: :delete , class: "show-menu__favorite__button2"%>
           <% end %>
         </p>
-        <%= render "users/follow_form", user: @project.user %>
+        <% unless @project.user.id == current_user.id %>
+          <%= render "users/follow_form", user: @project.user %>
+        <% end %>
       </div>
       <%= render "show_menu" %>
       <div class="col-5 show-menu__follow-favorite">
-        <%= render "users/follow_form", user: @project.user %>
+        <% unless @project.user.id == current_user.id %>
+          <%= render "users/follow_form", user: @project.user %>
+        <% end %>
         <p class="show-menu__favorite"><%= svg("star-regular.svg", class: "show-menu__icon") %>
           <% if @like.nil? %>
             <%= link_to "お気に入り登録する", project_likes_path(project_id: @project.id), method: :post, class: "show-menu__favorite__button" %>
@@ -164,8 +168,10 @@
           <div class="">
             <h2 class="col-12 show-project3__return__title2"><%= svg("gift-solid.svg", class: "show-project3__return__icon")
             %>&ensp;<%= pr.return_item_fund %>
-            <span class="show-project3__return__aid__wrap"><% if return_remains(pr) > 0 %>
-              <%= link_to "支援する", sponsor_lists_path(project_return_id: pr.id, project_id: @project.id), method: :post, class: "show-project3__return__aid" %></span>
+              <% unless @project.user.id == current_user.id %>
+                <span class="show-project3__return__aid__wrap"><% if return_remains(pr) > 0 %>
+                <%= link_to "支援する", sponsor_lists_path(project_return_id: pr.id, project_id: @project.id), method: :post, class: "show-project3__return__aid" %></span>
+              <% end %>
             <% end %>
             </h2>
           </div>
