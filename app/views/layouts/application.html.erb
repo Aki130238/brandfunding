@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -15,7 +14,7 @@
       <nav class="navbar navbar-expand-sm">
         <h1><%= link_to "BRANDFUNDING", root_path, class: "header__title" %></h1>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon header__icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
@@ -23,15 +22,14 @@
           <ul class="nav navbar-nav">
             <% if logged_in? %>
               <% if current_user.user_status == 2 %>
-                <li><%= link_to "会員情報", user_path(current_user.id), class: "header__navlink header__navlink__profile" %></li>
-                <li><%= link_to "職人情報", artisan_profile_path(current_user.id), class: "header__navlink header__navlink__artisan" %></li>
+                <li><%= link_to "職人情報", artisan_profile_path(current_user.id), class: "header__navlink" %></li>
               <% elsif current_user.user_status == 3 %>
-                <li><%= link_to "会員情報", user_path(current_user.id), class: "header__navlink header__navlink__profile" %></li>
+                <li><%= link_to "プロフィール", user_path(current_user.id), class: "header__navlink" %></li>
               <% end %>
-              <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete, class: "header__navlink header__navlink__sign" %></li>
+              <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete, class: "header__navlink" %></li>
             <% else %>
-              <li><%= link_to "ユーザー登録", new_user_path, class: "header__navlink header__navlink__sign" %></li>
-              <li><%= link_to "ログイン", new_session_path, class: "header__navlink header__navlink__sign" %></li>
+              <li><%= link_to "ユーザー登録", new_user_path, class: "header__navlink" %></li>
+              <li><%= link_to "ログイン", new_session_path, class: "header__navlink" %></li>
             <% end %>
           </ul>
         </div>
@@ -44,13 +42,12 @@
     <footer class="container-fluid footer">
       <div class="row footer__wrap">
         <h1 class="col-12 col-5 col-lg-4 col-xl-3 footer__title__wrap"><%= link_to "BRAND FUNDING", root_path, class: "footer__title" %></h1>
-        <div class="col-12 col-lg-8 footer__column__wrap">
-
-          <p class="footer__column"><%= link_to "利用規約", agreements_terms_of_service_path ,class: "footer__column footer__column__terms" %></p>
-          <p class="footer__column2 footer__column3">|</p>
-          <p class="footer__column2"><%= link_to "プライバシーポリシー", agreements_privacy_policy_path, class: "footer__column2 footer__column__privacy" %></p>
-          <p class="footer__column2 footer__column3">|</p>
-          <p class="footer__column2"><%= link_to "開発チーム", agreements_product_team_path, class: "footer__column2 footer__column__management" %></p>
+        <div class="d-flex col-12 col-lg-6 footer__column__wrap">
+          <p class="footer__column">ご利用規約</p>
+          <p class="footer__column2">|</p>
+          <p class="footer__column2">プライバシーポリシー</p>
+          <p class="footer__column2">|</p>
+          <p class="footer__column2">運営会社</p>
         </div>
       </div>
     </footer>

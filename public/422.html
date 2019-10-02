@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Coming soon</title>
+  <title>The change you wanted was rejected (422)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
@@ -54,15 +54,14 @@
   </style>
 </head>
 
-
-
-<body class="rails-default-error-page" style="background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);">
-  <div>
+<body class="rails-default-error-page">
+  <!-- This file lives in public/422.html -->
+  <div class="dialog">
     <div>
-      <p style="text-align: center"><img src="/comingsoon.png" alt="comingsoon" style="width: 60%;"></p>
+      <h1>The change you wanted was rejected.</h1>
+      <p>Maybe you tried to change something you didn't have access to.</p>
     </div>
-    <p style="margin-top: auto; font-size: 1.6rem; text-align: center;"><a href="#" onclick="window.history.back(); return false;" style="padding: .6rem 3rem; border-radius: 8px; background: #f6ae54; color: white; text-decoration: none;">戻る</a></p>
+    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
-

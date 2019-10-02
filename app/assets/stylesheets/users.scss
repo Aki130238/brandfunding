@@ -7,10 +7,6 @@
       padding-top: 5rem;
       color: $color-1;
       font-weight: bold;
-      font-size: 2.2rem;
-      @include mq (md) {
-        font-size: 2.5rem;
-      }
     }
     &__list {
       margin: 0 auto 3rem auto;
@@ -29,14 +25,6 @@
       }
       &__input {
         @extend .sign-form;
-        padding: .8rem 1.5rem;
-        @include mq(md) {
-          padding: 1.2rem 1.5rem;
-        }
-        font-size: 1.6rem;
-        @include mq(md) {
-          font-size: 1.8rem;
-        }
       }
       &__about {
         margin: 5rem auto 1rem auto;
@@ -50,32 +38,11 @@
         font-size: 1.3rem;
         text-align: center;
       }
-      &__privacy2:hover {
-        @extend .hover;
-        color: $hovercolor-privacy;
-        text-decoration: none;
-      }
-      &__terms:hover {
-        @extend .hover;
-        color: $hovercolor-terms;
-        text-decoration: none;
-      }
       &__button__wrap {
-        margin: 0 auto 2rem auto;
-      }
-      &__button__wrap2 {
-        margin: 0 auto 5rem auto;
+        margin: 0 auto;
       }
       &__button {
         @extend .sign-button;
-        font-size: 1.6rem;
-        @include mq(md) {
-          font-size: 1.8rem;
-        }
-      }
-      &__button:hover {
-        @extend .hover;
-        background: $hovercolor-sign2;
       }
     }
   }
@@ -87,7 +54,7 @@
     list-style: none;
   }
   &__title {
-    margin: 3rem 0 3rem 1rem;
+    margin: 3rem 0;
     @include mq(md) {
       margin: 3rem 0 3rem 2rem;
     }
@@ -99,7 +66,7 @@
     }
     color: $color-1;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     @include mq(lg) {
       font-size: 3rem;
     }
@@ -129,21 +96,6 @@
     &__li {
       border: 1px solid black;
       border-top: none;
-      &__favorite:hover {
-        @extend .hover;
-        background: $hovercolor-favorite;
-        color: white;
-      }
-      &__follow:hover {
-        @extend .hover;
-        background: $hovercolor-follow;
-        color: white;
-      }
-      &__user:hover {
-        @extend .hover;
-        background: $hovercolor-profile;
-        color: white;
-      }
     }
     &__li_border-top {
       border-top: 1px solid black;
@@ -156,13 +108,12 @@
       color: $color-1;
       font-weight: bold;
       text-align: left;
-      font-size: 2.3rem;
-      @include mq(lg) {
-        font-size: 2.4rem;
+      @include mq(md) {
+        font-size: 2rem;
       }
-    }
-    &__title:hover {
-      color: white;
+      @include mq(xl) {
+      font-size: 2.5rem;
+      }
     }
     &__title-2 {
       margin-left: 2rem;
@@ -170,34 +121,20 @@
       background: white;
       color: $color-1;
       font-weight: bold;
-      font-size: 2.3rem;
-      @include mq(lg) {
-        font-size: 2.4rem;
+      @include mq(md) {
+        font-size: 2rem;
       }
+      @include mq(xl) {
+        font-size: 2.5rem;
+        }
       &__link {
         color: $color-1;
         text-decoration: none;
       }
     }
-    &__title2:hover {
-      color: white;
-    }
     &__link {
       color: $color-1;
       text-decoration: none;
-      &__project:hover {
-        @extend .hover;
-        color: $bgcolor-project;
-      }
-      &__idea:hover {
-        @extend .hover;
-        color: $bgcolor-idea;
-      }
-      &__sponsor:hover {
-        @extend .hover;
-        color: $hovercolor-sponsor;
-        cursor: pointer;
-      }
     }
     &__item {
       color: black;
@@ -206,18 +143,6 @@
       margin-left: 4rem;
       color: $color-1;
       font-size: 1.8rem;
-      &__project:hover {
-        @extend .hover;
-        background: $bgcolor-project;
-      }
-      &__idea:hover {
-        @extend .hover;
-        background: $bgcolor-idea;
-      }
-      &__sponsor:hover {
-        @extend .hover;
-        background: $hovercolor-sponsor;
-      }
     }
   }
   &__form {
@@ -228,23 +153,12 @@
     @include mq(xl) {
       margin-left: 8rem;
     }
+    font-size: 2rem;
     @include mq(md) {
       font-size: 2.5rem;
     }
     &__button_wrap {
       margin-top: 3rem;
-    }
-    &__input {
-      font-size: 1.5rem;
-    }
-    &__button {
-      font-size: 1.5rem;
-      &__wrap {
-        margin-top: 2rem;
-      }
-    }
-    &__button:hover {
-      @extend .hover;
     }
   }
 }

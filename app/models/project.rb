@@ -6,7 +6,6 @@ class Project < ApplicationRecord
   has_many :project_return, dependent: :destroy
   has_one :project_sponsor, dependent: :destroy
   has_one :project_value, dependent: :destroy
-  belongs_to :idea
 
   accepts_nested_attributes_for :project_about
   accepts_nested_attributes_for :project_idea

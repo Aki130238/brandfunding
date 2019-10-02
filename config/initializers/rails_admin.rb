@@ -1,9 +1,9 @@
 RailsAdmin.config do |config|
-  config.authenticate_with do
-     authenticate_or_request_with_http_basic('Site Message') do |username, password|
-       username == ENV['BASIC_AUTH_NAME'] && password == ENV['BASIC_AUTH_PASSWORD']
-     end
-  end
+  # config.authenticate_with do
+  #    authenticate_or_request_with_http_basic('Site Message') do |username, password|
+  #      username == ENV['BASIC_AUTH_NAME'] && password == ENV['BASIC_AUTH_PASSWORD']
+  #    end
+  #  end
 
   ### Popular gems integration
 

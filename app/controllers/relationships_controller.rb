@@ -1,9 +1,4 @@
 class RelationshipsController < ApplicationController
-
-  def index
-    @relationships = Relationship.where(follower_id: current_user.id)
-  end
-
   def create
     if logged_in?
       @user = User.find(params[:relationship][:followed_id])

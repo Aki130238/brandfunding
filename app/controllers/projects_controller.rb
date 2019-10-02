@@ -1,32 +1,25 @@
 class ProjectsController < ApplicationController
-  before_action :require_login, only: %i[new create]
-  before_action :set_project, only: %i[show edit update destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
     @projects = Project.all
   end
 
   def new
-    if current_user.ideas.count == 0
-      flash[:alert] = "先にアイデアを作成してください"
-      redirect_to new_idea_path
-    else
-      @project = Project.new
-      @project.build_project_about
-      @project.build_project_idea
-      @project.build_project_image
-      @project.build_project_report
-      @project.project_return.build
-      @project.build_project_sponsor
-      @project.build_project_value
-      @ideas = current_user.ideas
-    end
+    @project = Project.new
+    @project.build_project_about
+    @project.build_project_idea
+    @project.build_project_image
+    @project.build_project_report
+    @project.project_return.build
+    @project.build_project_sponsor
+    @project.build_project_value
   end
 
   def create
     @project = current_user.projects.build(project_params)
     if @project.save
-      redirect_to project_path(@project)
+      redirect_to root_path
     else
       render 'new'
     end
@@ -40,7 +33,6 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @ideas = current_user.ideas
     if @project.user_id == session[:user_id]
       else
         redirect_to projects_path, notice: "他のユーザーのプロジェクトは編集できません！"
@@ -125,6 +117,4 @@ class ProjectsController < ApplicationController
   def set_project
     @project = Project.find(params[:id])
   end
-
-
 end
