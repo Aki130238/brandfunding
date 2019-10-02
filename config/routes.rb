@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get 'agreements/terms_of_service'
   get 'agreements/privacy_policy'
   get 'agreements/product_team'
+  resources :sponsor_lists, only: [:create]
 end

@@ -11,14 +11,14 @@
       </div>
       <div class="col-11 col-sm-8 col-md-5 show-project1__content__wrap">
         <p><%= svg("yen-sign-solid.svg", class: "show-project1__icon") %>&ensp;現在の支援総額</p>
-        <p class="col-lg-12 col-xl-11 show-project1__project-fund"><%= @project.project_value.project_fund %>支援額</p>
+        <p class="col-lg-12 col-xl-11 show-project1__project-fund"><%= @project.project_value.project_fund %><%= fund_count(@project) %></p>
         <p class="col-lg-12 col-xl-11 show-project1__progress">105%</p>
         <p class="col-lg-6 col-xl-5 show-project1__target-fund"><%= @project.project_value.target_fund %></p>
         <div class="show-project1__user-image__wrap">
           <p class="col-lg-5 col-xl-4 show-project1__patron"><%= svg("users-solid.svg", class: "show-project1__icon2") %>&ensp;パトロン数</p>
           <p class="col-lg-6 col-xl-4 show-project1__user-image">ユーザーイメージ</p>
         </div>
-        <p class="col-md-6 col-lg-5 col-xl-4 show-project1__supporter">サポーター人数</p>
+        <p class="col-md-6 col-lg-5 col-xl-4 show-project1__supporter"><%= sponsor_count(@project) %></p>
         <div class="show-project1__owner-name__wrap">
           <p class="show-project1__deadline__title"><%= svg("clock-regular.svg", class: "show-project1__icon3") %>&ensp;募集終了まで残り</p>
           <p class="col-lg-6 col-xl-5 offset-md-2 show-project1__owner-name"><%= @project.user.name %></p>
@@ -130,7 +130,6 @@
                 <p class="project-form-image__input">&ensp;</p>
                 </div>
                 <%= re.file_field :return_item_img, class: "col-11 form-control show-project3-form__input3", style: "display:none;", id: "fileReturn2" %>
-                </p>
                 <div class="show-project3-form__wrap">
                   <p class="col-lg-3">金額</p>
                   <p class="col-xl-9 form-inline"><%= re.number_field :return_item_fund, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;円</p>
@@ -157,13 +156,17 @@
             <% end %>
             </div>
       </div>
-      <% 3.times do %>
+      <% @project.project_return.each do |pr|%>
         <div class="show-project3__return__wrap2">
-          <h2 class="show-project3__return__title2"><%= svg("gift-solid.svg", class: "show-project3__return__icon") %>&ensp;3,000円</h2>
-          <p class="show-project3__return__content2"><% 20.times do %>テキスト<% end %></p>
+          <h2 class="show-project3__return__title2"><%= svg("gift-solid.svg", class: "show-project3__return__icon")
+          %>&ensp;<%= pr.return_item_fund %></h2>
+          <p class="show-project3__return__content2"><%= pr.return_item_about %></p>
           <div class="show-project3__return__guide">
-            <p class="show-project3__return__patron"><%= svg("users-solid.svg" ,class: "show-menu__icon3") %>&thinsp;パトロン：12人</p>
-            <p class="show-project3__return__schedule2"><%= svg("truck-moving-solid.svg" ,class: "show-menu__icon5") %>&thinsp;お届け予定：3日</p>
+            <p class="show-project3__return__patron"><%= svg("users-solid.svg" ,class: "show-menu__icon3") %>&thinsp;
+              <%= pr.sponsor_users.count %></p>
+            <p class="show-project3__return__schedule2"><%= svg("truck-moving-solid.svg" ,class: "show-menu__icon5")
+            %>&thinsp;<%= pr.delivery_date %></p>
+            <%= link_to "このプロジェクトを支援する", sponsor_lists_path(project_return_id: pr.id), method: :post %>
           </div>
         </div>
       <% end %>

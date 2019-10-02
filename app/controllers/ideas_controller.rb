@@ -1,4 +1,5 @@
 class IdeasController < ApplicationController
+  before_action :require_login
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
   before_action :idea_authority, only: [:edit, :uodate, :destroy]
 
