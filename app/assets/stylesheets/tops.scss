@@ -1,71 +1,10 @@
 .top-page {
   .menu {
     background: $bgcolor-2;
-    &__image1 {
-      object-position: 100% 100%;
-      width: 100%;
-      height: 45rem;
-      object-fit: cover;
-      @include mq(lg) {
-        object-fit: none;
-      }
-    }
-    &__image2 {
-      object-position: 70% 50%;
-      width: 100%;
-      height: 45rem;
-      object-fit: cover;
-      @include mq(lg) {
-        object-fit: none;
-      }
-    }
-    &__image3 {
-      object-position: 70% 50%;
-      width: 100%;
-      height: 45rem;
-      object-fit: cover;
-      @include mq(s) {
-        object-fit: none;
-      }
-    }
-    &__md {
-      margin-top: 1rem;
-      font-size: 2rem;
-      @include mq(lg) {
-        margin: 0;
-        font-size: 2.8rem;
-      }
-    }
-    &__title {
-      font-size: 3rem;
-      @include mq(lg) {
-        font-size: 3.5rem;
-      }
-      opacity: $top-opacity;
-    }
-    &__title2 {
-      font-size: 3rem;
-      @include mq(lg) {
-        font-size: 5rem;
-      }
-      opacity: $top-opacity;
-    }
-    &__sm-hide {
-      display: none;
-      @include mq(md) {
-        display: block;
-      }
-    }
     &__button {
-      padding: .6rem 2.5rem;
       border: 1px solid $color-main;
-      border-radius: 3px;
       background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100% );
       color: $color-1;
-      font-size: 1.4rem;
-    }
-    &__button:hover {
-      background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
     }
   }
 
@@ -78,82 +17,17 @@
 
   .guide {
     background: $bgcolor-2;
-    .guide2 {
-      background: $bgcolor-2;
-    }
-    &__image {
-      display: flex;
-      margin: 0 auto;
-    }
     &__column-1 {
       margin: 0 auto;
-      // padding: 0;
     }
     &__column-2 {
       margin: 0 auto;
-      // padding: 0;
     }
     &__title {
-      @include mq(s) {
-        margin-bottom: 1.5rem;
-      }
       font-weight: bold;
-      font-size: 2.5rem;
-      text-align: center;
-    }
-    &__content {
-      @include mq(s) {
-        display: none;
-      }
-    }
-    &__button__wrap {
-      margin: 0 auto 3rem auto;
-      text-align: center;
     }
     &__button {
       @extend .button;
-      padding: .6rem 1rem;
-      @include mq(md) {
-        font-size: 1.1rem;
-      }
-      @include mq(lg) {
-        font-size: 1.3rem;
-      }
-      font-size: 1.3rem;
-    }
-    &__button:hover {
-      @extend .hover;
-      color: black;
-    }
-    &__button1:hover {
-      background: $hovercolor-top1;
-    }
-    &__button2:hover {
-      background: $hovercolor-top2;
-    }
-    &__button3:hover {
-      background: $hovercolor-top3;
-    }
-  }
-
-  .article {
-    &__title {
-      font-weight: bold;
-    }
-    &__button {
-      color: black;
-      font-size: 1.6rem;
-      &__wrap {
-        margin: 1.5rem auto 5rem auto;
-        padding: 0;
-        border: 1px solid black;
-        border-radius: 3px;
-      }
-    }
-    &__button:hover {
-      @extend .hover;
-      background: $hovercolor-project;
-      color: white;
     }
   }
 }

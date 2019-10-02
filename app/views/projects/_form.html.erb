@@ -1,310 +1,256 @@
 <main class="container-fluid new-project-page">
   <div class="row">
-    <h1 class="col-12 new-project-page__title">プロジェクト<%= project_title %></h1>
+    <h1 class="col-12 new-project-page__title">プロジェクト<%= new_project %></h1>
   </div>
 
   <%= render "navbar" %>
 
   <section class="tab-content project-form">
     <div class="tab-pane fade show active project-form-value" id="value" role="tabpanel" aria-labelledby="value-tab">
-      <div class="progress project-form__bar">
-        <div class="progress-bar project-form__bar__content" style="width: 16.6%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-        </div>
-      </div>
-      <%= form_with(model: @project, local: true) do |f| %>
+    <%= form_with(model: @project, local: true) do |f| %>
+      <%= f.fields_for :project_value do |va| %>
         <div class="row project-form-value__target">
           <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-            <h3 class="col-5 col-md-6 project-form__title-1">アイディア</h3>
+            <h3 class="col-5 col-md-6 project-form__title-1">目標金額</h3>
             <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
           </div>
           <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-            <p class="project-form__idea__input__wrap"><%= f.select :idea_id, options_for_select(@ideas.map{ |i| [i.idea_title, i.id] }), {prompt: "アイディアを選択"}, {class: "col-10 col-md-5 project-form__idea__input"} %></p>
+            <p class="form-inline"><%= va.number_field :target_fund, class: "col-8 col-md-7 col-xl-5 form-control project-form-value__target__input", placeholder: "10,000" %>&ensp;円</p>
+            <p class="project-form-value__target__guide">目標金額は10,000円以上の金額で入力してください</p>
           </div>
         </div>
-        <%= f.fields_for :project_value do |va| %>
-          <div class="row project-form-value__target">
-            <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-              <h3 class="col-5 col-md-6 project-form__title-1">目標金額</h3>
-              <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
-            </div>
-            <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-              <p class="form-inline"><%= va.number_field :target_fund, class: "col-8 col-md-7 col-xl-5 form-control project-form-value__target__input", placeholder: "10,000" %>&ensp;円</p>
-              <p class="project-form-value__target__guide">目標金額は10,000円以上の金額で入力してください</p>
-            </div>
+        <div class="row project-form-value__deadline">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
+            <h3 class="col-5 col-md-6 project-form__title-1">募集終了日</h3>
+            <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
           </div>
-          <div class="row project-form-value__deadline">
-            <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-              <h3 class="col-5 col-md-6 project-form__title-1">募集終了日</h3>
-              <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
-            </div>
-            <div class="col-10 col-md-6 col-xl-6 offset-1 project-form__form__wrap">
-              <p class="form-inline"><%= va.date_field :recruitment_deadline, class: "col-8 col-xl-5 form-control project-form-value__deadline__input" %></p>
-              <p class="project-form-value__deadline__guide">期限が65日以下のプロジェクトでは、成功率がより高くなっています。</p><br>
-              <p class="project-form-value__deadline__guide">公開可能期間は2日〜80日となります。</p>
-              <p class="project-form-value__deadline__guide project-form-value__deadline__guide-2">※2019-03-01&ensp;を選択した場合、2019-03-01&ensp;23:59に終了します。</p>
-            </div>
+          <div class="col-10 col-md-6 col-xl-6 offset-1 project-form__form__wrap">
+            <p class="form-inline"><%= va.date_field :recruitment_deadline, class: "col-8 col-xl-5 form-control project-form-value__deadline__input" %></p>
+            <p class="project-form-value__deadline__guide">期限が65日以下のプロジェクトでは、成功率がより高くなっています。</p><br>
+            <p class="project-form-value__deadline__guide">公開可能期間は2日〜80日となります。</p>
+            <p class="project-form-value__deadline__guide project-form-value__deadline__guide-2">※2019-03-01&ensp;を選択した場合、2019-03-01&ensp;23:59に終了します。</p>
           </div>
-          <div class="row project-form-value__method">
-            <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-              <h3 class="col-5 col-md-6 project-form__title-1">募集方式</h3>
-              <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
-            </div>
-            <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-              <div class="form-inline">
-                <div class="project-form-value__method__input_wrap">
-                  <%= va.radio_button :recruitment_method, 0, id: "allIn" %>
-                  <label for="allIn" class="project-form-value__method__input__title">All-In&ensp;方式</label>
-                </div>
-                <div class="project-form-value__method__input_wrap-2">
-                  <%= va.radio_button :recruitment_method, 1, id: "allOrNothing" %>
-                  <label for="allOrNothing" class="project-form-value__method__input__title">All-or-Nothing&ensp;方式</label>
-                </div>
-              </div><br>
-              <div class="project-form-value__method__guide_wrap">
-                <p class="project-form-value__method__guide_wrap-2">All-In&ensp;方式</p>
-                <p class="project-form-value__method__guide">目標金額を達成しなくても賞金を受け取れる方式。（プロジェクトの実施、およびリターンの履行を確約できる方のみご利用可能です）
-                </p><br>
-                <p>All-or-Nothing&ensp;方式</p>
-                <p class="project-form-value__method__guide">目標金額を達成すると賞金を受け取れる方式。</p>
+        </div>
+        <div class="row project-form-value__method">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
+            <h3 class="col-5 col-md-6 project-form__title-1">募集方式</h3>
+            <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
+          </div>
+          <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
+            <div class="form-inline">
+              <div class="project-form-value__method__input_wrap">
+                <%= va.radio_button :recruitment_method, 0 %>
+                <p class="project-form-value__method__input__title">All-In&ensp;方式</p>
               </div>
-            </div>
-            <div class="row project-form__button_wrap">
-              <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectNext1">次へ</p>
-            </div>
-          </div>
-        <% end %>
-        </div>
-
-        <div class="tab-pane fade project-form-project" id="project" role="tabpanel" aria-labelledby="project-tab">
-          <div class="progress project-form__bar">
-            <div class="progress-bar project-form__bar__content" style="width: 33.2%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-            </div>
-          </div>
-          <div class="row project-form-project__title">
-            <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-              <h3 class="col-4 col-md-6 project-form__title-1">タイトル</h3>
-              <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
-            </div>
-            <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-              <p><%= f.text_field :project_title, class: "col-12 col-xl-11 form-control project-form-project__input", placeholder: "あなただけのタイトルでスポンサーを惹きつけましょう" %></p>
-              <p class="project-form-project__guide">40文字以内で入力してください。</p>
-            </div>
-          </div>
-          <div class="row project-form-project__content_wrap">
-            <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-              <h3 class="col-4 col-md-6 project-form__title-1">概要</h3>
-              <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
-            </div>
-            <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-              <p><%= f.text_area :project_text, class: "col-12 col-xl-11 form-control project-form-project__input-2", placeholder: "プロジェクトの内容を3行程度でまとめてみましょう" %></p>
-              <p class="project-form-project__guide">140文字以内で入力してください。</p>
+              <div class="project-form-value__method__input_wrap-2">
+                <%= va.radio_button :recruitment_method, 1 %>
+                <p class="project-form-value__method__input__title">All-or-Nothing&ensp;方式</p>
+              </div>
+            </div><br>
+            <div class="project-form-value__method__guide_wrap">
+              <p class="project-form-value__method__guide_wrap-2">All-In&ensp;方式</p>
+              <p class="project-form-value__method__guide">目標金額を達成しなくても賞金を受け取れる方式。（プロジェクトの実施、およびリターンの履行を確約できる方のみご利用可能です）
+              </p><br>
+              <p>All-or-Nothing&ensp;方式</p>
+              <p class="project-form-value__method__guide">目標金額を達成すると賞金を受け取れる方式。</p>
             </div>
           </div>
           <div class="row project-form__button_wrap">
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectBack1">前へ</p>
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectNext2">次へ</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">プレビュー</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">次へ</p>
           </div>
-        </div>
-
-        <div class="tab-pane fade project-form-image" id="image" role="tabpanel" aria-labelledby="image-tab">
-          <div class="progress project-form__bar">
-            <div class="progress-bar project-form__bar__content" style="width: 49.8%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-            </div>
-          </div>
-          <%= f.fields_for :project_image do |im| %>
-            <div class="row project-form-image__main">
-              <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-                <h3 class="col-5 col-md-6 project-form__title-1">メイン画像</h3>
-                <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
-              </div>
-              <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-                <div id="imageField" onClick="$('#file').click()" class="project-form-image__image_wrap">
-                  <p class="project-form-image__input">&ensp;</p>
-                </div>
-                <p><%= im.file_field :project_logo, class: "col-12 form-control project-form-image__input", style: "display:none;", id: "file" %></p>
-              </div>
-            </div>
-            <div class="row project-form-image__sub">
-              <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-                <h3 class="col-5 col-md-6 project-form__title-1">サブ画像</h3>
-              </div>
-              <div class="col-10 col-md-6 col-xl-4 offset-1 project-form__form__wrap">
-                <div class="form-inline">
-                  <%# <div id="imageField1" onClick="$('#file1').click()" class="col-xl-5 project-form-image__image_wrap-2">
-                <p class="project-form-image__input-2">&emsp;</p> %>
-                  <%= im.file_field :project_img, class: "col-lg-5 form-control project-form-image__input-2" %>
-                  <%# </div> %>
-                  <%# <div id="imageField2" onClick="$('#file2').click()" class="col-xl-5 project-form-image__image_wrap-2">
-                <p class="project-form-image__input-2">&emsp;</p> %>
-                  <%= im.file_field :project_img2, class: "col-lg-5 form-control project-form-image__input-2" %>
-                  <%# </div> %>
-                </div>
-                <div class="form-inline">
-                  <%# <div id="imageField3" onClick="$('#file3').click()" class="col-xl-5 project-form-image__image_wrap-2 project-form-image__input-2-1">
-                <p class="project-form-image__input-2">&emsp;</p> %>
-                  <%= im.file_field :project_img3, class: "col-lg-5 form-control project-form-image__input-2 project-form-image__input-2-1" %>
-                  <%# </div>
-              <div id="imageField4" onClick="$('#file4').click()" class="col-xl-5 project-form-image__image_wrap-2 project-form-image__input-2-1">
-                <p class="project-form-image__input-2">&emsp;</p> %>
-                  <%= im.file_field :project_img4, class: "col-lg-5 form-control project-form-image__input-2 project-form-image__input-2-1" %>
-                  <%# </div> %>
-                </div>
-              </div>
-              <div class="col-10 col-md-10 col-lg-6 col-xl-2 offset-1 offset-lg-4 offset-xl-0 project-form-image__guide__wrap">
-                <ul>
-                  <li class="project-form-image__guide__title"><h2>画像の推奨サイズ</h2></li>
-                  <li class="offset-1 project-form-image__guide__content">横1200px&ensp;縦800px&ensp;程度</li>
-                  <li class="offset-1 project-form-image__guide__content">比率&ensp;3:2</li>
-                  <li class="offset-1 project-form-image__guide__content">容量&ensp;10メガバイトまで</li>
-                  <li class="offset-1 project-form-image__guide__content">縦横の比率を揃えると見栄えがよくなります。</li>
-                </ul>
-                <ul>
-                  <li class="project-form-image__guide__title"><h2>画像の優先順位</h2></li>
-                  <li class="offset-1 project-form-image__guide__content">最大5枚まで登録でき、1枚目に設定した画像がメインの画像になります。</li>
-                </ul>
-              </div>
-            </div>
-            <div class="row project-form-image__movie">
-              <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-                <h3 class="col-5 col-md-6 project-form__title-1">動画</h3>
-              </div>
-              <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-                <p><%= im.url_field :project_movie, class: "col-12 form-control project-form-image__input-3", placeholder: "YouTubeのみ対応しています" %></p>
-              </div>
-            </div>
-          <% end %>
-          <div class="row project-form__button_wrap">
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectBack2">前へ</p>
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectNext3">次へ</p>
-          </div>
-        </div>
-
-        <div class="tab-pane fade project-form-about" id="about" role="tabpanel" aria-labelledby="about-tab">
-          <div class="progress project-form__bar">
-            <div class="progress-bar project-form__bar__content" style="width: 66.4%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-            </div>
-          </div>
-          <%= f.fields_for :project_about do |ab| %>
-            <div class="row project-form-about__content">
-              <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-                <h3 class="col-4 col-md-6 project-form__title-1">本文</h3>
-                <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
-              </div>
-              <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-                <%= ab.hidden_field :project_abouts, id: :article_text %>
-                <trix-editor input="article_text" class="col-12 form-control project-form-about__input"><%= ab.text_area :project_abouts, class: "col-12 form-control project-form-about__input" %></trix-editor>
-              </div>
-            </div>
-          <% end %>
-          <div class="row project-form__button_wrap">
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectBack3">前へ</p>
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectNext4">次へ</p>
-          </div>
-        </div>
-
-        <div class="tab-pane fade project-form-idea" id="return" role="tabpanel" aria-labelledby="return-tab">
-          <div class="progress project-form__bar">
-            <div class="progress-bar project-form__bar__content" style="width: 83%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-            </div>
-          </div>
-          <div class="row project-form-idea__content">
-            <% if logged_in? %>
-              <%= f.fields_for :project_return do |re| %>
-                <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-                  <h3 class="col-6 col-md-8  project-form__title-1">タイトル</h3>
-                  <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
-                </div>
-                <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-                  <p class="form-inline"><%= re.text_field :return_title, class: "col-12 col-md-11 form-control project-form-return__input" %></p>
-                </div>
-
-                <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-                  <h3 class="col-6 col-md-8 project-form__title-1">画像</h3>
-                  <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
-                </div>
-                <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-                  <div id="imageFieldReturn" onClick="$('#fileReturn').click()" class="project-form-image__image_wrap">
-                    <p class="project-form-image__input">&ensp;</p>
-                  </div>
-                  <p class="form-inline"><%= re.file_field :return_item_img, class: "col-12 col-md-11 form-control project-form-return__image", style: "display:none;", id: "fileReturn" %></p>
-                </div>
-
-                <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-                  <h3 class="col-6 col-md-8 project-form__title-1">金額</h3>
-                  <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
-                </div>
-                <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-                  <p class="form-inline"><%= re.number_field :return_item_fund, class: "col-6 col-md-4 form-control project-form-return__input3" %>&ensp;円</p>
-                </div>
-
-                <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-                  <h3 class="col-6 col-md-8 project-form__title-1">在庫数</h3>
-                  <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
-                </div>
-                <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-                  <p class="form-inline"><%= re.number_field :return_item_count, class: "col-6 col-md-4 form-control project-form-return__input3" %>&ensp;個</p>
-                </div>
-
-                <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-                  <h3 class="col-6 col-md-8 project-form__title-1">本文</h3>
-                  <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
-                </div>
-                <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-                  <p class="form-inline"><%= re.text_area :return_item_about, class: "col-12 col-md-11 form-control project-form-return__input2" %></p>
-                </div>
-
-                <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-                  <h3 class="col-6 col-md-8 project-form__title-1">スポンサー</h3>
-                  <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
-                </div>
-                <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-                  <p class="form-inline"><%= re.number_field :return_item_sponsors, class: "col-6 col-md-4 form-control project-form-return__input3" %>&ensp;人</p>
-                </div>
-
-                <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-                  <h3 class="col-6 col-md-8 project-form__title-1">お届け予定日</h3>
-                  <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
-                </div>
-                <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-                  <p class="form-inline"><%= re.date_field :delivery_date, class: "col-6 col-md-4 form-control project-form-return__input" %></p>
-                </div>
-
-                <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-                  <h3 class="col-6 col-md-8 project-form__title-1">備考</h3>
-                </div>
-                <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-                  <p class="form-inline"><%= re.text_area :return_item_remark, class: "col-12 col-md-11 form-control project-form-return__input" %></p>
-                </div>
-                <div class="row project-form__button_wrap">
-                  <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectBack4">前へ</p>
-                  <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectNext5">次へ</p>
-                </div>
-              <% end %>
-            <% else %>
-            <% end %>
-          </div>
-        </div>
-
-        <div class="tab-pane fade project-form-report" id="report" role="tabpanel" aria-labelledby="report-tab">
-          <div class="progress project-form__bar">
-            <div class="progress-bar project-form__bar__content" style="width: 100%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-            </div>
-          </div>
-          <%= f.fields_for :project_report do |id| %>
-            <div class="row project-form-idea__content">
-              <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
-                <h3 class="col-6 col-md-8 project-form__title-1">活動報告</h3>
-              </div>
-              <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-                <p class="form-inline"><%= id.text_area :project_reports, class: "col-12 col-md-11 form-control project-form-report__input" %></p>
-              </div>
-            </div>
-            <div class="row project-form__button_wrap">
-              <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button" id="projectBack5">前へ</p>
-              <%= f.submit "保存", class: "col-8 col-sm-4 col-md-3 col-lg-2 offset-1 project-form__button" %>
-            </div>
-          <% end %>
         </div>
       <% end %>
-      </section>
+    </div>
+
+    <div class="tab-pane fade project-form-project" id="project" role="tabpanel" aria-labelledby="project-tab">
+      <div class="row project-form-project__title">
+        <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
+          <h3 class="col-4 col-md-6 project-form__title-1">タイトル</h3>
+          <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
+        </div>
+        <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
+          <p><%= f.text_field :project_title, class: "col-12 col-xl-11 form-control project-form-project__input", placeholder: "あなただけのタイトルでスポンサーを惹きつけましょう" %></p>
+          <p class="project-form-project__guide">40文字以内で入力してください。</p>
+        </div>
+      </div>
+      <div class="row project-form-project__content_wrap">
+        <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
+          <h3 class="col-4 col-md-6 project-form__title-1">概要</h3>
+          <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
+        </div>
+        <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
+          <p><%= f.text_area :project_text, class: "col-12 col-xl-11 form-control project-form-project__input-2", placeholder: "プロジェクトの内容を3行程度でまとめてみましょう" %></p>
+          <p class="project-form-project__guide">140文字以内で入力してください。</p>
+        </div>
+      </div>
+      <div class="row project-form__button_wrap">
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">前へ</p>
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">次へ</p>
+      </div>
+    </div>
+
+    <div class="tab-pane fade project-form-image" id="image" role="tabpanel" aria-labelledby="image-tab">
+      <%= f.fields_for :project_image do |im| %>
+        <div class="row project-form-image__main">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
+            <h3 class="col-5 col-md-6 project-form__title-1">メイン画像</h3>
+            <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
+          </div>
+          <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
+            <div id="imageField" onClick="$('#file').click()" class="project-form-image__image_wrap">
+              <p class="project-form-image__input">あなただけのタイトルでスポンサーを惹きつけましょう</p>
+            </div>
+            <p><%= im.file_field :project_logo, class: "col-12 form-control project-form-image__input", style: "display:none;", id: "file" %></p>
+          </div>
+        </div>
+        <div class="row project-form-image__sub">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
+            <h3 class="col-5 col-md-6 project-form__title-1">サブ画像</h3>
+          </div>
+          <div class="col-10 col-md-6 col-xl-4 offset-1 project-form__form__wrap">
+            <div class="form-inline">
+              <%# <div id="imageField1" onClick="$('#file1').click()" class="col-xl-5 project-form-image__image_wrap-2">
+                <p class="project-form-image__input-2">&emsp;</p> %>
+                <%= im.file_field :project_img, class: "col-lg-5 form-control project-form-image__input-2" %>
+              <%# </div> %>
+              <%# <div id="imageField2" onClick="$('#file2').click()" class="col-xl-5 project-form-image__image_wrap-2">
+                <p class="project-form-image__input-2">&emsp;</p> %>
+                <%= im.file_field :project_img2, class: "col-lg-5 form-control project-form-image__input-2" %>
+              <%# </div> %>
+            </div>
+            <div class="form-inline">
+              <%# <div id="imageField3" onClick="$('#file3').click()" class="col-xl-5 project-form-image__image_wrap-2 project-form-image__input-2-1">
+                <p class="project-form-image__input-2">&emsp;</p> %>
+                <%= im.file_field :project_img3, class: "col-lg-5 form-control project-form-image__input-2 project-form-image__input-2-1" %>
+              <%# </div>
+              <div id="imageField4" onClick="$('#file4').click()" class="col-xl-5 project-form-image__image_wrap-2 project-form-image__input-2-1">
+                <p class="project-form-image__input-2">&emsp;</p> %>
+                <%= im.file_field :project_img4, class: "col-lg-5 form-control project-form-image__input-2 project-form-image__input-2-1" %>
+              <%# </div> %>
+            </div>
+          </div>
+          <div class="col-10 col-md-10 col-lg-6 col-xl-2 offset-1 offset-lg-4 offset-xl-0 project-form-image__guide__wrap">
+            <ul>
+              <li class="project-form-image__guide__title"><h2>画像の推奨サイズ</h2></li>
+              <li class="offset-1 project-form-image__guide__content">横1200px&ensp;縦800px&ensp;程度</li>
+              <li class="offset-1 project-form-image__guide__content">比率&ensp;3:2</li>
+              <li class="offset-1 project-form-image__guide__content">容量&ensp;10メガバイトまで</li>
+              <li class="offset-1 project-form-image__guide__content">縦横の比率を揃えると見栄えがよくなります。</li>
+            </ul>
+            <ul>
+              <li class="project-form-image__guide__title"><h2>画像の優先順位</h2></li>
+              <li class="offset-1 project-form-image__guide__content">最大5枚まで登録でき、1枚目に設定した画像がメインの画像になります。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row project-form-image__movie">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
+            <h3 class="col-5 col-md-6 project-form__title-1">動画</h3>
+          </div>
+          <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
+            <p><%= im.url_field :project_movie, class: "col-12 form-control project-form-image__input-3", placeholder: "YouTubeのみ対応しています" %></p>
+          </div>
+        </div>
+      <% end %>
+      <div class="row project-form__button_wrap">
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">前へ</p>
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">次へ</p>
+      </div>
+    </div>
+
+    <div class="tab-pane fade project-form-about" id="about" role="tabpanel" aria-labelledby="about-tab">
+      <%= f.fields_for :project_about do |ab| %>
+        <div class="row project-form-about__content">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
+            <h3 class="col-4 col-md-6 project-form__title-1">本文</h3>
+            <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
+          </div>
+          <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
+            <p class="form-inline">
+              <%= ab.text_area :project_abouts, value: "はじめに・ご挨拶
+  信頼性を高めるため、ご本人もしくは実行チームの簡単な自己紹介を書きましょう。
+
+
+  このプロジェクトで実現したいこと
+  企画内容と目的を具体的かつ論理的に書きましょう。
+
+
+  プロジェクトをやろうと思った理由
+  プロジェクト立ち上げの背景や経緯を具体的に書きましょう。
+
+
+  これまでの活動
+  プロジェクトにつながる過去の活動や体験を書きましょう。
+
+
+  資金の使い道
+  集めた支援金用途や内訳を書きましょう。
+
+
+  リターンについて
+  リターンに関する説明や画像を載せましょう。
+
+
+  実施スケジュール
+  プロジェクト実施の計画を時系列で書きましょう。
+
+
+  最後に
+  応援したくなるような熱いメッセージを書きましょう。
+
+
+  ※募集方式についての説明も載せるとわかりやすいです。
+
+  例）
+  ＜All-in方式の場合＞
+  本プロジェクトはAll-in方式で実施します。目標金額に満たない場合も、計画を実行し、リターンをお届けします。
+
+  ＜All-or-Nothing方式の場合＞
+  本プロジェクトはAll-or-Nothing方式で実施します。目標金額に満たない場合、計画の実行及びリターンのお届けはございません。",class: "col-12 form-control project-form-about__input" %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+      <div class="row project-form__button_wrap">
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">前へ</p>
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">次へ</p>
+      </div>
+    </div>
+
+    <div class="tab-pane fade project-form-idea" id="idea" role="tabpanel" aria-labelledby="idea-tab">
+      <%= f.fields_for :project_idea do |id| %>
+        <div class="row project-form-idea__content">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
+            <h3 class="col-6 col-md-8 project-form__title-1">アイディア追加</h3>
+          </div>
+          <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
+            <p class="form-inline"><%= id.text_area :project_returns, class: "col-12 col-md-11 form-control project-form-idea__input", placeholder: "リストからアイディア追加" %></p>
+          </div>
+        </div>
+      <% end %>
+      <div class="row project-form__button_wrap">
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">前へ</p>
+        <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">次へ</p>
+      </div>
+    </div>
+
+    <div class="tab-pane fade project-form-report" id="report" role="tabpanel" aria-labelledby="report-tab">
+      <%= f.fields_for :project_report do |id| %>
+        <div class="row project-form-idea__content">
+          <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
+            <h3 class="col-6 col-md-6 project-form__title-1">活動報告</h3>
+          </div>
+          <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
+            <p class="form-inline"><%= id.text_area :project_reports, class: "col-12 col-md-11 form-control project-form-report__input" %></p>
+          </div>
+        </div>
+        <div class="row project-form__button_wrap">
+          <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block project-form__button">前へ</p>
+          <%= f.submit "保存", class: "col-8 col-sm-4 col-md-3 col-lg-2 offset-1 project-form__button" %>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </section>
 </main>

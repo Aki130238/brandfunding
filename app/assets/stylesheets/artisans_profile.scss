@@ -21,10 +21,6 @@
       font-weight: bold;
       font-size: 2rem;
       text-align: center;
-      cursor: pointer;
-    }
-    &__privacy:hover {
-      opacity: 0.85;
     }
     &__privacy__content {
       display: inline-block;
@@ -40,11 +36,6 @@
       font-weight: bold;
       font-size: 2rem;
     }
-    &__button:hover {
-      @extend .hover;
-      background: $hovercolor-submit;
-      color: white;
-    }
     &__input_direction {
       @include mq(md) {
         display: flex;
@@ -59,7 +50,6 @@
       display: none;
       @include mq(md) {
         display: block;
-        margin: auto 0;
       }
     }
     &__title1 {
@@ -78,7 +68,7 @@
       display: none;
       @include mq(md) {
         display: block;
-        margin: auto 0;
+        margin-top: 1rem;
         color: $color-1;
         font-size: 1.4rem;
       }
@@ -91,28 +81,6 @@
       font-size: 1.4rem;
       text-align: center;
     }
-    &__title4_sm {
-      margin: auto 0;
-      padding: 0 .8rem;
-      background: $bgcolor-3;
-      color: white;
-      font-size: 1.4rem;
-      text-align: center;
-      @include mq(md) {
-        display: none;
-      }
-    }
-    &__title4_sm-none {
-      display: none;
-      @include mq(md) {
-        margin: auto 0;
-        padding: 0 .8rem;
-        background: $bgcolor-3;
-        color: white;
-        font-size: 1.4rem;
-        text-align: center;
-      }
-    }
     &__title_hide {
       margin: auto 0;
       padding: 0 .8rem;
@@ -122,7 +90,7 @@
       text-align: center;
     }
     &__input__title {
-      margin: auto 0 auto 8rem;
+      margin: auto 0 auto 2.5rem;
       @include mq(md) {
         margin: auto 0;
       }
@@ -134,8 +102,29 @@
         text-align: right;
       }
     }
+    &__input__title_name {
+      display: none;
+      @include mq(md) {
+        display: block;
+        margin: auto 0;
+        color: $color-1;
+        font-weight: bold;
+        font-size: 2rem;
+        text-align: right;
+      }
+    }
+    &__input__title_sm {
+      margin: auto 0 auto 2.5rem;
+      color: $color-1;
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: left;
+      @include mq(md) {
+        display: none;
+      }
+    }
     &__input__title_phone {
-      margin: 1rem 0 0 6rem;
+      margin: 1rem 0 0 1rem;
       @include mq(md) {
         margin: auto 0;
       }
@@ -153,7 +142,7 @@
         margin-bottom: 2rem;
       }
       &__input__wrap {
-        margin: .5rem auto 1rem auto;
+        margin: .5rem 0 1rem 0;
         @include mq(md) {
           margin: auto 0;
         }
@@ -162,64 +151,63 @@
         padding: .5rem 1rem;
         font-size: 1.6rem;
       }
+      &__title__wrap {
+        // padding: 1.5rem 0;
+      }
+      // &__title {
+      //   padding: .5rem 0 .5rem 4rem;
+      //   color: $color-1;
+      //   font-weight: bold;
+      // }
     }
     &__artisan {
       &__wrap {
         margin-bottom: 1.5rem;
       }
+      &__wrap2 {
+        margin-top: -10rem;
+      }
       &__wrap3 {
         margin-top: 3rem;
       }
-      &__input {
-        &__wrap {
-          margin-top: 1.1rem;
-        }
-        &__wrap2 {
-          margin: 1.1rem 0 0 8.3rem;
-        }
-        &__wrap3 {
-          margin: 1.1rem 0 0 4rem;
-        }
-        &__wrap4 {
-          margin-top: 5rem;
-        }
+      &__input__wrap {
+        margin-top: 1.1rem;
       }
-      &__genre {
-        &-list__wrap {
-          margin-top: 5rem;
-        }
-        &__content {
-          float: left;
-        }
+      &__input__wrap2 {
+        margin: 1.1rem 0 0 8.3rem;
       }
-      &__item {
-        &__title {
-          margin: auto 0 auto 2.5rem;
-          @include mq(md) {
-            margin: 5rem 0 0 0;
-          }
-          color: $color-1;
-          font-weight: bold;
-          font-size: 2rem;
-          text-align: left;
-          @include mq(md) {
-            text-align: right;
-          }
-        }
-        &__title2 {
-          margin: 5.5rem 0 auto 0;
-          padding: 0 .8rem;
-          background: $bgcolor-3;
-          color: white;
-          font-size: 1.4rem;
-          text-align: center;
-        }
-        &-list__wrap {
-          margin-top: 5rem;
-        }
+      &__input__wrap3 {
+        margin: 1.1rem 0 0 4rem;
+      }
+      &__input__wrap4 {
+        margin-top: 15rem;
+      }
+      &__genre__wrap {
+        margin-bottom: -10rem;
+      }
+      &__genre__wrap2 {
+        margin-bottom: -18rem;
+      }
+      &__genre-list__wrap {
+        margin-top: 7rem;
+      }
+      &__genre-list__wrap2 {
+        margin-top: 10rem;
+      }
+      &__genre__content {
+        float: left;
+      }
+      &__item__wrap {
+        margin-top: 5rem;
+      }
+      &__item-list__wrap {
+        margin-top: 18rem;
+      }
+      &__facillity__wrap {
+        margin-top: -5rem;
       }
       &__facillity-list__wrap {
-        margin-top: 5rem;
+        margin-top: 11rem;
       }
       &__input {
         padding: .5rem 1rem;
@@ -260,11 +248,6 @@
         background: $btncolor-2;
         font-size: 1.5rem;
         text-align: center;
-        cursor: pointer;
-      }
-      &__button:hover {
-        @extend .hover;
-        background: $hovercolor-artisanbtn;
       }
       &__image {
         width: 1.6rem;
@@ -272,14 +255,13 @@
         vertical-align: -.4rem;
       }
       &__radio__wrap {
-        margin-top: 4.8rem;
+        margin-top: 1rem;
       }
       &__radio__input {
         margin: .5rem 0 0 3rem;
       }
       &__radio__content {
         margin-top: .8rem;
-        cursor: pointer;
       }
     }
   }
@@ -287,7 +269,7 @@
 
 .artisans-page {
   &__header {
-    margin: 0 auto -1rem auto;
+    margin: 0 auto;
     padding: 1.5rem 0;
     background: $bgcolor-artisan;
   }
@@ -300,25 +282,14 @@
     background: $bgcolor-project2;
   }
   .artisan-list {
-    margin: 1.5rem auto;
-    @include mq(lg) {
-      margin: 1.5rem;
-    }
+    margin: 1.5rem;
     border: 1px solid black;
     &_void {
-      margin-top: 2rem;
-      @include mq(md) {
-        margin-top: 3rem;
-      }
+      margin: 3rem;
     }
     &__wrap {
-      margin: 0 auto;
-      @include mq(lg) {
-        margin: 0 0 0 auto;
-      }
-      @include mq(xl) {
-        margin-right: 3rem;
-      }
+      display: flex;
+      margin-left: 20rem;
     }
     &__link {
       color: $color-1;
@@ -368,95 +339,57 @@
     margin: 0 auto 3rem auto;
     background: $bgcolor-artisan3;
     &__wrap {
-      @include mq(xl) {
-        margin-left: -3rem;
-      }
+      margin-left: -3rem;
+    }
+    &__image__wrap {
+      margin: 2.5rem 0 2.5rem auto;
+      padding: 18rem 0;
+      border: 1px solid black;
+      border-radius: 5px;
+      background: white;
+      text-align: center;
     }
     &__image {
       margin-top: -18rem;
       padding: 11rem 0;
-      &__wrap {
-        margin: 2.5rem auto 0 auto;
-        @include mq(md) {
-          margin: 2.5rem auto;
-        }
-        @include mq(lg) {
-          margin: 2.5rem 0 2.5rem auto;
-        }
-        padding: 18rem 0;
-        border: 1px solid black;
-        border-radius: 5px;
-        background: white;
-        text-align: center;
-      }
-      &__decoration {
-        display: inline-block;
-        position: absolute;
-        top: -3px;
-        left: 25px;
-        z-index: 2;
-        width: 50px;
-        margin: 0;
-        padding: 28px 0;
-        border-radius: 2px 0 0 0;
-        background: $bgcolor-decoration;
-        color: white;
-        font-size: 20px;
-        text-align: center;
-      }
-      &__decoration__content {
-        font-size: 25px;
-        font-weight: bold;
-      }
-      &__decoration:before {
+    }
+    &__image__decoration {
+      display: inline-block;
       position: absolute;
-      content: '経歴';
-      top: 10px;
-      left: 11px;
+      top: -6px;
+      left: 25px;
+      margin: 0;
+      padding: 30px 0;
+      z-index: 2;
+      width: 50px;
+      text-align: center;
+      color: white;
+      font-size: 17px;
+      background: linear-gradient(#ff785b 0%, #e95738 100%);
+      border-radius: 2px 0 0 0;
+      }
+    &__image__decoration:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: -6px;
       border: none;
-      border-bottom: solid 6px $bgcolor-decoration;
+      border-bottom: solid 6px #cf4a2d;
       border-right: solid 6px transparent;
-      font-size: 1.4rem;
-      }
-      &__decoration:after {
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 0;
-        height: 0;
-        border-left: 25px solid $bgcolor-decoration;
-        border-right: 25px solid $bgcolor-decoration;
-        border-bottom: 15px solid transparent;
-      }
-      &__decoration2 {
-        position: absolute;
-        bottom: 0;
-        margin-bottom: 0;
-        background: $bgcolor-decoration2;
-        color: white;
-        text-align: right;
-      }
+    }
+    &__image__decoration:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 100%;
+      height: 0;
+      width: 0;
+      border-left: 25px solid #e95738;
+      border-right: 25px solid #e95738;
+      border-bottom: 15px solid transparent;
     }
     &__title {
-      @include mq(md) {
-        text-align: right;
-      }
-    }
-    &__content_sm {
-      display: none;
-      @include mq(lg) {
-        display: block;
-      }
-      color: $color-1;
-      font-size: 1.5rem;
-    }
-    &__content_sm2 {
-      color: $color-1;
-      font-size: 1.5rem;
-      @include mq(lg) {
-        display: none;
-      }
+      text-align: right;
     }
     &__content {
       color: $color-1;
@@ -479,9 +412,6 @@
       margin: -.3rem 2rem 0 0;
       background: $bgcolor-skill2;
       color: $color-1;
-    }
-    &__content4_sm {
-      margin-bottom: 1.5rem;
     }
     &__content5 {
       float: left;
@@ -506,18 +436,10 @@
     margin: 0 auto;
     &__title {
       margin-top: 2rem;
-      @include mq(md) {
-        text-align: right;
-      }
+      text-align: right;
     }
     &__content {
-      margin: 0 auto 3rem auto;
-      @include mq(md) {
-        margin: 0 0 3rem 0;
-      }
-      @include mq(lg) {
-        margin: 0 0 3rem 0;
-      }
+      margin-bottom: 3rem;
       padding: 1rem 1rem 30rem 1rem;
       border: 2px solid $bordercolor-1;
     }

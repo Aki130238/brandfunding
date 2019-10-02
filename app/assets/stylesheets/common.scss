@@ -16,7 +16,6 @@ $bgcolor-idea2: #FFFFEA;
 $bgcolor-skill: #D8EEF7;
 $bgcolor-skill2: #F4E000;
 $bgcolor-decoration: #66C5CD;
-$bgcolor-decoration2: #DF5462;
 $bgcolor-footer: #606060;
 $color-1: #6C6C6C;
 $color-main: #FE38C3;
@@ -25,35 +24,15 @@ $color-skill: #4C829F;
 $btncolor-1: #C19A88;
 $btncolor-2: #44B5AE;
 $btncolor-3: #AF7128;
-$btncolor-comment: #E2E590;
 $bordercolor-1: #E7E7E7;
-$hovercolor-top1: #ffffc1;
-$hovercolor-top2: #c1ffc1;
-$hovercolor-top3: #c1ffff;
-$hovercolor-main: #e3adc1;
-$hovercolor-sign: #e73562;
-$hovercolor-sign2: #f7b977;
-$hovercolor-profile: #f3a68c;
-$hovercolor-terms: #f7b977;
-$hovercolor-privacy: #f7b977;
-$hovercolor-management: #f7b977;
-$hovercolor-sponsor: #fcc800;
-$hovercolor-favorite: #fcc800;
-$hovercolor-follow: #fcc800;
-$hovercolor-submit: orange;
-$hovercolor-sort: #fcc800;
-$hovercolor-idea: #fcc800;
-$hovercolor-comment: #fcc800;
-$hovercolor-delete: #d70035;
-$hovercolor-artisanbtn: #00885a;
-$hovercolor-return: #fcc800;
-$hovercolor-user: #fcc800;
-$hovercolor-project: #1DBE00;
 
-$top-opacity: 0.9;
+@media (max-width: 540px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
 
 $breakpoints: (
-  's': 'screen and (max-width: 575px)',
   'sm': 'screen and (min-width: 576px)',
   'md': 'screen and (min-width: 768px)',
   'lg': 'screen and (min-width: 992px)',
@@ -104,10 +83,6 @@ $breakpoints: (
   color: $color-1;
 }
 
-.hover {
-  transition: 0.3s ease-in-out;
-}
-
 html {
   height: 100%;
   font-size: 62.5%;
@@ -134,29 +109,18 @@ html {
 }
 
 .header {
-  // position: sticky;
-  // top: 0;
-  // z-index: 99999;
-  @include mq(s) {
-    padding: 1rem 0 .5rem 3rem;
-  }
-  padding: 2.5rem 0 2rem 3rem;
-  border-top: solid $color-main;
+  padding: 2.5rem 0 2.5rem 3rem;
+  border-bottom: solid $color-main;
   &__title {
     color: $color-1;
-    font-family: 'Playfair Display', serif;
-    // text-shadow: 1px 1px 0 $color-main, -1px 1px 0 $color-main, 1px -1px 0 $color-main, -1px -1px 0 $color-main;
   }
   &__title:hover {
-    @extend .hover;
-    color: $hovercolor-main;
+    color: $color-1;
     text-decoration: none;
-  }
-  &__icon {
-    vertical-align: .2rem;
   }
   .navbar {
     margin-right: 2rem;
+    background: white;
     .navbar-toggler {
       font-size: 2rem;
       outline: 0;
@@ -168,21 +132,9 @@ html {
   &__navlink {
     margin: .5rem 4rem 0 0;
     color: $color-1;
-    @include mq(s) {
-      font-size: 1.4rem;
-    }
-    &__artisan:hover {
-      color: $bgcolor-artisan4;
-    }
-    &__profile:hover {
-      color: $hovercolor-profile;
-    }
-    &__sign:hover {
-      color: $hovercolor-sign;
-    }
   }
   &__navlink:hover {
-    @extend .hover;
+    color: $color-1;
     text-decoration: none;
   }
 }
@@ -194,76 +146,26 @@ html {
     margin-right: 5rem;
   }
   &__title__wrap {
-    @include mq(lg) {
-      margin-right: -8rem;
-    }
-    @include mq(xl) {
-      margin-right: -10rem;
-    }
     padding-top: .3rem;
   }
   &__title {
     margin-left: 3rem;
-    @include mq(md) {
-      margin-left: 4rem;
-    }
     color: white;
-    font-family: 'Playfair Display', serif;
   }
   &__title:hover {
-    @extend .hover;
-    color: $hovercolor-main;
+    color: white;
     text-decoration: none;
   }
   &__column {
-    margin: 0 1.5rem;
-    @include mq(md) {
-      margin: 0 1rem 0 3rem;
-    }
+    margin: 0 1rem 0 3rem;
     padding-top: .8rem;
     color: white;
     font-size: 1.4rem;
-    &__wrap {
-      @include mq(md) {
-        display: flex;
-        margin-left: -2.1rem;
-      }
-      @include mq(lg) {
-        margin-left: 0;
-      }
-    }
-    &__terms:hover {
-      @extend .hover;
-      color: $hovercolor-terms;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    &__privacy:hover {
-      @extend .hover;
-      color: $hovercolor-privacy;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    &__management:hover {
-      @extend .hover;
-      color: $hovercolor-management;
-      cursor: pointer;
-      text-decoration: none;
-    }
   }
   &__column2 {
-    margin: 0 1.5rem;
-    @include mq(md) {
-      margin-left: 1rem;
-    }
+    margin: 0 1rem;
     padding-top: .8rem;
     color: white;
     font-size: 1.4rem;
-  }
-  &__column3 {
-    display: none;
-    @include mq(md) {
-      display: block;
-    }
   }
 }
