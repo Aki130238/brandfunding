@@ -17,7 +17,13 @@
             <p class="project-list__title"><%= pr.project_text %></p>
           </div>
           <div class="row project-list__bar">
-            <p class="project-list__bar__content">SUCCESS</p>
+            <p class="project-list__bar__content">
+              <% if fund_count(pr) >= pr.project_value.target_fund %>
+                <%= "SUCCESS" %>
+              <% else %>
+                <%= fund_progress(pr) %>%
+              <% end %>
+            </p>
           </div>
           <div class="row project-list__guide">
             <p class="col-4">現在</p>

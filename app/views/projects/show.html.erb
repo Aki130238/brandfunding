@@ -11,8 +11,8 @@
       </div>
       <div class="col-11 col-sm-8 col-md-5 show-project1__content__wrap">
         <p><%= svg("yen-sign-solid.svg", class: "show-project1__icon") %>&ensp;現在の支援総額</p>
-        <p class="col-lg-12 col-xl-11 show-project1__project-fund"><%= @project.project_value.project_fund %><%= fund_count(@project) %></p>
-        <p class="col-lg-12 col-xl-11 show-project1__progress">105%</p>
+        <p class="col-lg-12 col-xl-11 show-project1__project-fund"><%= fund_count(@project) %></p>
+        <p class="col-lg-12 col-xl-11 show-project1__progress"><%= fund_progress(@project) %>%</p>
         <p class="col-lg-6 col-xl-5 show-project1__target-fund"><%= @project.project_value.target_fund %></p>
         <div class="show-project1__user-image__wrap">
           <p class="col-lg-5 col-xl-4 show-project1__patron"><%= svg("users-solid.svg", class: "show-project1__icon2") %>&ensp;パトロン数</p>
