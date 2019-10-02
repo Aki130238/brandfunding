@@ -228,12 +228,23 @@
     @include mq(xl) {
       margin-left: 8rem;
     }
-    font-size: 2rem;
     @include mq(md) {
       font-size: 2.5rem;
     }
     &__button_wrap {
       margin-top: 3rem;
+    }
+    &__input {
+      font-size: 1.5rem;
+    }
+    &__button {
+      font-size: 1.5rem;
+      &__wrap {
+        margin-top: 2rem;
+      }
+    }
+    &__button:hover {
+      @extend .hover;
     }
   }
 }

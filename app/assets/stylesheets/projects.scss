@@ -4,7 +4,7 @@
     width: 100%;
     padding: 2.5rem 0;
     background: $bgcolor-project;
-    color: $color-1;
+    color: white;
     font-weight: bold;
     text-align: center;
   }
@@ -54,7 +54,7 @@
     .nav-link.active {
       border: none;
       background: $bgcolor-project;
-      color: black;
+      color: white;
     }
   }
 
@@ -72,6 +72,14 @@
       }
       &__title {
         font-size: 1.4rem;
+      }
+    }
+    &__idea__input {
+      padding: .5rem 1rem;
+      border: 1px solid black;
+      outline: 0;
+      &__wrap {
+        margin: .5rem 0 3rem 0;
       }
     }
     &__title-1 {
@@ -207,6 +215,9 @@
           padding-bottom: 1rem;
         }
         &__guide_wrap-2 {
+          @include mq(s) {
+            padding-top: 0;
+          }
           padding-top: 3rem;
         }
         &__guide {
@@ -333,9 +344,12 @@
 .projects-page {
   &__header {
     background: $bgcolor-project;
-    }
+  }
   &__menu {
-    display: flex;
+    display: none;
+    @include mq(xl) {
+      display: flex;
+    }
     margin: .8rem auto .8rem auto;
     padding: 1rem 0;
     background: $bgcolor-project2;
@@ -358,6 +372,9 @@
     &__button {
       margin: 1rem 1.5rem 0 1rem;
       cursor: pointer;
+      &__wrap {
+        display: flex;
+      }
     }
     &__button:hover {
       @extend .hover;
@@ -373,6 +390,9 @@
     }
     &__button3 {
       margin: 0 2rem;
+      @include mq(s) {
+        margin: 0 .3rem;
+      }
       padding: 1rem 1.6rem;
       border: 1px solid $bordercolor-1;
       background: white;
@@ -385,6 +405,66 @@
       color: white;
     }
   }
+  &__menu2 {
+    @include mq(xl) {
+      display: none;
+    }
+    margin: .8rem auto .8rem auto;
+    padding: .5rem 0;
+    background: $bgcolor-project2;
+    &__icon__wrap {
+      margin-top: 1.1rem;
+    }
+    &__icon {
+      width: 2rem;
+      margin-left: 2rem;
+      cursor: pointer;
+    }
+    &__icon:hover {
+      @extend .hover;
+      color: $hovercolor-sort;
+    }
+    &__icon2 {
+      width: 1.6rem;
+      vertical-align: -.2rem;
+    }
+    &__button {
+      margin: 1rem 1.5rem 0 1rem;
+      cursor: pointer;
+      &__wrap {
+        display: flex;
+      }
+    }
+    &__button:hover {
+      @extend .hover;
+      color: $hovercolor-sort;
+    }
+    &__button2 {
+      margin: 0 .3rem;
+      padding: 1rem 1.6rem;
+      border: 1px solid $bordercolor-1;
+      background: white;
+      color: $color-1;
+      cursor: pointer;
+    }
+    &__button3 {
+      margin: 0 2rem;
+      @include mq(s) {
+        margin: 0 .3rem;
+      }
+      padding: 1rem 1.6rem;
+      border: 1px solid $bordercolor-1;
+      background: white;
+      color: $color-1;
+      cursor: pointer;
+    }
+    &__button2:hover, &__button3:hover {
+      @extend .hover;
+      background: $hovercolor-sort;
+      color: white;
+    }
+  }
+
   .project-list {
     margin: 2rem auto;
     @include mq(md) {
@@ -470,26 +550,29 @@
       text-align: center;
     }
     &__image {
-      margin: 0 auto 3rem auto;
-      @include mq(md) {
-        margin-left: 2rem;
-      }
-      @include mq(lg) {
-        margin: 0 0 3rem 6rem;
+      @include mq(s) {
+        padding: 15rem 0;
       }
       padding: 23.5rem 0;
       border: 1px solid black;
       background: white;
       text-align: center;
+      &__wrap {
+        margin: 0 auto;
+        padding: 0;
+        @include mq(md) {
+          margin: 0 0 0 auto;
+        }
+      }
     }
     &__sns {
       margin-bottom: 3rem;
-      @include mq(md) {
-        margin-left: 2rem;
-      }
-      @include mq(lg) {
-        margin-left: 6rem;
-      }
+      // @include mq(md) {
+      //   margin-left: 2rem;
+      // }
+      // @include mq(lg) {
+      //   margin-left: 6rem;
+      // }
       padding: .3rem 0;
       border: 1px solid black;
       background: white;
@@ -499,7 +582,9 @@
     &__content__wrap {
       margin: 0 auto;
       @include mq(md) {
-        margin: 2rem 0 0 4rem;
+        margin: 2rem auto 0 0;
+        padding-left: 5rem;
+        padding-right: 0;
       }
     }
     &__icon {
@@ -550,6 +635,9 @@
       @include mq(lg) {
         margin-top: 2rem;
       }
+      @include mq(xl) {
+        margin-top: 0;
+      }
       padding: 1.5rem 0;
       border: 1px solid black;
       background: white;
@@ -580,13 +668,25 @@
     }
     &__deadline {
       margin-top: 2rem;
-      @include mq(xl) {
-        margin: 0;
+      @include mq(md) {
+        margin-top: 2.5rem;
       }
-      padding: 1.5rem 0;
+      @include mq(lg) {
+        margin-top: 2rem;
+      }
+      @include mq(s) {
+        margin-top: 2.5rem;
+        padding: .3rem 0;
+      }
+      padding: 1rem 0;
       border: 1px solid black;
       background: white;
       text-align: center;
+      &__title {
+        @include mq(xl) {
+          margin-top: 2rem;
+        }
+      }
     }
     &__owner-name {
       padding: 1rem 0;
@@ -597,13 +697,16 @@
     &__prefectures__wrap {
       display: flex;
       margin-top: -2rem;
+      @include mq(s) {
+        margin-bottom: 5rem;
+      }
     }
     &__prefectures {
       margin: 2.5rem auto auto 1rem;
-      @include mq(md) {
-        margin: 2.5rem auto auto auto;
+      @include mq(lg) {
+        margin: 2rem auto auto auto;
       }
-      padding: .3rem 0;
+      padding: 1rem 0;
       border: 1px solid black;
       background: white;
       text-align: center;
@@ -611,46 +714,48 @@
   }
 
   .show-menu {
+    display: flex;
     margin: 5rem 0 0 2.5rem;
-    @include mq(md) {
+    @include mq(s) {
       margin: 1.5rem 0 0 3rem;
+      padding: 0;
     }
     @include mq(lg) {
-      margin: 10rem 0 0 6rem;
+      margin: 5rem 0 0 10rem;
+    }
+    @include mq(xl) {
+      margin: 5rem 0 0 13rem;
     }
     border: none;
     list-style: none;
-    &__favorite {
-      margin: 2rem 0 2rem 3rem;
+    &__follow-favorite_sm {
+      // margin: 0 auto;
+      padding-left: 3rem;
       @include mq(md) {
-        margin: 3rem 0 2rem 3rem;
+        display: none;
+      }
+    }
+    &__follow-favorite {
+      display: none;
+      @include mq(md) {
+        display: block;
+        padding: 0;
       }
       @include mq(lg) {
-        margin: -2.8rem 25rem 0 auto;
+        margin-left: 7rem;
       }
       @include mq(xl) {
-        margin: 10rem 0 0 6rem;
-      }
-      &__button {
-        color: $color-1;
-        text-decoration: none;
-      }
-      &__button:hover {
-        @extend .hover;
-        color: $hovercolor-favorite;
-      }
-      &__button2 {
-        color: red;
-        text-decoration: none;
+        display: flex;
+        margin-left: 5rem;
       }
     }
     &__follow {
-      margin: 3rem 0 0 3rem;
-      @include mq(lg) {
-        margin-top: 7rem;
+      // margin: 3rem 0 0 3rem;
+      @include mq(md) {
+        margin: 5.2rem 0 -4rem 0;
       }
       @include mq(xl) {
-        margin-top: 10rem;
+        margin-top: 5rem;
       }
       &-icon {
         width: 2rem;
@@ -670,6 +775,33 @@
         color: red;
         text-decoration: none;
         outline: 0;
+      }
+    }
+    &__favorite {
+      // margin: 2rem 0 2rem 3rem;
+      // @include mq(md) {
+      //   margin: 3rem 0 2rem 3rem;
+      // }
+      @include mq(md) {
+        margin: -5rem auto 0 auto;
+      }
+      @include mq(lg) {
+        margin: -5rem auto 0 auto;
+      }
+      @include mq(xl) {
+        margin-top: 5rem;
+      }
+      &__button {
+        color: $color-1;
+        text-decoration: none;
+      }
+      &__button:hover {
+        @extend .hover;
+        color: $hovercolor-favorite;
+      }
+      &__button2 {
+        color: red;
+        text-decoration: none;
       }
     }
     &__link {
@@ -716,11 +848,11 @@
   }
 
   .show-project2 {
-    margin: 5rem 0;
+    margin: 5rem auto 0 auto;
     &__home {
-      @include mq(lg) {
-        margin-left: 6rem;
-      }
+      // @include mq(lg) {
+      //   margin-left: 6rem;
+      // }
       &__title {
         font-weight: bold;
       }
@@ -730,33 +862,43 @@
       &__content {
         margin-top: 1.5rem;
         border: 1px solid black;
-        padding-bottom: 167rem;
+        @include mq(s) {
+          padding-bottom: 50rem;
+        }
+        padding-bottom: 103rem;
       }
     }
-    &__report {
-      @include mq(lg) {
-        margin-left: 6rem;
-      }
-    }
-    &__patron {
-      @include mq(lg) {
-        margin-left: 6rem;
-      }
-    }
+    // &__report {
+    //   @include mq(lg) {
+    //     margin-left: 6rem;
+    //   }
+    // }
+    // &__patron {
+    //   @include mq(lg) {
+    //     margin-left: 6rem;
+    //   }
+    // }
     &__comment {
-      @include mq(lg) {
-        margin-left: 6rem;
-      }
+      // @include mq(lg) {
+      //   margin-left: 6rem;
+      // }
       &__input__wrap {
-        margin: 0 auto 3rem auto;
+        margin: 1.5rem auto 3rem auto;
       }
       &__input {
+        @include mq(s) {
+          margin: 0 auto;
+        }
         padding: 1rem 1rem 10rem 1rem;
         font-size: 1.7rem;
         overflow: hidden;
         resize: none;
       }
       &__button__wrap {
+        @include mq(s) {
+          display: inline-block;
+          text-align: center;
+        }
         margin: 1.5rem auto 0 auto;
       }
       &__button {
@@ -773,21 +915,26 @@
       }
       &__content__wrap {
         display: flex;
-        margin: 2rem;
+        margin: 2rem auto;
       }
       &__user {
         color: black;
         text-decoration: none;
       }
+      &__user:hover {
+        @extend .hover;
+        color: $hovercolor-user;
+      }
       &__content {
         color: $color-1;
+        word-wrap: break-word;
       }
     }
   }
   .show-project3 {
-    margin-top: 3rem;
+    margin: 3rem 0 0 auto;
     @include mq(md) {
-      margin-left: 4rem;
+      margin-left: 3rem;
     }
     &-form {
       &__button {
@@ -887,8 +1034,8 @@
         border-bottom: 1px double black;
         color: $color-1;
       }
-      &__button {
-        margin: 2rem 0 0 2rem;
+      &__button__wrap {
+        margin: 2rem auto 0 auto;
         padding: 2rem 0;
         border-radius: 50px;
         background: $bgcolor-idea;
@@ -897,13 +1044,24 @@
         text-align: center;
         cursor: pointer;
       }
-      &__button:hover {
+      &__button__wrap:hover {
         @extend .hover;
         background: $hovercolor-idea;
         color: white;
       }
+      &__button {
+        color: $color-1;
+        text-decoration: none;
+      }
+      &__button:hover {
+        @extend .hover;
+        color: white;
+      }
     }
     &__return {
+      @include mq(s) {
+        margin: 0 auto;
+      }
       &__wrap {
         margin-bottom: 3rem;
         border: 1px solid black;
@@ -965,6 +1123,9 @@
         @include mq(lg) {
           display: flex;
         }
+      }
+      &__hide {
+          margin-bottom: 3rem;
       }
     }
   }
