@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user, only: [:edit, :update, :destroy]
+  before_action :require_login, only: %i[index show]
+  before_action :set_user, only: %i[show edit update destroy]
+  before_action :authenticate_user, only: %i[show edit update destroy]
 
   def index
     @users = User.all
@@ -8,6 +9,10 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    if logged_in?
+      flash[:alert] = "すでにログインしています"
+      redirect_to root_path
+    end
   end
 
   def create
@@ -133,13 +138,10 @@ class UsersController < ApplicationController
       )
   end
 
-  
-
-  # def authenticate_user
-  #   unless current_user.id == @user.id
-  #     flash[:notice] = "ログインが必要"
-  #     redirect_to users_path, notice:"ログインが必要です"
-  #   end
-  # end
-
+  def authenticate_user
+    unless current_user.id == @user.id
+      flash[:alert] = "権限がありません"
+      redirect_to root_path
+    end
+  end
 end

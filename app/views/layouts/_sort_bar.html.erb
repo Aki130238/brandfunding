@@ -1,10 +1,31 @@
 <div class="col-md-8 projects-page__menu">
-  <p class="projects-page__menu__icon__wrap"><%= svg("sort-amount-down-solid.svg", class: "projects-page__menu__icon") %></p>
-  <p class="projects-page__menu__button">並び替え</p>
+  <div class="projects-page__menu__button__wrap">
+    <p class="projects-page__menu__icon__wrap"><%= svg("sort-amount-down-solid.svg", class: "projects-page__menu__icon") %></p>
+    <p class="projects-page__menu__button">並び替え</p>
+  </div>
   <p class="projects-page__menu__button2">人気順</p>
   <p class="projects-page__menu__button2">新着順</p>
   <p class="projects-page__menu__button2">終了日が近い順</p>
   <p class="projects-page__menu__button2">支援総額順</p>
   <p class="projects-page__menu__button2">支援者数順</p>
   <p class="projects-page__menu__button3"><%= svg("plus-circle-solid.svg", class: "projects-page__menu__icon2") %>&thinsp;条件を追加</p>
+</div>
+
+<div class="col-10 col-md-8 projects-page__menu2">
+  <div class="projects-page__menu__button__wrap_open">
+    <a class="" data-toggle="collapse" data-target="#sortBar" aria-expanded="false" aria-controls="sortBar">
+      <div class="projects-page__menu__button__wrap">
+        <p class="projects-page__menu__icon__wrap"><%= svg("sort-amount-down-solid.svg", class: "projects-page__menu__icon") %></p>
+        <p class="projects-page__menu__button">並び替え</p>
+      </div>
+    </a>
+  </div>
+  <div class="collapse" id="sortBar">
+    <p class="projects-page__menu__button2">人気順</p>
+    <p class="projects-page__menu__button2">新着順</p>
+    <p class="projects-page__menu__button2">終了日が近い順</p>
+    <p class="projects-page__menu__button2">支援総額順</p>
+    <p class="projects-page__menu__button2">支援者数順</p>
+    <p class="projects-page__menu__button3"><%= svg("plus-circle-solid.svg", class: "projects-page__menu__icon2") %>&thinsp;条件を追加</p>
+  </div>
 </div>
