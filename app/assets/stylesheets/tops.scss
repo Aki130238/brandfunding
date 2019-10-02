@@ -134,5 +134,20 @@
     &__title {
       font-weight: bold;
     }
+    &__button {
+      color: black;
+      font-size: 1.6rem;
+      &__wrap {
+        margin: 1.5rem auto 5rem auto;
+        padding: 0;
+        border: 1px solid black;
+        border-radius: 3px;
+      }
+    }
+    &__button:hover {
+      @extend .hover;
+      background: $hovercolor-project;
+      color: white;
+    }
   }
 }
