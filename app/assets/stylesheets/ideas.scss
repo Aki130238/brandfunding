@@ -870,7 +870,7 @@
       text-decoration: none;
     }
     &__image {
-      padding: 8rem 0;
+      padding: 7rem 0;
       border-bottom: 1px solid black;
       text-align: center;
     }
@@ -927,18 +927,30 @@
         &__wrap {
           margin: 1rem 0 auto 0;
         }
+        &__wrap1 {
+
+        }
+        &__wrap2 {
+          // margin-bottom: .2rem;
+        }
+        &__wrap3 {
+          // margin-bottom: .2rem;
+        }
       }
       &__icon1 {
         width: 1.35rem;
       }
       &__icon2 {
-        width: 1.8rem;
+        width: 1.7rem;
       }
       &__icon3 {
-        width: 1.8rem;
+        width: 1.6rem;
+      }
+      &__wrap {
+        // padding-bottom: 1rem;
       }
       &__wrap1 {
-        border-right: 1px solid black;
+        border-bottom: 1px solid black;
       }
       &__wrap2 {
         border-right: 1px solid black;
@@ -946,6 +958,10 @@
       &__wrap3 {
 
       }
+    }
+    &__content1, &__content2, &__content3 {
+      color: $color-1;
+      font-size: 1.8rem;
     }
     &__content1 {
 

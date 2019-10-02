@@ -20,17 +20,17 @@
             <p class="idea-list__title"><%= i.idea_about %></p>
           </div>
           <div class="row idea-list__content">
-            <div class="col-4 idea-list__content__wrap1">
-              <p class="idea-list__content__icon__wrap"><%= svg("yen-sign-solid.svg", class: "idea-list__content__icon1") %></p>
-              <p class="idea-list__content1">1,000</p>
+            <div class="col-12 idea-list__content__wrap idea-list__content__wrap1">
+              <p class="idea-list__content__icon__wrap idea-list__content__icon__wrap1"><%= svg("yen-sign-solid.svg", class: "idea-list__content__icon1") %></p>
+              <p class="idea-list__content1"><%= i.budget %></p>
             </div>
-            <div class="col-4 idea-list__content__wrap2">
-              <p class="col-4 idea-list__content__icon__wrap"><%= svg("box-solid.svg", class: "idea-list__content__icon2") %></p>
-              <p class="idea-list__content2">30</p>
+            <div class="col-6 idea-list__content__wrap idea-list__content__wrap2">
+              <p class="idea-list__content__icon__wrap idea-list__content__icon__wrap2"><%= svg("box-solid.svg", class: "idea-list__content__icon2") %></p>
+              <p class="idea-list__content2"><%= i.idea_amount %>個</p>
             </div>
-            <div class="col-4 idea-list__content__wrap3">
-              <p class="col-4 idea-list__content__icon__wrap"><%= svg("calendar-alt-regular.svg", class: "idea-list__content__icon3") %></p>
-              <p class="idea-list__content3"></p>
+            <div class="col-6 idea-list__content__wrap idea-list__content__wrap3">
+              <p class="idea-list__content__icon__wrap idea-list__content__icon__wrap3"><%= svg("calendar-alt-regular.svg", class: "idea-list__content__icon3") %></p>
+              <p class="idea-list__content3"><%= i.delivery_date.strftime("'%y/%m/%d") %></p>
             </div>
           </div>
           <%# <div class="row idea-list__bar2">&ensp;</div> %>
