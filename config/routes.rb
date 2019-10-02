@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
   post 'projects/:id', to: 'project_returns#create'
   resources :projects do
-    resources :comments, only: %i[create]
+    resources :comments, only: %i[create destroy]
   end
   resources :conversations do
     resources :messages
