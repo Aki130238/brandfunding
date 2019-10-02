@@ -1,11 +1,31 @@
 .top-page {
   .menu {
     background: $bgcolor-2;
-    &__image {
+    &__image1 {
+      object-position: 100% 100%;
       width: 100%;
-      height: 20vh;
-      @include mq(md) {
-        height: auto;
+      height: 45rem;
+      object-fit: cover;
+      @include mq(lg) {
+        object-fit: none;
+      }
+    }
+    &__image2 {
+      object-position: 70% 50%;
+      width: 100%;
+      height: 45rem;
+      object-fit: cover;
+      @include mq(lg) {
+        object-fit: none;
+      }
+    }
+    &__image3 {
+      object-position: 70% 50%;
+      width: 100%;
+      height: 45rem;
+      object-fit: cover;
+      @include mq(s) {
+        object-fit: none;
       }
     }
     &__md {
@@ -17,10 +37,18 @@
       }
     }
     &__title {
-      font-size: 3.5rem;
+      font-size: 3rem;
+      @include mq(lg) {
+        font-size: 3.5rem;
+      }
+      opacity: $top-opacity;
     }
     &__title2 {
-      font-size: 5rem;
+      font-size: 3rem;
+      @include mq(lg) {
+        font-size: 5rem;
+      }
+      opacity: $top-opacity;
     }
     &__sm-hide {
       display: none;

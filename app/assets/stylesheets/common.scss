@@ -49,6 +49,8 @@ $hovercolor-artisanbtn: #00885a;
 $hovercolor-return: #fcc800;
 $hovercolor-user: #fcc800;
 
+$top-opacity: 0.9;
+
 $breakpoints: (
   's': 'screen and (max-width: 575px)',
   'sm': 'screen and (min-width: 576px)',
@@ -166,7 +168,7 @@ html {
     margin: .5rem 4rem 0 0;
     color: $color-1;
     @include mq(s) {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
     &__artisan:hover {
       color: $bgcolor-artisan4;
