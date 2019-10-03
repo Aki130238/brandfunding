@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2019_10_03_050731) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "artisan_image"
     t.index ["user_id"], name: "index_artisan_profiles_on_user_id"
   end
 
