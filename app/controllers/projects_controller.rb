@@ -8,7 +8,8 @@ class ProjectsController < ApplicationController
 
   def new
     if current_user.ideas.count == 0
-      redirect_to new_idea_path, alert: "アイディアを作成してください。"
+      flash[:alert] = "先にアイデアを作成してください"
+      redirect_to new_idea_path
     else
       @project = Project.new
       @project.build_project_about
@@ -25,10 +26,9 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.build(project_params)
     if @project.save
-      redirect_to project_path(@project), notice: "プロジェクトを登録しました。"
+      redirect_to project_path(@project)
     else
-      flash.now[:alert] = "プロジェクトの作成に失敗しました。"
-      render :new
+      render 'new'
     end
   end
 
@@ -43,7 +43,7 @@ class ProjectsController < ApplicationController
     @ideas = current_user.ideas
     if @project.user_id == session[:user_id]
       else
-        redirect_to projects_path, alert: "他のユーザーのプロジェクトは編集できません。"
+        redirect_to projects_path, notice: "他のユーザーのプロジェクトは編集できません！"
     end
   end
 
@@ -51,8 +51,7 @@ class ProjectsController < ApplicationController
     if @project.update(project_params)
       redirect_to projects_path, notice: "プロジェクトを編集しました！"
     else
-      flash.now[:alert] = "編集に失敗しました。"
-      render :edit
+      render 'edit'
     end
   end
 
@@ -63,10 +62,10 @@ class ProjectsController < ApplicationController
 
   def destroy
     if @project.user_id == session[:user_id]
-        @project.destroy
-        redirect_to projects_path, notice: "プロジェクトを削除しました！ "
+      @project.destroy
+      redirect_to projects_path, notice:"プロジェクトを削除しました！ "
       else
-        redirect_to projects_path, notice: "他のユーザーのプロジェクトは削除できません。"
+        redirect_to projects_path, notice: "他のユーザーのプロジェクトは削除できません！"
     end
   end
 

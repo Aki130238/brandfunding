@@ -29,8 +29,7 @@ class ArtisanProfilesController < ApplicationController
     if @user.update(user_edit_params)
       redirect_to artisan_profile_path(@user.id), notice: "プロフィールを修正しました！"
     else
-      flash[:alert] = "プロフィールを修正できません。"
-      render :new
+        render 'new', notice: "プロフィールを修正できません"
     end
   end
 
@@ -89,7 +88,8 @@ class ArtisanProfilesController < ApplicationController
 
   def artisan_profile_authority
     if @user.id != current_user.id
-      redirect_to root_path, danger: "権限がありません。"
+      flash[:danger] = "権限がありません"
+      redirect_to root_path
     end
   end
 end

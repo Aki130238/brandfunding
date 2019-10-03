@@ -673,7 +673,7 @@
       @include mq(xl) {
         margin-top: 0;
       }
-      padding: 0;
+      padding: 1.5rem 0;
       border: 1px solid black;
       background: white;
       text-align: center;
@@ -699,9 +699,10 @@
     }
     &__owner-name__wrap {
       display: flex;
-      margin-top: 9rem;
+      margin-top: 7rem;
     }
     &__deadline {
+      margin-top: 2rem;
       @include mq(md) {
         margin-top: 2.5rem;
       }
@@ -710,8 +711,9 @@
       }
       @include mq(s) {
         margin-top: 2.5rem;
+        padding: .3rem 0;
       }
-      padding: 0;
+      padding: 1rem 0;
       border: 1px solid black;
       background: white;
       text-align: center;
@@ -739,7 +741,7 @@
       @include mq(lg) {
         margin: 2rem auto auto auto;
       }
-      padding: 0;
+      padding: 1rem 0;
       border: 1px solid black;
       background: white;
       text-align: center;
@@ -1140,12 +1142,6 @@
       &__supporter, &__schedule {
         margin-bottom: 1.5rem;
         padding: .5rem 0;
-        @include mq(md) {
-          font-size: 1.4rem;
-        }
-        @include mq(xl) {
-          font-size: 1.6rem;
-        }
       }
       &__patron {
         margin: 3rem auto 1.5rem 1.5rem;
@@ -1162,29 +1158,6 @@
         @include mq(lg) {
           display: flex;
         }
-      }
-      &__aid {
-        position: relative;
-        left: 3rem;
-        color: $color-1;
-        font-size: 1.6rem;
-        text-decoration: none;
-        &__wrap {
-          margin-left: 8rem;
-          @include mq(md) {
-            margin-left: 5rem;
-          }
-          @include mq(lg) {
-            margin-left: 7rem;
-          }
-          @include mq(xl) {
-            margin-left: 20rem;
-          }
-        }
-      }
-      &__aid:hover {
-        @extend .hover;
-        color: $hovercolor-aid;
       }
       &__hide {
           margin-bottom: 3rem;

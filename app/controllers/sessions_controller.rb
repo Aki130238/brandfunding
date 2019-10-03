@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
   def new
     if logged_in?
-      redirect_to root_path, alert: "すでにログインしています"
+      flash[:alert] = 'すでにログインしています'
+      redirect_to root_path
     end
   end
 
@@ -9,15 +10,16 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to user_path(user.id), notice: "ログインしました。"
+      redirect_to user_path(user.id)
     else
-      flash.now[:danger] = "ログインに失敗しました"
-      render :new
+      flash.now[:danger] = 'ログインに失敗しました'
+      render 'new'
     end
   end
 
   def destroy
     session.delete(:user_id)
-    redirect_to new_session_path, notice: "ログアウトしました"
+    flash[:notice] = 'ログアウトしました'
+    redirect_to new_session_path
   end
 end
