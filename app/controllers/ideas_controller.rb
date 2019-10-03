@@ -50,7 +50,7 @@ class IdeasController < ApplicationController
   def idea_params
     params.require(:idea).permit(:idea_title, :idea_amount, :idea_about, :idea_usage, :idea_commit, :product_image,
                                  :idea_category, :idea_category_details, :idea_material, :work_style, :delivery_date,
-                                 :budget, idea_user_ids: [])
+                                 :budget, :idea_image, :idea_image_cache, idea_user_ids: [])
   end
 
   def idea_authority
