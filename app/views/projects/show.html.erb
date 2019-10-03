@@ -1,37 +1,49 @@
 <main class="container-fluid show-project-page">
   <div class="row show-project-page__header"></div>
+  <div class="row show-project__title__wrap">
+    <p class="col-12 col-md-6 show-project1__user-name">ユーザーネーム</p>
+    <p class="col-12 col-md-6 show-project1__title">『<%= @project.project_title %>』</p>
+  </div>
   <section class="show-project1">
     <div class="row show-project1">
-      <h2 class="col-10 show-project1__title"><%= @project.project_title %></h2>
-    </div>
-    <div class="row show-project1">
-      <div class="col-10 col-md-5 show-project1__image__wrap">
+      <div class="col-10 col-md-6 show-project1__image__wrap">
         <p class="show-project1__image">画像</p>
         <p class="show-project1__sns">SNS連携</p>
       </div>
       <div class="col-11 col-sm-8 col-md-5 show-project1__content__wrap">
-        <p><%= svg("yen-sign-solid.svg", class: "show-project1__icon") %>&ensp;現在の支援総額</p>
-        <p class="col-lg-12 col-xl-11 show-project1__project-fund"><%= fund_count(@project) %></p>
-        <p class="col-lg-12 col-xl-11 show-project1__progress"><%= fund_progress(@project) %>%</p>
-        <p class="col-lg-6 col-xl-5 show-project1__target-fund"><%= @project.project_value.target_fund %></p>
-        <div class="show-project1__user-image__wrap">
-          <p class="col-lg-5 col-xl-4 show-project1__patron"><%= svg("users-solid.svg", class: "show-project1__icon2") %>&ensp;パトロン数</p>
-          <p class="col-lg-6 col-xl-4 show-project1__user-image">ユーザーイメージ</p>
-        </div>
-        <p class="col-md-6 col-lg-5 col-xl-4 show-project1__supporter"><%= sponsor_count(@project) %></p>
-        <div class="show-project1__owner-name__wrap">
-          <p class="show-project1__deadline__title"><%= svg("clock-regular.svg", class: "show-project1__icon3") %>&ensp;募集終了まで残り</p>
-          <p class="col-lg-6 col-xl-5 offset-md-2 show-project1__owner-name"><%= @project.user.name %></p>
-        </div>
-        <div class="show-project1__prefectures__wrap">
-          <p class="col-lg-5 col-xl-4 show-project1__deadline">
-            <% if @project.project_value.recruitment_deadline > DateTime.now %>
-              <%= (@project.project_value.recruitment_deadline - DateTime.now).to_i / 1.days + 1 %>日
-            <% else %>
-              <span>募集終了</span></p>
-            <% end %>
-            <p class="col-lg-5 col-xl-4 col-xl-3 show-project1__prefectures"><%= @project.user.user_profile.prefectures %>&ensp;</p>
+        <div class="col-11">
+          <p class="show-project1__project-fund__title"><%= svg("yen-sign-solid.svg", class: "show-project1__icon") %>&ensp;現在の支援総額</p>
+          <p class="show-project1__project-fund"><%= fund_count(@project) %>円</p>
+          <div class="progress show-project1__progress__wrap">
+            <div class="progress-bar" style="width:<%= fund_progress(@project) %>%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+              <span class="show-project1__progress__content">&ensp;<%= fund_progress(@project) %>%</span>
             </div>
+          </div>
+          <p class="show-project1__target-fund">目標金額は<%= @project.project_value.target_fund %>円</p>
+          <div class="show-project1__user-image__wrap">
+            <div class="col-5 show-project1__patron__wrap">
+              <p class="show-project1__patron"><%= svg("users-solid.svg", class: "show-project1__icon2") %>&ensp;パトロン数</p>
+              <p class="show-project1__supporter"><%= sponsor_count(@project) %>人</p>
+            </div>
+            <p class="col-4 show-project1__user-image">ユーザーイメージ</p>
+          </div>
+          <div class="show-project1__deadline-owner">
+            <div class="col-5 show-project1__deadline__wrap">
+              <p class="show-project1__deadline__title"><%= svg("clock-regular.svg", class: "show-project1__icon3") %>&ensp;募集終了まで残り</p>
+              <p class="show-project1__deadline">
+                <% if @project.project_value.recruitment_deadline > DateTime.now %>
+                  <%= (@project.project_value.recruitment_deadline - DateTime.now).to_i / 1.days + 1 %>日
+                <% else %>
+                  <span>募集終了</span>
+                <% end %>
+              </p>
+            </div>
+            <div class="col-4">
+              <p class="show-project1__owner-name"><%= @project.user.name %></p>
+              <p class="show-project1__prefectures"><%= @project.user.user_profile.prefectures %>&ensp;</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="col-12 show-menu__follow-favorite_sm">
         <p class="show-menu__favorite"><%= svg("star-regular.svg", class: "show-menu__icon") %>
@@ -41,15 +53,11 @@
             <%= link_to "お気に入り登録を解除", project_like_path(project_id: @like.id), method: :delete , class: "show-menu__favorite__button2"%>
           <% end %>
         </p>
-        <% unless @project.user.id == current_user.id %>
-          <%= render "users/follow_form", user: @project.user %>
-        <% end %>
+        <%= render "users/follow_form", user: @project.user %>
       </div>
       <%= render "show_menu" %>
       <div class="col-5 show-menu__follow-favorite">
-        <% unless @project.user.id == current_user.id %>
-          <%= render "users/follow_form", user: @project.user %>
-        <% end %>
+        <%= render "users/follow_form", user: @project.user %>
         <p class="show-menu__favorite"><%= svg("star-regular.svg", class: "show-menu__icon") %>
           <% if @like.nil? %>
             <%= link_to "お気に入り登録する", project_likes_path(project_id: @project.id), method: :post, class: "show-menu__favorite__button" %>
@@ -65,12 +73,12 @@
     <div class="col-12 col-md-6 offset-lg-1 tab-content">
       <div class="tab-pane fade show active show-project2__home" id="showHome" role="tabpanel" aria-labelledby="showHome-tab">
         <h2 class="show-project2__home__title"><%= svg("file-solid.svg", class:"show-project2__home__icon") %>&ensp;プロジェクト本文</h2>
-        <p class="show-project2__home__content">&ensp;</p>
+        <p class="show-project2__home__content">&ensp;<%= @project.project_about.project_abouts %></p>
       </div>
 
       <div class="tab-pane fade show-project2__report" id="showReport" role="tabpanel" aria-labelledby="showReport-tab">
         <h2 class="show-project2__home__title"><%= svg("file-solid.svg", class:"show-project2__home__icon") %>&ensp;活動報告</h2>
-        <p class="show-project2__home__content">&ensp;<%= @project.project_report.project_reports %></p>
+        <p class="show-project2__home__content"><%= @project.project_report.project_reports %></p>
       </div>
 
       <div class="tab-pane fade show-project2__patron" id="showPatron" role="tabpanel" aria-labelledby="showPatron-tab">
@@ -122,67 +130,64 @@
           </div>
         </div>
         <% if @project.user_id == current_user.id %>
-          <button type="button" class="show-project3-form__button" data-toggle="collapse" data-target="#showReturnForm" aria-expanded="false" aria-controls="showReturnForm" id="showReturnButton">
-            <%= svg("plus-square-regular.svg", class: "show-project3-form__icon") %>&ensp;リターンを追加
-          </button>
+        <button type="button" class="show-project3-form__button" data-toggle="collapse" data-target="#showReturnForm" aria-expanded="false" aria-controls="showReturnForm" id="showReturnButton">
+          <%= svg("plus-square-regular.svg", class: "show-project3-form__icon") %>&ensp;リターンを追加
+        </button>
         <% end %>
         <div class="collapse" id="showReturnForm">
           <div class="show-project3-form">
-            <%= form_with(model: @project_return, url:"/projects/#{@project.id}",  local: true) do |re| %>
-              <div class="show-project3-form__wrap">
-                <p class="col-lg-3">タイトル</p>
-                <p class="col-xl-9 form-inline"><%= re.text_field :return_title, class: "col-12 form-control show-project3-form__input" %></p>
-              </div>
-              <p class="col-lg-3">画像</p>
-              <p class="col-xl-9 form-inline">
-                <div id="imageFieldReturn2" onClick="$('#fileReturn2').click()" class="show-project3-form__image__wrap">
-              <p class="project-form-image__input">&ensp;</p>
-              </div>
-              <%= re.file_field :return_item_img, class: "col-11 form-control show-project3-form__input3", style: "display:none;", id: "fileReturn2" %>
-              <div class="show-project3-form__wrap">
-                <p class="col-lg-3">金額</p>
-                <p class="col-xl-9 form-inline"><%= re.number_field :return_item_fund, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;円</p>
-              </div>
-              <div class="show-project3-form__wrap">
-                <p class="col-lg-3">在庫数</p>
-                <p class="col-xl-9 form-inline"><%= re.number_field :return_item_count, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;個</p>
-              </div>
-              <p class="col-lg-3">本文</p>
-              <p class="col-xl-11 form-inline"><%= re.text_area :return_item_about, class: "col-12 form-control show-project3-form__input3" %></p>
-              <div class="show-project3-form__wrap">
-                <p class="col-lg-3">スポンサー</p>
-                <p class="col-xl-9 form-inline"><%= re.number_field :return_item_sponsors, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;人</p>
-              </div>
-              <div class="show-project3-form__wrap">
-                <p class="col-lg-3">お届け予定日</p>
-                <p class="col-xl-9 form-inline"><%= re.date_field :delivery_date, class: "col-8 col-xl-5 form-control show-project3-form__input" %></p>
-              </div>
-              <p class="col-lg-3">備考</p>
-              <p class="col-xl-11 form-inline"><%= re.text_area :return_item_remark, class: "col-12 form-control show-project3-form__input3" %></p>
-              <p class="col-10 col-lg-8 col-xl-6 show-project3-form__button2__wrap"><%= re.submit "保存", class: "col-12 show-project3-form__button2" %>
-            <% end %>
+              <%= form_with(model: @project_return, url:"/projects/#{@project.id}",  local: true) do |re| %>
+                <div class="show-project3-form__wrap">
+                  <p class="col-lg-3">タイトル</p>
+                  <p class="col-xl-9 form-inline"><%= re.text_field :return_title, class: "col-12 form-control show-project3-form__input" %></p>
+                </div>
+                <p class="col-lg-3">画像</p>
+                <p class="col-xl-9 form-inline">
+                  <div id="imageFieldReturn2" onClick="$('#fileReturn2').click()" class="show-project3-form__image__wrap">
+                <p class="project-form-image__input">&ensp;</p>
+                </div>
+                <%= re.file_field :return_item_img, class: "col-11 form-control show-project3-form__input3", style: "display:none;", id: "fileReturn2" %>
+                <div class="show-project3-form__wrap">
+                  <p class="col-lg-3">金額</p>
+                  <p class="col-xl-9 form-inline"><%= re.number_field :return_item_fund, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;円</p>
+                </div>
+                <div class="show-project3-form__wrap">
+                  <p class="col-lg-3">在庫数</p>
+                  <p class="col-xl-9 form-inline"><%= re.number_field :return_item_count, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;個</p>
+                </div>
+                <p class="col-lg-3">本文</p>
+                <p class="col-xl-11 form-inline"><%= re.text_area :return_item_about, class: "col-12 form-control show-project3-form__input3" %></p>
+                <div class="show-project3-form__wrap">
+                  <p class="col-lg-3">スポンサー</p>
+                  <p class="col-xl-9 form-inline"><%= re.number_field :return_item_sponsors, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;人</p>
+                </div>
+                <div class="show-project3-form__wrap">
+                  <p class="col-lg-3">お届け予定日</p>
+                  <p class="col-xl-9 form-inline"><%= re.date_field :delivery_date, class: "col-8 col-xl-5 form-control show-project3-form__input" %></p>
+                </div>
+                <p class="col-lg-3">備考</p>
+                <p class="col-xl-11 form-inline"><%= re.text_area :return_item_remark, class: "col-12 form-control show-project3-form__input3" %></p>
+                <p class="col-10 col-lg-8 col-xl-6 show-project3-form__button2__wrap"><%= re.submit "保存", class: "col-12 show-project3-form__button2" %>
+              <% end %>
             </div>
       </div>
       <% @project.project_return.each do |pr|%>
         <div class="show-project3__return__wrap2">
-          <h2 class="show-project3__return__title2"><%= svg("gift-solid.svg", class: "show-project3__return__icon")
-          %>&ensp;<%= pr.return_item_fund %></h2>
+          <% if return_remains(pr) > 0 %>
+            <p class="col-11 show-project3__return__aid__wrap"><%= link_to "支援する", sponsor_lists_path(project_return_id: pr.id, project_id: @project.id), method: :post, class: "show-project3__return__aid" %></p>
+          <% end %>
+          <h2 class="show-project3__return__title2"><%= svg("gift-solid.svg", class: "show-project3__return__icon") %>&ensp;<%= pr.return_item_fund %></h2>
           <p class="show-project3__return__content2"><%= pr.return_item_about %></p>
           <div class="show-project3__return__guide">
-            <p class="show-project3__return__patron"><%= svg("users-solid.svg" ,class: "show-menu__icon3") %>&thinsp;
-              <%= pr.sponsor_users.count %><span>残り<%= return_remains(pr) %></span></p>
+            <p class="show-project3__return__patron"><%= svg("users-solid.svg" ,class: "show-menu__icon3") %>
+              <%= pr.sponsor_users.count %>&ensp;<span>残り&thinsp;<%= return_remains(pr) %></span></p>
             <p class="show-project3__return__schedule2"><%= svg("truck-moving-solid.svg" ,class: "show-menu__icon5")
-            %>&thinsp;<%= pr.delivery_date %></p>
-            <% unless @project.user.id == current_user.id %>
-              <% if return_remains(pr) > 0 %>
-                <%= link_to "支援する", sponsor_lists_path(project_return_id: pr.id, project_id: @project.id), method: :post %>
-              <% end %>
-            <% end %>
+            %>&ensp;<%= pr.delivery_date %></p>
           </div>
         </div>
       <% end %>
       <div class="show-project3__return__hide">&ensp;</div>
-    </div>
+      </div>
     </div>
   </section>
 </main>

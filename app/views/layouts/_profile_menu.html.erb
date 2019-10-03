@@ -42,14 +42,16 @@
       </div>
     </li>
     <li class="menu__li menu__li__favorite">
-    <%= link_to project_likes_path(@user.id), class: "menu__title-2__link" do %>
+    <%= link_to coming_soons_path, class: "menu__title-2__link" do %>
       <h1 class="menu__title-2 menu__li__favorite">お気に入りプロジェクト</h1>
     <% end %>
+    <%# project_likes_path(@user.id) %>
     </li>
     <li class="menu__li menu__li__follow">
-      <%= link_to relationships_path(@user.id), class: "menu__title-2__link" do %>
+      <%= link_to coming_soons_path, class: "menu__title-2__link" do %>
         <h1 class="menu__title-2 menu__li__follow">フォローしたオーナー</h1>
       <% end %>
+      <%# relationships_path(@user.id) %>
     </li>
     <%# <li class="menu__li menu__li__favorite">
       <h1 class="menu__title-2 menu__li__favorite">お気に入りデザイナー</h1>

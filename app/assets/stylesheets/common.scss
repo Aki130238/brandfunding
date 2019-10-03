@@ -49,6 +49,7 @@ $hovercolor-artisanbtn: #00885a;
 $hovercolor-return: #fcc800;
 $hovercolor-user: #fcc800;
 $hovercolor-project: #1DBE00;
+$hovercolor-aid: #fcc800;
 
 $top-opacity: 0.9;
 
@@ -141,7 +142,7 @@ html {
     padding: 1rem 0 .5rem 3rem;
   }
   padding: 2.5rem 0 2rem 3rem;
-  border-top: solid $color-main;
+  border-top: 3px solid $color-main;
   &__title {
     color: $color-1;
     font-family: 'Playfair Display', serif;
