@@ -6,7 +6,7 @@
     <div class="col-12 col-lg-5 offset-lg-1">
       <h2 class="col-10 offset-1 show-idea-overview__title">フラダンス衣装</h2>
       <p class="col-10 offset-1 show-idea-overview__image"><%= image_tag @idea.idea_image.url %></p>
-    </div>
+    </div>1
     <div class="col-10 col-lg-5 offset-1 offset-lg-0 show-idea-overview__wrap">
       <h3 class="show-idea-overview__title2">概要</h3>
       <p class="show-idea-overview__content">お仕事番号&thinsp;： <%= sprintf("%05d", @idea.id) %></p>
@@ -75,7 +75,7 @@
   <p class="col-9 col-md-5 col-lg-3 show-idea-page__edit__button__wrap"><%= link_to "アイデアを編集する", edit_idea_path(@idea), class: "col-12 btn show-idea-page__edit__button" if @idea.user_id == current_user.id %></p>
   <div class="show-idea-comment">
     <div class="col-12">
-      <%= form_with(model: [@idea, @idea_comment] ) do |f| %>
+      <%= form_with(model: [@idea, @idea_comment], local: true ) do |f| %>
         <p class="col-10 col-md-8 col-lg-7 col-xl-5 show-idea-comment__input__wrap"><%= f.text_area :content, class: "col-12 form-control show-idea-comment__input" %></p>
         <p class="col-6 col-md-4 col-lg-3 col-xl-2 show-idea-comment__button__wrap"><%= f.submit "コメントする", class: "col-lg-12 btn show-idea-comment__button" %></p>
       <% end %>
@@ -89,7 +89,8 @@
           </div>
           <div class="col-12">
             <% if idea_comment.user == current_user || @idea.user == current_user %>
-              <p class="col-9 col-md-4 col-lg-3 col-xl-2 show-idea-comment__delete-button__wrap"><%= link_to "コメントを削除する", idea_idea_comment_path(idea_comment.idea_id, idea_comment.id), method: :delete, remote: true, class: "col-12 show-idea-comment__delete-button" %></p>
+              <p class="col-9 col-md-4 col-lg-3 col-xl-2 show-idea-comment__delete-button__wrap">
+                <%= link_to "コメントを削除する", idea_idea_comment_path(idea_comment.idea_id, idea_comment.id), method: :delete, class: "col-12 show-idea-comment__delete-button" %></p>
             <% end %>
           </div>
         <% end %>

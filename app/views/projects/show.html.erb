@@ -94,8 +94,7 @@
               <p class="show-project2__comment__content">&thinsp;<%= simple_format(c.content, class:"col-6 col-md11 show-project2__comment__content") %></p>
             </div>
             <% if c.user_id == current_user.id || @project.user_id == current_user.id %>
-              <p><%= link_to "コメントを削除する", project_comment_path(c.project_id, c.id), method: :delete, remote: true
-              %></p>
+              <p><%= link_to "コメントを削除する", project_comment_path(c.project_id, c.id), method: :delete %></p>
             <% end %>
           <% end %>
         <% end %>
