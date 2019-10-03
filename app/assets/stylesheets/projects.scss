@@ -617,42 +617,69 @@
       }
     }
     &__sns {
+      &__icon__wraps {
+        // margin-right: -2%;
+      }
       &__icon__wrap {
         display: flex;
+        margin: 0 auto 0 0;
+        padding: 0;
       }
       &__icon__wrap2 {
         display: flex;
+        margin: 0 .5rem;
+        padding-left: 1rem;
+        cursor: pointer;
+      }
+      &__icon__wrap2:hover {
+        @extend .hover;
+        opacity: 0.9;
       }
       &__icon__wrap3 {
-        margin: auto;
+        margin: .3rem 0 -.5rem 0;
       }
       &__icon__title {
-        padding: .5rem 0 0 .5rem;
+        padding: .7rem 0 0 1rem;
         color: white;
       }
       &__icon1, &__icon2, &__icon3, &__icon4, &__icon5 {
         width: 3rem;
-        margin: 0 .3rem;
+        // margin: 0 .3rem;
         color: white;
-        cursor: pointer;
       }
       &__icon1 {
         &__wrap {
+          display: none;
+          @include mq(md) {
+            display: flex;
+          }
           background: $color-twitter;
         }
       }
       &__icon2 {
         &__wrap {
+          display: none;
+          @include mq(md) {
+            display: flex;
+          }
           background-image: $color-instagram;
         }
       }
       &__icon3 {
         &__wrap {
+          display: none;
+          @include mq(md) {
+            display: flex;
+          }
           background: $color-facebook;
         }
       }
       &__icon4 {
         &__wrap {
+          display: none;
+          @include mq(md) {
+            display: flex;
+          }
           background: $color-line;
         }
       }
@@ -685,14 +712,14 @@
       }
     }
     &__progress {
+      background: $bgcolor-idea;
       &__wrap {
-        margin-bottom: .6rem;
-        padding: 1.3rem 0;
-        border-radius: 50px;
-        background: $bgcolor-idea;
+        // padding: 1.3rem 0;
+        // margin-bottom: .6rem;
+
+        // border-radius: 50px;
       }
       &__content {
-        font-size: 1.8rem;
         color: white;
         text-align: left;
       }
@@ -1111,7 +1138,7 @@
         margin: 0 auto;
       }
       &__wrap {
-        margin-bottom: 3rem;
+        margin-bottom: 6rem;
         border: 1px solid black;
         background: $bgcolor-project2;
       }
@@ -1124,6 +1151,7 @@
       }
       &__title2 {
         margin: -3.2rem 0 1.5rem 1.5rem;
+        padding-top: .5rem;
         font-weight: bold;
       }
       &__icon {
@@ -1180,7 +1208,7 @@
       &__aid {
         position: relative;
         left: 3rem;
-        color: $color-1;
+        color: black;
         font-size: 1.6rem;
         text-decoration: none;
         &__wrap {
