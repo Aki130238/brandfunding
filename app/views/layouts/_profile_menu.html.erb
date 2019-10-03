@@ -3,19 +3,6 @@
     <li class="menu__user_image"><%= image_tag @user.image.to_s %></li>
     <li class="menu__user_name"><%= @user.name %></li>
     <li class="menu__li menu__li_border-top">
-      <div class="card card-body menu__list__project">
-        <button type="button" class="menu__button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
-          <h1 class="menu__title"><span class="menu__item">▼</span>&ensp;プロジェクト管理</h1>
-        </button>
-      </div>
-      <div class="collapse" id="collapseExample1">
-        <div class="card card-body">
-          <p class="menu__list"><%= link_to "プロジェクト新規作成", new_project_path, class: "menu__link menu__link__project", data: {"turbolinks" => false} %></p>
-          <p class="menu__list"><%= link_to "プロジェクト一覧", projects_path, class: "menu__link menu__link__project" %></p>
-        </div>
-      </div>
-    </li>
-    <li class="menu__li">
       <div class="card card-body menu__list__idea">
         <button type="button" class="menu__button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
           <h1 class="menu__title"><span class="menu__item">▼</span>&ensp;アイディア管理</h1>
@@ -25,6 +12,19 @@
         <div class="card card-body">
           <p class="menu__list"><%= link_to "アイディア新規作成", new_idea_path, class: "menu__link menu__link__idea", data: {"turbolinks" => false} %></p>
           <p class="menu__list"><%= link_to "アイディア一覧", ideas_path, class: "menu__link menu__link__idea" %></p>
+        </div>
+      </div>
+    </li>
+    <li class="menu__li">
+      <div class="card card-body menu__list__project">
+        <button type="button" class="menu__button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+          <h1 class="menu__title"><span class="menu__item">▼</span>&ensp;プロジェクト管理</h1>
+        </button>
+      </div>
+      <div class="collapse" id="collapseExample1">
+        <div class="card card-body">
+          <p class="menu__list"><%= link_to "プロジェクト新規作成", new_project_path, class: "menu__link menu__link__project", data: {"turbolinks" => false} %></p>
+          <p class="menu__list"><%= link_to "プロジェクト一覧", projects_path, class: "menu__link menu__link__project" %></p>
         </div>
       </div>
     </li>
