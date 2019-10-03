@@ -122,11 +122,11 @@
             <div class="col-md-9 edit-artisan-form__artisan__title__wrap">
               <p class="edit-artisan-form__title4">必須</p>
               <label for="workExp" class="edit-artisan-form__artisan__title">実務経験</label>
-              <p class="col-md-2 edit-artisan-form__artisan__input__wrap"><%= b.number_field :workexp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "workExp", placeholder: "0", value: @user.artisan_profile.workexp %></p>
-              <p class="edit-artisan-form__artisan__content">年</p>
+              <p class="col-md-2 edit-artisan-form__artisan__input__wrap_f"><%= b.number_field :workexp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "workExp", placeholder: "0", value: @user.artisan_profile.workexp %><span class="edit-artisan-form__artisan__content">年</span></p>
+              <%# <p class="edit-artisan-form__artisan__content">年</p> %>
               <label for="homeworkExp" class="edit-artisan-form__artisan__title">家庭縫製経験</label>
-              <p class="col-md-2 edit-artisan-form__artisan__input__wrap"><%= b.number_field :homeworkexp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "homeworkExp", placeholder: "0", value: @user.artisan_profile.homeworkexp  %></p>
-              <p class="edit-artisan-form__artisan__content">年</p>
+              <p class="col-md-2 edit-artisan-form__artisan__input__wrap_f"><%= b.number_field :homeworkexp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "homeworkExp", placeholder: "0", value: @user.artisan_profile.homeworkexp  %><span class="edit-artisan-form__artisan__content">年</span></p>
+              <%# <p class="edit-artisan-form__artisan__content">年</p> %>
             </div>
           </div>
 
