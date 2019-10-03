@@ -15,16 +15,26 @@
     font-weight: bold;
   }
   .edit-artisan-form {
-    &__privacy {
+    &__privacy__wrap {
       margin: 8rem auto 3rem auto;
       color: $color-1;
       font-weight: bold;
       font-size: 2rem;
       text-align: center;
-      cursor: pointer;
+    }
+    &__terms {
+      text-decoration: none;
+    }
+    &__terms:hover {
+      @extend .hover;
+      color: $hovercolor-terms;
+    }
+    &__privacy {
+      text-decoration: none;
     }
     &__privacy:hover {
-      opacity: 0.85;
+      @extend .hover;
+      color: $hovercolor-privacy;
     }
     &__privacy__content {
       display: inline-block;
@@ -84,12 +94,16 @@
       }
     }
     &__title4 {
-      margin: auto 0;
-      padding: 0 .8rem;
-      background: $bgcolor-3;
-      color: white;
-      font-size: 1.4rem;
-      text-align: center;
+      display: none;
+      @include mq(md) {
+        display: block;
+        margin: auto 0;
+        padding: 0 .8rem;
+        background: $bgcolor-3;
+        color: white;
+        font-size: 1.4rem;
+        text-align: center;
+      }
     }
     &__title4_sm {
       margin: auto 0;
@@ -194,7 +208,7 @@
       }
       &__item {
         &__title {
-          margin: auto 0 auto 2.5rem;
+          margin: auto 0 auto 8rem;
           @include mq(md) {
             margin: 5rem 0 0 0;
           }
@@ -207,12 +221,27 @@
           }
         }
         &__title2 {
-          margin: 5.5rem 0 auto 0;
+          display: none;
+          @include mq(md) {
+            display: block;
+            margin: 5.5rem 0 auto 0;
+            padding: 0 .8rem;
+            background: $bgcolor-3;
+            color: white;
+            font-size: 1.4rem;
+            text-align: center;
+          }
+        }
+        &__title2_sm {
+          margin: auto 0;
           padding: 0 .8rem;
           background: $bgcolor-3;
           color: white;
           font-size: 1.4rem;
           text-align: center;
+          @include mq(md) {
+            display: none;
+          }
         }
         &-list__wrap {
           margin-top: 5rem;
