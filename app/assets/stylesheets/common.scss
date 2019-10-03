@@ -78,6 +78,12 @@ $breakpoints: (
   padding:0;
 }
 
+.mb-s {
+  @include mq(s) {
+    margin-bottom: 5rem;
+  }
+}
+
 .center {
   display: inline-block;
   text-align: center;

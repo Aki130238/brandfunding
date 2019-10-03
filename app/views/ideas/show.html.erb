@@ -73,7 +73,6 @@
     <p class="col-9 col-lg-6 show-idea-list__content3"><%= @idea.idea_commit %></p>
   </div>
   <p class="col-9 col-md-5 col-lg-3 show-idea-page__edit__button__wrap"><%= link_to "アイデアを編集する", edit_idea_path(@idea), class: "col-12 btn show-idea-page__edit__button", data: {"turbolinks" => false} if @idea.user_id == current_user.id %></p>
-  <p class="col-9 col-md-5 col-lg-3 show-idea-page__edit__button__wrap"><%= link_to "アイデアを編集する", edit_idea_path(@idea), class: "col-12 btn show-idea-page__edit__button" if @idea.user_id == current_user.id %></p>
   <div class="show-idea-comment">
     <div class="col-12">
       <%= form_with(model: [@idea, @idea_comment] ) do |f| %>
