@@ -571,18 +571,34 @@
     padding: 3.5rem 0;
     background: $bgcolor-project;
   }
-  .show-project1 {
+  .show-project__title__wrap {
+    display: flex;
+    padding: 1.5rem;
     background: $bgcolor-6;
     color: $color-1;
-    &__title {
-      display: inline-block;
-      margin: 3rem auto;
-      padding: 2rem 0;
-      border: 1px solid black;
-      background: white;
+  }
+  .show-project1 {
+    background: $bgcolor-6;
+    &__user-name {
+      @include mq(s) {
+        margin: 1rem 0 auto 0;
+      }
+      @include mq(md) {
+        text-align: right;
+      }
       color: $color-1;
       font-weight: bold;
+      font-size: 2.5rem;
       text-align: center;
+    }
+    &__title {
+      color: $color-1;
+      font-weight: bold;
+      font-size: 2.5rem;
+      text-align: center;
+      @include mq(md) {
+        text-align: left;
+      }
     }
     &__image {
       @include mq(s) {
@@ -601,18 +617,50 @@
       }
     }
     &__sns {
-      margin-bottom: 3rem;
-      // @include mq(md) {
-      //   margin-left: 2rem;
-      // }
-      // @include mq(lg) {
-      //   margin-left: 6rem;
-      // }
-      padding: .3rem 0;
-      border: 1px solid black;
-      background: white;
-      text-align: center;
-      cursor: pointer;
+      &__icon__wrap {
+        display: flex;
+      }
+      &__icon__wrap2 {
+        display: flex;
+      }
+      &__icon__wrap3 {
+        margin: auto;
+      }
+      &__icon__title {
+        padding: .5rem 0 0 .5rem;
+        color: white;
+      }
+      &__icon1, &__icon2, &__icon3, &__icon4, &__icon5 {
+        width: 3rem;
+        margin: 0 .3rem;
+        color: white;
+        cursor: pointer;
+      }
+      &__icon1 {
+        &__wrap {
+          background: $color-twitter;
+        }
+      }
+      &__icon2 {
+        &__wrap {
+          background-image: $color-instagram;
+        }
+      }
+      &__icon3 {
+        &__wrap {
+          background: $color-facebook;
+        }
+      }
+      &__icon4 {
+        &__wrap {
+          background: $color-line;
+        }
+      }
+      &__icon5 {
+        &__wrap {
+          background: $color-google;
+        }
+      }
     }
     &__content__wrap {
       margin: 0 auto;
@@ -628,22 +676,31 @@
       vertical-align: -.4rem;
     }
     &__project-fund {
-      padding: 1.5rem 0;
-      border: 1px solid black;
-      background: white;
-      text-align: center;
+      margin-bottom: 0;
+      padding: 0;
+      font-weight: bold;
+      font-size: 5rem;
+      &__title {
+        margin-bottom: 0;
+      }
     }
     &__progress {
-      padding-left: 1.5rem;
-      border-radius: 50px;
-      background: $bgcolor-idea;
-      color: white;
+      &__wrap {
+        margin-bottom: .6rem;
+        padding: 1.3rem 0;
+        border-radius: 50px;
+        background: $bgcolor-idea;
+      }
+      &__content {
+        font-size: 1.8rem;
+        color: white;
+        text-align: left;
+      }
     }
     &__target-fund {
-      margin-bottom: 5rem;
-      border: 1px solid black;
-      background: white;
-      text-align: center;
+      margin-bottom: 3rem;
+      padding: 0;
+      color: $color-1;
     }
     &__user-image__wrap {
       display: flex;
@@ -651,99 +708,54 @@
         margin-bottom: -9rem;
       }
     }
-    &__patron {
-      margin: 10rem 0 0 -1.5rem;
-      @include mq(md) {
-        margin: 1rem 0 0 -1.5rem;
-      }
-    }
-    &__icon2 {
-      width: 3rem;
+    &__icon6 {
+      width: 2.5rem;
       color: black;
-      vertical-align: -.5rem;
+      vertical-align: -.3rem;
+    }
+    &__patron {
+      margin-bottom: 0;
+      &__wrap {
+        padding: 5rem 0 0 0;
+      }
     }
     &__supporter {
-      margin-bottom: -2rem;
-      @include mq(md) {
-        margin-bottom: 5rem;
-      }
-      @include mq(lg) {
-        margin-top: 2rem;
-      }
-      @include mq(xl) {
-        margin-top: 0;
-      }
-      padding: 1.5rem 0;
-      border: 1px solid black;
-      background: white;
-      text-align: center;
+      padding: 0;
+      font-weight: bold;
+      font-size: 5rem;
     }
     &__user-image {
-      margin: -5rem auto 0 auto;
       padding: 8rem 0;
-      @include mq(md) {
-        padding: 5rem 0;
-      }
-      @include mq(lg) {
-        padding: 8rem 0;
-      }
       border: 1px solid black;
       border-radius: 50%;
       background: white;
       text-align: center;
     }
     &__icon3 {
-      width: 2.2rem;
+      width: 2rem;
       color: black;
-      vertical-align: -.5rem;
+      vertical-align: -.3rem;
     }
-    &__owner-name__wrap {
+    &__deadline-owner {
       display: flex;
-      margin-top: 7rem;
+      margin-top: 10rem;
+      border-bottom: 3px solid $bordercolor-1;
     }
     &__deadline {
-      margin-top: 2rem;
-      @include mq(md) {
-        margin-top: 2.5rem;
-      }
-      @include mq(lg) {
-        margin-top: 2rem;
-      }
-      @include mq(s) {
-        margin-top: 2.5rem;
-        padding: .3rem 0;
-      }
-      padding: 1rem 0;
-      border: 1px solid black;
-      background: white;
-      text-align: center;
+      font-weight: bold;
+      font-size: 5rem;
       &__title {
-        @include mq(xl) {
-          margin-top: 2rem;
-        }
+        margin-bottom: 0;
+      }
+      &__wrap {
+        padding: 0;
       }
     }
     &__owner-name {
-      padding: 1rem 0;
-      border: 1px solid black;
-      background: white;
+      margin-top: 1rem;
       text-align: center;
     }
-    &__prefectures__wrap {
-      display: flex;
-      margin-top: -2rem;
-      @include mq(s) {
-        margin-bottom: 5rem;
-      }
-    }
     &__prefectures {
-      margin: 2.5rem auto auto 1rem;
-      @include mq(lg) {
-        margin: 2rem auto auto auto;
-      }
-      padding: 1rem 0;
-      border: 1px solid black;
-      background: white;
       text-align: center;
     }
   }
@@ -898,9 +910,9 @@
         margin-top: 1.5rem;
         border: 1px solid black;
         @include mq(s) {
-          padding-bottom: 50rem;
+          padding-bottom: .5rem 1rem 50rem .5rem;
         }
-        padding-bottom: 103rem;
+        padding: 1rem 1rem 103rem 1rem;
       }
     }
     // &__report {
@@ -973,6 +985,7 @@
     }
     &-form {
       &__button {
+        margin-bottom: 1rem;
         outline: 0;
       }
       &__icon {
@@ -1110,8 +1123,7 @@
         font-weight: bold;
       }
       &__title2 {
-        margin: 2rem 1.5rem 1.5rem 1.5rem;
-        padding-top: 2rem;
+        margin: -3.2rem 0 1.5rem 1.5rem;
         font-weight: bold;
       }
       &__icon {
@@ -1142,6 +1154,12 @@
       &__supporter, &__schedule {
         margin-bottom: 1.5rem;
         padding: .5rem 0;
+        @include mq(md) {
+          font-size: 1.4rem;
+        }
+        @include mq(xl) {
+          font-size: 1.6rem;
+        }
       }
       &__patron {
         margin: 3rem auto 1.5rem 1.5rem;
@@ -1158,6 +1176,21 @@
         @include mq(lg) {
           display: flex;
         }
+      }
+      &__aid {
+        position: relative;
+        left: 3rem;
+        color: $color-1;
+        font-size: 1.6rem;
+        text-decoration: none;
+        &__wrap {
+          padding-top: 1.3rem;
+          text-align: right;
+        }
+      }
+      &__aid:hover {
+        @extend .hover;
+        color: $hovercolor-aid;
       }
       &__hide {
           margin-bottom: 3rem;
