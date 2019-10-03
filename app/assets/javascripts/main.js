@@ -68,8 +68,8 @@ $(function(){
   });
 })
 
-$(window).on('turbolinks:load',function() {
-
+// $(document).on('turbolinks:load',function() {
+$(function(){
   $fileField = $('#fileReturn')
   $($fileField).on('change', $fileField, function(e) {
     file = e.target.files[0]
