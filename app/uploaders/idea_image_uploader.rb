@@ -14,7 +14,7 @@ class IdeaImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    "default_user.png"
+    "default_idea.png"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
