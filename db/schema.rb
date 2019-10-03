@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_03_171055) do
+ActiveRecord::Schema.define(version: 2019_10_02_043306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2019_10_03_171055) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string "content", null: false
+    t.string "content"
     t.bigint "user_id"
     t.bigint "project_id"
     t.datetime "created_at", null: false
@@ -82,17 +82,8 @@ ActiveRecord::Schema.define(version: 2019_10_03_171055) do
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
-  create_table "hivings", force: :cascade do |t|
-    t.bigint "idea_id"
-    t.bigint "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["idea_id"], name: "index_hivings_on_idea_id"
-    t.index ["project_id"], name: "index_hivings_on_project_id"
-  end
-
   create_table "idea_comments", force: :cascade do |t|
-    t.text "content", null: false
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "idea_id"
@@ -123,7 +114,6 @@ ActiveRecord::Schema.define(version: 2019_10_03_171055) do
     t.datetime "delivery_date", null: false
     t.string "budget", null: false
     t.bigint "user_id"
-    t.string "idea_image"
     t.index ["user_id"], name: "index_ideas_on_user_id"
   end
 
@@ -332,8 +322,6 @@ ActiveRecord::Schema.define(version: 2019_10_03_171055) do
   add_foreign_key "artisan_profiles", "users"
   add_foreign_key "comments", "projects"
   add_foreign_key "comments", "users"
-  add_foreign_key "hivings", "ideas"
-  add_foreign_key "hivings", "projects"
   add_foreign_key "idea_comments", "ideas"
   add_foreign_key "idea_comments", "users"
   add_foreign_key "ideas", "users"

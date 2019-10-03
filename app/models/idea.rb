@@ -4,7 +4,6 @@ class Idea < ApplicationRecord
   has_many :idea_comments, dependent: :destroy
   belongs_to :user
   has_one :project
-  mount_uploader :idea_image, IdeaImageUploader
 
   validates :idea_title, presence: true, length: { in: 1..40 }
   validates :idea_amount, presence: true, numericality: { greater_than: 0, less_than: 10000 }
