@@ -263,6 +263,11 @@
         padding: 1rem 1rem 15rem 1rem;
         font-size: 1.6rem;
       }
+      &__title__wrap {
+        @include mq(md) {
+          display: flex;
+        }
+      }
       &__title {
         margin: auto 0 auto 5rem;
         color: $color-1;

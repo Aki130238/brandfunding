@@ -117,9 +117,9 @@
         <%= f.fields_for :artisan_profile do |b| %>
 
           <div class="row edit-artisan-form__input__wrap">
-            <label for="workExp" class="col-3 edit-artisan-form__input__title">経験年数</label>
+            <label for="workExp" class="col-6 col-md-3 edit-artisan-form__input__title">経験年数</label>
             <p class="edit-artisan-form__title4_sm">必須</p>
-            <div class="col-md-9 d-flex">
+            <div class="col-md-9 edit-artisan-form__artisan__title__wrap">
               <p class="edit-artisan-form__title4">必須</p>
               <label for="workExp" class="edit-artisan-form__artisan__title">実務経験</label>
               <p class="col-md-2 edit-artisan-form__artisan__input__wrap"><%= b.number_field :workexp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "workExp", placeholder: "0", value: @user.artisan_profile.workexp %></p>
@@ -131,7 +131,7 @@
           </div>
 
           <div class="row edit-artisan-form__input__wrap">
-            <label for="skill" class="col-3 edit-artisan-form__input__title">スキル</label>
+            <label for="skill" class="col-6 col-md-3 edit-artisan-form__input__title">スキル</label>
             <p class="edit-artisan-form__title4_sm">必須</p>
             <div class="col-md-9 d-flex">
               <p class="edit-artisan-form__title4">必須</p>
@@ -157,7 +157,7 @@
           </div>
 
           <div class="row edit-artisan-form__artisan__genre__wrap">
-            <p class="col-3 edit-artisan-form__artisan__item__title">ジャンル</p>
+            <p class="col-6 col-md-3 edit-artisan-form__artisan__item__title">ジャンル</p>
             <p class="edit-artisan-form__artisan__item__title2_sm">必須</p>
             <div class="col-md-9 d-flex">
               <p class="edit-artisan-form__artisan__item__title2">必須</p>
@@ -184,7 +184,7 @@
           </div>
 
           <div class="row edit-artisan-form__artisan__item__wrap">
-            <p class="col-3 edit-artisan-form__artisan__item__title">アイテム</p>
+            <p class="col-6 col-md-3 edit-artisan-form__artisan__item__title">アイテム</p>
             <p class="edit-artisan-form__artisan__item__title2_sm">必須</p>
             <div class="col-md-9 d-flex edit-artisan-form__item__wrap" id="a">
               <p class="edit-artisan-form__artisan__item__title2">必須</p>
@@ -212,7 +212,7 @@
           </div>
 
           <div class="row edit-artisan-form__artisan__facillity__wrap">
-            <p class="col-3 edit-artisan-form__artisan__item__title">設備</p>
+            <p class="col-6 col-md-3 edit-artisan-form__artisan__item__title">設備</p>
             <p class="edit-artisan-form__artisan__item__title2_sm">必須</p>
             <div class="col-md-9 d-flex">
               <p class="edit-artisan-form__artisan__item__title2">必須</p>
@@ -241,7 +241,7 @@
           </div>
 
           <div class="row edit-artisan-form__artisan__wrap2">
-            <label for="workexp_text" class="col-3 edit-artisan-form__artisan__item__title">経歴詳細</label>
+            <label for="workexp_text" class="col-6 col-md-3 edit-artisan-form__artisan__item__title">経歴詳細</label>
             <p class="edit-artisan-form__artisan__item__title2_sm">必須</p>
             <div class="col-md-9 d-flex">
               <p class="edit-artisan-form__artisan__item__title2">必須</p>
@@ -250,7 +250,7 @@
           </div>
 
           <div class="row edit-artisan-form__artisan__wrap2">
-            <label for="mypr" class="col-3 edit-artisan-form__artisan__item__title">自己PR</label>
+            <label for="mypr" class="col-6 col-md-3 edit-artisan-form__artisan__item__title">自己PR</label>
             <p class="edit-artisan-form__artisan__item__title2_sm">必須</p>
             <div class="col-md-9 d-flex">
               <p class="edit-artisan-form__artisan__item__title2">必須</p>
@@ -259,7 +259,7 @@
           </div>
 
           <div class="row edit-artisan-form__artisan__wrap2">
-            <label for="myprofile" class="col-3 edit-artisan-form__artisan__item__title">自己紹介</label>
+            <label for="myprofile" class="col-6 col-md-3 edit-artisan-form__artisan__item__title">自己紹介</label>
             <div class="col-md-9 d-flex">
               <p class="edit-artisan-form__title_hide">必須</p>
               <p class="col-md-9 edit-artisan-form__artisan__input__wrap4"><%= b.text_field :myprofile, class: "form-control edit-artisan-form__artisan__input3", id: "myprofile", placeholder: "" %></p>
@@ -267,7 +267,7 @@
           </div>
 
           <div class="row edit-artisan-form__artisan__wrap3">
-            <p class="col-3 edit-artisan-form__artisan__item__title">お仕事状況</p>
+            <p class="col-6 col-md-3 edit-artisan-form__artisan__item__title">お仕事状況</p>
             <p class="edit-artisan-form__artisan__item__title2_sm">必須</p>
             <div class="col-md-9 d-flex">
               <p class="edit-artisan-form__artisan__item__title2">必須</p>
