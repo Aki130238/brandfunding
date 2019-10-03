@@ -15,36 +15,36 @@
             </ul>
           <% end %>
         <% end %>
-        <p class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-5 signup-form__wrap"><%= f.text_field :name, class:"form-control signup-form__input", placeholder: "ニックネーム" %></p>
-        <p class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-5 signup-form__wrap"><%= f.email_field :email, class:"form-control signup-form__input", placeholder: "メールアドレス" %></p>
-        <p class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-5 signup-form__wrap"><%= f.password_field :password, class:"form-control signup-form__input", placeholder: "パスワード" %></p>
-        <p class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-5 signup-form__wrap"><%= f.password_field :password_confirmation, class:"form-control signup-form__input", placeholder: "パスワード確認用" %></p>
+        <p class="col-11 col-sm-8 col-md-7 col-lg-6 col-xl-5 signup-form__wrap"><%= f.text_field :name, class:"form-control signup-form__input", placeholder: "ニックネーム" %></p>
+        <p class="col-11 col-sm-8 col-md-7 col-lg-6 col-xl-5 signup-form__wrap"><%= f.email_field :email, class:"form-control signup-form__input", placeholder: "メールアドレス" %></p>
+        <p class="col-11 col-sm-8 col-md-7 col-lg-6 col-xl-5 signup-form__wrap"><%= f.password_field :password, class:"form-control signup-form__input", placeholder: "パスワード" %></p>
+        <p class="col-11 col-sm-8 col-md-7 col-lg-6 col-xl-5 signup-form__wrap"><%= f.password_field :password_confirmation, class:"form-control signup-form__input", placeholder: "パスワード確認用" %></p>
         <p class="col-12 col-sm-7 offset-3 signup-form__about">登録は無料。年会費もかかりません。</p>
 
         <p class="col-12 col-sm-7 signup-form__privacy">「登録」のボタンを押すことにより、
           <%= link_to "利用規約", agreements_terms_of_service_path, class: "signup-form__terms" %>、
           <%= link_to "プライバシーポリシー", agreements_privacy_policy_path, class: "signup-form__privacy2" %>に同意したとみなします。
         </p>
-        <p class="col-10 col-sm-6 col-lg-4 col-xl-3 signup-form__button__wrap"><%= f.submit "登録", class: "col-12 btn signup-form__button" %></p>
+        <p class="col-9 col-sm-6 col-lg-4 col-xl-3 signup-form__button__wrap"><%= f.submit "登録", class: "col-12 btn signup-form__button" %></p>
       <% end %>
       <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
         <%= f.hidden_field :email, value: 'test1@example.com' %>
         <%= f.hidden_field :password, value: '123456' %>
-        <p class="col-7 col-sm-5 col-md-4 col-lg-3 signup-form__button__wrap">
+        <p class="col-9 col-sm-5 col-md-4 col-lg-3 signup-form__button__wrap">
           <%= f.submit "テストユーザー1でログイン", class: "col-12 btn signup-form__button" %>
         </p>
       <% end %>
       <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
         <%= f.hidden_field :email, value: 'test2@example.com' %>
         <%= f.hidden_field :password, value: '123456' %>
-        <p class="col-7 col-sm-5 col-md-4 col-lg-3 signup-form__button__wrap">
+        <p class="col-9 col-sm-5 col-md-4 col-lg-3 signup-form__button__wrap">
           <%= f.submit "テストユーザー2でログイン", class: "col-12 btn signup-form__button" %>
         </p>
       <% end %>
       <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
         <%= f.hidden_field :email, value: 'test3@example.com' %>
         <%= f.hidden_field :password, value: '123456' %>
-        <p class="col-7 col-sm-5 col-md-4 col-lg-3 signup-form__button__wrap">
+        <p class="col-9 col-sm-5 col-md-4 col-lg-3 signup-form__button__wrap">
           <%= f.submit "テストユーザー3でログイン", class: "col-12 btn signup-form__button" %>
         </p>
       <% end %>
