@@ -648,12 +648,13 @@
     }
     &__progress {
       &__wrap {
+        margin-bottom: .6rem;
         padding: 1.3rem 0;
         border-radius: 50px;
         background: $bgcolor-idea;
       }
       &__content {
-        font-size: 2rem;
+        font-size: 1.8rem;
         color: white;
         text-align: left;
       }
@@ -677,7 +678,7 @@
     &__patron {
       margin-bottom: 0;
       &__wrap {
-        padding: 0;
+        padding: 5rem 0 0 0;
       }
     }
     &__supporter {
@@ -716,18 +717,8 @@
       margin-top: 1rem;
       text-align: center;
     }
-    &__prefectures__wrap {
-      display: flex;
-      margin-top: -2rem;
-      @include mq(s) {
-        margin-bottom: 5rem;
-      }
-    }
     &__prefectures {
-      // margin: 2.5rem auto auto 1rem;
-      // @include mq(lg) {
-      //   margin: 2rem auto auto auto;
-      // }
+      text-align: center;
     }
   }
 
@@ -881,9 +872,9 @@
         margin-top: 1.5rem;
         border: 1px solid black;
         @include mq(s) {
-          padding-bottom: 50rem;
+          padding-bottom: .5rem 1rem 50rem .5rem;
         }
-        padding-bottom: 103rem;
+        padding: 1rem 1rem 103rem 1rem;
       }
     }
     // &__report {
@@ -1093,8 +1084,7 @@
         font-weight: bold;
       }
       &__title2 {
-        margin: 2rem 1.5rem 1.5rem 1.5rem;
-        padding-top: 2rem;
+        margin: -3.2rem 0 1.5rem 1.5rem;
         font-weight: bold;
       }
       &__icon {
@@ -1155,16 +1145,8 @@
         font-size: 1.6rem;
         text-decoration: none;
         &__wrap {
-          margin-left: 8rem;
-          @include mq(md) {
-            margin-left: 5rem;
-          }
-          @include mq(lg) {
-            margin-left: 7rem;
-          }
-          @include mq(xl) {
-            margin-left: 20rem;
-          }
+          padding-top: 1.3rem;
+          text-align: right;
         }
       }
       &__aid:hover {
