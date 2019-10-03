@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(version: 2019_10_03_050731) do
     t.datetime "delivery_date", null: false
     t.string "budget", null: false
     t.bigint "user_id"
+    t.string "idea_image"
     t.index ["user_id"], name: "index_ideas_on_user_id"
   end
 
