@@ -15,26 +15,16 @@
     font-weight: bold;
   }
   .edit-artisan-form {
-    &__privacy__wrap {
+    &__privacy {
       margin: 8rem auto 3rem auto;
       color: $color-1;
       font-weight: bold;
       font-size: 2rem;
       text-align: center;
-    }
-    &__terms {
-      text-decoration: none;
-    }
-    &__terms:hover {
-      @extend .hover;
-      color: $hovercolor-terms;
-    }
-    &__privacy {
-      text-decoration: none;
+      cursor: pointer;
     }
     &__privacy:hover {
-      @extend .hover;
-      color: $hovercolor-privacy;
+      opacity: 0.85;
     }
     &__privacy__content {
       display: inline-block;
@@ -94,16 +84,12 @@
       }
     }
     &__title4 {
-      display: none;
-      @include mq(md) {
-        display: block;
-        margin: auto 0;
-        padding: 0 .8rem;
-        background: $bgcolor-3;
-        color: white;
-        font-size: 1.4rem;
-        text-align: center;
-      }
+      margin: auto 0;
+      padding: 0 .8rem;
+      background: $bgcolor-3;
+      color: white;
+      font-size: 1.4rem;
+      text-align: center;
     }
     &__title4_sm {
       margin: auto 0;
@@ -188,10 +174,6 @@
         &__wrap {
           margin-top: 1.1rem;
         }
-        &__wrap_f {
-          margin-top: 1.1rem;
-          display: flex;
-        }
         &__wrap2 {
           margin: 1.1rem 0 0 8.3rem;
         }
@@ -212,7 +194,7 @@
       }
       &__item {
         &__title {
-          margin: auto 0 auto 8rem;
+          margin: auto 0 auto 2.5rem;
           @include mq(md) {
             margin: 5rem 0 0 0;
           }
@@ -225,27 +207,12 @@
           }
         }
         &__title2 {
-          display: none;
-          @include mq(md) {
-            display: block;
-            margin: 5.5rem 0 auto 0;
-            padding: 0 .8rem;
-            background: $bgcolor-3;
-            color: white;
-            font-size: 1.4rem;
-            text-align: center;
-          }
-        }
-        &__title2_sm {
-          margin: auto 0;
+          margin: 5.5rem 0 auto 0;
           padding: 0 .8rem;
           background: $bgcolor-3;
           color: white;
           font-size: 1.4rem;
           text-align: center;
-          @include mq(md) {
-            display: none;
-          }
         }
         &-list__wrap {
           margin-top: 5rem;
@@ -270,18 +237,13 @@
       &__title {
         margin: auto 0 auto 5rem;
         color: $color-1;
-        &__wrap {
-          @include mq(md) {
-            display: flex;
-          }
-        }
       }
       &__title2 {
         margin: auto 0 auto 10rem;
         color: $color-1;
       }
       &__content {
-        margin: auto 0 auto 1rem;
+        margin: auto 0;
         color: $color-1;
       }
       &__skill_bg {
