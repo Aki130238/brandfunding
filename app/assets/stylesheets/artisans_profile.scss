@@ -1,6 +1,9 @@
 .edit-artisan-page {
   &__title__wrap {
     margin-bottom: 2.5rem;
+    @include mq(s) {
+      padding-bottom: 0;
+    }
     padding: 1.5rem 0;
     border-bottom: 1px solid $bordercolor-1;
   }
@@ -13,18 +16,35 @@
     margin: .5rem 0 0 1rem;
     color: $color-1;
     font-weight: bold;
+    @include mq(s) {
+      font-size: 2.1rem;
+    }
   }
+
   .edit-artisan-form {
-    &__privacy {
+    &__privacy__wrap {
+      @include mq(s) {
+        margin-top: 3rem;
+      }
       margin: 8rem auto 3rem auto;
       color: $color-1;
       font-weight: bold;
       font-size: 2rem;
       text-align: center;
-      cursor: pointer;
+    }
+    &__terms {
+      text-decoration: none;
+    }
+    &__terms:hover {
+      @extend .hover;
+      color: $hovercolor-terms;
+    }
+    &__privacy {
+      text-decoration: none;
     }
     &__privacy:hover {
-      opacity: 0.85;
+      @extend .hover;
+      color: $hovercolor-privacy;
     }
     &__privacy__content {
       display: inline-block;
@@ -84,12 +104,16 @@
       }
     }
     &__title4 {
-      margin: auto 0;
-      padding: 0 .8rem;
-      background: $bgcolor-3;
-      color: white;
-      font-size: 1.4rem;
-      text-align: center;
+      display: none;
+      @include mq(md) {
+        display: block;
+        margin: auto 0;
+        padding: 0 .8rem;
+        background: $bgcolor-3;
+        color: white;
+        font-size: 1.4rem;
+        text-align: center;
+      }
     }
     &__title4_sm {
       margin: auto 0;
@@ -114,6 +138,9 @@
       }
     }
     &__title_hide {
+      @include mq(s) {
+        display: none;
+      }
       margin: auto 0;
       padding: 0 .8rem;
       background: white;
@@ -122,6 +149,10 @@
       text-align: center;
     }
     &__input__title {
+      @include mq(s) {
+        padding: 0;
+        font-size: 1.8rem;
+      }
       margin: auto 0 auto 8rem;
       @include mq(md) {
         margin: auto 0;
@@ -174,6 +205,10 @@
         &__wrap {
           margin-top: 1.1rem;
         }
+        &__wrap_f {
+          margin-top: 1.1rem;
+          display: flex;
+        }
         &__wrap2 {
           margin: 1.1rem 0 0 8.3rem;
         }
@@ -181,11 +216,17 @@
           margin: 1.1rem 0 0 4rem;
         }
         &__wrap4 {
+          @include mq(s) {
+            margin-top: 1rem;
+          }
           margin-top: 5rem;
         }
       }
       &__genre {
         &-list__wrap {
+          @include mq(s) {
+            margin-top: 1rem;
+          }
           margin-top: 5rem;
         }
         &__content {
@@ -194,7 +235,7 @@
       }
       &__item {
         &__title {
-          margin: auto 0 auto 2.5rem;
+          margin: auto 0 auto 8rem;
           @include mq(md) {
             margin: 5rem 0 0 0;
           }
@@ -207,18 +248,39 @@
           }
         }
         &__title2 {
-          margin: 5.5rem 0 auto 0;
+          display: none;
+          @include mq(md) {
+            display: block;
+            margin: 5.5rem 0 auto 0;
+            padding: 0 .8rem;
+            background: $bgcolor-3;
+            color: white;
+            font-size: 1.4rem;
+            text-align: center;
+          }
+        }
+        &__title2_sm {
+          margin: auto 0;
           padding: 0 .8rem;
           background: $bgcolor-3;
           color: white;
           font-size: 1.4rem;
           text-align: center;
+          @include mq(md) {
+            display: none;
+          }
         }
         &-list__wrap {
+          @include mq(s) {
+            margin-top: 1rem;
+          }
           margin-top: 5rem;
         }
       }
       &__facillity-list__wrap {
+        @include mq(s) {
+          margin-top: 1rem;
+        }
         margin-top: 5rem;
       }
       &__input {
@@ -235,15 +297,26 @@
         font-size: 1.6rem;
       }
       &__title {
+        @include mq(s) {
+          margin: 1.5rem 0 0 3rem;
+        }
         margin: auto 0 auto 5rem;
         color: $color-1;
+        &__wrap {
+          @include mq(md) {
+            display: flex;
+          }
+        }
       }
       &__title2 {
+        @include mq(s) {
+          margin: 1.5rem 0 0 3rem;
+        }
         margin: auto 0 auto 10rem;
         color: $color-1;
       }
       &__content {
-        margin: auto 0;
+        margin: auto 0 auto 1rem;
         color: $color-1;
       }
       &__skill_bg {
@@ -251,11 +324,18 @@
         padding: 1.5rem;
         background: $bgcolor-skill;
         color: $color-skill;
+        @include mq(s) {
+          font-size: 1.4rem;
+          text-align: center;
+        }
       }
       &__button {
         @extend .sign-button;
         margin-top: auto;
         margin-bottom: auto;
+        @include mq(s) {
+          display: none;
+        }
         padding: .8rem 0;
         background: $btncolor-2;
         font-size: 1.5rem;
@@ -272,6 +352,9 @@
         vertical-align: -.4rem;
       }
       &__radio__wrap {
+        @include mq(s) {
+          margin-top: 1rem;
+        }
         margin-top: 4.8rem;
       }
       &__radio__input {
