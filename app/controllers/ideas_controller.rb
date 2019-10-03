@@ -22,25 +22,23 @@ class IdeasController < ApplicationController
   def create
     @idea = current_user.ideas.build(idea_params)
     if @idea.save
-      redirect_to @idea, notice: "アイディアを作成しました。"
+      redirect_to @idea
     else
-      flash.now[:alert] = "作成に失敗しました。"
       render :new
     end
   end
 
   def update
     if @idea.update(idea_params)
-      redirect_to @idea, notice: "更新しました。"
+      redirect_to @idea
     else
-      flash.now[:alert] = "更新に失敗しました。"
       render :edit
     end
   end
 
   def destroy
     @idea.destroy
-    redirect_to ideas_path, notice: "アイディアを削除しました。"
+    redirect_to ideas_path
   end
 
   private
@@ -57,7 +55,8 @@ class IdeasController < ApplicationController
 
   def idea_authority
     if @idea.user_id != current_user.id
-      redirect_to root_path, alert: "権限がありません。"
+      flash[:danger] = "権限がありません"
+      redirect_to root_path
     end
   end
 end

@@ -48,17 +48,17 @@ ja:
         project_text: プロジェクト概要
       user_profile:
         id: ID
-        family_name: 名前
-        family_name_sub: 名前(ふりがな)
-        last_name: 氏名
-        last_name_sub: 氏名(ふりがな)
+        family_name: 名
+        family_name_sub: めい
+        last_name: 姓
+        last_name_sub: せい
         sex: 性別
         birthday: 誕生日
-        add_no: 郵便番号
+        add_no: 〒
         prefectures: 都道府県
         address: 住所
         phone_no1: 電話番号
-        phone_no2: 電話番号(予備)
+        phone_no2: 電話番号2
       user_statuses:
         status_name: 会員ステータス
         level: レベル

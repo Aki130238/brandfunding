@@ -20,5 +20,4 @@ Rails.application.routes.draw do
   get 'agreements/privacy_policy'
   get 'agreements/product_team'
   resources :sponsor_lists, only: [:create]
-  resources :coming_soons, only: [:index]
 end

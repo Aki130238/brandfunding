@@ -6,13 +6,12 @@ class UserProfilesController < ApplicationController
   end
 
   def update
-    flash[:notice] = "アップデートしました。"
+    flash[:notice] = 'UPdate'
     @user = User.find(params[:id])
     if @user.user_profile.update(user_profile_params)
       redirect_to user_path(@user.id), notice: "プロフィールを修正しました！"
     else
-      flash.now[:alert] = "プロフィールを修正できません"
-      render :edit
+      render 'edit', notice: "プロフィールを修正できません"
     end
   end
 
