@@ -22,6 +22,11 @@ $color-1: #6C6C6C;
 $color-main: #FE38C3;
 $color-error: #e73562;
 $color-skill: #4C829F;
+$color-twitter: #1B9CEB;
+$color-instagram: linear-gradient(to top, #df89b5 0%, #bfd9fe 100%);
+$color-facebook: #3C5A99;
+$color-line: #00B900;
+$color-google: #DD5144;
 $btncolor-1: #C19A88;
 $btncolor-2: #44B5AE;
 $btncolor-3: #AF7128;
@@ -107,6 +112,10 @@ $breakpoints: (
 
 .hover {
   transition: 0.3s ease-in-out;
+}
+
+.p0 {
+  padding: 0;
 }
 
 html {

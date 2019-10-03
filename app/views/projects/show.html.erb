@@ -8,7 +8,28 @@
     <div class="row show-project1">
       <div class="col-10 col-md-6 show-project1__image__wrap">
         <p class="show-project1__image">画像</p>
-        <p class="show-project1__sns">SNS連携</p>
+        <div class="col-10 show-project1__sns__icon__wrap">
+          <div class="col-3 show-project1__sns__icon__wrap2 show-project1__sns__icon1__wrap">
+            <p class="show-project1__sns__icon__wrap3"><%= svg("twitter-square-brands.svg", class: "show-project1__sns__icon1") %></p>
+            <p class="show-project1__sns__icon__title show-project1__sns__icon1__title">Twitter</p>
+          </div>
+          <div class="col-3 show-project1__sns__icon__wrap2 show-project1__sns__icon2__wrap">
+            <p class="show-project1__sns__icon__wrap3"><%= svg("instagram-brands.svg", class: "show-project1__sns__icon2") %></p>
+            <p class="show-project1__sns__icon__title show-project1__sns__icon2__title">Instagram</p>
+          </div>
+          <div class="col-3 show-project1__sns__icon__wrap2 show-project1__sns__icon3__wrap">
+            <p class="show-project1__sns__icon__wrap3"><%= svg("facebook-square-brands.svg", class: "show-project1__sns__icon3") %></p>
+            <p class="show-project1__sns__icon__title show-project1__sns__icon3__title">Facebook</p>
+          </div>
+          <div class="col-3 show-project1__sns__icon__wrap2 show-project1__sns__icon4__wrap">
+            <p class="show-project1__sns__icon__wrap3"><%= svg("line-brands.svg", class: "show-project1__sns__icon4") %></p>
+            <p class="show-project1__sns__icon__title show-project1__sns__icon4__title">LINE</p>
+          </div>
+          <div class="col-3 show-project1__sns__icon__wrap2 show-project1__sns__icon5__wrap">
+            <p class="show-project1__sns__icon__wrap3"><%= svg("google-plus-square-brands.svg", class: "show-project1__sns__icon5") %></p>
+            <p class="show-project1__sns__icon__title show-project1__sns__icon5__title">Google+</p>
+          </div>
+        </div>
       </div>
       <div class="col-11 col-sm-8 col-md-5 show-project1__content__wrap">
         <div class="col-11">
@@ -22,7 +43,7 @@
           <p class="show-project1__target-fund">目標金額は<%= @project.project_value.target_fund %>円</p>
           <div class="show-project1__user-image__wrap">
             <div class="col-5 show-project1__patron__wrap">
-              <p class="show-project1__patron"><%= svg("users-solid.svg", class: "show-project1__icon2") %>&ensp;パトロン数</p>
+              <p class="show-project1__patron"><%= svg("users-solid.svg", class: "show-project1__icon6") %>&ensp;パトロン数</p>
               <p class="show-project1__supporter"><%= sponsor_count(@project) %>人</p>
             </div>
             <p class="col-4 show-project1__user-image">ユーザーイメージ</p>
@@ -137,36 +158,36 @@
           <div class="show-project3-form">
               <%= form_with(model: @project_return, url:"/projects/#{@project.id}",  local: true) do |re| %>
                 <div class="show-project3-form__wrap">
-                  <p class="col-lg-3">タイトル</p>
-                  <p class="col-xl-9 form-inline"><%= re.text_field :return_title, class: "col-12 form-control show-project3-form__input" %></p>
+                  <p class="col-lg-4">タイトル</p>
+                  <p class="col-xl-9 form-inline p0"><%= re.text_field :return_title, class: "col-10 form-control show-project3-form__input" %></p>
                 </div>
-                <p class="col-lg-3">画像</p>
-                <p class="col-xl-9 form-inline">
+                <p class="col-lg-4">画像</p>
+                <p class="col-xl-9 form-inline"></p>
                   <div id="imageFieldReturn2" onClick="$('#fileReturn2').click()" class="show-project3-form__image__wrap">
                 <p class="project-form-image__input">&ensp;</p>
                 </div>
                 <%= re.file_field :return_item_img, class: "col-11 form-control show-project3-form__input3", style: "display:none;", id: "fileReturn2" %>
                 <div class="show-project3-form__wrap">
-                  <p class="col-lg-3">金額</p>
-                  <p class="col-xl-9 form-inline"><%= re.number_field :return_item_fund, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;円</p>
+                  <p class="col-lg-4">金額</p>
+                  <p class="col-xl-9 form-inline p0"><%= re.number_field :return_item_fund, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;円</p>
                 </div>
                 <div class="show-project3-form__wrap">
-                  <p class="col-lg-3">在庫数</p>
-                  <p class="col-xl-9 form-inline"><%= re.number_field :return_item_count, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;個</p>
+                  <p class="col-lg-4">在庫数</p>
+                  <p class="col-xl-9 form-inline p0"><%= re.number_field :return_item_count, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;個</p>
                 </div>
-                <p class="col-lg-3">本文</p>
-                <p class="col-xl-11 form-inline"><%= re.text_area :return_item_about, class: "col-12 form-control show-project3-form__input3" %></p>
+                <p class="col-lg-4">本文</p>
+                <p class="col-xl-12 form-inline"><%= re.text_area :return_item_about, class: "col-12 form-control show-project3-form__input3" %></p>
                 <div class="show-project3-form__wrap">
-                  <p class="col-lg-3">スポンサー</p>
-                  <p class="col-xl-9 form-inline"><%= re.number_field :return_item_sponsors, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;人</p>
+                  <p class="col-lg-4">スポンサー</p>
+                  <p class="col-xl-9 form-inline p0"><%= re.number_field :return_item_sponsors, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;人</p>
                 </div>
                 <div class="show-project3-form__wrap">
-                  <p class="col-lg-3">お届け予定日</p>
-                  <p class="col-xl-9 form-inline"><%= re.date_field :delivery_date, class: "col-8 col-xl-5 form-control show-project3-form__input" %></p>
+                  <p class="col-lg-4">お届け予定日</p>
+                  <p class="col-xl-9 form-inline p0"><%= re.date_field :delivery_date, class: "col-8 col-xl-6 form-control show-project3-form__input" %></p>
                 </div>
-                <p class="col-lg-3">備考</p>
-                <p class="col-xl-11 form-inline"><%= re.text_area :return_item_remark, class: "col-12 form-control show-project3-form__input3" %></p>
-                <p class="col-10 col-lg-8 col-xl-6 show-project3-form__button2__wrap"><%= re.submit "保存", class: "col-12 show-project3-form__button2" %>
+                <p class="col-lg-4">備考</p>
+                <p class="col-xl-12 form-inline"><%= re.text_area :return_item_remark, class: "col-12 form-control show-project3-form__input3" %></p>
+                <p class="col-10 col-md-7 show-project3-form__button2__wrap"><%= re.submit "保存", class: "col-12 show-project3-form__button2" %>
               <% end %>
             </div>
       </div>
@@ -175,7 +196,7 @@
           <% if return_remains(pr) > 0 %>
             <p class="col-11 show-project3__return__aid__wrap"><%= link_to "支援する", sponsor_lists_path(project_return_id: pr.id, project_id: @project.id), method: :post, class: "show-project3__return__aid" %></p>
           <% end %>
-          <h2 class="show-project3__return__title2"><%= svg("gift-solid.svg", class: "show-project3__return__icon") %>&ensp;<%= pr.return_item_fund %></h2>
+          <h2 class="show-project3__return__title2"><%= svg("gift-solid.svg", class: "show-project3__return__icon") %>&ensp;<%= pr.return_item_fund %>円</h2>
           <p class="show-project3__return__content2"><%= pr.return_item_about %></p>
           <div class="show-project3__return__guide">
             <p class="show-project3__return__patron"><%= svg("users-solid.svg" ,class: "show-menu__icon3") %>

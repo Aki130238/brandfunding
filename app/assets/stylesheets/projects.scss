@@ -617,12 +617,50 @@
       }
     }
     &__sns {
-      margin-bottom: 3rem;
-      padding: .3rem 0;
-      border: 1px solid black;
-      background: white;
-      text-align: center;
-      cursor: pointer;
+      &__icon__wrap {
+        display: flex;
+      }
+      &__icon__wrap2 {
+        display: flex;
+      }
+      &__icon__wrap3 {
+        margin: auto;
+      }
+      &__icon__title {
+        padding: .5rem 0 0 .5rem;
+        color: white;
+      }
+      &__icon1, &__icon2, &__icon3, &__icon4, &__icon5 {
+        width: 3rem;
+        margin: 0 .3rem;
+        color: white;
+        cursor: pointer;
+      }
+      &__icon1 {
+        &__wrap {
+          background: $color-twitter;
+        }
+      }
+      &__icon2 {
+        &__wrap {
+          background-image: $color-instagram;
+        }
+      }
+      &__icon3 {
+        &__wrap {
+          background: $color-facebook;
+        }
+      }
+      &__icon4 {
+        &__wrap {
+          background: $color-line;
+        }
+      }
+      &__icon5 {
+        &__wrap {
+          background: $color-google;
+        }
+      }
     }
     &__content__wrap {
       margin: 0 auto;
@@ -670,7 +708,7 @@
         margin-bottom: -9rem;
       }
     }
-    &__icon2 {
+    &__icon6 {
       width: 2.5rem;
       color: black;
       vertical-align: -.3rem;
@@ -947,6 +985,7 @@
     }
     &-form {
       &__button {
+        margin-bottom: 1rem;
         outline: 0;
       }
       &__icon {
