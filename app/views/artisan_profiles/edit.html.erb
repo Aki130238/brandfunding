@@ -12,7 +12,7 @@
           </div> %>
 
           <div class="row edit-artisan-form__profile__wrap">
-            <label for="firstName" class="col-8 col-md-3 edit-artisan-form__input__title">氏名</label>
+            <label for="firstName" class="col-6 col-md-3 edit-artisan-form__input__title">氏名</label>
             <div class="edit-artisan-form__title_show">
               <p class="edit-artisan-form__title1">必須</p>
               <p class="edit-artisan-form__title2">非公開</p>
@@ -28,7 +28,7 @@
           </div>
 
           <div class="row edit-artisan-form__profile__wrap">
-            <label for="firstNameSub" class="col-8 col-md-3 edit-artisan-form__input__title">氏名(ふりがな)</label>
+            <label for="firstNameSub" class="col-6 col-md-3 edit-artisan-form__input__title">氏名(ふりがな)</label>
             <div class="edit-artisan-form__title_show">
               <p class="edit-artisan-form__title1">必須</p>
               <p class="edit-artisan-form__title2">非公開</p>
@@ -44,7 +44,7 @@
           </div>
 
           <div class="row edit-artisan-form__profile__wrap">
-            <label for="Prefectures" class="col-8 col-md-3 edit-artisan-form__input__title">都道府県</label>
+            <label for="Prefectures" class="col-6 col-md-3 edit-artisan-form__input__title">都道府県</label>
             <div class="edit-artisan-form__title_show">
               <p class="edit-artisan-form__title1">必須</p>
               <p class="edit-artisan-form__title2">非公開</p>
@@ -59,7 +59,7 @@
           </div>
 
           <div class="row edit-artisan-form__profile__wrap">
-            <label for="AddNumber" class="col-8 col-md-3 edit-artisan-form__input__title">郵便番号</label>
+            <label for="AddNumber" class="col-6 col-md-3 edit-artisan-form__input__title">郵便番号</label>
             <div class="edit-artisan-form__title_show">
               <p class="edit-artisan-form__title1">必須</p>
               <p class="edit-artisan-form__title2">非公開</p>
@@ -74,7 +74,7 @@
           </div>
 
           <div class="row edit-artisan-form__profile__wrap">
-            <label for="address" class="col-8 col-md-3 edit-artisan-form__input__title">住所</label>
+            <label for="address" class="col-6 col-md-3 edit-artisan-form__input__title">住所</label>
             <div class="edit-artisan-form__title_show">
               <p class="edit-artisan-form__title1">必須</p>
               <p class="edit-artisan-form__title2">非公開</p>
@@ -89,7 +89,7 @@
           </div>
 
           <div class="row edit-artisan-form__profile__wrap">
-            <label for="PhoneNumber1" class="col-8 col-md-3 edit-artisan-form__input__title">電話番号</label>
+            <label for="PhoneNumber1" class="col-6 col-md-3 edit-artisan-form__input__title">電話番号</label>
             <div class="edit-artisan-form__title_show">
               <p class="edit-artisan-form__title1">必須</p>
               <p class="edit-artisan-form__title2">非公開</p>
@@ -100,7 +100,7 @@
                 <p class="edit-artisan-form__title2">非公開</p>
               </div>
               <p class="col-10 col-md-4 edit-artisan-form__profile__input__wrap"><%= a.text_field :phone_no1, class: "form-control edit-artisan-form__profile__input", id: "PhoneNumber1", placeholder: "例）00000000000(ハイフン不要)" %></p>
-              <label for="PhoneNumber2" class="col-8 col-md-2 edit-artisan-form__input__title edit-artisan-form__input__title_phone">電話番号(予備)</label>
+              <label for="PhoneNumber2" class="col-6 col-md-2 edit-artisan-form__input__title edit-artisan-form__input__title_phone">電話番号(予備)</label>
               <p class="edit-artisan-form__title3">非公開</p>
               <p class="col-10 col-md-4 edit-artisan-form__profile__input__wrap"><%= a.text_field :phone_no2, class: "col-md-11 form-control edit-artisan-form__profile__input", id: "PhoneNumber2", placeholder: "例）00000000000(ハイフン不要)" %></p>
             </div>
@@ -117,20 +117,22 @@
         <%= f.fields_for :artisan_profile do |b| %>
 
           <div class="row edit-artisan-form__input__wrap">
-            <label for="workExp" class="col-5 col-md-3 edit-artisan-form__input__title">経験年数</label>
-            <div class="col-md-9 d-flex">
+            <label for="workExp" class="col-6 col-md-3 edit-artisan-form__input__title">経験年数</label>
+            <p class="edit-artisan-form__title4_sm">必須</p>
+            <div class="col-md-9 edit-artisan-form__artisan__title__wrap">
               <p class="edit-artisan-form__title4">必須</p>
               <label for="workExp" class="edit-artisan-form__artisan__title">実務経験</label>
-              <p class="col-md-2 edit-artisan-form__artisan__input__wrap"><%= b.number_field :workexp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "workExp", placeholder: "0", value: @user.artisan_profile.workexp %></p>
-              <p class="edit-artisan-form__artisan__content">年</p>
+              <p class="col-md-2 edit-artisan-form__artisan__input__wrap_f"><%= b.number_field :workexp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "workExp", placeholder: "0", value: @user.artisan_profile.workexp %><span class="edit-artisan-form__artisan__content">年</span></p>
+              <%# <p class="edit-artisan-form__artisan__content">年</p> %>
               <label for="homeworkExp" class="edit-artisan-form__artisan__title">家庭縫製経験</label>
-              <p class="col-md-2 edit-artisan-form__artisan__input__wrap"><%= b.number_field :homeworkexp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "homeworkExp", placeholder: "0", value: @user.artisan_profile.homeworkexp  %></p>
-              <p class="edit-artisan-form__artisan__content">年</p>
+              <p class="col-md-2 edit-artisan-form__artisan__input__wrap_f mb-s"><%= b.number_field :homeworkexp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "homeworkExp", placeholder: "0", value: @user.artisan_profile.homeworkexp  %><span class="edit-artisan-form__artisan__content">年</span></p>
+              <%# <p class="edit-artisan-form__artisan__content">年</p> %>
             </div>
           </div>
 
           <div class="row edit-artisan-form__input__wrap">
-            <label for="skill" class="col-md-3 edit-artisan-form__input__title">スキル</label>
+            <label for="skill" class="col-6 col-md-3 edit-artisan-form__input__title">スキル</label>
+            <p class="edit-artisan-form__title4_sm">必須</p>
             <div class="col-md-9 d-flex">
               <p class="edit-artisan-form__title4">必須</p>
               <p class="col-md-10 edit-artisan-form__artisan__skill_bg">下からスキル・経験年数を入力してください。</p>
@@ -138,24 +140,24 @@
           </div>
 
           <div class="row edit-artisan-form__input__wrap">
-            <div class="col-md-9 offset-xl-3 d-flex">
+            <div class="col-md-9 offset-md-3 edit-artisan-form__artisan__title__wrap">
               <label for="skill" class="edit-artisan-form__artisan__title2">&emsp;スキル</label>
               <p class="col-md-4 edit-artisan-form__artisan__input__wrap"><%= b.text_field :skill, class: "col-md-11 form-control edit-artisan-form__artisan__input", id: "skill", placeholder: "例：パターン作成、縫製.etc" %></p>
-              <p class="col-md-4 offset-xl-1 edit-artisan-form__artisan__input__wrap"><%= b.text_field :skill_free, class: "col-md-11 form-control edit-artisan-form__artisan__input2", id: "skillFree", placeholder: "その他のスキル" %></p>
+              <p class="col-md-4 offset-md-1 edit-artisan-form__artisan__input__wrap"><%= b.text_field :skill_free, class: "col-md-11 form-control edit-artisan-form__artisan__input2", id: "skillFree", placeholder: "その他のスキル" %></p>
             </div>
           </div>
 
           <div class="row edit-artisan-form__input__wrap">
-            <div class="col-md-9 offset-xl-3 d-flex">
+            <div class="col-md-9 offset-md-3 edit-artisan-form__artisan__title__wrap">
               <label for="skillExp" class="edit-artisan-form__artisan__title2">経験年数</label>
-              <p class="col-md-2 edit-artisan-form__artisan__input__wrap"><%= b.number_field :skill_exp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "skillExp", placeholder: "0" %></p>
-              <p class="edit-artisan-form__artisan__content">年</p>
-              <p class="col-md-2 offset-xl-3 edit-artisan-form__artisan__button"><%= svg("plus-solid.svg", class: "edit-artisan-form__artisan__image") %>&thinsp;スキルを登録する</p>
+              <p class="col-md-2 edit-artisan-form__artisan__input__wrap_f mb-s"><%= b.number_field :skill_exp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "skillExp", placeholder: "0" %><span class="edit-artisan-form__artisan__content">年</span></p>
+              <p class="col-6 col-md-4 col-lg-3 offset-md-3 edit-artisan-form__artisan__button"><%= svg("plus-solid.svg", class: "edit-artisan-form__artisan__image") %>&thinsp;スキルを登録する</p>
             </div>
           </div>
 
           <div class="row edit-artisan-form__artisan__genre__wrap">
-            <p class="col-md-3 edit-artisan-form__artisan__item__title">ジャンル</p>
+            <p class="col-6 col-md-3 edit-artisan-form__artisan__item__title">ジャンル</p>
+            <p class="edit-artisan-form__artisan__item__title2_sm">必須</p>
             <div class="col-md-9 d-flex">
               <p class="edit-artisan-form__artisan__item__title2">必須</p>
               <div class="col-md-11 edit-artisan-form__artisan__genre-list__wrap">
@@ -169,9 +171,9 @@
           </div>
 
           <div class="row edit-artisan-form__artisan__genre__wrap2">
-            <div class="col-md-9 offset-xl-3 d-flex">
+            <div class="col-md-9 offset-md-3 d-flex">
               <p class="edit-artisan-form__title_hide">必須</p>
-              <div class="col-md-8 edit-artisan-form__artisan__genre-list__wrap2">
+              <div class="col-md-8 edit-artisan-form__artisan__genre-list__wrap2 mb-s">
                 <% genreOther = ArtisanGenreList.find(6) %>
                 <p class="col-md-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_genre_list_ids, { multiple: true, checked: @artisan_profile.artisan_genre_lists.find_by(id: genreOther.id).present?, include_hidden: false }, genreOther[:id] %>
                   <%= genreOther.genre_name %></p>
@@ -181,7 +183,8 @@
           </div>
 
           <div class="row edit-artisan-form__artisan__item__wrap">
-            <p class="col-md-3 edit-artisan-form__artisan__item__title">アイテム</p>
+            <p class="col-6 col-md-3 edit-artisan-form__artisan__item__title">アイテム</p>
+            <p class="edit-artisan-form__artisan__item__title2_sm">必須</p>
             <div class="col-md-9 d-flex edit-artisan-form__item__wrap" id="a">
               <p class="edit-artisan-form__artisan__item__title2">必須</p>
               <div class="col-md-11 edit-artisan-form__artisan__item-list__wrap">
@@ -196,7 +199,7 @@
           </div>
 
           <div class="row edit-artisan-form__input__wrap">
-            <div class="col-md-9 offset-xl-3 d-flex">
+            <div class="col-md-9 offset-md-3 d-flex mb-s">
               <p class="edit-artisan-form__title_hide">必須</p>
               <div class="col-md-8">
                 <% itemOther = ArtisanItemList.find(13) %>
@@ -208,7 +211,8 @@
           </div>
 
           <div class="row edit-artisan-form__artisan__facillity__wrap">
-            <p class="col-md-3 edit-artisan-form__artisan__item__title">設備</p>
+            <p class="col-6 col-md-3 edit-artisan-form__artisan__item__title">設備</p>
+            <p class="edit-artisan-form__artisan__item__title2_sm">必須</p>
             <div class="col-md-9 d-flex">
               <p class="edit-artisan-form__artisan__item__title2">必須</p>
               <div class="col-md-11 edit-artisan-form__artisan__facillity-list__wrap">
@@ -223,9 +227,9 @@
           </div>
 
           <div class="row edit-artisan-form__input__wrap">
-            <div class="col-md-9 offset-xl-3 d-flex">
+            <div class="col-md-9 offset-md-3 d-flex">
               <p class="edit-artisan-form__title_hide">必須</p>
-              <div class="col-md-8">
+              <div class="col-md-8 mb-s">
                 <% facillityOther = ArtisanFacillityList.find(9) %>
                 <p class="col-md-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_facillity_list_ids, { multiple: true, checked: @artisan_profile.artisan_facillity_lists.find_by(id: facillityOther.id)
                     .present?, include_hidden: false }, facillityOther[:id] %>
@@ -236,23 +240,25 @@
           </div>
 
           <div class="row edit-artisan-form__artisan__wrap2">
-            <label for="workexp_text" class="col-md-3 edit-artisan-form__artisan__item__title">経歴詳細</label>
-            <div class="col-md-9 d-flex">
+            <label for="workexp_text" class="col-6 col-md-3 edit-artisan-form__artisan__item__title">経歴詳細</label>
+            <p class="edit-artisan-form__artisan__item__title2_sm">必須</p>
+            <div class="col-md-9 d-flex mb-s">
               <p class="edit-artisan-form__artisan__item__title2">必須</p>
               <p class="col-md-9 edit-artisan-form__artisan__input__wrap4"><%= b.text_field :workexp_text, class: "form-control edit-artisan-form__artisan__input3", id: "workexp_text", placeholder: "" %></p>
             </div>
           </div>
 
           <div class="row edit-artisan-form__artisan__wrap2">
-            <label for="mypr" class="col-md-3 edit-artisan-form__artisan__item__title">自己PR</label>
-            <div class="col-md-9 d-flex">
+            <label for="mypr" class="col-6 col-md-3 edit-artisan-form__artisan__item__title">自己PR</label>
+            <p class="edit-artisan-form__artisan__item__title2_sm">必須</p>
+            <div class="col-md-9 d-flex mb-s">
               <p class="edit-artisan-form__artisan__item__title2">必須</p>
               <p class="col-md-9 edit-artisan-form__artisan__input__wrap4"><%= b.text_field :mypr, class: "form-control edit-artisan-form__artisan__input3", id: "mypr", placeholder: "" %></p>
             </div>
           </div>
 
           <div class="row edit-artisan-form__artisan__wrap2">
-            <label for="myprofile" class="col-md-3 edit-artisan-form__artisan__item__title">自己紹介</label>
+            <label for="myprofile" class="col-6 col-md-3 edit-artisan-form__artisan__item__title">自己紹介</label>
             <div class="col-md-9 d-flex">
               <p class="edit-artisan-form__title_hide">必須</p>
               <p class="col-md-9 edit-artisan-form__artisan__input__wrap4"><%= b.text_field :myprofile, class: "form-control edit-artisan-form__artisan__input3", id: "myprofile", placeholder: "" %></p>
@@ -260,7 +266,8 @@
           </div>
 
           <div class="row edit-artisan-form__artisan__wrap3">
-            <p class="col-md-3 edit-artisan-form__artisan__item__title">お仕事状況</p>
+            <p class="col-6 col-md-3 edit-artisan-form__artisan__item__title">お仕事状況</p>
+            <p class="edit-artisan-form__artisan__item__title2_sm">必須</p>
             <div class="col-md-9 d-flex">
               <p class="edit-artisan-form__artisan__item__title2">必須</p>
               <div class="col-md-9 d-flex edit-artisan-form__artisan__radio__wrap">
@@ -275,9 +282,9 @@
           </div>
 
           <div>
-            <p class="col-md-5 edit-artisan-form__privacy">「職人登録する」のボタンを押すことにより、<br>
-            <%= link_to "利用規約", agreements_terms_of_service_path %>、
-            <%= link_to "プライバシーポリシー", agreements_privacy_policy_path %>に同意したとみなします。
+            <p class="col-md-5 edit-artisan-form__privacy__wrap">「職人登録する」のボタンを押すことにより、<br>
+            <%= link_to "利用規約", agreements_terms_of_service_path, class: "edit-artisan-form__terms"%>、
+            <%= link_to "プライバシーポリシー", agreements_privacy_policy_path, class: "edit-artisan-form__privacy" %>に同意したとみなします。
           </p>
             <%= f.hidden_field :user_status, value: 2 %>
             <p class="col-md-5 edit-artisan-form__button__wrap"><%= f.submit "職人登録する", class: "col-md-12 edit-artisan-form__button" %></p>
