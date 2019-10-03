@@ -6,9 +6,9 @@ class ProjectReturnsController < ApplicationController
     @project_return.project_id = params[:id]
     # @project_return = @project.project_returns.build(project_return_params)
     if @project_return.save
-      redirect_to project_path(@project)
+      redirect_to project_path(@project), notice: "リターンを登録しました。"
     else
-      redirect_to root_path
+      redirect_to root_path, alert: "登録に失敗しました。"
     end
   end
 
