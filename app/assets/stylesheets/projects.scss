@@ -1189,6 +1189,25 @@
       &__hide {
           margin-bottom: 3rem;
       }
+      &__patron {
+        margin: 3rem auto 1.5rem 1.5rem;
+      }
+      &__schedule2 {
+        margin: .5rem auto 1.5rem 2rem;
+        padding-bottom: 1rem;
+        @include mq(lg) {
+          margin: 3rem 2rem 1.5rem auto;
+          padding-bottom: 0;
+        }
+      }
+      &__guide {
+        @include mq(lg) {
+          display: flex;
+        }
+      }
+      &__hide {
+          margin-bottom: 3rem;
+      }
     }
   }
 }

@@ -11,7 +11,8 @@ class ArtisanProfilesController < ApplicationController
       @user_profile = @user.user_profile
       @artisan_profile = @user.artisan_profile
     else
-      redirect_to root_path, alert: "職人ではありません。"
+      flash[:alert] = "職人ではありません"
+      redirect_to root_path
     end
   end
 
