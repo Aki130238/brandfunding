@@ -66,7 +66,7 @@ $(function(){
   $('#projectBack5').on('click', function() {
     $('.projectTab5').trigger('click');
   });
-})
+});
 
 // $(document).on('turbolinks:load',function() {
 $(function(){
