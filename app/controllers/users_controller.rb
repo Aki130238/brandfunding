@@ -10,8 +10,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     if logged_in?
-      flash[:alert] = "すでにログインしています"
-      redirect_to root_path
+      redirect_to root_path, notice: "ログインしています。"
     end
   end
 
@@ -20,13 +19,14 @@ class UsersController < ApplicationController
     @user.build_user_profile(user_profile_params)
     @user.build_artisan_profile(artisan_profile_params)
     if params[:back]
-      render 'new'
+      render :new
     else
       if @user.save
         session[:user_id] = @user.id
-        redirect_to user_path(@user.id), notice: "userを作成しました！"
+        redirect_to user_path(@user.id), notice: "ユーザーを登録しました。"
       else
-        render 'new'
+        flash.now[:alert] = "ユーザー登録に失敗しました。"
+        render :new
       end
     end
   end
@@ -35,21 +35,22 @@ class UsersController < ApplicationController
   end
 
   def edit
-    flash[:notice] = 'ユーザーエディット'
+    flash[:notice] = 'ユーザー編集'
     @user_profile = @user.user_profile
   end
 
   def update
     if @user.user_profile.update(user_profile_params)
-      redirect_to user_path(@user.id), notice: "userを編集しました！"
+      redirect_to user_path(@user.id), notice: "ユーザーを更新しました。"
     else
-      render 'edit'
+      flash.now[:alert] = "更新に失敗しました。"
+      render :edit
     end
   end
 
   def destroy
     @user.destroy
-    redirect_to root_path, notice:"userを削除しました！"
+    redirect_to root_path, notice: "ユーザーを削除しました。"
   end
 
   def confirm
@@ -140,8 +141,7 @@ class UsersController < ApplicationController
 
   def authenticate_user
     unless current_user.id == @user.id
-      flash[:alert] = "権限がありません"
-      redirect_to root_path
+      redirect_to root_path, alert: "権限がありません。"
     end
   end
 end
