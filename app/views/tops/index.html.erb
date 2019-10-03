@@ -73,6 +73,21 @@
     </a>
   </div>
 
+<article>
+  <ul class="project-list">
+    <% @projects.each do |pr| %>
+      <li class="project-list__wrap">
+        <img class="project-list__image" data-src="smb01.jpg" alt="Thumbnail [100%x225]" src="smb01.jpg" data-holder-rendered="true">
+        <p class="card-text"><%= pr.project_text %></p>
+        <div class="btn-group">
+          <%= link_to "View", project_path(pr.id), class: "btn btn-sm btn-outline-secondary" %>
+          <%= link_to "Edit", edit_project_path(pr.id), class: "btn btn-sm btn-outline-secondary" %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</article>
+
   <nav class="guide">
     <div class="row guide2">
       <div class="col-9 col-sm-6 col-md-3 guide__column-1">
