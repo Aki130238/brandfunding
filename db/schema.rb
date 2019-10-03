@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_10_03_050731) do
-=======
-ActiveRecord::Schema.define(version: 2019_10_02_043306) do
->>>>>>> Revert "Revert "Develop""
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
