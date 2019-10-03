@@ -1,9 +1,10 @@
 <main class="container-fluid show-project-page">
   <div class="row show-project-page__header"></div>
+  <div class="row show-project__title__wrap">
+    <p class="col-12 col-md-4 show-project1__user-name">ユーザーネーム</p>
+    <p class="col-12 col-md-7 show-project1__title">『<%= @project.project_title %>』</p>
+  </div>
   <section class="show-project1">
-    <div class="row show-project1">
-      <h2 class="col-10 show-project1__title"><%= @project.project_title %></h2>
-    </div>
     <div class="row show-project1">
       <div class="col-10 col-md-5 show-project1__image__wrap">
         <p class="show-project1__image">画像</p>
@@ -61,12 +62,12 @@
     <div class="col-12 col-md-6 offset-lg-1 tab-content">
       <div class="tab-pane fade show active show-project2__home" id="showHome" role="tabpanel" aria-labelledby="showHome-tab">
         <h2 class="show-project2__home__title"><%= svg("file-solid.svg", class:"show-project2__home__icon") %>&ensp;プロジェクト本文</h2>
-        <p class="show-project2__home__content">&ensp;</p>
+        <p class="show-project2__home__content">&ensp;<%= @project.project_about.project_abouts %></p>
       </div>
 
       <div class="tab-pane fade show-project2__report" id="showReport" role="tabpanel" aria-labelledby="showReport-tab">
         <h2 class="show-project2__home__title"><%= svg("file-solid.svg", class:"show-project2__home__icon") %>&ensp;活動報告</h2>
-        <p class="show-project2__home__content">&ensp;<%= @project.project_report.project_reports %></p>
+        <p class="show-project2__home__content"><%= @project.project_report.project_reports %></p>
       </div>
 
       <div class="tab-pane fade show-project2__patron" id="showPatron" role="tabpanel" aria-labelledby="showPatron-tab">

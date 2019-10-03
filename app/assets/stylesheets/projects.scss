@@ -571,17 +571,36 @@
     padding: 3.5rem 0;
     background: $bgcolor-project;
   }
+  .show-project__title__wrap {
+    display: flex;
+    // margin: 0 auto;
+    background: $bgcolor-6;
+    color: $color-1;
+  }
   .show-project1 {
     background: $bgcolor-6;
     color: $color-1;
-    &__title {
-      display: inline-block;
-      margin: 3rem auto;
-      padding: 2rem 0;
-      border: 1px solid black;
-      background: white;
+    &__user-name {
+      @include mq(s) {
+        margin: 1rem 0 auto 0;
+      }
+      @include mq(md) {
+
+      }
       color: $color-1;
       font-weight: bold;
+      font-size: 2rem;
+      text-align: center;
+    }
+    &__title {
+      // display: inline-block;
+      // margin: 3rem auto;
+      // padding: 2rem 0;
+      // border: 1px solid black;
+      // background: white;
+      color: $color-1;
+      font-weight: bold;
+      font-size: 2rem;
       text-align: center;
     }
     &__image {
