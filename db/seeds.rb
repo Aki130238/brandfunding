@@ -69,6 +69,9 @@ UserProfile.create([
   phone_no1: '12312341234',
   user_id: 1
                    ])
+ArtisanProfile.create([
+  user_id: 1
+                      ])
 User.create([
               name: 'テストユーザー2',
               email: 'test2@example.com',
@@ -85,6 +88,9 @@ UserProfile.create([
   phone_no1: '12312341234',
   user_id: 2
                    ])
+ArtisanProfile.create([
+  user_id: 2
+                      ])
 User.create([
               name: 'テストユーザー3',
               email: 'test3@example.com',
@@ -101,3 +107,6 @@ UserProfile.create([
   phone_no1: '12312341234',
   user_id: 3
                    ])
+ArtisanProfile.create([
+  user_id: 3
+                      ])
