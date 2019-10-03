@@ -1,5 +1,7 @@
 .mb-s {
-  margin-bottom: 3rem;
+  @include mq(s) {
+    margin-bottom: 5rem;
+  }
 }
 
 .edit-artisan-page {
