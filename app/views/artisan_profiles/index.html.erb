@@ -27,6 +27,12 @@
         <div class="row">
           <p class="col-12 artisan-list__pr"><%= artisan.artisan_profile.mypr %></p>
         </div>
+        <div>
+          <p class="col-12 artisan-list__pr"><%= artisan.artisan_profile.work_status %></p>
+        </div>
+        <div>
+          <%= link_to '詳細', artisan_profile_path(artisan) %>
+        </div>
         <div class="row artisan-list__bar"></div>
       </div>
     <% end %>

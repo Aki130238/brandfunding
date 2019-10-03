@@ -9,8 +9,11 @@ class ArtisanProfilesController < ApplicationController
 
   def show
     if @user.user_status == 2
-      @user_profile = @user.user_profile
-      @artisan_profile = @user.artisan_profile
+      @user_profile = @user.user_profile #userのログイン名とメルアド以外が格納
+      @artisan_profile = @user.artisan_profile #職人情報が格納
+      @artisan_genres = @artisan_profile.artisan_genre_lists.pluck(:genre_name)# ジャンル
+      @artisan_facillities = @artisan_profile.artisan_facillity_lists.pluck(:facillity_name)# 設備
+      @artisan_items = @artisan_profile.artisan_item_lists.pluck(:item_name)# アイテム
     else
       redirect_to root_path, alert: "職人ではありません。"
     end
