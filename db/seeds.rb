@@ -74,9 +74,6 @@ User.create([
               email: 'test2@example.com',
               password: '123456'
              ])
-ArtisanProfile.create([
-  user_id: 1
-                      ])
 UserProfile.create([
   family_name: 'テスト',
   family_name_sub: 'てすと',
@@ -93,9 +90,6 @@ User.create([
               email: 'test3@example.com',
               password: '123456'
              ])
-ArtisanProfile.create([
-  user_id: 2
-                      ])
 UserProfile.create([
   family_name: 'テスト',
   family_name_sub: 'てすと',
@@ -107,6 +101,3 @@ UserProfile.create([
   phone_no1: '12312341234',
   user_id: 3
                    ])
-ArtisanProfile.create([
-  user_id: 3
-                      ])
