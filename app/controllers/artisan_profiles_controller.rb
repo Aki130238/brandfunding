@@ -15,8 +15,7 @@ class ArtisanProfilesController < ApplicationController
       @artisan_facillities = @artisan_profile.artisan_facillity_lists.pluck(:facillity_name)# 設備
       @artisan_items = @artisan_profile.artisan_item_lists.pluck(:item_name)# アイテム
     else
-      flash[:alert] = "職人ではありません"
-      redirect_to root_path
+      redirect_to root_path, alert: "職人登録をしてください。"
     end
   end
 
@@ -27,9 +26,10 @@ class ArtisanProfilesController < ApplicationController
 
   def update
     if @user.update(user_edit_params)
-      redirect_to artisan_profile_path(@user.id), notice: "プロフィールを修正しました！"
+      redirect_to artisan_profile_path(@user.id), notice: "プロフィールを更新しました。"
     else
-        render 'new', notice: "プロフィールを修正できません"
+      flash.now[:alert] = "プロフィールを修正できませんでした。"
+      render :new
     end
   end
 
@@ -88,8 +88,7 @@ class ArtisanProfilesController < ApplicationController
 
   def artisan_profile_authority
     if @user.id != current_user.id
-      flash[:danger] = "権限がありません"
-      redirect_to root_path
+      redirect_to root_path, alert: "権限がありません。"
     end
   end
 end
