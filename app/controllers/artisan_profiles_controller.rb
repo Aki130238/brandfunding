@@ -15,7 +15,8 @@ class ArtisanProfilesController < ApplicationController
       @artisan_facillities = @artisan_profile.artisan_facillity_lists.pluck(:facillity_name)# 設備
       @artisan_items = @artisan_profile.artisan_item_lists.pluck(:item_name)# アイテム
     else
-      redirect_to root_path, alert: "職人ではありません。"
+      flash[:alert] = "職人ではありません"
+      redirect_to root_path
     end
   end
 

@@ -17,11 +17,11 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if @comment.user == current_user || @project.user == current_user
       @comment.destroy
-      flash[:notice] = "コメントを削除しました。"
-      redirect_to project_path(@project)
+      flash[:notice] = "コメントを削除しました"
+      redirect_back(fallback_location: root_path)
     else
-      flash[:alert] = "コメントの削除に失敗しました。"
-      redirect_to project_path(@project)
+      flash[:alert] = "コメントを削除しました"
+      redirect_back(fallback_location: root_path)
     end
   end
 
