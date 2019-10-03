@@ -11,7 +11,11 @@
       <div class="project-list col-9 col-sm-8 col-md-5 col-lg-3">
         <%= link_to project_path(pr.id), class: "project-list__link" do %>
           <div class="row">
-            <span class="col-12 project-list__image"><%= pr.project_image.project_img %>画像</span>
+            <% if pr.project_image.project_img.nil? then %>
+              <%= image_tag 'project_sample.png' %>
+            <% else %>
+              <span class="col-12 project-list__image"><%= pr.project_image.project_img %></span>
+            <% end %>
           </div>
           <div class="row">
             <p class="project-list__title"><%= pr.project_text %></p>

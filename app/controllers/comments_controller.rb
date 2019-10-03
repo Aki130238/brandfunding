@@ -4,8 +4,10 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.project_id = params[:project_id]
     if @comment.save
+      flash[:notice] = "コメントしました。"
       redirect_back(fallback_location: root_path)
     else
+      flash[:alert] = "コメントに失敗しました。"
       redirect_back(fallback_location: root_path)
     end
   end
@@ -15,9 +17,11 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if @comment.user == current_user || @project.user == current_user
       @comment.destroy
-      redirect_to project_path(@project)
+      flash[:notice] = "コメントを削除しました"
+      redirect_back(fallback_location: root_path)
     else
-      redirect_to project_path(@project)
+      flash[:alert] = "コメントを削除しました"
+      redirect_back(fallback_location: root_path)
     end
   end
 
