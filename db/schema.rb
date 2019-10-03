@@ -61,6 +61,12 @@ ActiveRecord::Schema.define(version: 2019_10_03_044803) do
     t.index ["user_id"], name: "index_artisan_profiles_on_user_id"
   end
 
+  create_table "chats", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.string "content"
     t.bigint "user_id"
