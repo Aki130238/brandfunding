@@ -7,7 +7,7 @@
   </div>
   <div class="row col-12 col-md-10 col-lg-11 col-xl-10 artisan-list__wrap">
     <div class="row col-12 artisan-list_void"></div>
-    <% 9.times do %>
+    <% @artisans.each do |artisan| %>
       <div class=" col-9 col-sm-8 col-md-5 col-lg-3 artisan-list">
         <div class="row">
           <p class="col-11 artisan-list__image">職人画像</p>
@@ -16,16 +16,16 @@
           <p class="artisan-list__title"></p>
         </div>
         <div class="row">
-          <p class="col-4 artisan-list__image2">職人画像</p>
+          <p class="col-4 artisan-list__image2"><%= image_tag artisan.image.to_s %></p>
         </div>
         <div class="row">
-          <p class="col-12 artisan-list__year">実務経験&ensp;20年</p>
+          <p class="col-12 artisan-list__year">実務経験&ensp;<%= artisan.artisan_profile.workexp %></p>
         </div>
         <div class="row">
-          <p class="col-12 artisan-list__name">職人名</p>
+          <p class="col-12 artisan-list__name"><%= artisan.user_profile.family_name %>&ensp;<%= artisan.user_profile.last_name %></p>
         </div>
         <div class="row">
-          <p class="col-12 artisan-list__pr"><% 20.times do %>一言PR<% end %></p>
+          <p class="col-12 artisan-list__pr"><%= artisan.artisan_profile.mypr %></p>
         </div>
         <div class="row artisan-list__bar"></div>
       </div>

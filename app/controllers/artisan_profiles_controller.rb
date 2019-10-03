@@ -4,6 +4,7 @@ class ArtisanProfilesController < ApplicationController
   before_action :artisan_profile_authority, only: [:edit, :update]
 
   def index
+    @artisans = User.where(user_status: 2 )
   end
 
   def show
