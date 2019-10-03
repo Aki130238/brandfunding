@@ -1,1 +1,2 @@
 $(".follow_form_"+"<%= @user.id %>").html("<%= escape_javascript(render partial: 'users/follow_form', locals: { user: @user } ) %>")
+$(".follow_form2_"+"<%= @user.id %>").html("<%= escape_javascript(render partial: 'users/follow_form2', locals: { user: @user } ) %>")
