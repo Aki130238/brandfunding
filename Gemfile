@@ -15,10 +15,11 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
+gem 'turbolinks', '~> 5'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'trix'
 # gem 'bootstrap', '~> 4.3.1'
-gem 'rails_12factor'
+
 
 # Backend
 gem 'jbuilder', '~> 2.5'
