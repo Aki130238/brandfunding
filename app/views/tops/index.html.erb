@@ -79,7 +79,7 @@
     <% @projects.each do |pr| %>
       <%= link_to project_path(pr.id), class: "project-list__wrap__link" do %>
         <li class="project-list__wrap">
-          <p class="project-list__image__wrap"><%= image_tag pr.project_image.project_logo.url, class: "project-list__image" %></p>
+          <p class="col-md-6 project-list__image__wrap"><%= image_tag pr.project_image.project_logo.url, class: "project-list__image" %></p>
           <%# <img class="project-list__image" data-src="smb01.jpg" alt="Thumbnail [100%x225]" src="smb01.jpg" data-holder-rendered="true"> %>
           <p class="col-12 project-list__title"><%= pr.project_text %></p>
           <p class="col-4 project-list__edit__link__wrap"></p>
