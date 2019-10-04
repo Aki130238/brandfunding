@@ -78,7 +78,7 @@
     <% @projects.each do |pr|%>
       <div class="project-list col-9 col-sm-8 col-md-5 col-lg-3">
         <%= link_to project_path(pr.id), class: "project-list__link" do %>
-          <div class="">
+          <div class="project-list__image__wrap">
             <span class="col-12 project-list__image"><%= image_tag pr.project_image.project_logo.url, class: "col-12 project-list__image" %></span>
           </div>
           <div class="">
