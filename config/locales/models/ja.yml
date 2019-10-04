@@ -48,10 +48,10 @@ ja:
         project_text: プロジェクト概要
       user_profile:
         id: ID
-        family_name: 名前
-        family_name_sub: 名前(ふりがな)
-        last_name: 氏名
-        last_name_sub: 氏名(ふりがな)
+        family_name: 姓
+        family_name_sub: 姓(ふりがな)
+        last_name: 名
+        last_name_sub: 名(ふりがな)
         sex: 性別
         birthday: 誕生日
         add_no: 郵便番号
