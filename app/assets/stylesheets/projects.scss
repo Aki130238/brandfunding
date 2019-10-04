@@ -616,19 +616,24 @@
       }
     }
     &__image {
-      @include mq(s) {
-        padding: 15rem 0;
-      }
-      padding: 23.5rem 0;
-      border: 1px solid black;
-      background: white;
-      text-align: center;
-      &__wrap {
-        margin: 0 auto;
+        width: 100%;
+        object-fit: contain;
         padding: 0;
-        @include mq(md) {
-          margin: 0 0 0 auto;
+      // text-align: center;
+      &__wrap {
+        @include mq(s) {
+          margin: 0 auto;
         }
+        margin-left: 5rem;
+        padding-right: 0;
+        // margin: 0 auto;
+        // padding: 0;
+        // @include mq(md) {
+        //   margin: 0 0 0 auto;
+        // }
+      }
+      &__wrap2 {
+        padding: 0;
       }
     }
     &__sns {
@@ -706,6 +711,9 @@
     }
     &__content__wrap {
       margin: 0 auto;
+      @include mq(s) {
+        padding: 0;
+      }
       @include mq(md) {
         margin: 2rem auto 0 0;
         padding-left: 5rem;
@@ -758,7 +766,7 @@
     &__patron {
       margin-bottom: 0;
       &__wrap {
-        padding: 5rem 0 0 0;
+        padding: 2rem 0 0 0;
       }
     }
     &__supporter {
@@ -767,11 +775,16 @@
       font-size: 5rem;
     }
     &__user-image {
-      padding: 8rem 0;
+      width: 100%;
+      height: 15rem;
+      @include mq(s) {
+        height: 17rem;
+      }
       border: 1px solid black;
       border-radius: 50%;
       background: white;
       text-align: center;
+      object-fit: contain;
     }
     &__icon3 {
       width: 2rem;
@@ -796,9 +809,11 @@
     &__owner-name {
       margin-top: 1rem;
       text-align: center;
+      font-weight: bold;
     }
     &__prefectures {
       text-align: center;
+      font-weight: bold;
     }
   }
 
@@ -1110,18 +1125,22 @@
         margin-bottom: 3rem;
         padding-top: 3rem;
         font-weight: bold;
+        font-size: 2.5rem;
         text-align: center;
         vertical-align: middle;
       }
       &__image {
-        margin: 0 auto 2rem auto;
-        padding: 15rem 0;
-        border: 1px solid black;
-        background: white;
-        text-align: center;
+        width: 100%;
+        object-fit: contain;
+        margin: 0 auto;
+        // margin: 0 auto 2rem auto;
+        // padding: 15rem 0;
+        // border: 1px solid black;
+        // background: white;
+        // text-align: center;
       }
       &__title2 {
-        margin-left: 2rem;
+        margin: 1.5rem 0 0 2rem;
         padding: .6rem 0;
         border-radius: 20px;
         background: $btncolor-3;

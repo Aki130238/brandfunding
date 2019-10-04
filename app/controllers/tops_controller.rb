@@ -1,7 +1,7 @@
 class TopsController < ApplicationController
   def index
     @user = User.new
-    @projects = Project.all
+    @projects = Project.all.reverse_order.limit(3)
   end
 
   def new

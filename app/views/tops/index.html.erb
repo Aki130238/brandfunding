@@ -73,40 +73,51 @@
     </a>
   </div>
 
-<article class="row">
-  <ul class="col-12 project-list">
-    <%# <li class="project-list__void"></li> %>
-    <% @projects.each do |pr| %>
-      <%= link_to project_path(pr.id), class: "project-list__wrap__link" do %>
-        <li class="project-list__wrap">
-          <p class="project-list__image__wrap"><%= image_tag pr.project_image.project_logo.url, class: "project-list__image" %></p>
-          <%# <img class="project-list__image" data-src="smb01.jpg" alt="Thumbnail [100%x225]" src="smb01.jpg" data-holder-rendered="true"> %>
-          <p class="col-12 project-list__title"><%= pr.project_text %></p>
-          <p class="col-4 project-list__edit__link__wrap"></p>
-          <div class="project-list__content__wrap">
-            <p class="col-3 project-list__patron"><%= svg("users-solid.svg", class: "project-list__icon1") %>&thinsp;3人</p>
-            <p class="col-6 project-list__value"><%= svg("yen-sign-solid.svg", class: "project-list__icon3") %>&thinsp;1,000,0000円</p>
-            <p class="col-3 project-list__deadline"><%= svg("clock-regular.svg", class: "project-list__icon2") %>&thinsp;3日</p>
+  <div class="row col-12 col-md-11 col-lg-12 project-list__wrap">
+    <h2 class="col-12 project__title">最新の注目プロジェクト</h2>
+    <% @projects.each do |pr|%>
+      <div class="project-list col-9 col-sm-8 col-md-5 col-lg-3">
+        <%= link_to project_path(pr.id), class: "project-list__link" do %>
+          <div class="">
+            <span class="col-12 project-list__image"><%= image_tag pr.project_image.project_logo.url, class: "col-12 project-list__image" %></span>
+          </div>
+          <div class="">
+            <p class="project-list__title"><%= pr.project_text %></p>
+          </div>
+          <div class="project-list__guide">
+            <p class="col-4 project-list__guide__icon__wrap"><%= svg("users-solid.svg", class: "project-list__guide__icon2") %></p>
+            <p class="col-4 project-list__guide__icon__wrap"><%= svg("yen-sign-solid.svg", class: "project-list__guide__icon1") %></p>
+            <p class="col-4 project-list__guide__icon__wrap"><%= svg("clock-regular.svg", class: "project-list__guide__icon3") %></p>
+          </div>
+          <div class="project-list__content">
+            <p class="col-4"><%= sponsor_count(pr) %>人</p>
+            <p class="col-4"><%= fund_count(pr) %>円</p>
+            <p class="col-4">
+              <% if (pr.project_value.recruitment_deadline > DateTime.now) %>
+                <%= (pr.project_value.recruitment_deadline - DateTime.now).to_i / 1.days + 1 %>日
+              <% else %>
+                <span>募集終了</span></p>
+              <% end %>
+            </p>
           </div>
           <div class="progress">
-            <div class="progress-bar project-list__progress" style="width: 30%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar project-list__progress" style="width: <%= fund_progress(pr) %>%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
               <span class="project-list__progress__content">&ensp;30%</span>
             </div>
           </div>
-          <div class="project-list__void">&emsp;</div>
-        </li>
-      <% end %>
+        <% end %>
+      </div>
     <% end %>
-  </ul>
-</article>
+    <div class="row col-12 project-list_void"></div>
+  </div>
 
   <nav class="guide">
-    <div class="row guide2">
+    <div class="guide2">
       <div class="col-9 col-sm-6 col-md-3 guide__column-1">
         <p class="guide__image__wrap"><img class="rounded-circle justify-content-center guide__image" src="icon_item01.png" alt="Generic placeholder image" width="140" height="145"></p>
         <h2 class="guide__title">アイディアを投稿</h2>
         <p class="guide__content">まずは作りたいアイディアを投稿してからプロジェクトを立ち上げましょう。あなたのプロジェクトに共感する仲間が集まります。</p>
-        <p class="col-9 col-md-12 col-lg-10 col-xl-8 guide__button__wrap">
+        <p class="col-10 col-md-12 col-lg-10 col-xl-8 guide__button__wrap">
           <% if logged_in? %>
             <%= link_to "オーナー登録する »", edit_user_profile_path(current_user.id), class:"col-12 btn guide__button guide__button1" %>
           <% else %>
@@ -118,7 +129,7 @@
         <p class="guide__image__wrap"><img class="rounded-circle guide__image" src="icon_item02.png" alt="Generic placeholder image" width="140" height="140"></p>
         <h2 class="guide__title">スポンサーを集めて</h2>
         <p class="guide__content">オーナーやプロジェクトに共感したら支援者になりましょう！スポンサーになればあなたはブランドメンバーの仲間入りです。</p>
-        <p class="col-9 col-md-12 col-lg-10 col-xl-8 guide__button__wrap">
+        <p class="col-10 col-md-12 col-lg-10 col-xl-8 guide__button__wrap">
           <% if logged_in? %>
             <%= link_to "スポンサー登録する »", edit_user_profile_path(current_user.id), class: "col-12 btn guide__button guide__button2" %>
           <% else %>
@@ -130,7 +141,7 @@
         <p class="guide__image__wrap"><img class="rounded-circle guide__image" src="icon_item03.png" alt="Generic placeholder image" width="140" height="135"></p>
         <h2 class="guide__title">職人に依頼する</h2>
         <p class="guide__content">BRANDFUNDINGを支える日本全国の職人がオリジナルブランドづくりを応援します。世界に通用するブランドを目指せます。</p>
-        <p class="col-9 col-md-12 col-lg-10 col-xl-8 guide__button__wrap">
+        <p class="col-10 col-md-12 col-lg-10 col-xl-8 guide__button__wrap">
           <% if logged_in? %>
             <%= link_to "職人登録する »", edit_artisan_profile_path(current_user.id), class: "col-12 btn guide__button guide__button3" %>
           <% else %>
@@ -140,5 +151,4 @@
       </div>
     </div>
   </nav>
-  <p class="col-7 col-md-4 article__button__wrap"><%= link_to "一覧を見る", projects_path, class: "btn col-12 article__button" %></p>
 </main>
