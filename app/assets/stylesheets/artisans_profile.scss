@@ -5,6 +5,7 @@
 }
 
 .edit-artisan-page {
+  background: $bgcolor-artisan5;
   &__title__wrap {
     margin-bottom: 2.5rem;
     @include mq(s) {
