@@ -76,17 +76,22 @@
     }
   }
 
+  .project-list::-webkit-scrollbar{
+    display:none;
+  }
+
   .project-list {
     overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+    margin-bottom: 0;
     background: $bgcolor-project4;
     &__void {
       margin-bottom: -1rem;
     }
     &__wrap {
       display: inline-block;
-      width: 30%;
+      width: 24%;
       margin: 0 1.5rem;
       background: white;
       &__link {
@@ -101,13 +106,15 @@
     }
     &__image {
       width: 100%;
-      height: 28rem;
+      height: 25rem;
       object-fit: contain;
     }
     &__title {
+      width: 100%;
       margin-bottom: 0;
       padding: 0 1.5rem 1.5rem 1.5rem;
       font-size: 2rem;
+      word-break : break-all;
       &__wrap {
 
       }
