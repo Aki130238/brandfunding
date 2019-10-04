@@ -1,4 +1,5 @@
 .new-project-page {
+  background: $bgcolor-project6;
   &__title {
     display: inline-block;
     width: 100%;
@@ -77,6 +78,7 @@
     &__idea__input {
       padding: .5rem 1rem;
       border: 1px solid black;
+      background: white;
       outline: 0;
       &__wrap {
         margin: .5rem 0 3rem 0;
@@ -159,6 +161,7 @@
       }
       padding: 1.5rem 0rem;
       border: 1px solid black;
+      background: white;
       cursor: pointer;
     }
     &__button:hover {
@@ -266,6 +269,7 @@
       &__image_wrap {
         margin-top: 1.5rem;
         border: 1px solid black;
+        background: white;
       }
       &__image_wrap2 {
         float: left;
@@ -358,7 +362,7 @@
 
 .projects-page {
   // padding: 0;
-  background: #f9fff9;
+  background: $bgcolor-project6;
   &__header {
     background: $bgcolor-project;
     &__wrap {

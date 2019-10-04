@@ -110,10 +110,10 @@
         height: 18rem;
       }
       @include mq(lg) {
-        height: 16rem;
+        height: 15rem;
       }
       @include mq(xl) {
-        height: 23rem;
+        height: 21rem;
       }
       object-fit: contain;
       padding: 0;

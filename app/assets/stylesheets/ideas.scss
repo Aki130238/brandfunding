@@ -888,9 +888,14 @@
       text-decoration: none;
     }
     &__image {
-      padding: 7rem 0;
-      border-bottom: 1px solid black;
-      text-align: center;
+      width: 100%;
+      object-fit: contain;
+      &__wrap {
+        padding: 0;
+      }
+      // padding: 7rem 0;
+      // border-bottom: 1px solid black;
+      // text-align: center;
     }
     &__title {
       margin: 1rem 0 3rem 1.3rem;
