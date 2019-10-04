@@ -40,7 +40,10 @@
           </div>
         </div>
         <div class="idea-form__button_wrap">
-          <p class="col-8 col-sm-4 col-md-3 col-lg-2  d-inline-block idea-form__button" id="ideaNext1">次へ</p>
+          <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaNext1">次へ</p>
+        </div>
+        <div class="idea-form__button_wrap2">
+          <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaNext1">次へ</p>
         </div>
         </div>
 
@@ -73,8 +76,12 @@
             </div>
           </div>
           <div class="idea-form__button_wrap">
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaBack1">前へ</p>
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaNext2">次へ</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaBack1">戻る</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaNext2">次へ</p>
+          </div>
+          <div class="idea-form__button_wrap2">
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaNext2">次へ</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaBack1">戻る</p>
           </div>
         </div>
 
@@ -119,8 +126,12 @@
             </div>
           </div>
           <div class="idea-form__button_wrap">
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaBack2">前へ</p>
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaNext3">次へ</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaBack2">戻る</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaNext3">次へ</p>
+          </div>
+          <div class="idea-form__button_wrap2">
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaNext3">次へ</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaBack2">戻る</p>
           </div>
         </div>
 
@@ -152,8 +163,12 @@
             </div>
           </div>
           <div class="idea-form__button_wrap">
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaBack3">前へ</p>
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaNext4">次へ</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaBack3">戻る</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaNext4">次へ</p>
+          </div>
+          <div class="idea-form__button_wrap2">
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaNext4">次へ</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaBack3">戻る</p>
           </div>
         </div>
 
@@ -175,8 +190,12 @@
             </div>
           </div>
           <div class="idea-form__button_wrap">
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaBack4">前へ</p>
-            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaNext5">次へ</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaBack4">戻る</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaNext5">次へ</p>
+          </div>
+          <div class="idea-form__button_wrap2">
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaNext5">次へ</p>
+            <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaBack4">戻る</p>
           </div>
         </div>
 
@@ -202,11 +221,9 @@
               <h4 class="col-2 col-md-3 col-xl-2 idea-form-idea-details__title2">必須</h4>
             </div>
             <div class="col-md-8 idea-form-idea-details__input__wrap">
-
               <p class="offset-1 offset-md-3 form-inline"><%= f.number_field :idea_amount, class: "col-5 col-md-6 col-xl-4
               form-control idea-form-idea-details__input idea-form-idea-details__input__number", placeholder: "数値を入力", min: "1", max: "9999" %>&emsp;点</p>
               <p class="col-9 col-lg-8 col-xl-7 offset-1 offset-md-3 idea-form-idea-details__guide">最低製作数量を伝えて必要な予算を確定させましょう。<br>職人さんへの製作意欲につながります。</p>
-
             </div>
           </div>
           <div class="row">
@@ -269,7 +286,11 @@
               <p class="col-9 col-lg-8 col-xl-7 offset-1 offset-md-3 idea-form-idea-details__guide">1~1000文字まで。</p>
             </div>
             <div class="idea-form__button_wrap">
-              <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button" id="ideaBack5">戻る</p>
+              <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaBack5">前へ</p>
+              <%= f.submit "保存", class: "col-8 col-sm-4 col-md-3 col-lg-2 offset-1 idea-form__button" %>
+            </div>
+            <div class="idea-form__button_wrap2">
+              <p class="col-8 col-sm-4 col-md-3 col-lg-2 offset-1 d-inline-block idea-form__button ideaBack5">前へ</p>
               <%= f.submit "保存", class: "col-8 col-sm-4 col-md-3 col-lg-2 offset-1 idea-form__button" %>
             </div>
           </div>
