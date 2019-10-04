@@ -613,9 +613,12 @@
       text-align: center;
     }
     &__title {
-      color: $color-1;
+      color: black;
       font-weight: bold;
       font-size: 2.5rem;
+      @include mq(md) {
+        font-size: 3rem;
+      }
       text-align: center;
     }
     &__image {
@@ -732,7 +735,10 @@
       margin-bottom: 0;
       padding: 0;
       font-weight: bold;
-      font-size: 5rem;
+      font-size: 4.5rem;
+      @include mq(md) {
+        font-size: 5rem;
+      }
       &__title {
         margin-bottom: 0;
       }
@@ -775,7 +781,10 @@
     &__supporter {
       padding: 0;
       font-weight: bold;
-      font-size: 5rem;
+      font-size: 4.5rem;
+      @include mq(md) {
+        font-size: 5rem;
+      }
     }
     &__user-image {
       width: 100%;
@@ -801,7 +810,10 @@
     }
     &__deadline {
       font-weight: bold;
-      font-size: 5rem;
+      font-size: 4.5rem;
+      @include mq(md) {
+        font-size: 5rem;
+      }
       &__title {
         margin-bottom: 0;
       }
@@ -970,9 +982,9 @@
         margin-top: 1.5rem;
         border: 1px solid black;
         @include mq(s) {
-          padding-bottom: .5rem 1rem 50rem .5rem;
+          padding-bottom: .5rem 1rem 30rem .5rem;
         }
-        padding: 1rem 1rem 103rem 1rem;
+        padding: 1rem 1rem 90rem 1rem;
       }
     }
     // &__report {
@@ -1125,7 +1137,10 @@
       padding-bottom: 1.5rem;
       background: $bgcolor-idea2;
       &__title {
-        margin-bottom: 3rem;
+        margin-bottom: 1.5rem;
+        @include  mq(md) {
+          margin-bottom: 3rem;
+        }
         padding-top: 3rem;
         font-weight: bold;
         font-size: 2.5rem;
