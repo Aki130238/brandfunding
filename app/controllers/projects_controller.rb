@@ -87,6 +87,7 @@ class ProjectsController < ApplicationController
     #   ],
     #   project_image_attribute: [
     #     :id,
+    #     :project_logo,
     #     :project_img,
     #     :project_img2,
     #     :project_img3,
