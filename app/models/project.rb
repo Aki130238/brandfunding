@@ -20,4 +20,7 @@ class Project < ApplicationRecord
   has_many :comments
   has_many :project_likes, dependent: :destroy
   has_many :like_users, through: :project_likes, source: :user
+
+  validates :project_title, presence: true, length: { in: 1..40 }
+  validates :project_text, presence: true, length: { in: 1..140 }
 end

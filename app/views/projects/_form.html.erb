@@ -28,7 +28,8 @@
               <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
             </div>
             <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-              <p class="form-inline"><%= va.number_field :target_fund, in: 0..10000000, class: "col-8 col-md-7 col-xl-5 form-control project-form-value__target__input", placeholder: "10,000" %>&ensp;円</p>
+              <p class="form-inline"><%= va.number_field :target_fund, in: 10000..100000000, class: "col-8 col-md-7
+              col-xl-5 form-control project-form-value__target__input", placeholder: "10,000" %>&ensp;円</p>
               <p class="project-form-value__target__guide">目標金額は10,000円以上の金額で入力してください</p>
             </div>
           </div>
@@ -89,7 +90,8 @@
               <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
             </div>
             <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-              <p><%= f.text_field :project_title, class: "col-12 col-xl-11 form-control project-form-project__input", placeholder: "あなただけのタイトルでスポンサーを惹きつけましょう" %></p>
+              <p><%= f.text_field :project_title, in: 1..40, class: "col-12 col-xl-11 form-control
+              project-form-project__input", placeholder: "あなただけのタイトルでスポンサーを惹きつけましょう" %></p>
               <p class="project-form-project__guide">40文字以内で入力してください。</p>
             </div>
           </div>
@@ -99,7 +101,8 @@
               <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
             </div>
             <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-              <p><%= f.text_area :project_text, class: "col-12 col-xl-11 form-control project-form-project__input-2", placeholder: "プロジェクトの内容を3行程度でまとめてみましょう" %></p>
+              <p><%= f.text_area :project_text, in: 1..140, class: "col-12 col-xl-11 form-control
+              project-form-project__input-2", placeholder: "プロジェクトの内容を3行程度でまとめてみましょう" %></p>
               <p class="project-form-project__guide">140文字以内で入力してください。</p>
             </div>
           </div>
@@ -202,7 +205,7 @@
                 <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
               </div>
               <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-                <%= ab.hidden_field :project_abouts, id: :article_text %>
+                <%= ab.hidden_field :project_abouts, in: 1..1000, id: :article_text %>
                 <trix-editor input="article_text" class="col-12 form-control project-form-about__input"><%= ab.text_area :project_abouts, class: "col-12 form-control project-form-about__input" %></trix-editor>
               </div>
             </div>
@@ -249,7 +252,8 @@
                   <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
                 </div>
                 <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-                  <p class="form-inline"><%= re.number_field :return_item_fund, in: 0..10000000, class: "col-6 col-md-4 form-control project-form-return__input3" %>&ensp;円</p>
+                  <p class="form-inline"><%= re.number_field :return_item_fund, in: 1..10000000, class: "col-6
+                  col-md-4 form-control project-form-return__input3" %>&ensp;円</p>
                 </div>
 
                 <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
@@ -257,7 +261,8 @@
                   <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
                 </div>
                 <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-                  <p class="form-inline"><%= re.number_field :return_item_count, in: 0..1000, class: "col-6 col-md-4 form-control project-form-return__input3" %>&ensp;個</p>
+                  <p class="form-inline"><%= re.number_field :return_item_count, in: 1..9999, class: "col-6 col-md-4
+                  form-control project-form-return__input3" %>&ensp;個</p>
                 </div>
 
                 <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
@@ -273,7 +278,8 @@
                   <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
                 </div>
                 <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-                  <p class="form-inline"><%= re.number_field :return_item_sponsors, in: 0..1000, class: "col-6 col-md-4 form-control project-form-return__input3" %>&ensp;人</p>
+                  <p class="form-inline"><%= re.number_field :return_item_sponsors, class: "col-6
+                  col-md-4 form-control project-form-return__input3" %>&ensp;人</p>
                 </div>
 
                 <div class="col-md-4 offset-1 d-flex project-form__title__wrap">

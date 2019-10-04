@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_03_171055) do
+ActiveRecord::Schema.define(version: 2019_10_04_060822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,7 +131,7 @@ ActiveRecord::Schema.define(version: 2019_10_03_171055) do
 
   create_table "project_abouts", force: :cascade do |t|
     t.bigint "project_id"
-    t.text "project_abouts"
+    t.text "project_abouts", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_project_abouts_on_project_id"
@@ -202,18 +202,18 @@ ActiveRecord::Schema.define(version: 2019_10_03_171055) do
 
   create_table "project_values", force: :cascade do |t|
     t.bigint "project_id"
-    t.integer "target_fund"
+    t.integer "target_fund", null: false
     t.integer "project_fund"
     t.string "recruitment_method"
-    t.datetime "recruitment_deadline"
+    t.datetime "recruitment_deadline", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_project_values_on_project_id"
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "project_title"
-    t.text "project_text"
+    t.string "project_title", null: false
+    t.text "project_text", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
