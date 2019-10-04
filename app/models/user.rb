@@ -2,6 +2,10 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, on: :new
+  validates :name,  presence: true, length: { maximum: 30 }
+  before_validation { email.downcase! }
+  validates :email, presence: true, length: { maximum: 255 },
+                    format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   has_one :user_profile, inverse_of: :user, dependent: :destroy
   accepts_nested_attributes_for :user_profile, reject_if: :all_blank, update_only: true
   has_one :artisan_profile, inverse_of: :user, dependent: :destroy
