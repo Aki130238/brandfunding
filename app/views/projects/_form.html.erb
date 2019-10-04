@@ -206,7 +206,8 @@
               </div>
               <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
                 <%= ab.hidden_field :project_abouts, in: 1..1000, id: :article_text %>
-                <trix-editor input="article_text" class="col-12 form-control project-form-about__input"><%= ab.text_area :project_abouts, class: "col-12 form-control project-form-about__input" %></trix-editor>
+                <%# <trix-editor input="article_text" class="col-12 form-control project-form-about__input"> %>
+                <p class="col-12 project-form-about__input__wrap"><%= ab.text_area :project_abouts, class: "col-12 form-control project-form-about__input" %></p>
               </div>
             </div>
           <% end %>
