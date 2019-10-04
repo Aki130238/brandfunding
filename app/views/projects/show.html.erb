@@ -1,8 +1,7 @@
 <main class="container-fluid show-project-page">
   <div class="row show-project-page__header"></div>
   <div class="row show-project__title__wrap">
-    <p class="col-12 col-md-6 show-project1__user-name"><%= @project.user.name %></p>
-    <p class="col-12 col-md-6 show-project1__title">『<%= @project.project_title %>』</p>
+    <p class="col-12 show-project1__title">『<%= @project.project_title %>』</p>
   </div>
   <section class="show-project1">
     <div class="row show-project1">
@@ -143,16 +142,6 @@
           <p class="col-10 col-md-11 show-project3__idea__button__wrap">詳細要件はこちらから</p>
         <% end %>
       </div>
-      <div class="col-12 show-project3__return">
-        <h2 class="show-project3__return__title"><%= svg("gift-solid.svg", class: "show-project3__return__icon") %>&ensp;リターン</h2>
-        <div class="show-project3__return__wrap">
-          <p class="col-11 show-project3__return__money">リターン金額</p>
-          <p class="col-11 show-project3__return__content">リターン内容</p>
-          <div class="show-project3__return__supporter__wrap">
-            <p class="col-5 show-project3__return__supporter">サポーター人数</p>
-            <p class="col-5 show-project3__return__schedule">お届け予定日</p>
-          </div>
-        </div>
         <% if @project.user_id == current_user.id %>
           <button type="button" class="show-project3-form__button" data-toggle="collapse" data-target="#showReturnForm" aria-expanded="false" aria-controls="showReturnForm" id="showReturnButton">
             <%= svg("plus-square-regular.svg", class: "show-project3-form__icon") %>&ensp;リターンを追加
