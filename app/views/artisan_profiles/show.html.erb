@@ -1,5 +1,5 @@
 <main class="show-artisan-page">
-  <h1 class="show-artisan-page__title">職人紹介&emsp;<%= link_to "職人一覧(仮置き)", artisan_profiles_path %><%= link_to "職人情報編集(仮置き)", edit_artisan_profile_path(current_user.id) %></h1>
+  <h1 class="show-artisan-page__title">職人紹介</h1>
   <div class="row show-artisan1">
     <div class="col-md-4">
       <div class="col-10 col-sm-8 col-md-12 col-lg-10 col-xl-8 show-artisan1__image__wrap">
@@ -65,9 +65,9 @@
         <p class="col-md-3 col-lg-2"></p>
         <div class="col-md-9 col-lg-10">
           <p class="col-md-9 col-lg-10 show-artisan1__content6"><%= @artisan_profile.skill_free %></p>
+          <p><%= link_to "職人情報を編集する", edit_artisan_profile_path(current_user.id) %></p>
         </div>
       </div>
-
     </div>
   </div>
 
