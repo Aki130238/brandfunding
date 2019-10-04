@@ -175,12 +175,6 @@
           <div class="row edit-artisan-form__artisan__genre__wrap2">
             <div class="col-md-9 offset-md-3 d-flex">
               <p class="edit-artisan-form__title_hide">必須</p>
-              <div class="col-md-8 edit-artisan-form__artisan__genre-list__wrap2 mb-s">
-                <% genreOther = ArtisanGenreList.find(6) %>
-                <p class="col-md-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_genre_list_ids, { multiple: true, checked: @artisan_profile.artisan_genre_lists.find_by(id: genreOther.id).present?, include_hidden: false }, genreOther[:id] %>
-                  <%= genreOther.genre_name %></p>
-                <%= b.text_field :genre_free, class: "col-md-7 form-control edit-artisan-form__artisan__input", id: "genre_free", placeholder: "その他のジャンル" %>
-              </div>
             </div>
           </div>
 
@@ -203,12 +197,6 @@
           <div class="row edit-artisan-form__input__wrap">
             <div class="col-md-9 offset-md-3 d-flex mb-s">
               <p class="edit-artisan-form__title_hide">必須</p>
-              <div class="col-md-8">
-                <% itemOther = ArtisanItemList.find(13) %>
-                <p class="col-md-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_genre_list_ids, { multiple: true, checked: @artisan_profile.artisan_genre_lists.find_by(id: itemOther.id).present?, include_hidden: false }, itemOther[:id] %>
-                  <%= itemOther.item_name %></p>
-                <%= b.text_field :item_free, class: "col-md-7 form-control edit-artisan-form__artisan__input", id: "item_free", placeholder: "その他のアイテム" %>
-              </div>
             </div>
           </div>
 
@@ -231,13 +219,6 @@
           <div class="row edit-artisan-form__input__wrap">
             <div class="col-md-9 offset-md-3 d-flex">
               <p class="edit-artisan-form__title_hide">必須</p>
-              <div class="col-md-8 mb-s">
-                <% facillityOther = ArtisanFacillityList.find(9) %>
-                <p class="col-md-5 edit-artisan-form__artisan__genre__content"><%= b.check_box :artisan_facillity_list_ids, { multiple: true, checked: @artisan_profile.artisan_facillity_lists.find_by(id: facillityOther.id)
-                    .present?, include_hidden: false }, facillityOther[:id] %>
-                  <%= facillityOther.facillity_name %></p>
-                <%= b.text_field :facillity_free, class: "col-md-7 form-control edit-artisan-form__artisan__input", id: "facillity_free", placeholder: "その他の設備（特殊ミシンなど）" %>
-              </div>
             </div>
           </div>
 
