@@ -447,6 +447,15 @@
 }
 
 .show-artisan-page {
+  .edit-artisan__link {
+    color: $color-1;
+    text-decoration: none;
+  }
+  .edit-artisan__link:hover {
+    @extend .hover;
+    color: $bgcolor-decoration;
+  }
+  background: $bgcolor-artisan5;
   &__title {
     margin-bottom: -.15rem;
     padding: 1rem 0;

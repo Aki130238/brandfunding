@@ -55,6 +55,7 @@ $hovercolor-idea: #fcc800;
 $hovercolor-comment: #fcc800;
 $hovercolor-delete: #d70035;
 $hovercolor-artisanbtn: #00885a;
+$hovercolor-artisan: #c1ffff;
 $hovercolor-return: #fcc800;
 $hovercolor-user: #fcc800;
 $hovercolor-project: #1DBE00;
@@ -189,6 +190,9 @@ html {
     font-size: 1.6rem;
     @include mq(md) {
       font-size: 1.65rem;
+    }
+    &__project:hover {
+      color: $hovercolor-project;
     }
     &__artisan:hover {
       color: $bgcolor-artisan4;
