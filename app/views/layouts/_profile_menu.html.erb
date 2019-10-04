@@ -3,9 +3,9 @@
     <li class="menu__user_image"><%= image_tag @user.image.to_s %></li>
     <li class="menu__user_name"><%= @user.name %></li>
     <li class="menu__li menu__li_border-top">
-      <div class="card card-body menu__list__idea">
+      <div class="card card-body menu__list__idea p0">
         <button type="button" class="menu__button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-          <h1 class="menu__title"><span class="menu__item">▼</span>&ensp;アイディア管理</h1>
+          <h1 class="menu__title2"><span class="menu__item">▼</span>&ensp;アイディア管理</h1>
         </button>
       </div>
       <div class="collapse" id="collapseExample2">
@@ -16,9 +16,9 @@
       </div>
     </li>
     <li class="menu__li">
-      <div class="card card-body menu__list__project">
+      <div class="card card-body menu__list__project p0">
         <button type="button" class="menu__button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
-          <h1 class="menu__title"><span class="menu__item">▼</span>&ensp;プロジェクト管理</h1>
+          <h1 class="menu__title2"><span class="menu__item">▼</span>&ensp;プロジェクト管理</h1>
         </button>
       </div>
       <div class="collapse" id="collapseExample1">
@@ -29,36 +29,37 @@
       </div>
     </li>
     <li class="menu__li">
-      <div class="card card-body menu__list__sponsor">
+      <div class="card card-body menu__list__sponsor p0">
         <button type="button" class="menu__button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
-          <h1 class="menu__title"><span class="menu__item">▼</span>&ensp;スポンサー管理</h1>
+          <h1 class="menu__title2"><span class="menu__item">▼</span>&ensp;スポンサー管理</h1>
         </button>
       </div>
       <div class="collapse" id="collapseExample3">
         <div class="card card-body">
-          <p class="menu__list menu__link__sponsor">スポンサー</p>
-          <p class="menu__list menu__link__sponsor">スポンサー</p>
+          <%= link_to coming_soons_path, class: "menu__title-2_link menu__link__sponsor" do %>
+            <p class="menu__list menu__link__sponsor">スポンサー一覧</p>
+          <% end %>
         </div>
       </div>
     </li>
-    <li class="menu__li menu__li__favorite">
+    <li class="menu__li menu__li__favorite p0">
     <%= link_to coming_soons_path, class: "menu__title-2__link" do %>
-      <h1 class="menu__title-2 menu__li__favorite">お気に入りプロジェクト</h1>
+      <h1 class="menu__title2 menu__li__favorite">お気に入りプロジェクト</h1>
     <% end %>
     <%# project_likes_path(@user.id) %>
     </li>
-    <li class="menu__li menu__li__follow">
+    <li class="menu__li menu__li__follow p0">
       <%= link_to coming_soons_path, class: "menu__title-2__link" do %>
-        <h1 class="menu__title-2 menu__li__follow">フォローしたオーナー</h1>
+        <h1 class="menu__title2 menu__li__follow">フォローしたオーナー</h1>
       <% end %>
       <%# relationships_path(@user.id) %>
     </li>
     <%# <li class="menu__li menu__li__favorite">
       <h1 class="menu__title-2 menu__li__favorite">お気に入りデザイナー</h1>
     </li> %>
-    <li class="menu__li menu__li__user">
+    <li class="menu__li menu__li__user p0">
       <%= link_to edit_user_profile_path(@user.id), class: "menu__title-2__link" do %>
-        <h1 class="menu__title-2 menu__li__user">会員情報変更</h1>
+        <h1 class="menu__title2 menu__li__user">会員情報変更</h1>
       <% end %>
     </li>
   </ul>

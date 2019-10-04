@@ -98,7 +98,7 @@
     <div class="col-12 col-md-6 offset-lg-1 tab-content">
       <div class="tab-pane fade show active show-project2__home" id="showHome" role="tabpanel" aria-labelledby="showHome-tab">
         <h2 class="show-project2__home__title"><%= svg("file-solid.svg", class:"show-project2__home__icon") %>&ensp;プロジェクト本文</h2>
-        <p class="show-project2__home__content">&ensp;<%= @project.project_about.project_abouts %></p>
+        <p class="show-project2__home__content"><%= @project.project_about.project_abouts %></p>
       </div>
 
       <div class="tab-pane fade show-project2__report" id="showReport" role="tabpanel" aria-labelledby="showReport-tab">
@@ -181,10 +181,6 @@
                 </div>
                 <p class="col-lg-4">本文</p>
                 <p class="col-xl-12 form-inline"><%= re.text_area :return_item_about, class: "col-12 form-control show-project3-form__input3" %></p>
-                <div class="show-project3-form__wrap">
-                  <p class="col-lg-4">スポンサー</p>
-                  <p class="col-xl-9 form-inline p0"><%= re.number_field :return_item_sponsors, in: 0..1000, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;人</p>
-                </div>
                 <div class="show-project3-form__wrap">
                   <p class="col-lg-4">お届け予定日</p>
                   <p class="col-xl-9 form-inline p0"><%= re.date_field :delivery_date, class: "col-8 col-xl-6 form-control show-project3-form__input" %></p>

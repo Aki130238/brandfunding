@@ -18,7 +18,7 @@
                 <% if logged_in? %>
                   <%= link_to "スポンサー登録する", edit_user_profile_path(current_user.id), class: "btn btn-lg menu__button" %>
                 <% else %>
-                  <%= link_to "スポンサー登録する", new_session_path, class: "btn btn-lg menu__button" %>
+                  <%= link_to "スポンサー登録する", new_user_path, class: "btn btn-lg menu__button" %>
                 <% end %>
               </p>
             </div>
@@ -36,7 +36,7 @@
                 <% if logged_in? %>
                   <%= link_to "オーナー登録する", edit_user_profile_path(current_user.id), class: "btn btn-lg menu__button" %>
                 <% else %>
-                  <%= link_to "オーナー登録する", new_session_path, class: "btn btn-lg menu__button" %>
+                  <%= link_to "オーナー登録する", new_user_path, class: "btn btn-lg menu__button" %>
                 <% end %>
               </p>
             </div>
@@ -52,7 +52,7 @@
                 <% if logged_in? %>
                   <%= link_to "職人登録する", edit_artisan_profile_path(current_user.id), class: "btn btn-lg menu__button" %>
                 <% else %>
-                  <%= link_to "職人登録する", new_session_path, class: "btn btn-lg menu__button" %>
+                  <%= link_to "職人登録する", new_user_path, class: "btn btn-lg menu__button" %>
                 <% end %>
               </p>
             </div>
@@ -81,7 +81,7 @@
         <li class="project-list__wrap">
           <p class="project-list__image__wrap"><%= image_tag pr.project_image.project_logo.url, class: "project-list__image" %></p>
           <%# <img class="project-list__image" data-src="smb01.jpg" alt="Thumbnail [100%x225]" src="smb01.jpg" data-holder-rendered="true"> %>
-          <p class="col-10 project-list__title"><%= pr.project_text %></p>
+          <p class="col-12 project-list__title"><%= pr.project_text %></p>
           <p class="col-4 project-list__edit__link__wrap"></p>
           <div class="project-list__content__wrap">
             <p class="col-3 project-list__patron"><%= svg("users-solid.svg", class: "project-list__icon1") %>&thinsp;3人</p>
@@ -110,7 +110,7 @@
           <% if logged_in? %>
             <%= link_to "オーナー登録する »", edit_user_profile_path(current_user.id), class:"col-12 btn guide__button guide__button1" %>
           <% else %>
-            <%= link_to "オーナー登録する »", new_session_path, class: "col-12 btn guide__button guide__button1" %>
+            <%= link_to "オーナー登録する »", new_user_path, class: "col-12 btn guide__button guide__button1" %>
           <% end %>
         </p>
       </div>
@@ -122,7 +122,7 @@
           <% if logged_in? %>
             <%= link_to "スポンサー登録する »", edit_user_profile_path(current_user.id), class: "col-12 btn guide__button guide__button2" %>
           <% else %>
-            <%= link_to "スポンサー登録する »", new_session_path, class: "col-12 btn guide__button guide__button2" %>
+            <%= link_to "スポンサー登録する »", new_user_path, class: "col-12 btn guide__button guide__button2" %>
           <% end %>
         </p>
       </div>
@@ -134,7 +134,7 @@
           <% if logged_in? %>
             <%= link_to "職人登録する »", edit_artisan_profile_path(current_user.id), class: "col-12 btn guide__button guide__button3" %>
           <% else %>
-            <%= link_to "職人登録する »", new_session_path, class: "col-12 btn guide__button guide__button3"  %>
+            <%= link_to "職人登録する »", new_user_path, class: "col-12 btn guide__button guide__button3"  %>
           <% end %>
         </p>
       </div>
