@@ -989,7 +989,18 @@
       }
       &__content__wrap {
         display: flex;
-        margin: 2rem auto;
+        margin: 0 auto;
+      }
+      &__delete {
+        color: $hovercolor-delete;
+        text-decoration: none;
+        &__wrap {
+          margin-bottom: 3rem;
+        }
+      }
+      &__delete:hover {
+        @extend .hover;
+        color: red;
       }
       &__user {
         color: black;

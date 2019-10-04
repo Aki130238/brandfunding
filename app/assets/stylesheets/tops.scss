@@ -1,6 +1,6 @@
 .top-page {
   .menu {
-    background: $bgcolor-2;
+    background: $bgcolor-project4;
     &__image1 {
       object-position: 100% 100%;
       width: 100%;
@@ -80,13 +80,44 @@
     overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+    background: $bgcolor-project4;
+    // &__void {
+    //   display: inline-block;
+    //   margin-left: 1.5rem;
+    //   background: $bgcolor-2;
+    // }
     &__wrap {
         display: inline-block;
-        width: 30%;
+        width: 25%;
         margin: 0 1.5rem;
+        background: white;
     }
     &__image {
-      object-fit: cover;
+      width: 100%;
+      height: 23rem;
+      object-fit: contain;
+    }
+    &__title {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+    &__content__wrap {
+      display: flex;
+    }
+    &__icon1, &__icon2, &__icon3 {
+      width: 2rem;
+    }
+    &__icon3 {
+      width: 1.5rem;
+    }
+    &__patron {
+      text-align: right;
+    }
+    &__deadline {
+      padding: 0;
+      text-align: left;
+    }
+    &__value {
+      text-align: right;
     }
   }
 
