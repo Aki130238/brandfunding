@@ -77,7 +77,7 @@
   <ul class="project-list">
     <% @projects.each do |pr| %>
       <li class="project-list__wrap">
-        <%# <%= image_tag pr.project_image.project_logo %>
+        <%= image_tag pr.project_image.project_logo.url %>
         <img class="project-list__image" data-src="smb01.jpg" alt="Thumbnail [100%x225]" src="smb01.jpg" data-holder-rendered="true">
         <p class="card-text"><%= pr.project_text %></p>
         <div class="btn-group">
