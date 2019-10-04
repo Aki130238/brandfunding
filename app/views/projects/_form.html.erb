@@ -89,7 +89,8 @@
               <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
             </div>
             <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-              <p><%= f.text_field :project_title, class: "col-12 col-xl-11 form-control project-form-project__input", placeholder: "あなただけのタイトルでスポンサーを惹きつけましょう" %></p>
+              <p><%= f.text_field :project_title, in: 1..40, class: "col-12 col-xl-11 form-control
+              project-form-project__input", placeholder: "あなただけのタイトルでスポンサーを惹きつけましょう" %></p>
               <p class="project-form-project__guide">40文字以内で入力してください。</p>
             </div>
           </div>
@@ -99,7 +100,8 @@
               <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
             </div>
             <div class="col-10 col-md-6 offset-1 project-form__form__wrap">
-              <p><%= f.text_area :project_text, class: "col-12 col-xl-11 form-control project-form-project__input-2", placeholder: "プロジェクトの内容を3行程度でまとめてみましょう" %></p>
+              <p><%= f.text_area :project_text, in: 1..140, class: "col-12 col-xl-11 form-control
+              project-form-project__input-2", placeholder: "プロジェクトの内容を3行程度でまとめてみましょう" %></p>
               <p class="project-form-project__guide">140文字以内で入力してください。</p>
             </div>
           </div>
