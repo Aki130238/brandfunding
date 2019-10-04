@@ -252,7 +252,8 @@
                   <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
                 </div>
                 <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-                  <p class="form-inline"><%= re.number_field :return_item_fund, in: 0..10000000, class: "col-6 col-md-4 form-control project-form-return__input3" %>&ensp;円</p>
+                  <p class="form-inline"><%= re.number_field :return_item_fund, in: 1..10000000, class: "col-6
+                  col-md-4 form-control project-form-return__input3" %>&ensp;円</p>
                 </div>
 
                 <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
@@ -260,7 +261,8 @@
                   <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
                 </div>
                 <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-                  <p class="form-inline"><%= re.number_field :return_item_count, in: 0..1000, class: "col-6 col-md-4 form-control project-form-return__input3" %>&ensp;個</p>
+                  <p class="form-inline"><%= re.number_field :return_item_count, in: 1..9999, class: "col-6 col-md-4
+                  form-control project-form-return__input3" %>&ensp;個</p>
                 </div>
 
                 <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
@@ -276,7 +278,8 @@
                   <h4 class="col-3 col-sm-2 col-md-3 col-lg-2 project-form__title-2">必須</h4>
                 </div>
                 <div class="col-10 col-md-6 offset-1 project-form__form__return__wrap">
-                  <p class="form-inline"><%= re.number_field :return_item_sponsors, in: 0..1000, class: "col-6 col-md-4 form-control project-form-return__input3" %>&ensp;人</p>
+                  <p class="form-inline"><%= re.number_field :return_item_sponsors, class: "col-6
+                  col-md-4 form-control project-form-return__input3" %>&ensp;人</p>
                 </div>
 
                 <div class="col-md-4 offset-1 d-flex project-form__title__wrap">
