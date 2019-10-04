@@ -73,6 +73,33 @@
     </a>
   </div>
 
+<article class="row">
+  <ul class="col-12 project-list">
+    <%# <li class="project-list__void"></li> %>
+    <% @projects.each do |pr| %>
+      <%= link_to project_path(pr.id), class: "project-list__wrap__link" do %>
+        <li class="project-list__wrap">
+          <p class="project-list__image__wrap"><%= image_tag pr.project_image.project_logo.url, class: "project-list__image" %></p>
+          <%# <img class="project-list__image" data-src="smb01.jpg" alt="Thumbnail [100%x225]" src="smb01.jpg" data-holder-rendered="true"> %>
+          <p class="col-10 project-list__title"><%= pr.project_text %></p>
+          <p class="col-4 project-list__edit__link__wrap"></p>
+          <div class="project-list__content__wrap">
+            <p class="col-3 project-list__patron"><%= svg("users-solid.svg", class: "project-list__icon1") %>&thinsp;3人</p>
+            <p class="col-6 project-list__value"><%= svg("yen-sign-solid.svg", class: "project-list__icon3") %>&thinsp;1,000,0000円</p>
+            <p class="col-3 project-list__deadline"><%= svg("clock-regular.svg", class: "project-list__icon2") %>&thinsp;3日</p>
+          </div>
+          <div class="progress">
+            <div class="progress-bar project-list__progress" style="width: 30%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+              <span class="project-list__progress__content">&ensp;30%</span>
+            </div>
+          </div>
+          <div class="project-list__void">&emsp;</div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</article>
+
   <nav class="guide">
     <div class="row guide2">
       <div class="col-9 col-sm-6 col-md-3 guide__column-1">
@@ -113,33 +140,5 @@
       </div>
     </div>
   </nav>
-
-  <article class="article">
-    <div class="container">
-      <div class="py-5 text-center">
-        <h2 class="article__title">投稿された最新プロジェクト</h2>
-      </div>
-      <div class="row">
-        <% @projects.each do |p| %>
-          <div class="col-12 col-sm-6 col-md-4">
-            <div class="card mb-4 box-shadow">
-              <img class="card-img-top" data-src="smb01.jpg" alt="Thumbnail [100%x225]" style="width: 100%; display: block;" src="smb01.jpg" data-holder-rendered="true">
-              <div class="card-body">
-                <p class="card-text"><%= p.project_text %></p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <%= link_to "View", project_path(p.id), class: "btn btn-sm btn-outline-secondary", data: {"turbolinks" => false} %>
-                    <%= link_to "Edit", edit_project_path(p.id), class: "btn btn-sm btn-outline-secondary", data: {"turbolinks" => false} %>
-                  </div>
-                <%# <small class="text-muted">108 いいね</small> %>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-      <p class="col-7 col-md-4 article__button__wrap"><%= link_to "一覧を見る", projects_path, class: "btn col-12 article__button" %></p>
-    </div>
-  </article>
-
+  <p class="col-7 col-md-4 article__button__wrap"><%= link_to "一覧を見る", projects_path, class: "btn col-12 article__button" %></p>
 </main>

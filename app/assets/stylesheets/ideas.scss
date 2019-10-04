@@ -96,13 +96,28 @@
       color: $color-1;
     }
     &__button_wrap {
-      display: inline-block;
+      display: none;
+      @include mq(md) {
+        display: inline-block;
+        width: 100%;
+        margin-top: 5rem;
+        padding-bottom: 10rem;
+        text-align: center;
+      }
+    }
+    &__button_wrap2 {
+      display: block;
       width: 100%;
-      margin-top: 5rem;
-      padding-bottom: 10rem;
+      margin: 5rem 0;
       text-align: center;
+      @include mq(md) {
+        display: none;
+      }
     }
     &__button {
+      @include mq(s) {
+        margin-bottom: .5rem;
+      }
       margin: 1.5rem auto 0 auto;
       @include mq(sm) {
         margin-left:1.5rem;
@@ -516,7 +531,7 @@
     font-size: 1.4rem;
     text-decoration: none;
     &__wrap {
-      margin: 5rem auto 0 auto;
+      margin: 3rem auto 2rem auto;
     }
   }
   &__edit__button:hover {
@@ -544,6 +559,7 @@
     &__title{
       padding: 3rem 0 1rem 0;
       font-weight: bold;
+      text-align: center;
     }
     &__title2 {
       padding: .8rem 1.5rem .8rem 2rem;
@@ -553,9 +569,11 @@
       font-weight: bold;
     }
     &__image {
+      width: 100%;
       margin-bottom: 1.5rem;
-      padding: 13rem 0;
+      // padding: 13rem 0;
       border: 1px solid black;
+      object-fit: cover;
     }
     &__content {
       margin-top: 1.5rem;
@@ -708,6 +726,272 @@
     &__delete-button:hover {
       @extend .hover;
       background: $hovercolor-delete;
+    }
+  }
+}
+
+.ideas-page {
+  &__header {
+    background: $bgcolor-idea;
+    &__wrap {
+
+    }
+  }
+  &__menu {
+    display: none;
+    @include mq(xl) {
+      display: flex;
+    }
+    margin: .8rem auto .8rem auto;
+    padding: 1rem 0;
+    background: $bgcolor-project2;
+    &__icon__wrap {
+      margin-top: 1.1rem;
+    }
+    &__icon {
+      width: 2rem;
+      margin-left: 2rem;
+      cursor: pointer;
+    }
+    &__icon:hover {
+      @extend .hover;
+      color: $hovercolor-sort;
+    }
+    &__icon2 {
+      width: 1.6rem;
+      vertical-align: -.2rem;
+    }
+    &__button {
+      margin: 1rem 1.5rem 0 1rem;
+      cursor: pointer;
+      &__wrap {
+        display: flex;
+      }
+    }
+    &__button:hover {
+      @extend .hover;
+      color: $hovercolor-sort;
+    }
+    &__button2 {
+      margin: 0 .3rem;
+      padding: 1rem 1.6rem;
+      border: 1px solid $bordercolor-1;
+      background: white;
+      color: $color-1;
+      cursor: pointer;
+    }
+    &__button3 {
+      margin: 0 2rem;
+      @include mq(s) {
+        margin: 0 .3rem;
+      }
+      padding: 1rem 1.6rem;
+      border: 1px solid $bordercolor-1;
+      background: white;
+      color: $color-1;
+      cursor: pointer;
+    }
+    &__button2:hover, &__button3:hover {
+      @extend .hover;
+      background: $hovercolor-sort;
+      color: white;
+    }
+  }
+  &__menu2 {
+    @include mq(xl) {
+      display: none;
+    }
+    margin: .8rem auto .8rem auto;
+    padding: .5rem 0;
+    background: $bgcolor-project2;
+    &__icon__wrap {
+      margin-top: 1.1rem;
+    }
+    &__icon {
+      width: 2rem;
+      margin-left: 2rem;
+      cursor: pointer;
+    }
+    &__icon:hover {
+      @extend .hover;
+      color: $hovercolor-sort;
+    }
+    &__icon2 {
+      width: 1.6rem;
+      vertical-align: -.2rem;
+    }
+    &__button {
+      margin: 1rem 1.5rem 0 1rem;
+      cursor: pointer;
+      &__wrap {
+        display: flex;
+      }
+    }
+    &__button:hover {
+      @extend .hover;
+      color: $hovercolor-sort;
+    }
+    &__button2 {
+      margin: 0 .3rem;
+      padding: 1rem 1.6rem;
+      border: 1px solid $bordercolor-1;
+      background: white;
+      color: $color-1;
+      cursor: pointer;
+    }
+    &__button3 {
+      margin: 0 2rem;
+      @include mq(s) {
+        margin: 0 .3rem;
+      }
+      padding: 1rem 1.6rem;
+      border: 1px solid $bordercolor-1;
+      background: white;
+      color: $color-1;
+      cursor: pointer;
+    }
+    &__button2:hover, &__button3:hover {
+      @extend .hover;
+      background: $hovercolor-sort;
+      color: white;
+    }
+  }
+
+  .idea-list {
+    margin: 1.5rem auto;
+    border: 1px solid black;
+    @include mq(md) {
+      margin: 1.5rem;
+    }
+    &_void {
+      display: none;
+      @include mq(md) {
+        display: block;
+        margin: 3rem;
+      }
+    }
+    &__wrap {
+      margin: 1.5rem auto;
+      @include mq(md) {
+        float: right;
+      }
+      @include mq(lg) {
+        margin-left: 5rem;
+        padding-left: 15rem;
+      }
+      @include mq(xl) {
+        padding-left: 0;
+      }
+    }
+    &__link {
+      color: $color-1;
+      text-decoration: none;
+    }
+    &__image {
+      padding: 7rem 0;
+      border-bottom: 1px solid black;
+      text-align: center;
+    }
+    &__title {
+      margin: 1rem 0 3rem 1.3rem;
+    }
+    &__bar {
+      background: $bgcolor-idea;
+    }
+    &__bar__content {
+      margin: .5rem auto;
+      color: $color-1;
+    }
+    &__content__wrap {
+      background: $bgcolor-project2;
+    }
+    &__guide {
+      display: flex;
+      margin-bottom: -.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid black;
+      background: $bgcolor-project2;
+      color: $color-1;
+      font-size: 1.4rem;
+      text-align: center;
+      &__content {
+        @include mq(s) {
+          display: none;
+        }
+      }
+      &__icon__wrap {
+        padding-top: 1rem;
+      }
+      &__icon1, &__icon2, &__icon3 {
+        // @include mq(md) {
+        //   display: none;
+        // }
+        // &__wrap {
+        //   @include mq(md) {
+        //     display: none;
+        //   }
+        // }
+      }
+    }
+    &__content {
+      display: flex;
+      border-top: 1px solid black;
+      background: $bgcolor-project2;
+      font-weight: bold;
+      font-size: 1.4rem;
+      text-align: center;
+      &__icon {
+
+        &__wrap {
+          margin: 1rem 0 auto 0;
+        }
+        &__wrap1 {
+
+        }
+        &__wrap2 {
+          // margin-bottom: .2rem;
+        }
+        &__wrap3 {
+          // margin-bottom: .2rem;
+        }
+      }
+      &__icon1 {
+        width: 1.35rem;
+      }
+      &__icon2 {
+        width: 1.7rem;
+      }
+      &__icon3 {
+        width: 1.6rem;
+      }
+      &__wrap {
+        // padding-bottom: 1rem;
+      }
+      &__wrap1 {
+        border-bottom: 1px solid black;
+      }
+      &__wrap2 {
+        border-right: 1px solid black;
+      }
+      &__wrap3 {
+
+      }
+    }
+    &__content1, &__content2, &__content3 {
+      color: $color-1;
+      font-size: 1.8rem;
+    }
+    &__content1 {
+
+    }
+    &__content2 {
+
+    }
+    &__content3 {
+
+    }
+    &__bar2 {
+      background: $bgcolor-project3;
     }
   }
 }

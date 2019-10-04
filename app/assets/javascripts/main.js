@@ -3,67 +3,67 @@ $(function(){
 });
 
 $(function(){
-  $('#ideaNext1').on('click', function() {
+  $('.ideaNext1').on('click', function() {
     $('.ideaTab2').trigger('click');
   });
-  $('#ideaNext2').on('click', function() {
+  $('.ideaNext2').on('click', function() {
     $('.ideaTab3').trigger('click');
   });
-  $('#ideaNext3').on('click', function() {
+  $('.ideaNext3').on('click', function() {
     $('.ideaTab4').trigger('click');
   });
-  $('#ideaNext4').on('click', function() {
+  $('.ideaNext4').on('click', function() {
     $('.ideaTab5').trigger('click');
   });
-  $('#ideaNext5').on('click', function() {
+  $('.ideaNext5').on('click', function() {
     $('.ideaTab6').trigger('click');
   });
-  $('#ideaBack1').on('click', function() {
+  $('.ideaBack1').on('click', function() {
     $('.ideaTab1').trigger('click');
   });
-  $('#ideaBack2').on('click', function() {
+  $('.ideaBack2').on('click', function() {
     $('.ideaTab2').trigger('click');
   });
-  $('#ideaBack3').on('click', function() {
+  $('.ideaBack3').on('click', function() {
     $('.ideaTab3').trigger('click');
   });
-  $('#ideaBack4').on('click', function() {
+  $('.ideaBack4').on('click', function() {
     $('.ideaTab4').trigger('click');
   });
-  $('#ideaBack5').on('click', function() {
+  $('.ideaBack5').on('click', function() {
     $('.ideaTab5').trigger('click');
   });
 });
 
 $(function(){
-  $('#projectNext1').on('click', function() {
+  $('.projectNext1').on('click', function() {
     $('.projectTab2').trigger('click');
   });
-  $('#projectNext2').on('click', function() {
+  $('.projectNext2').on('click', function() {
     $('.projectTab3').trigger('click');
   });
-  $('#projectNext3').on('click', function() {
+  $('.projectNext3').on('click', function() {
     $('.projectTab4').trigger('click');
   });
-  $('#projectNext4').on('click', function() {
+  $('.projectNext4').on('click', function() {
     $('.projectTab5').trigger('click');
   });
-  $('#projectNext5').on('click', function() {
+  $('.projectNext5').on('click', function() {
     $('.projectTab6').trigger('click');
   });
-  $('#projectBack1').on('click', function() {
+  $('.projectBack1').on('click', function() {
     $('.projectTab1').trigger('click');
   });
-  $('#projectBack2').on('click', function() {
+  $('.projectBack2').on('click', function() {
     $('.projectTab2').trigger('click');
   });
-  $('#projectBack3').on('click', function() {
+  $('.projectBack3').on('click', function() {
     $('.projectTab3').trigger('click');
   });
-  $('#projectBack4').on('click', function() {
+  $('.projectBack4').on('click', function() {
     $('.projectTab4').trigger('click');
   });
-  $('#projectBack5').on('click', function() {
+  $('.projectBack5').on('click', function() {
     $('.projectTab5').trigger('click');
   });
 });

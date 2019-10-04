@@ -3,7 +3,7 @@
     <div class="row">
       <h1 class="col-11 col-sm-8 col-md-7 col-lg-6 col-xl-5 signup__title">ブランドファンディングはあなたのやりたい事を応援します。仲間と一緒にアイディアをカタチに</h1>
     </div>
-    <div class="col-12 signup-form">
+    <div class="signup-form">
       <%= form_with(model: @user, local: true) do |f| %>
         <% if @user.errors.any? %>
           <% @user.errors.full_messages.each do |message| %>
