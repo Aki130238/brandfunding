@@ -8,7 +8,8 @@ class ProjectReturnsController < ApplicationController
     if @project_return.save
       redirect_to project_path(@project), notice: "リターンを登録しました。"
     else
-      redirect_to root_path, alert: "登録に失敗しました。"
+      flash[:alert] = "登録に失敗しました。"
+      redirect_back(fallback_location: root_path)
     end
   end
 
