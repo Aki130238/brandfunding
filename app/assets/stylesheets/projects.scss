@@ -131,14 +131,29 @@
       }
     }
     &__button_wrap {
-      display: inline-block;
+      display: none;
+      @include mq(md) {
+        display: inline-block;
+        width: 100%;
+        margin-top: 5rem;
+        padding-bottom: 10rem;
+        text-align: center;
+      }
+    }
+    &__button_wrap2 {
+      display: block;
       width: 100%;
-      margin-top: 5rem;
-      padding-bottom: 10rem;
+      margin: 5rem 0;
       text-align: center;
+      @include mq(md) {
+        display: none;
+      }
     }
     &__button {
-      margin-top: 1.5rem;
+      @include mq(s) {
+        margin-bottom: .5rem;
+      }
+      margin: 1.5rem auto 0 auto;
       @include mq(sm) {
         margin-left:1.5rem;
       }
@@ -989,7 +1004,18 @@
       }
       &__content__wrap {
         display: flex;
-        margin: 2rem auto;
+        margin: 0 auto;
+      }
+      &__delete {
+        color: $hovercolor-delete;
+        text-decoration: none;
+        &__wrap {
+          margin-bottom: 3rem;
+        }
+      }
+      &__delete:hover {
+        @extend .hover;
+        color: red;
       }
       &__user {
         color: black;

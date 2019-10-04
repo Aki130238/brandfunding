@@ -26,7 +26,7 @@
             <p class="show-project1__sns__icon__title show-project1__sns__icon4__title">LINE</p>
           </div>
           <%# <div class="col-3 show-project1__sns__icon__wrap2 show-project1__sns__icon5__wrap">
-            <p class="show-project1__sns__icon__wrap3"><%= svg("google-plus-square-brands.svg", class: "show-project1__sns__icon5") %></p>
+            <p class="show-project1__sns__icon__wrap3"><%= svg("google-plus-square-brands.svg", class: "show-project1__sns__icon5") %>
             <%# <p class="show-project1__sns__icon__title show-project1__sns__icon5__title">Google+</p>
           </div> %>
         </div>
@@ -112,13 +112,14 @@
       <div class="tab-pane fade show-project2__comment" id="showComment" role="tabpanel" aria-labelledby="showComment-tab">
         <h2 class="show-project2__home__title"><%= svg("file-solid.svg", class:"show-project2__home__icon") %>&ensp;取引コメント</h2>
         <% if @comments.nil? %>
+          <% else %>
           <% @comments.each do |c| %>
             <div class="show-project2__comment__content__wrap">
               <p><a href="/users/<%= @project.user.id %>" class="show-project2__comment__user"><%= c.user.name %>：</a></p>
               <p class="show-project2__comment__content">&thinsp;<%= simple_format(c.content, class:"col-6 col-md11 show-project2__comment__content") %></p>
             </div>
             <% if c.user_id == current_user.id || @project.user_id == current_user.id %>
-              <p><%= link_to "コメントを削除する", project_comment_path(c.project_id, c.id), method: :delete %></p>
+              <p class="show-project2__comment__delete__wrap"><%= link_to "コメントを削除する", project_comment_path(c.project_id, c.id), method: :delete, class: "show-project2__comment__delete" %></p>
             <% end %>
           <% end %>
         <% end %>
