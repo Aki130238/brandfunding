@@ -122,10 +122,10 @@
             <div class="col-md-9 edit-artisan-form__artisan__title__wrap">
               <p class="edit-artisan-form__title4">必須</p>
               <label for="workExp" class="edit-artisan-form__artisan__title">実務経験</label>
-              <p class="col-md-2 edit-artisan-form__artisan__input__wrap_f"><%= b.number_field :workexp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "workExp", placeholder: "0", value: @user.artisan_profile.workexp %><span class="edit-artisan-form__artisan__content">年</span></p>
+              <p class="col-md-2 edit-artisan-form__artisan__input__wrap_f"><%= b.number_field :workexp, in: 0..100, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "workExp", placeholder: "0", value: @user.artisan_profile.workexp %><span class="edit-artisan-form__artisan__content">年</span></p>
               <%# <p class="edit-artisan-form__artisan__content">年</p> %>
               <label for="homeworkExp" class="edit-artisan-form__artisan__title">家庭縫製経験</label>
-              <p class="col-md-2 edit-artisan-form__artisan__input__wrap_f mb-s"><%= b.number_field :homeworkexp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "homeworkExp", placeholder: "0", value: @user.artisan_profile.homeworkexp  %><span class="edit-artisan-form__artisan__content">年</span></p>
+              <p class="col-md-2 edit-artisan-form__artisan__input__wrap_f mb-s"><%= b.number_field :homeworkexp, in: 0..100, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "homeworkExp", placeholder: "0", value: @user.artisan_profile.homeworkexp  %><span class="edit-artisan-form__artisan__content">年</span></p>
               <%# <p class="edit-artisan-form__artisan__content">年</p> %>
             </div>
           </div>
@@ -144,7 +144,7 @@
               <label for="skill" class="edit-artisan-form__artisan__title2">&emsp;スキル</label>
               <p class="col-md-4 edit-artisan-form__artisan__input__wrap"><%= b.text_field :skill, class: "col-md-11 form-control edit-artisan-form__artisan__input", id: "skill", placeholder: "例：パターン作成、縫製.etc" %></p>
               <label for="skillExp" class="edit-artisan-form__artisan__title2">経験年数</label>
-              <p class="col-md-2 edit-artisan-form__artisan__input__wrap_f mb-s"><%= b.number_field :skill_exp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "skillExp", placeholder: "0" %><span class="edit-artisan-form__artisan__content">年</span></p>
+              <p class="col-md-2 edit-artisan-form__artisan__input__wrap_f mb-s"><%= b.number_field :skill_exp, in: 0..100, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "skillExp", placeholder: "0" %><span class="edit-artisan-form__artisan__content">年</span></p>
               <%# < class="col-md-4 offset-md-1 edit-artisan-form__artisan__input__wrap"><%= b.text_field :skill_free, class: "col-md-11 form-control edit-artisan-form__artisan__input2", id: "skillFree", placeholder: "その他のスキル" %>
             </div>
           </div>
@@ -152,7 +152,7 @@
           <%# <div class="row edit-artisan-form__input__wrap">
             <div class="col-md-9 offset-md-3 edit-artisan-form__artisan__title__wrap">
               <label for="skillExp" class="edit-artisan-form__artisan__title2">経験年数</label>
-              <p class="col-md-2 edit-artisan-form__artisan__input__wrap_f mb-s"><%= b.number_field :skill_exp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "skillExp", placeholder: "0"<span class="edit-artisan-form__artisan__content">年</span></p>
+              <p class="col-md-2 edit-artisan-form__artisan__input__wrap_f mb-s"><%= b.number_field in: 0..100, :skill_exp, class: "col-md-12 form-control edit-artisan-form__artisan__input", id: "skillExp", placeholder: "0"<span class="edit-artisan-form__artisan__content">年</span></p>
               <%# <p class="col-6 col-md-4 col-lg-3 offset-md-3 edit-artisan-form__artisan__button"><%= svg("plus-solid.svg", class: "edit-artisan-form__artisan__image") thinsp;スキルを登録する</p> %>
             <%# </div>
           </div> %>
