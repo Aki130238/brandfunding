@@ -76,6 +76,20 @@
     }
   }
 
+  .project-list {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    &__wrap {
+        display: inline-block;
+        width: 30%;
+        margin: 0 1.5rem;
+    }
+    &__image {
+      object-fit: cover;
+    }
+  }
+
   .guide {
     background: $bgcolor-2;
     .guide2 {

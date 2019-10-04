@@ -516,7 +516,7 @@
     font-size: 1.4rem;
     text-decoration: none;
     &__wrap {
-      margin: 5rem auto 0 auto;
+      margin: 3rem auto 2rem auto;
     }
   }
   &__edit__button:hover {
@@ -544,6 +544,7 @@
     &__title{
       padding: 3rem 0 1rem 0;
       font-weight: bold;
+      text-align: center;
     }
     &__title2 {
       padding: .8rem 1.5rem .8rem 2rem;
@@ -553,9 +554,11 @@
       font-weight: bold;
     }
     &__image {
+      width: 100%;
       margin-bottom: 1.5rem;
-      padding: 13rem 0;
+      // padding: 13rem 0;
       border: 1px solid black;
+      object-fit: cover;
     }
     &__content {
       margin-top: 1.5rem;

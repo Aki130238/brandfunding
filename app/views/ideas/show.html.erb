@@ -4,8 +4,8 @@
   </div>
   <div class="row show-idea-overview">
     <div class="col-12 col-lg-5 offset-lg-1">
-      <h2 class="col-10 offset-1 show-idea-overview__title">フラダンス衣装</h2>
-      <p class="col-10 offset-1 show-idea-overview__image"><%= image_tag @idea.idea_image.url %></p>
+      <h2 class="col-10 offset-1 show-idea-overview__title"><%= @idea.idea_title %></h2>
+      <p class="col-10 offset-1 show-idea-overview__image__wrap"><%= image_tag @idea.idea_image.url, class: "show-idea-overview__image" %></p>
     </div>
     <div class="col-10 col-lg-5 offset-1 offset-lg-0 show-idea-overview__wrap">
       <h3 class="show-idea-overview__title2">概要</h3>
@@ -13,6 +13,7 @@
       <p class="show-idea-overview__content">&emsp;製品用途&thinsp;： <%= @idea.idea_usage %></p>
       <p class="show-idea-overview__content">納品希望日&thinsp;： <%= format_date(@idea.delivery_date) %></p>
       <p class="show-idea-overview__content">&emsp;契約形態&thinsp;： <%= @idea.work_style %></p>
+      <p class="show-idea-page__edit__button__wrap"><%= link_to "アイデアを編集する", edit_idea_path(@idea), class: "col-12 btn show-idea-page__edit__button" if @idea.user_id == current_user.id %></p>
     </div>
   </div>
   <div class="row show-idea-list offset-lg-1">
@@ -72,7 +73,6 @@
     <p class="col-9 col-lg-3 show-idea-list__title2">職人へ伝えたいこと</p>
     <p class="col-9 col-lg-6 show-idea-list__content3"><%= @idea.idea_commit %></p>
   </div>
-  <p class="col-9 col-md-5 col-lg-3 show-idea-page__edit__button__wrap"><%= link_to "アイデアを編集する", edit_idea_path(@idea), class: "col-12 btn show-idea-page__edit__button" if @idea.user_id == current_user.id %></p>
   <div class="show-idea-comment">
     <div class="col-12">
       <%= form_with(model: [@idea, @idea_comment], local: true ) do |f| %>
