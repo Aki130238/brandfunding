@@ -22,7 +22,7 @@ class IdeasController < ApplicationController
   def create
     @idea = current_user.ideas.build(idea_params)
     if @idea.save
-      redirect_to @idea, notice: "アイディアを作成しました。"
+      redirect_to ideas_path(@idea), notice: "アイディアを作成しました。"
     else
       flash.now[:alert] = "アイディアの作成に失敗しました。"
       render :new
