@@ -8,14 +8,17 @@ $bgcolor-artisan: #BAFFFB;
 $bgcolor-artisan2: #F1F1F1;
 $bgcolor-artisan3: #EBFCFF;
 $bgcolor-artisan4: #00E2FF;
+$bgcolor-artisan5: #f9ffff;
 $bgcolor-project: #1DBE00;
 $bgcolor-project2: #F6F8FA;
 $bgcolor-project3: #E3E4E8;
 $bgcolor-project4: #efffef;
+$bgcolor-project5: #f9fff9;
 $bgcolor-idea: #FFD800;
 $bgcolor-idea2: #FFFFEA;
 $bgcolor-skill: #D8EEF7;
 $bgcolor-skill2: #F4E000;
+$bgcolor-user: #f9fcff;
 $bgcolor-decoration: #66C5CD;
 $bgcolor-decoration2: #DF5462;
 $bgcolor-footer: #606060;
@@ -52,12 +55,15 @@ $hovercolor-idea: #fcc800;
 $hovercolor-comment: #fcc800;
 $hovercolor-delete: #d70035;
 $hovercolor-artisanbtn: #00885a;
+$hovercolor-artisan: #c1ffff;
 $hovercolor-return: #fcc800;
 $hovercolor-user: #fcc800;
 $hovercolor-project: #1DBE00;
 $hovercolor-aid: #fcc800;
 
 $top-opacity: 0.9;
+
+$bgcolor-project6: #f9fff9;
 
 $breakpoints: (
   's': 'screen and (max-width: 575px)',
@@ -154,6 +160,10 @@ html {
   padding: 2.5rem 0 2rem 3rem;
   border-top: 3px solid $color-main;
   &__title {
+    font-size: 2.8rem;
+    @include mq(md) {
+      font-size: 3rem;
+    }
     color: $color-1;
     font-family: 'Playfair Display', serif;
     // text-shadow: 1px 1px 0 $color-main, -1px 1px 0 $color-main, 1px -1px 0 $color-main, -1px -1px 0 $color-main;
@@ -179,8 +189,12 @@ html {
   &__navlink {
     margin: .5rem 4rem 0 0;
     color: $color-1;
-    @include mq(s) {
-      font-size: 1.4rem;
+    font-size: 1.6rem;
+    @include mq(md) {
+      font-size: 1.65rem;
+    }
+    &__project:hover {
+      color: $hovercolor-project;
     }
     &__artisan:hover {
       color: $bgcolor-artisan4;

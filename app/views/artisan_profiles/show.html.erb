@@ -66,7 +66,7 @@
         <div class="col-md-9 col-lg-10">
           <p class="col-md-9 col-lg-10 show-artisan1__content6"><%= @artisan_profile.skill_free %></p>
           <% if @user.id == current_user.id%>
-            <p><%= link_to "職人情報を編集する", edit_artisan_profile_path(current_user.id) %></p>
+            <p><%= link_to "職人情報を編集する", edit_artisan_profile_path(current_user.id), class: "edit-artisan__link" %></p>
           <% end %>
         </div>
       </div>

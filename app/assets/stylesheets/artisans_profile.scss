@@ -5,6 +5,7 @@
 }
 
 .edit-artisan-page {
+  background: $bgcolor-artisan5;
   &__title__wrap {
     margin-bottom: 2.5rem;
     @include mq(s) {
@@ -62,6 +63,7 @@
     &__button {
       padding: 1.5rem 0rem;
       border: 1px solid black;
+      background: white;
       color: $color-1;
       font-weight: bold;
       font-size: 2rem;
@@ -375,6 +377,7 @@
 }
 
 .artisans-page {
+  background: $bgcolor-artisan5;
   &__header {
     margin: 0 auto -1rem auto;
     padding: 1.5rem 0;
@@ -389,6 +392,7 @@
     background: $bgcolor-project2;
   }
   .artisan-list {
+    background: white;
     margin: 1.5rem auto;
     @include mq(lg) {
       margin: 1.5rem;
@@ -446,10 +450,19 @@
 }
 
 .show-artisan-page {
+  .edit-artisan__link {
+    color: black;
+    text-decoration: none;
+  }
+  .edit-artisan__link:hover {
+    @extend .hover;
+    color: $bgcolor-decoration;
+  }
+  background: $bgcolor-artisan5;
   &__title {
     margin-bottom: -.15rem;
     padding: 1rem 0;
-    background: $bgcolor-artisan2;
+    background: $bgcolor-decoration;
     font-weight: bold;
     text-align: center;
   }
