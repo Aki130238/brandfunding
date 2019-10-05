@@ -4,7 +4,7 @@ class IdeasController < ApplicationController
   before_action :idea_authority, only: [:edit, :uodate, :destroy]
 
   def index
-    @ideas = current_user.ideas
+    @ideas = current_user.ideas.reverse_order
   end
 
   def show
