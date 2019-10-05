@@ -126,6 +126,10 @@
     }
     &__title {
       margin: 1rem 0 3rem 1.3rem;
+      padding-right: 1.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     &__content__wrap {
       // background: $bgcolor-project2;
