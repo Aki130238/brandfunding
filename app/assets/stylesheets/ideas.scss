@@ -905,14 +905,23 @@
       // text-align: center;
     }
     &__title {
-      margin: 1rem 0 3rem 1.3rem;
+      margin: 0 0 3rem 1.3rem;
+      padding: 1rem 0;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     &__bar {
       background: $bgcolor-idea;
     }
     &__bar__content {
       margin: .5rem auto;
+      padding: 0 1rem;
       color: $color-1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     &__content__wrap {
       background: $bgcolor-project2;
