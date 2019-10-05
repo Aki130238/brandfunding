@@ -60,19 +60,19 @@
         idea-form-user__input__wrap" id= "ideaUserWrap1">
               <p class="idea-form-user__content"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea
                   .idea_users.find_by(id: 1).present?, include_hidden: false, class:
-                  "idea-form-user__input" }, IdeaUser.ids[0] %>メンズ</p>
+                  "idea-form-user__input" }, IdeaUser.ids[0] %>&thinsp;メンズ</p>
             </div>
             <div class="col-8 col-sm-5 col-md-4 col-lg-2 offset-3 offset-sm-1 offset-lg-0 idea-form-user__input__wrap2" id= "ideaUserWrap2">
               <p class="idea-form-user__content"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea
-                  .idea_users.find_by(id: 2).present?, include_hidden: false, class: "idea-form-user__input" },IdeaUser.ids[1] %>レディース</p>
+                  .idea_users.find_by(id: 2).present?, include_hidden: false, class: "idea-form-user__input" },IdeaUser.ids[1] %>&thinsp;レディース</p>
             </div>
             <div class="col-8 col-sm-5 col-md-4 col-lg-2 offset-3 offset-sm-1 offset-md-2 offset-lg-0 idea-form-user__input__wrap idea-form-user__input__wrap3" id= "ideaUserWrap3">
               <p class="idea-form-user__content"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea
-                  .idea_users.find_by(id: 3).present?, include_hidden: false, class: "idea-form-user__input" }, IdeaUser.ids[2] %>キッズ</p>
+                  .idea_users.find_by(id: 3).present?, include_hidden: false, class: "idea-form-user__input" }, IdeaUser.ids[2] %>&thinsp;キッズ</p>
             </div>
             <div class="col-8 col-sm-5 col-md-4 col-lg-2 offset-3 offset-sm-1 offset-lg-0 idea-form-user__input__wrap2" id= "ideaUserWrap4">
               <p class="idea-form-user__content2"><%= f.check_box :idea_user_ids, { multiple: true, checked: @idea
-                  .idea_users.find_by(id: 4).present?,  include_hidden: false, class: "idea-form-user__input" },IdeaUser.ids[3] %>ベビー＆<br>マタニティ</p>
+                  .idea_users.find_by(id: 4).present?,  include_hidden: false, class: "idea-form-user__input" },IdeaUser.ids[3] %>&thinsp;ベビー＆<br>マタニティ</p>
             </div>
           </div>
           <div class="idea-form__button_wrap">

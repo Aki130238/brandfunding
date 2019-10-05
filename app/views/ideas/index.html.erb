@@ -16,7 +16,7 @@
             <p class="idea-list__bar__content"><%= i.idea_title %></p>
           </div>
           <div class="row">
-            <span class="col-12 idea-list__image">画像</span>
+            <p class="col-12 idea-list__image__wrap"><%= image_tag i.idea_image.url, class: "idea-list__image" %></p>
           </div>
           <div class="row">
             <p class="idea-list__title"><%= i.idea_about %></p>

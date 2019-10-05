@@ -1,14 +1,13 @@
 <main class="container-fluid show-project-page">
   <div class="row show-project-page__header"></div>
   <div class="row show-project__title__wrap">
-    <p class="col-12 col-md-6 show-project1__user-name">ユーザーネーム</p>
-    <p class="col-12 col-md-6 show-project1__title">『<%= @project.project_title %>』</p>
+    <p class="col-12 show-project1__title">『<%= @project.project_title %>』</p>
   </div>
   <section class="show-project1">
     <div class="row show-project1">
       <div class="col-10 col-md-6 show-project1__image__wrap">
-        <p class="show-project1__image">画像</p>
-        <div class="col-11 show-project1__sns__icon__wrap">
+        <p class="col-12 show-project1__image__wrap2"><%= image_tag @project.project_image.project_logo.url, class: "col-12 project-list__image" %></p>
+        <div class="col-11 show-project1__sns__icon__wrap">&ensp;
           <div class="col-md-3 show-project1__sns__icon__wrap2 show-project1__sns__icon1__wrap">
             <p class="show-project1__sns__icon__wrap3"><%= svg("twitter-square-brands.svg", class: "show-project1__sns__icon1") %></p>
             <p class="show-project1__sns__icon__title show-project1__sns__icon1__title">Twitter</p>
@@ -46,7 +45,7 @@
               <p class="show-project1__patron"><%= svg("users-solid.svg", class: "show-project1__icon6") %>&ensp;パトロン数</p>
               <p class="show-project1__supporter"><%= sponsor_count(@project) %>人</p>
             </div>
-            <p class="col-8 col-md-4 show-project1__user-image">ユーザーイメージ</p>
+            <p class="col-8 col-md-4 show-project1__user-image"><%= image_tag @project.user.image.to_s %></p>
           </div>
           <div class="show-project1__deadline-owner">
             <div class="col-5 show-project1__deadline__wrap">
@@ -132,7 +131,7 @@
     <div class="col-12 col-md-5 col-lg-4 show-project3">
       <div class="show-project3__idea">
         <h2 class="col-12 show-project3__idea__title"><%= @project.idea.idea_title %></h2>
-        <p class="col-10 col-md-11 show-project3__idea__image">画像</p>
+        <p class="col-10 col-md-11 show-project3__idea__image"><%= image_tag @project.idea.idea_image.url, class: "show-idea-overview__image" %></p>
         <h3 class="col-3 col-md-2 show-project3__idea__title2">概要</h3>
         <p class="col-11 show-project3__idea__content">お仕事番号&thinsp;： <%= sprintf("%05d", @project.idea.id) %> </p>
         <p class="col-11 show-project3__idea__content">&emsp;製品用途&thinsp;： <%= @project.idea.idea_usage %></p>
@@ -143,16 +142,6 @@
           <p class="col-10 col-md-11 show-project3__idea__button__wrap">詳細要件はこちらから</p>
         <% end %>
       </div>
-      <div class="col-12 show-project3__return">
-        <h2 class="show-project3__return__title"><%= svg("gift-solid.svg", class: "show-project3__return__icon") %>&ensp;リターン</h2>
-        <div class="show-project3__return__wrap">
-          <p class="col-11 show-project3__return__money">リターン金額</p>
-          <p class="col-11 show-project3__return__content">リターン内容</p>
-          <div class="show-project3__return__supporter__wrap">
-            <p class="col-5 show-project3__return__supporter">サポーター人数</p>
-            <p class="col-5 show-project3__return__schedule">お届け予定日</p>
-          </div>
-        </div>
         <% if @project.user_id == current_user.id %>
           <button type="button" class="show-project3-form__button" data-toggle="collapse" data-target="#showReturnForm" aria-expanded="false" aria-controls="showReturnForm" id="showReturnButton">
             <%= svg("plus-square-regular.svg", class: "show-project3-form__icon") %>&ensp;リターンを追加

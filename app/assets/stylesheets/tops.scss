@@ -1,6 +1,6 @@
 .top-page {
+  background: $bgcolor-project2;
   .menu {
-    background: $bgcolor-project4;
     &__image1 {
       object-position: 100% 100%;
       width: 100%;
@@ -69,84 +69,108 @@
     }
   }
 
-  .slide {
-    &__button {
-      top: 20%;
-      height: 40rem;
+  .project__title {
+    @include mq(s) {
+      font-size: 2.5rem;
     }
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: center;
   }
 
-  .project-list::-webkit-scrollbar{
-    display:none;
+  .slide__button {
+    height: 30rem;
+    top: 20rem;
   }
 
   .project-list {
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: 0;
-    background: $bgcolor-project4;
-    &__void {
-      margin-bottom: -1rem;
+    margin: 2rem auto;
+    padding: 0;
+    background: white;
+    &_void {
+      display: none;
+      @include mq(md) {
+        display: block;
+        margin: 3rem;
+      }
     }
     &__wrap {
-      display: inline-block;
-      width: 24%;
-      margin: 0 1.5rem;
-      background: white;
-      &__link {
-        color: black;
-        text-decoration: none;
-      }
+      display: flex;
+      margin: 1.5rem auto;
+      padding: auto;
     }
-    &__edit__link {
-      &__wrap {
-        margin: -2rem auto 1.5rem auto;
-      }
+    &__link {
+      color: $color-1;
+      text-decoration: none;
     }
     &__image {
       width: 100%;
-      height: 25rem;
+      height: 16rem;
+      @include mq(md) {
+        height: 18rem;
+      }
+      @include mq(lg) {
+        height: 15rem;
+      }
+      @include mq(xl) {
+        height: 21rem;
+      }
       object-fit: contain;
+      padding: 0;
+      &__wrap {
+        // background: $bgcolor-project2;
+      }
+      // padding: 8rem 0;
+      // border: 1px solid black;
+      // text-align: center;
     }
     &__title {
-      width: 100%;
-      margin-bottom: 0;
-      padding: 0 1.5rem 1.5rem 1.5rem;
-      font-size: 2rem;
-      word-break : break-all;
-      &__wrap {
-
-      }
+      margin: 1rem 0 3rem 1.3rem;
     }
     &__content__wrap {
+      // background: $bgcolor-project2;
+    }
+    &__guide {
       display: flex;
+      margin-bottom: -.5rem;
+      padding-top: 1rem;
+      color: $color-1;
+      font-size: 1.4rem;
       text-align: center;
+      &__content {
+        @include mq(s) {
+          display: none;
+        }
+      }
+      &__icon__wrap {
+        padding-top: 1rem;
+      }
+      &__icon1, &__icon2, &__icon3 {
+        // @include mq(md) {
+        //   display: none;
+        // }
+        // &__wrap {
+        //   @include mq(md) {
+        //     display: none;
+        //   }
+        // }
+      }
+      &__icon1 {
+        width: 1.35rem;
+      }
+      &__icon2 {
+        width: 2rem;
+      }
+      &__icon3 {
+        width: 1.8rem;
+      }
     }
-    &__icon1, &__icon2, &__icon3 {
-
-    }
-    &__icon1 {
-      width: 2.2rem;
-      vertical-align: -.2rem;
-    }
-    &__icon2 {
-      width: 2rem;
-      vertical-align: -.4rem;
-    }
-    &__icon3 {
-      width: 1.5rem;
-      vertical-align: -.4rem;
-    }
-    &__patron {
-
-    }
-    &__deadline {
-      padding: 0;
-
-    }
-    &__value {
-
+    &__content {
+      display: flex;
+      // padding-bottom: 1rem;
+      font-weight: bold;
+      font-size: 1.4rem;
+      text-align: center;
     }
     &__progress {
       background: $bgcolor-project;
@@ -156,11 +180,20 @@
   .guide {
     background: $bgcolor-2;
     .guide2 {
+      @include mq(md) {
+        display: flex;
+      }
+      margin-bottom: 5rem;
       background: $bgcolor-2;
     }
     &__image {
-      display: flex;
+      @include mq(md) {
+        display: flex;
+      }
       margin: 0 auto;
+      &__wrap {
+        text-align: center;
+      }
     }
     &__column-1 {
       margin: 0 auto;
