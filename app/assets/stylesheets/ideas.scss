@@ -596,6 +596,11 @@
       background: $bgcolor-idea;
       font-weight: bold;
       text-align: center;
+      padding-right: 1rem;
+      word-break: break-all;
+      overflow: hidden;
+      height: 3.6em;
+      line-height: 1.8;
     }
     &__title2 {
       margin: 0 auto 1rem auto;
