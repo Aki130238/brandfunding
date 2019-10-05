@@ -42,7 +42,7 @@
           <p class="show-project1__target-fund">目標金額は<%= @project.project_value.target_fund %>円</p>
           <div class="show-project1__user-image__wrap">
             <div class="col-5 show-project1__patron__wrap">
-              <p class="show-project1__patron"><%= svg("users-solid.svg", class: "show-project1__icon6") %>&ensp;パトロン数</p>
+              <p class="show-project1__patron"><%= svg("users-solid.svg", class: "show-project1__icon6") %>&ensp;サポーター</p>
               <p class="show-project1__supporter"><%= sponsor_count(@project) %>人</p>
             </div>
             <p class="col-8 col-md-4 show-project1__user-image"><%= image_tag @project.user.image.to_s %></p>
@@ -63,6 +63,7 @@
               <p class="show-project1__prefectures"><%= @project.user.user_profile.prefectures %>&ensp;</p>
             </div>
           </div>
+          <p class="show-project1__edit__wrap"><%= svg("edit-regular.svg", class: "show-project1__edit__icon") if @project.user_id == current_user.id %><%= link_to "プロジェクトを編集する", edit_project_path(@project), class: "col-12 show-project1__edit" if @project.user_id == current_user.id %></p>
         </div>
       </div>
       <div class="col-12 show-menu__follow-favorite_sm">
@@ -129,6 +130,7 @@
       </div>
     </div>
     <div class="col-12 col-md-5 col-lg-4 show-project3">
+      <h2 class="show-project3__title">このプロジェクトのアイディア</h2>
       <div class="show-project3__idea">
         <h2 class="col-12 show-project3__idea__title"><%= @project.idea.idea_title %></h2>
         <p class="col-10 col-md-11 show-project3__idea__image"><%= image_tag @project.idea.idea_image.url, class: "show-idea-overview__image" %></p>
@@ -149,37 +151,38 @@
         <% end %>
         <div class="collapse" id="showReturnForm">
           <div class="show-project3-form">
-              <%= form_with(model: @project_return, url:"/projects/#{@project.id}",  local: true) do |re| %>
-                <div class="show-project3-form__wrap">
-                  <p class="col-lg-4">タイトル</p>
-                  <p class="col-xl-9 form-inline p0"><%= re.text_field :return_title, class: "col-10 form-control show-project3-form__input" %></p>
-                </div>
-                <p class="col-lg-4">画像</p>
-                <p class="col-xl-9 form-inline"></p>
-                  <div id="imageFieldReturn2" onClick="$('#fileReturn2').click()" class="show-project3-form__image__wrap">
-                <p class="project-form-image__input">&ensp;</p>
-                </div>
-                <%= re.file_field :return_item_img, class: "col-11 form-control show-project3-form__input3", style: "display:none;", id: "fileReturn2" %>
-                <div class="show-project3-form__wrap">
-                  <p class="col-lg-4">金額</p>
-                  <p class="col-xl-9 form-inline p0"><%= re.number_field :return_item_fund, in: 0..10000000, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;円</p>
-                </div>
-                <div class="show-project3-form__wrap">
-                  <p class="col-lg-4">在庫数</p>
-                  <p class="col-xl-9 form-inline p0"><%= re.number_field :return_item_count, in: 0..1000, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;個</p>
-                </div>
-                <p class="col-lg-4">本文</p>
-                <p class="col-xl-12 form-inline"><%= re.text_area :return_item_about, class: "col-12 form-control show-project3-form__input3" %></p>
-                <div class="show-project3-form__wrap">
-                  <p class="col-lg-4">お届け予定日</p>
-                  <p class="col-xl-9 form-inline p0"><%= re.date_field :delivery_date, class: "col-8 col-xl-6 form-control show-project3-form__input" %></p>
-                </div>
-                <p class="col-lg-4">備考</p>
-                <p class="col-xl-12 form-inline"><%= re.text_area :return_item_remark, class: "col-12 form-control show-project3-form__input3" %></p>
-                <p class="col-10 col-md-7 show-project3-form__button2__wrap"><%= re.submit "保存", class: "col-12 show-project3-form__button2" %></p>
-              <% end %>
-            </div>
+            <%= form_with(model: @project_return, url:"/projects/#{@project.id}",  local: true) do |re| %>
+              <div class="show-project3-form__wrap">
+                <p class="col-lg-4">タイトル</p>
+                <p class="col-xl-9 form-inline p0"><%= re.text_field :return_title, class: "col-10 form-control show-project3-form__input" %></p>
+              </div>
+              <p class="col-lg-4">画像</p>
+              <p class="col-xl-9 form-inline"></p>
+                <div id="imageFieldReturn2" onClick="$('#fileReturn2').click()" class="show-project3-form__image__wrap">
+              <p class="project-form-image__input">&ensp;</p>
+              </div>
+              <%= re.file_field :return_item_img, class: "col-11 form-control show-project3-form__input3", style: "display:none;", id: "fileReturn2" %>
+              <div class="show-project3-form__wrap">
+                <p class="col-lg-4">金額</p>
+                <p class="col-xl-9 form-inline p0"><%= re.number_field :return_item_fund, in: 0..10000000, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;円</p>
+              </div>
+              <div class="show-project3-form__wrap">
+                <p class="col-lg-4">在庫数</p>
+                <p class="col-xl-9 form-inline p0"><%= re.number_field :return_item_count, in: 0..1000, class: "col-6 col-xl-5 form-control show-project3-form__input2" %>&ensp;個</p>
+              </div>
+              <p class="col-lg-4">本文</p>
+              <p class="col-xl-12 form-inline"><%= re.text_area :return_item_about, class: "col-12 form-control show-project3-form__input3" %></p>
+              <div class="show-project3-form__wrap">
+                <p class="col-lg-4">お届け予定日</p>
+                <p class="col-xl-9 form-inline p0"><%= re.date_field :delivery_date, class: "col-8 col-xl-6 form-control show-project3-form__input" %></p>
+              </div>
+              <p class="col-lg-4">備考</p>
+              <p class="col-xl-12 form-inline"><%= re.text_area :return_item_remark, class: "col-12 form-control show-project3-form__input3" %></p>
+              <p class="col-10 col-md-7 show-project3-form__button2__wrap"><%= re.submit "保存", class: "col-12 show-project3-form__button2" %></p>
+            <% end %>
+          </div>
       </div>
+      <h2 class="show-project3__title2">このプロジェクトのリターン</h2>
       <% @project.project_return.each do |pr|%>
         <div class="show-project3__return__wrap2">
           <% unless @project.user_id == current_user.id %>

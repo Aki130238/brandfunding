@@ -604,6 +604,27 @@
   }
   .show-project1 {
     background: $bgcolor-6;
+    &__edit {
+      margin-left: -1rem;
+      color: $color-1;
+      font-weight: bold;
+      text-decoration: none;
+      &__icon {
+        width: 2rem;
+        vertical-align: -.3rem;
+        cursor: pointer;
+      }
+      &__icon:hover {
+        color: $hovercolor-project;
+      }
+      &__wrap {
+        margin-top: 1.5rem;
+      }
+    }
+    &__edit:hover {
+      @extend .hover;
+      color: $hovercolor-project;
+    }
     &__user-name {
       @include mq(s) {
         margin: 1rem 0 auto 0;
@@ -1069,6 +1090,18 @@
     margin: 3rem 0 0 auto;
     @include mq(md) {
       margin-left: 3rem;
+    }
+    &__title {
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-weight: bold;
+      font-size: 2.5rem;
+    }
+    &__title2 {
+      margin: 3rem 0;
+      text-align: center;
+      font-weight: bold;
+      font-size: 2.5rem;
     }
     &-form {
       &__button {
