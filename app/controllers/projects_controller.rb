@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :require_login, only: %i[new create]
+  before_action :require_login, only: %i[show new create]
   before_action :set_project, only: %i[show edit update destroy]
 
   def index
@@ -36,7 +36,11 @@ class ProjectsController < ApplicationController
     @comments = @project.comments
     @comment = Comment.new
     @project_return = ProjectReturn.new
-    @like = current_user.project_likes.find_by(project_id: @project.id)
+    if logged_in?
+      @like = current_user.project_likes.find_by(project_id: @project.id)
+    else
+      @like = nil
+    end
   end
 
   def edit
