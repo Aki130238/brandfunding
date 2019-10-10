@@ -5,7 +5,7 @@
     </div>
   </div>
 
-  <div class="row col-8 col-md-11 col-lg-12 col-xl-10 project-list__wrap">
+  <div class="row col-12 col-md-11 col-lg-12 col-xl-10 project-list__wrap">
     <div class="row col-12 project-list_void"></div>
     <% @projects.each do |pr|%>
       <div class="project-list col-9 col-sm-8 col-md-5 col-lg-3">
@@ -37,7 +37,7 @@
               <% if (pr.project_value.recruitment_deadline > DateTime.now) %>
                 <%= (pr.project_value.recruitment_deadline - DateTime.now).to_i / 1.days + 1 %>日
               <% else %>
-                <span>募集終了</span></p>
+                <span class="project-list__content__end">募集終了</span></p>
               <% end %>
             </p>
           </div>
