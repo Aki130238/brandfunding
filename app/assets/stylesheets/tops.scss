@@ -115,6 +115,16 @@
       // text-align: center;
     }
     &__title {
+      width: 22rem;
+      @include mq(md) {
+        width: 25rem;
+      }
+      @include mq(lg) {
+        width: 20rem;
+      }
+      @include mq(xl) {
+        width: 28rem;
+      }
       margin: 1rem 0 3rem 1.3rem;
       padding-right: 1.5rem;
       white-space: nowrap;
@@ -123,6 +133,17 @@
     }
     &__content__wrap {
       // background: $bgcolor-project2;
+    }
+    &__content {
+      &__end {
+        font-size: .8em;
+        @include mq(lg) {
+          font-size: .5rem;
+        }
+        @include mq(xl) {
+          font-size: 1.4rem;
+        }
+      }
     }
     &__guide {
       display: flex;

@@ -493,7 +493,7 @@
     margin: 1.5rem auto;
     background: white;
     @include mq(md) {
-      margin: 1.5rem;
+      margin: 3rem 1.5rem;
     }
     &_void {
       display: none;
@@ -528,6 +528,16 @@
       // text-align: center;
     }
     &__title {
+      width: 22rem;
+      @include mq(md) {
+        width: 25rem;
+      }
+      @include mq(lg) {
+        width: 20rem;
+      }
+      @include mq(xl) {
+        width: 28rem;
+      }
       margin: 1rem 0 3rem 1.3rem;
       padding-right: 1rem;
       white-space: nowrap;
@@ -587,6 +597,15 @@
       font-weight: bold;
       font-size: 1.4rem;
       text-align: center;
+      &__end {
+        font-size: .8em;
+        @include mq(lg) {
+          font-size: .5rem;
+        }
+        @include mq(xl) {
+          font-size: 1.4rem;
+        }
+      }
     }
     &__bar2 {
       background: $bgcolor-project3;

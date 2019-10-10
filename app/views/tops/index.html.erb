@@ -96,13 +96,13 @@
               <% if (pr.project_value.recruitment_deadline > DateTime.now) %>
                 <%= (pr.project_value.recruitment_deadline - DateTime.now).to_i / 1.days + 1 %>日
               <% else %>
-                <span>募集終了</span></p>
+                <span class="project-list__content__end">募集終了</span></p>
               <% end %>
             </p>
           </div>
           <div class="progress">
             <div class="progress-bar project-list__progress" style="width: <%= fund_progress(pr) %>%;" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-              <span class="project-list__progress__content">&ensp;30%</span>
+              <%# <span class="project-list__progress__content">&ensp;30%</span> %>
             </div>
           </div>
         <% end %>
