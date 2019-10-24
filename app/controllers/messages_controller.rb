@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   before_action do
       @conversation = Conversation.find(params[:conversation_id])
+      @idea = Idea.find_by(params[:user_id])
   end
 
   def index
