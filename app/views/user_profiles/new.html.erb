@@ -48,9 +48,9 @@
       </div>
 
       <div class="col-md-8 order-md-1">
-        
+
           <h4 class="mb-3">ユーザー情報</h4>
-          
+
           <div class="row">
             <div class="col-md-6 mb-3">
               <%= f.label :family_name %>
@@ -100,7 +100,7 @@
                 </div>
               </div>
             </div>
-                          
+
             <div class="col-md-6 mb-3">
               <%= f.label :prefectures %>
               <%= f.text_field :prefectures, class: "form-control", id: "Prefectures", placeholder: "例）東京都" %>
@@ -126,7 +126,7 @@
                 Your username is required.
               </div>
             </div>
-                          
+
             <div class="col-md-6 mb-3">
               <%= f.label :phone_no2 %>
               <%= f.text_field :phone_no2, class: "form-control", id: "PhoneNumber2", placeholder: "例）00000000000(ハイフン不要)" %>
@@ -139,4 +139,5 @@
     </div>
   <%= f.submit :"ユーザー情報を編集する", class: "btn btn-primary btn-lg btn-block" %>
   <% end %>
+
 </div>

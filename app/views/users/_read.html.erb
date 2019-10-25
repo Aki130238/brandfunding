@@ -94,6 +94,15 @@
             <%= link_to "職人登録申請フォームへ", edit_artisan_profile_path(@user.id), class: "btn btn-info form-control my-page__form__button" %>
           </div>
         <% end %>
+        <div class="container">
+          <p id="notice"><%= notice %></p>
+          <div id="user_comments_area">
+            <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+            <%= render partial: 'user_comments/index', locals: { user_comment: @user_comment, user: @user } %>
+          </div>
+          <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+          <%= render partial: 'user_comments/form', locals: { user_comment: @user_comment, user: @user } %>
+        </div>
       <% end %>
     </section>
   </div>

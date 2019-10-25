@@ -32,6 +32,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user_comments = @user.user_comments
+    @user_comment = @user.user_comments.build
   end
 
   def edit
