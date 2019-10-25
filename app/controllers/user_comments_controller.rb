@@ -1,6 +1,7 @@
 class UserCommentsController < ApplicationController
 
   def create
+    binding.irb
     # Blogをパラメータの値から探し出し,Blogに紐づくcommentsとしてbuildします。
     @user = User.find(params[:user_id])
     @user_comment = @user.user_comments.build(user_comment_params)
