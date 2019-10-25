@@ -1,5 +1,6 @@
+<main class="container-fluid show-idea-page">
   <div class="row">
-    <h1 class="col-12 show-idea-page__title">アイディア詳細</h1>
+    <h1 class="col-12 show-idea-page__title">このアイディアの商談ルーム</h1>
   </div>
   <div class="row show-idea-overview">
     <div class="col-12 col-lg-5 offset-lg-1">
@@ -14,6 +15,10 @@
       <p class="show-idea-overview__content">&emsp;契約形態&thinsp;： <%= @idea.work_style %></p>
     </div>
   </div>
+  <div>
+    <div style="width: 100px"><%= image_tag @idea.user.image.url %></div>
+    <p>オーナー：<%= @idea.user.name %>さん</p>
+  </div>
 <% if @over_ten %>
   <%= link_to '以前のメッセージ', '?m=all' %>
 <% end %>
@@ -23,7 +28,11 @@
     <% if message.body.present? %>
       <div class="item">
         <div class="content">
-          <div class="header"><strong><%= message.user.name %></strong> <%= message.message_time %></div>
+          <div class="header">
+            <div style="width: 60px"><%= image_tag message.user.image.url %></div>
+            <strong><%= message.user.name %></strong>
+            <p><%= message.message_time %></p>
+          </div>
           <div class="list">
             <div class="item">
               <i class="right triangle icon"></i>
@@ -48,3 +57,5 @@
     <%= f.submit "メッセージを送る", class: "col-12 btn show-idea-page__edit__button" %>
   </div>
 <% end %>
+
+</main>
