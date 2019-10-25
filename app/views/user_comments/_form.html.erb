@@ -1,21 +1,9 @@
-<%= form_with(model: [user, user_comment]) do |form| %>
-  <% if user_comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user_comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-      <ul>
-      <% user_comment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :user_content %>
-    <%= form.text_area :user_content %>
+<%= form_with(model: [user, user_comment], url: user_user_comments_path(user_id: @user.id) ) do |form| %>
+  <div class="field mb-3">
+    <%= form.text_area :content, class: "col-lg-12 btn show-idea-comment__button" %>
   </div>
-
+  <%= hidden_field :comment_user_id, value: current_user.id %>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "コメントする", class: "col-lg-12 btn btn-warning show-idea-comment__button" %>
   </div>
 <% end %>

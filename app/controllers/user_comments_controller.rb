@@ -4,11 +4,10 @@ class UserCommentsController < ApplicationController
     # Blogをパラメータの値から探し出し,Blogに紐づくcommentsとしてbuildします。
     @user = User.find(params[:user_id])
     @user_comment = @user.user_comments.build(user_comment_params)
-    @user_comment.comment_user_id = current_user.id
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @user_comment.save
-        format.html { redirect_to user_path(@user) }
+        format.html { redirect_to user_path(@user), notice: 'コメントしました'  }
       else
         format.html { redirect_to user_path(@user), notice: '投稿できませんでした...' }
       end
