@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: "tops#index"
-  resources :users, :user_profiles
+  resources :users, :user_profiles do
+    resources :user_comments, only: %i[create destroy]
+  end
   resources :artisan_profiles, only: %i[index show edit update]
   resources :sessions, only: %i[new create destroy]
   resources :project_likes, only: %i[index create destroy]
