@@ -168,19 +168,3 @@ end
       ])
     end
   
-    Project.create!([
-      idea_title: "アイディア#{15+i}",
-      idea_amount: 30,
-      idea_about: 'ゆるふわの着物をつくりたい',
-      idea_usage: 'ギフト',
-      idea_commit: 'できるだけ着物に似せたい',
-      product_image: '似た物がある',
-      idea_category: '和服',
-      idea_category_details: 'トップス・シャツ',
-      idea_material: '生地のみ',
-      work_style: '初期費用固定と単価にて変動',
-      delivery_date: '2020-1-7',
-      budget: '5万円~10万円',
-      user_id: 2,
-      idea_image: open("app/assets/images/default_idea.png"),
-      ])
