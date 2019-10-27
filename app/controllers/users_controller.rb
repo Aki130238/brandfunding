@@ -42,7 +42,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    binding.irb
     if @user.update(user_params)
       redirect_to user_path(@user.id), notice: "ユーザーを更新しました。"
     else

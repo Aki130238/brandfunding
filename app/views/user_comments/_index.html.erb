@@ -2,7 +2,7 @@
   <% @user_comments.each do |comment| %>
     <% if comment.id.present? %>
       <li>
-        <p><%= comment.content %></p>
+        <p class="h5"><%= link_to comment.user.name, user_path %>: <%= comment.content %></p>
       </li>
     <% end %>
   <% end %>
