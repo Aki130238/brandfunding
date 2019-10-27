@@ -14,7 +14,7 @@
       <p class="show-idea-overview__content">納品希望日&thinsp;： <%= format_date(@idea.delivery_date) %></p>
       <p class="show-idea-overview__content">&emsp;契約形態&thinsp;： <%= @idea.work_style %></p>
       <p class="show-idea-page__edit__button__wrap"><%= link_to "アイデアを編集する", edit_idea_path(@idea), class: "col-12 btn show-idea-page__edit__button" if @idea.user_id == current_user.id %></p>
-      <p class="show-idea-page__edit__button__wrap"><%= link_to '商談ルームに入る', conversations_path(sender_id: current_user.id, recipient_id: @idea.user.id), method: :post, class: "col-12 btn show-idea-page__edit__button" %></p>
+      <p class="show-idea-page__edit__button__wrap"><%= link_to '商談ルームに入る', idea_conversation_messages_path(sender_id: current_user.id, recipient_id: @idea.user.id), method: :post, class: "col-12 btn show-idea-page__edit__button" %></p>
     </div>
   </div>
   <div class="row show-idea-list offset-lg-1">
