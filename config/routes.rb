@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :relationships, only: %i[index create destroy]
   resources :ideas do
     resources :idea_comments, only: %i[create destroy]
+    resources :conversations do
+      resources :messages
+    end
   end
   post 'projects/:id', to: 'project_returns#create'
   resources :projects do
