@@ -28,4 +28,10 @@
     <p class="projects-page__menu__button2">支援者数順</p>
     <p class="projects-page__menu__button3"><%= svg("plus-circle-solid.svg", class: "projects-page__menu__icon2") %>&thinsp;条件を追加</p>
   </div>
+  <div class="collapse" >
+    <%= search_form_for @search do |f| %>
+      <%= f.search_field :idea_title_cont, required: true %>
+      <%= f.submit "検索", class: "col-lg-12 btn show-idea-comment__button" %>
+    <% end %>
+  </div>
 </div>

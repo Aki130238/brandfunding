@@ -1,0 +1,5 @@
+<% search_form_for(@q, url:search_path) do |f| %>
+  <%= f.label :name_cont, '名前'%>
+  <%= f.search_field :name_cont%>
+  <%= f.submit %>
+<% end %>
