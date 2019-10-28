@@ -5,6 +5,9 @@ class IdeasController < ApplicationController
 
   def index
     @ideas = current_user.ideas.reverse_order
+    @params = params[:q]
+    @search = Idea.ransack(@params)
+    @result = @search.result(distinct: true)
   end
 
   def show

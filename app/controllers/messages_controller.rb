@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
   before_action do
       @conversation = Conversation.find(params[:conversation_id])
-      @idea = Idea.find_by(params[:id])
+      # @idea = Idea.find_by(params[:id])
+      @idea = Idea.find_by(params[:idea_id])
   end
 
   def index
@@ -36,7 +37,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:body, :user_id)
+    params.require(:message).permit(:body, :user_id, :idea_id)
   end
 
 end

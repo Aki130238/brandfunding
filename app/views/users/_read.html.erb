@@ -96,14 +96,12 @@
         <% end %>
       <% end %>
       <div class="mb-3">
-          <div id="user_comments_area">
-            <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
-            <%= render partial: 'user_comments/index', locals: { user_comment: @user_comment, user: @user } %>
-          </div>
-          <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
-        <%= form_with(model: [@user, @user_comment], url: user_user_comments_path(user_id: @user.id), local: true ) do |form| %>
+        <div id="user_comments_area">
+          <%= render partial: 'user_comments/index', locals: { user_comment: @user_comment, user: @user } %>
+        </div>
+        <%= form_with(model: [@user, @user_comment], url: user_user_comments_path(user_id: @user.id), remote: true ) do |form| %>
           <div class="field mb-3">
-            <%= form.text_area :content, class: "col-lg-12 btn show-idea-comment__button" %>
+            <%= form.text_area :content, class: "col-lg-12 btn show-idea-comment__button form-control" %>
           </div>
           <%= hidden_field :comment_user_id, value: current_user.id %>
           <div class="actions"><%= form.submit "コメントする", class: "col-lg-12 btn btn-warning show-idea-comment__button" %></div>

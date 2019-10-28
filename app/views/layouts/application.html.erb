@@ -25,10 +25,11 @@
             <li><%= link_to "プロジェクト一覧", projects_path, class: "header__navlink header__navlink__project" %></li>
             <% if logged_in? %>
               <% if current_user.user_status == 2 %>
+                <li><%= current_user.name %></li>
                 <li><%= link_to "会員情報", user_path(current_user.id), class: "header__navlink header__navlink__profile" %></li>
                 <li><%= link_to "職人情報", artisan_profile_path(current_user.id), class: "header__navlink header__navlink__artisan" %></li>
               <% elsif current_user.user_status == 3 %>
-                <li><%= link_to "会員情報", user_path(current_user.id), class: "header__navlink header__navlink__profile" %></li>
+                <li><%= link_to "#{current_user.name}さんの 会員情報", user_path(current_user.id), class: "header__navlink header__navlink__profile" %></li>
               <% end %>
               <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete, class: "header__navlink header__navlink__sign" %></li>
             <% else %>

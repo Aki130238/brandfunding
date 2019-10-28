@@ -29,6 +29,7 @@ gem 'mini_magick'
 gem 'jquery-rails'
 gem 'rails_admin', '~> 2.0'
 gem 'rails-i18n', '~> 5.1'
+gem 'ransack'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
