@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_25_015448) do
+ActiveRecord::Schema.define(version: 2019_10_28_012850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(version: 2019_10_25_015448) do
     t.integer "recipient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "idea_id"
+    t.index ["idea_id"], name: "index_conversations_on_idea_id"
     t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
     t.index ["sender_id", "recipient_id"], name: "index_conversations_on_sender_id_and_recipient_id", unique: true
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
@@ -335,6 +337,7 @@ ActiveRecord::Schema.define(version: 2019_10_25_015448) do
   add_foreign_key "artisan_profiles", "users"
   add_foreign_key "comments", "projects"
   add_foreign_key "comments", "users"
+  add_foreign_key "conversations", "ideas"
   add_foreign_key "idea_comments", "ideas"
   add_foreign_key "idea_comments", "users"
   add_foreign_key "ideas", "users"
