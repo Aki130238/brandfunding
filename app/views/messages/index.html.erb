@@ -48,7 +48,7 @@
   <% end %>
 </div>
 
-<%= form_with(model: [@conversation, @message], local: true) do |f| %>
+<%= form_with(model: [@idea, @conversation, @message], local: true) do |f| %>
   <div class="field">
     <%= f.text_area :body, class: "form-control" %>
   </div>
