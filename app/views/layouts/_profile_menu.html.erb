@@ -1,7 +1,9 @@
 <nav class="col-10 col-md-5 col-lg-4 col-xl-3 menu offset-1 offset-md-0">
   <ul>
-    <li class="menu__user_image"><%= image_tag @user.image.to_s %></li>
+    <%= link_to(edit_user_path(@user.id)) do %>
+    <li class="menu__user_image"><%= image_tag @user.image.to_s, alt: 'user_image' %></li>
     <li class="menu__user_name"><%= @user.name %></li>
+    <% end %>
     <li class="menu__li menu__li_border-top">
       <div class="card card-body menu__list__idea p0">
         <button type="button" class="menu__button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
@@ -10,7 +12,7 @@
       </div>
       <div class="collapse" id="collapseExample2">
         <div class="card card-body">
-          <p class="menu__list"><%= link_to "アイディア新規作成", new_idea_path, class: "menu__link menu__link__idea", data: {"turbolinks" => false} %></p>
+          <p class="menu__list"><%= link_to "アイディア新規作成", new_idea_path, class: "menu__link menu__link__idea", data: {"turbolinks" => false}, id: "idea_new" %></p>
           <p class="menu__list"><%= link_to "アイディア一覧", ideas_path, class: "menu__link menu__link__idea" %></p>
         </div>
       </div>
@@ -42,18 +44,18 @@
         </div>
       </div>
     </li>
-    <li class="menu__li menu__li__favorite p0">
-    <%= link_to coming_soons_path, class: "menu__title-2__link" do %>
-      <h1 class="menu__title2 menu__li__favorite">お気に入りプロジェクト</h1>
-    <% end %>
+    <%# <li class="menu__li menu__li__favorite p0">
+    <%=# link_to coming_soons_path, class: "menu__title-2__link" do %>
+      <%# <h1 class="menu__title2 menu__li__favorite">お気に入りプロジェクト</h1> %>
+    <%# end %>
     <%# project_likes_path(@user.id) %>
-    </li>
-    <li class="menu__li menu__li__follow p0">
-      <%= link_to coming_soons_path, class: "menu__title-2__link" do %>
-        <h1 class="menu__title2 menu__li__follow">フォローしたオーナー</h1>
-      <% end %>
+    <%# </li> %>
+    <%# <li class="menu__li menu__li__follow p0"> %>
+      <%# <%= link_to coming_soons_path, class: "menu__title-2__link" do %>
+        <%# <h1 class="menu__title2 menu__li__follow">フォローしたオーナー</h1> %>
+      <%# <% end %>
       <%# relationships_path(@user.id) %>
-    </li>
+    <%# </li> %>
     <%# <li class="menu__li menu__li__favorite">
       <h1 class="menu__title-2 menu__li__favorite">お気に入りデザイナー</h1>
     </li> %>

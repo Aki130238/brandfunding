@@ -1,4 +1,5 @@
 class Idea < ApplicationRecord
+  has_one :conversation, dependent: :destroy
   has_many :select_genre_in_ideas, dependent: :destroy
   has_many :idea_users, through: :select_genre_in_ideas
   has_many :idea_comments, dependent: :destroy
@@ -12,7 +13,7 @@ class Idea < ApplicationRecord
   validates :idea_commit, presence: true, length: { in: 1..1000 }
   validates :idea_usage, :product_image, :idea_category,
             :idea_category_details, :idea_material, :work_style,
-            :delivery_date, :budget, :idea_user_ids, presence: true
+            :delivery_date, :budget, presence: true
   validate :delivery_date_cannot_be_in_the_past
 
   def delivery_date_cannot_be_in_the_past

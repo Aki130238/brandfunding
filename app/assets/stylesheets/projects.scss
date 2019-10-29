@@ -370,10 +370,6 @@
     }
   }
   &__menu {
-    display: none;
-    @include mq(xl) {
-      display: flex;
-    }
     margin: .8rem auto .8rem auto;
     padding: 1rem 0;
     background: $bgcolor-project2;
@@ -393,6 +389,10 @@
       width: 1.6rem;
       vertical-align: -.2rem;
     }
+    &__input {
+      display: inline;
+      margin-left: 2rem;
+    }
     &__button {
       margin: 1rem 1.5rem 0 1rem;
       cursor: pointer;
@@ -405,6 +405,7 @@
       color: $hovercolor-sort;
     }
     &__button2 {
+      display: inline;
       margin: 0 .3rem;
       padding: 1rem 1.6rem;
       border: 1px solid $bordercolor-1;

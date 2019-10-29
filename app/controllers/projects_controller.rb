@@ -45,9 +45,8 @@ class ProjectsController < ApplicationController
 
   def edit
     @ideas = current_user.ideas
-    if @project.user_id == session[:user_id]
-      else
-        redirect_to projects_path, notice: "他のユーザーのプロジェクトは編集できません。"
+    unless @project.user_id == session[:user_id]
+      redirect_to projects_path, notice: "他のユーザーのプロジェクトは編集できません。"
     end
   end
 
@@ -89,7 +88,7 @@ class ProjectsController < ApplicationController
     #     :id,
     #     :project_returns
     #   ],
-    #   project_image_attribute: [
+    #   project_image_attributes: [
     #     :id,
     #     :project_logo,
     #     :project_img,
@@ -99,11 +98,11 @@ class ProjectsController < ApplicationController
     #     :project_img5,
     #     :project_movie
     # ],
-    # project_report_attribute: [
+    # project_report_attributes: [
     #   :id,
     #   :project_reports
     # ],
-    # project_return_attribute: [
+    # project_return_attributes: [
     #   :id,
     #   :return_title,
     #   :return_item_img,
@@ -114,11 +113,11 @@ class ProjectsController < ApplicationController
     #   :return_item_remark,
     #   :return_option
     # ],
-    # project_sponsor_attribute: [
+    # project_sponsor_attributes: [
     #   :id,
     #   :sponsors_list
     # ],
-    # project_value_attribute: [
+    # project_value_attributes: [
     #   :id,
     #   :target_fund,
     #   :project_fund,

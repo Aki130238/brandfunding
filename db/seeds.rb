@@ -110,3 +110,77 @@ UserProfile.create([
 ArtisanProfile.create([
   user_id: 3
                       ])
+
+9.times do |i|
+Idea.create!([
+  idea_title: "アイディア#{i}",
+  idea_amount: 30,
+  idea_about: 'ゆるふわの着物をつくりたい',
+  idea_usage: 'ギフト',
+  idea_commit: 'できるだけ着物に似せたい',
+  product_image: '似た物がある',
+  idea_category: '和服',
+  idea_category_details: 'トップス・シャツ',
+  idea_material: '生地のみ',
+  work_style: '初期費用固定と単価にて変動',
+  delivery_date: '2019-11-14',
+  budget: '5万円~10万円',
+  user_id: 1,
+  idea_image: open("app/assets/images/default_idea.png"),
+  ])
+end
+
+6.times do |i|
+  Idea.create!([
+    idea_title: "アイディア#{9+i}",
+    idea_amount: 30,
+    idea_about: 'ゆるふわの着物をつくりたい',
+    idea_usage: 'ギフト',
+    idea_commit: 'できるだけ着物に似せたい',
+    product_image: '似た物がある',
+    idea_category: '和服',
+    idea_category_details: 'トップス・シャツ',
+    idea_material: '生地のみ',
+    work_style: '初期費用固定と単価にて変動',
+    delivery_date: '2019-12-24',
+    budget: '5万円~10万円',
+    user_id: 2,
+    idea_image: open("app/assets/images/default_idea.png"),
+    ])
+  end
+
+  3.times do |i|
+    Idea.create!([
+      idea_title: "アイディア#{15+i}",
+      idea_amount: 30,
+      idea_about: 'ゆるふわの着物をつくりたい',
+      idea_usage: 'ギフト',
+      idea_commit: 'できるだけ着物に似せたい',
+      product_image: '似た物がある',
+      idea_category: '和服',
+      idea_category_details: 'トップス・シャツ',
+      idea_material: '生地のみ',
+      work_style: '初期費用固定と単価にて変動',
+      delivery_date: '2020-1-7',
+      budget: '5万円~10万円',
+      user_id: 2,
+      idea_image: open("app/assets/images/default_idea.png"),
+      ])
+    end
+
+40.times do |i|
+  User.create!(
+    name: "ユーザー名#{1 + i}",
+    email: "mael#{1 + i}@dic.com",
+    password: "password"
+  )
+end
+
+  18.times do |i|
+    Conversation.create!(
+      idea_id: "#{1 + i}",
+      recipient_id: "#{1 + i}",
+      sender_id: "#{2 + i}"
+    )
+  end
+

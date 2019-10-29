@@ -1,0 +1,30 @@
+    <% @ideas.each do |i| %>
+      <div class="idea-list col-9 col-sm-8 col-md-5 col-lg-3">
+        <%= link_to idea_path(i.id), class: "idea-list__link" do %>
+          <div class="row idea-list__bar">
+            <p class="idea-list__bar__content"><%= i.idea_title %></p>
+          </div>
+          <div class="row">
+            <p class="col-12 idea-list__image__wrap"><%= image_tag i.idea_image.url, class: "idea-list__image" %></p>
+          </div>
+          <div class="row">
+            <p class="idea-list__title"><%= i.idea_about %></p>
+          </div>
+          <div class="row idea-list__content">
+            <div class="col-12 idea-list__content__wrap idea-list__content__wrap1">
+              <p class="idea-list__content__icon__wrap idea-list__content__icon__wrap1"><%= svg("yen-sign-solid.svg", class: "idea-list__content__icon1") %></p>
+              <p class="idea-list__content1"><%= i.budget %></p>
+            </div>
+            <div class="col-6 idea-list__content__wrap idea-list__content__wrap2">
+              <p class="idea-list__content__icon__wrap idea-list__content__icon__wrap2"><%= svg("box-solid.svg", class: "idea-list__content__icon2") %></p>
+              <p class="idea-list__content2"><%= i.idea_amount %>個</p>
+            </div>
+            <div class="col-6 idea-list__content__wrap idea-list__content__wrap3">
+              <p class="idea-list__content__icon__wrap idea-list__content__icon__wrap3"><%= svg("calendar-alt-regular.svg", class: "idea-list__content__icon3") %></p>
+              <p class="idea-list__content3"><%= i.delivery_date.strftime("'%y/%m/%d") %></p>
+            </div>
+          </div>
+          <%# <div class="row idea-list__bar2">&ensp;</div> %>
+        <% end %>
+      </div>
+    <% end %>

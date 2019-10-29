@@ -32,6 +32,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @ideas = Idea.all
+    @user_comments = @user.user_comments
+    @user_comment = @user.user_comments.build
   end
 
   def edit
@@ -40,7 +43,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.user_profile.update(user_profile_params)
+    if @user.update(user_params)
       redirect_to user_path(@user.id), notice: "ユーザーを更新しました。"
     else
       flash.now[:alert] = "更新に失敗しました。"
@@ -76,7 +79,7 @@ class UsersController < ApplicationController
       :email,
       :password,
       :password_confirmation,
-      :image_name,
+      :image,
       :image_cache
     )
   end
@@ -87,8 +90,8 @@ class UsersController < ApplicationController
       :email,
       :image_name,
       :image_cache,
-      user_profile:[
-        :family_name, 
+      user_profile_attributes:[
+        :family_name,
         :family_name_sub,
         :last_name,
         :last_name_sub,

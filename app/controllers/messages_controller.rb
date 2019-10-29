@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
   before_action do
       @conversation = Conversation.find(params[:conversation_id])
+      @idea = Idea.find_by(params[:id])
+      #@idea = Idea.find_by(params[:idea_id])
   end
 
   def index
@@ -22,12 +24,13 @@ class MessagesController < ApplicationController
 
     @messages = @messages.order(:created_at)
     @message = @conversation.messages.build
+    @idea = Idea.find_by(id: params[:idea_id])
   end
 
   def create
     @message = @conversation.messages.build(message_params)
     if @message.save
-      redirect_to conversation_messages_path(@conversation)
+      redirect_to idea_conversation_messages_path(@conversation)
     else
       render 'index'
     end

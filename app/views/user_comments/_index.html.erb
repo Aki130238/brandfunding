@@ -1,0 +1,9 @@
+<ul class="mb-3">
+  <% @user_comments.each do |comment| %>
+    <% if comment.id.present? %>
+      <li>
+        <p class="h5"><%= link_to comment.user.name, user_path(comment.user) %>: <%= comment.content %></p>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
