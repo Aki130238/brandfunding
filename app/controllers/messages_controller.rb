@@ -24,6 +24,7 @@ class MessagesController < ApplicationController
 
     @messages = @messages.order(:created_at)
     @message = @conversation.messages.build
+    @idea = Idea.find_by(id: params[:idea_id])
   end
 
   def create
