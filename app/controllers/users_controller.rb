@@ -32,6 +32,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @ideas = Idea.all
     @user_comments = @user.user_comments
     @user_comment = @user.user_comments.build
   end

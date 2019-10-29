@@ -1,9 +1,7 @@
 <main class="container-fluid my-page">
   <h1 class="row col-12 col-lg-10 my-page__title">会員情報・住所確認/変更</h1>
   <div class="row">
-
     <%= render "layouts/profile_menu" %>
-
     <section class="col-10 col-md-6 offset-1 offset-md-0 my-page__form">
       <%= form_with(model: @user, url: user_path, local: true, method: :patch) do |f| %>
         <%= f.fields_for :user_profile do |a| %>
