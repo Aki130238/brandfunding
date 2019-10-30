@@ -1,6 +1,7 @@
 class Message < ApplicationRecord
   belongs_to :conversation
   belongs_to :user
+  validates :body, presence: true, length: { in: 1..1000 }
 
   validates_presence_of :body, :conversation_id, :user_id
   def message_time
