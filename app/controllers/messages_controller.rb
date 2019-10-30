@@ -32,7 +32,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to idea_conversation_messages_path(@conversation)
     else
-      render 'index'
+      redirect_to idea_conversation_messages_path(@conversation), notice: "メッセージを入力してください"
     end
   end
   private
