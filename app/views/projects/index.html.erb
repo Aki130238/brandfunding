@@ -37,7 +37,7 @@
               <% if (pr.project_value.recruitment_deadline > DateTime.now) %>
                 <%= (pr.project_value.recruitment_deadline - DateTime.now).to_i / 1.days + 1 %>日
               <% else %>
-                <span class="project-list__content__end">募集終了</span></p>
+                <span class="project-list__content__end">募集終了</span>
               <% end %>
             </p>
           </div>
