@@ -22,7 +22,7 @@
           <ul class="navbar-nav mr-auto">
           </ul>
           <ul class="nav navbar-nav">
-            <li><%= link_to "アイディア一覧", ideas_path, class: "header__navlink header__navlink__project" %></li>
+            <li><%= link_to "プロジェクト一覧", projects_path, class: "header__navlink header__navlink__project" %></li>
             <% if logged_in? %>
               <% if current_user.user_status == 2 %>
                 <li><%= current_user.name %></li>
@@ -45,7 +45,7 @@
     <div class="main-wrap">
       <%= yield %>
     </div>
-    
+
     <footer class="container-fluid footer">
       <div class="row footer__wrap">
         <h1 class="col-12 col-5 col-lg-4 col-xl-3 footer__title__wrap"><%= link_to "BRAND FUNDING", root_path, class: "footer__title" %></h1>
